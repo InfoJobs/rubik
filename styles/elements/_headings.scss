@@ -1,0 +1,152 @@
+/*
+Typography
+
+Styleguide 1.3
+*/
+
+
+/*------------------------------------*\
+$HEADINGS
+\*------------------------------------*/
+/*
+Headings
+
+Definition of differents levels of titles.
+```
+H1		- Size: Level 1
+H2 		- Size: Level 2
+H3		- Size: Level 3
+```
+
+Markup:
+<h1>Header Level 1</h1>
+<h2>Header Level 2</h2>
+<h3>Header Level 3</h3>
+
+Styleguide 1.3.1
+*/
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+	font-family: $base-font-family-bold;
+
+	.skin-executive & {
+		font-family: $base-font-family-light;
+		color: $dark-silk;
+	}
+}
+
+.section h1,
+.section .h1 {
+	margin: 20px 0;
+	font-size: $xxlarge-font-size;
+	line-height: $xxlarge-line-height;
+
+	@media only screen and (min-width: $bp-desktop) {
+		margin-bottom: 40px;
+		font-size: 36px;
+		line-height: 100%;
+	}
+}
+
+h1,
+.h1 {
+	margin-bottom: 35px;
+	font-size: $large-font-size;
+	line-height: $large-line-height;
+
+	@include mediaquery ($bp-tablet) {
+		font-size: $xlarge-font-size;
+		line-height: $xlarge-line-height;
+	}
+
+	@include mediaquery ($bp-desktop) {
+		font-size: $xxlarge-font-size;
+		line-height: $xxlarge-line-height;
+	}
+}
+
+h2,
+.h2 {
+	margin: 0 0 15px 0;
+	font-size: $medium-font-size;
+	line-height: $medium-line-height;
+
+	@include mediaquery ($bp-tablet) {
+		font-size: $large-font-size;
+		line-height: $large-line-height;
+	}
+
+	@include mediaquery ($bp-desktop) {
+		font-size: $xlarge-font-size;
+		line-height: $xlarge-line-height;
+	}
+}
+
+h3,
+.h3 {
+	@extend %font-medium-line;
+	margin-bottom: 15px;
+}
+
+/*
+Heading-addons
+
+Used to reset properties defined for generic H1.
+```
+.heading-addons		- Structure: To reset H1 margin
+```
+
+Markup:
+<div class="heading-addons">
+<h1>Header Level 1</h1>
+</div>
+
+Styleguide 1.3.1.1
+*/
+
+.heading-addons {
+
+	h1 {
+		margin: 0;
+		word-wrap : break-word;
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		-ms-hyphens: auto;
+		hyphens: auto;
+	}
+}
+
+/*
+Heading mega
+
+Used for a big size of Heading.
+
+
+Markup:
+<h1 class="heading-mega">Header Level 1</h1>
+
+Styleguide 1.3.1.2
+*/
+
+.heading-mega {
+	font-size: $xlarge-font-size;
+	line-height: $xlarge-line-height;
+	margin-bottom: 20px;
+
+	@include mediaquery ($bp-tablet) {
+		font-size: $xxlarge-font-size;
+		line-height: $xxlarge-line-height;
+		margin-bottom: 30px;
+	}
+
+	@include mediaquery ($bp-desktop) {
+		font-size: $xxxlarge-font-size;
+		line-height: $xxxlarge-line-height;
+	}
+
+}

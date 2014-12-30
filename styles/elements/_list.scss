@@ -1,0 +1,357 @@
+/*------------------------------------*\
+    $LIST
+\*------------------------------------*/
+/*
+Lists
+
+```
+.list-default - List without decoration
+```
+
+Markup:
+<ul class="list-default">
+<li>Salario no disponible</li>
+<li>Experiencia monima: no requerida</li>
+<li>Tipo de oferta: de duracion determinada, jornada completa</li>
+</ul>
+
+Styleguide 1.3.3
+*/
+
+.list-default {
+
+    & > li,
+    & > dt {
+        display: block;
+        position: relative;
+        margin-bottom: 10px;
+
+        @at-root .small#{&} {
+            margin-bottom: 5px;
+        }
+    }
+
+    & > dt {
+        margin-bottom: 0;
+        font-weight: bold;
+    }
+
+    & > dd {
+        margin-bottom: 20px;
+    }
+}
+
+/*
+Lists with bullets
+
+Markup:
+<ul class="list-default list-bullet-default">
+<li>Salario no disponible</li>
+<li>Experiencia monima: no requerida</li>
+<li>Tipo de oferta: de duracion determinada, jornada completa</li>
+</ul>
+
+.list-bullet-default - List with bullets decoration
+.list-bullet-icon - List with icons decoration
+
+Styleguide 1.3.3.1
+*/
+
+.list-bullet-default > li,
+.list-bullet-default > dt,
+.list-bullet-default > dd {
+    padding-left: 20px;
+
+    @media print {
+        margin: 0;
+    }
+}
+.list-bullet-default > li:before,
+.list-bullet-default > dt:before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 0;
+    display: block;
+    width: 5px;
+    height: 5px;
+    list-style-position: inside;
+    border-radius: 50%;
+    background-color: $soft-script;
+}
+
+.list-bullet-icon > .iconfont-30px {
+    padding-left: 40px;
+    position: relative;
+}
+
+.list-bullet-icon [class^="iconfont-"]:before,
+.list-bullet-icon [class*=" iconfont-"]:before {
+    position: absolute;
+    top: -5px;
+}
+
+/*
+Lists with titles inside
+
+```
+.list-default-title - Title inside lists elements
+```
+
+Markup:
+<ul class="list-default">
+<li>
+<h3 class="list-default-title">Salario no disponible</h3>
+</li>
+<li>Experiencia monima: no requerida</li>
+<li>Tipo de oferta: de duracion determinada, jornada completa</li>
+</ul>
+
+
+Styleguide 1.3.3.2
+*/
+
+.list-default-title { //TODO: check usability; replace structure for <dl><dt><dd> element
+    display: inline-block;
+    margin: 0;
+    font-size: 16px;
+
+    .skin-executive & {
+        font-size: 16px
+    }
+}
+
+.list-default-text { //TODO: check usability; replace structure for <p> element
+    display: block;
+    margin: 0;
+}
+
+/*
+Lists with dividers
+
+```
+.list-divider - Divider
+```
+
+Markup:
+<ul class="list-default list-divider">
+<li>Experiencia monima: no requerida</li>
+<li>Tipo de oferta: de duracion determinada, jornada completa</li>
+</ul>
+
+Styleguide 1.3.3.3
+*/
+
+.list-divider > li {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $darkest-shiro;
+
+    &:first-child {
+        padding-top: 0;
+    }
+
+    &:last-child {
+        border: none;
+    }
+
+    @at-root .small#{&} {
+        margin-bottom: 5px;
+        padding: 0 0 5px 0;
+    }
+
+    @at-root .list-divider-bleed#{&} { // fix .inner default padding
+        margin: 0 -10px;
+        padding-right: 10px;
+        padding-left: 10px;
+
+        @include mediaquery ($bp-tablet) {
+            margin: 0 -20px;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+
+}
+
+
+/*
+Tag group
+
+```
+.tag-group - Tag list
+```
+
+Markup:
+<ul class="tag-group">
+<li>Contrato de duracion determinada</li>
+<li>Jornada completa</li>
+<li>Salario no especificado</li>
+</ul>
+
+Styleguide 1.3.3.4
+*/
+
+.tag-group {
+    @extend %font-small-line;
+    overflow: hidden;
+
+    &:last-child {
+        margin-top: 10px;
+    }
+}
+
+.tag-group li {
+    float: left;
+    margin-bottom: 5px;
+    padding-right: 20px;
+
+    .skin-executive &:only-child { //TODO: fix extra margin used in result-list component
+        margin-bottom: 0;
+    }
+
+    @media print {
+        margin: 0;
+    }
+}
+
+/*
+Tag divider
+
+```
+.tag-divider - To add a gap between tags
+```
+
+Markup:
+<ul class="tag-group tag-group-sticker">
+<li class="tag-divider">Madrid</li>
+<li>Hace 4m	<span class="sticker sticker-marked">Nueva</span></li>
+</ul>
+
+Styleguide 1.3.3.5
+*/
+
+.tag-group li.tag-divider {
+    @extend %divider;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.tag-group li.tag-sticker {
+    float: none;
+
+    @media print {
+        float: left;
+    }
+}
+
+
+/*
+Tag group top
+
+```
+.tag-group-top  - To add a gap at the bottom
+```
+
+Markup:
+<ul class="tag-group tag-group-top">
+<li>Contrato de duracion determinada</li>
+<li>Jornada completa</li>
+<li>Salario no especificado</li>
+</ul>
+
+Styleguide 1.3.3.6
+*/
+
+.tag-group-top {
+    margin-bottom: 10px;
+
+    @media print {
+        margin: 0;
+    }
+}
+
+/*
+Sticker Tag group
+
+```
+.tag-group-sticker - Stickers tags
+```
+
+Markup:
+<ul class="tag-group tag-group-sticker">
+<li><a href="#" class="sticker sticker-skill">Javascript</a></li>
+<li><a href="#" class="sticker sticker-skill">Office</a></li>
+<li><a href="#" class="sticker sticker-skill">HTML</a></li>
+<li><a href="#" class="sticker sticker-skill">Java</a></li>
+</ul>
+
+Styleguide 1.3.3.7
+*/
+
+.tag-group-sticker li {
+    padding-right: 0;
+}
+
+.tag-group .alternative { //TODO: nest with '& .tag-group'
+    margin-right: 0;
+}
+
+.tag-group .ellipsis { //TODO: nest with '& tag-group'
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tag-group  .tag-ellipsis-cols2 { //TODO: nest with '& tag-group'
+    max-width: 50%;
+}
+
+.tag-group  .tag-ellipsis-cols3 { //TODO: nest with '& tag-group'
+    max-width: 33%;
+}
+
+// Es redefineix el color a gris perque, tot i tenir default, els anchors
+// es continuen pintant en blau i el tag-primary en verd
+
+.tag-disabled {  //TODO: ??
+    color: $soft-script;
+}
+
+//float list items in columns
+@for $i from 1 through 4 {
+    $percentage: $i * 25;
+    .cols-per-#{$percentage} {
+        overflow: hidden;
+
+        li {
+            float:left;
+            width: calc((1% * #{$percentage}) - 10px);
+            margin-right: 10px;
+        }
+    }
+}
+
+@include mediaquery ($bp-tablet) {
+
+    .tag-contrast {
+        float: left;
+        margin-top: -2px;
+        margin-bottom: 0;
+    }
+
+}
+
+@include mediaquery ($bp-desktop) {
+
+    .tag-group li.tag-sticker {
+        float: left;
+    }
+
+}

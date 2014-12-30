@@ -1,0 +1,410 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+    $MEDIA BOARD
+\*------------------------------------*/
+
+.media-board {
+
+	padding: 10px;
+
+	.item {
+		position: relative;
+		overflow: hidden;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+
+
+		a {
+			display: block;
+			-webkit-transition: none;
+			transition: none;
+
+			&:hover,
+			&:link,
+			&:visited {
+				color: $shiro;
+			}
+		}
+
+		p {
+			font-size: 16px;
+			line-height: 18px;
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			-moz-font-smoothing: antialiased;
+		}
+
+		.caption {
+			left: 0;
+			width: 100%;
+			padding: 20px;
+		}
+
+		.title {
+			margin: 0 0 6px 0;
+			font-family: Proximanova;
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			-moz-font-smoothing: antialiased;
+			font-size: 25px;
+			line-height: 27px;
+
+			strong {
+				font-family: Proximanovabold;
+			}
+		}
+
+		h3.title {
+			font-size: 25px;
+			line-height: 28px;
+			margin: 0;
+		}
+
+
+
+		// Block 1 -------------------------------------------------------------
+		// ---------------------------------------------------------------------
+		&1 {
+
+			a {
+				@include display-flex;
+				@include align-items(center);
+				min-height: 200px;
+				background-color: rgba(0,0,0,.5);
+			}
+
+			.caption {
+				bottom: 0;
+			}
+
+		}
+
+		// Block 2 -------------------------------------------------------------
+		// ---------------------------------------------------------------------
+		&2 {
+
+			a {
+				@include display-flex;
+				@include align-items(center);
+				min-height: 140px;
+				background-color: rgba(0,0,0,.5);
+			}
+
+			.caption {
+				bottom: 0;
+			}
+
+		}
+
+
+		// Block 3 -------------------------------------------------------------
+		// ---------------------------------------------------------------------
+		&3 {
+			background-color: $day-blue;
+
+			a {
+				@include display-flex;
+				@include align-items(center);
+				min-height: 94px;
+			}
+
+			.caption {
+				bottom: 0;
+			}
+		}
+
+	}
+
+	.item-group {
+
+		& > div {
+			border-top: 10px solid $shiro;
+		}
+	}
+
+
+	@include mediaquery ($bp-tablet) {
+
+		.item {
+
+			opacity: 1;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+
+
+			// Block 2 ---------------------------------------------------------
+			// -----------------------------------------------------------------
+			&1 {
+				width: 100%;
+
+				a {
+					display: block;
+					min-height: 280px;
+					background: none;
+				}
+
+				.caption {
+					top: auto;
+					position: absolute;
+					bottom: 0;
+				}
+			}
+
+			// Block 2 ---------------------------------------------------------
+			// -----------------------------------------------------------------
+			&2 {
+				border-right: 10px solid $shiro;
+				width: 66.66%;
+
+				a {
+					display: block;
+				}
+
+				.caption {
+					top: auto;
+					position: absolute;
+					bottom: 0;
+				}
+			}
+
+
+			// Block 3 ---------------------------------------------------------
+			// -----------------------------------------------------------------
+			&3 {
+				width: 33.33%;
+
+				a {
+					display: block;
+					min-height: inherit;
+				}
+
+				.title {
+					font-size: 18px;
+					line-height: 20px;
+				}
+
+				.caption {
+					top: auto;
+					position: absolute;
+					bottom: 0;
+				}
+			}
+
+		}
+
+		.item-group {
+			width: 100%;
+			height: 100%;
+
+			& > div {
+				margin-top: 0;
+				float: left;
+			}
+
+			a {
+				min-height: 180px;
+			}
+
+		}
+
+		.gradient {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			min-height: 150px;
+			background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+			background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,0.8)));
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+			background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+			background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+		}
+
+	}
+
+
+	@include mediaquery ($bp-desktop) {
+
+
+		height: 362px;
+
+		.item {
+
+			.title,
+			h2.title {
+				margin: 0;
+			}
+
+			a {
+				position: relative;
+				min-height: 100%;
+			}
+
+			&1 {
+				width: auto;
+				margin-right: 312px;
+				height: 100%;
+				min-height: none;
+				max-height: 100%;
+
+
+
+				.title {
+					font-size: 30px;
+					line-height: 32px;
+				}
+
+				&::before {
+					content: "";
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					background-color: rgba(0,0,0,.2);
+					opacity: 0;
+					-webkit-transition: all .5s;
+					transition: all .5s;
+				}
+
+				&:hover {
+					background-position: 50% 30%;
+
+					&::before {
+						content: "";
+						opacity: 1;
+						-webkit-transition: opacity .5s;
+						transition: opacity .5s;
+					}
+				}
+			}
+
+			&2 {
+				height: 66.66%;
+				padding-right: 0;
+				border-right: 0;
+
+				.title {
+					font-size: 30px;
+					line-height: 32px;
+					font-family: Proximanova;
+				}
+
+				&:hover {
+					background-position: 20%;
+					-webkit-transition: all 0.35s;
+					transition: all 0.35s;
+				}
+			}
+
+			&3 {
+				height: 33.33%;
+				background-size: 100% 200%;
+				background-image: -webkit-linear-gradient(top, $day-blue 50%, #1d7aae 50%);
+				background-image:    -moz-linear-gradient(top, $day-blue 50%, #1d7aae 50%);
+				background-image:      -o-linear-gradient(top, $day-blue 50%, #1d7aae 50%);
+				background-image:         linear-gradient(top, $day-blue 50%, #1d7aae 50%);
+				background-position: 0 0;
+
+				-webkit-transition: background-position 1s;
+				transition: background-position 1s;
+
+
+				.title {
+					font-size: 20px;
+					line-height: 22px;
+					font-family: Proximanova;
+				}
+			}
+		}
+
+		.item-group {
+			float: right;
+			width: 312px;
+			margin-top: -342px; //ToDo: Fix this patch
+			padding-left: 10px;
+
+			& > div {
+				float: none;
+				width: 100%;
+
+				&:first-child {
+					border-top: 0;
+				}
+			}
+
+			&3 {
+				border-top: 10px solid $shiro;
+			}
+		}
+
+
+		// Animation -----------------------------------------------------------
+		.effect-image {
+			-webkit-transition: all .35s;
+			transition: all .35s;
+
+
+			.description {
+				-webkit-transform: translateY(18px);
+				transform: translateY(18px);
+			}
+
+
+
+
+			.title {
+				-webkit-transform : translateY(18px);
+				transform : translateY(18px);
+				-webkit-transition: -webkit-transform 0.35s;
+				transition: transform 0.35s;
+			}
+
+			.description {
+				opacity: 0;
+				-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+				transition: opacity 0.3s, transform 0.5s;
+			}
+
+			&:hover {
+				-webkit-transition: all .35s;
+				transition: all .35s;
+
+				.title {
+					//-webkit-transform: translateY(-6px);
+					//transform: translateY(-6px);
+					//-webkit-transition: -webkit-transform 0.35s;
+					//transition: transform 0.35s;
+				}
+
+				.description {
+					opacity: 1;
+					-webkit-transform: translateY(0);
+					transform: translateY(0);
+
+					-webkit-transition: opacity 0.35s 0.05s, -webkit-transform 0.35 0.05s;
+					transition: opacity 0.35s 0.05s, transform 0.35s 0.05s;
+				}
+			}
+
+			&:hover::before {
+				transition: all .3s;
+				background-position: 50% 25%;
+			}
+		}
+
+		.effect-color {
+			-webkit-transition: all .5s;
+			transition: all .5s;
+
+			&:hover {
+				background-position: 0 100%;
+			}
+		}
+
+	}
+
+}

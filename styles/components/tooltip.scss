@@ -1,0 +1,267 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+    $TOOLTIP
+\*------------------------------------*/
+
+.tooltip-hidden {/*por defecto oculto*/
+	display: none;
+}
+
+.tooltip {
+	color: $dark-silk;
+
+	h3,
+	p,
+	ul {
+		color: $dark-silk;
+	}
+
+	a,
+	a:hover,
+	a:visited {
+		color: $day-blue;
+	}
+}
+
+.close-tooltip {
+	display: inline-block;
+	overflow: hidden;
+	width: 0;
+	float: right;
+}
+
+.close-tooltip:before {
+    content: "";
+    display: block;
+    height: 14px;
+    margin-right: 20px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    width: 14px;
+	background: url(#{$path-backgrounds}/bg-close.png) no-repeat 0 0;
+}
+
+//move tooltip only for mobile
+
+.move-up-tooltip--mobile,
+.move-down-tooltip--mobile {
+	width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+
+	@include mediaquery ($bp-tablet) {
+    	width: auto;
+    	left: auto;
+    }
+
+}
+.move-up-tooltip--mobile {
+	visibility: visible;
+    top:0;
+    -webkit-animation: move-up .4s;
+    	animation: move-up .4s;
+
+	@include mediaquery ($bp-tablet) {
+    	-webkit-animation: tooltip-fade-in .6s both;
+	          	animation: tooltip-fade-in .6s both;
+	}
+
+}
+.move-down-tooltip--mobile {
+	visibility: hidden;
+    -webkit-animation: move-down .6s;
+    	animation: move-down .6s;
+
+	@include mediaquery ($bp-tablet) {
+		visibility: visible;
+		animation: none;
+    }
+
+}
+.move-down-tooltip--mobile a {
+	transition: none;
+}
+
+.tooltip-layer {
+	position: fixed;
+	overflow: auto;
+	top: 0;
+	bottom: 0;
+	background-color: $shiro;
+
+	@include mediaquery ($bp-tablet) {
+			position: absolute;
+			overflow: visible;
+			top: 34px;
+			left: -31px;
+			bottom: auto;
+			background-color: transparent;
+	}
+}
+
+.tooltip-wrapper {
+	display: inline-block;
+
+	@include mediaquery ($bp-tablet) {
+		position: relative;
+	}
+}
+
+.circle {
+    border: 2px solid;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 50%;
+    padding: 5px;
+    -webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+}
+
+@include mediaquery ($bp-tablet) {
+
+	.tooltip {
+		position: relative;
+		background-color: $shiro;
+	  	border: 1px solid #ccc;
+	  	border-radius: 4px;
+	 	box-shadow: 0 0 4px #ccc;
+	 	z-index: 9999;
+	}
+	.tooltip:before {
+		content:"";
+	  	position: absolute;
+	  	bottom: 100%;
+	  	left: 40px;
+	  	margin-left: -12px;
+	  	width: 0;
+	  	height: 0;
+	    border-bottom: 12px solid #ccc;
+	    border-left: 12px solid transparent;
+	    border-right: 12px solid transparent;;
+	}
+	.tooltip:after {
+	  	content:"";
+	  	position: absolute;
+	  	bottom: 100%;
+	  	left: 40px;
+	  	margin-left: -10px;
+	  	width: 0;
+	  	height: 0;
+	  	border-bottom: 10px solid #fff;
+	  	border-right: 10px solid transparent;
+	  	border-left: 10px solid transparent;
+	}
+
+	.tooltip-fade-out {
+	  -webkit-animation: tooltip-fade-out .6s both;
+	          animation: tooltip-fade-out .6s both;
+	}
+
+}
+
+
+//keyframes
+
+@keyframes tooltip-fade-out {
+
+  0% {
+	visibility: visible;
+	opacity: 1;
+  }
+
+  100% {
+  	visibility: hidden;
+    opacity: 0;
+  }
+
+}
+@-webkit-keyframes tooltip-fade-out {
+
+  0% {
+	visibility: visible;
+	opacity: 1;
+  }
+
+  100% {
+  	visibility: hidden;
+    opacity: 0;
+  }
+
+}
+
+
+@keyframes tooltip-fade-in {
+
+  0% {
+	opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
+@-webkit-keyframes tooltip-fade-in {
+
+  0% {
+	opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
+
+@keyframes move-up {
+
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: 0;
+    }
+}
+@-webkit-keyframes move-up {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes move-down {
+
+    0% {
+        top: 0;
+   		display: block;
+		visibility: visible;
+
+    }
+    100% {
+        top: 100%;
+   		display: block;
+		visibility: visible;
+
+    }
+}
+@-webkit-keyframes move-down {
+
+    0% {
+        top: 0;
+   		display: block;
+		visibility: visible;
+    }
+    100% {
+        top: 100%;
+   		display: block;
+		visibility: visible;
+    }
+}

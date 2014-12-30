@@ -1,0 +1,317 @@
+//generics
+@import "../generics/generics";
+
+//refactor
+@import "../core/fonts";
+
+/*------------------------------------*\
+    $FILTERS
+\*------------------------------------*/
+
+/*
+Filters
+
+Styleguide 2.4
+*/
+
+.filters {
+	padding: 25px 20px 20px 20px;
+	min-width: 240px;
+	max-width: 482px;
+
+	fieldset {
+		position: relative;
+		margin-bottom: 40px;
+	}
+	.label-checkbox {
+		width: 85%;
+		margin:0;
+
+		a,
+		a:hover,
+		a:visited,
+		a:active {
+			text-decoration: none;
+			color: $mid-script;
+
+			.skin-executive &  {
+				color: #bebebe;
+			}
+		}
+		.number {
+			margin-left: 5px;
+		}
+	}
+
+	.disabled a,
+	.disabled a:hover,
+	.disabled a:visited,
+	.disabled a:active {
+		color: $soft-script;
+	}
+
+	li,
+	.salary .btn-group {
+		margin-bottom: 10px;
+	}
+
+	li:last-child {
+		margin-bottom: 0;
+	}
+
+	.experience .noUi-target {
+		margin-top: 5px;
+		margin-bottom: 26px;
+	}
+
+	p {
+		@extend %font-small-line;
+	}
+
+	hr {
+		width: 50px;
+		margin-bottom: 15px;
+		border-color: $darkest-shiro;
+	}
+
+	.hr:before {
+		content: "";
+		display: block;
+		width: 50px;
+		margin: 15px 0;
+		border-top: 1px solid $darkest-shiro;
+	}
+
+	.opened-list,
+	.closed-list {
+		display: inline-block;
+		margin-top: 10px;
+	}
+
+	.end-list {
+		border-top: 1px solid $darkest-shiro;
+	}
+
+	.end-list a {
+		margin-top: 0;
+		padding: 10px 0;
+	}
+}
+
+/*
+Filter keyword
+
+Markup:
+<div class="form filters">
+	<fieldset>
+		<legend class="fieldset-title">Palabra clave</legend>
+		<ul class="filter-keyword clearfix">
+			<li class="form-field-inline keyword">
+				<label for="keyword" class="hide-small-device hide-medium-device hide-large-device">Palabra clave</label>
+				<input type="text" value="" name="keyword" id="keyword" maxlength="200" class="input-little">
+			</li>
+			<li class="form-field-inline keyword-submit">
+				<button data-small-device="OK" data-large-device="Filtrar" onclick="searchByKeyword()" type="submit" id="buttonKeyword" class="btn btn-default btn-form-inline">Filtrar</button>
+			</li>
+		</ul>
+	</fieldset>
+</div>
+
+Styleguide 2.4.1
+*/
+
+.filter-keyword {
+	display: table;
+	width: 100%;
+
+	.form-field-inline {
+		display: table-cell;
+		float: none;
+		vertical-align: top;
+	}
+
+	input {
+		width: 100%;
+	}
+}
+
+.filters .filters-selected {
+	margin-bottom: 10px;
+}
+
+a.opened-list:after {
+    content: attr(data-opened-list);
+    display: inline-block;
+}
+
+a.closed-list:after {
+    content: attr(data-closed-list);
+    display: inline-block;
+}
+
+.filters-layer {
+
+	@media only screen and (max-width: $tablet-start) {
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		min-height: 100%;
+		z-index: 999998; // this element must be under the loading element
+		background-color: $dark-shiro;
+
+		// animation of this layer is in transitions.scss
+	}
+
+
+	@media print {
+		display: none;
+	}
+}
+
+// aquesta class va al contenidor pare per a que el fons arribi fins al final de la pagina
+
+.filters-back {
+	background: $dark-shiro;
+}
+
+.filters-back {
+	padding: 10px 20px;
+	border-bottom: 1px solid $darkest-shiro;
+	background: $dark-shiro;
+	width: 100%;
+	height: 50px;
+
+	.skin-executive & {
+		border-bottom: 1px solid $mid-script;
+		background: transparent;
+	}
+}
+
+.filters-back-bottom {
+	padding: 10px 0px;
+	background: $dark-shiro;
+	width: 100%;
+	height: 50px;
+
+	.skin-executive & {
+		background: transparent;
+	}
+}
+
+/*
+Slider one range
+
+```
+.js-ui-slider-pips
+```
+
+Markup:
+<div class="form filters">
+	<fieldset class="experience">
+		<legend class="fieldset-title">Experiencia (anyos) </legend>
+		<div id="experience" class="js-ui-slider-pips"></div>
+	</fieldset>
+</div>
+
+Styleguide 2.4.2
+*/
+
+/*
+Slider range group
+
+```
+.slider-value
+.range-group
+.range
+```
+
+Markup:
+<div class="form filters">
+	<fieldset class="salary">
+		<span id="field" class="slider-value"></span>
+		<div id="salary"></div>
+		<ul class="range-group">
+			<li class="range" id="minRange">6K <span>[(min value)]</span></li>
+			<li class="range" id="maxRange">+60k <span>[(max value)]</span></li>
+		</ul>
+		<div class="btn-group btn-group-justified">
+			<div id="mode_3">
+				<button type="button" id="periodo-salario-3" class="btn btn-default">[year]</button>
+			</div>
+			<div id="mode_2">
+				<button type="button" id="periodo-salario-2" class="btn btn-default">[month]</button>
+			</div>
+			<div id="mode_1">
+				<button type="button" id="periodo-salario-1" class="btn btn-default">[hour]</button>
+			</div>
+		</div>
+		<p>[Solo para ofertas con salario especificado]</p>
+	</fieldset>
+</div>
+
+Styleguide 2.4.3
+*/
+
+//------> Mover clases a _noiuslider.scss (range, ...)
+
+.range-group { //aplicar nombre concreto para sliders
+	height: 35px;
+}
+
+.range {
+	display: inline-block;
+    width: 9%;
+    margin-top: 5px;
+    font-size: 14px;
+    color: $soft-script;
+}
+
+.range:last-child {
+    position: absolute;
+    right: 0;
+    width: auto;
+}
+
+.range span {
+	display: none;
+}
+
+.slider-value {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.js-ui-slider-pips {
+	position: relative;
+}
+
+.js-ui-slider-pips[disabled="disabled"].ui-slider-pips .ui-slider-pip {
+	cursor: default;
+}
+
+@include mediaquery ($bp-tablet) {
+
+	.filters {
+		padding: 10px 10px 10px 30px;
+	}
+
+	.filters-back {
+		padding-left: 30px;
+	}
+
+}
+
+@include mediaquery ($bp-desktop) {
+
+	.filters {
+		padding: 20px;
+	}
+
+	.filter {
+        display: none;
+
+    }
+
+}

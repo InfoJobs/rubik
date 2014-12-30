@@ -1,0 +1,482 @@
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+
+// mixins interessants a implementar
+//	en enllasos/botons
+//		cursor
+//		overflow
+//		white-space
+//		transition
+//		...
+
+/*
+Buttons
+
+Markup:
+<a href="#" class="btn btn-default {$modifiers}">Link Button</a>
+<button class="btn btn-default {$modifiers}">Button Element</button>
+
+.btn-medium			- Size: Medium iuoipeu proiquwe poiewqu
+.btn-large 			- Size: Large
+.btn-disabled		- Disabled
+
+Styleguide 1.5
+*/
+
+.btn {
+  /*@include transition;*/
+  display: inline-block;
+  width: auto;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  color: $shiro;
+  cursor: pointer;
+  font-size: $small-font-size;
+  font-weight: normal;
+  line-height: 18px;
+  overflow: visible;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+
+.btn:hover {
+  @include transition;
+}
+
+button.btn {
+  height: 30px;
+}
+
+.btn-default {
+  color: $dark-silk;
+  background-color: $resting-katana;
+
+  .skin-executive & {
+  	color: $mediterranean-sea;
+  	background-color: transparent;
+  }
+
+  .skin-executive .panel-executive .btn-group &,
+  .panel-executive .btn-group & {
+  	border-color: $mediterranean-sea;
+  	color: $mediterranean-sea;
+  	background-color: transparent;
+  }
+
+  .skin-executive .btn-group & {
+  	border-color: $wood-katana-slash;
+  	color: $mid-script;
+  	background-color: $shiro;
+  }
+}
+
+.btn-default:hover,
+.btn-default:active {
+    background: $katana-slash;
+	color: $dark-silk;
+
+	.skin-executive &,
+	.skin-executive .panel-executive .btn-group & {
+	    background-color: $mediterranean-sea;
+		color: $shiro;
+	}
+
+	.skin-executive .btn-group & {
+		color: $mid-script;
+		background-color: $wood-katana-slash;
+	}
+}
+
+/*
+Primary
+
+Markup:
+<a href="#" class="btn btn-primary {$modifiers}">Link Button</a>
+<button class="btn btn-primary {$modifiers}">Button Element</button>
+
+.btn-medium		- Size: Medium
+.btn-large 		- Size: Large
+
+Styleguide 1.5.1
+*/
+
+.btn-primary {
+  color: $shiro;
+  background-color: $day-blue;
+
+  .skin-executive & {
+    color: $shiro;
+    background-color: $mediterranean-sea;
+  }
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    color: $shiro;
+    background-color: $late-blue;
+
+  .skin-executive & {
+    color: $shiro;
+    background-color: $dark-mediterranean-sea;
+  }
+}
+
+.btn-primary:active {
+  background-color: $night-blue;
+}
+
+/*
+Primary contrast
+
+Button Primary contrast
+
+Markup:
+<a href="#" class="btn btn-primary-contrast {$modifiers}">Link Button</a>
+<button class="btn btn-primary-contrast {$modifiers}">Button Element</button>
+<input type="button" class="btn btn-primary-contrast {$modifiers}" value="Input Element"/>
+
+.btn-medium		- Size: Medium
+.btn-large 		- Size: Large
+
+Styleguide 1.5.2
+*/
+
+.btn-primary-contrast {
+  color: $shiro;
+  background-color: $late-blue;
+
+  .skin-executive &  {
+      background-color: $dark-mediterranean-sea;
+  }
+}
+
+.btn-primary-contrast:hover,
+.btn-primary-contrast:focus {
+    color: $shiro;
+    background-color: $night-blue;
+
+  .skin-executive &  {
+      background-color: $dark-mediterranean-sea;
+  }
+}
+
+.btn-primary-contrast:active {
+  background-color: $midnight-blue;
+
+  .skin-executive &  {
+      background-color: $dark-mediterranean-sea;
+  }
+}
+
+/*
+Link Primary
+
+Markup:
+<a href="#" class="btn btn-link-primary">Link Button</a>
+
+Styleguide 1.5.3
+*/
+
+.btn-link-primary {
+  color: $day-blue;
+}
+
+.btn-link-primary:hover,
+.btn-link-primary:focus {
+  text-decoration: underline;
+  color: $late-blue;
+}
+
+.btn-link-primary + .btn-link-primary,
+.btn-link-secondary + .btn-link-secondary {
+  padding-left: 0;
+}
+
+/*
+Link Secondary
+
+Markup:
+<a href="#" class="btn btn-link-secondary">Link Button</a>
+
+Styleguide 1.5.4
+*/
+
+.btn-link-secondary {
+  color: $mid-script;
+}
+
+.btn-link-secondary:hover {
+  text-decoration: underline;
+  color: $dark-silk;
+}
+
+/*
+Link Company
+
+Markup:
+<a href="#" class="btn btn-link-company">Link Button</a>
+
+Styleguide 1.5.5
+*/
+
+.btn-link-company {
+  color: $soft-script;
+}
+
+.btn-link-company:hover {
+  @extend .btn-link-secondary:hover;
+  color: $shiro;
+}
+
+.btn-medium {
+    padding: 0 10px;
+    font-size: $medium-btn;
+    line-height: 38px;
+}
+.btn-large {
+	padding: 0 20px;
+	font-size: $large-font-size;
+    line-height: 40px;
+}
+
+button.btn-large {
+  height: 42px;
+}
+
+.btn-icon,
+.btn-icon:hover  {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    padding-left: 50px;
+}
+
+/*
+Icon Update
+
+Button with icon update.
+Used in home
+
+Markup:
+<button class="btn btn-icon btn-icon-update">Button Element</button>
+<input type="button" class="btn btn-icon btn-icon-update" value="Input Element"/>
+
+Styleguide 1.5.7
+*/
+
+.btn-icon-update,
+.btn-icon-update:hover {
+    background-image: url("#{$path-media}/appgrade/backgrounds/bg-update.png");
+    background-position: 20px 50%;
+}
+
+.btn-iconfont  {
+    padding: 4px 10px;
+    font-size: 18px;
+}
+
+.btn-iconfont:before  {
+    position: relative;
+    top: 2px;
+}
+
+button[disabled],
+button:hover[disabled],
+button:active[disabled],
+.btn-disabled,
+.btn-disabled:hover,
+.btn-disabled:active,
+.btn-disabled:focus {
+   background: $shiro;
+   color: $wood-katana-smash;
+   cursor: default;
+
+   // review this rule (not work without background, border,...)
+   .skin-executive & {
+     background: $wood-resting-katana;
+     color: $wood-katana-smash;
+   }
+}
+
+/*
+Button group
+
+Buttons are action items.
+
+Markup:
+<a href="#" class="button {$modifiers}">Link Button</a>
+<button class="button {$modifiers}">Button Element</button>
+<input type="button" class="button {$modifiers}" value="Input Element"/>
+
+.btn-medium			  - ...
+.btn-large 			  - ...
+
+Styleguide 1.5.8
+*/
+
+.btn-group {
+    display: table;
+
+  	& > div {
+  		display: table-cell;
+  	}
+
+  	button { /* fix iOS buttons separation */
+  		margin: 0;
+  	}
+
+  	div:first-child:not(:last-child) .btn {
+  		border-bottom-right-radius: 0;
+  	    border-top-right-radius: 0;
+  	}
+
+  	div:not(:first-of-type):not(:last-of-type) .btn {
+  		 border-radius: 0 0 0 0;
+  	}
+
+  	div:last-child .btn {
+  		border-bottom-left-radius: 0;
+  	    border-top-left-radius: 0;
+  	}
+
+  	.btn,
+  	.btn:hover {
+  		border-right-width: 0;
+  		width: 100%;
+  		background-color: $shiro;
+
+  		&:hover:not([disabled]) {
+  			background-color: $resting-katana;
+
+  			.panel-executive & {
+  				background-color: $mediterranean-sea;
+  			}
+  		}
+  		&.btn-disabled:hover {
+  			background: $shiro;
+  		}
+  	}
+
+  	div:last-of-type .btn{
+  		border-right-width: 1px;
+  		border-bottom-right-radius: 5px;
+  	    border-top-right-radius: 5px;
+  	    border-bottom-left-radius: 0;
+  	    border-top-left-radius: 0;
+  	}
+
+  	.active .btn,
+  	.active .btn.btn-disabled {
+  	    background-color: $resting-katana;
+  	    cursor: default;
+
+  	    .skin-executive & {
+  	 		background: $resting-katana;
+  	 	}
+
+  	 	.skin-executive .panel-executive & {
+  			color: $shiro;
+  			background-color: $mediterranean-sea;
+  		}
+  	}
+}
+
+.btn-group-justified {
+     width: 100%;
+
+    .btn {
+        width: 100%;
+    }
+  }
+
+.btn-divider {
+  border-right: 1px solid $darkest-shiro;
+  border-radius: 0;
+}
+
+.btn-divider-company {
+  border-right:  1px solid $mid-script;
+}
+
+.btn-form-inline {
+  width: 100%;
+}
+
+.btn-close {
+    padding: 0;
+    font-size: 33px;
+    font-weight: bold;
+    line-height: 1;
+    opacity: 0.5;
+    border: 0 none;
+    background: none repeat scroll 0 0 transparent;
+    cursor: pointer;
+}
+
+//button group width social networks icons
+/*.btn-group .btn{
+  &.fb-small,
+  &.tw-small,
+  &.gplus-small {
+    width: auto;
+  }
+}*/
+
+.fb-small,
+.fb-small:hover,
+.tw-small,
+.tw-small:hover,
+.gplus-small,
+.gplus-small:hover {
+  padding: 15px 17px;
+  background-repeat: no-repeat;
+}
+
+.fb-small,
+.fb-small:hover {
+  background-image: url("#{$path-sprites}/sprite-social-18x18.png");
+  background-position: center 6px;
+}
+.tw-small,
+.tw-small:hover {
+  background-image: url("#{$path-sprites}/sprite-social-18x18.png");
+  background-position: center -20px;
+}
+.gplus-small,
+.gplus-small:hover {
+  background-image: url("#{$path-sprites}/sprite-social-18x18.png");
+  background-position: center -44px;
+}
+
+//class en contenedor para dejar correctamente margin superior cuando hay un button seguido de un texto
+.btn-expanded-small-text {
+  margin-top: 10px;
+}
+
+p > .btn {
+    margin-left: 10px;
+}
+
+@media only screen and (max-width: $tablet-start) {
+  button.btn-form-inline {
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: $mobile-start) {
+	.btn-large {
+		font-size: $medium-font-size;
+	}
+
+	p > .btn {
+	    display: block;
+	    margin: 10px 0 0;
+	}
+}

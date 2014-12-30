@@ -1,0 +1,18 @@
+{
+  "name": "RubikStyleGuide",
+  "description": "Rubik StyleGuide",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/InfoJobs/rubik/tree/master/styleguide"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "0.4.1",
+    "grunt-contrib-clean": "0.6.0",
+    "grunt-contrib-sass": "0.8.1",
+    "grunt-contrib-copy": "0.6.0",
+    "grunt-shell": "1.1.1"
+  }
+}
+

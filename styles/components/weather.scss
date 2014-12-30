@@ -1,0 +1,61 @@
+//generics
+@import "../generics/generics";
+@import "../core/fonts";
+
+
+/*------------------------------------*\
+	$WEATHER
+\*------------------------------------*/
+
+.weather {
+	display: none;
+
+	@include mediaquery($bp-tablet) {
+		display: table;
+		height: 30px;
+		font-size: $xsmall-font-size;
+		line-height: $xsmall-line-height;
+		text-align: left;
+		vertical-align: middle;
+		color: $shiro;
+
+		.data,
+		img {
+			display: table-cell;
+		}
+
+		img {
+			height: 30px;
+			padding-right: 10px;
+		}
+
+		.data {
+			vertical-align: middle;
+
+			li:first-child {
+				display: none;
+			}
+		}
+
+		.province,
+		.date {
+			display: none;
+		}
+
+	}
+
+	@include mediaquery($bp-desktop) {
+		.degrees::after  {
+			content: '|';
+			padding-left: 5px;
+			margin-right: 5px;
+		}
+
+		.province,
+		.date {
+			display: inline-block;
+		}
+	}
+
+
+}

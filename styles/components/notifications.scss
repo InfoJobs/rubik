@@ -1,0 +1,120 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+	$NOTIFICATIONS
+\*------------------------------------*/
+
+/*
+Notifications
+
+###Notification
+Loremew eqwfwaerg sefg sdfg sdfgsdfg sdfg sdfg sdf gsdf gsdfgsdfgsdfg
+
+Markup:
+<div class="{$modifiers}">
+<button class="btn-close" type="button">x</button>
+<p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
+<p class="contrast">Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="contrast link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
+</div>
+
+.notification -
+
+Styleguide 2.12
+*/
+
+.notification {
+	color: $shiro;
+	padding: 20px;
+	font-size: 16px;
+	line-height: $base-line-height; //revisar line-height
+
+	.notification-toast & {
+		opacity: .9;
+	}
+
+	.notification-toast-fixed & {
+		position: fixed;
+		width: 100%;
+		max-width: 970px;
+		top: 0;
+
+		@include mediaquery ($bp-tablet) {
+
+			margin: 0 10px;
+
+		}
+
+		@include mediaquery ($bp-tablet) {
+
+			margin: 0 auto;
+
+		}
+	}
+}
+
+.notification-toast {
+	position: relative;
+	z-index: 9998;
+}
+
+.notification .btn-close { //TODO: update for font-icons
+	color: inherit;
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+
+.notification .title {
+	margin-bottom: 5px;
+	font-family: $base-font-family-bold;
+	font-size: 20px;
+	line-height: 100%;
+	color: $shiro;
+}
+
+/*
+Notifications
+
+Loremew eqwfwaerg sefg sdfg sdfgsdfg sdfg sdfg sdf gsdf gsdfgsdfgsdfg
+
+Markup:
+<div class="notification {$modifiers}">
+<p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
+<p class="contrast">Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="contrast link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
+</div>
+
+.notification-error -
+.notification-success -
+.notification-info -
+.notification-dismissable -
+
+
+Styleguide 2.12.1
+*/
+
+.notification-error {
+	background: $trueblood;
+}
+
+.notification-success {
+	background: $bamboo;
+}
+
+.notification-info {
+	background: $outer-king;
+}
+
+/*TODO: var to be defined*/
+.notification-warning {
+	color: $dark-silk;
+	background: #e1a900;
+
+	a {
+		color: $dark-silk;
+	}
+}
+.notification-dismissable {
+	position: relative;
+	padding-right: 70px;
+}

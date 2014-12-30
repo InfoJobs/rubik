@@ -1,0 +1,43 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+    $USER FEEDBACK
+\*------------------------------------*/
+
+/*
+User Feedback
+
+Styleguide 2.22
+*/
+
+.user-feedback {
+	position: relative;
+	height: 0;
+
+	@media print {
+		display: none;
+	}
+
+	a:hover {
+		color: $shiro;
+	}
+}
+.user-feedback .link-user-feedback {
+    display: inline-block;
+    position: fixed;
+    right: 5%;
+    bottom: 0;
+    padding: 10px;
+    background: $bamboo;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 9999;
+}
+
+@media only screen and (max-width: $tablet-start) {
+	.user-feedback {
+		display: none;
+	}
+}

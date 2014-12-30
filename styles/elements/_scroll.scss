@@ -1,0 +1,66 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+    $SCROLL
+\*------------------------------------*/
+/*!
+ * jQuery ClassyScroll
+ * http://www.class.pm/projects/jquery/classyscroll
+ *
+ * Copyright 2011 - 2013, Class.PM www.class.pm
+ * Written by Marius Stanciu - Sergiu <marius@picozu.net>
+ * Licensed under the GPL Version 3 license.
+ * Version 1.1.0
+ *
+*/
+
+.scrollbar-path-vertical, .scrollbar-path-horizontal {
+    position: absolute;
+    background-color: transparent;
+    z-index: 100;
+}
+.scrollbar-path-horizontal {
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+}
+.scrollbar-path-vertical {
+    right: 5px;
+    top: 0;
+    height: 100%;
+    width: 10px;
+}
+.scrollbar-path-vertical {
+    box-shadow: inset 1px 0px 1 rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 1px 0px 1 rgba(0,0,0,0.1);
+    -webkit-box-shadow: inset 1px 0px 0 rgba(0,0,0,0.1);
+}
+.scrollbar-path-horizontal {
+    box-shadow: inset 0px 1px 1 rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 0px 1px 1 rgba(0,0,0,0.1);
+    -webkit-box-shadow: inset 0px 1px 0 rgba(0,0,0,0.1);
+}
+.scrollbar-handle{
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #999;
+}
+.scrollbar-path-vertical .scrollbar-handle {
+    height: 20%;
+    width: 100%;
+}
+.scrollbar-path-horizontal .scrollbar-handle {
+    width: 20%;
+    height: 100%;
+}
+.scrollbar-path-vertical, .scrollbar-path-horizontal, .scrollbar-handle {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.scrollbar-content {
+   /* padding: 0 20px 0 0;*/
+}

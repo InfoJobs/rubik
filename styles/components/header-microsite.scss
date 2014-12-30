@@ -1,0 +1,103 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+	$HEADER MICROSITES
+\*------------------------------------*/
+
+.header-microsite {
+	margin-top: -1px;
+	border-top: 1px solid $darkest-shiro;
+	border-bottom: 1px solid $darkest-shiro;
+	background-color: $shiro;
+
+	div {
+		display: table;
+		width: 100%;
+	}
+
+	a {
+		display: table;
+		overflow: hidden;
+		padding-right: 10px;
+		cursor: pointer;
+	}
+
+	img {
+		display: table-cell;
+		float: left;
+		height: 60px;
+		margin: 10px;
+		border: 1px solid $darkest-shiro;
+	}
+
+	p {
+		display: table-cell;
+		width: 100%;
+		vertical-align: middle;
+		font-family: $base-font-family-bold;
+		font-size: 20px;
+		text-decoration: none;
+		color: $dark-silk;
+		background-image: url(//media.infojobs.net/appgrade/backgrounds/bg-header-microsite-arrow-icon.png);
+		background-position: right center;
+		background-repeat: no-repeat;
+
+		span {
+			display: inline-block;
+			overflow: hidden;
+			padding-top: 10px;
+			padding-right: 35px;
+			vertical-align: middle;
+		}
+	}
+
+	@media print {
+		display: none;
+	}
+
+}
+
+#corp_web_div_contenido,
+#IJ_rwd {
+	display: none;
+}
+
+@include mediaquery ($bp-tablet) {
+
+	.header-microsite {
+		img {
+			margin: 10px 20px;
+
+		}
+
+		a {
+
+			padding-right: 20px;
+
+		}
+
+		p {
+			span {
+				padding-top: 5px;
+				padding-right: 55px;
+			}
+		}
+	}
+
+}
+
+@include mediaquery (969px) {
+	.header-microsite {
+		display: none;
+	}
+
+	#corp_web_div_contenido,
+	#IJ_rwd {
+		display: block;
+		padding-top: 20px;
+		background-color: $shiro;
+	}
+
+
+}

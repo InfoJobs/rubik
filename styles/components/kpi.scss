@@ -1,0 +1,163 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+$KPI
+\*------------------------------------*/
+
+/*
+Kpi
+
+Markup:
+<div class="kpi">
+	<a href="#"><span class="kpi-indicator iconfont-Viewdetails">15</span></a>
+	<h2 class="kpi-title">Ofertas para ti</h2>
+	<p>Lorem ipsum <br><a href="#">Link</a></p>
+</div>
+
+Styleguide 2.25
+*/
+
+$kpi-height-mobile:      86px;
+$kpi-width-mobile:       86px;
+
+$kpi-height-tablet:		 132px;
+$kpi-width-tablet:		 132px;
+
+$kpi-height-desktop:	 150px;
+$kpi-width-desktop:	     150px;
+
+$wrap-kpi-width-desktop: 257px;
+
+
+
+.kpi {
+	margin:0 10px;
+	text-align: center;
+
+	[class^="iconfont-"]::before,
+	[class*=" iconfont-"]::before {
+		display: none;
+
+		@include mediaquery ($bp-tablet) {
+			display: block;
+			position: absolute;
+			font-size: 14px;
+			left: 75%;
+			bottom: 11%;
+			font-size: 22px;
+		}
+
+		@include mediaquery ($bp-desktop) {
+			bottom: 10%;
+			left: 73%;
+			font-size: 30px;
+		}
+	}
+
+
+	@include mediaquery ($bp-tablet) {
+		width: $kpi-width-tablet;
+		margin:0 20px 30px;
+	}
+
+	@include mediaquery ($bp-desktop) {
+		width: $wrap-kpi-width-desktop;
+	}
+
+}
+
+.kpi-indicator {
+	display: block;
+	color: $shiro;
+	padding: 0;
+	background-image: url('#{$path-backgrounds}/bg-kpi-circle.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: 100% auto;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	margin:0 auto 14px;
+	font-size: 30px;
+	line-height: $kpi-height-mobile;
+	height: $kpi-height-mobile;
+	width: $kpi-width-mobile;
+
+
+	@include mediaquery ($bp-tablet) {
+		background-image: url('#{$path-backgrounds}/bg-kpi-twocircles.png');
+		padding: 0 5% 0 0;
+		font-size: 50px;
+		width: $kpi-width-tablet;
+		line-height: $kpi-height-tablet;
+		height: $kpi-height-tablet;
+
+	}
+
+	@include mediaquery ($bp-desktop) {
+
+		font-size: 60px;
+		width: $kpi-width-desktop;
+		line-height: $kpi-height-desktop;
+		height: $kpi-height-desktop;
+	}
+
+}
+
+.kpi-link-indicator {
+	display: inline-block;
+	position: relative;
+	z-index: 0;
+
+	&::after {
+		@include transition;
+
+		display: block;
+		background-image: url('#{$path-backgrounds}/bg-kpi-circle-hover.png');
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: 100% auto;
+		content:"";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+
+		@include mediaquery ($bp-tablet) {
+			background-image: url('#{$path-backgrounds}/bg-kpi-twocircles-hover.png');
+
+		}
+
+	}
+
+	.custom-bg &:hover {
+		text-decoration: none;
+	}
+
+	&:hover::after {
+		opacity: 1;
+	}
+
+}
+
+.kpi-title {
+	font-size: $small-font-size;
+	line-height: $small-line-height;
+	margin-bottom: 2px;
+
+	@include mediaquery ($bp-tablet) {
+
+		font-size: $base-font-size;
+		line-height: $base-line-height;
+	}
+
+	@include mediaquery ($bp-desktop) {
+
+		font-size: $medium-font-size;
+		line-height: $medium-line-height;
+	}
+
+}

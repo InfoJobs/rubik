@@ -1,0 +1,54 @@
+@import "../generics/generics";
+
+//refactor
+@import "../core/fonts";
+@import "../core/colors";
+
+/*------------------------------------*\
+    $STICKERS
+\*------------------------------------*/
+
+.sticker {
+    font-size: 12px; //ToDo: review this rule
+    display: inline-block;
+    padding: 0 10px;
+    border-radius: 10px;
+    line-height: 17px;
+
+    @media print {
+    	padding: 0;
+    }
+}
+
+.sticker-marked {
+    color: $shiro;
+	background-color: $bamboo;
+}
+
+.sticker-secondary {
+	color: $shiro;
+	background-color: $day-blue;
+}
+
+.sticker-skill,
+.skin-executive a.sticker-skill {
+	margin: 0 5px 0 0;
+    border: 1px solid $katana-slash;
+    color: $dark-silk;
+    background-color: $resting-katana;
+    cursor: pointer;
+
+    &:hover {
+    	color: $dark-silk;
+    	background-color: $katana-slash;
+	}
+
+	&:active {
+    	background-color: $katana-smash;
+	}
+}
+
+.sticker-executive {
+    color: $shiro;
+	background-color: $dark-silk;
+}

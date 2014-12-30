@@ -1,0 +1,297 @@
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
+
+@font-face {
+  font-family: 'Proximanova';
+  src: url('#{$path-font}proximanova-regular.eot?') format('eot'),
+	  url('#{$path-font}proximanova-regular.woff') format('woff'),
+	  url('#{$path-font}proximanova-regular.otf') format('opentype'),
+	  url('#{$path-font}proximanova-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Proximanovalight';
+  src: url('#{$path-font}proximanova-light.eot?') format('eot'),
+	  url('#{$path-font}proximanova-light.woff') format('woff'),
+	  url('#{$path-font}proximanova-light.otf') format('opentype'),
+	  url('#{$path-font}proximanova-light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Proximanovabold';
+  src: url('#{$path-font}proximanova-bold.eot?') format('eot'),
+	  url('#{$path-font}proximanova-bold.woff') format('woff'),
+	  url('#{$path-font}proximanova-bold.otf') format('opentype'),
+	  url('#{$path-font}proximanova-bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Proximanovasemibold';
+  src: url('#{$path-font}proximanova-semibold.eot?') format('eot'),
+	  url('#{$path-font}proximanova-semibold.woff') format('woff'),
+	  url('#{$path-font}proximanova-semibold.otf') format('opentype'),
+	  url('#{$path-font}proximanova-semibold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Icons';
+	src:url('#{$path-font}infojobs.eot?') format('eot'),
+		url('#{$path-font}infojobs.woff') format('woff'),
+		url('#{$path-font}infojobs.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  @include box-sizing($box-model);
+}
+
+html,
+body {
+	height: 100%;
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	color: $dark-silk;
+    background: $outer-fields;
+}
+
+body.skin-executive {
+	font-family: $base-font-family-light;
+	color: $mid-script;
+}
+
+input,
+select,
+textarea,
+button {
+	font-family: inherit;
+}
+
+a {
+	@include transition;
+ 	text-decoration: none;
+ 	color: $day-blue;
+
+ 	.skin-executive & {
+		color: $mediterranean-sea;
+	}
+}
+
+a:hover {
+	 text-decoration: none;
+	 color: $day-blue;
+
+	 .skin-executive & {
+		color: $mediterranean-sea;
+	}
+}
+
+a:focus {
+	outline:none;
+}
+
+strong {
+	font-family: $base-font-family-bold;
+
+	.skin-executive &  {
+		font-family: $base-font-family-light;
+	}
+}
+
+/*
+Layouts
+
+Styleguide 1.2
+*/
+
+/*
+Containers
+
+```
+.wrapper				- To create page structure
+.container 				- To create block content
+.container-expanded		- To create gap between block contents via margin-top
+```
+
+Markup:
+<div class="wrapper">
+    <div class="container container-expanded">
+        ...
+    </div>
+</div>
+
+Styleguide 1.2.2
+*/
+
+.wrapper {
+	min-height: 100%;
+    position: relative;
+
+    @include mediaquery ($bp-desktop) {
+
+        overflow: hidden;
+
+    }
+
+}
+
+.container {
+	max-width: 970px;
+	margin: 0 auto;
+}
+
+.container-expanded {
+    margin-top: 10px;
+
+	@media print {
+		margin: 0;
+	}
+}
+
+/*
+Inner containers
+
+Inner create 20px gutters (gaps between content) via padding using .inner class as a wrapper of content.
+Inner can be nested several times.
+
+Markup:
+<div class="inner">
+    ...
+</div>
+
+.inner				    - To create a 20 pixels gap between previous, next, left and right containers
+.inner-expanded			- To create a 40 pixels gap between previous and next container
+
+Styleguide 1.2.4
+*/
+
+.content-wrapper,
+.inner {
+	padding: 20px 10px;
+
+    @include mediaquery ($bp-tablet) {
+
+        padding: 20px;
+
+    }
+
+	@media print {
+		padding: 0;
+	}
+}
+
+.inner-expanded {
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+    & > .inner:first-child,
+    & > .inner:only-child {
+		padding-top: 0;
+	}
+
+    & > .inner:last-child,
+    & > .inner:only-child {
+		padding-bottom: 0;
+	}
+
+    & + .inner-expanded {
+        padding-top: 0;
+
+        @include mediaquery ($bp-desktop) {
+            padding-top: 40px;
+        }
+    }
+}
+
+.section-divider:before {
+	content: "";
+	border-top: 1px solid $darkest-shiro;
+	display: block;
+	padding-top: 20px;
+}
+.img-responsive {
+	max-width: 100%;
+	height: auto;
+}
+
+.section { //TODO: only used at home and red_de_contactos.html
+    background-color: $shiro;
+	padding: 10px;
+
+    @include mediaquery ($bp-desktop) {
+
+        padding: 20px;
+
+    }
+}
+
+.section-footer {
+		margin: 30px 0 20px 0;
+		text-align: center;
+		clear: both;
+}
+
+.section-centered {
+	text-align: center;
+}
+
+hr {
+	margin: 0;
+	border: none;
+	border-top: 1px solid $outer-wall;
+}
+
+.aside-wrapper {//TODO: only used in 'search-results-list' replace for grid system
+    background-color: $dark-shiro;
+
+	.skin-executive & {
+		background-color: $dark-silk;
+	}
+
+    @include mediaquery ($bp-desktop) {
+
+      .aside-content {
+        width: 240px;
+      }
+
+    }
+
+    .main-content {
+		background-color: $shiro;
+
+        @include mediaquery ($bp-desktop) {
+
+          position: relative;
+          margin-left: 240px;
+          padding: 0 0 70px 0;
+
+        }
+    }
+}
+
+.truncate {
+	display: block;
+ 	max-width: 99%;
+  	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+    padding-left: 1px;
+}
+
+//.truncate-comma:after {
+//	content: (" ,");
+//	position: absolute;
+//    right: 0;
+//}
+
+
+// preload images
+
+body {
+	//for logo print
+	background: url(#{$path-media}/appgrade/backgrounds/bg-logo-claim-empleo.svg) no-repeat -9999px -9999px;
+}

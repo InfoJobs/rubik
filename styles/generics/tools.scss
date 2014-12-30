@@ -1,0 +1,198 @@
+//generics
+@import "generics";
+@import "../core/print";
+
+/*------------------------------------*\
+    $UTILITIES
+\*------------------------------------*/
+
+.pull-left {
+	float: left;
+
+	&--mobile {
+	 	float: left;
+
+		@include mediaquery ($bp-tablet) {
+				float: none;
+		}
+	}
+
+	&--tablet {
+
+		@include mediaquery ($bp-tablet) {
+
+		float:left;
+
+		}
+	}
+}
+
+.pull-right {
+	float: right;
+
+	&--mobile {
+		float: right;
+
+		@include mediaquery ($bp-tablet) {
+			float: none;
+		}
+	}
+
+	&--tablet {
+
+		@include mediaquery ($bp-tablet) {
+			float:right;
+
+		}
+
+	}
+
+}
+
+.pull-left--desktop,
+.pull-right--desktop {
+	float: none;
+}
+
+.pull-bottom-right { //only used in ver_oferta.html. this name can be confused (as a generic)
+	position: absolute;
+	bottom: 50px;
+	right: 20px;
+}
+
+.text-center {
+	text-align: center;
+
+	.centered {
+		display: inline-block;
+	}
+}
+
+.text-right {
+	text-align: right;
+}
+
+
+//Use to add clickable area
+.hit-area {
+	position: relative;
+
+	&::after {
+		position: absolute;
+		top: -5px;
+		right: -5px;
+		bottom: -5px;
+		left: -5px;
+		content: "";
+	}
+}
+
+
+/*------------------------------------*\
+    $BORDERS
+\*------------------------------------*/
+
+@each $value in $orientations {
+
+  .border-#{$value}  {
+    border-#{$value}: 1px solid $darkest-shiro;
+  }
+
+}
+
+/*------------------------------------*\
+    $MARGINS
+
+    var $orientations in _vars.scss
+\*------------------------------------*/
+@each $value in $orientations {
+
+	.margin-#{$value}  {
+	    margin-#{$value}: $padding;
+	 }
+
+}
+
+.border-top-expanded  {
+	position: relative;
+}
+
+.border-top-expanded::before  {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background-color: $darkest-shiro;
+
+    .panel-executive & {
+    	background-color: $mid-script;
+    }
+
+}
+
+
+/*------------------------------------*\
+    $HIDE
+\*------------------------------------*/
+
+.hide {
+	display: none;
+}
+
+@media only screen and (max-width: $mobile-start) {
+
+	.hide-small-device,
+	div.hide-small-device,
+	.aside-wrapper .hide-small-device {
+		display: none;
+	}
+	//div.hide-small-device is must because we have .btn-group > div {display: table-cell;} on buttons.scss
+	//.aside-wrapper .hide-small-device is must because we have .aside-wrapper .col-n {display: table-cell;} on grids.scss
+
+}
+@include mediaquery ($bp-tablet) {
+
+	//Use to replace text in desktop, this class needs data-text attribute and has to be included the first one
+	.data-text {
+
+		&::before {
+			content: attr(data-text);
+			position: static;
+		}
+
+		acronym,
+		span {
+			display: none;
+		}
+	}
+
+	.pull-left--desktop {
+		float: left;
+	}
+
+	.pull-right--desktop {
+		float: right;
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) { //TODO: convert to a mixin
+
+	.hide-medium-device,
+	div.hide-medium-device,
+	.aside-wrapper .hide-medium-device {
+		display: none;
+	}
+	//div.hide-medium-device is must because we have .btn-group > div {display: table-cell;} on buttons.scss
+	//.aside-wrapper .hide-medium-device is must because we have .aside-wrapper .col-n {display: table-cell;} on grids.scss
+}
+
+@include mediaquery ($bp-desktop) {
+
+	.hide-large-device {
+		display: none;
+	}
+
+}

@@ -1,0 +1,364 @@
+//generics
+@import "../generics/generics";
+
+//refactor
+@import "../core/fonts";
+@import "../core/colors";
+
+/*------------------------------------*\
+    $JOB LIST
+\*------------------------------------*/
+
+/*
+Job List
+
+Styleguide 2.8
+*/
+
+.result-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: $shiro;
+    border-top: 1px solid $darkest-shiro;
+    border-bottom: 1px solid $darkest-shiro;
+
+    .result-list-header + & {
+        margin-top: 0;
+        border-top: none;
+    }
+
+    & + .border-top { //parche a doc listado-ofertas
+        margin-bottom: 0;
+        border-top: none;
+    }
+
+    .inner & {
+        margin-left: -10px;
+
+        @include mediaquery ($bp-tablet) {
+            margin-left: -20px;
+        }
+    }
+
+    .sticker-marked {
+        @extend %marked-contrast;
+        margin-left: 10px;
+
+        .skin-executive & {
+            background-color: $day-blue;
+        }
+    }
+
+    .sticker-secondary {
+        margin-bottom: 5px;
+    }
+
+    .tag-group-top {
+        height: 20px;
+
+        li  {
+            padding-right: 20px;
+        }
+    }
+}
+
+.result-list > li {
+    @extend %font-small-line;
+    overflow: hidden;
+    padding: 20px 10px 15px 10px;
+    border-bottom: 1px solid $darkest-shiro;
+    -webkit-touch-callout:none;
+
+    p:last-child {
+        margin-bottom: 5px;
+    }
+}
+
+.result-list > li:last-child {
+    border-bottom: none;
+}
+
+
+.result-list li.active {
+    background: #F2F2F2;
+    cursor: pointer;
+}
+
+// Es redefineix el color a gris perque per disseny no pot ser blau
+// (default valor)
+
+.result-list a {
+    color: $dark-silk;
+}
+
+.result-list-title {
+    @extend %font-medium-line;
+    clear: left;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.result-list-subtitle {
+    @extend %font-small-line;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-family: $base-font-family;
+
+    .skin-executive & {
+        font-size: 16px;
+    }
+}
+
+.result-list-subtitle a:hover {
+    text-decoration: underline;
+}
+
+.result-list-description {
+    margin-top: 12px;
+    margin-bottom: 10px;
+    color: $mid-script;
+}
+
+// Quan hi ha logo, el nom de l'empresa ha de quedar truncat
+// per no collapsar amb el logo
+
+.result-list-logo .result-list-subtitle {
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 1px;
+}
+
+.result-list-pic-logo {
+    width: 62px;
+    height: 62px;
+    float: right;
+    margin-left: 20px;
+
+    img {
+        width: 60px;
+    }
+}
+
+// Es redefineix el color a gris perque, tot i tenir default, els anchors
+// es continuen pintant en blau i el tag-primary en verd
+
+.result-list .disabled a,
+.result-list-title a:visited {
+    color: $soft-script;
+}
+
+.list-logos {
+    padding: 10px 0 10px 10px;
+    max-height: 198px;
+    overflow: hidden;
+    background-color: $shiro;
+
+    .item {
+        float: left;
+        width: 25%;
+        overflow: hidden;
+        padding-right: 10px;
+        img {
+            width: 100%;
+            height: auto;
+        }
+        &:hover {
+            background-color: $shiro;
+        }
+    }
+}
+
+.result-list > li.list-logos {
+    padding: 20px 0 20px 10px;
+}
+
+.result-list > li.list-logos:hover {
+    background-color: $shiro;
+    cursor: inherit;
+}
+
+.list-logos .item {
+    padding-right: 10px;
+}
+
+// cabecera en un listado de resultados
+
+.result-list-header {
+
+    @include mediaquery ($bp-desktop) {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        border-bottom: 1px solid $darkest-shiro;
+    }
+
+    .box {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        background-color: $dark-shiro;
+        overflow: hidden;
+
+        @include mediaquery ($bp-tablet) {
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+        }
+
+        @include mediaquery ($bp-desktop) {
+            background: none;
+        }
+    }
+
+    .header-filters {
+        padding: 10px;
+
+        @include mediaquery ($bp-tablet) {
+            padding-left: 20px;
+        }
+    }
+
+    h1 {
+        font-family: $base-font-family;
+        font-size: $base-font-size;
+        margin: 0;
+        padding: 0 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #333;
+        line-height: 50px;
+
+        @include mediaquery ($bp-tablet) {
+            padding: 0 10px 0 20px;
+        }
+
+        @include mediaquery ($bp-desktop) {
+            line-height: 70px;
+            padding: 0 20px;
+        }
+    }
+
+    .link {
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: 155px;
+        min-width: 158px;
+        line-height: 50px;
+        white-space: nowrap;
+
+        &::before {
+            content: '';
+            border-left: 1px solid $darkest-shiro;
+            padding-right: 10px;
+
+            @include mediaquery ($bp-desktop) {
+                padding-right: 20px;
+            }
+        }
+
+        @include mediaquery ($bp-desktop) {
+            min-width: 168px;
+            line-height: 70px;
+        }
+
+    }
+
+    .order {
+        padding: 10px;
+
+        @include mediaquery ($bp-desktop) {
+            min-width: 200px;
+            padding: 20px;
+        }
+
+        .btn-group {
+            width: 100%;
+            table-layout: fixed;
+
+            @include mediaquery ($bp-desktop) {
+                width: auto;
+                table-layout: auto;
+            }
+        }
+    }
+
+}
+
+.result-list-footer {
+    border-top: 1px solid $darkest-shiro;
+    padding: 20px 10px;
+    text-align: center;
+
+    @include mediaquery ($bp-desktop) {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    @media print {
+        display: none;
+    }
+
+}
+
+//ToDo: esta clase debe subsituirse por una extend de list-default
+.result-list-zero li {
+    color: $mid-script;
+}
+
+@include mediaquery ($bp-tablet) {
+    .result-list > li {
+        padding: 20px 20px 15px 20px;
+    }
+
+    .result-list > li.list-logos {
+        padding-left: 20px;
+    }
+
+    .result-list-pic-logo {
+        width: 82px;
+        height: 82px;
+        img {
+            width: 80px;
+        }
+    }
+
+    .list-logos .item {
+        padding-right: 20px;
+    }
+
+    .result-list-description {
+        width: 80%;
+        &.without-logo {
+            width: 100%;
+        }
+    }
+}
+
+@include mediaquery ($bp-desktop) {
+
+    .result-list {
+
+        .tag-group-top {
+            height: auto;
+        }
+    }
+
+    .result-list li:hover {
+        background: #e3f5fd;
+        cursor: pointer;
+    }
+
+    .result-list-pic-logo {
+        width: 108px;
+        height: 108px;
+        img {
+            width: 106px;
+        }
+    }
+
+}

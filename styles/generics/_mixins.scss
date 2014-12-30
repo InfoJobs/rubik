@@ -1,0 +1,104 @@
+/*------------------------------------*\
+$MIXINS
+\*------------------------------------*/
+
+/*
+Mediaqueries
+
+$breakpoint = $bp-tablet, $bp-desktop or specific
+$query1     = min or max
+$query2     = width, device-width
+
+*/
+
+@mixin mediaquery ($breakpoint, $query1: min, $query2: width) {
+
+	@media only screen and (#{$query1}-#{$query2}: $breakpoint) {
+		@content;
+	}
+}
+
+@mixin transition {
+	transition: all 0.3s ease-in-out 0s;
+}
+
+@mixin box-sizing($box-model) {
+	-webkit-box-sizing: $box-model;
+	-moz-box-sizing: $box-model;
+	box-sizing: $box-model;
+}
+
+@mixin display-flex {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@mixin align-items($value: stretch) {
+	@if $value == flex-start {
+		-webkit-box-align: start;
+		-ms-flex-align: start;
+	} @else if $value == flex-end {
+		-webkit-box-align: end;
+		-ms-flex-align: end;
+	} @else {
+		-webkit-box-align: $value;
+		-ms-flex-align: $value;
+	}
+	-webkit-align-items: $value;
+	-moz-align-items: $value;
+	align-items: $value;
+}
+
+@mixin flex ( $value: 1 ) {
+	-webkit-box-flex: $value;
+	-webkit-flex: $value;
+	-ms-flex: $value;
+	flex: $value;
+}
+
+@mixin inner {
+	padding: 20px 10px;
+	background-color: $shiro;
+
+	@include mediaquery ($bp-tablet) {
+		padding: 20px;
+	}
+}
+
+@mixin panel-default {
+	background-color: $dark-shiro;
+}
+
+@mixin panel-executive {
+	color: $shiro;
+	background-color: $dark-silk;
+}
+
+//mixin for all prefix browsers
+@mixin vendor-prefix($prop, $value) {
+	@each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+		#{$vendor}#{$prop}: #{$value};
+	}
+}
+//  use example:
+//  .class {
+//      @include vendor-prefix('box-sizing', 'border-box');
+//  }
+//
+
+@mixin linear-gradient($fromColor, $top-value, $toColor) {
+	background:   -webkit-linear-gradient(top, $fromColor $top-value, $toColor 100%);
+	background: 	 -moz-linear-gradient(top, $fromColor $top-value, $toColor 100%);
+	background:       -ms-linear-gradient(top, $fromColor $top-value, $toColor 100%);
+	background:        -o-linear-gradient(top, $fromColor $top-value, $toColor 100%);
+	background:          -webkit-gradient(left top, left bottom, color-stop($top-value, $fromColor), color-stop(100%, $fromColor));
+	background: 		  linear-gradient(top, $fromColor $top-value, $toColor 100%);
+}
+
+//	use example:
+//	.class {
+//		@include linear-gradient(rgba(0,0,0,0), 50%, rgba(0,0,0,0.8));
+//	}
+//

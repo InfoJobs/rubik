@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Results list</title>
+<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/header.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/navigation.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/banners.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/thumbnail.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/content-logo.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/pagination.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/user-feedback.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/stickers.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/header-microsite.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/social-footer.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/footer.css" />
+
+<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css" />
+<script type="text/javascript" src="//es-static0.infojobs.com/jquery-1.7.1.min.js?v=367620405" ></script>
+<script src="js/slider/nouislider.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui/jquery-ui-1.8.4.custom.min.js"></script>
+<script src="js/slider/jquery-ui-slider-pips.js"></script>
+
+
+</head>
+<body>
+<div class="wrapper">
+	<div class="container">
+	        <div class="container-expanded">
+	            <!-- Header no logado -->
+	            <header class="global-nav global-nav-applicant">
+	                <nav>
+	                    <ul>
+	                        <li>
+	                        	<a id="home-nologged-menu" onclick="xt_click(this,'C','1','hnl_header_menu','A'); return true;" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Menú</span></a>
+	                            <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
+	                                <li>
+	                                <!--  el logo se muestra como H1 solo en la cabecera de la home -->
+	                                    <a id="home-nologged-inicio" class=" active logo" onclick="xt_click(this,'C','1','hnl_header_title','N'); return true;" href="/responsive-home/index.xhtml">
+	                                    	<img alt="" src="//media.infojobs.net/appgrade/backgrounds/bg-logo.png">
+	                                    	<span>Inicio</span>
+	                                    </a>
+	                                </li>
+	                                <!-- active-top para una opcion activa y a la vez tiene submenu  -->
+	                                <li class=""> <a href="/ofertas-trabajo" onClick="xt_click(this,'C','1','hnl_header_search_job','N'); return true;" id="1"> Empleo</a>
+	                                    <ul class="nav-bar nav-bar-submenu">
+	                                    	<!-- active-submenu para opcion activa en submenu  -->
+	                                        <li><a class="" href="/ofertas-trabajo" onClick="xt_click(this,'C','1','ca_menu_tab_ofertas','N'); return true;" id="5">Ofertas de trabajo </a></li>
+	                                        <li><a class="" href="/empleo-publico" onClick="xt_click(this,'C','1','ca_menu_tab_empleo_publico','N'); return true;" id="6">Empleo público </a></li>
+	                                        <li><a class="" href="http://orientacion-laboral.infojobs.net" onClick="xt_click(this,'C','1','','N'); return true;" id="7">Orientación laboral </a></li>
+	                                        <li><a class="" href="/servicios-i.xhtml?dgv=7753589806181239226" onClick="xt_click(this,'C','1','ca_menu_tab_servicios','N'); return true;" id="3">Servicios </a></li>
+	                                    </ul>
+	                                </li>
+	                                <li><a id="2" onclick="xt_click(this,'C','1','hnl_header_freelance','N'); return true;" href="https://freelance.infojobs.net">Freelance </a></li>
+	                                <li><a id="3" onclick="xt_click(this,'C','1','hnl_header_executive','N'); return true;" href="http://executive.infojobs.net/">Executive </a></li>
+	                                <li><a id="4" onclick="xt_click(this,'C','1','hnl_header_training','N'); return true;" href="http://formacion.infojobs.net">Formación </a></li>
+	                            </ul>
+	                        </li>
+	                        <li>
+	                            <ul class="access-bar pull-right clearfix">
+	                                <li class="btn-divider"><a id="home-nologged-company" onclick="xt_click(this,'C','1','hnl_header_company','N'); return true;" href="/home_employer.xhtml?dgv=5571055436268630564" class="btn btn-link-secondary">Publicar una oferta </a></li>
+	                                <li><a id="candidate_login" href="#" class="btn btn-link-primary">Accede</a></li>
+	                                <li><a id="home-nologged-company" onclick="xt_click(this,'C','1','hnl_header_registration','N'); return true;" href="/candidate/registration/registration-index.xhtml?dgv=210979324725989341" class="btn btn-primary">Regístrate</a></li>
+	                            </ul>
+	                            <a id="home-nologged-profile" href="#" class="nav-bar-top-toggle nav-bar-top-login"><img src="//media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png" alt="Nombre Apellido"><span style="display: none">Perfil usuario</span></a>
+	                        </li>
+	                    </ul>
+	                </nav>
+	            </header>
+	            <!-- / Header sin submenu no logado -->
+	        </div>
+		<div class="aside-wrapper">
+			<div class="content-wrapper">
+				<div>
+					<div class="pagination-bar">
+						<ul>
+							<li><a href="#">Volver</a></li>
+							<li><a href="#" class="btn btn-link-primary">Anterior</a> <a href="#" class="btn btn-link-primary">Siguiente</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+    </div>
+</body>

@@ -1,0 +1,73 @@
+/*------------------------------------*\
+    $FONTS
+\*------------------------------------*/
+
+// Placeholders
+
+%font-small-line { //p.small
+	font-size: $small-font-size;
+	line-height: $small-line-height;
+
+	@media print {
+		font-size: 10.5pt;
+		line-height: 11.5pt;
+	}
+}
+
+%font-base-line { //p
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+
+	@media print {
+		font-size: ($xsmall-font-size/$point-to-px);
+		line-height: ($xsmall-line-height/$point-to-px);
+	}
+}
+
+%font-medium-line { //h3
+	font-size: $medium-font-size;
+	line-height: $medium-line-height;
+
+	@media print {
+		font-size: ($medium-font-size/$point-to-px);
+		line-height: ($medium-line-height/$point-to-px);
+	}
+}
+
+%font-large-line { //h2
+	font-size: $large-font-size;
+	line-height: $large-line-height;
+
+	@media print {
+		font-size: ($large-font-size/$point-to-px);
+		line-height: ($large-line-height/$point-to-px);
+	}
+
+	@include mediaquery ($bp-desktop) {
+		font-size: $xlarge-font-size;
+		line-height: $xlarge-line-height;
+	}
+
+}
+
+%font-xxlarge-line { //h1
+	font-size: $xxlarge-font-size;
+	line-height: $xxlarge-line-height;
+
+	@media print {
+		font-size: 22.5pt;
+		line-height: 23.5pt;
+	}
+
+}
+
+%font-xxxlarge-line { //extra h1
+	font-size: $xxxlarge-font-size;
+	line-height: $xxxlarge-line-height;
+
+	@media print {
+		font-size: 27pt;
+		line-height: 28pt;
+	}
+
+}

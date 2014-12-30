@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+// Custom vars for Styleguide
+$path-font: 		'../fonts/';
+$path-media: 		'http://media.infojobs.net';
+$path-icons:		'http://media.infojobs.net/app/icons';
+$path-sprites:		'http://media.infojobs.net/appgrade/sprites';
+$path-backgrounds: 	'http://media.infojobs.net/appgrade/backgrounds/';
+
+
+@import '../styles/generics/generics';
+
+@import '../styles/generics/reset';
+@import '../styles/generics/clearfix';
+
+//core
+
+@import '../styles/core/main';
+@import '../styles/core/grids';
+@import '../styles/core/fonts';
+@import '../styles/core/colors';
+@import '../styles/core/transitions';
+
+//elements
+
+@import '../styles/elements/scroll';
+@import '../styles/elements/icons';
+@import '../styles/elements/buttons';
+@import '../styles/elements/headings';
+@import '../styles/elements/paragraphs';
+@import '../styles/elements/list';
+@import '../styles/elements/forms';
+
+
+/*
+Common CSS
+
+Styleguide 1
+*/
+
+// components
+@import '../styles/components/banners';
+@import '../styles/components/board';
+@import '../styles/components/carousel';
+@import '../styles/components/content-logo';
+@import '../styles/components/filters';
+@import '../styles/components/footer';
+@import '../styles/components/header-microsite';
+@import '../styles/components/header';
+@import '../styles/components/job-list';
+@import '../styles/components/layer';
+@import '../styles/components/loading';
+@import '../styles/components/media-board';
+@import '../styles/components/modal';
+@import '../styles/components/navigation';
+@import '../styles/components/notifications';
+@import '../styles/components/nouislider';
+@import '../styles/components/pagination';
+@import '../styles/components/panels';
+@import '../styles/components/pulldown-chosen';
+@import '../styles/components/search';
+@import '../styles/components/social-footer';
+@import '../styles/components/stickers';
+@import '../styles/components/thumbnail';
+@import '../styles/components/tooltip';
+@import '../styles/components/ui-slider-pips';
+@import '../styles/components/user-feedback';
+@import '../styles/components/value-proposition';
+@import '../styles/components/custom-board';
+@import '../styles/components/custom-background';
+@import '../styles/components/kpi';
+@import '../styles/components/crop-image';
+@import '../styles/components/tips-list';
+@import '../styles/components/weather';
+
+
+
+// tools
+@import '../styles/generics/tools';

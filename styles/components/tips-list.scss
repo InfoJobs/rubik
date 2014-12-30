@@ -1,0 +1,260 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+	$TIPS
+\*------------------------------------*/
+
+.tips-list {
+
+	li {
+		width: 100%;
+		margin-top: 10px;
+		border-bottom: 1px solid $katana-slash; //TODO: idem .list-divider except paddings and margins
+
+		&:last-child {
+			border: none;
+		}
+
+		@include mediaquery (601px) {
+			display: table;
+			height: 110px;
+			margin-top: 0;
+		}
+
+		@at-root #{&}.main .cell-1 [class*=" iconfont-"]::after {
+
+			@include mediaquery (601px) {
+				position: absolute;
+				top: 0;
+				left: 18px;
+				width: 30px;
+				height: 30px;
+				padding-top: 4px;
+				font-family: 'Icons';
+				content: "\e62a";
+				border: 2px solid #e2e5e6;
+				border-radius: 50%;
+				color: $shiro;
+				font-size: 18px;
+				background-color: $bamboo;
+			}
+
+			@include mediaquery ($bp-desktop) {
+				left: 42px;
+			}
+		}
+
+		@at-root #{&}.main .kind {
+			color: $bamboo;
+		}
+
+		@at-root #{&}.main .kind::before {
+			content: "";
+			position: absolute;
+			top: 2px;
+			left: -15px;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background: #00a550;
+
+			@include mediaquery (601px) {
+				display: none;
+				border: none;
+			}
+		}
+	}
+
+	[class^="cell-"],
+	[class*=" cell-"] {
+		text-align: center;
+		padding: 20px 10px; //TODO: placeholder .inner??
+		vertical-align: middle;
+		background-color: $shiro;
+
+		@include mediaquery (601px) {
+			display: table-cell;
+			overflow: hidden;
+			vertical-align: middle;
+			padding: 20px;
+		}
+	}
+
+	.cell {
+
+		&-1 {
+			background: $darkest-shiro;
+			padding: 5px 10px;
+
+			@include mediaquery (601px) {
+				max-width: 60px;
+				width: 60px;
+				padding: 0 10px;
+			}
+
+			@include mediaquery ($bp-desktop) {
+				max-width: 100px;
+				width: 100px;
+			}
+		}
+
+		&-2 {
+			padding-bottom: 15px;
+
+			@include mediaquery (601px) {
+				text-align: left;
+				width: auto;
+				padding-top: 20px;
+			}
+
+			.text {
+
+				@include mediaquery (601px) {
+					max-height: 80px;
+					overflow: hidden;
+					padding-top: 0;
+				}
+
+				p {
+					display: none;
+
+					@include mediaquery (601px) {
+						display: block;
+					}
+				}
+			}
+		}
+
+		&-3 {
+
+			@include mediaquery (601px) {
+				text-align: right;
+			}
+		}
+
+		&-image {
+
+			+ .cell-2  {
+				padding-top: 0;
+			}
+
+			@include mediaquery (601px) {
+				margin: 0;
+				padding: 20px 0 20px 20px;
+
+				+ .cell-2  {
+					padding-top: 20px;
+				}
+
+			}
+
+			.crop-circle {
+				width: 80px;
+				height: 80px;
+				border: 1px solid $darkest-shiro;
+			}
+
+			.crop-image {
+				width: 100%;
+				height: 80px;
+				border: 1px solid $darkest-shiro;
+
+				@include mediaquery (601px) {
+					width: 80px;
+				}
+
+			}
+		}
+
+	}
+
+	.cell-2 + .cell-3 {
+		padding-top: 0;
+
+		@include mediaquery (601px) {
+			padding-top: 20px;
+		}
+	}
+
+	.cell-1 [class^="iconfont-"],
+	.cell-1 [class*=" iconfont-"] {
+		display: none;
+		padding-left: 0;
+
+		@include mediaquery (601px) {
+			display: block;
+			text-align: center;
+		}
+
+		@include mediaquery ($bp-desktop) {
+			padding-bottom: 10px;
+		}
+	}
+
+	.cell-1 [class^="iconfont-"]::before,
+	.cell-1 [class*=" iconfont-"]::before {
+
+		@include mediaquery (601px) {
+			position: relative;
+			display: block;
+			color: $soft-script;
+
+			.main & {
+				display: inline-block;
+			}
+		}
+	}
+
+	.title {
+		margin-bottom: 0;
+
+		& + p {
+			margin-bottom: 0;
+		}
+
+		@include mediaquery (601px) {
+			display: table-cell;
+			vertical-align: middle;
+			font-size: $base-font-size;
+			line-height: $base-line-height;
+		}
+
+		@include mediaquery ($bp-desktop) {
+			font-size: $medium-font-size;
+			line-height: $medium-line-height;
+		}
+	}
+
+	.kind {
+		display: inline;
+		position: relative;
+		font-size: $xsmall-font-size;
+		line-height: $xsmall-line-height;
+		color: $soft-script;
+
+		@include mediaquery (601px) {
+			display: none;
+		}
+
+		@include mediaquery ($bp-desktop) {
+			display: block;
+		}
+	}
+
+	.btn {
+		display: block;
+		width: 100%;
+
+		@include mediaquery (601px) {
+			display: inline;
+			width: auto;
+		}
+	}
+
+	.link {
+		display: block;
+		margin-top: 15px;
+		font-size: $small-font-size;
+	}
+}

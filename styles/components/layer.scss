@@ -1,0 +1,20 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+    $LAYER
+\*------------------------------------*/
+
+.layer-hidden {
+	visibility: hidden;
+	display: none;
+	
+	@media only screen and (min-width: 769px) {
+	
+		visibility: visible;
+		display: block;
+
+	}
+	
+}
+

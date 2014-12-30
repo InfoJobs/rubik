@@ -1,0 +1,64 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+    $LOADING
+\*------------------------------------*/
+.loading-layer { 
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 999999;
+	background-color: rgba(255, 255 , 255, 0.8);
+}
+
+.loading {
+  background-color: transparent;
+  width: 15px;
+  height: 15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 0px;
+  box-shadow: -15px 15px $bamboo, 0 30px $day-blue;
+  animation: Spinner 1.5s ease-in-out infinite;
+  -webkit-animation: Spinner 1.5s ease-in-out infinite;
+}
+
+@keyframes Spinner {
+  0% {
+    box-shadow: -15px 15px $bamboo, 0 30px $day-blue;
+  }
+  25% {
+    box-shadow: 0px 15px $bamboo, -15px 30px $day-blue;
+  }
+  50% {
+    box-shadow: 0px 30px $bamboo, -15px 15px $day-blue;
+  }
+  75% {
+    box-shadow: -15px 30px $bamboo, 0px 15px $day-blue;
+  }
+  100% {
+    box-shadow: -15px 15px $bamboo, 0px 30px $day-blue;
+  }
+}
+@-webkit-keyframes Spinner {
+  0% {
+    box-shadow: -15px 15px $bamboo, 0 30px $day-blue;
+  }
+  25% {
+    box-shadow: 0px 15px $bamboo, -15px 30px $day-blue;
+  }
+  50% {
+    box-shadow: 0px 30px $bamboo, -15px 15px $day-blue;
+  }
+  75% {
+    box-shadow: -15px 30px $bamboo, 0px 15px $day-blue;
+  }
+  100% {
+    box-shadow: -15px 15px $bamboo, 0px 30px $day-blue;
+  }
+}
+

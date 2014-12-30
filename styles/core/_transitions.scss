@@ -1,0 +1,301 @@
+/*------------------------------------*\
+    $TRANSITIONS
+\*------------------------------------*/
+
+.slide-up .slide-item { /* .slide-up apply to <a> element */
+	max-height: 0;
+	overflow: hidden;
+
+  -webkit-transition: all .6s ease-in-out;
+       -o-transition: all .6s ease-in-out;
+          transition: all .6s ease-in-out;
+}
+
+.slide-up:hover .slide-item {
+	max-height: 100%;
+}
+
+.fade {
+	-webkit-transition: opacity 0.3s ease-in-out;
+       	 -o-transition: opacity 0.3s ease-in-out;
+          	transition: opacity 0.3s ease-in-out;
+}
+
+.fade .fade-in {
+    opacity: 0;
+}
+
+.fade:hover .fade-in {
+    opacity: 1;
+}
+
+/* keyframes =================================================== */
+
+//fade-in
+
+.fade-in {
+  -webkit-animation: fade-in 1s both;
+          animation: fade-in 1s both;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+//fade-out
+
+.fade-out {
+  -webkit-animation: fade-out 1s both;
+          animation: fade-out 1s both;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+//fade-in-out
+
+.fade-in-out {
+
+    -webkit-animation-name: fade-in-out;
+    		animation-name: fade-in-out;
+  	-webkit-animation-timing-function: ease-in-out;
+  			animation-timing-function: ease-in-out;
+  	-webkit-animation-duration: 1s;
+  			animation-duration: 1s;
+
+  	-webkit-animation-fill-mode: forwards;
+  			animation-fill-mode: forwards;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 1;
+  }
+
+  10%, 90% {
+  	opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+//fade-in-up
+
+.fade-in-up {
+  -webkit-animation: fade-in-up 1s both;
+          animation: fade-in-up 1s both;
+}
+
+@keyframes fade-in-up  {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+}
+
+//move
+
+@keyframes move-up {
+
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: 0;
+    }
+}
+@-webkit-keyframes move-up {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes move-down {
+
+    0% {
+        top: 0;
+   		display: block;
+		visibility: visible;
+
+    }
+    100% {
+        top: 100%;
+   		display: block;
+		visibility: visible;
+
+    }
+}
+@-webkit-keyframes move-down {
+
+    0% {
+        top: 0;
+   		display: block;
+		visibility: visible;
+    }
+    100% {
+        top: 100%;
+   		display: block;
+		visibility: visible;
+    }
+}
+
+//move layer only for mobile
+
+.move-up-layer--mobile,
+.move-down-layer--mobile {
+	width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+
+	@include mediaquery ($bp-tablet) {
+    	width: auto;
+    	position: static;
+    	left: auto;
+    }
+
+}
+.move-up-layer--mobile {
+	visibility: visible;
+    top:0;
+    -webkit-animation: move-up 1s;
+    	animation: move-up 1s;
+
+		@include mediaquery ($bp-tablet) {
+		animation: none;
+	}
+
+}
+.move-down-layer--mobile {
+	visibility: hidden;
+    -webkit-animation: move-down 2s;
+    	animation: move-down 2s;
+
+		@include mediaquery ($bp-tablet) {
+		visibility: visible;
+		animation: none;
+    }
+
+}
+.move-down-layer--mobile a {
+	transition: none;
+}
+
+@media only screen and (max-width: $tablet-start) {
+
+	//move layer only for mobile and tablet
+
+	.move-up-layer,
+	.move-down-layer {
+		width: 100%;
+	    position: absolute;
+	    left: 0;
+	    z-index: 1;
+	}
+	.move-up-layer {
+		visibility: visible;
+	    top:0;
+	    -webkit-animation: move-up 1s;
+	    	animation: move-up 1s;
+	}
+	.move-down-layer {
+		visibility: hidden;
+	    -webkit-animation: move-down 2s;
+	    	animation: move-down 2s;
+	}
+	.move-down-layer a {
+		transition: none;
+	}
+}
+
+//rotate
+
+.rotate:before {
+	-webkit-animation-name: rotate;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-direction: reverse;
+
+	-ms-animation-name: rotate;
+	-ms-animation-duration:1s;
+	-ms-animation-iteration-count: infinite;
+	-ms-animation-timing-function: linear;
+	-ms-animation-direction: reverse;
+
+	animation-name: rotate;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-direction: reverse;
+
+}
+
+@keyframes rotate {
+	from {
+		transform:rotate(0deg);
+	}
+
+	to {
+		transform:rotate(360deg);
+	}
+}
+
+@-webkit-keyframes rotate {
+	from {
+		-webkit-transform:rotate(0deg);
+	}
+
+	to {
+		-webkit-transform:rotate(360deg);
+	}
+}
+
+
+//delay and duration
+@for $i from 1 through 10 {
+	.delay-#{$i} {
+		-webkit-animation-delay: #{$i}s;
+    			animation-delay: #{$i}s;
+    }
+
+    .animation-duration-#{$i} {
+		-webkit-animation-duration: #{$i}s;
+				animation-duration: #{$i}s;
+	}
+}

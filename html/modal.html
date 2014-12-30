@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>modal</title>
+
+<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/modal.css" />
+<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css" />
+<script type="text/javascript" src="../../jquery-2.1.0.js"></script>
+<script type="text/javascript" src="../js/jquery.modal.js" ></script>
+
+</head>
+
+<body>
+<div class="wrapper">
+	<div class="container content-wrapper">
+
+	<div class="modal" data-close="Cerrar"
+         data-headermodal="Esto es una modal css.">
+		<a href="#" class="js-modal-open">Open modal</a>
+		<div class="modal-hidden modal-layer">
+			<div class="modal-inner">
+				<div class="modal-content">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+					minim </p>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	</div>
+</div>
+
+<script>
+
+	$(document).ready(function(){
+		$(".modal").modalWindow();
+		});	
+</script>
+</body>

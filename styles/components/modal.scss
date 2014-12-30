@@ -1,0 +1,217 @@
+/*
+Javascript Components
+
+Styleguide 3
+*/
+
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+    $MODAL
+\*------------------------------------*/
+
+/*
+Modal
+
+Styleguide 3.1
+*/
+
+
+.modal-hidden {/*por defecto oculto*/
+	display: none;
+}
+
+.modal-header {
+	position: relative;
+	padding: 20px 10px 15px 10px;
+	overflow: hidden;
+	background-color: $day-blue;
+
+	@include mediaquery ($bp-tablet) {
+		padding: 20px 20px 15px 20px;
+ 	}
+
+	.title {
+		margin: 0;
+		float:left;
+		padding-right: 40px;
+		color: $shiro;
+		font-size: 20px;
+		line-height: 22px;
+	}
+
+	.close-modal {
+		position: absolute;
+		top: 15px;
+		right: 5px;
+		display: block;
+		overflow: hidden;
+		padding: 5px;
+		color: rgba(255,255,255,.5);
+
+		@include mediaquery ($bp-tablet) {
+			right: 15px;
+	    }
+	}
+
+	.close-modal:hover,
+	.close-modal:visited,
+	.close-modal:active {
+		color: rgba(255,255,255,.5);
+	}
+}
+
+.modal-content { //TODO: confirm this structure is necessary instead of .inner
+	overflow: auto;
+
+ 	textarea {
+ 		min-height: 140px;
+ 	}
+
+}
+
+
+
+.modal-layer {
+
+  &::before {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);
+  }
+
+  &.modal-fade-in::before {
+    display: block;
+  }
+
+}
+
+.modal-inner {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: 0 auto;
+	max-width: 100%;
+	//min-height: 100%;
+	background-color: $shiro;
+ 	box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+ 	z-index: 9999;
+
+	//problems with iOS & safari
+    //-webkit-animation: modal-flipinX .3s both;
+    animation: modal-flipinX .3s both;
+
+	@include mediaquery ($bp-tablet - 1) {
+		//top: 50%;
+		min-height: inherit;
+		bottom: auto;
+    }
+
+}
+
+.modal-fade-out {
+  -webkit-animation: modal-fade-out .4s both;
+          animation: modal-fade-out .4s both;
+}
+
+
+//keyframes
+@keyframes modal-fade-out {
+
+  0% {
+	visibility: visible;
+	opacity: 1;
+  }
+
+  100% {
+  	visibility: hidden;
+    opacity: 0;
+  }
+
+}
+
+@-webkit-keyframes modal-fade-out {
+
+  0% {
+	visibility: visible;
+	opacity: 1;
+  }
+
+  100% {
+  	visibility: hidden;
+    opacity: 0;
+  }
+
+}
+
+// modal-flipinX --------------------------------------------------------------
+
+.modal-flipinX {
+  -webkit-animation: modal-flipinX .6s both;
+  animation: flipInX .6s both;
+}
+
+@-webkit-keyframes modal-flipinX {
+  from {
+    -webkit-transform: perspective(800px) rotate3d(1, 0, 0, 30deg) translateY(-60%);
+    -webkit-transition-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: perspective(800px);
+    opacity: 1;
+
+	@include mediaquery ($bp-desktop) {
+
+      -webkit-transform: perspective(800px) translateY(-50%);
+
+    }
+  }
+}
+
+@keyframes modal-flipinX {
+  from {
+    transform: perspective(800px) rotate3d(1, 0, 0, 30deg) translateY(-60%);
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  to {
+    transform: perspective(800px);
+    opacity: 1;
+
+	@include mediaquery ($bp-desktop) {
+
+      transform: perspective(800px) translateY(-50%);
+
+    }
+  }
+}
+
+
+// fade-in --------------------------------------------------------------------
+
+.modal-fade-in {
+  -webkit-animation: modal-fade-in .4s both;
+  animation: modal-fade-in .4s both;
+}
+
+@keyframes modal-fade-in {
+  0% { opacity: 0; }
+  100% { modal-fade-in: 1; }
+}
+
+@-webkit-keyframes modal-fade-in {
+  0% { opacity: 0; }
+  100% { modal-fade-in: 1; }
+}

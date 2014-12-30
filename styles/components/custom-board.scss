@@ -1,0 +1,41 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+$CUSTOM BOARD
+\*------------------------------------*/
+
+
+/*
+custom board
+
+Markup:
+
+<div class="custom-board">
+	<h1 class="heading-mega">Buenos dias</h1>
+	<blockquote class="small-quote base hide-small-device">
+		<span>The blockquote element represents a section that is quoted from another source.</span>
+		<cite class="small alternative">The Idol</cite>
+	</blockquote>
+</div>
+
+
+
+Styleguide 2.26
+*/
+
+
+//used in my infojobs
+
+
+.custom-board {
+
+	.heading-mega {
+		margin-bottom: 20px;
+	}
+
+	blockquote {
+		margin: 0 auto;
+		max-width: 690px;
+	}
+}

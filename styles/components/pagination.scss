@@ -1,0 +1,51 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+    $PAGINATION
+\*------------------------------------*/
+
+.pagination {
+	@include inner;
+	border-top: 1px solid $darkest-shiro;
+	background: $shiro;
+}
+
+.pagination .btn-group {
+	margin: 0 auto;
+	width: 100%;
+}
+
+.pagination .btn-group .btn {
+    width: 100%;
+}
+
+@include mediaquery ($bp-tablet) {
+
+	.pagination .btn-group {
+		width: 440px;
+	}
+
+	.pagination .btn-group .btn {
+	    width: 100%;
+	}
+
+	.pagination-top-microsite {
+		padding: 20px;
+	}
+
+	.pagination-top-microsite + .inner {
+		padding-top: 0;
+	}
+}
+
+@include mediaquery ($bp-desktop) {
+
+	.pagination .btn-group {
+      width: auto;
+	}
+
+	.pagination .btn-group .btn {
+      width: auto;
+	}
+}

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Offer page</title>
+
+<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+
+<link rel="stylesheet" type="text/css" href="../styles/components/header.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/navigation.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/banners.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/thumbnail.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/content-logo.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/pagination.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/user-feedback.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/stickers.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/header-microsite.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/social-footer.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/footer.css" />
+
+<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css" />
+</head>
+
+<body>
+<div class="wrapper">
+	<div class="container"> 
+		<!-- Header no logado con submenu -->
+		<div class="container-expanded shadow-all">  	
+           <header class="global-nav global-nav-applicant global-nav-submenu global-nav-submenu-applicant">
+               <nav>
+                   <ul>
+                       <li>
+                       	<a id="home-nologged-menu" onclick="xt_click(this,'C','1','hnl_header_menu','A'); return true;" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Menú</span></a>
+                           <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
+                               <li>
+                               <!--  el logo se muestra como H1 solo en la cabecera de la home -->
+                                   <a id="home-nologged-inicio" class="logo" onclick="xt_click(this,'C','1','hnl_header_title','N'); return true;" href="/responsive-home/index.xhtml">
+                                   	<img alt="" src="//media.infojobs.net/appgrade/backgrounds/bg-logo-mini.png">
+                                   	<span>Inicio</span>
+                                   </a>
+                               </li>
+                               <!-- active-top-submenu - necesaria para que en responsive se marque el li que contiene el submenu  -->
+                               <li class="active-top-submenu"> <a class="active-top" href="/ofertas-trabajo" onClick="xt_click(this,'C','1','hnl_header_search_job','N'); return true;" id="1"> Empleo</a>
+                                   <ul class="nav-bar nav-bar-submenu">
+                                       <li><a class="active-submenu" href="/ofertas-trabajo" onClick="xt_click(this,'C','1','ca_menu_tab_ofertas','N'); return true;" id="5">Ofertas de trabajo </a></li>
+                                       <li><a class="" href="/empleo-publico" onClick="xt_click(this,'C','1','ca_menu_tab_empleo_publico','N'); return true;" id="6">Empleo público </a></li>
+                                       <li><a class="" href="http://orientacion-laboral.infojobs.net" onClick="xt_click(this,'C','1','','N'); return true;" id="7">Orientación laboral </a></li>
+                                       <li><a class="" href="/servicios-i.xhtml?dgv=7753589806181239226" onClick="xt_click(this,'C','1','ca_menu_tab_servicios','N'); return true;" id="3">Servicios </a></li>
+                                   </ul>
+                               </li>
+                               <li><a id="2" onclick="xt_click(this,'C','1','hnl_header_freelance','N'); return true;" href="https://freelance.infojobs.net">Freelance </a></li>
+                               <li><a id="3" onclick="xt_click(this,'C','1','hnl_header_executive','N'); return true;" href="http://executive.infojobs.net/">Executive </a></li>
+                               <li><a id="4" onclick="xt_click(this,'C','1','hnl_header_training','N'); return true;" href="http://formacion.infojobs.net">Formación </a></li>
+                           </ul>
+                       </li>
+                       <li>
+                           <ul class="access-bar pull-right clearfix">
+                               <li class="btn-divider"><a id="home-nologged-company" onclick="xt_click(this,'C','1','hnl_header_company','N'); return true;" href="/home_employer.xhtml?dgv=5571055436268630564" class="btn btn-link-secondary">Publicar una oferta </a></li>
+                               <li><a id="candidate_login" href="#" class="btn btn-link-primary">Accede</a></li>
+                               <li><a id="home-nologged-company" onclick="xt_click(this,'C','1','hnl_header_registration','N'); return true;" href="/candidate/registration/registration-index.xhtml?dgv=210979324725989341" class="btn btn-primary">Regístrate</a></li>
+                           </ul>
+                           <a id="home-nologged-profile" href="#" class="nav-bar-top-toggle nav-bar-top-login"><img src="//media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png" alt="Nombre Apellido"><span style="display: none">Perfil usuario</span></a>
+                       </li>
+                   </ul>
+               </nav>
+           </header>
+         </div>
+      	<!-- / Header sin submenu no logado -->
+      	<div itemscope itemtype="http://schema.org/JobPosting">
+	        <div class="shadow-notop">
+				<!--  pagination  -->
+				<div class="panel-small-device-header clearfix">
+						<a href="#" class="pagination-top-microsite link small hit-area pull-left flex-grow-1" title="Volver al listado de ofertas">Volver</a>
+						<div class="pagination-top-microsite pull-right text-center flex-grow-1">
+							<ul class="links-bar centered">
+								<li><a href="#" class="data-text small hit-area disabled" data-text="Anterior" title="Mostrar oferta anterior"><acronym title="Anterior">Ant.</acronym></a>
+								<li><a href="#" class="data-text small hit-area" data-text="Siguiente" title="Mostrar oferta siguiente"><acronym title="Siguiente">Sig.</acronym></a>
+							</ul>
+						</div>
+					<div class="hide-medium-device hide-large-device text-right flex-grow-1">
+						<a class="btn btn-primary" href="#">Inscribirme</a>
+					</div>
+				</div>
+				<!--  /pagination  -->
+				<div class="header-microsite clearfix">
+					<div>
+						<a href="http://racc.trabajo.infojobs.net">
+			      			<img src="http://www.infojobs.net/employer/profile/profile-edit/do-get-image?id=20097943738&amp;typeImage=3" alt="Racc">
+			      			<p class="title"><span>INSTALACIONES INOXTI SOCIEDAD LIMITADA</span></p>
+				      	</a>
+			      	</div>
+				</div>
+				
+				
+				<style type="text/css">
+        			/* Estilos CSS */	
+
+					.Contenido {position:relative;margin: 25px auto 30px auto;width:975px !important; padding-left:0px; padding-right:0px;}
+					.deloitte-cont {margin:0 auto 10px;font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#000; padding-top:10px; background:url(//media.infojobs.net/corp/deloitte-bg.jpg) no-repeat left top; position:relative;}
+					.deloitte-cont p {line-height:130%;padding:0 0 1.1em 0;margin:0px;text-align:left;}
+					.deloitte-cont img { margin-bottom:15px;}
+					.deloitte-cont ul { padding-left:0px; margin-left:0px;}
+					.deloitte-cont li { font-size:12px; line-height:130%; list-style:none; padding-bottom:.8em;}
+					
+					
+					
+					.deloitte-cl { clear:both;}
+					
+					.deloitte-flash{ text-align:center; padding-bottom:50px;}
+					.deloitte-pie a, .deloitte-pie a:link, .deloitte-pie a:visited, .deloitte-pie a:hover{color:#193177; float:right; padding-right:50px; }
+					.deloitte-pie a:hover{ text-decoration:none;}
+			
+					a.deloitte-home{ height: 35px;left: 20px;position: absolute;top: 10px; width: 125px; display:block;}
+					.deloitte-menu1{ background:url(//media.infojobs.net/corp/deloitte-marca.gif) no-repeat; position:absolute; width:24px; height:12px; top:58px; left:70px;}
+					.deloitte-menu2{ background:url(//media.infojobs.net/corp/deloitte-marca.gif) no-repeat; position:absolute; width:24px; height:12px; top:58px; left:410px;}
+					.deloitte-menu3{ background:url(//media.infojobs.net/corp/deloitte-marca.gif) no-repeat; position:absolute; width:24px; height:12px; top:58px; left:510px;}
+					.deloitte-menu4{ background:url(//media.infojobs.net/corp/deloitte-marca.gif) no-repeat; position:absolute; width:24px; height:12px; top:58px; left:635px;}
+					.deloitte-menu5{ background:url(//media.infojobs.net/corp/deloitte-marca.gif) no-repeat; position:absolute; width:24px; height:12px; top:58px; left:770px;}
+					.deloitte-menu6{ background:url(//media.infojobs.net/corp/deloitte-marca.gif) no-repeat; position:absolute; width:24px; height:12px; top:58px; left:900px;}
+					
+					.deloitte-txt{ width:880px; margin-left:50px;}
+					.deloitte-txt h1{ line-height:105%; height:auto; border-bottom:1px solid #E0E1E3; color:#00A1DD; font-size:18px; font-weight:bold; padding-bottom:5px; margin-bottom:20px;}
+					.deloitte-txt h2{ line-height:105%; height:auto; border-bottom:1px solid #E0E1E3; color:#9F9F9F; font-size:14px; font-weight:bold; padding-bottom:5px;margin-bottom:20px; margin-top:20px;} 
+					
+					.deloitte-right{ float:right; margin-right:10px;}
+					
+					.deloitte-float{ float:left; display:inline; margin-right:50px; width:410px;}
+					.deloitte-float2{ float:left; display:inline; width:410px;}
+					
+					
+					/* Menu - Los nombres de las clases son siempre los mismos */
+					#corp_web_div_menus {} 
+					.corp_web_menu {height:40px; padding-bottom:50px;}
+					.corp_web_menu_titulo {display:none;}  
+					.corp_web_menu ol {list-style: none; padding:0; margin:5px 0 0px 340px;} 
+					.corp_web_menu li {margin:0; float:left; padding:13px 3px 14px 0 }
+					.corp_web_menu li a:link, .corp_web_menu li a:visited {margin:0;padding:0px 8px 0px 8px;width:auto;text-align:center;font-family: Arial, Helvetica, sans-serif; font-size:11px; text-decoration:none; color:#fff; font-weight:bold; border-right:1px solid #465993;} 		
+					.corp_web_menu li a:hover {color:#00A8DE; text-decoration:none;}
+					#corp_web_menu_selected{color:#fff;} 
+					#corp_web_div_menus_banner	{display:none;}	
+			
+					
+					/* 	Fin menu */		
+			
+					.TituloListado {display:none;}
+					.perfilNombre {display:none;}
+					h1.perfilNombre {display:none;}
+					.Listado {width:98%;}
+					.Listado th {color:#878787;}
+			
+					/* Fin Estilos CSS */
+				</style>
+				<div class="clearfix" id="corp_web_div_contenido">    
+				    <style type="text/css">
+						 .corp_web_menu {
+						     height: 0px;
+						 }
+						 .corp_web_menu ol {
+						     margin-left: 330px;
+						 }
+					</style>
+					<div class="deloitte-cont cabecera-corporativa">
+					    <div id="corp_web_div_menus">
+					            <div class="corp_web_menu">
+					                <ol>
+					                    <li><a href="http://deloitte.trabajo.infojobsQANI.net/quienes-somos">Quiénes somos</a></li>
+					                    <li><a href="http://deloitte.trabajo.infojobsQANI.net/deloitte-espana">Deloitte España</a></li>
+					                    <li><a href="http://deloitte.trabajo.infojobsQANI.net/nuestro-capital-humano">Nuestro capital humano</a></li>
+					                    <li><a href="http://deloitte.trabajo.infojobsQANI.net/desarrollo-profesional">Desarrollo profesional</a></li>
+					                    <li><a style=" border:none;" href="http://deloitte.trabajo.infojobsQANI.net/lista-ofertas">Ofertas de trabajo</a></li>
+					                </ol>
+					            </div>
+					            <div id="corp_web_div_menus_banner"></div>
+					        </div>
+					        <a class="deloitte-home" href="http://deloitte.trabajo.infojobsQANI.net/home"></a>
+					</div>
+				</div>
+				
+					 
+				<div class="inner">
+			      	<!-- max.long title with logo  -->
+			      	<div class="heading-addons content-logo">
+			      		<div class="content-logo-text">
+				      		<ul class="tag-group tag-group-top clearfix">
+				      			<li class="tag-sticker"><span class="sticker sticker-executive icon-executive">Executive</span></li>
+				      			<li class="alternative icon-location alternative-ellipsis-cols2"><span class="ellipsis">Acepta candidatos de tu provincia</span></li>
+				      			<li class="alternative icon-fire">Urgente</li>
+				      		</ul>
+			      			<h1 itemprop="title">Lorem ipsum dolor sit amet, consectetur cras amet.</h1>
+		      			</div>
+			      		<div class="content-logo-media">
+				      		<a href="http://racc.trabajo.infojobs.net">
+				      			<figure class="fig-thumbnail fig-thumbnail-logo slide-up">
+				      				<img src="http://www.infojobs.net/employer/profile/profile-edit/do-get-image?id=20097943738&amp;typeImage=3" alt="Vodafone">
+				      				<figcaption class="fig-thumbnail-caption slide-item">
+										<p class="fig-thumbnail-details">Saber más</p>
+									</figcaption>
+				      			</figure>
+				      		</a>
+			      		</div>
+					</div>
+		       </div>
+		       <div class="row row-bleed clearfix panel-default"> <!-- aplicar class="panel-executive" para las ofertas executive -->
+		      		<div class="col-8 col-6-medium">
+		      			<div class="col-child">
+		      				<div class="col-child-content clearfix">
+		      					<div class="col-6 col-12-medium ">
+				      				<ul class="list-default list-bullet-default small">
+				      					<li class="small"> 
+					      					<a href="#" class="link bold">Roca</a> <!-- aplicar class="link contrast-link bold" para las ofertas executive -->
+					      				</li>
+				      					<li class="small">
+				      						<span class="truncate truncate-comma">Barcelona Barcelona Barcelona Barcelona Barcelona Barcelona</span> <a href="#" class="link">Barcelona</a>, Spain <!-- aplicar class="link contrast-link" para las ofertas executive -->
+				      					</li>
+				      				</ul>
+			      				</div>
+			      				<div class="col-6 col-12-medium">
+				      				<ul class="list-default list-bullet-default small"> 
+				      					<li class="small"> 
+					      					<dl class="dl-default">
+					      						<dt>Salario:</dt>
+					      						<dd>6.000&euro; a 20.000&euro; Bruto/año</dd> 
+					      					</dl>
+					      				</li>
+				      					<li class="small">
+				      						<dl class="dl-default">
+					      						<dt>Experiencia m&iacute;nima:</dt>
+					      						<dd>De 3 a 5 años</dd> 
+					      					</dl>
+				      					</li>
+				      					<li class="small">
+				      						<dl class="dl-default">
+					      						<dt>Tipo de oferta:</dt>
+					      						<dd>Jornada completa</dd> 
+					      					</dl>
+				      					</li>
+				      				</ul>
+			      				</div>
+		      				</div>
+		      			</div>
+		      		</div>
+		      		<div class="col-4 col-6-medium hide-small-device">
+		      			<div class="col-child pull-right">
+		      				<div class="col-child-content">
+		      					<a class="btn btn-primary btn-medium pull-bottom-right hide-small-device" href="#">Inscribirme a esta oferta</a>
+		      				</div>
+		      			</div>
+		      		</div>
+		      	</div>
+			</div>
+		   <div class="container-expanded shadow-all">	
+			   <div class="row clearfix">
+					<div class="col-8 col-12-medium">
+						<div class="col-child">
+							<div class="inner inner-extended">	
+								<!--  description -->
+								<h2>Descripci&oacute;n</h2>
+								<p>Adecco selecciona un/a ingeniero/a industrial para empresa ubicada en Salamanca.</p>
+								<p>Se encargará de la elaboracion y gestión de proyectos eléctricos y de construcción. Labores de oficina Técnico/a y diseño de proyectos.</p>
+								<p>Contrato temporal con posibilidad de incorporacion a plantilla</p>
+								<ul class="list-default list-bullet-default">
+									<li>
+										<h3 class="list-default-title">Referencia</h3>
+										<span class="list-default-text">Lorem ipsum lorem ipsum</span>
+										
+									</li>
+									<li>
+										<h3 class="list-default-title">Categor&iacute;a</h3>
+										<span class="list-default-text"><a href="#" class="link">Lorem ipsum lorem ipsum</a></span>
+									</li>
+					      		</ul>
+					      	</div>
+							<div class="inner inner-extended">	
+								<!--  requisitos -->
+								<h2>Requisitos</h2>
+								<ul class="list-default list-bullet-default">
+									<li>
+										<h3 class="list-default-title">Estudios m&iacute;nimos</h3>
+										<span class="list-default-text">Lorem ipsum lorem ipsum</span>
+										
+									</li>
+									<li>
+										<h3 class="list-default-title">Experiencia m&iacute;nima</h3>
+										<span class="list-default-text"><a href="#" class="link">Lorem ipsum lorem ipsum</a></span>
+									</li>
+									<li>
+										<h3 class="list-default-title">Imprescindible residente en</h3>
+										<span class="list-default-text">Lorem ipsum lorem ipsum</span>
+									</li>
+									<li>
+										<h3 class="list-default-title">Conocimientos necesarios</h3>
+								  		<ul class="tag-group tag-group-sticker">
+							      			<li><a href="#" class="sticker sticker-skill">JS</a></li>
+							      			<li><a href="#" class="sticker sticker-skill">Office</a></li>
+							      		</ul>
+						      		</li>
+						      		<li>
+										<h3 class="list-default-title">Requisitos m&iacute;nimos</h3>
+										<span class="list-default-text">Lorem ipsum lorem ipsum</span>
+									</li>
+									<li>
+										<h3 class="list-default-title">Requisitos deseados</h3>
+										<span class="list-default-text">Lorem ipsum lorem ipsum</span>
+										<span class="list-default-text">Lorem ipsum lorem ipsum</span>
+									</li>
+					      		</ul>
+							</div>
+							<div class="inner inner-extended">
+								<p class="small"><strong>250 inscritos a esta oferta</strong></p>
+								<p class="small">Nuestro consejo: no dudes en inscribirte si tienes el perfil, no necesariamente todos los otros incritos lo tienen.</p>
+								<div class="btn-expanded-small-text">
+									<a class="data-text btn btn-primary btn-medium" data-text="Inscribirme a esta oferta" href="#"><span>Inscribirme</span></a>
+									<span class="panel-small-device-footer"><a class="btn btn-link-primary" href="#">Recibir ofertas como estas por e-mail</a></span>
+								</div>
+							</div>
+						</div>
+					</div>   
+					<div clas="col-4 col-12-medium">	
+						<div class="col-child"></div>
+					</div>
+				</div>
+		  </div>
+		  
+		 <!-- user-feedback -->
+ 		<div class="user-feedback">
+			<a href="#" class="link-user-feedback">User Feedback</a>
+		</div>
+		 <!--  /user-feedback -->
+		<!-- Footer -->
+		<footer>
+			<div class="footer">
+			  <div class="container footer-container footer-slotbanner" style="margin-left: auto; margin-right: auto;">
+			    <div class="social-footer shadow-notop">
+			      <p class="social-footer-title">Síguenos en redes sociales</p>
+			      <dl class="social-icons">
+			        <dt>Facebook</dt>
+			        <dd> <a class="fb-medium" href="http://www.facebook.com/InfoJobs">108.5K <span class="hide-medium-device">likes</span> </a> </dd>
+			        <dt>Compromiso InfoJobs</dt>
+			        <dd> <a class="tw-medium" href="http://twitter.com/InfoJobs">141.2K <span class="hide-medium-device">seguidores</span> </a> </dd>
+			        <dt>Trabaja con nosotros</dt>
+			        <dd> <a class="gplus-medium" href="http://plus.google.com/+infojobs">7.7K <span class="hide-medium-device">+1</span> </a> </dd>
+			      </dl>
+			    </div>
+			    <div class="footer-nav">
+			      <ul class="row clearfix">
+			        <li class="col-3">
+			          <div class="col-child col-child-content">
+			            <h3>Sobre InfoJobs</h3>
+			            <ul>
+			              <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_infojobsHoy','N'); return true;" href="http://nosotros.infojobscw.net">InfoJobs hoy</a></li>
+			              <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_infojobsCompormiso','N'); return true;" href="http://nosotros.infojobscw.net/responsabilidad-social/compromiso-infojobs">Compromiso InfoJobs</a></li>
+			              <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_trabajaConNosotros','N'); return true;" href="http://nosotros.trabajo.infojobscw.net/home">Trabaja con nosotros</a></li>
+			              <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_programaAfiliados','N'); return true;" href="/programa-afiliados-i.xhtml">Afiliados para empresas</a></li>
+			              <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_ofertasEmpleo','N'); return true;" href="/ofertas-empleo">Ofertas de empleo</a></li>
+			              <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_ofertasEmpleoPublico','N'); return true;" href="/empleo-publico/ofertas-empleo">Empleo público</a></li>
+			            </ul>
+			          </div>
+			        </li>
+			        <li class="col-3">
+			          <div class="col-child col-child-content">
+			            <h3>Prensa</h3>
+			            <ul>
+			              <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_indicadoresPrensa','N'); return true;" href="http://nosotros.infojobscw.net/prensa/indicadores-infojobs">Indicadores de InfoJobs</a></li>
+			              <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_notasPrensa','N'); return true;" href="http://nosotros.infojobscw.net/prensa/notas-prensa">Notas de prensa</a></li>
+			              <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_contactoPrensa','N'); return true;" href="http://nosotros.infojobscw.net/contacto-prensa">Contacto de prensa</a></li>
+			            </ul>
+			          </div>
+			        </li>
+			        <li class="col-3">
+			          <div class="col-child col-child-content">
+			            <h3>+ InfoJobs</h3>
+			            <ul>
+			              <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_orientacionLaboral','N'); return true;" href="http://orientacion-laboral.infojobscw.net">Orientación laboral</a></li>
+			              <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_freelance','N'); return true;" href="http://freelance.infojobscw.net">InfoJobs Freelance</a></li>
+			              <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_executive','N'); return true;" href="/empleo-directivos-managers">InfoJobs Executive</a></li>
+			              <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_formacion','N'); return true;" href="http://formacion.infojobscw.net">InfoJobs Formación</a></li>
+			              <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_infojobsItaly','N'); return true;" href="http://www.infojobscw.it">Oferte di lavoro in Italia</a></li>
+			            </ul>
+			          </div>
+			        </li>
+			        <li class="col-3">
+			          <div class="col-child col-child-content">
+			            <h3>Síguenos</h3>
+			            <ul>
+			              <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_blogCandidatos','N'); return true;" href="http://blog.infojobscw.net">Blog de candidatos</a></li>
+			              <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_blogEmpresas','N'); return true;" href="http://blog.infojobscw.net/empresas">Blog de empresas</a></li>
+			              <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_infojobsMobil','N'); return true;" href="http://apps.trabajo.infojobscw.net">InfoJobs en tu móvil</a></li>
+			              <li class="app"><a href="//itunes.apple.com/es/app/infojobs-empleo/id382581206?mt=8"><img src="//media.infojobs.net/appgrade/pictures/pic-app-store.png"></a></li>
+			              <li class="app"><a href="//play.google.com/store/apps/details?id=net.infojobs.mobile.android&amp;hl=es"><img src="//media.infojobs.net/appgrade/pictures/pic-google-play.png"></a></li>
+			            </ul>
+			          </div>
+			        </li>
+			      </ul>
+			      <div class="section-footer">
+			        <ul class="footer-nav-bar">
+			          <li>&copy; InfoJobs 2014</li>
+			          <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_seguridad','N'); return true;" href="http://comunicacion.infojobscw.net/estatica.jsp?nombre_url=seguridad">Seguridad</a></li>
+			          <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_publicidad','N'); return true;" href="/empresas/publicidad-home">Publicidad</a></li>
+			          <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_reglasDeUso','N'); return true;" href="/reglas.xhtml">Reglas de uso</a></li>
+			          <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_condicionesLegales','N'); return true;" href="/lex.xhtml">Condiciones legales</a></li>
+			          <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_cookiesPolicy','N'); return true;" href="/lex.xhtml#cookies-policy">PolÃ­tica de cookies</a></li>
+			          <li><a onClick="xt_click(this,'C','1','hnl_footer_go_to_faqs','N'); return true;" href="/candidate/help/top-faqs.xhtml">Ayuda</a></li>
+			        </ul>
+			        <hr>
+			        <ul class="footer-nav-bar">
+			          <li>Otras webs de Schibsted</li>
+			          <li><a href="http://www.segundamano.es">segundamano.es</a></li>
+			          <li><a href="http://www.fotocasa.es">fotocasa.es</a></li>
+			          <li><a href="http://www.coches.net">coches.net</a></li>
+			          <li><a href="http://motos.net">motos.net</a></li>
+			          <li><a href="http://www.vehiculosindustriales.net">vehiculosindustriales.net</a></li>
+			          <li><a href="http://www.lectiva.com">lectiva.com</a></li>
+			          <li><a href="http://www.20minutos.es">20minutos.es</a></li>
+			        </ul>
+			        <div class="clearfix logo-scm-medium"> <a href="//www.schibsted.com/Online-Classified/"><img src="//media.infojobs.net/appgrade/pictures/pic-scm-logo.png"></a> </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</footer>
+		<!-- /Footer -->
+    </div>
+ </div>
+</body>

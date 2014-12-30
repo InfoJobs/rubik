@@ -1,0 +1,131 @@
+//generics
+@import "../generics/generics";
+
+
+/*------------------------------------*\
+    $BOARD
+\*------------------------------------*/
+
+/*
+Board
+
+###Board
+```
+.board
+.board-executive
+.text
+.child
+.child-center
+.claim
+.text-small
+.text-large
+```
+
+Markup:
+
+<div class="board board-executive">
+	<div class="text" id="stretch">
+		<div class="child">
+			<div class="child-center">
+	   			<h1 class="claim">Cuenta Executive, exclusiva para directivos, managers y especialistas de alto nivel</h1>
+	   			<p class="description">Tenemos las mejores oportunidades del mercado para acercarte al siguiente paso en tu carrera.</p>
+	   			<a class="btn btn-primary btn-large" href="#" onclick="unfold();" id="ibButton1">Activar mi cuenta Executive</a>
+	   			<p class="small" id="ibLabel2">En un solo click recuperando tu CV de InfoJobs</p>
+	   		</div>
+		</div>
+	</div>
+</div>
+
+Styleguide 2.1
+*/
+
+.board {
+	overflow: hidden;
+	width: 100%;
+	color: $shiro;
+
+	.text {
+		width: 100%;
+		bottom: 0;
+		padding: 20px 0;
+
+		@include mediaquery ($bp-tablet) {
+
+			min-height: 245px;
+			height: 365px;
+		}
+	}
+
+	.child {
+		display: table;
+		height: 100%;
+		color: $shiro;
+	}
+
+	.child-center {
+		display: table-cell;
+		vertical-align: middle;
+		margin-top: 0;
+		margin-bottom: 20px;
+		padding-right: 10px;
+		padding-left: 10px;
+		text-shadow: 0px 0px 5px rgba(51, 51, 51, 0.5);
+
+		@include mediaquery ($bp-tablet) {
+			width: 500px;
+			padding-right: 20px;
+			padding-left: 20px;
+		}
+	}
+
+	.claim {
+		margin-bottom: 15px;
+		color: $shiro;
+	}
+
+	.claim + p {
+		margin-bottom: 30px;
+	}
+
+	.btn {
+		left: $padding;
+	}
+
+
+	.btn + p {
+		margin-top: 10px;
+	}
+
+	.text-small {
+
+		@include mediaquery ($bp-tablet) {
+
+			min-height: auto;
+			height: 305px;
+		}
+
+	}
+
+	.text-large {
+
+		@include mediaquery ($bp-tablet) {
+
+			min-height: auto;
+			height: 245px;
+		}
+
+	}
+
+    &.board-executive {
+		background: $dark-softened;
+		background-image: url(#{$path-media}/appgrade/pictures/pic-crsl-executive-mobile.jpg);
+		background-position:  0 0;
+		background-repeat: no-repeat;
+
+		@include mediaquery ($bp-tablet) {
+
+			background-color: $dark-silk;
+			background-image: url(#{$path-media}/appgrade/pictures/pic-crsl-executive-big.jpg);
+		}
+	}
+}

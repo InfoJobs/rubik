@@ -1,0 +1,60 @@
+//generics
+@import "../generics/generics";
+
+
+/*------------------------------------*\
+$CROP-IMAGE
+\*------------------------------------*/
+
+/*
+Crop image
+
+Styleguide 2.27
+*/
+
+/*
+crop-image
+
+Markup:
+<div class="crop-image" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-header-grid-01.jpg')"></div>
+
+Styleguide 2.27.1
+*/
+
+/*
+crop-circle
+
+Markup:
+<div class="crop-circle" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-header-grid-01.jpg')"></div>
+
+Styleguide 2.27.2
+*/
+
+.crop-image,
+.crop-circle {
+
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 80px;// by default
+	overflow:hidden;
+	margin:auto;
+
+	@include mediaquery ($bp-tablet) {
+		width: 80px;
+
+	}
+}
+.crop-image {
+	width: 100%;
+
+	@include mediaquery ($bp-tablet) {
+		width: 80px;// by default
+
+	}
+
+}
+.crop-circle {
+	border-radius: 50%;
+
+}

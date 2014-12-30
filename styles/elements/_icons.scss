@@ -1,0 +1,398 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+	$ICONS
+\*------------------------------------*/
+
+%icon-sprite16x16::before {
+	content: "";
+	position: absolute;
+	bottom: 2px;
+	left: 0;
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+	background-image: url("#{$path-sprites}/sprite-icons-16x16.png");
+	background-repeat: no-repeat;
+
+	@media print {
+		background: none;
+	}
+}
+
+
+//Applies to elements containing a class that begin with icon-
+
+[class^="icon-"],
+[class*="icon-"] {
+	position: relative;
+	padding-left: 17px;
+
+	@media print {
+		padding: 0;
+	}
+}
+
+li.icon-fire {
+	padding-left: 7px;
+
+	@media print {
+		padding: 0;
+	}
+}
+
+.icon-fire::before {
+	@extend %icon-sprite16x16;
+	width: 2px;
+	background-position: center -90px;
+}
+
+li.icon-location {
+	padding-left: 13px;
+
+	@media print {
+		padding: 0;
+	}
+}
+
+.icon-location::before {
+	@extend %icon-sprite16x16;
+	width: 8px;
+	background-position: center -60px;
+}
+
+.icon-executive::before {
+	@extend %icon-sprite16x16;
+	background-position: center -30px;
+
+	.panel-executive &  {
+		background-position: center -110px;
+	}
+}
+
+.sticker.icon-executive::before {
+	margin-left: 4px;
+	background-position: center -109px;
+}
+
+.sticker.icon-executive {
+	padding-left: 23px;
+
+	@media print {
+		padding: 0;
+	}
+}
+
+.icon-applied::before {
+	@extend %icon-sprite16x16;
+	background-position: center 0;
+}
+
+
+/*------------------------------------*\
+	$ICONSFONTS
+\*------------------------------------*/
+
+/*
+Icons size
+
+Markup:
+<ul>
+<li class="{$modifiers}">Executive</li>
+<li class="{$modifiers}">Acepta candidatos...</li>
+<li class="{$modifiers}">Urgente</li>
+</ul>
+
+.iconfont-18px
+.iconfont-22px
+.iconfont-30px
+.iconfont-100px
+
+Styleguide 1.6
+*/
+
+@mixin iconfont {
+	position: absolute;
+	font-family: 'Icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	left: 0;
+
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="iconfont-"]::before,
+[class*=" iconfont-"]::before,
+[class^="iconfont-"]::after,
+[class*=" iconfont-"]::after {
+	@include iconfont;
+}
+
+[class^="iconfont-"],
+[class*=" iconfont-"] {
+	position: relative;
+
+}
+
+//needs sass version 3.4.7 or later
+[class*=" iconfont-"]::before {
+
+	@at-root .btn#{&} { //applied to btn-group too
+		position: relative;
+		top: 2px;
+		display: inline-block;
+		margin-right: 8px;
+		-webkit-transform-origin: 7px 7px; /* Chrome, Safari, Opera */
+				transform-origin: 7px 7px;
+
+	}
+}
+//
+//[class*=" iconfont-"]::before {
+//
+//@at-root button.btn-medium#{&} {
+//font-size: 16px;
+//line-height: 1px;
+//}
+//}
+//
+//class*=" iconfont-"]::before {
+
+//@at-root button.btn-medium#{&} {
+//font-size: 16px;
+//line-height: 1px;
+//}
+//}
+//
+//[class*=" iconfont-"]::before {
+//
+//@at-root button.btn-large#{&} {
+//font-size: 20px;
+//ine-height: 1px;
+//}
+//}
+//[class*=" iconfont-"]::before {
+
+//@at-root button.btn-large#{&} {
+//font-size: 20px;
+//line-height: 1px;
+//}
+//}
+//
+
+$icon-size: (18, 22, 30, 100); //TODO: resolve problem when it s moved to _vars
+
+@each $value in $icon-size {
+	.iconfont-#{$value}px::before {
+		font-size: #{$value}px;
+	}
+}
+
+.iconfont-18px { //TODO: calculate automatically text's font-size and increment it 2px
+	padding-left: 20px;
+}
+
+.iconfont-22px { //used in mobile's header
+	padding-left: 30px;
+}
+
+.iconfont-30px {
+	padding-left: 40px;
+}
+
+
+/*
+Icon color
+
+Markup:
+<ul>
+<li class="iconfont-30px {$modifiers}">Executive</li>
+<li class="iconfont-30px {$modifiers}">Acepta candidatos...</li>
+<li class="iconfont-30px {$modifiers}">Urgente</li>
+</ul>
+
+.iconfont-soft-script		- Color: To change text color applied in the icon
+
+Styleguide 1.6.1
+*/
+
+.iconfont-soft-script::before {
+	color: $soft-script;
+}
+
+/*
+Icon function
+
+```
+.iconfont-img
+```
+Markup:
+<span class="iconfont-100px">Executive</span>
+
+Styleguide 1.6.2
+*/
+
+.iconfont-img::before {
+	position: relative;
+}
+
+/*
+Icons type
+
+Markup:
+<ul>
+<li class="iconfont-30px iconfont-soft-script {$modifiers}">Executive</li>
+<li class="iconfont-30px {$modifiers}">Acepta candidatos...</li>
+<li class="iconfont-30px {$modifiers}">Urgente</li>
+</ul>
+
+.iconfont-ArrowDown			- Type: To apply arrow down icon
+.iconfont-ArrowLeft			- Type: To apply arrow left icon
+.iconfont-ArrowUp			- Type: To apply arrow up icon
+.iconfont-Arrow				- Type: To apply arrow right icon
+.iconfont-BurguerMenu		- Type: To apply mobile menu icon
+...
+
+Styleguide 1.6.3
+*/
+
+.iconfont-ArrowDown::before {
+	content: "\e600";
+}
+.iconfont-ArrowLeft::before {
+	content: "\e601";
+}
+.iconfont-ArrowUp::before {
+	content: "\e602";
+}
+.iconfont-Arrow::before {
+	content: "\e603";
+}
+.iconfont-BurguerMenu::before {
+	content: "\e604";
+}
+.iconfont-Calendar::before {
+	content: "\e605";
+}
+.iconfont-Candidaturas::before {
+	content: "\e606";
+}
+.iconfont-Category::before {
+	content: "\e607";
+}
+.iconfont-Check::before {
+	content: "\e608";
+}
+.iconfont-Clock::before {
+	content: "\e609";
+}
+.iconfont-Close::before {
+	content: "\e60a";
+}
+.iconfont-Company::before {
+	content: "\e60b";
+}
+.iconfont-Config::before {
+	content: "\e60c";
+}
+.iconfont-CV::before {
+	content: "\e60d";
+}
+.iconfont-Euro::before {
+	content: "\e60e";
+}
+.iconfont-Facebook::before {
+	content: "\e60f";
+}
+.iconfont-GooglePlus::before {
+	content: "\e610";
+}
+.iconfont-Location::before {
+	content: "\e611";
+}
+.iconfont-Mail::before {
+	content: "\e612";
+}
+.iconfont-Reload::before {
+	content: "\e613";
+}
+.iconfont-Search::before {
+	content: "\e614";
+}
+.iconfont-State::before {
+	content: "\e615";
+}
+.iconfont-Suitecase::before {
+	content: "\e616";
+}
+.iconfont-Twitter::before {
+	content: "\e617";
+}
+.iconfont-User::before {
+	content: "\e618";
+}
+.iconfont-LinkedIn::before {
+	content: "\e619";
+}
+.iconfont-Viewdetails::before {
+	content: "\e61a";
+}
+.iconfont-EditCv::before {
+	content: "\e61b";
+}
+.iconfont-Home::before {
+	content: "\e61c";
+}
+.iconfont-QR::before {
+	content: "\e61d";
+}
+.iconfont-Config-alt::before {
+	content: "\e61e";
+}
+.iconfont-Edit::before {
+	content: "\e61f";
+}
+.iconfont-Help::before {
+	content: "\e620";
+}
+.iconfont-Info::before {
+	content: "\e621";
+}
+.iconfont-Plus::before {
+	content: "\e622";
+}
+.iconfont-Smile::before {
+	content: "\e623";
+}
+.iconfont-Wifi::before {
+	content: "\e624";
+}
+.iconfont-Alert::before {
+	content: "\e625";
+}
+.iconfont-Connect::before {
+	content: "\e626";
+}
+.iconfont-AlertProfile::before {
+	content: "\e627";
+}
+.iconfont-Hide::before {
+	content: "\e628";
+}
+.iconfont-News::before {
+	content: "\e629";
+}
+.iconfont-Flag::before {
+	content: "\e62a";
+}
+.iconfont-Offers::before {
+	content: "\e62b";
+}

@@ -1,0 +1,127 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+$PANELS
+\*------------------------------------*/
+
+.panel {
+
+	&-default {
+		background-color: $dark-shiro;
+	}
+
+	&-canvas {
+		background-color: $shiro;
+	}
+
+	&-executive {
+		color: $shiro;
+		background-color: $dark-silk;
+
+		h1, h2, h3, p {
+			color: $shiro;
+		}
+	}
+
+	&-info {
+		color: $shiro;
+		background-color: $dark-softened;
+	}
+}
+
+.row-panel-8-4 {
+	color: $shiro;
+	overflow: hidden;
+
+	.panel-executive {
+		background-color: $dark-silk;
+	}
+
+	.panel-info {
+		background-color: $dark-softened;
+	}
+
+	.skin-executive & {
+		color: $shiro;
+	}
+
+	@include mediaquery ($bp-tablet) {
+		background: -moz-linear-gradient(left, $dark-silk 0%, $dark-silk 0%, $dark-silk 50%, #393939 50%, #393939 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%,$dark-silk), color-stop(0%,$dark-silk), color-stop(50%,$dark-silk), color-stop(50%,#393939), color-stop(100%,#393939)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(left, $dark-silk 0%,#ff3232 0%,#ff2828 50%,#393939 50%,#393939 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(left, $dark-silk 0%,$dark-silk 0%,$dark-silk 50%,#393939 50%,#393939 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(left, $dark-silk 0%,$dark-silk 0%,$dark-silk 50%,#393939 50%,#393939 100%); /* IE10+ */
+		background: linear-gradient(to right, $dark-silk 0%,$dark-silk 0%,$dark-silk 50%,#393939 50%,#393939 100%); /* W3C */
+	}
+
+	@include mediaquery ($bp-desktop) {
+		background: -moz-linear-gradient(left, $dark-silk 0%, $dark-silk 0%, $dark-silk 66.6%, #393939 66.6%, #393939 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%,$dark-silk), color-stop(0%,$dark-silk), color-stop(66.6667%,$dark-silk), color-stop(66.6667%,#393939), color-stop(100%,#393939)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(left, $dark-silk 0%,#ff3232 0%,#ff2828 66.6667%,#393939 66.6667%,#393939 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(left, $dark-silk 0%,$dark-silk 0%,$dark-silk 66.6667%,#393939 66.6667%,#393939 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(left, $dark-silk 0%,$dark-silk 0%,$dark-silk 66.6667%,#393939 66.6667%,#393939 100%); /* IE10+ */
+		background: linear-gradient(to right, $dark-silk 0%,$dark-silk 0%,$dark-silk 66.6%,#393939 66.6%,#393939 100%); /* W3C */
+	}
+}
+
+.panel-small-device-footer {//only used in ver_oferta.html. this name can be confused (as a generic)
+	position: absolute;
+	bottom: 13px;
+	right: 10px;
+}
+
+.panel-small-device-header {
+	@include panel-default;
+
+	@include mediaquery (945px) {
+		border-bottom: 1px solid $dark-shiro;
+		background: none;
+	}
+}
+
+// solo aplica a movil no redefinimos en otros dispositivos de mayor resolucion de pantalla
+
+@media only screen and (max-width: $mobile-start) {
+
+	.panel-small-device-header { //inicio de contenido como panel a sangre solo en movil
+		@include display-flex;
+		@include panel-default;
+
+		position: relative;
+		overflow: hidden;
+		padding: 10px;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+
+		.flex-grow-1 {
+			@include flex;
+
+			.links-bar {
+				float: none;
+			}
+		}
+	}
+
+	.panel-small-device-footer { //fin de contenido como panel a sangre solo en movil === only used in ver_oferta.html. this name can be confused (as a generic)
+		@include panel-default;
+
+		position: static;
+		display: block;
+		margin: 0 -10px;
+		padding: 10px 0 0 0;
+		text-align: center; // anadir class solo para el centrado??
+		border-top: 1px solid $darkest-shiro;
+
+		.skin-executive & {
+			border-top: 1px solid $mid-script;
+			background: $dark-silk;
+		}
+	}
+}

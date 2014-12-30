@@ -1,0 +1,186 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+	$FOOTER
+\*------------------------------------*/
+
+/*
+Footer
+
+Styleguide 2.5
+*/
+
+.help-footer {
+
+	p {
+		color: $mid-script;
+	}
+
+	a,
+	strong {
+		padding-right: 20px;
+	}
+
+}
+
+.footer {
+	font-family: $base-font-family;
+	clear: both;
+	background-color: $outer-land;
+
+	> li > a {
+		color: $outer-pawn;
+	}
+
+	@media print {
+		display: none;
+	}
+
+	@include mediaquery ($bp-tablet) {
+		margin-bottom: 10px;
+	}
+
+	@include mediaquery ($bp-desktop) {
+		margin-bottom: 0;
+		padding: 0;
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			height: 100%;
+			background-color: $outer-land;
+		}
+	}
+}
+
+.footer-nav {
+	display: none;
+
+	@include mediaquery ($bp-desktop) {
+		display: block;
+		padding: 40px 20px 20px 20px;
+
+			.col-child-content {
+				margin-bottom: 0;
+				padding: 0 10px 0 0;
+
+				& + .col-child-content {/*adjacents lists in footer*/
+					margin-top: 40px;
+				}
+			}
+
+			.section-footer {
+				margin: 0;
+			}
+
+			a:hover {
+				text-decoration: underline;
+				color: $outer-king;
+			}
+
+			h3 {
+				font-family: $base-font-family-bold;
+				color: $outer-king;
+			}
+
+			li {
+
+				a {
+					display: block;
+					color: $outer-pawn;
+				}
+
+				& li {
+					font-size: $base-font-size;
+					line-height: $base-line-height;
+					margin-bottom: 15px;
+				}
+
+				& li:last-child {
+					margin-bottom: 0;
+				}
+
+				&.app {
+					display: inline-table;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					a {
+						display: block;
+						opacity: 0.8;
+						-moz-backface-visibility: hidden;
+							backface-visibility: hidden;
+
+						&:hover {
+							opacity: 1;
+						}
+					}
+				}
+			}
+
+			.footer-nav-bar {
+				margin: 15px 0;
+
+				&:first-child {
+					margin-top: 21px;
+				}
+
+				div & {
+					text-align: center;
+				}
+
+				& > li > a,
+				& > li:first-child {
+					font-size: $small-font-size;
+					line-height: $small-line-height;
+				}
+
+				& > li,
+				& > li > a {
+					display: inline;
+					float: none;
+					margin-right: 0;
+				}
+
+				li a {
+					margin-left: 15px;
+				}
+
+			}
+
+			.footer-logos {
+	 			margin-top: 20px;
+	 			margin-bottom: 0;
+
+	 			.logo-scm-medium {
+					width: 140px;
+					margin: 10px auto 0 auto;
+				}
+
+				.logo-scm-medium a {
+					display: block;
+				}
+
+				.logo-intercom {
+					margin-top: 10px;
+				}
+	 		}
+	}
+}
+
+
+.footer-container {
+
+	@include mediaquery ($bp-desktop) {
+		position: relative;
+
+		& + .footer-container {
+			display: none;
+		}
+	}
+}

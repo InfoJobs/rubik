@@ -1,0 +1,131 @@
+@import "_fonts";
+
+/*------------------------------------*\
+    $COLORS
+\*------------------------------------*/
+
+/*
+Colors
+
+Markup:
+<p class="{$modifiers}">Color</p>
+
+.contrast			- Color: White
+.disabled			- Color: White
+.marked				- Color: Mint
+.marked-contrast	- Color: White into mint
+.alternative		- Color: Grey
+.highlight			- Color: Yellow
+.script				- Color: Grey
+.soft-script		- Color: Grey
+...
+
+Styleguide 1.1
+*/
+
+//white text
+.contrast {
+	color: $shiro;
+	&:hover {
+		color: $shiro;
+	}
+	&:focus {
+		color: $shiro;
+	}
+}
+
+//underlined text
+.contrast-link,
+.contrast-link:visited {
+	color: #41a4db;
+
+	&:hover,
+	&:focus {
+		color: $day-blue;
+	}
+ }
+
+//disabled text
+.disabled,
+.disabled:hover,
+.disabled:visited,
+.disabled:active {
+	color: $soft-script;
+	cursor: default;
+}
+
+.disabled:hover {
+	text-decoration: none;
+}
+
+.marked {
+	color: $bamboo;
+
+	.skin-executive & {
+		color: $day-blue;
+	}
+}
+
+%marked-contrast {
+	color: $shiro;
+	background-color: $bamboo;
+}
+
+.marked-contrast {
+	@extend %marked-contrast;
+}
+
+.alternative {
+    color: $soft-script;
+}
+
+.alternative-action {
+	color: $mid-script;
+
+	.skin-executive & {
+		color: $mid-script;
+	}
+
+	.panel-info & {
+		color: $shiro;
+	}
+
+	.panel-executive & {
+		color: $shiro;
+	}
+}
+
+a.alternative-action:hover {
+	color: $day-blue;
+
+	.skin-executive & {
+		color: $mediterranean-sea;
+	}
+}
+
+.highlight {
+	padding: 3px;
+	background-color: #ffff66; //TODO: define var
+}
+
+//force color used for texts. Not use this when it is a component
+.script,
+a.script,
+a.script:hover,
+a.script:visited,
+a.script:active {
+    color: $dark-silk;
+}
+
+//force color used for texts (p.e: top-searches). Not use this when it is a component
+.soft-script,
+a.soft-script,
+a.soft-script:hover,
+a.soft-script:visited,
+a.soft-script:active {
+	color: $outer-pawn;
+}
+
+.darkest-shiro {
+	color: $darkest-shiro;
+}

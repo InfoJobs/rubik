@@ -1,0 +1,30 @@
+//generics
+
+
+@import "generics/generics";
+
+	//vars.scss
+	//functions.scss
+	//mixins.scss
+	//placeholders.scss
+
+@import "generics/reset";
+@import "generics/clearfix";
+
+//core
+
+@import "core/main";
+@import "core/grids";
+@import "core/fonts";
+@import "core/colors";
+@import "core/transitions";
+
+//elements
+
+@import "elements/scroll";
+@import "elements/icons";
+@import "elements/buttons";
+@import "elements/headings";
+@import "elements/paragraphs";
+@import "elements/list";
+@import "elements/forms";

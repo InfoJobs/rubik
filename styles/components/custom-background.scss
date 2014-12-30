@@ -1,0 +1,52 @@
+//generics
+@import "../generics/generics";
+
+/*
+Custom Background
+
+Use a style attribute in HTM for the background-image.
+You can include degraded  with child element.
+
+Markup:
+<div class="custom-bg {$modifiers}" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-header-grid-01.jpg');">
+    <div class="inner gradient">
+        <p>Use a style attribute in HTM for the background-image.</p> <p>You can include degraded with child element.</p>
+    </div>
+</div>
+
+.liquid-bg		- Background resize
+
+
+Styleguide 2.24
+*/
+
+.custom-bg {
+    color: $shiro;
+    //the background-image is not reusable
+    background-repeat: no-repeat;
+    background-position: center;
+    @include vendor-prefix('background-size', 'cover');
+
+    &.liquid-bg {
+        @include vendor-prefix('background-size', '100% auto');
+    }
+
+    .gradient {
+        @include linear-gradient(rgba(0,0,0,0), 50%, rgba(0,0,0,0.8));
+    }
+
+    .alternative {
+        color: #cbcbcb;
+    }
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: $shiro;
+    }
+    a:hover,
+    a:active {
+        text-decoration: underline;
+    }
+}

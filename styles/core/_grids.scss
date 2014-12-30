@@ -1,0 +1,181 @@
+/*------------------------------------*\
+$GRIDS
+\*------------------------------------*/
+
+/*
+Grid System
+
+Grid system is used for creating page layout through a series of rows and columns that house
+your content.
+
+- Rows must be placed within a .container (fixed-width) for proper alignment and padding.
+- Use rows to create horizontal groups of columns.
+- Content should be placed within columns, and only columns may be immediate children of rows.
+- Predefined grid classes like .row and .col-4 are available for quickly making grid layouts.
+- Columns create gutters (gaps between columns content) via padding using .col-child class as inmediate children of col-4.
+- Grid columns are created by specifying the number of twelve available columns you wish to span.
+For example, three equal columns would use three .col-4.
+- If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.
+- Grid classes apply to devices with screen widths greater than or equal to the breakpoint sizes,
+and override grid classes targeted at smaller devices.
+Therefore, applying any .col-12-medium class to an element force content adjust to 100% width defined for medium devices.
+```
+.row				- To create a row of columns
+.row-bleed			- To create a row of columns without natural padding
+.col-child 			- To create gaps between columns content
+.col-child-content	- To Padding inside column content
+```
+
+Markup:
+<div class="row row-bleed clearfix">
+<div class="{$modifiers}">
+<div class="col-child">
+...
+</div>
+</div>
+</div>
+
+.col-3 				- To create 25% column width
+.col-4 				- To create 33.33% column width
+.col-6 				- To create 50% column width
+.col-8 				- To create 66.66% column width
+.col-12				- To create 100% column width
+
+
+Styleguide 1.2.1
+*/
+
+$gridColumns: 12;
+
+@mixin row {
+	margin: 0 0 0 -10px;
+	clear: both;
+	position: relative;
+
+	@media print {
+		margin: 0;
+	}
+}
+
+
+.row {
+	@include row;
+
+	.aside-wrapper & {
+		display: table;
+		width: 100%;
+		margin-left: 0;
+	}
+
+	& + .row {
+		margin-bottom: 10px;
+
+		@media print {
+			margin: 0;
+		}
+	}
+}
+
+@for $i from 1 through $gridColumns {
+	.col-#{$i} {
+		width: ((100 / $gridColumns) * $i) * 1%;
+		float: left;
+	}
+}
+
+@for $i from 1 through $gridColumns {
+	.col-#{$i} {
+
+		.col-child {
+			margin: 0 0 10px 10px;
+
+			.aside-wrapper & {
+				margin-left: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			@media print {
+				margin: 0;
+			}
+		}
+
+		@media print {
+			width: 100%;
+			float: none;
+		}
+
+		.aside-wrapper & {
+			float: none;
+			display: table-cell;
+		}
+	}
+}
+
+.col-child-content {
+	padding: 10px;
+
+	@media print {
+		padding: 0;
+	}
+}
+
+.row-bleed { //TODO: related with panel- structure
+	@include row;
+	margin: 0;
+	padding-top: 10px;
+	padding-right: 10px;
+}
+
+@media only screen and (max-width: $tablet-start) {
+
+	.col-6-medium {
+		width: 50%;
+	}
+
+	.col-12-medium {
+		width: 100%;
+
+		.aside-wrapper & {
+			display: block;
+		}
+	}
+}
+
+@media only screen and (max-width: $mobile-start) {
+
+	@for $i from 1 through $gridColumns {
+		.col-#{$i},
+		.col-#{$i}-medium {
+
+			float: none;
+			width: auto;
+		}
+	}
+
+	.col-6-mobile {
+		width: 50%;
+		float: left;
+
+		.col-child {
+			margin: 0 0 10px 10px;
+
+			@media print {
+				margin: 0;
+			}
+		}
+
+		@media print {
+			width: 100%;
+			float: none;
+		}
+	}
+
+	.row-bleed {
+		margin: 0 0 -20px 0;
+		padding-bottom: 20px;
+	}
+
+}

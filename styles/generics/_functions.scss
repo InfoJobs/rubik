@@ -1,0 +1,55 @@
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+@function calc-height-box($font-size, $num-lines) {
+
+  // local vars
+  $line-height: null;
+  $max-height: null;
+
+  // Clear the units of values
+  $font-size: clear-units($font-size);
+  $num-lines: clear-units($num-lines);
+
+  // Define height as the text size
+  @if $font-size == $small-font-size {      // 14px
+    $line-height: $small-line-height;
+  }
+  @else if $font-size == $base-font-size {  // 16px
+    $line-height: $base-line-height;
+  }
+  @else if $font-size == $large-font-size {   // 20px
+    $line-height: $large-line-height;
+  }
+  @else if $font-size == $xxxlarge-font-size {  // 36px
+    $line-height: $xxxlarge-line-height;
+  }
+
+  // Get the line-height as the font-size, through a Cross-multiplication
+  $line-height: cross-multiplication( $font-size, $line-height );
+
+  // multiply the line-height by the number of lines
+  $max-height: round(clear-units($line-height)) * $num-lines;
+  $max-height: round($max-height);
+  @return $max-height;
+  // @return $max-height - $num-lines; // TODO: To review
+
+}
+
+
+
+/**
+ * cross multiplication percentages
+ */
+@function cross-multiplication( $value1, $value2 ) {
+  @return ($value1 * $value2) / 100;
+}
+
+
+
+/**
+ * Turn numbers with units into unitless numbers
+ */
+@function clear-units($value){
+  @return ($value / ($value * 0 + 1));
+}

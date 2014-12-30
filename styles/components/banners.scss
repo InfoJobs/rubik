@@ -1,0 +1,136 @@
+/*
+Components
+
+Styleguide 2
+*/
+
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+    $BANNERS
+\*------------------------------------*/
+
+/*
+Banners's containers
+
+```
+.wrapper-slotbanner
+.slotbanner
+.slotbanner-top
+.container-slotbanner
+.slotbanner-top-brandday
+.slotbanner-aside
+.slotbanner-fixed
+.half-page-ad
+```
+
+Markup:
+<div class="wrapper wrapper-slotbanner half-page-ad">
+	<div class="slotbanner">
+		<div class="slotbanner-top">
+		...
+		</div>
+		<div class="container container-slotbanner">
+		...
+		</div>
+	</div>
+	<div class="slotbanner-aside">
+		<div class="slotbanner-fixed">
+		...
+		</div>
+	</div>
+</div>
+
+Styleguide 1.2.3
+*/
+
+.wrapper-slotbanner {
+
+	.slotbanner { //padre centra el contenido pagina y banners sin footer
+		margin: 0 auto;
+	}
+	.container-slotbanner { // contenido pagina
+		float: left;
+		width: 100%;
+	}
+	.slotbanner-top,
+	.slotbanner-top-brandday {
+		max-width: 980px;
+		margin-top: 10px;
+		min-height: 90px;
+
+		@media print {
+			display: none;
+		}
+	}
+	.slotbanner-top-brandday {
+		min-height: 250px;
+	}
+
+	.slotbanner-aside {
+		float: left;
+
+		@media print {
+			display: none;
+		}
+	}
+	.slotbanner-top img,
+	.slotbanner-aside img,
+	.slotbanner-top object,
+	.slotbanner-aside object {
+		display: block;
+	}
+	.slotbanner-fixed {
+		position: fixed;
+		top: 0;
+		margin: 10px;
+
+		> div {
+			margin-bottom: 10px;
+			//background: red;
+			//border:5px solid coral;
+		}
+	}
+}
+
+//formatos banner
+
+.slotbanner,
+.half-page-ad .slotbanner {
+	max-width: 1280px;
+}
+
+@media only screen and (max-width: 1255px) {
+
+.wrapper-slotbanner.half-page-ad {
+
+		.slotbanner-aside {
+			display: none;
+		}
+
+		.slotbanner {
+	    	max-width: 970px;
+		}
+
+	    .slotbanner-top {
+	    	overflow: hidden;
+		}
+	}
+
+}
+
+@media only screen and (max-width: 945px) {
+
+.wrapper-slotbanner {
+
+		.slotbanner-top,
+		.slotbanner-aside {
+			display:none;
+		}
+
+		.container-slotbanner {
+			float:none;
+		}
+	}
+}

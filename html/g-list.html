@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Result list</title>
+<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+
+<link rel="stylesheet" type="text/css" href="../styles/components/pagination.css" />
+
+ <link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
+</head>
+<body>
+<div class="wrapper">
+	<div class="container"> <!-- necessita la class aside quan hi hagi la barra de filtres -->
+		<!-- <div class="container aside">
+		<!-- barra de filtres -->
+		<!-- <aside>
+			<div class="filters-back hide-large-device show-medium-device">
+				<a class="btn btn-primary btn-large" href="#">Aplicar filtros</a>
+			</div>
+
+			<form method="post" class="form filters" action="#">
+				<fieldset>
+					<legend>Filtros</legend>
+						<h4>Filtrar por palabra clave</h4>
+				    	<ul class="clearfix">
+				        	<li class="form-field-inline">
+				            	<label class="hide-large-device" for="keyword">Filtrar por palabra clave</label>
+				                <input class="input-little" type="text" maxlength="200" id="keyword" placeholder="Jardinero en lorem ipsum whatever">
+				            </li>
+							<li class="form-field-inline">
+								<button class="btn btn-default" type="submit">Filtrar</button>
+							</li>
+				       </ul>
+				 </fieldset>
+			</form>
+	    </aside> -->
+	    <div class="content-wrapper clearfix">
+	      <ul class="result-list">
+	      	<!-- logo -->
+	      	<li class="result-list-logo">
+	      		<a href="http://racc.trabajo.infojobs.net" class="result-list-pic-logo">
+	      			<img src="http://www.infojobs.net/employer/profile/profile-edit/do-get-image?id=20097943738&typeImage=3" alt="Vodafone" />
+	      		</a>
+	      		<ul class="tag-group tag-group-top clearfix">
+	      			<li class="alternative icon-executive">Executive</li>
+	      			<li class="alternative icon-location tag-ellipsis-cols2"><span class="ellipsis">Acepta candidatos de tu provincia</span></li>
+	      			<li class="alternative icon-fire">Urgente</li>
+	      		</ul>
+	      		<span class="stick stick-marked">Destacada</span>
+      			<h2 class="result-list-title"><a href="#ingeniero1">Ingeniero T�cnico: Redes, seguridad y sistemas lorem ipsum dolor amet</a></h2>
+      			<h3 class="result-list-subtitle"><a href="#centel1">Centel telecomunicaciones, S.A.</a></h3>
+
+	      		<ul class="tag-group">
+	      			<li class="tag-divider">Barcelona</li>
+	      			<li class="marked">hace 2h</li>
+	      		</ul>
+	      		<p class="result-list-description hide-small-device">Encetem proc�s de selecci� per a joves amb o sense experi�ncia, amb inter�s per a iniciar i/o desenvolupar carrera comer</p>
+	      		<ul class="tag-group hide-small-device">
+	      			<li class="tag-divider">Contrato permanente</li>
+	      			<li class="tag-divider">Jornada completa</li>
+	      			<li>20.000 - 30.000 &euro;</li>
+	      		</ul>
+	      	</li>
+
+	      	<!-- renovada -->
+	      	<li class="result-list-logo">
+	      		<a href="http://racc.trabajo.infojobs.net" class="result-list-pic-logo">
+	      			<img src="http://www.infojobs.net/employer/profile/profile-edit/do-get-image?id=20097943738&typeImage=3" alt="Vodafone" />
+	      		</a>
+      			<h2 class="result-list-title"><a href="#ingeniero2">Ingeniero T�cnico: Redes, seguridad y sistemas lorem ipsum dolor amet</a></h2>
+      			<h3 class="result-list-subtitle"><a href="#centel2">Centel telecomunicaciones, S.A.</a></h3>
+
+	      		<ul class="tag-group">
+	      			<li class="tag-divider">Barcelona</li>
+	      			<li><span class="marked">hace 2h</span> (Renovada)</li>
+	      		</ul>
+	      	</li>
+
+	      	<!-- urgente -->
+	      	<li>
+	      		<ul class="tag-group tag-group-top clearfix">
+	      			<li class="alternative icon-fire">Urgente</li>
+	      		</ul>
+      			<h2 class="result-list-title"><a href="#ingeniero3">Ingeniero T�cnico: Redes, seguridad y sistemas lorem ipsum</a></h2>
+      			<h3 class="result-list-subtitle"><a href="#centel3">Centel telecomunicaciones, S.A.</a></h3>
+
+	      		<ul class="tag-group">
+	      			<li class="tag-divider">Barcelona</li>
+	      			<li><span class="marked">hace 2h</span> (Renovada)</li>
+	      		</ul>
+	      	</li>
+
+	      	<!-- +24h -->
+	      	<li class="result-list-logo">
+	      		<a href="http://racc.trabajo.infojobs.net" class="result-list-pic-logo">
+	      			<img src="http://www.infojobs.net/employer/profile/profile-edit/do-get-image?id=20097943738&typeImage=3" alt="Vodafone" />
+	      		</a>
+      			<h2 class="result-list-title"><a href="#camarero1">Camarero</a></h2>
+      			<h3 class="result-list-subtitle"><a href="#centel4">Centel telecomunicaciones, S.A.</a></h3>
+
+	      		<ul class="tag-group">
+	      			<li class="tag-divider">San Sebasti�n</li>
+	      			<li>hace 1d</li>
+	      		</ul>
+	      	</li>
+
+	      	<!-- ya inscrito + urgente -->
+	      	<li class="disabled">
+	      		<ul class="tag-group tag-group-top clearfix">
+	      			<li class="marked icon-applied">Ya inscrito</li>
+	      			<li class="alternative icon-fire">Urgente</li>
+	      		</ul>
+      			<h2 class="result-list-title"><a href="#ingeniero4">Ingeniero T�cnico: Redes, seguridad y sistemas lorem ipsum</a></h2>
+      			<h3 class="result-list-subtitle"><a href="#centel5">Centel telecomunicaciones, S.A.</a></h3>
+
+	      		<ul class="tag-group">
+	      			<li class="tag-divider">Barcelona</li>
+	      			<li><span class="tag-disabled">hace 2h</span> (Renovada)</li>
+	      		</ul>
+	      	</li>
+
+	      	<!--urgente -->
+	      	<li>
+	      		<ul class="tag-group tag-group-top clearfix">
+	      			<li class="alternative icon-fire">Urgente</li>
+	      		</ul>
+      			<h2 class="result-list-title"><a href="#ingeniero5">Ingeniero Técnico: Redes, seguridad y sistemas lorem ipsum</a></h2>
+      			<h3 class="result-list-subtitle"><a href="#centel6">Centel telecomunicaciones, S.A.</a></h3>
+
+	      		<ul class="tag-group">
+	      			<li class="tag-divider">Barcelona</li>
+	      			<li><span class="marked">hace 2h</span> (Renovada)</li>
+	      		</ul>
+	      	</li>
+
+	      	<!-- executive -->
+	      	<li>
+	      		<a href="http://racc.trabajo.infojobs.net" class="result-list-pic-logo">
+	      			<img src="http://www.infojobs.net/employer/profile/profile-edit/do-get-image?id=20097943738&typeImage=3" alt="Vodafone" />
+	      		</a>
+	      		<ul class="tag-group tag-group-top clearfix">
+	      			<li class="alternative icon-executive">Executive</li>
+	      		</ul>
+
+      			<h2 class="result-list-title"><a href="#ingeniero6">Ingeniero Técnico: Redes, seguridad y sistemas lorem ipsum</a></h2>
+      			<h3 class="result-list-subtitle"><a href="#centel7">Centel telecomunicaciones, S.A.</a></h3>
+
+	      		<ul class="tag-group">
+	      			<li class="tag-divider">Barcelona</li>
+	      			<li><span class="marked">hace 2h</span> (Renovada)</li>
+	      		</ul>
+	      	</li>
+
+	      	<!-- Executive + Multiprovincia -->
+	      	<li>
+	      		<ul class="tag-group tag-group-top clearfix">
+	      			<li class="alternative icon-executive">Executive</li>
+	      			<li class="alternative icon-location tag-ellipsis-cols2"><span class="ellipsis">Acepta candidatos de tu provincia</span></li>
+	      		</ul>
+      			<h2 class="result-list-title"><a href="#ingeniero7">Ingeniero Técnico: Redes, seguridad y sistemas lorem ipsum</a></h2>
+      			<h3 class="result-list-subtitle"><a href="#centel8">Centel telecomunicaciones, S.A.</a></h3>
+
+	      		<ul class="tag-group">
+	      			<li class="tag-divider tag-ellipsis-cols3"><span class="ellipsis">Hospitalet de Llobregat</span></li>
+	      			<li><span class="marked">hace 2h</span> (Renovada)</li>
+	      		</ul>
+	      	</li>
+
+	      	<!-- Multiprovincia -->
+	      	<li>
+	      		<ul class="tag-group tag-group-top clearfix">
+	      			<li class="alternative icon-location tag-ellipsis-cols2"><span class="ellipsis">Acepta candidatos de tu provincia</span></li>
+	      		</ul>
+      			<h2 class="result-list-title"><a href="#ingeniero8">Ingeniero Técnico: Redes, seguridad y sistemas lorem ipsum</a></h2>
+      			<h3 class="result-list-subtitle"><a href="#centel9">Centel telecomunicaciones, S.A.</a></h3>
+
+	      		<ul class="tag-group">
+	      			<li class="tag-divider">Barcelona</li>
+	      			<li><span class="marked">hace 2h</span> (Renovada)</li>
+	      		</ul>
+	      	</li>
+
+	      	<!-- sin logo -->
+	      	<li>
+      			<h2 class="result-list-title"><a href="#ingeniero9">Ingeniero Técnico: Redes, seguridad y sistemas lorem ipsum</a></h2>
+      			<h3 class="result-list-subtitle"><a href="#centel10">Centel telecomunicaciones, S.A.</a></h3>
+
+	      		<ul class="tag-group">
+	      			<li class="tag-divider">Barcelona</li>
+	      			<li><span class="marked">hace 2h</span> (Renovada)</li>
+	      		</ul>
+	      	</li>
+	      </ul>
+	      <div class="pagination">
+			<div class="btn-group">
+				<div>
+					<button type="button" class="btn btn-default">Anterior</a>
+				</div>
+				<div class="active hide-small-device hide-medium-device">
+					<button type="button" class="btn btn-default">1</a>
+				</div>
+				<div class="hide-small-device hide-medium-device">
+					<button type="button" class="btn btn-default">2</a>
+				</div>
+				<div class="hide-small-device hide-medium-device">
+					<button type="button" class="btn btn-default">3</a>
+				</div>
+				<div class="hide-small-device hide-medium-device">
+					<button type="button" class="btn btn-default">4</a>
+				</div>
+				<div class="hide-small-device hide-medium-device">
+					<button type="button" class="btn btn-default">5</a>
+				</div>
+				<div class="hide-small-device hide-medium-device">
+					<button type="button" class="btn btn-default">6</a>
+				</div>
+				<div class="hide-small-device hide-medium-device">
+					<button type="button" class="btn btn-default">7</a>
+				</div>
+				<div class="hide-small-device hide-medium-device">
+					<button type="button" class="btn btn-default">8</a>
+				</div>
+				<div class="hide-small-device hide-medium-device">
+					<button type="button" class="btn btn-default">9</a>
+				</div>
+				<div>
+					<button type="button" class="btn btn-default">Siguiente</a>
+				</div>
+			</div>
+		</div>
+		</div>
+    </div>
+ </div>
+</body>

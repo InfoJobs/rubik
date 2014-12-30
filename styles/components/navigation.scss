@@ -1,0 +1,88 @@
+//generics
+@import "../generics/generics";
+
+
+/*------------------------------------*\
+    $NAVIGATION
+\*------------------------------------*/
+
+.link-underline,
+.link-underline:hover,
+.link:hover {
+ 	text-decoration: underline;
+}
+
+.nav-bar > li {
+    float: left;
+}
+
+.nav-bar > li > a {
+	display: block;
+}
+
+.nav-bar-submenu {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width:100%;
+	background: $darkest-shiro;
+}
+
+.nav-bar-submenu > li > a {
+	padding:20px 15px;
+	color: $dark-silk;
+}
+
+.nav-bar-submenu > li > a:hover {
+	color:$day-blue;
+}
+
+.links-bar {
+	float: right; //replace for grid structure
+
+	li {
+		@extend %divider;
+		float: left;
+		padding: 0 10px;
+
+		&:first-child {
+			padding-left: 0;
+		}
+
+	 	&:last-child {
+			padding-right: 0;
+			border: 0;
+		}
+	}
+
+	a,
+	a:hover,
+	a:active,
+	a:visited {
+ 		@extend %font-small-line;
+	}
+
+	a:hover{
+ 		text-decoration: underline;
+	}
+
+	a.disabled:hover{
+ 		text-decoration: none;
+	}
+
+	@media print {
+		display: none;
+	}
+}
+
+.text-center ul.links-bar {
+	margin-top: 5px;
+}
+
+@include mediaquery ($bp-tablet) {
+
+	.text-center ul.links-bar {
+		margin-top: 0;
+	}
+
+}

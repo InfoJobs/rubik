@@ -1,0 +1,550 @@
+/*------------------------------------*\
+    $FORMS
+\*------------------------------------*/
+
+fieldset {
+
+	& + fieldset {
+		margin-top: 40px;
+	}
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	& > button {
+		margin-top: 20px;
+	}
+}
+
+legend {
+	display: none;
+}
+
+label {
+	display: inline-block;
+	margin-bottom: 5px;
+	vertical-align: top;
+	line-height: 125%;
+	color: $mid-script;
+	font-size: $base-font-size;
+
+	.error &:first-of-type {
+		color: $trueblood;
+	}
+	.panel-executive & {
+		color: #bebebe;
+	}
+}
+
+select {
+	padding: 13px 10px;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	font-size: 16px;
+	color: $dark-silk;
+	border: 0 none;
+	cursor: pointer;
+}
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 $outer-wall;
+}
+
+input,
+textarea {
+	display: block;
+	width: 330px;
+	margin: 0;
+	padding: 5px 10px;
+	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
+	border-radius: 5px;
+	font-size: 16px;
+
+	.modal-content & {
+		width: 100%;
+	}
+
+	.error & {
+		border-color: $trueblood;
+	}
+}
+
+input {
+	height: 32px;
+}
+
+textarea {
+	min-height: 150px;
+	resize: vertical;
+}
+
+input::-webkit-input-placeholder,
+input::-moz-placeholder,
+input:-ms-input-placeholder,
+textarea::-webkit-input-placeholder,
+textarea::-moz-placeholder,
+textarea:-ms-input-placeholder  {
+	color: $soft-script;
+}
+
+input[placeholder],
+textarea[placeholder] {
+	text-overflow: ellipsis;
+}
+
+input[type="radio"],
+input[type="checkbox"]{
+	display: inline-block;
+	cursor: pointer;
+  	padding: 0;
+  	margin: 2px 0 0 0;
+	width: auto;
+  	border: 0 none;
+  	vertical-align: top;
+  	height: auto;
+	font-size: 15px;
+}
+
+input[disabled="disabled"],
+select[disabled="disabled"] {
+	color: $wood-katana-smash;
+	cursor: default;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label,
+.label-checkbox { //class ".label-checkbox" deprecated. actualy used in filters only
+	cursor: pointer;
+	width: 85%;
+
+}
+
+/*
+Forms structure
+
+```
+.form--field-block 	- Fields disposition: block
+.field-annex
+```
+
+Markup:
+<form>
+  <fieldset>
+    <legend>Lorem ipsum</legend>
+    <ul class="form--field-block clearfix">
+		<li>
+			<label for="field1">Label</label>
+			<input type="text" id="field1">
+		</li>
+		<li>
+			<label for="field2">Label</label>
+			<input type="text" id="field2">
+		</li>
+    </ul>
+    <button type="submit" class="btn btn-primary" id="button">Send</button>
+	<div class="field-annex">
+		<input type="checkbox" id="permanent-login">
+		<label for="permanent-login">Recordar</label>
+	</div>
+  </fieldset>
+</form>
+
+Styleguide 1.4
+*/
+.form {
+	width: 100%;
+}
+
+.form--field-block > li { //TODO: Could be possible to apply only a class in <form> to avoid do it in every <ul>?
+	margin-bottom: 20px;
+	vertical-align: middle;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	.info {
+		margin-top: 3px;
+	}
+}
+
+//TODO == mejorar esta regla
+form ul ul {
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
+form ul .form-field-inline ul {
+	margin-top: 0;
+	margin-left: 0;
+}
+
+//TODO: Nest .form-field-inline in .search-bar.scss component, because is not possible to apply this layout independently
+.form-field-inline {
+	float: left;
+	padding-right: 10px;
+}
+
+.form-field-inline:last-child {
+	margin-right: 0;
+	padding-right: 0;
+}
+
+/*.form-field-inline label {
+    margin-bottom: 5px;
+}*/
+
+/*
+Radio buttons / Checkbox
+
+```
+.fieldset-title - To format radio button/checkbox's title
+.label-checkbox - To align label in a radio button/checkbox structure
+```
+
+Markup:
+<fieldset>
+	<legend class="fieldset-title">Fecha</legend>
+	<ul>
+		<li>
+			<input type="radio" checked="checked" id="fecha_a">
+			<label title="Ofertas de empleo para cualquier fecha" class="label-checkbox" for="fecha_a">
+				Cualquier fecha
+			</label>
+		</li>
+		<li>
+			<input type="radio" id="fecha_b">
+			<label title="Ofertas de empleo ultimas 24h" class="label-checkbox" for="fecha_b">
+				Ultimas <span class="marked">24 horas</span>
+			</label>
+		</li>
+		<li>
+			<input type="radio" id="fecha_c">
+			<label title="Ofertas de empleo ultimos 7 dias" class="label-checkbox" for="fecha_c">
+				Ultimos 7 dias
+			</label>
+		</li>
+		<li>
+			<input type="radio" id="fecha_d">
+			<label title="Ofertas de empleo ultimos 15 dias" class="label-checkbox" for="fecha_d">
+				Ultimos 15 dias
+			</label>
+		</li>
+	</ul>
+</fieldset>
+
+Styleguide 1.4.1
+*/
+
+/*
+Radio buttons's inline
+
+```
+.radio-group - To create a radio button's group with inline structure
+```
+
+Markup:
+<ul class="radio-group clearfix">
+	<li>
+		<input type="radio" checked="checked" id="option1"><label for="option1">Option 1</label>
+	</li>
+	<li>
+		<input type="radio" id="option2"><label for="option2">Option 2</label>
+	</li>
+</ul>
+
+Styleguide 1.4.2
+*/
+
+.radio-group {
+	width: 100%;
+}
+
+.radio-group li {
+	float: left;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.radio-group li + li {
+	margin-left: 10px;
+}
+
+.radio-group label {
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+
+		//TODO: Fix line-height
+
+    &:before,
+    &:after {
+    	content: "";
+	    position: absolute;
+	    right: 0;
+	    left: 0;
+	    height: 10px;
+    }
+
+		&:before {
+			top: -10px;
+		}
+
+		&:after {
+	    top: 100%;
+		}
+}
+
+/*
+Selects
+
+```
+.form-select -  Field select
+```
+
+Markup:
+<div class="form-select">
+  <select data-placeholder="Cualquier provincia" class="chosen-select" tabindex="-1">
+    <option selected="selected" value="0">Option 1</option>
+    <option value="1">Option 2</option>
+  </select>
+</div>
+
+Styleguide 1.4.3
+*/
+
+.form-select {
+	position: relative;
+	height: 32px;
+	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
+	border-radius: 5px;
+	line-height: 14px;
+	-webkit-appearance: none;
+	background: url(#{$path-backgrounds}/bg-select-arrow.png) right 50% no-repeat $shiro;
+
+	select {
+		width: 100%;
+		height: 32px;
+		padding:6px;
+		text-indent: 0.01px;
+		text-overflow: "";
+		-webkit-appearance: none;
+			 -moz-appearance: none;
+						appearance: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		float: right;
+		margin: 0;
+		background: none;
+	}
+
+	&-disabled {
+		overflow: hidden;
+		background-color: $dark-shiro;
+	}
+
+	optgroup:before {
+		content: "";
+		display: block;
+		height: 1px;
+		border-bottom: 1px solid $darkest-shiro;
+		margin-bottom: 5px;
+	}
+
+	optgroup {
+		padding: 0;
+		margin: 10px 0;
+
+		option {
+			background: transparent;
+		}
+
+		option:after {
+			content: "";
+			display: block;
+			padding: 2px;
+		}
+
+		option:before {
+			content: "";
+			display: block;
+			padding: 2px;
+		}
+	}
+}
+
+.form-select-medium {
+	width: 350px;
+}
+
+
+/*
+Input group
+
+```
+.input-group
+```
+
+Styleguide 1.4.4
+*/
+
+.input-group {
+    display: table;
+
+	& > div {
+		display: table-cell;
+	}
+
+	input { /* fix iOS buttons separation */
+		margin: 0;
+	}
+
+	div:first-child:not(:last-child) input {
+		border-bottom-right-radius: 0;
+	    border-top-right-radius: 0;
+	}
+
+	div:not(:first-child):not(:last-child) input {
+		 border-radius: 0 0 0 0;
+	}
+
+	div:last-child input {
+		border-bottom-left-radius: 0;
+	    border-top-left-radius: 0;
+	}
+
+	input {
+		border-right-width: 0;
+		width: 100%;
+	}
+
+	div:last-child input {
+		border-right-width: 1px;
+	}
+
+	.active input {
+	    background-color: $shiro;
+	    cursor: default;
+	}
+
+	&-date {
+		input {
+			width: 50px;
+		}
+
+		div:last-child input  {
+			width: 66px;
+		}
+	}
+}
+
+.field-annex {
+	display: inline-block;
+	padding: 0 10px;
+
+	input[type="checkbox"] + label {
+	 	width: auto;
+	 }
+}
+
+/*
+Fieldset title
+
+Styleguide 1.4.5
+*/
+
+.fieldset-title {
+	display: block;
+	padding-bottom:10px;
+
+	.error & {
+		color: $trueblood;
+	}
+}
+
+/*
+Field error
+
+```
+.error-info - Error description
+```
+
+Markup:
+<form>
+  <fieldset>
+    <legend>Lorem ipsum</legend>
+    <ul class="form--field-block clearfix">
+      <li class="error">
+        <label for="field1">Label</label>
+        <input type="text" id="field1">
+		<p class="error-info">Descripcion del error</p>
+      </li>
+      <li>
+        <label for="field2">Label</label>
+        <input type="text" id="field2">
+      </li>
+    </ul>
+    <button type="submit" class="btn btn-primary" id="button">Send</button>
+  </fieldset>
+</form>
+
+Styleguide 1.4.7
+*/
+
+.error-info {
+	margin-top: 5px;
+	color: $trueblood;
+	font-size: 12px;
+	line-height: 110%;
+}
+
+@media only screen and (max-width: $tablet-start) {
+
+	input {
+		width: 100%;
+		height: 44px;
+	}
+
+	textarea {
+		width: 100%;
+	}
+
+	.radio-group {
+		margin-bottom: 10px;
+		border-radius: 5px;
+
+		li {
+			float: left;
+			padding: 6px 10px;
+			box-sizing: border-box;
+		}
+
+		li + li {
+			margin-left: 0;
+		}
+
+		label {
+		    margin-bottom: 0;
+		}
+	}
+
+	.form-select {
+		height: 44px;
+	}
+
+	.form-select select {
+		height: auto;
+		margin-top: 2px;
+		padding: 10px;
+	}
+
+	/*already defined (and modified) at pulldown-chosen.scss */
+	.chosen-container-single .chosen-single {
+		margin-top: 2px;
+		padding: 10px;
+	}
+}
