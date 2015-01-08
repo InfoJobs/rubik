@@ -36,15 +36,13 @@ h3,
 
 	.skin-executive & {
 		font-family: $base-font-family-light;
-		color: $dark-silk;
 	}
 }
 
 .section h1,
 .section .h1 {
 	margin: 20px 0;
-	font-size: $xxlarge-font-size;
-	line-height: $xxlarge-line-height;
+	font-size: 32px;
 
 	@media only screen and (min-width: $bp-desktop) {
 		margin-bottom: 40px;
@@ -56,13 +54,8 @@ h3,
 h1,
 .h1 {
 	margin-bottom: 35px;
-	font-size: $large-font-size;
-	line-height: $large-line-height;
-
-	@include mediaquery ($bp-tablet) {
-		font-size: $xlarge-font-size;
-		line-height: $xlarge-line-height;
-	}
+	font-size: $xlarge-font-size;
+	line-height: $xlarge-line-height;
 
 	@include mediaquery ($bp-desktop) {
 		font-size: $xxlarge-font-size;
@@ -73,13 +66,8 @@ h1,
 h2,
 .h2 {
 	margin: 0 0 15px 0;
-	font-size: $medium-font-size;
-	line-height: $medium-line-height;
-
-	@include mediaquery ($bp-tablet) {
-		font-size: $large-font-size;
-		line-height: $large-line-height;
-	}
+	font-size: $large-font-size;
+	line-height: $large-line-height;
 
 	@include mediaquery ($bp-desktop) {
 		font-size: $xlarge-font-size;

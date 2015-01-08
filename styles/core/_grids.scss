@@ -86,15 +86,38 @@ $gridColumns: 12;
 @for $i from 1 through $gridColumns {
 	.col-#{$i} {
 
+		.inner & {
+			margin-right: -10px;
+
+			@include mediaquery ($bp-tablet) {
+				margin-right: 0;
+			}
+		}
+
+		.row-bleed & .col-child {
+			@include mediaquery ($bp-tablet) {
+				margin-right: 10px;
+			}
+			@include mediaquery ($bp-desktop) {
+				margin-right: 0;
+			}
+		}
+
+		.row-bleed &:last-child .col-child {
+			@include mediaquery ($bp-desktop) {
+				margin-right: 10px;
+			}
+		}
+
 		.col-child {
-			margin: 0 0 10px 10px;
+			margin: 0 0 10px 0;
+
+			@include mediaquery ($bp-tablet) {
+				margin-left: 10px;
+			}
 
 			.aside-wrapper & {
 				margin-left: 0;
-			}
-
-			&:last-child {
-				margin-bottom: 0;
 			}
 
 			@media print {
@@ -124,9 +147,10 @@ $gridColumns: 12;
 
 .row-bleed { //TODO: related with panel- structure
 	@include row;
-	margin: 0;
+	margin-bottom: -20px;
+	margin-left: 0;
 	padding-top: 10px;
-	padding-right: 10px;
+	padding-bottom: 20px;
 }
 
 @media only screen and (max-width: $tablet-start) {
@@ -171,11 +195,6 @@ $gridColumns: 12;
 			width: 100%;
 			float: none;
 		}
-	}
-
-	.row-bleed {
-		margin: 0 0 -20px 0;
-		padding-bottom: 20px;
 	}
 
 }
