@@ -73,7 +73,7 @@ textarea {
 }
 
 input {
-	height: 32px;
+	height: 30px;
 }
 
 textarea {
@@ -318,7 +318,7 @@ Styleguide 1.4.3
 
 .form-select {
 	position: relative;
-	height: 32px;
+	height: 30px;
 	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
 	border-radius: 5px;
 	line-height: 14px;
@@ -327,7 +327,7 @@ Styleguide 1.4.3
 
 	select {
 		width: 100%;
-		height: 32px;
+		height: 30px;
 		padding:6px;
 		text-indent: 0.01px;
 		text-overflow: "";
