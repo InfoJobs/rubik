@@ -46,15 +46,6 @@ $PANELS
 		color: $shiro;
 	}
 
-	@include mediaquery ($bp-tablet) {
-		background: -moz-linear-gradient(left, $dark-silk 0%, $dark-silk 0%, $dark-silk 50%, #393939 50%, #393939 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, right top, color-stop(0%,$dark-silk), color-stop(0%,$dark-silk), color-stop(50%,$dark-silk), color-stop(50%,#393939), color-stop(100%,#393939)); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(left, $dark-silk 0%,#ff3232 0%,#ff2828 50%,#393939 50%,#393939 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(left, $dark-silk 0%,$dark-silk 0%,$dark-silk 50%,#393939 50%,#393939 100%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(left, $dark-silk 0%,$dark-silk 0%,$dark-silk 50%,#393939 50%,#393939 100%); /* IE10+ */
-		background: linear-gradient(to right, $dark-silk 0%,$dark-silk 0%,$dark-silk 50%,#393939 50%,#393939 100%); /* W3C */
-	}
-
 	@include mediaquery ($bp-desktop) {
 		background: -moz-linear-gradient(left, $dark-silk 0%, $dark-silk 0%, $dark-silk 66.6%, #393939 66.6%, #393939 100%); /* FF3.6+ */
 		background: -webkit-gradient(linear, left top, right top, color-stop(0%,$dark-silk), color-stop(0%,$dark-silk), color-stop(66.6667%,$dark-silk), color-stop(66.6667%,#393939), color-stop(100%,#393939)); /* Chrome,Safari4+ */

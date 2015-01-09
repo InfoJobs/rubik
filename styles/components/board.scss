@@ -3,7 +3,7 @@
 
 
 /*------------------------------------*\
-    $BOARD
+$BOARD
 \*------------------------------------*/
 
 /*
@@ -20,18 +20,16 @@ Board
 .text-small
 .text-large
 ```
-
 Markup:
-
 <div class="board board-executive">
 	<div class="text" id="stretch">
 		<div class="child">
 			<div class="child-center">
-	   			<h1 class="claim">Cuenta Executive, exclusiva para directivos, managers y especialistas de alto nivel</h1>
-	   			<p class="description">Tenemos las mejores oportunidades del mercado para acercarte al siguiente paso en tu carrera.</p>
-	   			<a class="btn btn-primary btn-large" href="#" onclick="unfold();" id="ibButton1">Activar mi cuenta Executive</a>
-	   			<p class="small" id="ibLabel2">En un solo click recuperando tu CV de InfoJobs</p>
-	   		</div>
+				<h1 class="claim">Cuenta Executive, exclusiva para directivos, managers y especialistas de alto nivel</h1>
+				<p class="description">Tenemos las mejores oportunidades del mercado para acercarte al siguiente paso en tu carrera.</p>
+				<a class="btn btn-primary btn-large" href="#" onclick="unfold();" id="ibButton1">Activar mi cuenta Executive</a>
+				<p class="small" id="ibLabel2">En un solo click recuperando tu CV de InfoJobs</p>
+			</div>
 		</div>
 	</div>
 </div>
@@ -84,7 +82,11 @@ Styleguide 2.1
 	}
 
 	.claim + p {
-		margin-bottom: 30px;
+		margin-bottom: 0;
+	}
+
+	.description + .btn {
+		margin-top: 30px;
 	}
 
 	.btn {
@@ -116,16 +118,17 @@ Styleguide 2.1
 
 	}
 
-    &.board-executive {
+	&.board-executive {
 		background: $dark-softened;
 		background-image: url(#{$path-media}/appgrade/pictures/pic-crsl-executive-mobile.jpg);
 		background-position:  0 0;
 		background-repeat: no-repeat;
+		background-size: cover;
 
 		@include mediaquery ($bp-tablet) {
-
 			background-color: $dark-silk;
 			background-image: url(#{$path-media}/appgrade/pictures/pic-crsl-executive-big.jpg);
 		}
+
 	}
 }
