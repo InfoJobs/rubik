@@ -322,26 +322,16 @@ Styleguide 1.5.8
 .btn-group {
     display: table;
 
-  	& > div {
-  		display: table-cell;
-  	}
+    & > div {
+        display: table-cell;
+    }
+
+    .btn {
+        border-color: $katana-slash;
+    }
 
   	button { /* fix iOS buttons separation */
   		margin: 0;
-  	}
-
-  	div:first-child:not(:last-child) .btn {
-  		border-bottom-right-radius: 0;
-  	    border-top-right-radius: 0;
-  	}
-
-  	div:not(:first-of-type):not(:last-of-type) .btn {
-  		 border-radius: 0 0 0 0;
-  	}
-
-  	div:last-child .btn {
-  		border-bottom-left-radius: 0;
-  	    border-top-left-radius: 0;
   	}
 
   	.btn,
@@ -364,10 +354,6 @@ Styleguide 1.5.8
 
   	div:last-of-type .btn{
   		border-right-width: 1px;
-  		border-bottom-right-radius: 5px;
-  	    border-top-right-radius: 5px;
-  	    border-bottom-left-radius: 0;
-  	    border-top-left-radius: 0;
   	}
 
   	.active .btn,
@@ -396,7 +382,6 @@ Styleguide 1.5.8
 
 .btn-divider {
   border-right: 1px solid $darkest-shiro;
-  border-radius: 0;
 }
 
 .btn-divider-company {
