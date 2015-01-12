@@ -155,9 +155,19 @@
 <script type="text/javascript" src="../js/widget.weather.js"></script>
 <script>
 	(function(){
-		var numAnim = new countUp('kpi-indicator-offers');
-		numAnim.start();
+		var eKpiOffers = document.getElementById('kpi-indicator-offers');
 
+		nValKpiOffers = parseInt(eKpiOffers.dataset.endval);
+
+		if( nValKpiOffers > 999 ) {
+			nValKpiOffers = nValKpiOffers / 1000;
+			eKpiOffers.innerHTML = nValKpiOffers.toFixed(1).replace('.',',') + '<span>K</span>';
+
+		} else {
+			var numAnim = new countUp('kpi-indicator-offers');
+			numAnim.start();
+			
+		}
 	})();
 </script>
 </body>
