@@ -186,6 +186,11 @@ form ul .form-field-inline ul {
 .form-field-inline {
 	float: left;
 	padding-right: 10px;
+
+	@media only screen and (min-width: $bp-tablet) {
+
+		line-height: 1.4;
+	}
 }
 
 .form-field-inline:last-child {
