@@ -1,0 +1,17 @@
+{
+  "name": "Rubik",
+  "version": "1.0.0",
+  "authors": [
+    "Joan Leon <joan.leon@infojobs.net>",
+    "Laura Arnedo <laura.arnedo@infojobs.net>",
+    "Norbert Guasch <norbertguasch@gmail.com>",
+    "Pablo González <pablo.gonzalez@infojobs.net>"
+  ],
+  "description": "Rubik Framework",
+  "homepage": "http://www.infojobs.net",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+	"styleguide"
+  ]
+}
