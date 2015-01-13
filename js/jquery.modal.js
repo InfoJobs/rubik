@@ -32,7 +32,7 @@
         return this.each(function() {
 			var $this = $( this ),
 				headermodal = $this.data().headermodal || settings.headermodal,
-				close  $this.data().close || settings.close,
+				close = $this.data().close || settings.close,
 				closeBackground	= $this.data().closeBackground || settings.closeBackground,
 				autoclose = $this.data().autoclose || settings.autoclose,
 				callback = $this.data().callback,
