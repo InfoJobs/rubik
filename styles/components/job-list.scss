@@ -198,6 +198,7 @@ Styleguide 2.8
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
+        display: -webkit-box;
         background-color: $dark-shiro;
         overflow: hidden;
 
@@ -205,6 +206,7 @@ Styleguide 2.8
             -webkit-flex: 1;
             -ms-flex: 1;
             flex: 1;
+            -webkit-box-flex: 1;
         }
 
         @include mediaquery ($bp-desktop) {
@@ -230,6 +232,10 @@ Styleguide 2.8
         text-overflow: ellipsis;
         color: #333;
         line-height: 50px;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        -webkit-box-flex: 1;
 
         @include mediaquery ($bp-tablet) {
             padding: 0 10px 0 20px;
@@ -245,6 +251,7 @@ Styleguide 2.8
         -webkit-flex: 1;
         -ms-flex: 1;
         flex: 1;
+        -webkit-box-flex: 1;
         width: 155px;
         min-width: 158px;
         line-height: 50px;
