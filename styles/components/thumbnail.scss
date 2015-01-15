@@ -3,7 +3,7 @@
 
 
 /*------------------------------------*\
-$THUMBNAIL
+	$THUMBNAIL
 \*------------------------------------*/
 //Revisar componente - font-size's
 
@@ -16,12 +16,12 @@ Thumbnail
 
 Markup:
 <figure class="fig-thumbnail slide-up">
-<a href="#">
-<img border="0" src="http://www.infojobs.net/logo/logo/do-get.xhtml?id=20727600872&" alt="">
-</a>
-<figcaption class="fig-thumbnail-caption slide-item">
-<p class="fig-thumbnail-details">Ver ofertas</p>
-</figcaption>
+	<a href="#">
+		<img border="0" src="http://www.infojobs.net/logo/logo/do-get.xhtml?id=20727600872&" alt="">
+	</a>
+	<figcaption class="fig-thumbnail-caption slide-item">
+		<p class="fig-thumbnail-details">Ver ofertas</p>
+	</figcaption>
 </figure>
 
 Styleguide 2.20
@@ -59,6 +59,8 @@ Styleguide 2.20
 
 .fig-thumbnail-logo {
 	border: 1px solid $darkest-shiro;
+	background: $shiro;
+	padding: 4px;
 
 	.fig-thumbnail-caption {
 		display: none;
@@ -70,6 +72,7 @@ Styleguide 2.20
 	opacity: .9;
 	position: absolute;
 	bottom: 0;
+	left: 0;
 	width: 100%;
 }
 
