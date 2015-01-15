@@ -1,266 +1,269 @@
-	//generics
-	@import "../generics/generics";
+//generics
+@import "../generics/generics";
 
 
-	/*------------------------------------*\
-		$THUMBNAIL
-	\*------------------------------------*/
-	//Revisar componente - font-size's
+/*------------------------------------*\
+	$THUMBNAIL
+\*------------------------------------*/
+//Revisar componente - font-size's
 
-	/*
-	Thumbnail
+/*
+Thumbnail
 
-	###Thumbnail basic
-	- Image with caption at the bottom , if the picture is clickable add tag `<a>` as the example
+###Thumbnail basic
+- Image with caption at the bottom , if the picture is clickable add tag `<a>` as the example
 
 
-	Markup:
-	<figure class="fig-thumbnail slide-up">
-		<a href="#">
-			<img border="0" src="http://www.infojobs.net/logo/logo/do-get.xhtml?id=20727600872&" alt="">
-		</a>
-		<figcaption class="fig-thumbnail-caption slide-item">
-			<p class="fig-thumbnail-details">Ver ofertas</p>
-		</figcaption>
-	</figure>
+Markup:
+<figure class="fig-thumbnail slide-up">
+	<a href="#">
+		<img border="0" src="http://www.infojobs.net/logo/logo/do-get.xhtml?id=20727600872&" alt="">
+	</a>
+	<figcaption class="fig-thumbnail-caption slide-item">
+		<p class="fig-thumbnail-details">Ver ofertas</p>
+	</figcaption>
+</figure>
 
-	Styleguide 2.20
-	*/
+Styleguide 2.20
+*/
 
-	.fig-thumbnail {
-		position:relative;
-		text-align:left;
-		background:$dark-shiro;
+.fig-thumbnail {
+	position:relative;
+	text-align:left;
+	background:$dark-shiro;
 
-		p {
-			margin:0;
-		}
-
-		img {
-			display:block;
-		}
-	}
-
-	.fig-thumbnail-title {
-		font-size: 18px;
-		color:$shiro;
+	p {
 		margin:0;
 	}
 
-	.fig-thumbnail-description {
-		font-size: 14px;
-		color:$shiro;
+	img {
+		display:block;
 	}
+}
 
-	.fig-thumbnail-details {
-		color:$bamboo;
-		font-size: 14px;
-	}
+.fig-thumbnail-title {
+	font-size: 18px;
+	color:$shiro;
+	margin:0;
+}
 
-	.fig-thumbnail-logo {
-		border: 1px solid $darkest-shiro;
+.fig-thumbnail-description {
+	font-size: 14px;
+	color:$shiro;
+}
 
-		.fig-thumbnail-caption {
-			display: none;
-		}
-	}
+.fig-thumbnail-details {
+	color:$bamboo;
+	font-size: 14px;
+}
+
+.fig-thumbnail-logo {
+	border: 1px solid $darkest-shiro;
+	background: $shiro;
+	padding: 4px;
 
 	.fig-thumbnail-caption {
-		background: $dark-silk;
-		opacity: .9;
+		display: none;
+	}
+}
+
+.fig-thumbnail-caption {
+	background: $dark-silk;
+	opacity: .9;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.fig-logos-home {
+	position: relative;
+	border: 1px solid $darkest-shiro;
+	height: 190px;
+	overflow: hidden;
+	margin-bottom: 10px;
+
+	.brand {
 		position: absolute;
-		bottom: 0;
+		top: -50px;
+		transition: all 500ms ease 0s;
 		width: 100%;
+
+		&::before {
+			display: block;
+			content: '';
+			background-color: rgba(40, 110, 143, .8);
+			height: 100%;
+			position: absolute;
+			width: 100%;
+			top: 0;
+			left: 0;
+			z-index: 1;
+		}
 	}
 
-	.fig-logos-home {
-		position: relative;
+	figcaption {
+		padding: 10px;
+	}
+
+	.logo {
+		position: absolute;
+		top: -37px;
+		right: 10px;
+		width: 70px;
+		height: 70px;
+		padding: 4px;
 		border: 1px solid $darkest-shiro;
-		height: 190px;
-		overflow: hidden;
-		margin-bottom: 10px;
+		background: $shiro;
 
-		.brand {
-			position: absolute;
-			top: -50px;
-			transition: all 500ms ease 0s;
+		img {
 			width: 100%;
+		}
+	}
 
-			&::before {
-				display: block;
-				content: '';
-				background-color: rgba(40, 110, 143, .8);
-				height: 100%;
-				position: absolute;
-				width: 100%;
-				top: 0;
-				left: 0;
-				z-index: 1;
-			}
+	&--caption {
+		position: absolute;
+		top: 55px;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		border-top: 2px solid $day-blue;
+		background-color: #F4F4F4; //ToDo: no existe como variable
+		transition: all 500ms ease 0s;
+
+		.title {
+			height: 20px;
+			overflow: hidden;
+			margin: 0 80px 0 0;
+			font-family: $base-font-family-bold;
+			font-size: 16px;
+			line-height: 18px;
+			white-space: nowrap;
+			color: $dark-silk;
+			transition: all 300ms ease 0s;
 		}
 
-		figcaption {
-			padding: 10px;
+		.details {
+			color: $day-blue;
+			margin-bottom: 10px;
 		}
 
-		.logo {
-			position: absolute;
-			top: -37px;
-			right: 10px;
-			width: 70px;
-			height: 70px;
-			padding: 4px;
-			border: 1px solid $darkest-shiro;
-			background: $shiro;
-
-			img {
-				width: 100%;
-			}
+		.description {
+			opacity: 1;
+			transition: all 800ms ease 0s;
+			color: $dark-silk;
 		}
 
-		&--caption {
-			position: absolute;
-			top: 55px;
-			bottom: 0;
-			width: 100%;
-			height: 100%;
-			z-index: 2;
-			border-top: 2px solid $day-blue;
-			background-color: #F4F4F4; //ToDo: no existe como variable
-			transition: all 500ms ease 0s;
-
-			.title {
-				height: 20px;
-				overflow: hidden;
-				margin: 0 80px 0 0;
-				font-family: $base-font-family-bold;
-				font-size: 16px;
-				line-height: 18px;
-				white-space: nowrap;
-				color: $dark-silk;
-				transition: all 300ms ease 0s;
-			}
-
-			.details {
-				color: $day-blue;
-				margin-bottom: 10px;
-			}
-
-			.description {
-				opacity: 1;
-				transition: all 800ms ease 0s;
-				color: $dark-silk;
-			}
-
-		}
-		@include mediaquery ($bp-tablet) {
-			height: 225px;
-
-		}
-
-		@include mediaquery ($bp-desktop) {
-
-			height: auto;
-
-			&::after {
-				content:"";
-				display: block;
-				height: 58px;
-			}
-
-			.brand {
-				position: relative;
-				top: 0;
-				overflow: hidden;
-
-				&::before {
-					background-color: transparent;
-					position: relative;
-				}
-
-				img {
-					display: block;
-					width: 100%;
-					height: auto;
-				}
-			}
-
-			&--caption {
-				top: auto;
-				bottom: -133px;
-				height: 192px;
-
-				.description {
-					opacity: 0;
-				}
-			}
-
-			&:hover {
-				position: relative;
-
-				.brand {
-					top: -50px;
-					transition: all 300ms ease 0s;
-
-					&::before {
-						display: block;
-						content: '';
-						background-color: rgba(40, 110, 143, .8);
-						height: 100%;
-						position: absolute;
-						transition: all 400ms ease 0s;
-						width: 100%;
-						top: 0;
-						left: 0;
-						z-index: 1;
-					}
-
-				}
-
-				.fig-logos-home--caption {
-					bottom: 0;
-					transition: all 250ms ease 0s;
-				}
-
-				.logo {
-					top: -35px;
-					transition: all 300ms ease 0s;
-				}
-
-				.title {
-					transition: all 300ms ease 0s;
-				}
-
-				.description {
-					opacity: 1;
-					transition: all 400ms ease 0s, opacity 800ms ease 0s;
-				}
-			}
-		}
-
+	}
+	@include mediaquery ($bp-tablet) {
+		height: 225px;
 
 	}
 
 	@include mediaquery ($bp-desktop) {
-		.fig-thumbnail-logo .fig-thumbnail-caption {
+
+		height: auto;
+
+		&::after {
+			content:"";
 			display: block;
-			text-align: center;
+			height: 58px;
 		}
 
-		.fig-thumbnail-logo .fig-thumbnail-caption p {
-			padding: 5px;
+		.brand {
+			position: relative;
+			top: 0;
+			overflow: hidden;
+
+			&::before {
+				background-color: transparent;
+				position: relative;
+			}
+
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		&--caption {
+			top: auto;
+			bottom: -133px;
+			height: 192px;
+
+			.description {
+				opacity: 0;
+			}
+		}
+
+		&:hover {
+			position: relative;
+
+			.brand {
+				top: -50px;
+				transition: all 300ms ease 0s;
+
+				&::before {
+					display: block;
+					content: '';
+					background-color: rgba(40, 110, 143, .8);
+					height: 100%;
+					position: absolute;
+					transition: all 400ms ease 0s;
+					width: 100%;
+					top: 0;
+					left: 0;
+					z-index: 1;
+				}
+
+			}
+
+			.fig-logos-home--caption {
+				bottom: 0;
+				transition: all 250ms ease 0s;
+			}
+
+			.logo {
+				top: -35px;
+				transition: all 300ms ease 0s;
+			}
+
+			.title {
+				transition: all 300ms ease 0s;
+			}
+
+			.description {
+				opacity: 1;
+				transition: all 400ms ease 0s, opacity 800ms ease 0s;
+			}
 		}
 	}
 
-	@media only screen and (max-width: $tablet-start) {
-		.fig-thumbnail-description  {
-			display: none;
-		}
 
+}
+
+@include mediaquery ($bp-desktop) {
+	.fig-thumbnail-logo .fig-thumbnail-caption {
+		display: block;
+		text-align: center;
 	}
 
-	@media only screen and (max-width: $mobile-start) {
-		.fig-thumbnail {
-			max-height: none;
-		}
+	.fig-thumbnail-logo .fig-thumbnail-caption p {
+		padding: 5px;
 	}
+}
+
+@media only screen and (max-width: $tablet-start) {
+	.fig-thumbnail-description  {
+		display: none;
+	}
+
+}
+
+@media only screen and (max-width: $mobile-start) {
+	.fig-thumbnail {
+		max-height: none;
+	}
+}
