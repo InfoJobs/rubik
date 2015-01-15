@@ -191,8 +191,16 @@ Styleguide 1.6
 $icon-size: (18, 22, 30, 100); //TODO: resolve problem when it s moved to _vars
 
 @each $value in $icon-size {
-	.iconfont-#{$value}px::before {
-		font-size: #{$value}px;
+	.iconfont-#{$value}px {
+
+		&::before {
+			font-size: #{$value}px;
+		}
+
+		&:empty { //aplica nomes a 22px. cal extendre-ho a les altres icon-size
+			width: 23px;
+			height: 28px;
+		}
 	}
 }
 

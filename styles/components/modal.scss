@@ -43,7 +43,7 @@ Styleguide 3.1
 
 	.close-modal {
 		position: absolute;
-		top: 15px;
+		top: 12px;
 		right: 5px;
 		display: block;
 		overflow: hidden;
@@ -99,6 +99,7 @@ Styleguide 3.1
 	right: 0;
 	top: 0;
 	bottom: 0;
+	overflow: hidden;
 	margin: 0 auto;
 	max-width: 100%;
 	//min-height: 100%;
