@@ -113,7 +113,8 @@ Styleguide 1.6
 */
 
 @mixin iconfont {
-	position: absolute;
+	position: relative;
+	top: 2px;
 	font-family: 'Icons';
 	speak: none;
 	font-style: normal;
@@ -136,76 +137,37 @@ Styleguide 1.6
 	@include iconfont;
 }
 
-[class^="iconfont-"],
-[class*=" iconfont-"] {
-	position: relative;
-
-}
-
 //needs sass version 3.4.7 or later
 [class*=" iconfont-"]::before {
 
-	@at-root .btn#{&} { //applied to btn-group too
-		position: relative;
-		top: 2px;
+	@at-root .btn#{&} {
 		display: inline-block;
-		margin-right: 8px;
-		-webkit-transform-origin: 7px 7px; /* Chrome, Safari, Opera */
-				transform-origin: 7px 7px;
+		margin-right: 8px; //needed to separate icon from the text
+	}
 
+	@at-root .btn-group .btn#{&} {
+		margin-right: 0;
 	}
 }
-//
-//[class*=" iconfont-"]::before {
-//
-//@at-root button.btn-medium#{&} {
-//font-size: 16px;
-//line-height: 1px;
-//}
-//}
-//
-//class*=" iconfont-"]::before {
-
-//@at-root button.btn-medium#{&} {
-//font-size: 16px;
-//line-height: 1px;
-//}
-//}
-//
-//[class*=" iconfont-"]::before {
-//
-//@at-root button.btn-large#{&} {
-//font-size: 20px;
-//ine-height: 1px;
-//}
-//}
-//[class*=" iconfont-"]::before {
-
-//@at-root button.btn-large#{&} {
-//font-size: 20px;
-//line-height: 1px;
-//}
-//}
-//
 
 $icon-size: (18, 22, 30, 100); //TODO: resolve problem when it s moved to _vars
 
 @each $value in $icon-size {
+
 	.iconfont-#{$value}px {
 
 		&::before {
 			font-size: #{$value}px;
-		}
-
-		&:empty { //aplica nomes a 22px. cal extendre-ho a les altres icon-size
-			width: 23px;
-			height: 28px;
 		}
 	}
 }
 
 .iconfont-18px { //TODO: calculate automatically text's font-size and increment it 2px
 	padding-left: 20px;
+
+	.tooltip-wrapper & {
+		padding-left: 0;
+	}
 }
 
 .iconfont-22px { //used in mobile's header

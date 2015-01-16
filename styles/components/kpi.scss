@@ -41,6 +41,7 @@ $wrap-kpi-width-desktop: 257px;
 
 		@include mediaquery ($bp-tablet) {
 			display: block;
+			top: auto;
 			position: absolute;
 			font-size: 14px;
 			left: 75%;
@@ -88,7 +89,6 @@ $wrap-kpi-width-desktop: 257px;
 		font-size: 25px;
 	}
 
-
 	@include mediaquery ($bp-tablet) {
 		background-image: url('#{$path-backgrounds}/bg-kpi-twocircles.png');
 		padding: 0 5% 0 0;
@@ -100,7 +100,6 @@ $wrap-kpi-width-desktop: 257px;
 		span {
 			font-size: 35px;
 		}
-
 	}
 
 	@include mediaquery ($bp-desktop) {
@@ -109,7 +108,7 @@ $wrap-kpi-width-desktop: 257px;
 		width: $kpi-width-desktop;
 		line-height: $kpi-height-desktop;
 		height: $kpi-height-desktop;
-		
+
 		span {
 			font-size: 40px;
 		}
