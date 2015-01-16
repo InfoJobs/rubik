@@ -180,11 +180,11 @@
 	.cell-1 [class^="iconfont-"],
 	.cell-1 [class*=" iconfont-"] {
 		display: none;
-		padding-left: 0;
+		padding-left: 0; //needed to reset .iconfont-[size] padding-left heritance
 
 		@include mediaquery (601px) {
+			position: relative; //needed to position .iconfont-Flag applied by .main class
 			display: block;
-			text-align: center;
 		}
 
 		@include mediaquery ($bp-desktop) {
@@ -196,14 +196,15 @@
 	.cell-1 [class*=" iconfont-"]::before {
 
 		@include mediaquery (601px) {
-			position: relative;
 			display: block;
+			top: 0;
 			color: $soft-script;
 
 			.main & {
 				display: inline-block;
 			}
 		}
+
 	}
 
 	.title {
