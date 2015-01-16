@@ -43,7 +43,7 @@ Styleguide 3.1
 
 	.close-modal {
 		position: absolute;
-		top: 12px;
+		top: 10px;
 		right: 5px;
 		display: block;
 		overflow: hidden;
@@ -53,6 +53,12 @@ Styleguide 3.1
 		@include mediaquery ($bp-tablet) {
 			right: 15px;
 	    }
+
+	    @at-root #{&}.iconfont-22px:empty { //specific solution. TODO: improve with not having any empty iconfont for accessibility
+			width: 23px;
+			height: 28px;
+		}
+
 	}
 
 	.close-modal:hover,
