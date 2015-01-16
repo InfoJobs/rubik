@@ -59,7 +59,7 @@
 	a:hover,
 	a:active,
 	a:visited {
- 		@extend %font-small-line;
+ 		@extend %font-small-line !optional;
 	}
 
 	a:hover{
