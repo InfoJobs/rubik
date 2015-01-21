@@ -6,21 +6,27 @@
 \*------------------------------------*/
 
 .search-bar {
-	padding: 20px;
+	padding: 10px;
+	font-size: 14px;
+	vertical-align: middle;
 	background-color: $day-blue;
 
 	.skin-executive & {
 		background-color: $mediterranean-sea;
 	}
 
+	.inner & {
+		padding: 0;
+	}
+
 	input[type="radio"] {
-		margin: 0 5px 0 2px;
+		margin: 2px 5px 0 2px;
 		width: auto;
 	}
 
 	label {
-		margin-bottom: 7px;
-		line-height: 90%;
+		margin-bottom: 5px;
+		line-height: 105%;
 		color: $shiro;
 	}
 
@@ -31,10 +37,6 @@
 	.search-keyword-field {
 		width: 53%;
 	}
-
-	/*.ie8 .search-keyword-field {
-		width: 49%;
-	}*/
 
 	.search-country-field {
 		width: 38%;
@@ -63,6 +65,11 @@
 			}
 
 		}
+	}
+
+    @include mediaquery ($bp-tablet) {
+		padding: 20px;
+
 	}
 
 	@media print {
@@ -132,11 +139,6 @@
 }
 
 @media only screen and (max-width: $mobile-start) {
-	.search-bar {
-		padding: 10px;
-		font-size: 14px;
-		vertical-align: middle;
-	}
 
 	.search-bar .radio-group label {
 		margin: 0;
