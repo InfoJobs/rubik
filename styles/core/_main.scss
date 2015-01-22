@@ -94,6 +94,11 @@ a:focus {
 	outline:none;
 }
 
+.underline,
+.underline:hover {
+    text-decoration: underline;
+}
+
 strong {
 	font-family: $base-font-family-bold;
 
