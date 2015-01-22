@@ -27,6 +27,31 @@
 		padding: 0;
 	}
 
+	.form-field-inline {
+		padding-right: 0;
+		margin-bottom: 10px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+	.search-keyword-field,
+	.search-country-field,
+	.search-submit-field {
+		float: none;
+		width: 100%;
+	}
+
+	.radio-group {
+		margin-bottom: 0;
+	}
+
+	.radio-group li {
+		padding: 10px 10px 10px 0;
+	}
+
 	input[type="radio"] {
 		margin: 2px 5px 0 2px;
 		width: auto;
@@ -41,42 +66,18 @@
 		width: 100%;
 	}
 
-	.search-keyword-field {
-		width: 53%;
+	.search-country-field li {
+		margin-bottom: 0;
+
 	}
 
-	.search-country-field {
-		width: 38%;
+	.radio-group label {
+		margin: 0;
 
-		li {
-			margin-bottom: 0;
-		}
 	}
 
-	.search-submit-field {
-		width: 9%;
-		overflow: hidden;
-
-		@media only screen and (min-width: $bp-tablet) {
-			height: 52px;
-			position: relative;
-		}
-
-		.btn-form-inline {
-
-			@media only screen and (min-width: $bp-tablet) {
-				position: absolute;
-				bottom: 0;
-				left: 0;
-
-			}
-
-		}
-	}
-
-    @include mediaquery ($bp-tablet) {
-		padding: 20px;
-
+	.search-bar .js-show-field {
+		display: none;
 	}
 
 	@media print {
@@ -85,24 +86,63 @@
 
 }
 
+@include mediaquery ($bp-tablet) {
+
+	.search-bar {
+		padding: 20px;
+
+		.radio-group label {
+			margin-bottom: 5px;
+
+		}
+
+		.search-bar .js-show-field {
+			display: block;
+		}
+	}
+
+}
+
+@include mediaquery ($bp-desktop) {
+
+	.search-bar {
+
+		.form-field-inline {
+			float: left;
+			padding-right: 10px;
+			margin-bottom: 0;
+
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+
+		.search-keyword-field {
+			width: 53%;
+		}
+
+		.search-country-field {
+			width: 38%;
+		}
+
+		.search-submit-field {
+			width: 9%;
+			overflow: hidden;
+		}
+
+		.radio-group li {
+			padding: 0;
+		}
+
+	}
+
+}
+
 @media only screen and (max-width: $tablet-start) {
 
 	.search-bar {
 
-		li {
-			padding-right: 0;
-		}
-
-		.search-keyword-field,
-		.search-country-field,
-		.search-submit-field {
-			float: none;
-			width: 100%;
-			margin: 0;
-		}
-
 		.search-keyword-field {
-			margin-bottom: 10px;
 
 			input {
 				background-image:url(//media.infojobs.net/appgrade/backgrounds/bg-magglass-light.png);
@@ -110,14 +150,6 @@
 			    background-repeat: no-repeat;
 			    padding-right: 18%;
 			}
-		}
-
-		.radio-group {
-			margin-bottom: 0;
-		}
-
-		.radio-group li {
-			padding: 10px 10px 10px 0;
 		}
 
 		.radio-group li:first-child {
@@ -133,21 +165,8 @@
 			padding: 10px;
 		}
 
-		.btn-form-inline {
-			margin-top: 10px;
-		}
-
 	}
 
-	.search-bar .js-show-field {
-		display: none;
-	}
 
-}
 
-@media only screen and (max-width: $mobile-start) {
-
-	.search-bar .radio-group label {
-		margin: 0;
-	}
 }
