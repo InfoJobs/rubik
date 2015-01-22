@@ -9,7 +9,15 @@
 	padding: 10px;
 	font-size: 14px;
 	vertical-align: middle;
-	background-color: $day-blue;
+
+	&-main {
+		background-color: $day-blue;
+
+		label {
+			color: $shiro;
+		}
+
+	}
 
 	.skin-executive & {
 		background-color: $mediterranean-sea;
@@ -27,7 +35,6 @@
 	label {
 		margin-bottom: 5px;
 		line-height: 105%;
-		color: $shiro;
 	}
 
 	input {
