@@ -45,6 +45,7 @@
 	}
 
 	.radio-group {
+		display: block;
 		margin-bottom: 0;
 	}
 
@@ -79,9 +80,6 @@
 	.js-show-field {
 		display: none;
 
-		&.js-field-open {
-			display: block;
-		}
 	}
 
 
@@ -110,46 +108,65 @@
 	.search-bar {
 
 		ul:first-of-type {
-			display: table;
-			width: 100%;
+			@include display-flex;
+			@include vendor-prefix('flex-flow', 'row wrap');
+  			@include align-items (flex-end);
 		}
 
 		.form-field-inline {
-			display: table-cell;
-			vertical-align: bottom;
+			@include flex (1);
 			padding-right: 10px;
 			margin-bottom: 0;
 
 			&:last-child {
 				padding-right: 0;
 			}
+
+			.col-child	& {
+				@include flex (1 100%);
+
+			}
 		}
 
 		.search-keyword-field {
-			width: 50%;
+			@include flex (4);
+			width: auto;
+
+			.col-child	& {
+				flex: 1 auto;
+			}
 		}
 
 		.search-country-field {
+			@include flex (3);
 			width: auto;
+
+			.col-child	& {
+				@include flex (1 auto);
+			}
+
 		}
 
 		.search-submit-field {
-			width: auto;
 			overflow: hidden;
+			width: auto;
 		}
 
 		.radio-group li {
 			padding: 0;
 		}
 
-		.js-show-field {
-			display: table-cell;
+		.btn-form-inline {
 
-			&.js-field-open {
-				display: table-cell;
+			.col-child & {
+				width: auto;
+				margin-top: 10px;
 			}
 		}
 
+		.js-show-field {
+			display: block;
+		}
 
 	}
 
