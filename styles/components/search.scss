@@ -107,7 +107,7 @@
 
 	.search-bar {
 
-		ul:first-of-type {
+		ul {
 			@include display-flex;
 			@include vendor-prefix('flex-flow', 'row wrap');
   			@include align-items (flex-end);
@@ -168,6 +168,10 @@
 			display: block;
 		}
 
+		.chosen-results {
+			display: block;
+		}
+
 	}
 
 }
@@ -198,6 +202,7 @@
 			margin-top: 2px;
 			padding: 10px;
 		}
+
 
 	}
 
