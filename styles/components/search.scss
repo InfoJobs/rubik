@@ -6,11 +6,11 @@
 \*------------------------------------*/
 
 .search-bar {
-	padding: 10px;
 	font-size: 14px;
 	vertical-align: middle;
 
 	&-main {
+		padding: 10px;
 		background-color: $day-blue;
 
 		label {
@@ -21,10 +21,6 @@
 
 	.skin-executive & {
 		background-color: $mediterranean-sea;
-	}
-
-	.inner & {
-		padding: 0;
 	}
 
 	.form-field-inline {
@@ -92,7 +88,11 @@
 @include mediaquery ($bp-tablet) {
 
 	.search-bar {
-		padding: 20px;
+
+		&-main {
+			padding: 20px;
+
+		}
 
 		.radio-group label {
 			margin-bottom: 5px;
@@ -200,7 +200,5 @@
 		}
 
 	}
-
-
 
 }

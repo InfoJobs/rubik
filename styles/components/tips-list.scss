@@ -16,18 +16,17 @@
 			border: none;
 		}
 
-		@include mediaquery (601px) {
+		@include mediaquery ($bp-tablet) {
 			display: table;
-			height: 110px;
 			margin-top: 0;
 		}
 
 		@at-root #{&}.main .cell-1 [class*=" iconfont-"]::after {
 
-			@include mediaquery (601px) {
+			@include mediaquery ($bp-tablet) {
 				position: absolute;
 				top: 0;
-				left: 18px;
+				left: 50%;
 				width: 30px;
 				height: 30px;
 				padding-top: 4px;
@@ -36,13 +35,9 @@
 				border: 2px solid #e2e5e6;
 				border-radius: 50%;
 				color: $shiro;
-				font-size: 18px;
 				background-color: $bamboo;
 			}
 
-			@include mediaquery ($bp-desktop) {
-				left: 42px;
-			}
 		}
 
 		@at-root #{&}.main .kind {
@@ -59,7 +54,7 @@
 			border-radius: 50%;
 			background: #00a550;
 
-			@include mediaquery (601px) {
+			@include mediaquery ($bp-tablet) {
 				display: none;
 				border: none;
 			}
@@ -73,9 +68,8 @@
 		vertical-align: middle;
 		background-color: $shiro;
 
-		@include mediaquery (601px) {
+		@include mediaquery ($bp-tablet) {
 			display: table-cell;
-			overflow: hidden;
 			vertical-align: middle;
 			padding: 20px;
 		}
@@ -84,25 +78,22 @@
 	.cell {
 
 		&-1 {
-			background: $darkest-shiro;
-			padding: 5px 10px;
 
-			@include mediaquery (601px) {
-				max-width: 60px;
-				width: 60px;
-				padding: 0 10px;
+			@include mediaquery ($bp-tablet) {
+				max-width: 90px;
+				width: 90px;
 			}
 
 			@include mediaquery ($bp-desktop) {
-				max-width: 100px;
-				width: 100px;
+				max-width: 180px;
+				width: 180px;
 			}
 		}
 
 		&-2 {
 			padding-bottom: 15px;
 
-			@include mediaquery (601px) {
+			@include mediaquery ($bp-tablet) {
 				text-align: left;
 				width: auto;
 				padding-top: 20px;
@@ -110,26 +101,10 @@
 
 			.text {
 
-				@include mediaquery (601px) {
-					max-height: 80px;
-					overflow: hidden;
+				@include mediaquery ($bp-tablet) {
 					padding-top: 0;
 				}
 
-				p {
-					display: none;
-
-					@include mediaquery (601px) {
-						display: block;
-					}
-				}
-			}
-		}
-
-		&-3 {
-
-			@include mediaquery (601px) {
-				text-align: right;
 			}
 		}
 
@@ -139,7 +114,8 @@
 				padding-top: 0;
 			}
 
-			@include mediaquery (601px) {
+			@include mediaquery ($bp-tablet) {
+				width: 100px;
 				margin: 0;
 				padding: 20px 0 20px 20px;
 
@@ -160,7 +136,7 @@
 				height: 80px;
 				border: 1px solid $darkest-shiro;
 
-				@include mediaquery (601px) {
+				@include mediaquery ($bp-tablet) {
 					width: 80px;
 				}
 
@@ -169,11 +145,14 @@
 
 	}
 
-	.cell-2 + .cell-3 {
-		padding-top: 0;
+	.cell-1 [class^="icon-"],
+	.cell-1 [class*=" icon-"] {
+		display: none;
 
-		@include mediaquery (601px) {
-			padding-top: 20px;
+		@include mediaquery ($bp-desktop) {
+			display: block;
+			margin: 0 auto;
+			margin-bottom: 5px;
 		}
 	}
 
@@ -182,7 +161,7 @@
 		display: none;
 		padding-left: 0; //needed to reset .iconfont-[size] padding-left heritance
 
-		@include mediaquery (601px) {
+		@include mediaquery ($bp-tablet) {
 			position: relative; //needed to position .iconfont-Flag applied by .main class
 			display: block;
 		}
@@ -195,7 +174,7 @@
 	.cell-1 [class^="iconfont-"]::before,
 	.cell-1 [class*=" iconfont-"]::before {
 
-		@include mediaquery (601px) {
+		@include mediaquery ($bp-tablet) {
 			display: block;
 			top: 0;
 			color: $soft-script;
@@ -214,27 +193,25 @@
 			margin-bottom: 0;
 		}
 
-		@include mediaquery (601px) {
-			display: table-cell;
-			vertical-align: middle;
-			font-size: $base-font-size;
-			line-height: $base-line-height;
+		@include mediaquery ($bp-tablet) {
+			font-size: $medium-font-size;
+			line-height: $medium-line-height;
 		}
 
 		@include mediaquery ($bp-desktop) {
-			font-size: $medium-font-size;
-			line-height: $medium-line-height;
+			font-size: $large-font-size;
+			line-height: $large-line-height;
 		}
 	}
 
 	.kind {
 		display: inline;
 		position: relative;
-		font-size: $xsmall-font-size;
-		line-height: $xsmall-line-height;
+		font-size: $small-font-size;
+		line-height: $small-line-height;
 		color: $soft-script;
 
-		@include mediaquery (601px) {
+		@include mediaquery ($bp-tablet) {
 			display: none;
 		}
 
@@ -246,9 +223,10 @@
 	.btn {
 		display: block;
 		width: 100%;
+		margin-top: 8px;
 
-		@include mediaquery (601px) {
-			display: inline;
+		@include mediaquery ($bp-tablet) {
+			display: inline-block;
 			width: auto;
 		}
 	}
@@ -257,5 +235,13 @@
 		display: block;
 		margin-top: 15px;
 		font-size: $small-font-size;
+
+			@include mediaquery ($bp-tablet) {
+				display: inline-block;
+				margin: 0 0 0 10px;
+
+
+			}
+
 	}
 }
