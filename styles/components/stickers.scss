@@ -15,6 +15,12 @@
     border-radius: 10px;
     line-height: 17px;
 
+    .nav-bar-notifications & {
+    	position: absolute;
+    	bottom: 12px;
+    	right: -4px;
+    }
+
     @media print {
     	padding: 0;
     }
