@@ -47,6 +47,24 @@ Styleguide 1.5
   @include transition;
 }
 
+.btn-annex {
+    margin-right: 15px;
+
+    & + .link {
+      white-space: nowrap;
+    }
+
+  & + .field-annex { //needed for a check/radiobutton/link structure close to the btn
+
+    display: inline-block;
+      margin-top: 10px;
+
+    input[type="checkbox"] + label {
+      width: auto;
+    }
+  }
+}
+
 button.btn {
   height: 30px;
 }
