@@ -257,21 +257,22 @@ Styleguide 2.4.3
 //------> Mover clases a _noiuslider.scss (range, ...)
 
 .range-group { //aplicar nombre concreto para sliders
-	height: 35px;
+	display: -webkit-box;      /* iOS 6-, Safari 3.1-6 */
+    display: -ms-flexbox;      /* IE 10 */
+    display: -webkit-flex;     /* Chrome */
+    display: flex;             /* Opera 12.1, Firefox 20+ */
+    -webkit-flex-flow: column wrap;
+            flex-flow: column wrap;
+    flex-flow: row wrap-reverse;
+    height: 35px;
+    justify-content: space-between;
 }
 
 .range {
 	display: inline-block;
-    width: 9%;
     margin-top: 5px;
     font-size: 14px;
     color: $soft-script;
-}
-
-.range:last-child {
-    position: absolute;
-    right: 0;
-    width: auto;
 }
 
 .range span {
