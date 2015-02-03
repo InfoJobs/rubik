@@ -127,7 +127,6 @@ Forms structure
 
 ```
 .form--field-block 	- Fields disposition: block
-.field-annex
 ```
 
 Markup:
@@ -447,14 +446,6 @@ Styleguide 1.4.4
 	}
 }
 
-.field-annex {
-	display: inline-block;
-	padding: 0 10px;
-
-	input[type="checkbox"] + label {
-	 	width: auto;
-	 }
-}
 
 /*
 Fieldset title

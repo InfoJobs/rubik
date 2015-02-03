@@ -89,6 +89,21 @@ li.icon-location {
 	background-position: center 0;
 }
 
+.icon-size-50 {
+	width: 50px;
+	height: 50px;
+	background-size: 100% auto;
+
+}
+.icon-candidaturas {
+		background: url("#{$path-backgrounds}/icon-candidaturas.png") no-repeat 0 0;
+}
+.icon-CV {
+		background: url("#{$path-backgrounds}/icon-CV.png") no-repeat 0 0;
+}
+.icon-contactos {
+		background: url("#{$path-backgrounds}/icon-contacts.png") no-repeat 0 0;
+}
 
 /*------------------------------------*\
 	$ICONSFONTS
