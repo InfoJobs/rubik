@@ -49,15 +49,19 @@
 
 }
 
-.pull-left--desktop,
-.pull-right--desktop {
-	float: none;
+.pull-left--desktop {
+
+	@include mediaquery ($bp-desktop) {
+		float: left;
+	}
+
 }
 
-.pull-bottom-right { //only used in ver_oferta.html. this name can be confused (as a generic)
-	position: absolute;
-	bottom: 50px;
-	right: 20px;
+.pull-right--desktop {
+
+	@include mediaquery ($bp-desktop) {
+		float: right;
+	}
 }
 
 .text-center {
@@ -169,13 +173,6 @@
 		}
 	}
 
-	.pull-left--desktop {
-		float: left;
-	}
-
-	.pull-right--desktop {
-		float: right;
-	}
 }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) { //TODO: convert to a mixin

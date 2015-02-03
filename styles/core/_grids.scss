@@ -103,7 +103,7 @@ $gridColumns: 12;
 			}
 		}
 
-		.row-bleed &:last-child .col-child {
+		.row-bleed &:last-of-type .col-child {
 			@include mediaquery ($bp-desktop) {
 				margin-right: 10px;
 			}
