@@ -18,53 +18,59 @@
 		<div class="container-expanded">
 			<!-- Component -->
 			<ul class="tips-list">
-				<li class="main">
-					<div class="cell-1">
-						<span class="icon-size-50 icon-candidaturas iconfont-30px"></span>
-						<p class="kind hide-medium-device">Candidaturas</p>
-					</div>
-					<div class="cell-2">
-						<div class="text">
-							<h2 class="title">¡Hay novedades en tus candidaturas!</h2>
-							<a class="btn btn-primary btn-small" href="#">Ver candidaturas</a>
+				<li class="main" style="overflow: hidden;">
+					<div class="animation">
+						<div class="cell-1">
+							<span class="icon-size-50 icon-candidaturas iconfont-30px"></span>
+							<p class="kind hide-medium-device">Candidaturas</p>
+						</div>
+						<div class="cell-2">
+							<div class="text">
+								<h2 class="title">¡Hay novedades en tus candidaturas!</h2>
+								<a class="btn btn-primary btn-small js-action" href="#">Ver candidaturas</a>
+							</div>
 						</div>
 					</div>
 				</li>
-				<li>
-					<div class="cell-1">
-						<span class="icon-size-50 icon-CV iconfont-30px"></span>
-						<p class="kind hide-medium-device">Mis Cvs</p>
-					</div>
-					<!--
-					<div class="cell-image">
-						<div class="crop-image" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-header-grid-01.jpg')"></div>
-					</div>
-				-->
-					<div class="cell-2">
-						<div class="text">
-							<h2 class="title">¡Hay novedades en tus candidaturas!</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis congue mi, a tempor ipsum luctus non. Integer molestie diam sed lorem molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis congue mi, a tempor ipsum l</p>
-							<a class="btn btn-primary btn-small iconfont-Reload rotate" href="#">Actualizar fecha CV</a>
-							<a class="link" href="#">Editar CV</a>
+				<li style="overflow: hidden;">
+					<div class="animation">
+						<div class="cell-1">
+							<span class="icon-size-50 icon-CV iconfont-30px"></span>
+							<p class="kind hide-medium-device">Mis Cvs</p>
+						</div>
+						<!--
+						<div class="cell-image">
+							<div class="crop-image" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-header-grid-01.jpg')"></div>
+						</div>
+					-->
+						<div class="cell-2">
+							<div class="text">
+								<h2 class="title">¡Hay novedades en tus candidaturas!</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis congue mi, a tempor ipsum luctus non. Integer molestie diam sed lorem molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis congue mi, a tempor ipsum l</p>
+								<a class="btn btn-primary btn-small iconfont-Reload rotate js-action" href="#">Actualizar fecha CV</a>
+								<a class="link" href="#">Editar CV</a>
 
+							</div>
 						</div>
 					</div>
 				</li>
-				<li>
-					<div class="cell-1">
-						<span class="icon-size-50 icon-contactos iconfont-30px"></span>
-						<p class="kind hide-medium-device">Contactos</p>
-					</div>
-					<!--
-					<div class="cell-image">
-						<div class="crop-circle" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-header-grid-01.jpg')"></div>
-					</div>
-				-->
-					<div class="cell-2">
-						<div class="text">
-							<h2 class="title">¡Hay novedades en tus candidaturas!</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis congue mi, a tempor ipsum luctus non. Integer molestie diam sed lorem molestie.</p>
-							<a class="btn btn-primary btn-small" href="#">Añadir contactos</a>
+				<li style="overflow: hidden;">
+					<div class="animation">
+						<div class="cell-1">
+							<span class="icon-size-50 icon-contactos iconfont-30px"></span>
+							<p class="kind hide-medium-device">Contactos</p>
+						</div>
+						<!--
+						<div class="cell-image">
+							<div class="crop-circle" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-header-grid-01.jpg')"></div>
+						</div>
+					-->
+						<div class="cell-2">
+							<div class="text">
+								<h2 class="title">¡Hay novedades en tus candidaturas!</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis congue mi, a tempor ipsum luctus non. Integer molestie diam sed lorem molestie.</p>
+								<a class="btn btn-primary btn-small js-action" href="#">Añadir contactos</a>
+							</div>
 						</div>
 					</div>
 				</li>
@@ -73,6 +79,33 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	//console.log(document.querySelectorAll('.js-action'));
+	var elActionTip = document.querySelectorAll('.js-action');
+	//console.log(elActionTip);
+
+	for (var i = 0; i < elActionTip.length; i++) {
+		//console.log(elActionTip[i]);
+
+		elActionTip[i].addEventListener('click',function(e){
+			//console.log(e.target.text);
+			classList.add("fade-out");
+		});
+
+	}
+
+	function fadeOut() {
+		document.querySelectorAll(".animation").classList.add("fade-out");
+		window.setTimeout(showTip, 2000);
+	}
+
+	function showTip() {
+		document.getElementById(".animation").classList.add("fade-in-up");
+	}
+
+</script>
+
 </body>
 
 </html>
