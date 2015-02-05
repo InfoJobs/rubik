@@ -1,17 +1,17 @@
-var $tipList = $('.tips-list > li');
-
-for (var i = 0; i < $tipList.length; i++ ) {
-
-	// with js native
-	$tipList[i].style.height = $tipList[i].clientHeight + 'px';
-	// with jquery
-	// $($list[i]).css({'height':$list[i].clientHeight + 'px'});
-
-}
-
 $('.js-action').click(function(event) {
    event.preventDefault();
 	var that = event.target;
+
+	var $tipList = $('.tips-list > li');
+
+	for (var i = 0; i < $tipList.length; i++ ) {
+
+		// with js native
+		$tipList[i].style.height = $tipList[i].clientHeight + 'px';
+		// with jquery
+		// $($list[i]).css({'height':$list[i].clientHeight + 'px'});
+
+	}
 
    $.ajax(this.href, {
       success: function(data) {
