@@ -299,3 +299,14 @@
 				animation-duration: #{$i}s;
 	}
 }
+
+//close-animate, need the height in px at element that will have the transition
+.close-animate {
+		height: 0;
+		overflow: hidden;
+
+	  -webkit-transition: all .6s ease-in-out;
+	       -o-transition: all .6s ease-in-out;
+	          transition: all .6s ease-in-out;
+
+}
