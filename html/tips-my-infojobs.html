@@ -84,31 +84,8 @@
 	</div>
 </div>
 
-<script>
-	//console.log(document.querySelectorAll('.js-action'));
-	var elActionTip = document.querySelectorAll('.js-action');
-	//console.log(elActionTip);
-
-	for (var i = 0; i < elActionTip.length; i++) {
-		//console.log(elActionTip[i]);
-
-		elActionTip[i].addEventListener('click',function(e){
-			//console.log(e.target.text);
-			classList.add("fade-out");
-		});
-
-	}
-
-	function fadeOut() {
-		document.querySelectorAll(".animation").classList.add("fade-out");
-		window.setTimeout(showTip, 2000);
-	}
-
-	function showTip() {
-		document.getElementById(".animation").classList.add("fade-in-up");
-	}
-
-</script>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="../js/tips-list.js"></script>
 
 </body>
 
