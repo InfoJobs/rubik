@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-15">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spinner</title>
+<title>Filters</title>
+
+<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/style.css" />
+
 <link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+
+<link rel="stylesheet" type="text/css" href="../styles/components/filters.css" />
+
+<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css" />
+
+
 <script type="text/javascript" src="//es-static0.infojobs.com/jquery-1.7.1.min.js?v=367620405" ></script>
 <script src="js/slider/nouislider.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui/jquery-ui-1.8.4.custom.min.js"></script>
@@ -11,10 +20,13 @@
 </head>
 <body>
 <div class="aside">
+<!-- La maqueta del spinner esta ahora en: g-spinner.html
 
 	<div class="loading-layer">
 		<div class="loading"></div>
 	</div>
+
+	-->
 
 	<div class=" hide-large-device filters-show">
 		<a class="btn btn-primary" href="#" id="open-layer">Ver filtros</a>
@@ -28,7 +40,7 @@
 		<form method="post" class="form filters" action="#">
 			<fieldset>
 				<legend class="fieldset-title">Filtrar por palabra clave</legend>
-		    	<ul class="clearfix">
+		    	<ul class="filter-keyword">
 		        	<li class="form-field-inline keyword">
 		            	<label class="hide-small-device hide-medium-device hide-large-device" for="keyword">Filtrar por palabra clave</label>
 		                <input class="input-little" type="text" maxlength="200" id="keyword" placeholder="Jardinero en lorem ipsum whatever">
@@ -50,13 +62,13 @@
 			<fieldset>
 				<legend class="fieldset-title">Filtrar por fecha</legend>
 				<ul>
-					<li>
+					<li class="disabled">
 	                   	<input type="radio" id="fecha_a" name="filtro_fecha">
 	                   	<label class="label-checkbox" for="fecha_a">Cualquier fecha</label>
 	                 </li>
 					<li>
 	                   	<input type="radio" id="fecha_b" name="filtro_fecha">
-	                   	<label class="label-checkbox" for="fecha_b">�ltimas <span class="tag-primary">24 horas</span></label>
+	                   	<label class="label-checkbox" for="fecha_b">�ltimas <span class="marked">24 horas</span></label>
 	                 </li>
 					<li>
 	                   	<input type="radio" id="fecha_c" name="filtro_fecha">
@@ -226,167 +238,12 @@
 				<legend class="fieldset-title">Por experiencia m�nima</legend>
 				<div id="experience-disabled" class="js-ui-slider-pips" disabled="disabled"></div>
 			</fieldset>
-			<a data-closed-list="Ver m�s filtros" data-opened-list="Ver menos filtros" class="closed-list end-list" href="#"></a>
+			<div class="end-list">
+				<a data-closed-list="Ver m�s filtros" data-opened-list="Ver menos filtros" class="closed-list" href="#"></a>
+			</div>
 		</form>
     </aside>
     <!--  /filters -->
-    	 <ul class="result-list">
-    	 <!-- <ul class="result-list loading-layer"> a�adir la class loading-layer cuando aparezca el loading para dar opacidad al listado -->
-	      	<!-- logo -->
-	      	<li class="result-list-logo">
-	      		<a href="http://racc.trabajo.infojobs.net" class="result-list-pic-logo">
-	      			<span class="logo-frame"><img src="http://www.infojobs.net/employer/profile/profile-edit/do-get-image?id=20097943738&typeImage=3" alt="Vodafone" /></span>
-	      		</a>
-	      		<ul class="tag-group tag-group-top clearfix">
-	      			<li class="tag icon-executive">Executive</li>
-	      			<li class="tag icon-location tag-ellipsis-cols2"><span class="ellipsis">Acepta candidatos de tu provincia</span></li>
-	      			<li class="tag icon-fire">Urgente</li>
-	      		</ul>
-	      		<span class="marked-contrast">Destacada</span>
-      			<h2 class="result-list-title"><a href="#ingeniero1">Ingeniero T�cnico: Redes, seguridad y sistemas lorem ipsum dolor amet</a></h2>
-      			<h3 class="result-list-subtitle"><a href="#centel1">Centel telecomunicaciones, S.A.</a></h3>
-
-	      		<ul class="tag-group">
-	      			<li class="tag-divider">Barcelona</li>
-	      			<li class="marked">hace 2h</li>
-	      		</ul>
-	      		<p class="result-list-description hide-small-device">Encetem proc�s de selecci� per a joves amb o sense experi�ncia, amb inter�s per a iniciar i/o desenvolupar carrera comer</p>
-	      		<ul class="tag-group hide-small-device">
-	      			<li class="tag-divider">Contrato permanente</li>
-	      			<li class="tag-divider">Jornada completa</li>
-	      			<li>20.000 - 30.000 &euro;</li>
-	      		</ul>
-	      	</li>
-
-	      	<!-- renovada -->
-	      	<li class="result-list-logo">
-	      		<a href="http://racc.trabajo.infojobs.net" class="result-list-pic-logo">
-	      			<span class="logo-frame"><img src="http://www.infojobs.net/employer/profile/profile-edit/do-get-image?id=20097943738&typeImage=3" alt="Vodafone" /></span>
-	      		</a>
-      			<h2 class="result-list-title"><a href="#ingeniero2">Ingeniero T�cnico: Redes, seguridad y sistemas lorem ipsum dolor amet</a></h2>
-      			<h3 class="result-list-subtitle"><a href="#centel2">Centel telecomunicaciones, S.A.</a></h3>
-
-	      		<ul class="tag-group">
-	      			<li class="tag-divider">Barcelona</li>
-	      			<li><span class="marked">hace 2h</span> (Renovada)</li>
-	      		</ul>
-	      	</li>
-
-	      	<!-- urgente -->
-	      	<li>
-	      		<ul class="tag-group tag-group-top clearfix">
-	      			<li class="tag icon-fire">Urgente</li>
-	      		</ul>
-      			<h2 class="result-list-title"><a href="#ingeniero3">Ingeniero T�cnico: Redes, seguridad y sistemas lorem ipsum</a></h2>
-      			<h3 class="result-list-subtitle"><a href="#centel3">Centel telecomunicaciones, S.A.</a></h3>
-
-	      		<ul class="tag-group">
-	      			<li class="tag-divider">Barcelona</li>
-	      			<li><span class="marked">hace 2h</span> (Renovada)</li>
-	      		</ul>
-	      	</li>
-
-	      	<!-- +24h -->
-	      	<li class="result-list-logo">
-	      		<a href="http://racc.trabajo.infojobs.net" class="result-list-pic-logo">
-	      			<span class="logo-frame"><img src="http://www.infojobs.net/employer/profile/profile-edit/do-get-image?id=20097943738&typeImage=3" alt="Vodafone" /></span>
-	      		</a>
-      			<h2 class="result-list-title"><a href="#camarero1">Camarero</a></h2>
-      			<h3 class="result-list-subtitle"><a href="#centel4">Centel telecomunicaciones, S.A.</a></h3>
-
-	      		<ul class="tag-group">
-	      			<li class="tag-divider">San Sebasti�n</li>
-	      			<li>hace 1d</li>
-	      		</ul>
-	      	</li>
-
-	      	<!-- ya inscrito + urgente -->
-	      	<li class="disabled">
-	      		<ul class="tag-group tag-group-top clearfix">
-	      			<li class="tag marked icon-applied">Ya inscrito</li>
-	      			<li class="tag icon-fire">Urgente</li>
-	      		</ul>
-      			<h2 class="result-list-title"><a href="#ingeniero4">Ingeniero T�cnico: Redes, seguridad y sistemas lorem ipsum</a></h2>
-      			<h3 class="result-list-subtitle"><a href="#centel5">Centel telecomunicaciones, S.A.</a></h3>
-
-	      		<ul class="tag-group">
-	      			<li class="tag-divider">Barcelona</li>
-	      			<li><span class="tag-disabled">hace 2h</span> (Renovada)</li>
-	      		</ul>
-	      	</li>
-
-	      	<!--urgente -->
-	      	<li>
-	      		<ul class="tag-group tag-group-top clearfix">
-	      			<li class="tag icon-fire">Urgente</li>
-	      		</ul>
-      			<h2 class="result-list-title"><a href="#ingeniero5">Ingeniero T�cnico: Redes, seguridad y sistemas lorem ipsum</a></h2>
-      			<h3 class="result-list-subtitle"><a href="#centel6">Centel telecomunicaciones, S.A.</a></h3>
-
-	      		<ul class="tag-group">
-	      			<li class="tag-divider">Barcelona</li>
-	      			<li><span class="marked">hace 2h</span> (Renovada)</li>
-	      		</ul>
-	      	</li>
-
-	      	<!-- executive -->
-	      	<li>
-	      		<a href="http://racc.trabajo.infojobs.net" class="result-list-pic-logo">
-	      			<span class="logo-frame"><img src="http://www.infojobs.net/employer/profile/profile-edit/do-get-image?id=20097943738&typeImage=3" alt="Vodafone" /></span>
-	      		</a>
-	      		<ul class="tag-group tag-group-top clearfix">
-	      			<li class="tag icon-executive">Executive</li>
-	      		</ul>
-
-      			<h2 class="result-list-title"><a href="#ingeniero6">Ingeniero T�cnico: Redes, seguridad y sistemas lorem ipsum</a></h2>
-      			<h3 class="result-list-subtitle"><a href="#centel7">Centel telecomunicaciones, S.A.</a></h3>
-
-	      		<ul class="tag-group">
-	      			<li class="tag-divider">Barcelona</li>
-	      			<li><span class="marked">hace 2h</span> (Renovada)</li>
-	      		</ul>
-	      	</li>
-
-	      	<!-- Executive + Multiprovincia -->
-	      	<li>
-	      		<ul class="tag-group tag-group-top clearfix">
-	      			<li class="tag icon-executive">Executive</li>
-	      			<li class="tag icon-location tag-ellipsis-cols2"><span class="ellipsis">Acepta candidatos de tu provincia</span></li>
-	      		</ul>
-      			<h2 class="result-list-title"><a href="#ingeniero7">Ingeniero T�cnico: Redes, seguridad y sistemas lorem ipsum</a></h2>
-      			<h3 class="result-list-subtitle"><a href="#centel8">Centel telecomunicaciones, S.A.</a></h3>
-
-	      		<ul class="tag-group">
-	      			<li class="tag-divider tag-ellipsis-cols3"><span class="ellipsis">Hospitalet de Llobregat</span></li>
-	      			<li><span class="marked">hace 2h</span> (Renovada)</li>
-	      		</ul>
-	      	</li>
-
-	      	<!-- Multiprovincia -->
-	      	<li>
-	      		<ul class="tag-group tag-group-top clearfix">
-	      			<li class="tag icon-location tag-ellipsis-cols2"><span class="ellipsis">Acepta candidatos de tu provincia</span></li>
-	      		</ul>
-      			<h2 class="result-list-title"><a href="#ingeniero8">Ingeniero T�cnico: Redes, seguridad y sistemas lorem ipsum</a></h2>
-      			<h3 class="result-list-subtitle"><a href="#centel9">Centel telecomunicaciones, S.A.</a></h3>
-
-	      		<ul class="tag-group">
-	      			<li class="tag-divider">Barcelona</li>
-	      			<li><span class="marked">hace 2h</span> (Renovada)</li>
-	      		</ul>
-	      	</li>
-
-	      	<!-- sin logo -->
-	      	<li>
-      			<h2 class="result-list-title"><a href="#ingeniero9">Ingeniero T�cnico: Redes, seguridad y sistemas lorem ipsum</a></h2>
-      			<h3 class="result-list-subtitle"><a href="#centel10">Centel telecomunicaciones, S.A.</a></h3>
-
-	      		<ul class="tag-group">
-	      			<li class="tag-divider">Barcelona</li>
-	      			<li><span class="marked">hace 2h</span> (Renovada)</li>
-	      		</ul>
-	      	</li>
-	      </ul>
     </div>
 
     <!--
@@ -488,7 +345,7 @@
 	<script>
 
 			$('#open-layer').click(function(){
-			    $('.layer-hidden').addClass('move-up-layer').removeClass('layer-hidden');
+			    $('.layer-hidden').addClass('move-up-layer').removeClass('layer-sm-hidden');
 			    $('.move-down-layer').addClass('move-up-layer').removeClass('move-down-layer');
 			});
 
