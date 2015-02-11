@@ -5,23 +5,6 @@
 	$ICONS
 \*------------------------------------*/
 
-%icon-sprite16x16::before {
-	content: "";
-	position: absolute;
-	bottom: 2px;
-	left: 0;
-	width: 16px;
-	height: 16px;
-	margin-right: 5px;
-	background-image: url("#{$path-sprites}/sprite-icons-16x16.png");
-	background-repeat: no-repeat;
-
-	@media print {
-		background: none;
-	}
-}
-
-
 //Applies to elements containing a class that begin with icon-
 
 [class^="icon-"],
@@ -33,62 +16,6 @@
 		padding: 0;
 	}
 }
-
-li.icon-fire {
-	padding-left: 7px;
-
-	@media print {
-		padding: 0;
-	}
-}
-
-.icon-fire::before {
-	@extend %icon-sprite16x16;
-	width: 2px;
-	background-position: center -90px;
-}
-
-li.icon-location {
-	padding-left: 13px;
-
-	@media print {
-		padding: 0;
-	}
-}
-
-.icon-location::before {
-	@extend %icon-sprite16x16;
-	width: 8px;
-	background-position: center -60px;
-}
-
-.icon-executive::before {
-	@extend %icon-sprite16x16;
-	background-position: center -30px;
-
-	.panel-executive &  {
-		background-position: center -110px;
-	}
-}
-
-.sticker.icon-executive::before {
-	margin-left: 4px;
-	background-position: center -109px;
-}
-
-.sticker.icon-executive {
-	padding-left: 23px;
-
-	@media print {
-		padding: 0;
-	}
-}
-
-.icon-applied::before {
-	@extend %icon-sprite16x16;
-	background-position: center 0;
-}
-
 
 /*------------------------------------*\
 	$ICONSIMAGE
@@ -128,6 +55,7 @@ Markup:
 <li class="{$modifiers}">Urgente</li>
 </ul>
 
+.iconfont-16px
 .iconfont-18px
 .iconfont-22px
 .iconfont-30px
@@ -145,7 +73,7 @@ Styleguide 1.6
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
-	line-height: 1;
+	line-height: 0;
 	left: 0;
 
 
@@ -174,7 +102,7 @@ Styleguide 1.6
 	}
 }
 
-$iconfont-size: (18, 22, 30, 100); //TODO: resolve problem when it s moved to _vars
+$iconfont-size: (16, 18, 22, 30, 100); //TODO: resolve problem when it s moved to _vars
 
 @each $value in $iconfont-size {
 
@@ -185,23 +113,6 @@ $iconfont-size: (18, 22, 30, 100); //TODO: resolve problem when it s moved to _v
 		}
 	}
 }
-
-.iconfont-18px { //TODO: calculate automatically text's font-size and increment it 2px
-	padding-left: 20px;
-
-	.tooltip-wrapper & {
-		padding-left: 0;
-	}
-}
-
-.iconfont-22px { //used in mobile's header
-	padding-left: 30px;
-}
-
-.iconfont-30px {
-	padding-left: 40px;
-}
-
 
 /*
 Icon color
@@ -389,4 +300,43 @@ Styleguide 1.6.3
 }
 .iconfont-Offers::before {
 	content: "\e62b";
+}
+.iconfont-Big-check::before {
+	content: "\e62c";
+}
+.iconfont-BigArrowDown::before {
+	content: "\e62d";
+}
+.iconfont-BigArrowLeft::before {
+	content: "\e62e";
+}
+.iconfont-BigArrowUp::before {
+	content: "\e62f";
+}
+.iconfont-BigArrowRight::before {
+	content: "\e630";
+}
+.iconfont-BigArrowObliqueLeftDown::before {
+	content: "\e631";
+}
+.iconfont-BigArrowObliqueRightDown::before {
+	content: "\e632";
+}
+.iconfont-BigArrowObliqueLeftUp::before {
+	content: "\e633";
+}
+.iconfont-BigArrowObliqueRightUp::before {
+	content: "\e634";
+}
+.iconfont-Star::before {
+	content: "\e635";
+}
+.iconfont-Lock::before {
+	content: "\e636";
+}
+.iconfont-Menumore::before {
+	content: "\e637";
+}
+.iconfont-Alert-circle::before {
+	content: "\e638";
 }
