@@ -89,12 +89,21 @@ li.icon-location {
 	background-position: center 0;
 }
 
-.icon-size-50 {
-	width: 50px;
-	height: 50px;
-	background-size: 100% auto;
 
+/*------------------------------------*\
+	$ICONSIMAGE
+\*------------------------------------*/
+$icon-size: (50); //TODO: resolve problem when it s moved to _vars
+
+@each $value in $icon-size {
+
+	.icon-#{$value}px {
+		width: #{$value}px;
+		height: #{$value}px;
+		background-size: 100% auto;
+	}
 }
+
 .icon-candidaturas {
 		background: url("#{$path-backgrounds}/icon-candidaturas.png") no-repeat 0 0;
 }
@@ -165,9 +174,9 @@ Styleguide 1.6
 	}
 }
 
-$icon-size: (18, 22, 30, 100); //TODO: resolve problem when it s moved to _vars
+$iconfont-size: (18, 22, 30, 100); //TODO: resolve problem when it s moved to _vars
 
-@each $value in $icon-size {
+@each $value in $iconfont-size {
 
 	.iconfont-#{$value}px {
 

@@ -8,22 +8,39 @@
 .tips-list {
 
 	li {
+
 		width: 100%;
+		overflow: hidden;
 		margin-top: 10px;
 		border-bottom: 1px solid $katana-slash; //TODO: idem .list-divider except paddings and margins
+		background-color: $shiro;
 
 		&:last-child {
 			border: none;
 		}
 
+		& > div {
+			// First create a flex layout context
+			display: flex;
+
+			///* Define the flow direction and if it's allowed the items to wrap. Default values are:
+			//* flex-direction: row;
+			//* flex-wrap: nowrap;
+			//*
+			//* This is the same as:
+			//* flex-flow: row nowrap;
+			//*/
+
+			@include mediaquery ($bp-tablet) {
+				align-items: center;
+			}
+		}
+
 		@include mediaquery ($bp-tablet) {
-			display: table;
 			margin-top: 0;
 		}
 
 		@at-root #{&}.main .cell-1 [class*=" iconfont-"]::after {
-
-			@include mediaquery ($bp-tablet) {
 				position: absolute;
 				top: 0;
 				left: 50%;
@@ -36,40 +53,21 @@
 				border-radius: 50%;
 				color: $shiro;
 				background-color: $bamboo;
-			}
-
 		}
 
 		@at-root #{&}.main .kind {
-			color: $bamboo;
+				color: $bamboo;
 		}
 
-		@at-root #{&}.main .kind::before {
-			content: "";
-			position: absolute;
-			top: 2px;
-			left: -15px;
-			width: 10px;
-			height: 10px;
-			border-radius: 50%;
-			background: #00a550;
-
-			@include mediaquery ($bp-tablet) {
-				display: none;
-				border: none;
-			}
-		}
 	}
 
 	[class^="cell-"],
 	[class*=" cell-"] {
-		text-align: center;
 		padding: 20px 10px; //TODO: placeholder .inner??
-		vertical-align: middle;
+		vertical-align: top;
 		background-color: $shiro;
 
 		@include mediaquery ($bp-tablet) {
-			display: table-cell;
 			vertical-align: middle;
 			padding: 20px;
 		}
@@ -78,93 +76,56 @@
 	.cell {
 
 		&-1 {
+			//Define a flex grow
+			flex: 1;
+			text-align: center;
+			max-width: 70px;
+			width: 70px;
 
 			@include mediaquery ($bp-tablet) {
-				max-width: 90px;
-				width: 90px;
+				max-width: 140px;
+				width: 140px;
 			}
 
 			@include mediaquery ($bp-desktop) {
 				max-width: 180px;
 				width: 180px;
 			}
+
+			.crop-circle {
+				width: 50px;
+				height: 50px;
+
+				@include mediaquery ($bp-tablet) {
+					width: 60px;
+					height: 60px;
+				}
+			}
 		}
 
 		&-2 {
-			padding-bottom: 15px;
+			//Define a flex grow
+			flex: 2;
 
 			@include mediaquery ($bp-tablet) {
-				text-align: left;
 				width: auto;
 				padding-top: 20px;
 			}
 
-			.text {
-
-				@include mediaquery ($bp-tablet) {
-					padding-top: 0;
-				}
-
-			}
-		}
-
-		&-image {
-
-			+ .cell-2  {
-				padding-top: 0;
-			}
-
-			@include mediaquery ($bp-tablet) {
-				width: 100px;
-				margin: 0;
-				padding: 20px 0 20px 20px;
-
-				+ .cell-2  {
-					padding-top: 20px;
-				}
-
-			}
-
-			.crop-circle {
-				width: 80px;
-				height: 80px;
-				border: 1px solid $darkest-shiro;
-			}
-
-			.crop-image {
-				width: 100%;
-				height: 80px;
-				border: 1px solid $darkest-shiro;
-
-				@include mediaquery ($bp-tablet) {
-					width: 80px;
-				}
-
-			}
 		}
 
 	}
 
 	.cell-1 [class^="icon-"],
 	.cell-1 [class*=" icon-"] {
-		display: none;
-
-		@include mediaquery ($bp-desktop) {
 			display: block;
 			margin: 0 auto;
 			margin-bottom: 5px;
-		}
 	}
 
 	.cell-1 [class^="iconfont-"],
 	.cell-1 [class*=" iconfont-"] {
-		display: none;
-		padding-left: 0; //needed to reset .iconfont-[size] padding-left heritance
-
-		@include mediaquery ($bp-tablet) {
-			position: relative; //needed to position .iconfont-Flag applied by .main class
-			display: block;
-		}
+		position: relative; //needed to position .iconfont-Flag applied by .main class
 
 		@include mediaquery ($bp-desktop) {
 			padding-bottom: 10px;
@@ -173,8 +134,6 @@
 
 	.cell-1 [class^="iconfont-"]::before,
 	.cell-1 [class*=" iconfont-"]::before {
-
-		@include mediaquery ($bp-tablet) {
 			display: block;
 			top: 0;
 			color: $soft-script;
@@ -182,8 +141,6 @@
 			.main & {
 				display: inline-block;
 			}
-		}
-
 	}
 
 	.title {
@@ -205,43 +162,19 @@
 	}
 
 	.kind {
-		display: inline;
-		position: relative;
-		font-size: $small-font-size;
-		line-height: $small-line-height;
-		color: $soft-script;
-
-		@include mediaquery ($bp-tablet) {
-			display: none;
-		}
+		display: none;
 
 		@include mediaquery ($bp-desktop) {
 			display: block;
+			position: relative;
+			font-size: $small-font-size;
+			line-height: $small-line-height;
+			color: $soft-script;
 		}
 	}
 
 	.btn {
-		display: block;
-		width: 100%;
-		margin-top: 8px;
-
-		@include mediaquery ($bp-tablet) {
-			display: inline-block;
-			width: auto;
-		}
+	  	margin-top: 8px;
 	}
 
-	.link {
-		display: block;
-		margin-top: 15px;
-		font-size: $small-font-size;
-
-			@include mediaquery ($bp-tablet) {
-				display: inline-block;
-				margin: 0 0 0 10px;
-
-
-			}
-
-	}
 }

@@ -51,18 +51,28 @@ Styleguide 1.5
     margin-right: 15px;
 
     & + .link {
-      white-space: nowrap;
+      white-space: nowrap;  //TODO: solve margin-top when .link fall down below .btn
+      font-size: $small-font-size;
     }
 
-  & + .field-annex { //needed for a check/radiobutton/link structure close to the btn
-
-    display: inline-block;
-      margin-top: 10px;
-
-    input[type="checkbox"] + label {
-      width: auto;
+    @at-root #{&}.btn-medium + .link {
+        font-size: $medium-font-size;
     }
-  }
+
+    @at-root #{&}.btn-large + .link {
+        font-size: $large-font-size;
+    }
+
+    & + .field-annex { //needed for a check/radiobutton/link structure close to the btn
+
+      display: inline-block;
+        margin-top: 10px;
+
+      input[type="checkbox"] + label {
+        width: auto;
+      }
+    }
+
 }
 
 button.btn {
@@ -252,12 +262,12 @@ Styleguide 1.5.5
 
 .btn-medium {
     padding: 0 10px;
-    font-size: $medium-btn;
+    font-size: $medium-font-size;
     line-height: 38px;
 }
 .btn-large {
-	padding: 0 20px;
-	font-size: $large-font-size;
+	  padding: 0 20px;
+	  font-size: $large-font-size;
     line-height: 40px;
 }
 
