@@ -104,8 +104,16 @@ a.alternative-action:hover {
 }
 
 .highlight {
-	padding: 3px;
+	padding: 2px 5px;
 	background-color: #ffff66; //TODO: define var
+
+	h1 & {
+		padding: 10px 5px 0 5px;
+	}
+
+	.sticker-skill & {
+		padding: 0 3px;
+	}
 }
 
 //force color used for texts. Not use this when it is a component
