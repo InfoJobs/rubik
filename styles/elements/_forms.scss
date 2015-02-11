@@ -40,7 +40,6 @@ label {
 select {
 	padding: 13px 10px;
 	border: 0;
-	border-radius: 0;
 	background: transparent;
 	font-size: 16px;
 	color: $dark-silk;
@@ -60,12 +59,7 @@ textarea {
 	margin: 0;
 	padding: 5px 10px;
 	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
-	border-radius: 5px;
 	font-size: 16px;
-
-	.modal-content & {
-		width: 100%;
-	}
 
 	.error & {
 		border-color: $trueblood;
@@ -79,6 +73,7 @@ input {
 textarea {
 	min-height: 150px;
 	resize: vertical;
+	width: 100%;
 }
 
 input::-webkit-input-placeholder,
@@ -100,7 +95,7 @@ input[type="checkbox"]{
 	display: inline-block;
 	cursor: pointer;
   	padding: 0;
-  	margin: 2px 0 0 0;
+  	margin: 3px 0 0 0;
 	width: auto;
   	border: 0 none;
   	vertical-align: top;
@@ -324,7 +319,6 @@ Styleguide 1.4.3
 	position: relative;
 	height: 30px;
 	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
-	border-radius: 5px;
 	line-height: 14px;
 	-webkit-appearance: none;
 	background: url(#{$path-backgrounds}/bg-select-arrow.png) right 50% no-repeat $shiro;
@@ -405,20 +399,6 @@ Styleguide 1.4.4
 
 	input { /* fix iOS buttons separation */
 		margin: 0;
-	}
-
-	div:first-child:not(:last-child) input {
-		border-bottom-right-radius: 0;
-	    border-top-right-radius: 0;
-	}
-
-	div:not(:first-child):not(:last-child) input {
-		 border-radius: 0 0 0 0;
-	}
-
-	div:last-child input {
-		border-bottom-left-radius: 0;
-	    border-top-left-radius: 0;
 	}
 
 	input {
@@ -505,13 +485,8 @@ Styleguide 1.4.7
 		height: 44px;
 	}
 
-	textarea {
-		width: 100%;
-	}
-
 	.radio-group {
 		margin-bottom: 10px;
-		border-radius: 5px;
 
 		li {
 			float: left;
