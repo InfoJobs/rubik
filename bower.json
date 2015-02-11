@@ -12,6 +12,9 @@
   "ignore": [
     "**/.*",
     "node_modules",
-	"styleguide"
+    "html",
+    "styleguide",
+    "examples",
+    "embedded"
   ]
 }
