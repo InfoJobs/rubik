@@ -45,12 +45,12 @@ $wrap-kpi-width-desktop: 257px;
 			position: absolute;
 			font-size: 14px;
 			left: 75%;
-			bottom: 11%;
+			bottom: 18%;
 			font-size: 22px;
 		}
 
 		@include mediaquery ($bp-desktop) {
-			bottom: 10%;
+			bottom: 20%;
 			left: 73%;
 			font-size: 30px;
 		}
