@@ -62,10 +62,7 @@ Markup:
 
 .base				- Size: To force body copy size
 .medium				- Size: To increase text size
-
 .bold				- Style: To bold the letter
-
-.quote				- Type: To identify a cite
 
 Styleguide 1.3.3
 */
@@ -86,10 +83,13 @@ Styleguide 1.3.3
 Blockquotes
 
 Markup:
-<blockquote class="small-quote base">
+<blockquote class="{$modifiers}">
 <span>The blockquote element represents a section that is quoted from another source.</span>
 <cite class="small alternative">The Idol</cite>
 </blockquote>
+
+.small-quote		- Size: small size
+.quote				- Type: with quotation mark
 
 Styleguide 1.3.3.1
 */
