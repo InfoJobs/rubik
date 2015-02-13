@@ -28,6 +28,10 @@
       height: 30px;
     }
 
+    @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
+        font-size: $medium-font-size;
+    }
+
     p > & {
         margin-left: 10px;
 
@@ -208,6 +212,10 @@ Styleguide 1.5.1
     padding: 0 10px;
     font-size: $medium-font-size;
     line-height: 38px;
+
+    @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
+        font-size: 22px;
+    }
 }
 
 .btn-large {
@@ -222,7 +230,24 @@ Styleguide 1.5.1
     @at-root button#{&} {
         height: 42px;
     }
+
+    @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
+        font-size: 30px;
+    }
 }
+
+
+/*
+Buttons with text and icon
+
+Use `.iconfont-[name]` class to display the icon it's needed.
+
+Markup:
+<a href="#" class="btn btn-primary btn-medium iconfont-Facebook">Link Button</a>
+<button class="btn btn-primary btn-medium iconfont-Facebook">Button Element</button>
+
+Styleguide 1.5.2
+*/
 
 ///*DEPRECATED: .btn-icon-update only used on home page*/
 .btn-icon-update,
@@ -241,7 +266,7 @@ Markup:
 <a href="#" class="btn btn-default btn-medium btn-disabled">Link Button</a>
 <button class="btn btn-default btn-medium btn-disabled">Button Element</button>
 
-Styleguide 1.5.2
+Styleguide 1.5.3
 */
 
 button[disabled],
@@ -273,7 +298,7 @@ Markup:
 <a href="#" class="btn btn-primary btn-medium btn-annex">Button</a>
 <a href="#" class="link">Link</a>
 
-Styleguide 1.5.3
+Styleguide 1.5.4
 */
 
 .btn-annex {
@@ -313,7 +338,7 @@ Use `.btn-form-inline` class to display button with full width.
 Markup:
 <button class="btn btn-default btn-form-inline">Button Element</button>
 
-Styleguide 1.5.4
+Styleguide 1.5.5
 */
 
 .btn-form-inline { //only used on search-bar and filters
@@ -349,7 +374,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 1.5.5
+Styleguide 1.5.6
 */
 
 .btn-group { //TODO: Add hide text for empty buttons
@@ -406,7 +431,6 @@ Styleguide 1.5.5
   	}
 }
 
-
 /*
 Button group
 
@@ -426,7 +450,25 @@ Markup:
     </div>
 </div>
 
-Styleguide 1.5.6
+Styleguide 1.5.7
+*/
+
+/*
+Button group with icon
+
+Use `.iconfont-[name]` class to display the icon it's needed.
+
+Markup:
+<div class="btn-group">
+    <div>
+        <a class="btn btn-default iconfont-Facebook" href="#" title="Comparte esta oferta en Facebook"></a>
+    </div>
+    <div>
+        <a class="btn btn-default iconfont-Twitter" href="#" title="Tweetea esta oferta"></a>
+    </div>
+</div>
+
+Styleguide 1.5.8
 */
 
 .btn-group-justified { //TODO: same properties than .btn-form-inline class
@@ -436,7 +478,6 @@ Styleguide 1.5.6
         width: 100%;
     }
 }
-
 
 ///*DEPRECATED: .btn-divider and .btn-divider-company only used on header*/
 .btn-divider {
