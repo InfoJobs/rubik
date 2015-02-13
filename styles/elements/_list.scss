@@ -1,21 +1,28 @@
+// Text elements
+
 /*------------------------------------*\
     $LIST
 \*------------------------------------*/
 /*
 Lists
 
-```
-.list-default - List without decoration
-```
+To create semantic lists use `<ul>` for unordered list, `ol` for ordered list and `dl` for definition list.
+<br>Use `.list-default` class for a list without decoration.
 
 Markup:
 <ul class="list-default">
-<li>Salario no disponible</li>
-<li>Experiencia monima: no requerida</li>
-<li>Tipo de oferta: de duracion determinada, jornada completa</li>
+    <li>Salario no disponible</li>
+    <li>Experiencia minima: no requerida</li>
+    <li>Tipo de oferta: de duracion determinada, jornada completa</li>
 </ul>
+<dl class="list-default">
+    <dt>Salario:</dt>
+    <dd>No disponible</dd>
+    <dt>Tipo de oferta:</dt>
+    <dd>De duracion determinada, jornada completa</dd>
+</dl>
 
-Styleguide 1.3.3
+Styleguide 1.3.4
 */
 
 .list-default {
@@ -47,17 +54,16 @@ Styleguide 1.3.3
 /*
 Lists with bullets
 
+To add default bullets at list use `.list-bullet-default` class.
+
 Markup:
 <ul class="list-default list-bullet-default">
-<li>Salario no disponible</li>
-<li>Experiencia monima: no requerida</li>
-<li>Tipo de oferta: de duracion determinada, jornada completa</li>
+    <li>Salario no disponible</li>
+    <li>Experiencia minima: no requerida</li>
+    <li>Tipo de oferta: de duracion determinada, jornada completa</li>
 </ul>
 
-.list-bullet-default - List with bullets decoration
-.list-bullet-icon - List with icons decoration
-
-Styleguide 1.3.3.1
+Styleguide 1.3.4.1
 */
 
 .list-bullet-default > li,
@@ -83,6 +89,7 @@ Styleguide 1.3.3.1
     background-color: $soft-script;
 }
 
+//DEPRECATED: only used on login page //TODO Delete this, refactor?
 .list-bullet-icon > .iconfont-30px {
     padding-left: 40px;
     position: relative;
@@ -95,23 +102,22 @@ Styleguide 1.3.3.1
 }
 
 /*
-Lists with titles inside
+Lists with nested structure
 
-```
-.list-default-title - Title inside lists elements
-```
+Lists with nested html content like titles, text, etc.<br>
+You can use `list-default-title` for headings inside `li` tags,<br>
+`.list-default-text` for text in `<p>` or `<span>` inside `li` tags when previous title.
 
 Markup:
 <ul class="list-default">
 <li>
-<h3 class="list-default-title">Salario no disponible</h3>
+<h3 class="list-default-title">Salario</h3>
+<span class="list-default-text">No disponible</span>
 </li>
-<li>Experiencia monima: no requerida</li>
-<li>Tipo de oferta: de duracion determinada, jornada completa</li>
 </ul>
 
 
-Styleguide 1.3.3.2
+Styleguide 1.3.4.2
 */
 
 .list-default-title { //TODO: check usability; replace structure for <dl><dt><dd> element
@@ -132,17 +138,16 @@ Styleguide 1.3.3.2
 /*
 Lists with dividers
 
-```
-.list-divider - Divider
-```
+Use `.list-divider` class to divide list items in block. This divider is on bottom at element.
 
 Markup:
 <ul class="list-default list-divider">
-<li>Experiencia monima: no requerida</li>
-<li>Tipo de oferta: de duracion determinada, jornada completa</li>
+    <li>Experiencia monima: no requerida</li>
+    <li>Tipo de oferta: de duracion determinada, jornada completa</li>
+    <li>Experiencia minima: no requerida</li>
 </ul>
 
-Styleguide 1.3.3.3
+Styleguide 1.3.4.3
 */
 
 .list-divider > li {
@@ -185,18 +190,16 @@ Styleguide 1.3.3.3
 /*
 Tag group
 
-```
-.tag-group - Tag list
-```
+Use `.tag-group` class to flow list items in line.
 
 Markup:
 <ul class="tag-group">
-<li>Contrato de duracion determinada</li>
-<li>Jornada completa</li>
-<li>Salario no especificado</li>
+    <li>Contrato de duracion determinada</li>
+    <li>Jornada completa</li>
+    <li>Salario no especificado</li>
 </ul>
 
-Styleguide 1.3.3.4
+Styleguide 1.3.4.4
 */
 
 .tag-group {
@@ -225,17 +228,15 @@ Styleguide 1.3.3.4
 /*
 Tag divider
 
-```
-.tag-divider - To add a gap between tags
-```
+Use `.tag-divider` to divide tag group items in line with a gap between tags.
 
 Markup:
-<ul class="tag-group tag-group-sticker">
-<li class="tag-divider">Madrid</li>
-<li>Hace 4m	<span class="sticker sticker-marked">Nueva</span></li>
+<ul class="tag-group">
+    <li class="tag-divider">Madrid</li>
+    <li class>Barcelona</li>
 </ul>
 
-Styleguide 1.3.3.5
+Styleguide 1.3.4.4.1
 */
 
 .tag-group li.tag-divider {
@@ -256,18 +257,17 @@ Styleguide 1.3.3.5
 /*
 Tag group top
 
-```
-.tag-group-top  - To add a gap at the bottom
-```
+Use `.tag-group-top` to add a gap at the bottom in a tag group.
 
 Markup:
 <ul class="tag-group tag-group-top">
-<li>Contrato de duracion determinada</li>
-<li>Jornada completa</li>
-<li>Salario no especificado</li>
+    <li>Contrato de duracion determinada</li>
+    <li>Jornada completa</li>
+    <li>Salario no especificado</li>
 </ul>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.3.3.6
+Styleguide 1.3.4.4.2
 */
 
 .tag-group-top {
@@ -276,28 +276,6 @@ Styleguide 1.3.3.6
     @media print {
         margin: 0;
     }
-}
-
-/*
-Sticker Tag group
-
-```
-.tag-group-sticker - Stickers tags
-```
-
-Markup:
-<ul class="tag-group tag-group-sticker">
-<li><a href="#" class="sticker sticker-skill">Javascript</a></li>
-<li><a href="#" class="sticker sticker-skill">Office</a></li>
-<li><a href="#" class="sticker sticker-skill">HTML</a></li>
-<li><a href="#" class="sticker sticker-skill">Java</a></li>
-</ul>
-
-Styleguide 1.3.3.7
-*/
-
-.tag-group-sticker li {
-    padding-right: 0;
 }
 
 .tag-group .alternative { //TODO: nest with '& .tag-group'
@@ -320,36 +298,47 @@ Styleguide 1.3.3.7
     max-width: 33%;
 }
 
+/*
+Sticker Tag group
+
+Use `.tag-group-sticker` class when items of tag group are stickers.<br>
+For stickers visit stickers section.
+
+Markup:
+<ul class="tag-group tag-group-sticker">
+    <li><a href="#" class="sticker sticker-skill">Javascript</a></li>
+    <li><a href="#" class="sticker sticker-skill">Office</a></li>
+    <li><a href="#" class="sticker sticker-skill">HTML</a></li>
+    <li><a href="#" class="sticker sticker-skill">Java</a></li>
+</ul>
+
+Styleguide 1.3.4.4.3
+*/
+
+.tag-group-sticker li {
+    padding-right: 0;
+}
+
+
 // Es redefineix el color a gris perque, tot i tenir default, els anchors
 // es continuen pintant en blau i el tag-primary en verd
 
-.tag-disabled {  //TODO: ??
+.tag-disabled {  //TODO: ?? se usa? Usar alternative?
     color: $soft-script;
 }
 
-//float list items in columns
-@for $i from 1 through 4 {
-    $percentage: $i * 25;
-    .cols-per-#{$percentage} {
-        overflow: hidden;
-
-        li {
-            float:left;
-            width: calc((1% * #{$percentage}) - 10px);
-            margin-right: 10px;
-        }
-    }
-}
-
-@include mediaquery ($bp-tablet) {
-
-    .tag-contrast {
-        float: left;
-        margin-top: -2px;
-        margin-bottom: 0;
-    }
-
-}
+// @for $i from 1 through 4 {
+//     $percentage: $i * 25;
+//     .cols-per-#{$percentage} {
+//         overflow: hidden;
+//
+//         li {
+//             float:left;
+//             width: calc((1% * #{$percentage}) - 10px);
+//             margin-right: 10px;
+//         }
+//     }
+// }
 
 @include mediaquery ($bp-desktop) {
 
