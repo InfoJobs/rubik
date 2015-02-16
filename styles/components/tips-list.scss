@@ -146,10 +146,6 @@
 	.title {
 		margin-bottom: 0;
 
-		& + p {
-			margin-bottom: 0;
-		}
-
 		@include mediaquery ($bp-tablet) {
 			font-size: $medium-font-size;
 			line-height: $medium-line-height;
@@ -159,6 +155,10 @@
 			font-size: $large-font-size;
 			line-height: $large-line-height;
 		}
+	}
+
+	& p {
+		margin-bottom: 0;
 	}
 
 	.kind {
