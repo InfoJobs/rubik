@@ -89,6 +89,20 @@ Styleguide 1.3.4.1
     background-color: $soft-script;
 }
 
+/*
+Lists with icons
+
+To add icons at list use `.list-bullet-icon` class, and the necessary classes for the icon and size as example.
+
+Markup:
+<ul class="list-default list-bullet-icon">
+    <li class="iconfont-CV iconfont-30px iconfont-soft-script"><strong>Crea tu CV online</strong> y pres&eacute;ntate como profesional ante las empresas</li>
+    <li class="iconfont-Check iconfont-30px iconfont-soft-script"><strong>Inscr&iacute;bete en ofertas</strong> de trabajo de tu perfil con un solo clic</li>
+</ul>
+
+Styleguide 1.3.4.2
+*/
+
 //DEPRECATED: only used on login page //TODO Delete this, refactor?
 .list-bullet-icon > .iconfont-30px {
     padding-left: 40px;
@@ -117,7 +131,7 @@ Markup:
 </ul>
 
 
-Styleguide 1.3.4.2
+Styleguide 1.3.4.3
 */
 
 .list-default-title { //TODO: check usability; replace structure for <dl><dt><dd> element
@@ -147,7 +161,7 @@ Markup:
     <li>Experiencia minima: no requerida</li>
 </ul>
 
-Styleguide 1.3.4.3
+Styleguide 1.3.4.4
 */
 
 .list-divider > li {
@@ -199,7 +213,7 @@ Markup:
     <li>Salario no especificado</li>
 </ul>
 
-Styleguide 1.3.4.4
+Styleguide 1.3.4.5
 */
 
 .tag-group {
@@ -236,7 +250,7 @@ Markup:
     <li class>Barcelona</li>
 </ul>
 
-Styleguide 1.3.4.4.1
+Styleguide 1.3.4.5.1
 */
 
 .tag-group li.tag-divider {
@@ -267,7 +281,7 @@ Markup:
 </ul>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.3.4.4.2
+Styleguide 1.3.4.5.2
 */
 
 .tag-group-top {
@@ -280,22 +294,6 @@ Styleguide 1.3.4.4.2
 
 .tag-group .alternative { //TODO: nest with '& .tag-group'
     margin-right: 0;
-}
-
-.tag-group .ellipsis { //TODO: nest with '& tag-group'
-    display: block;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.tag-group  .tag-ellipsis-cols2 { //TODO: nest with '& tag-group'
-    max-width: 50%;
-}
-
-.tag-group  .tag-ellipsis-cols3 { //TODO: nest with '& tag-group'
-    max-width: 33%;
 }
 
 /*
@@ -312,18 +310,47 @@ Markup:
     <li><a href="#" class="sticker sticker-skill">Java</a></li>
 </ul>
 
-Styleguide 1.3.4.4.3
+Styleguide 1.3.4.5.3
 */
 
 .tag-group-sticker li {
     padding-right: 0;
 }
 
+/*
+Tag group with ellipsis
+
+To generate ellipsis use `.tag-ellipsis-cols2` class in `<li>` when 2 tags in tag group or `.tag-ellipsis-cols3` if are 3 tags.<br>
+The element with ellipsis must have the class `ellipsis` in a `<span>`.
+
+Markup:
+<ul class="tag-group">
+    <li class="tag-divider tag-ellipsis-cols2"><span class=".ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span></li>
+    <li>Lorem ipsum</li>
+</ul>
+
+Styleguide 1.3.4.5.4
+*/
+.tag-group .ellipsis { //TODO: nest with '& tag-group'. Use truncate class?
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tag-group  .tag-ellipsis-cols2 { //TODO: nest with '& tag-group'
+    max-width: 50%;
+}
+
+.tag-group  .tag-ellipsis-cols3 { //TODO: nest with '& tag-group'
+    max-width: 33%;
+}
 
 // Es redefineix el color a gris perque, tot i tenir default, els anchors
 // es continuen pintant en blau i el tag-primary en verd
 
-.tag-disabled {  //TODO: ?? se usa? Usar alternative?
+.tag-disabled {  //TODO: ?? se usa? Usar class alternative?
     color: $soft-script;
 }
 
