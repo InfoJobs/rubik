@@ -35,10 +35,9 @@ Icons image and size
 The icons with background image need a class to define the type and another class for size.
 
 Markup:
-<ul>
-	<li class="icon-50px icon-candidaturas">icon-candidaturas</li>
-	<li class="icon-50px icon-CV">icon-CV</li>
-	<li class="icon-50px icon-contactos">icon-candidaturas</li>
+<span class="icon-50px icon-candidaturas"></span>
+<span class="icon-50px icon-CV"></span>
+<span class="icon-50px icon-contactos"></span>
 </ul>
 
 Styleguide 1.6.1
@@ -60,6 +59,7 @@ $icon-size: (50); //TODO: resolve problem when it s moved to _vars
 @each $value in $icon-size {
 
 	.icon-#{$value}px {
+		display: block;
 		width: #{$value}px;
 		height: #{$value}px;
 		background-size: 100% auto;
