@@ -5,6 +5,14 @@
 	$ICONS
 \*------------------------------------*/
 
+/*
+Icons
+
+Icons with background image and icons as font.
+
+Styleguide 1.6
+*/
+
 //Applies to elements containing a class that begin with icon-
 
 [class^="icon-"],
@@ -20,16 +28,21 @@
 /*------------------------------------*\
 	$ICONSIMAGE
 \*------------------------------------*/
-$icon-size: (50); //TODO: resolve problem when it s moved to _vars
 
-@each $value in $icon-size {
+/*
+Icons image and size
 
-	.icon-#{$value}px {
-		width: #{$value}px;
-		height: #{$value}px;
-		background-size: 100% auto;
-	}
-}
+The icons with background image need a class to define the type and another class for size.
+
+Markup:
+<ul>
+	<li class="icon-50px icon-candidaturas">icon-candidaturas</li>
+	<li class="icon-50px icon-CV">icon-CV</li>
+	<li class="icon-50px icon-contactos">icon-candidaturas</li>
+</ul>
+
+Styleguide 1.6.1
+*/
 
 .icon-candidaturas {
 		background: url("#{$path-backgrounds}/icon-candidaturas.png") no-repeat 0 0;
@@ -41,27 +54,29 @@ $icon-size: (50); //TODO: resolve problem when it s moved to _vars
 		background: url("#{$path-backgrounds}/icon-contacts.png") no-repeat 0 0;
 }
 
+
+$icon-size: (50); //TODO: resolve problem when it s moved to _vars
+
+@each $value in $icon-size {
+
+	.icon-#{$value}px {
+		width: #{$value}px;
+		height: #{$value}px;
+		background-size: 100% auto;
+	}
+}
+
 /*------------------------------------*\
 	$ICONSFONTS
 \*------------------------------------*/
 
 /*
-Icons size
+Iconfonts
 
-Markup:
-<ul>
-<li class="{$modifiers}">Executive</li>
-<li class="{$modifiers}">Acepta candidatos...</li>
-<li class="{$modifiers}">Urgente</li>
-</ul>
+The iconfonts are icons generated as font,<br>
+color and size can be modified in the same way as the text.
 
-.iconfont-16px
-.iconfont-18px
-.iconfont-22px
-.iconfont-30px
-.iconfont-100px
-
-Styleguide 1.6
+Styleguide 1.6.2
 */
 
 @mixin iconfont {
@@ -103,6 +118,27 @@ Styleguide 1.6
 	}
 }
 
+/*
+Icons size
+
+Classes to modify the icon size.
+
+Markup:
+<ul>
+	<li class="iconfont-Company {$modifiers}">Lorem ipsum</li>
+</ul>
+
+{$modifiers}:
+
+.iconfont-16px	- 16px
+.iconfont-18px	- 18px
+.iconfont-22px	- 22px
+.iconfont-30px	- 30px
+.iconfont-100px	- 100px
+
+Styleguide 1.6.2.1
+*/
+
 $iconfont-size: (16, 18, 22, 30, 100); //TODO: resolve problem when it s moved to _vars
 
 @each $value in $iconfont-size {
@@ -118,16 +154,18 @@ $iconfont-size: (16, 18, 22, 30, 100); //TODO: resolve problem when it s moved t
 /*
 Icon color
 
+Classes to modify the icon color.
+
 Markup:
 <ul>
-<li class="iconfont-30px {$modifiers}">Executive</li>
-<li class="iconfont-30px {$modifiers}">Acepta candidatos...</li>
-<li class="iconfont-30px {$modifiers}">Urgente</li>
+	<li class="iconfont-30px iconfont-Company {$modifiers}">Lorem ipsum</li>
 </ul>
+
+{$modifiers}:
 
 .iconfont-soft-script		- Color: To change text color applied in the icon
 
-Styleguide 1.6.1
+Styleguide 1.6.2.2
 */
 
 .iconfont-soft-script::before {
@@ -143,7 +181,7 @@ Icon function
 Markup:
 <span class="iconfont-100px">Executive</span>
 
-Styleguide 1.6.2
+Styleguide 1.6.2.3
 */
 
 .iconfont-img::before {
@@ -151,23 +189,72 @@ Styleguide 1.6.2
 }
 
 /*
-Icons type
+Iconfont type
+
+All icon types. Use these classes.
 
 Markup:
-<ul>
-<li class="iconfont-30px iconfont-soft-script {$modifiers}">Executive</li>
-<li class="iconfont-30px {$modifiers}">Acepta candidatos...</li>
-<li class="iconfont-30px {$modifiers}">Urgente</li>
+<ul class="list-defaut">
+	<li class="iconfont-ArrowDown iconfont-22px">iconfont-ArrowDown</li>
+	<li class="iconfont-ArrowLeft iconfont-22px">iconfont-ArrowLeft</li>
+	<li class="iconfont-ArrowUp iconfont-22px">iconfont-ArrowUp</li>
+	<li class="iconfont-Arrow iconfont-22px">iconfont-Arrow</li>
+	<li class="iconfont-BurguerMenu iconfont-22px">iconfont-BurguerMenu</li>
+	<li class="iconfont-Calendar iconfont-22px">iconfont-Calendar</li>
+	<li class="iconfont-Candidaturas iconfont-22px">iconfont-Candidaturas</li>
+	<li class="iconfont-Category iconfont-22px">iconfont-Category</li>
+	<li class="iconfont-Check iconfont-22px">iconfont-Check</li>
+	<li class="iconfont-Clock iconfont-22px">iconfont-Clock</li>
+	<li class="iconfont-Close iconfont-22px">iconfont-Close</li>
+	<li class="iconfont-Company iconfont-22px">iconfont-Company</li>
+	<li class="iconfont-Config iconfont-22px">iconfont-Config</li>
+	<li class="iconfont-CV iconfont-22px">iconfont-CV</li>
+	<li class="iconfont-Euro iconfont-22px">iconfont-Euro</li>
+	<li class="iconfont-Facebook iconfont-22px">iconfont-Facebook</li>
+	<li class="iconfont-GooglePlus iconfont-22px">iconfont-GooglePlus</li>
+	<li class="iconfont-Location iconfont-22px">iconfont-Location</li>
+	<li class="iconfont-Mail iconfont-22px">iconfont-Mail</li>
+	<li class="iconfont-Reload iconfont-22px">iconfont-Reload</li>
+	<li class="iconfont-Search iconfont-22px">iconfont-Search</li>
+	<li class="iconfont-State iconfont-22px">iconfont-State</li>
+	<li class="iconfont-Suitecase iconfont-22px">iconfont-Suitecase</li>
+	<li class="iconfont-Twitter iconfont-22px">iconfont-Twitter</li>
+	<li class="iconfont-User iconfont-22px">iconfont-User</li>
+	<li class="iconfont-LinkedIn iconfont-22px">iconfont-LinkedIn</li>
+	<li class="iconfont-Viewdetails iconfont-22px">iconfont-Viewdetails</li>
+	<li class="iconfont-EditCv iconfont-22px">iconfont-EditCv</li>
+	<li class="iconfont-Home iconfont-22px">iconfont-Home</li>
+	<li class="iconfont-QR iconfont-22px">iconfont-QR</li>
+	<li class="iconfont-Config-alt iconfont-22px">iconfont-Config-alt</li>
+	<li class="iconfont-Edit iconfont-22px">iconfont-Edit</li>
+	<li class="iconfont-Help iconfont-22px">iconfont-Help</li>
+	<li class="iconfont-Info iconfont-22px">iconfont-Info</li>
+	<li class="iconfont-Plus iconfont-22px">iconfont-Plus</li>
+	<li class="iconfont-Smile iconfont-22px">iconfont-Smile</li>
+	<li class="iconfont-Wifi iconfont-22px">iconfont-Wifi</li>
+	<li class="iconfont-Alert iconfont-22px">iconfont-Alert</li>
+	<li class="iconfont-Connect iconfont-22px">iconfont-Connect</li>
+	<li class="iconfont-AlertProfile iconfont-22px">iconfont-AlertProfile</li>
+	<li class="iconfont-Hide iconfont-22px">iconfont-Hide</li>
+	<li class="iconfont-News iconfont-22px">iconfont-News</li>
+	<li class="iconfont-Flag iconfont-22px">iconfont-Flag</li>
+	<li class="iconfont-Offers iconfont-22px">iconfont-Offers</li>
+	<li class="iconfont-Big-check iconfont-22px">iconfont-Big-check</li>
+	<li class="iconfont-BigArrowDown iconfont-22px">iconfont-BigArrowDown</li>
+	<li class="iconfont-BigArrowLeft iconfont-22px">iconfont-BigArrowLeft</li>
+	<li class="iconfont-BigArrowUp iconfont-22px">iconfont-BigArrowUp</li>
+	<li class="iconfont-BigArrowRight iconfont-22px">iconfont-BigArrowRight</li>
+	<li class="iconfont-BigArrowObliqueLeftDown iconfont-22px">iconfont-BigArrowObliqueLeftDown</li>
+	<li class="iconfont-BigArrowObliqueRightDown iconfont-22px">iconfont-BigArrowObliqueRightDown</li>
+	<li class="iconfont-BigArrowObliqueLeftUp iconfont-22px">iconfont-BigArrowObliqueLeftUp</li>
+	<li class="iconfont-BigArrowObliqueRightUp iconfont-22px">iconfont-BigArrowObliqueRightUp</li>
+	<li class="iconfont-Star iconfont-22px">iconfont-Star</li>
+	<li class="iconfont-Lock iconfont-22px">iconfont-Lock</li>
+	<li class="iconfont-Menumore iconfont-22px">iconfont-Menumore</li>
+	<li class="iconfont-Alert-circle iconfont-22px">iconfont-Alert-circle</li>
 </ul>
 
-.iconfont-ArrowDown			- Type: To apply arrow down icon
-.iconfont-ArrowLeft			- Type: To apply arrow left icon
-.iconfont-ArrowUp			- Type: To apply arrow up icon
-.iconfont-Arrow				- Type: To apply arrow right icon
-.iconfont-BurguerMenu		- Type: To apply mobile menu icon
-...
-
-Styleguide 1.6.3
+Styleguide 1.6.2.4
 */
 
 .iconfont-ArrowDown::before {
