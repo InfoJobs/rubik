@@ -200,3 +200,27 @@ $gridColumns: 12;
 	}
 
 }
+
+//TODO: Move to component
+/*------------------------------------*\
+$CARDS
+\*------------------------------------*/
+
+.row-card {
+
+	@include display-flex;
+    -webkit-flex-flow: column wrap;
+            flex-flow: column wrap;
+
+		@include mediaquery ($bp-tablet) {
+	    -webkit-flex-flow: column wrap;
+	            flex-flow: row wrap;
+		}
+
+	[class^="col-"],
+	[class*="col-"] {
+		@include display-flex;
+		flex: 1;
+	}
+
+}
