@@ -35,6 +35,14 @@
 }
 
 @font-face {
+  font-family: 'Slabo-regular';
+  src: url('#{$path-font}slabo-regular.eot?') format('eot'),
+	  url('#{$path-font}slabo-regular.woff') format('woff'),
+	  url('#{$path-font}slabo-regular.otf') format('opentype'),
+	  url('#{$path-font}slabo-regular.ttf') format('truetype');
+}
+
+@font-face {
 	font-family: 'Icons';
 	src:url('#{$path-font}infojobs.eot?') format('eot'),
 		url('#{$path-font}infojobs.woff') format('woff'),
