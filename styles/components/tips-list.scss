@@ -23,7 +23,7 @@
 
 			@include mediaquery ($bp-tablet) {
 			// First create a flex layout context
-			display: flex;
+			@include display-flex;
 			///* Define the flow direction and if it's allowed the items to wrap. Default values are:
 			//* flex-direction: row;
 			//* flex-wrap: nowrap;
@@ -82,7 +82,7 @@
 
 			@include mediaquery ($bp-tablet) {
 				//Define a flex grow
-				flex: 1;
+  				@include flex;
 				max-width: 140px;
 				width: 140px;
 				float: none;
@@ -109,7 +109,7 @@
 
 			@include mediaquery ($bp-tablet) {
 				//Define a flex grow
-				flex: 2;
+  				@include flex(2);
 				width: auto;
 				padding-top: 20px;
 				margin-left: 0;
