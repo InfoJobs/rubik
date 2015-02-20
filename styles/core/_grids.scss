@@ -206,21 +206,18 @@ $gridColumns: 12;
 $CARDS
 \*------------------------------------*/
 
-.row-card {
+@include mediaquery ($bp-tablet) {
 
-	@include display-flex;
-    -webkit-flex-flow: column wrap;
-            flex-flow: column wrap;
-
-		@include mediaquery ($bp-tablet) {
-	    -webkit-flex-flow: column wrap;
-	            flex-flow: row wrap;
-		}
-
-	[class^="col-"],
-	[class*="col-"] {
+	.row-card {
 		@include display-flex;
-		flex: 1;
+		-webkit-flex-flow: row wrap;
+		        flex-flow: row wrap;
+
+		[class^="col-"],
+		[class*="col-"] {
+			@include display-flex;
+			flex: 1;
+		}
 	}
 
 }
