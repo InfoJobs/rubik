@@ -46,7 +46,8 @@ module.exports = function(grunt) {
         // command: 'kss-node css styleguide --css css/style.doc.css'
         // command: 'kss-node css styleguide --css css/style.doc.css --template templates/styleguide-template'
         // command: 'kss-node css styleguide --css css/style.doc.css --template templates/template'
-        command: 'kss-node css styleguide --css css/style.doc.css --template templates/github'
+        // command: 'kss-node css styleguide --css css/style.doc.css --template templates/github'
+        command: 'kss-node css styleguide --template templates/infojobs'
       }
     }
   });

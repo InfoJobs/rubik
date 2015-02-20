@@ -17,7 +17,7 @@
   </header>
   <div class="styleguide-container">
     <nav class="styleguide-menu styleguide-reset">
-        <ul class="styleguide-menu-list" data-kss-ref="{{rootNumber}}">
+        <ul class="styleguide-menu-list" data-kss-ref="{{rootName}}">
 
             <li class="kss-menu-item">
                 <a href="./index.html">0. Overview</a>
@@ -33,16 +33,16 @@
         {{#if overview}}
         {{else}}
         <ul class="kss-menu-child">
-            {{#eachSection rootNumber}}
-            {{#whenDepth 1}}
-            {{else}}
-            <li class="kss-menu-item">
-                <a href="#section-{{reference}}">
-                    <span class="kss-ref">{{reference}}</span>
-                    <span class="kss-name">{{header}}</span>
-                </a>
-            </li>
-            {{/whenDepth}}
+            {{#eachSection rootName}}
+              {{#ifDepth 1}}
+              {{else}}
+              <li class="kss-menu-item">
+                  <a href="#section-{{reference}}">
+                      <span class="kss-ref">{{reference}}</span>
+                      <span class="kss-name">{{header}}</span>
+                  </a>
+              </li>
+              {{/ifDepth}}
             {{/eachSection}}
         </ul>
         {{/if}}
@@ -52,35 +52,35 @@
 
       {{#if overview}}
       <div class="styleguide-markdown-body styleguide-reset">
-        {{html overview}}
+        {{{overview}}}
       </div>
       {{else}}
-      {{#eachSection rootNumber}}
-      {{#ifAny markup modifiers}}
+      {{#eachSection rootName}}
+      {{#if markup}}
       <div id="section-{{reference}}" class="styleguide-example">
         <header class="styleguide-example-header styleguide-reset">
           <h3>{{reference}} <em>{{header}}</em></h3>
         </header>
         {{#if description}}
         <div class="styleguide-description styleguide-markdown-body styleguide-reset">
-          {{html description}}
+          {{{description}}}
 
           <ul class="styleguide-modifier">
               {{#eachModifier}}
-              <li><strong>{{name}}</strong> - {{html description}}</li>
+              <li><strong>{{name}}</strong> - {{{description}}}</li>
               {{/eachModifier}}
           </ul>
         </div>
         {{/if}}
 
         <div class="styleguide-element">
-          {{modifierMarkup}}
+          {{markup}}
         </div>
 
         {{#eachModifier}}
         <div class="styleguide-element styleguide-modifier">
           <span class="styleguide-modifier-name">{{name}}</span>
-          {{modifierMarkup}}
+          {{markup}}
         </div>
         {{/eachModifier}}
 
@@ -96,10 +96,10 @@
       </header>
       {{#if description}}
       <div class="markdown-body styleguide-reset">
-        {{html description}}
+        {{{description}}}
       </div>
       {{/if}}
-      {{/ifAny}}
+      {{/if}}
       {{/eachSection}}
       {{/if}}
     </div>
