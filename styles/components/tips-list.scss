@@ -148,11 +148,8 @@
 
 	.title {
 		margin-bottom: 0;
-
-		@include mediaquery ($bp-tablet) {
-			font-size: $medium-font-size;
-			line-height: $medium-line-height;
-		}
+		font-size: $medium-font-size;
+		line-height: $medium-line-height;
 
 		@include mediaquery ($bp-desktop) {
 			font-size: $large-font-size;
