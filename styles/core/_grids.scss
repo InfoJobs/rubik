@@ -216,7 +216,8 @@ $CARDS
 		[class^="col-"],
 		[class*="col-"] {
 			@include display-flex;
-			flex: 1;
+  			@include flex;
+
 		}
 	}
 
