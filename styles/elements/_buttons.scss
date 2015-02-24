@@ -240,7 +240,7 @@ Styleguide 1.5.1
 /*
 Buttons with text and icon
 
-Use `.iconfont-[name]` class to display the icon it's needed.
+Use class `.iconfont-[name]` to display the icon it's needed.
 
 Markup:
 <a href="#" class="btn btn-primary btn-medium iconfont-Facebook">Link Button</a>
@@ -260,7 +260,7 @@ Styleguide 1.5.2
 /*
 Buttons status
 
-Use `.btn-disabled` class to show button as disabled.
+Use class `.btn-disabled` to show button as disabled.
 
 Markup:
 <a href="#" class="btn btn-default btn-medium btn-disabled">Link Button</a>
@@ -291,7 +291,7 @@ button:active[disabled],
 /*
 Button annex
 
-Use `.btn-annex` class to add an adjacent element close to the button.
+Use class `.btn-annex` to add an adjacent element close to the button.
 
 
 Markup:
@@ -333,9 +333,10 @@ Styleguide 1.5.4
 /*
 Buttons display
 
-Use `.btn-form-inline` class to display button with full width.
+Use class `.btn-form-inline` to display button with full width.
 
 Markup:
+<a href="#" class="btn btn-primary btn-form-inline">Button Element</a>
 <button class="btn btn-default btn-form-inline">Button Element</button>
 
 Styleguide 1.5.5
@@ -357,20 +358,20 @@ Styleguide 1.5.5
 /*
 Button group
 
-Use `.btn-group` class to create a button group structure. Add `.btn-group-justified` to display buttons with full width.
-Apply `.active` to display button selected.
-
+Use class `.btn-group` to create a button group structure.
+Use class `.btn-default` for button group buttons.
+Use class `.active` to highlight button the selected.
 
 Markup:
 <div class="btn-group">
     <div class="active">
-        <button class="btn btn-default" type="button">a&ntilde;o</button>
+        <button class="btn btn-default" type="button">year</button>
     </div>
     <div>
-        <button class="btn btn-default" type="button">mes</button>
+        <button class="btn btn-default" type="button">month</button>
     </div>
     <div>
-        <button class="btn btn-default" type="button">hora</button>
+        <button class="btn btn-default" type="button">hour</button>
     </div>
 </div>
 
@@ -432,21 +433,21 @@ Styleguide 1.5.6
 }
 
 /*
-Button group
+Button group justified
 
-Use `.btn-group-justified` to display `.btn-group` buttons with full width.
+Use class `.btn-group-justified` to display `.btn-group` buttons with full width.
 
 
 Markup:
 <div class="btn-group btn-group-justified">
     <div class="active">
-        <button class="btn btn-default" type="button">a&ntilde;o</button>
+        <button class="btn btn-default" type="button">year</button>
     </div>
     <div>
-        <button class="btn btn-default" type="button">mes</button>
+        <button class="btn btn-default" type="button">month</button>
     </div>
     <div>
-        <button class="btn btn-default" type="button">hora</button>
+        <button class="btn btn-default" type="button">hour</button>
     </div>
 </div>
 
@@ -456,7 +457,7 @@ Styleguide 1.5.7
 /*
 Button group with icon
 
-Use `.iconfont-[name]` class to display the icon it's needed.
+Use class `.iconfont-[name]` to display the icon it's needed.
 
 Markup:
 <div class="btn-group">

@@ -50,3 +50,26 @@ Styleguide 2.24
         text-decoration: underline;
     }
 }
+
+
+.overlay-70 {//TODO: hacer por opcion el porcentaje de opacity
+
+    position: relative;
+
+    &::after {
+            content:"";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-color: rgba(0,0,0,0.7); /*dim the background*/
+
+    }
+
+    *
+     {
+        z-index: 2;
+    }
+}

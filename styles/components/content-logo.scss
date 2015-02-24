@@ -2,28 +2,34 @@
 @import "../generics/generics";
 
 /*------------------------------------*\
-$CONTENT LOGO
+	$CONTENT LOGO
 \*------------------------------------*/
 
 /*
 Content logo
 
+Use class `.content-logo` nested with `.heading-addons` to center vertically text with logo.
+
+Apply `.content-logo-text` and `.content-logo-media` to build the text and logo structure.
+
 
 Markup:
-<div class="content-logo">
-<div class="content-logo-text">
-<h1>CONTROLLER con ingles alto y movilidad geografica</h1>
-</div>
-<div class="content-logo-media">
-<a href="#">
-<figure class="fig-thumbnail fig-thumbnail-logo slide-up">
-<img title="BROS GROUP - Ofertas de trabajo" src="https://www.infojobs.net/logo/logo/do-get.xhtml?id=20790330118" alt="BROS GROUP - Ofertas de trabajo">
-<figcaption class="fig-thumbnail-caption slide-item">
-<p class="fig-thumbnail-details">Ver ofertas</p>
-</figcaption>
-</figure>
-</a>
-</div>
+<div class="heading-addons">
+	<div class="content-logo">
+		<div class="content-logo-text">
+			<h1>Lorem ipsum dolor sit amet</h1>
+		</div>
+		<div class="content-logo-media">
+			<a href="#">
+				<figure class="fig-thumbnail fig-thumbnail-logo slide-up">
+					<img title="BROS GROUP - Ofertas de trabajo" src="https://www.infojobs.net/logo/logo/do-get.xhtml?id=20790330118" alt="Lorem ipsum dolor sit amet">
+					<figcaption class="fig-thumbnail-caption slide-item">
+						<p class="fig-thumbnail-details">Lorem ipsum</p>
+					</figcaption>
+				</figure>
+			</a>
+		</div>
+	</div>
 </div>
 
 Styleguide 2.3

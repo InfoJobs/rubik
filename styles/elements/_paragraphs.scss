@@ -95,13 +95,13 @@ Use `<cite>` tag to cite the reference.
 
 Markup:
 <blockquote class="{$modifiers}">
-	<span>The blockquote element represents a section that is quoted from another source.</span>
-	<cite class="small alternative">The Idol</cite>
+	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</span>
+	<cite>Lorem ipsum</cite>
 </blockquote>
 
 {$modifiers}:
 
-.small-quote		- Size: small size
+.vip-quote			- Size: big size and Slabo font-family
 .quote				- Type: with quotation mark
 
 Styleguide 1.3.5
@@ -115,8 +115,10 @@ Styleguide 1.3.5
 	background: url(#{$path-media}/appgrade/pictures/pic-quote-executive.png) center 0 no-repeat;
 }
 
-.small-quote {
-	font-style: italic;
+.vip-quote {
+	font-family: $alternative-font-family;
+	font-size: $large-font-size;
+	line-height: $large-line-height;
 
 	span:after,
 	span:before {
@@ -124,10 +126,10 @@ Styleguide 1.3.5
 	}
 
 	cite {
-		white-space: nowrap;
-	}
-
-	cite:before {
-		content: "- ";
+		display: block;
+		margin-top: 10px;
+		font-family: $base-font-family;
+		font-size: $base-font-size;
+		line-height: $base-line-height;
 	}
 }
