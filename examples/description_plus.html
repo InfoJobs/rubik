@@ -16,7 +16,7 @@
 <link rel="stylesheet" type="text/css" href="../styles/components/stickers.css" />
 <link rel="stylesheet" type="text/css" href="../styles/components/header-microsite.css" />
 <link rel="stylesheet" type="text/css" href="../styles/components/job-list.css" />
-<link rel="stylesheet" type="text/css" href="../styles/components/casper.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/collapsible.css" />
 <link rel="stylesheet" type="text/css" href="../styles/components/social-footer.css" />
 <link rel="stylesheet" type="text/css" href="../styles/components/footer.css" />
 
@@ -76,27 +76,29 @@
 				<div class="inner panel-canvas">
 					<div class="inner panel-default">BANNER</div>
    		    	</div>
-	   			<div class="container panel-canvas">
+	   			<div class="container-expanded panel-canvas">
 			     	<div class="inner">
 			     		<div class="heading-addons">
 				    		<div class="content-logo">
 				      			<div class="content-logo-text">
 				      				<h1 id="prefijoPuesto" itemprop="title">Programadores ProC y C</h1>
 				      			</div>
-				      			<div class="content-logo-media">
-						      		<a onclick="javascript:xt_click(this,'C',infojobs.pageConfig.getXitiPortalLevelTwo(),'empresa-logo','N'); return true;" href="//everis.trabajo.infojobs.net">
-						      			<figure class="fig-thumbnail fig-thumbnail-logo slide-up">
-						      				<img title="everis Ofertas de empleo Profesionales - Ofertas de trabajo" src="https://www.infojobs.net/logo/logo/do-get.xhtml?id=21379656682&dgv=252806171182193570" alt="everis Ofertas de empleo Profesionales - Ofertas de trabajo">
-
-						      			</figure>
-					      			</a>
-				      			</div>
+								<div class="content-logo-media">
+									<a href="#">
+										<figure class="fig-thumbnail fig-thumbnail-logo slide-up">
+											<img title="BROS GROUP - Ofertas de trabajo" src="https://www.infojobs.net/logo/logo/do-get.xhtml?id=20790330118" alt="Lorem ipsum dolor sit amet">
+											<figcaption class="fig-thumbnail-caption slide-item">
+												<p class="fig-thumbnail-details">Lorem ipsum</p>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
 				      		</div>
 				     	</div>
 			     	</div>
 			     	<div class="row clearfix">
-			     		<div class="col-4 col-12-medium panel-default">
-			     			<div class="col-child inner-expanded">
+			     		<div class="col-4 col-12-medium">
+			     			<div class="col-child inner inner-expanded panel-default">
 			     				<h2>Datos de la empresa</h2>
 			     				<ul class="list-default list-bullet-icon">
 									<li class="iconfont-Company iconfont-18px iconfont-soft-script">[Sector de la empresa]</li>
@@ -111,7 +113,7 @@
 			     			<div class="col-child inner inner-expanded">
 			     				<h2>Descripción</h2>
 
-			     				<div class="casper js-casper">
+			     				<div class="collapsible margin-bottom js-collapsible">
 			     					<p>QUÉ ESPERAMOS DE TI...</p>
 									<p>Desde Grupo ICA buscamos un Analista Front para importante cliente situado en Madrid.</p>
 									<p>POR QUÉ TRABAJAR CON NOSOTROS...</p>
@@ -122,7 +124,14 @@
 									- Trabajarás en un entorno joven altamente cualificado y con muy buen ambiente de trabajo<br>
 									- Obtendrás un paquete de compensación salarial competitivo y alineado con las prácticas retributivas más avanzadas del sector, además de otros beneficios sociales. Para ello, ofrecemos una retribución Flexible a la carta, con distintos productos (Tickets Restaurante, Cheques Guardería, Seguro Médico,...).</p>
 								</div>
-								<a class="link js-casper-link" href="#" data-maxheight="300" data-offset="40" data-animation="300" data-copyinit="Mostrar más información" data-copyend="Mostrar menos información">Mostrar más información</a>
+								<a class="link js-collapsible-toggle" href="#"
+								data-heightmobile="100"
+								data-heighttablet="200"
+								data-heightdesktop="300"
+								data-offset="40"
+								data-animation="300"
+								data-copyinit="Mostrar más información"
+								data-copyend="Mostrar menos información">Mostrar más información</a>
 
 							</div>
 						</div>
@@ -166,8 +175,13 @@
 
 					      	<!-- renovada -->
 					      	<li class="result-list-logo">
-					      		<a href="http://racc.trabajo.infojobs.net" class="result-list-pic-logo">
-					      			<img src="http://www.infojobs.net/employer/profile/profile-edit/do-get-image?id=20097943738&typeImage=3" alt="Vodafone" />
+								<a href="http://racc.trabajo.infojobs.net" class="result-list-pic-logo">
+					      			<figure class="fig-thumbnail fig-thumbnail-logo slide-up">
+					      				<img src="http://www.infojobs.net/employer/profile/profile-edit/do-get-image?id=20097943738&typeImage=3" alt="Vodafone" />
+					      				<figcaption class="fig-thumbnail-caption slide-item">
+											<p class="fig-thumbnail-details">Ver ofertas</p>
+										</figcaption>
+					      			</figure>
 					      		</a>
 				      			<h2 class="result-list-title"><a href="#ingeniero2">Ingeniero Tecnico: Redes, seguridad y sistemas lorem ipsum dolor amet</a></h2>
 				      			<h3 class="result-list-subtitle"><a href="#centel2">Centel telecomunicaciones, S.A.</a></h3>
@@ -178,6 +192,49 @@
 					      		</ul>
 					      	</li>
 					      </ul>
+						<div class="pagination">
+							<div class="btn-group">
+								<div class=" active hide-small-device hide-medium-device ">
+									<button class="btn btn-default" id="page1" type="button">1</button>
+								</div>
+								<div class="hide-small-device hide-medium-device">
+									<button class="btn btn-default" id="page2" type="button">2</button>
+								</div>
+								<div class="hide-small-device hide-medium-device">
+									<button class="btn btn-default" id="page3" type="button">3</button>
+								</div>
+								<div class="hide-small-device hide-medium-device">
+									<button class="btn btn-default" id="page4" type="button">4</button>
+								</div>
+								<div class="hide-small-device hide-medium-device">
+									<button class="btn btn-default" id="page5" type="button">5</button>
+								</div>
+								<div class="hide-small-device hide-medium-device">
+									<button class="btn btn-default" id="page6" type="button">6</button>
+								</div>
+								<div class="hide-small-device hide-medium-device">
+									<button class="btn btn-default" id="page7" type="button">7</button>
+								</div>
+								<div class="hide-small-device hide-medium-device">
+									<button class="btn btn-default" id="page8" type="button">8</button>
+								</div>
+								<div class="hide-small-device hide-medium-device">
+									<button class="btn btn-default" id="page9" type="button">9</button>
+								</div>
+								<div class="hide-small-device hide-medium-device">
+									<button class="btn btn-default" id="page10" type="button">10</button>
+								</div>
+								<div class="hide-small-device hide-medium-device">
+									<button class="btn btn-default" id="page11" type="button">11</button>
+								</div>
+								<div class="single">
+									<button class="btn btn-default" id="pageNext" type="button" title="Siguiente">Siguiente</button>
+								</div>
+							</div>
+						</div>
+						<div class="text-center">
+							<a href="#" class="btn btn-default">Nueva búsqueda</a>
+						</div>
 			     	</div>
 		     	</div>
 
@@ -318,33 +375,6 @@
 		</div>
     </div>
 	<script src="../js/jquery-2.1.0.min.js"></script>
+	<script src="../js/collapsible.js"></script>
 
-	<script>
-
-		var elCasperLink = document.querySelector('.js-casper-link');
-		var bClose = true;
-
-		elCasperLink.addEventListener('click', function(event){
-			event.preventDefault();
-
-			var elCasper = document.querySelector('.js-casper');
-			var offset = $(elCasper).offset();
-			elCasper.style.height = '300px';
-
-			if (bClose) {
-				elCasper.style.maxHeight = 'none';
-				elCasper.style.height = '400px';
-				this.innerHTML = this.dataset.copyend;
-				bClose = !bClose;
-
-			} else {
-				elCasper.style.maxHeight = this.dataset.maxheight + 'px';
-				this.innerHTML = this.dataset.copyinit;
-				bClose = !bClose;
-				$("html, body").animate({ scrollTop: offset.top - this.dataset.offset }, this.dataset.animation );
-			}
-
-		});
-
-	</script>
 </body>

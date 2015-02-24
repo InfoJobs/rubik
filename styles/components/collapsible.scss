@@ -1,0 +1,21 @@
+//generics
+@import "../generics/generics";
+
+
+/*------------------------------------*\
+    $CASPER
+\*------------------------------------*/
+
+.collapsible {
+	overflow: hidden;
+	height: 100px;
+	transition: all 0.5s ease;
+
+	@include mediaquery ($bp-tablet) {
+		height: 200px;
+	}
+
+	@include mediaquery ($bp-desktop) {
+		height: 300px;
+	}
+}
