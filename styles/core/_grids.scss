@@ -216,10 +216,23 @@ $gridColumns: 12;
 			height: 100%;
 		}
 
+		.col-6-medium,
+		.col-12-medium  {
+			display: block;
+		}
+
 		.col-child {
 			display: block;
 		}
 
 	}
 
+	@include mediaquery ($bp-desktop) {
+
+		.col-6-medium,
+		.col-12-medium  {
+			display: table-cell;
+		}
+
+	}
 }
