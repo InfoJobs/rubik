@@ -199,6 +199,34 @@ $gridColumns: 12;
 		}
 	}
 
+
+
+}
+
+/*------------------------------------*\
+$ROW FAUX
+\*------------------------------------*/
+
+@include mediaquery ($bp-tablet) {
+
+	.row-faux {
+		display: table;
+		height: 100%;
+
+		[class^="col-"],
+		[class*="col-"] {
+			display: table-cell;
+			vertical-align: top;
+			float: none;
+			height: 100%;
+		}
+
+		.col-child {
+			display: block;
+		}
+
+	}
+
 }
 
 //TODO: Move to component
