@@ -45,8 +45,6 @@ Markup:
 Styleguide 1.2.1
 */
 
-$gridColumns: 12;
-
 @mixin row {
 	margin: 0 0 0 -10px;
 	clear: both;
@@ -57,9 +55,13 @@ $gridColumns: 12;
 	}
 }
 
-
 .row {
 	@include row;
+
+	> [class^="col-"]:last-of-type .col-child,
+	> [class*="col-"]:last-of-type .col-child {
+			margin-bottom: 0;
+	}
 
 	.aside-wrapper & {
 		display: table;
@@ -67,7 +69,7 @@ $gridColumns: 12;
 		margin-left: 0;
 	}
 
-	& + .row {
+	+ .row {
 		margin-bottom: 10px;
 
 		@media print {
@@ -76,60 +78,49 @@ $gridColumns: 12;
 	}
 }
 
-@for $i from 1 through $gridColumns {
-	.col-#{$i} {
-		width: ((100 / $gridColumns) * $i) * 1%;
-		float: left;
+$gridColumns: 12;
+
+@include mediaquery ($bp-tablet) {
+	@for $i from 1 through $gridColumns {
+		.col-#{$i},
+		.col-#{$i}-medium  {
+			width: ((100 / $gridColumns) * $i) * 1%;
+			float: left;
+		}
 	}
 }
 
-@for $i from 1 through $gridColumns {
-	.col-#{$i} {
+[class^="col-"],
+[class*="col-"] {
 
-		.inner & {
-			margin-right: -10px;
+	.inner & {
+		margin-right: -10px;
 
-			@include mediaquery ($bp-tablet) {
-				margin-right: 0;
-			}
+		@include mediaquery ($bp-tablet) {
+			margin-right: 0;
 		}
+	}
 
-		.row-bleed & .col-child {
-			@include mediaquery ($bp-tablet) {
-				margin-right: 10px;
-			}
-			@include mediaquery ($bp-desktop) {
-				margin-right: 0;
-			}
-		}
+	@media print {
+		width: 100%;
+		float: none;
+	}
 
-		.row-bleed &:last-of-type .col-child {
-			@include mediaquery ($bp-desktop) {
-				margin-right: 10px;
-			}
-		}
+	.aside-wrapper & {
+		float: none;
+		display: table-cell;
+	}
+}
 
-		.col-child {
-			margin: 0 0 10px 10px;
+.col-child {
+	margin: 0 0 10px 10px;
 
-			.aside-wrapper & {
-				margin-left: 0;
-			}
+	.aside-wrapper & {
+		margin-left: 0;
+	}
 
-			@media print {
-				margin: 0;
-			}
-		}
-
-		@media print {
-			width: 100%;
-			float: none;
-		}
-
-		.aside-wrapper & {
-			float: none;
-			display: table-cell;
-		}
+	@media print {
+		margin: 0;
 	}
 }
 
@@ -153,54 +144,59 @@ $gridColumns: 12;
 	@include row;
 	margin: 0;
 	padding-top: 10px;
-}
 
-@media only screen and (max-width: $tablet-start) {
-
-	.col-6-medium {
-		width: 50%;
+	.col-child {
+		@include mediaquery ($bp-tablet) {
+			margin-right: 10px;
+		}
+		@include mediaquery ($bp-desktop) {
+			margin-right: 0;
+		}
 	}
 
-	.col-12-medium {
-		width: 100%;
-
-		.aside-wrapper & {
-			display: block;
+	&:last-of-type .col-child {
+		@include mediaquery ($bp-desktop) {
+			margin-right: 10px;
 		}
 	}
 }
 
-@media only screen and (max-width: $mobile-start) {
+.col-6-medium {
 
-	@for $i from 1 through $gridColumns {
-		.col-#{$i},
-		.col-#{$i}-medium {
-
-			float: none;
-			width: auto;
-		}
+	@include mediaquery ($bp-tablet) {
+		width: 50%;
 	}
 
-	.col-6-mobile {
-		width: 50%;
-		float: left;
+	@include mediaquery ($bp-desktop) {
 
-		.col-child {
-			margin: 0 0 10px 10px;
+		@for $i from 1 through $gridColumns {
 
-			@media print {
-				margin: 0;
+			@at-root .col-#{$i}#{&} {
+				width: ((100 / $gridColumns) * $i) * 1%;
 			}
 		}
 
-		@media print {
-			width: 100%;
-			float: none;
+	}
+}
+
+.col-12-medium {
+
+	@include mediaquery ($bp-tablet) {
+		width: 100%;
+	}
+
+	@include mediaquery ($bp-desktop) {
+
+		@for $i from 1 through $gridColumns {
+
+			@at-root .col-#{$i}#{&} {
+				width: ((100 / $gridColumns) * $i) * 1%;
+			}
 		}
+
 	}
 
 }
-
 
 /*------------------------------------*\
 	$ROW FAUX
@@ -218,21 +214,12 @@ $gridColumns: 12;
 			vertical-align: top;
 			float: none;
 			height: 100%;
-
-			@at-root #{&}.col-12-medium {
-				display: block;
-			}
 		}
 
 		.col-child {
 			display: block;
 		}
+
 	}
 
-	@include mediaquery ($bp-desktop) {
-		[class^="col-"].col-12-medium,
-		[class*="col-"].col-12-medium {
-			display: table-cell;
-		}
-	}
 }
