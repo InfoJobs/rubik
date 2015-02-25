@@ -199,7 +199,12 @@ $gridColumns: 12;
 		}
 	}
 
-
+	.row {
+		& > [class^="col-"]:last-of-type .col-child,
+		& > [class*="col-"]:last-of-type .col-child {
+				margin-bottom: 0;
+		}
+	}
 
 }
 
