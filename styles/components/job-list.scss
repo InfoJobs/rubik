@@ -33,10 +33,10 @@ Styleguide 2.8
     }
 
     .inner & {
-        margin-left: -10px;
+        margin: 0 -10px;
 
         @include mediaquery ($bp-tablet) {
-            margin-left: -20px;
+            margin: 0 -20px;
         }
     }
 
