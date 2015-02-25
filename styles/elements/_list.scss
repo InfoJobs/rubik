@@ -92,10 +92,10 @@ Styleguide 1.3.4.1
 /*
 Lists with icons
 
-To add icons at list use `.list-bullet-icon` class, and the necessary classes for the icon and size as example.
+Use class `.iconfont-[name]` and `.iconfont-[size]` in <li> element to display the icon it's needed.
 
 Markup:
-<ul class="list-default list-bullet-icon">
+<ul class="list-default">
     <li class="iconfont-CV iconfont-30px iconfont-soft-script"><strong>Crea tu CV online</strong> y pres&eacute;ntate como profesional ante las empresas</li>
     <li class="iconfont-Check iconfont-30px iconfont-soft-script"><strong>Inscr&iacute;bete en ofertas</strong> de trabajo de tu perfil con un solo clic</li>
 </ul>
@@ -105,21 +105,30 @@ Styleguide 1.3.4.2
 
 $iconfont-size: (16, 18, 22, 30, 100);
 
-[class^="iconfont-"],
-[class*="iconfont-"] {
-    position: relative;
+.list-default {
+
+    [class^="iconfont-"],
+    [class*="iconfont-"] {
+        position: relative;
+    }
+
+    @each $val in $iconfont-size {
+      .iconfont-#{$val}px {
+        padding-left: #{$val + 10}px;
+      }
+    }
 }
 
-@each $val in $iconfont-size {
-  .iconfont-#{$val}px {
-    @if ($val < 50) {
-      padding-left: #{$val + 10}px;
-    }
-    @else {
-      padding-left: #{$val + 20}px;
-    }
-  }
-}
+//@each $val in $iconfont-size {
+//	.iconfont-#{$val}px {
+//    @if ($val < 50) {
+//		padding-left: #{$val + 10}px;
+//	}
+//	@else {
+//		padding-left: #{$val + 20}px;
+//		}
+//	}
+//}
 
 .list-bullet-icon [class^="iconfont-"]:before,
 .list-bullet-icon [class*=" iconfont-"]:before {
