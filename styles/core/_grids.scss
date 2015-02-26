@@ -90,6 +90,18 @@ $gridColumns: 12;
 	}
 }
 
+@include mediaquery ($bp-desktop) {
+
+	@for $i from 1 through $gridColumns {
+
+		.col-#{$i}.col-6-medium,
+		.col-#{$i}.col-12-medium {
+			width: ((100 / $gridColumns) * $i) * 1%;
+		}
+	}
+
+}
+
 [class^="col-"],
 [class*="col-"] {
 
@@ -161,42 +173,7 @@ $gridColumns: 12;
 	}
 }
 
-.col-6-medium {
 
-	@include mediaquery ($bp-tablet) {
-		width: 50%;
-	}
-
-	@include mediaquery ($bp-desktop) {
-
-		@for $i from 1 through $gridColumns {
-
-			@at-root .col-#{$i}#{&} {
-				width: ((100 / $gridColumns) * $i) * 1%;
-			}
-		}
-
-	}
-}
-
-.col-12-medium {
-
-	@include mediaquery ($bp-tablet) {
-		width: 100%;
-	}
-
-	@include mediaquery ($bp-desktop) {
-
-		@for $i from 1 through $gridColumns {
-
-			@at-root .col-#{$i}#{&} {
-				width: ((100 / $gridColumns) * $i) * 1%;
-			}
-		}
-
-	}
-
-}
 
 /*------------------------------------*\
 	$ROW FAUX
