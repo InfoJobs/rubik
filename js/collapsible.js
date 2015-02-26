@@ -15,7 +15,7 @@ function calcCollapsible() {
 
 			elCollapsible.style.height = elCollapsible.dataset.heightmobile + 'px';
 			elCollapsible.querySelector('.gradient').style.display = 'block';
-			elCollapsibleLink.style.display = 'block';
+			elCollapsibleLink.style.display = 'inline-block';
 			nCollapsibleHeight = elCollapsible.dataset.heightmobile;
 
 		}
@@ -28,7 +28,7 @@ function calcCollapsible() {
 
 			elCollapsible.style.height = elCollapsible.dataset.heighttablet + 'px';
 			elCollapsible.querySelector('.gradient').style.display = 'block';
-			elCollapsibleLink.style.display = 'block';
+			elCollapsibleLink.style.display = 'inline-block';
 			nCollapsibleHeight = elCollapsible.dataset.heighttablet;
 
 		}
@@ -39,7 +39,7 @@ function calcCollapsible() {
 
 			elCollapsible.style.height = elCollapsible.dataset.heightdesktop + 'px';
 			elCollapsible.querySelector('.gradient').style.display = 'block';
-			elCollapsibleLink.style.display = 'block';
+			elCollapsibleLink.style.display = 'inline-block';
 			nCollapsibleHeight = elCollapsible.dataset.heightdesktop;
 
 		}
