@@ -199,26 +199,37 @@ $gridColumns: 12;
 		}
 	}
 
+	.row {
+		& > [class^="col-"]:last-of-type .col-child,
+		& > [class*="col-"]:last-of-type .col-child {
+				margin-bottom: 0;
+		}
+	}
+
 }
 
-//TODO: Move to component
 /*------------------------------------*\
-$CARDS
+$ROW FAUX
 \*------------------------------------*/
 
 @include mediaquery ($bp-tablet) {
 
-	.row-card {
-		@include display-flex;
-		-webkit-flex-flow: row wrap;
-		        flex-flow: row wrap;
+	.row-faux {
+		display: table;
+		height: 100%;
 
 		[class^="col-"],
 		[class*="col-"] {
-			@include display-flex;
-  			@include flex;
-
+			display: table-cell;
+			vertical-align: top;
+			float: none;
+			height: 100%;
 		}
+
+		.col-child {
+			display: block;
+		}
+
 	}
 
 }

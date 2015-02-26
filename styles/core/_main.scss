@@ -102,9 +102,10 @@ a:focus {
 	outline:none;
 }
 
-.underline,
-.underline:hover {
-    text-decoration: underline;
+.link-underline,
+.link-underline:hover,
+.link:hover {
+ 	text-decoration: underline;
 }
 
 strong {
