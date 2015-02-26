@@ -104,28 +104,6 @@
 
 }
 
-.border-divider {
-   padding-top: 20px;
-   padding-bottom: 20px;
-   border-top: 1px solid $darkest-shiro;
-
-   .inner & {
-       margin-left: -10px;
-       margin-right: -10px;
-       //padding-left: 10px;
-
-       @include mediaquery ($bp-tablet) {
-           margin-left: -20px;
-           margin-right: -20px;
-           //padding-left: 20px;
-       }
-   }
-
-	&:last-child {
-		padding-bottom: 0;
-	}
-}
-
 /*------------------------------------*\
     $MARGINS
 
