@@ -221,13 +221,8 @@ $ROW FAUX
 		[class^="col-"],
 		[class*="col-"] {
 			display: table-cell;
-			vertical-align: top;
 			float: none;
-			height: 100%;
-		}
-
-		.col-child {
-			display: block;
+			border-left: 10px solid $outer-fields;
 		}
 
 	}
