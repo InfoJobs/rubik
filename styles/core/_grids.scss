@@ -213,6 +213,7 @@ $ROW FAUX
 \*------------------------------------*/
 
 .row-faux {
+	margin-left: 0;
 
 	[class^="col-"],
 	[class*="col-"] {
@@ -224,6 +225,7 @@ $ROW FAUX
 	}
 
 	@include mediaquery ($bp-tablet) {
+		margin-left: -10px;
 		display: table;
 		//table-layout: fixed;
 		//width: 100%;
