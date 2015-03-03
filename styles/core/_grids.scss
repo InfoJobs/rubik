@@ -186,17 +186,19 @@ $gridColumns: 12;
 		[class^="col-"],
 		[class*="col-"] {
 			display: table-cell;
+			overflow: hidden;
 			vertical-align: top;
 			float: none;
 			height: 100%;
 		}
 
-		.col-12-medium  {
+		.col-12-medium {
 			display: block;
 		}
 
 		.col-child {
-			display: block;
+			display: table;
+			width: 100%;
 		}
 
 	}

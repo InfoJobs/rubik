@@ -50,7 +50,6 @@ Styleguide 2.3
 	align-items: center;
 
 	@media print {
-
 		min-height: auto;
 	}
 
@@ -105,5 +104,13 @@ Styleguide 2.3
 	        width: 100px;
 	    }
 
+	}
+}
+
+
+.content-banner {
+
+	img { // TODO: move to tools.scss
+		width: 100%;
 	}
 }
