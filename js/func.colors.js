@@ -1,4 +1,3 @@
-
 function getLuminance (hexColor) {
     var r, g, b, d ,h, minRGB, maxRGB,
         computedH = 0,
@@ -27,10 +26,10 @@ function getLuminance (hexColor) {
     maxRGB = Math.max(r,Math.max(g,b));
 
     // Black-gray-white
-    if (minRGB==maxRGB) {
-        computedV = minRGB;
-        return [0,0,computedV];
-    }
+    // if (minRGB==maxRGB) {
+    //      computedV = minRGB;
+    //      return [0,0,computedV];
+    // }
 
     // Colors other than black-gray-white:
     d = (r==minRGB) ? g-b : ((b==minRGB) ? r-g : b-r);
