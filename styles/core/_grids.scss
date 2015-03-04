@@ -61,7 +61,7 @@ Styleguide 1.2.1
 	> [class^="col-"]:last-of-type .col-child,
 	> [class*="col-"]:last-of-type .col-child {
 			margin-bottom: 0;
-	}
+		}
 
 	.aside-wrapper & {
 		display: table;
@@ -178,18 +178,14 @@ $gridColumns: 12;
 \*------------------------------------*/
 
 .row-faux {
-
+	@include row;
 	@include mediaquery ($bp-tablet) {
-		display: table;
-		height: 100%;
+		@include display-flex;
 
 		[class^="col-"],
 		[class*="col-"] {
-			display: table-cell;
-			overflow: hidden;
-			vertical-align: top;
+			@include display-flex;
 			float: none;
-			height: 100%;
 		}
 
 		.col-12-medium {
@@ -197,8 +193,8 @@ $gridColumns: 12;
 		}
 
 		.col-child {
-			display: table;
-			width: 100%;
+			display: block;
+			@include flex;
 		}
 
 	}
@@ -207,7 +203,7 @@ $gridColumns: 12;
 
 		.col-6-medium,
 		.col-12-medium  {
-			display: table-cell;
+			display: block;
 		}
 
 	}
