@@ -81,7 +81,7 @@
 	   			<div class="panel-canvas">
 			     	<div class="border-bottom">
 			     		<div class="heading-addons">
-				    		<div class="inner content-logo js-content-logo" data-color="#356890" data-dark="#000000" data-light="#FFFFFF">
+				    		<div class="inner content-logo js-content-logo" data-bgcolor="#363234" data-dark="#000000" data-light="#FFFFFF">
 				      			<div class="content-logo-text">
 				      				<h1 id="prefijoPuesto" itemprop="title">Programadores ProC y C</h1>
 				      			</div>
@@ -378,24 +378,6 @@
     </div>
 	<script src="../js/jquery-2.1.0.min.js"></script>
 	<script src="../js/collapsible.js"></script>
-	<script>
-
-		var elContentLogo = document.querySelector('.js-content-logo');
-		var elContentText = elContentLogo.querySelector('h1');
-		var colorBackground = elContentLogo.dataset.color;
-		var nLuminance = getLuminance(colorBackground);
-		var colorText;
-
-		// Luminance is from 0 to 1
-		if( colorBackground < 0.5 ) {
-			colorText = elContentLogo.dataset.light;
-		} else {
-			colorText = elContentLogo.dataset.dark;
-		}
-		elContentLogo.style.backgroundColor = colorBackground;
-		elContentText.style.color = colorText;
-
-	</script>
-
+	<script src="../js/content-logo.js"></script>
 
 </body>
