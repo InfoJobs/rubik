@@ -363,3 +363,14 @@ Styleguide 1.3.4.5.4
     }
 
 }
+
+.list-inline {
+	font-size: 0;
+
+	dt,
+	dd,
+	li {
+		display: inline-block;
+		font-size: $small-font-size;
+	}
+}
