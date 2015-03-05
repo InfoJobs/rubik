@@ -99,10 +99,17 @@ Styleguide 2.3
 	a {
 	    width: 100px;
 	    height: 100px;
+	}
 
-	    img {
-	        width: 100px;
-	    }
+	img {
+		display: block;
+		width: 100px;
+		padding: 4px;
+		border: 1px solid $darkest-shiro;
+	}
 
+	.fig-thumbnail-logo img {
+		border: none;
+		padding: 0;
 	}
 }
