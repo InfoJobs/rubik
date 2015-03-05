@@ -11,21 +11,25 @@ $HEADINGS
 /*
 Headings
 
-Definition of differents levels of titles. `<h1>` for level 1, `<h2>` for level 2, `<h3>` for level 3.
-<br>`<h1>` defines the most important heading. 
-Only one `<h1>` per page or `<section>`.
+Definition of differents levels of titles. <br>
+`<h1>` for level 1,<br>
+`<h2>` for level 2,<br>
+`<h3>` for level 3.<br>
+`<h1>` defines the most important heading. Only one `<h1>` per page or `<section>`.
 
 Markup:
-<h1>Header Level 1</h1>
-<h2>Header Level 2</h2>
-<h3>Header Level 3</h3>
+<h1>Heading level 1</h1>
+<h2>Heading level 2</h2>
+<h3>Heading level 3</h3>
 
 Styleguide 1.3.1
 */
 
 h1,
 h2,
-h3 {
+.h2
+h3,
+.h3 {
 	font-family: $base-font-family-bold;
 
 	.skin-executive & {
@@ -55,7 +59,8 @@ h1 {
 	}
 }
 
-h2 {
+h2,
+.h2 {
 	margin: 0 0 15px 0;
 	font-size: $large-font-size;
 	line-height: $large-line-height;
@@ -66,7 +71,8 @@ h2 {
 	}
 }
 
-h3 {
+h3,
+.h3 {
 	@extend %font-medium-line;
 	margin-bottom: 15px;
 }
@@ -74,7 +80,7 @@ h3 {
 /*
 Heading-addons
 
-Use class `.heading-addons` to reset margin defined for generic H1.
+Use class `.heading-addons` to reset margin defined for generic `<h1>`.
 
 Markup:
 <div class="heading-addons">
@@ -85,7 +91,7 @@ Markup:
 Styleguide 1.3.1.1
 */
 
-.heading-addons {
+.heading-addons { //TODO: modificar nomenclatura de esta clase
 
 	h1 {
 		margin: 0;
@@ -100,11 +106,11 @@ Styleguide 1.3.1.1
 /*
 Heading mega
 
-Use `heading-mega` for a big size of Heading.
+Use class `.heading-mega` for a big size of Heading.
 
 
 Markup:
-<h1 class="heading-mega">Header Level 1</h1>
+<h1 class="heading-mega">Heading mega</h1>
 
 Styleguide 1.3.1.2
 */
@@ -125,4 +131,22 @@ Styleguide 1.3.1.2
 		line-height: $xxxlarge-line-height;
 	}
 
+}
+
+.heading-divider {
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid $darkest-shiro;
+
+	&-bleed {
+		margin-left: -10px;
+		margin-right: -10px;
+		padding-left: 10px;
+
+		@include mediaquery ($bp-tablet) {
+			margin-left: -20px;
+			margin-right: -20px;
+			padding-left: 20px;
+		}
+	}
 }

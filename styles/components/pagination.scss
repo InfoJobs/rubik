@@ -5,6 +5,57 @@
     $PAGINATION
 \*------------------------------------*/
 
+/*
+Pagination
+
+Wrap a `.btn-group` structure with `pagination` class.
+
+Markup:
+<div class="pagination">
+	<div class="btn-group">
+		<div class=" active hide-small-device hide-medium-device ">
+			<button class="btn btn-default" id="page1" type="button">1</button>
+		</div>
+		<div class="hide-small-device hide-medium-device">
+			<button class="btn btn-default" id="page2" type="button">2</button>
+		</div>
+		<div class="hide-small-device hide-medium-device">
+			<button class="btn btn-default" id="page3" type="button">3</button>
+		</div>
+		<div class="hide-small-device hide-medium-device">
+			<button class="btn btn-default" id="page4" type="button">4</button>
+		</div>
+		<div class="hide-small-device hide-medium-device">
+			<button class="btn btn-default" id="page5" type="button">5</button>
+		</div>
+		<div class="hide-small-device hide-medium-device">
+			<button class="btn btn-default" id="page6" type="button">6</button>
+		</div>
+		<div class="hide-small-device hide-medium-device">
+			<button class="btn btn-default" id="page7" type="button">7</button>
+		</div>
+		<div class="hide-small-device hide-medium-device">
+			<button class="btn btn-default" id="page8" type="button">8</button>
+		</div>
+		<div class="hide-small-device hide-medium-device">
+			<button class="btn btn-default" id="page9" type="button">9</button>
+		</div>
+		<div class="hide-small-device hide-medium-device">
+			<button class="btn btn-default" id="page10" type="button">10</button>
+		</div>
+		<div class="hide-small-device hide-medium-device">
+			<button class="btn btn-default" id="page11" type="button">11</button>
+		</div>
+		<div class="single">
+			<button class="btn btn-default" id="pageNext" type="button" title="Siguiente">Siguiente</button>
+		</div>
+	</div>
+</div>
+
+Styleguide 2.9
+*/
+
+
 .pagination {
 	background: $shiro;
 

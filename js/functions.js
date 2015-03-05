@@ -1,3 +1,8 @@
+/**
+ * Function Color Luminance
+ *
+ */
+
 function getLuminance (hexColor) {
     var r, g, b, d ,h, minRGB, maxRGB,
         computedH = 0,

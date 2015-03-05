@@ -151,23 +151,6 @@ $iconfont-size: (16, 18, 22, 30, 100); //TODO: resolve problem when it s moved t
 	}
 }
 
-/*
-Icon color
-
-Classes to modify the icon color.
-
-Markup:
-<ul>
-	<li class="iconfont-30px iconfont-Company {$modifiers}">Lorem ipsum</li>
-</ul>
-
-{$modifiers}:
-
-.iconfont-soft-script		- Color: To change text color applied in the icon
-
-Styleguide 1.6.2.2
-*/
-
 .iconfont-soft-script::before {
 	color: $soft-script;
 }
@@ -181,7 +164,7 @@ Icon function
 Markup:
 <span class="iconfont-100px">Executive</span>
 
-Styleguide 1.6.2.3
+Styleguide 1.6.2.2
 */
 
 .iconfont-img::before {
@@ -254,7 +237,7 @@ Markup:
 	<li class="iconfont-Alert-circle iconfont-22px">iconfont-Alert-circle</li>
 </ul>
 
-Styleguide 1.6.2.4
+Styleguide 1.6.2.3
 */
 
 .iconfont-ArrowDown::before {

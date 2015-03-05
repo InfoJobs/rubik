@@ -47,8 +47,8 @@ function calcCollapsible() {
 	}
 }
 
-window.onload = calcCollapsible;
-window.onresize = calcCollapsible;
+window.addEventListener('load', calcCollapsible);
+window.addEventListener('resize', calcCollapsible);
 
 
 elCollapsibleLink.addEventListener('click', function(event){
@@ -76,12 +76,11 @@ elCollapsibleLink.addEventListener('click', function(event){
     	elCollapsible.querySelector('.gradient').style.display = 'block';
 
         elCollapsible.style.height = nCollapsibleHeight + 'px';
-        this.innerHTML = this.dataset.copyinit;
-        bClose = !bClose;
-        $("html, body").animate({ scrollTop: offset.top - this.dataset.offset }, this.dataset.animation );
-        var d = document.getElementById("collapsible");
 
-        d.className = d.className + "";
+        $("html, body").animate({ scrollTop: offset.top - this.dataset.offset }, this.dataset.animation );
+
+		this.innerHTML = this.dataset.copyinit;
+		bClose = !bClose;
 
     }
 

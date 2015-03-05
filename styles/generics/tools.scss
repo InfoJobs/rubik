@@ -10,10 +10,10 @@
 	float: left;
 
 	&--mobile {
-	 	float: left;
+		float: left;
 
 		@include mediaquery ($bp-tablet) {
-				float: none;
+			float: none;
 		}
 	}
 
@@ -21,7 +21,7 @@
 
 		@include mediaquery ($bp-tablet) {
 
-		float:left;
+			float:left;
 
 		}
 	}
@@ -39,26 +39,20 @@
 	}
 
 	&--tablet {
-
 		@include mediaquery ($bp-tablet) {
 			float:right;
-
 		}
-
 	}
 
 }
 
 .pull-left--desktop {
-
 	@include mediaquery ($bp-desktop) {
 		float: left;
 	}
-
 }
 
 .pull-right--desktop {
-
 	@include mediaquery ($bp-desktop) {
 		float: right;
 	}
@@ -132,11 +126,12 @@
 
     var $orientations in _vars.scss
 \*------------------------------------*/
+
 @each $value in $orientations {
 
 	.margin-#{$value}  {
-	    margin-#{$value}: $padding;
-	 }
+	   margin-#{$value}: $padding;
+	}
 
 }
 
@@ -180,6 +175,7 @@
 	//.aside-wrapper .hide-small-device is must because we have .aside-wrapper .col-n {display: table-cell;} on grids.scss
 
 }
+
 @include mediaquery ($bp-tablet) {
 
 	//Use to replace text in desktop, this class needs data-text attribute and has to be included the first one
@@ -192,7 +188,7 @@
 
 		acronym,
 		span {
-			display: none;
+		display: none;
 		}
 	}
 

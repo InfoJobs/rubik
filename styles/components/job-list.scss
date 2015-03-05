@@ -16,7 +16,6 @@ Styleguide 2.8
 */
 
 .result-list {
-    margin-top: 20px;
     margin-bottom: 20px;
     background: $shiro;
     border-top: 1px solid $darkest-shiro;
@@ -185,31 +184,23 @@ Styleguide 2.8
 // cabecera en un listado de resultados
 
 .result-list-header {
+	flex-direction: column; //TODO: make a mixin with vendors
+	padding-bottom: 0;
 
     @include mediaquery ($bp-desktop) {
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
+    	@include display-flex;
+    	flex-direction: row; //TODO: make a mixin with vendors
+    	padding-bottom: 20px;
         border-bottom: 1px solid $darkest-shiro;
     }
 
     .box {
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        display: -webkit-box;
-        background-color: $dark-shiro;
+        @include display-flex;
+        @include flex;
         overflow: hidden;
 
-        @include mediaquery ($bp-tablet) {
-            -webkit-flex: 1;
-            -ms-flex: 1;
-            flex: 1;
-            -webkit-box-flex: 1;
-        }
-
         @include mediaquery ($bp-desktop) {
-            background: none;
+        	align-self: center;
         }
     }
 
@@ -222,76 +213,36 @@ Styleguide 2.8
     }
 
     h1 {
+    	@include flex;
+    	align-self: center;
         font-family: $base-font-family;
         font-size: $base-font-size;
         margin: 0;
-        padding: 0 10px;
+        line-height: 23px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         color: #333;
-        line-height: 50px;
-        -webkit-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        -webkit-box-flex: 1;
-
-        @include mediaquery ($bp-tablet) {
-            padding: 0 10px 0 20px;
-        }
 
         @include mediaquery ($bp-desktop) {
-            line-height: 70px;
-            padding: 0 20px;
+        	white-space: normal;
+        	overflow: visible;
+            text-overflow: clip;
         }
     }
 
     .link {
-        -webkit-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        -webkit-box-flex: 1;
-        width: 155px;
-        min-width: 158px;
-        line-height: 50px;
-        white-space: nowrap;
-
-        &::before {
-            content: '';
-            border-left: 1px solid $darkest-shiro;
-            padding-right: 10px;
-
-            @include mediaquery ($bp-desktop) {
-                padding-right: 20px;
-            }
-        }
-
-        @include mediaquery ($bp-desktop) {
-            min-width: 168px;
-            line-height: 70px;
-        }
-
+    	align-self: center;
     }
 
-    .order {
-        padding: 10px;
+    .action {
+    	margin-top: 10px;
 
-        @include mediaquery ($bp-desktop) {
-            min-width: 200px;
-            padding: 20px;
-        }
-
-        .btn-group {
-            width: 100%;
-            table-layout: fixed;
-
-            @include mediaquery ($bp-desktop) {
-                width: auto;
-                table-layout: auto;
-            }
+    	@include mediaquery ($bp-desktop) {
+        	align-self: center;
+        	margin-top: 0;
         }
     }
-
 }
 
 .result-list-footer {

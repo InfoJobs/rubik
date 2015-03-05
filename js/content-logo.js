@@ -28,5 +28,5 @@ function calcResolution() {
 	}
 }
 
-window.onload = calcResolution;
-window.onresize = calcResolution;
+window.addEventListener('load', calcResolution);
+window.addEventListener('resize', calcResolution);
