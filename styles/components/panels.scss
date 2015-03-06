@@ -31,6 +31,16 @@ $PANELS
 	}
 }
 
+[class^="col-"].panel + [class^="col-"] .col-child,
+[class^="col-"].panel:not(:first-child) .col-child,
+[class*="col-"].panel + [class*="col-"] .col-child,
+[class*="col-"].panel:not(:first-child) .col-child {
+
+	@include mediaquery ($bp-tablet) {
+		margin-left: 0;
+	}
+}
+
 .row-panel-8-4 {
 	color: $shiro;
 	overflow: hidden;

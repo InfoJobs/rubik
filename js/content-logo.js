@@ -12,9 +12,9 @@ function calcResolution() {
 
 		// Luminance is from 0 to 1
 		if( nLuminance < 0.6 ) {
-			colorText = elContentLogo.dataset.light;
+			colorText = elContentLogo.dataset.textlight;
 		} else {
-			colorText = elContentLogo.dataset.dark;
+			colorText = elContentLogo.dataset.textdark;
 		}
 
 		elContentLogo.style.backgroundColor = colorBackground;

@@ -95,6 +95,7 @@ Styleguide 2.3
 	-ms-flex: none;
 	flex: none;
 	margin-left: 20px;
+	background-color: $shiro;
 
 	a {
 	    width: 100px;
@@ -103,7 +104,7 @@ Styleguide 2.3
 
 	img {
 		display: block;
-		width: 100px;
+		width: 110px;
 		padding: 4px;
 		border: 1px solid $darkest-shiro;
 	}
@@ -111,5 +112,6 @@ Styleguide 2.3
 	.fig-thumbnail-logo img {
 		border: none;
 		padding: 0;
+		width: 100px;
 	}
 }
