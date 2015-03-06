@@ -41,6 +41,18 @@ $PANELS
 	}
 }
 
+.col-12-medium.panel + .col-12-medium .col-child,
+.col-12-medium.panel:not(:first-child) .col-child {
+
+	@include mediaquery ($bp-tablet) {
+		margin-left: 10px;
+	}
+
+	@include mediaquery ($bp-desktop) {
+		margin-left: 0;
+	}
+}
+
 .row-panel-8-4 {
 	color: $shiro;
 	overflow: hidden;

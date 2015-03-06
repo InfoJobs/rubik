@@ -197,7 +197,7 @@ $gridColumns: 12;
 	@include mediaquery ($bp-tablet) {
 
 		@include display-flex;
-		flex-flow: row wrap;
+		@include vendor-prefix('flex-flow', 'row wrap');
 
 		[class^="col-"],
 		[class*="col-"] {
