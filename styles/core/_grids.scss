@@ -181,6 +181,7 @@ $gridColumns: 12;
 	@include row;
 	@include mediaquery ($bp-tablet) {
 		@include display-flex;
+		flex-flow: row wrap;
 
 		[class^="col-"],
 		[class*="col-"] {
@@ -203,7 +204,7 @@ $gridColumns: 12;
 
 		.col-6-medium,
 		.col-12-medium  {
-			display: block;
+			@include display-flex;
 		}
 
 	}
