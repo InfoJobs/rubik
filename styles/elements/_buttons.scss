@@ -278,6 +278,7 @@ button:active[disabled],
 .btn-disabled:focus {
    background: $shiro;
    color: $wood-katana-smash;
+   text-decoration: none;
    cursor: default;
 
    // review this rule (not work without background, border,...)

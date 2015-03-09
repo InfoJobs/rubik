@@ -309,3 +309,12 @@ body {
 	//for logo print
 	background: url(#{$path-media}/appgrade/backgrounds/bg-logo-claim-empleo.svg) no-repeat -9999px -9999px;
 }
+
+// to apply on container needs min-height
+.inner-freak {
+	min-height: 250px;
+
+	&:only-of-type {
+		min-height: 400px;
+	}
+}
