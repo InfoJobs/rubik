@@ -74,6 +74,12 @@ Styleguide 1
 @import '../styles/components/form-rating-nps';
 
 
-
 // tools
 @import '../styles/generics/tools';
+
+/*
+Custom styles
+
+*/
+
+@import 'styleguide/templates/infojobs/public/custom';
