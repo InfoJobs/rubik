@@ -28,7 +28,8 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: [
-          { src: ['rubik-styleguide.scss'], dest: 'css/style.doc.css'}
+          { src: ['rubik-styleguide.scss'], dest: 'css/style.doc.css'},
+          { src: ['templates/infojobs/public/custom.scss'], dest: 'templates/infojobs/public/custom.css'}
         ]
       },
       production: {
@@ -43,11 +44,8 @@ module.exports = function(grunt) {
     },
     shell: {
       kss: {
-        // command: 'kss-node css styleguide --css css/style.doc.css'
-        // command: 'kss-node css styleguide --css css/style.doc.css --template templates/styleguide-template'
-        // command: 'kss-node css styleguide --css css/style.doc.css --template templates/template'
-        // command: 'kss-node css styleguide --css css/style.doc.css --template templates/github'
-        command: 'kss-node css styleguide --template templates/infojobs'
+         command: 'kss-node css styleguide --css css/style.doc.css'
+//        command: 'kss-node css styleguide --template templates/infojobs'
       }
     }
   });

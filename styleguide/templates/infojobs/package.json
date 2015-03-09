@@ -1,7 +1,7 @@
 {
-  "name": "kss-node-template",
-  "version": "2.0.1",
-  "description": "The default template for kss-node.",
+  "name": "infojobs-template",
+  "version": "1.0.0",
+  "description": "InfoJobs template for Rubik Styleguide.",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

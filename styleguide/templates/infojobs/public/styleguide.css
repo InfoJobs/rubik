@@ -1,142 +1,5 @@
 @charset "UTF-8";
-/*------------------------------------*\
-    $STYLE
-\*------------------------------------*/
-/**
- * Aquí incluímos todos los módulos (archivos .scss) que se can
- * a compilar en el CSS definitivo: /css/style.css.
- * Si no usas algún módulo, es recomendable que elimines
- * o comentes su inclusión para no tener estilos innecesarios en tu CSS final
- * y optimizar lo máximo posible.
- */
-/*------------------------------------*\
-    $CONTENIDO
-\*------------------------------------*/
-/**
- * Contenido..................... Esto que lees
 
- * Variables..................... Configuramos todas las variables del framework
-
- * Mixins........................ Mixins de LESS
-
- * Helpers....................... Clases de ayuda
-
- * Reset......................... Reinicio de valores CSS
-
- * Fuentes....................... Fuentes que vamos a importar
-
- * Links......................... Formas y estilos de los links
-
- * Tablas........................ Estilos de las tablas
-
- * Botones....................... Estilos de Botones, skins y variantes
-
- * Elementos..................... Elementos varios como Imagen, HR, etc...
-
- * Tipografía.................... Encabezados, small, párrafos, listas, etc...
-
- * Navegación.................... Una navegación, por si quieres usar esta y no la tuya propia
-
- * Formularios................... Estilos de todos los elementos de formularios y sus variantes
-
- * Sitio......................... Aquí escribes tus estilos para la web se vea como tu quieres ;)
-
- * Paginación.................... Estilos básicos para las paginaciones
-
- * Texturas...................... Badges, cajas y wells
-
- * Breakpoints................... Importamos breakpoints basados en las variables @bp$
-
- * Patron........................ Estilos para la guía de patrones
- */
-/*------------------------------------*\
-    $VARIABLES
-\*------------------------------------*/
-/**
- *
- * Definimos y configuramos las variables CSS que vamos a utilizar
- *
- */
-/*------------------------------------*\
-    $BREAKPOINTS
-\*------------------------------------*/
-/**
- * "Start with the small screen first, then expand until it looks like shit. Time to insert a breakpoint!"
- */
-/*------------------------------------*\
-    $BORDER-BOX
-\*------------------------------------*/
-/**
- * Quieres todos los elementos tener un box-sizing:border-box?
- * paulirish.com/2012/box-sizing-border-box-ftw ?
- */
-/*------------------------------------*\
-    $PATHS
-\*------------------------------------*/
-/*------------------------------------*\
-    $LAYOUT
-\*------------------------------------*/
-/**
- * Definimos elementos constantes del layout
- */
-/*------------------------------------*\
-    $FONT-FACE
-\*------------------------------------*/
-/**
- * Definimos las fuentes a utilizar:
- * $basefont para todos los textos inline
- * $altfont para textos alternativos, como citas, intro, etc...
- * $codefont para código
- */
-/*------------------------------------*\
-    $TAMAÑOS
-\*------------------------------------*/
-/**
- * Definimos las fuentes a utilizar:
- * $basefont para todos los textos inline
- * $altfont para textos alternativos, como citas, intro, etc...
- * $codefont para código
- */
-/*------------------------------------*\
-    $COLORS
-\*------------------------------------*/
-/**
- * Brand stuff
- */
-/**
- * Escala de grises
- * A veces no queremos que el negro sea "negro" o el blanco "blanco", puedes cambiarlos.
- */
-/*------------------------------------*\
-    $TEXTURAS
-\*------------------------------------*/
-/**
- * Definimos Colores y elementos de popups, mensajes de alerta, etc...
- */
-/* Colores sociales -> son los colores corporativos, pero cambiadlos
- * si hace falta. (también podéis añadir más)  ///////////////////////
- */
-/*------------------------------------*\
-    $MIXINS
-\*------------------------------------*/
-/*------------------------------------*\
-    $PLACEHOLDERS
-\*------------------------------------*/
-/**
-* The ghost, nudged to maintain perfect centering
-*/
-/**
-* Escondemos el texto solo VISUALMENTE
-*/
-/**
-* Escondemos el texto de VISUALMENTE y SCREENREADERS
-*/
-/**
-* Escondemos pero mantenemos layout.
-*/
-/**
-* Visualmente escondido, pero se puede detectar con teclado (focus).
-*/
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   position: static;
@@ -2051,3 +1914,29 @@ html, body, .container, .main {
   left: 0;
   overflow-x: hidden;
   overflow-y: auto; }
+
+/* styleguide -------------------------------------------------------------- */
+
+.styleguide-html {
+    background-color: lightblue;
+}
+
+.styleguide-block {
+    margin-top: 60px;
+}
+
+.styleguide-header {
+    background-color: lightcoral;
+}
+
+.styleguide-description {
+    background-color: lightgreen;
+}
+
+.styleguide-modifier {
+    background-color: lightgray;
+}
+
+.styleguide-html-highlight {
+    background-color: lightpink;
+}

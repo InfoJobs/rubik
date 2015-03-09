@@ -19,16 +19,17 @@
 	
 	
 	//--------------------------------------------------------------------------
-	w.onload = function() {
+	w.addEventListener('load', function() {
 		var sPath = window.location.pathname;
 		
 		currentSection( sPath );
-        equalColumn();
-	}
+        //equalColumn();
+        prettyPrint();
+	});
     
-    w.onresize = function() {
-        equalColumn();
-	}
+    w.addEventListener('resize', function() {
+        //equalColumn();
+	});
 
 
 	// Funcions ----------------------------------------------------------------

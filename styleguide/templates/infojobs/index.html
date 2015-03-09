@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="public/styleguide.css">
-        <link rel="stylesheet" href="public/style.css">
+        <link rel="stylesheet" href="public/custom.css">
     </head>
     <body>
 
@@ -88,24 +88,21 @@
 
                 {{#eachSection rootName}}
                     {{#if markup}}
-                        <div id="rubik-{{reference}}" class="styleguide-example">
-                            <header class="styleguide-example-header styleguide-reset">
-                                <h3>{{{reference}}} <em>{{{header}}}</em></h3>
-                            </header>
-                            {{#if description}}
-                                <div class="styleguide-description styleguide-markdown-body styleguide-reset">
-                                    {{{description}}}
-                                    <ul class="styleguide-modifier">
-                                    {{#eachModifier}}
-                                        <li><strong>{{{name}}}</strong> - {{{description}}}</li>
-                                    {{/eachModifier}}
-                                    </ul>
-                                </div>
-                            {{/if}}
-
-                            <div class="styleguide-element">
-                                {{{markup}}}
-                            </div>
+                        <div id="rubik-{{reference}}" class="grid styleguide-block">
+                            <div class="col-12">
+                                <header class="styleguide-header">
+                                    <h3>{{{reference}}} <em>{{{header}}}</em></h3>
+                                </header>
+                                {{#if description}}
+                                    <div class="styleguide-description">
+                                        {{{description}}}
+                                        <ul class="styleguide-modifier">
+                                        {{#eachModifier}}
+                                            <li><strong>{{{name}}}</strong> - {{{description}}}</li>
+                                        {{/eachModifier}}
+                                        </ul>
+                                    </div>
+                                {{/if}}
 
                             {{#eachModifier}}
                                 <div class="styleguide-element styleguide-modifier">
@@ -114,20 +111,23 @@
                                 </div>
                             {{/eachModifier}}
 
-                            <div class="styleguide-html styleguide-reset">
+                            <div class="styleguide-html">
                                 <div class="styleguide-html-highlight">
-                                    <pre><code class="xml">{{{markup}}}</code></pre>
+                                    <pre><code class="css">{{{markup}}}</code></pre>
                                 </div>
+                            </div>
+                           
+                           
                             </div>
                         </div>
 
                     {{else}}
 
-                            <header class="example-header styleguide-reset">
+                            <header class="example-header">
                                 <h1>{{{header}}}</h1>
                             </header>
                             {{#if description}}
-                                <div class="markdown-body styleguide-reset">
+                                <div class="markdown-body">
                                     {{{description}}}
                                 </div>
                             {{/if}}
@@ -142,6 +142,7 @@
         </div>
 
         <script src="public/jquery-2.1.0.min.js"></script>
+        <script src="public/prettify.js"></script>
         <script src="public/plugins.js"></script>
         <script src="public/main.js"></script>
     </body>
