@@ -44,10 +44,10 @@ body {
       font-size: 14px;
       text-align: center;
       background-color: $darkest-shiro;
+      float: left;
+      width: 50%;
+        @include mediaquery ($bp-tablet) {
 
-            @include mediaquery ($bp-desktop) {
-
-                float: left;
                 width: 25%;
 
             }
