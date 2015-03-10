@@ -1,0 +1,10 @@
+.guide {
+    background-color: $shiro;
+
+    .col-child {
+    //[class^="col-"],
+    //[class*="col-"]
+        padding: 20px;
+        background-color: grey;
+    }
+}
