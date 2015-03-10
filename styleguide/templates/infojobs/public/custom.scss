@@ -1,10 +1,24 @@
+html,
+body {
+    height: auto;
+    background: none;
+}
+
 .guide {
     background-color: $shiro;
 
     .col-child {
     //[class^="col-"],
     //[class*="col-"]
-        padding: 20px;
-        background-color: grey;
+        padding: 10px;
+        text-align: center;
+        background-color: $darkest-shiro;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
+
+    .col-6-medium {
+        width: 50%;
+    }
+
 }
