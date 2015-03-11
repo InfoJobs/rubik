@@ -31,7 +31,10 @@ $PANELS
 	}
 }
 
-[class*="col-"].panel .col-child {
+[class^="col-"].panel .col-child,
+[class^="col-"].panel + [class^="col-"] .col-child,
+[class*="col-"].panel .col-child,
+[class*="col-"].panel + [class*="col-"] .col-child {
 	margin-bottom: 0;
 }
 
