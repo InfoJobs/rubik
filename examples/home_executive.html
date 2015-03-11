@@ -119,27 +119,26 @@
 						   		</div>
 				   			</div>
 				   		</div>
-				   		<div class="row row-panel-8-4 clearfix fade-in-up">
-							<div class="col-8 col-6-medium row-bleed panel-executive">
-								<div class="col-child">
-									<div class="col-child-content">
-										<p>Actualmente no puedes acceder a una cuenta Executive. Es posible que tu CV no estï¿½ actualizadoy por eso no refleje que cumples con el perfil requerido.</p>
-										<a onclick="" href="#" class="btn btn-primary btn-medium" title="">Actualizar mi CV</a>
-										<p>Si tienes problemas para activar tu cuenta Executive, <a href="#" class="link">contacta con nosotros</a>.</p>
-									</div>
+						<div class="row-faux fade-in-up" id="accountEngagement">
+							<div class="col-8 col-12-medium panel">
+								<div class="col-child inner panel-executive">
+										<p>Si tenías tu CV en InfoJobs es probable que tu cuenta Executive ya esté activada.</p>
+										<a title="" class="btn btn-primary btn-medium" href="#" onclick="abrirThickboxLogin('/empleo-directivos-managers?dgv='+getDgv());xt_med('C', '1', 'X_EXECUTIVE_ACTUALIZE_CV', 'N');">Comprobar que tengo mi cuenta Executive</a>
+										<p>¿Eres nuevo/a en InfoJobs? <a class="link" onclick="xt_click(this,'C',infojobs.pageConfig.getXitiPortalLevelTwo(),'header_registration','N'); return true;" href="/candidate/registration/registration-index.xhtml?forTrace=executive-landing&amp;subsegmento=31">Crea ahora tu cuenta</a></p>
 								</div>
 							</div>
-							<div class="col-4 col-6-medium row-bleed panel-info">
-								<div class="col-child">
-									<div class="col-child-content">
-										<h2>ï¿½Quiï¿½n puede acceder a una cuenta Executive?</h2>
+							<div class="col-4 col-12-medium">
+									<div class="col-child inner panel-info">
+										<h2>¿Quién puede acceder a una cuenta Executive?</h2>
 										<ul class="list-default list-bullet-default small">
-											<li>Profesionales de perfil directivo, manager o especialista de alto nivel. <a href="#" class="link">Ver perfiles</a>.</li>
-											<li>Experiencia laboral de mï¿½s de 5 aï¿½os.</li>
-											<li>ï¿½ltimo salario al nivel del puesto.</li>
+											<li>
+												Profesionales de perfil de dirección o management.
+												<a onclick="window.scrollTo(0,1320);" id="verperfiles" class="link" href="javascript:void(0);">Ver perfiles</a>
+											</li>
+											<li>Experiencia laboral de más de 5 años.</li>
+											<li>Último salario al nivel del puesto.</li>
 										</ul>
 									</div>
-								</div>
 							</div>
 						</div>
 						<div class="inner panel-executive fade-in-up hide">
@@ -151,7 +150,7 @@
 				</section>
 			</div>
 
-	        <div class="container-expanded shadow-all">
+	        <div class="container-expanded shadow-all panel-canvas">
 				<section id="uvp" class="inner text-center">
 					<header>
 						<h1>ï¿½Quï¿½ ventajas tiene tu cuenta Executive?</h1>

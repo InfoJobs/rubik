@@ -165,7 +165,7 @@ $gridColumns: 12;
 	}
 }
 
-.row-bleed { //TODO: related with panel- structure
+.row-bleed { //DEPRECATED: only used in 'view-offer' and 'home-executive'
 	@include row;
 	margin: 0;
 	padding-top: 10px;

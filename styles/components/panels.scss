@@ -31,6 +31,10 @@ $PANELS
 	}
 }
 
+[class*="col-"].panel .col-child {
+	margin-bottom: 0;
+}
+
 [class^="col-"].panel + [class^="col-"] .col-child,
 [class^="col-"].panel:not(:first-child) .col-child,
 [class*="col-"].panel + [class*="col-"] .col-child,
@@ -53,7 +57,11 @@ $PANELS
 	}
 }
 
+<<<<<<< HEAD
 .row-panel-8-4 {
+=======
+.row-panel-8-4 { //DEPRECATED
+>>>>>>> develop
 	color: $shiro;
 	overflow: hidden;
 

@@ -1,0 +1,43 @@
+//generics
+@import "../generics/generics";
+
+//refactor
+@import "../core/fonts";
+
+/*------------------------------------*\
+    $FORM RATING NPS
+\*------------------------------------*/
+
+/*
+Form rating NPS
+
+Styleguide 2.28
+*/
+
+.rating-nps {
+
+	.range {
+		margin: 0 0 5px 0;
+	}
+	.range-group {
+		height: auto;
+		padding: 0 12px 0 0;
+	}
+	.radio-group {
+		display: table;
+		table-layout: fixed;
+		margin-left: -6px;
+	}
+	.radio-group li {
+		display: table-cell;
+		padding: 0;
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+
+	.radio-group label {
+		display: block;
+		width: auto;
+	}
+}
