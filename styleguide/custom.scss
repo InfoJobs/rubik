@@ -30,56 +30,51 @@ body {
 
     //Colors
     .color {
-        padding: 10px 20px;
-        text-align: center;
-        border: 1px solid #2D3133;
-        float: left;
-        margin: 10px 0 0 10px;
-    }
-}
+        margin-bottom: 10px;
 
-
-.guide-icons ul {
-
-    overflow: hidden;
-    display: inline-block;
-    width: 100%;
-
-    li {
-      height: 100px;
-      margin: 0px;
-      outline: 1px solid white;
-      font-size: 14px;
-      text-align: center;
-      background-color: $darkest-shiro;
-
-            @include mediaquery ($bp-desktop) {
-
-                float: left;
-                width: 25%;
-
-            }
-
-          @include mediaquery ($bp-desktop) {
-
-              float: left;
-              width: 16.666%;
-
-          }
-
+        li {
+            padding: 10px 20px;
+            text-align: center;
+            border: 1px solid #2D3133;
+            float: left;
+            margin: 0 10px 10px 0;
+        }
     }
 
-    li::after,
-    li::before {
-      display: block;
-      padding: 30px;
-      text-align: center;
-      font-size: 30px;
+    //Icons
+    &.icons ul {
+		overflow: hidden;
+        display: inline-block;
+        width: 100%;
 
+	    li {
+			height: 100px;
+			margin: 0px;
+			outline: 1px solid white;
+			font-size: 14px;
+			text-align: center;
+			background-color: $darkest-shiro;
+			float: left;
+			width: 50%;
 
+			@include mediaquery ($bp-tablet) {
+				width: 25%;
+
+			}
+
+			@include mediaquery ($bp-desktop) {
+				width: 16.666%;
+
+			}
+
+        }
+
+		li::after,
+        li::before {
+			display: block;
+			padding: 30px;
+			text-align: center;
+			font-size: 30px;
+		}
     }
-
-
-
-
 }
