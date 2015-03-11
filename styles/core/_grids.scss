@@ -61,7 +61,7 @@ Styleguide 1.2.1
 	> [class^="col-"]:last-of-type .col-child,
 	> [class*="col-"]:last-of-type .col-child {
 			margin-bottom: 0;
-		}
+	}
 
 	.aside-wrapper & {
 		display: table;
@@ -82,12 +82,20 @@ $gridColumns: 12;
 
 @include mediaquery ($bp-tablet) {
 	@for $i from 1 through $gridColumns {
-		.col-#{$i},
-		.col-#{$i}-medium  {
+		.col-#{$i} {
 			width: ((100 / $gridColumns) * $i) * 1%;
 			float: left;
 		}
 	}
+
+	.col-6-medium {
+		width: 50%;
+	}
+
+	.col-12-medium {
+		width: 100%;
+	}
+
 }
 
 @include mediaquery ($bp-desktop) {
@@ -124,8 +132,13 @@ $gridColumns: 12;
 	}
 }
 
+
 .col-child {
 	margin: 0 0 10px 10px;
+
+	@include mediaquery ($bp-tablet) {
+		margin-bottom: 0;
+	}
 
 	.aside-wrapper & {
 		margin-left: 0;
@@ -152,7 +165,7 @@ $gridColumns: 12;
 	}
 }
 
-.row-bleed { //TODO: related with panel- structure
+.row-bleed { //DEPRECATED: only used in 'view-offer' and 'home-executive'
 	@include row;
 	margin: 0;
 	padding-top: 10px;
@@ -178,10 +191,13 @@ $gridColumns: 12;
 \*------------------------------------*/
 
 .row-faux {
+
 	@include row;
+
 	@include mediaquery ($bp-tablet) {
+
 		@include display-flex;
-		flex-flow: row wrap;
+		@include vendor-prefix('flex-flow', 'row wrap');
 
 		[class^="col-"],
 		[class*="col-"] {
@@ -208,4 +224,5 @@ $gridColumns: 12;
 		}
 
 	}
+
 }
