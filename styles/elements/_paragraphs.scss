@@ -84,7 +84,8 @@ Styleguide 1.3.3
 /*
 Text variants
 
-Use class `.bold` to bold the letter.
+Use class `.bold` to bold the letter.<br>
+Use only on this tags elements `<p>`, `<li>`, `<span>`, `dt` or `dd`
 
 Markup:
 <p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
