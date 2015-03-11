@@ -22,11 +22,15 @@ body {
     }
 
     .color {
-        padding: 10px 20px;
-        text-align: center;
-        border: 1px solid #2D3133;
-        float: left;
-        margin: 10px 0 0 10px;
+        margin-bottom: 10px;
+
+        li {
+            padding: 10px 20px;
+            text-align: center;
+            border: 1px solid #2D3133;
+            float: left;
+            margin: 0 10px 10px 0;
+        }
     }
 
     &.icons ul {
