@@ -1,12 +1,16 @@
 html,
 body {
     height: auto;
+}
+
+body {
     background: none;
 }
 
 .guide {
     background-color: $shiro;
 
+    //Grid
     .col-child {
     //[class^="col-"],
     //[class*="col-"]
@@ -21,6 +25,11 @@ body {
         width: 50%;
     }
 
+    .row + .row {
+        margin-bottom: 0;
+    }
+
+    //Colors
     .color {
         margin-bottom: 10px;
 
@@ -33,48 +42,42 @@ body {
         }
     }
 
-    &.icons ul {
-
-        overflow: hidden;
+	&.icons ul {
+		overflow: hidden;
         display: inline-block;
         width: 100%;
 
-        li {
-          height: 100px;
-          margin: 0px;
-          outline: 1px solid white;
-          font-size: 14px;
-          text-align: center;
-          background-color: $darkest-shiro;
+	    li {
+			height: 100px;
+			margin: 0px;
+			outline: 1px solid white;
+			font-size: 14px;
+			text-align: center;
+			background-color: $darkest-shiro;
+			float: left;
+			width: 50%;
 
-                @include mediaquery ($bp-desktop) {
+			@include mediaquery ($bp-tablet) {
 
-                    float: left;
-                    width: 25%;
+				width: 25%;
 
-                }
+			}
 
-              @include mediaquery ($bp-desktop) {
+			@include mediaquery ($bp-desktop) {
 
-                  float: left;
-                  width: 16.666%;
+				width: 16.666%;
 
-              }
+			}
 
         }
 
-        li::after,
+		li::after,
         li::before {
-          display: block;
-          padding: 30px;
-          text-align: center;
-          font-size: 30px;
-
-
-        }
-
-
-
+			display: block;
+			padding: 30px;
+			text-align: center;
+			font-size: 30px;
+		}
 
     }
 }
