@@ -1,6 +1,9 @@
 html,
 body {
     height: auto;
+}
+
+body {
     background: none;
 }
 
@@ -15,7 +18,6 @@ body {
         text-align: center;
         background-color: $darkest-shiro;
         overflow: hidden;
-        text-overflow: ellipsis;
     }
 
     .col-6-medium {
