@@ -13,7 +13,8 @@ your content.
 (Show grid)
 
 - Use class `.row` to create a horizontal group of columns.
-- Then nest as many containers `<div class="col-[number]">` as columns are necessary to build the layout and including `<div class="col-child">` as immediate children.
+- Then nest as many containers `<div class="col-[number]">` as columns are necessary to build the layout
+- Include the container `<div class="col-child">` as immediate children of `.col-[number]`.
 
 (Show layout)
 
