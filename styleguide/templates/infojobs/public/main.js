@@ -150,6 +150,6 @@
 		});
 	}
 
-	
+	prettyPrint();
 
 })(document, window);

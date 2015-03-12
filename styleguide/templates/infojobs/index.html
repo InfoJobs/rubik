@@ -8,9 +8,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="public/styleguide.css">
-        <link rel="stylesheet" href="public/custom.css">
+        <link rel="stylesheet" href="public/styles.css">
     </head>
-    <body>
+    <body id="kss-node">
 
     	<nav class="menu">
             <div class="logo">
@@ -46,7 +46,7 @@
                                 {{#eachSection reference}}
                                     {{#ifDepth 2}}
                                     <li>
-                                        <a href="section-{{../../reference}}.html#rubik-{{reference}}">{{header}}</a>
+                                        <a href="section-{{../../reference}}.html#rubik-{{{reference}}}">{{header}}</a>
                                     </li>
                                     {{/ifDepth}}
                                 {{/eachSection}}
@@ -76,11 +76,12 @@
                 {{#if homepage}}
                 {{! - HOME -------------------------------------------------- }}
                 <div class="grid">
-                    <div class="col-12">
+                    <div class="col-8">
                         <div class="box-row">
                         {{{homepage}}}
                         </div>
                     </div>
+                    <div class="col-4"></div>
                 </div>
 
                 {{else}}
@@ -89,36 +90,51 @@
                 {{#eachSection rootName}}
                     {{#if markup}}
                         <div id="rubik-{{reference}}" class="grid styleguide-block">
-                            <div class="col-12">
+                            <div class="col-8">
                                 <header class="styleguide-header">
-                                    <h3>{{{reference}}} <em>{{{header}}}</em></h3>
+                                    <h3>{{{header}}}</h3>
                                 </header>
                                 {{#if description}}
                                     <div class="styleguide-description">
                                         {{{description}}}
-                                        <ul class="styleguide-modifier">
+                                        
+                                    </div>
+                                {{/if}}
+                                
+                                {{#if markup}}
+                                    <div class="kss-modifier__wrapper">
+                                        <div class="kss-modifier__heading kss-style">
+                                            Example{{#if modifiers}}s{{/if}}
+                                        </div>
+                                        {{#if modifiers}}
+                                            <div class="kss-modifier__default-name kss-style">
+                                            Default styling
+                                        </div>
+                                        {{/if}}
+                                        <div class="kss-modifier__example">
+                                            {{{markup}}}
+                                        </div>
                                         {{#eachModifier}}
-                                            <li><strong>{{{name}}}</strong> - {{{description}}}</li>
+                                            <div class="kss-modifier__name kss-style">
+                                                {{name}}
+                                            </div>
+                                            <div class="kss-modifier__description kss-style">
+                                                {{{description}}}
+                                            </div>
+                                            <div class="kss-modifier__example">
+                                                {{{markup}}}
+                                            </div>
                                         {{/eachModifier}}
-                                        </ul>
+                                    </div>
+
+                                    <div class="kss-markup kss-style">
+                                        <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
                                     </div>
                                 {{/if}}
 
-                            {{#eachModifier}}
-                                <div class="styleguide-element styleguide-modifier">
-                                    <span class="styleguide-modifier-name">{{{name}}}</span>
-                                    {{{markup}}}
-                                </div>
-                            {{/eachModifier}}
-
-                            <div class="styleguide-html">
-                                <div class="styleguide-html-highlight">
-                                    <pre><code class="css">{{{markup}}}</code></pre>
-                                </div>
-                            </div>
-                           
                            
                             </div>
+                            <div class="col-4"></div>
                         </div>
 
                     {{else}}
@@ -142,6 +158,7 @@
         </div>
 
         <script src="public/jquery-2.1.0.min.js"></script>
+        <script src="public/kss.js"></script>
         <script src="public/prettify.js"></script>
         <script src="public/plugins.js"></script>
         <script src="public/main.js"></script>

@@ -13,7 +13,7 @@ module.exports = function(grunt) {
       },
       allStyles: {
         files: [
-          { src: ['css/style.css'], dest: 'styleguide/public/style.css'}
+          { src: ['css/styles.css'], dest: 'styleguide/public/styles.css'}
         ]
       },
       copyFonts: {
@@ -28,8 +28,7 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: [
-          { src: ['rubik-styleguide.scss'], dest: 'css/style.doc.css'},
-          { src: ['templates/infojobs/public/custom.scss'], dest: 'templates/infojobs/public/custom.css'}
+          { src: ['rubik-styleguide.scss'], dest: 'css/styles.doc.css'}
         ]
       },
       production: {
@@ -37,15 +36,15 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: [
-          { src: ['rubik-styleguide.scss'], dest: 'css/style.css'}
+          { src: ['rubik-styleguide.scss'], dest: 'css/styles.css'}
         ]
 
       }
     },
     shell: {
       kss: {
-         command: 'kss-node css styleguide --css css/style.doc.css'
-//        command: 'kss-node css styleguide --template templates/infojobs'
+//          command: 'kss-node css styleguide --css css/styles.doc.css'
+          command: 'kss-node css styleguide --template templates/infojobs'
       }
     }
   });
