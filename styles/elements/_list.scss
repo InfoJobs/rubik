@@ -95,12 +95,14 @@ Styleguide 1.3.4.1
 /*
 Lists with icons
 
-To add icons at list use `.list-bullet-icon` class, and the necessary classes for the icon and size as example.
+Use class `.list-default` and `.list-bullet-icon` when use icons in a list.<br>
+Use class `.iconfont-[name]` for icon type and `.iconfont-[size]` for icon size.
+Visit the <a href="#section-1.6.1">icons guide</a>.
 
 Markup:
 <ul class="list-default list-bullet-icon">
-    <li class="iconfont-CV iconfont-30px iconfont-soft-script"><strong>Crea tu CV online</strong> y pres&eacute;ntate como profesional ante las empresas</li>
-    <li class="iconfont-Check iconfont-30px iconfont-soft-script"><strong>Inscr&iacute;bete en ofertas</strong> de trabajo de tu perfil con un solo clic</li>
+    <li class="iconfont-CV iconfont-30px iconfont-soft-script">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo </li>
+    <li class="iconfont-Check iconfont-30px iconfont-soft-script">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo</li>
 </ul>
 
 Styleguide 1.3.4.2
@@ -137,23 +139,8 @@ Lists with nested structure
     margin: 0;
 }
 
-/*
-Lists with dividers
 
-Use class `.list-divider` to divide list items in block.<br>
-This divider is on bottom at element.
-
-Markup:
-<ul class="list-default list-divider">
-    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </li>
-    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </li>
-    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </li>
-</ul>
-
-Styleguide 1.3.4.3
-*/
-
-.list-divider > li {
+.list-divider > li {//DEPRECATED: mirar donde se usa.
     padding-top: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid $darkest-shiro;
@@ -201,13 +188,13 @@ Styleguide 1.3.4.3
 /*
 Tag group
 
-Use `.tag-group` class to flow list items in line.
+Use class `.tag-group` to flow list items in line.
 
 Markup:
 <ul class="tag-group">
-    <li>Contrato de duracion determinada</li>
-    <li>Jornada completa</li>
-    <li>Salario no especificado</li>
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum dolor</li>
 </ul>
 
 Styleguide 1.3.4.5
@@ -239,12 +226,12 @@ Styleguide 1.3.4.5
 /*
 Tag divider
 
-Use `.tag-divider` to divide tag group items in line with a gap between tags.
+Use class `.tag-divider` to divide tag group items in line with a gap between tags.
 
 Markup:
 <ul class="tag-group">
-    <li class="tag-divider">Madrid</li>
-    <li class>Barcelona</li>
+    <li class="tag-divider">Lorem ipsum dolor</li>
+    <li class>Lorem ipsum</li>
 </ul>
 
 Styleguide 1.3.4.5.1
@@ -268,13 +255,13 @@ Styleguide 1.3.4.5.1
 /*
 Tag group top
 
-Use `.tag-group-top` to add a gap at the bottom in a tag group.
+Use class `.tag-group-top` to add a gap at the bottom in a tag group.
 
 Markup:
 <ul class="tag-group tag-group-top">
-    <li>Contrato de duracion determinada</li>
-    <li>Jornada completa</li>
-    <li>Salario no especificado</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
 </ul>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
@@ -294,35 +281,23 @@ Styleguide 1.3.4.5.2
 }
 
 /*
-Sticker Tag group
-
-Use `.tag-group-sticker` class when items of tag group are stickers.<br>
-For stickers visit stickers section.
-
-Markup:
-<ul class="tag-group tag-group-sticker">
-    <li><a href="#" class="sticker sticker-skill">Javascript</a></li>
-    <li><a href="#" class="sticker sticker-skill">Office</a></li>
-    <li><a href="#" class="sticker sticker-skill">HTML</a></li>
-    <li><a href="#" class="sticker sticker-skill">Java</a></li>
-</ul>
-
-Styleguide 1.3.4.5.3
-*/
-
-.tag-group-sticker li {
-    padding-right: 0;
-}
-
-/*
 Tag group with ellipsis
 
-To generate ellipsis use `.tag-ellipsis-cols2` class in `<li>` when 2 tags in tag group or `.tag-ellipsis-cols3` if are 3 tags.<br>
-The element with ellipsis must have the class `ellipsis` in a `<span>`.
+Use class `.ellipsis` in `<span>` to generate ellipsis in a element of tag group.<br>
+Use class `.tag-ellipsis-cols2` in `<li>` when 2 tags in tag group or `.tag-ellipsis-cols3` if are 3 tags.
 
 Markup:
 <ul class="tag-group">
-    <li class="tag-divider tag-ellipsis-cols2"><span class=".ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span></li>
+    <li class="tag-divider tag-ellipsis-cols2">
+        <span class="ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+    </li>
+    <li>Lorem ipsum</li>
+</ul>
+<ul class="tag-group">
+    <li class="tag-divider tag-ellipsis-cols3">
+        <span class="ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+    </li>
+    <li>Lorem ipsum</li>
     <li>Lorem ipsum</li>
 </ul>
 
@@ -364,13 +339,7 @@ Styleguide 1.3.4.5.4
 //     }
 // }
 
-@include mediaquery ($bp-desktop) {
 
-    .tag-group li.tag-sticker {
-        float: left;
-    }
-
-}
 
 .list-inline {
 	font-size: 0;
