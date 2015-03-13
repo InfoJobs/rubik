@@ -7,7 +7,7 @@ $PARAGRAPHS
 /*
 Paragraphs
 
-Use tag `<p>` for a basic paragraph. Don't use `<span>` or `<div>` as tag, is not semantic.
+Use tag `<p>` for a basic paragraph. Don't use `<span>` or `<div>` as a text tag, it's not semantic.
 
 Markup:
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -60,7 +60,7 @@ $font-size: (small, base, medium); //TODO: resolve problem when it s moved to _v
 /*
 Text size
 
-Use class `.base` or `.medium` to change the size of text.
+Use class `.base` or `.medium` to change the size of the text.
 
 Markup:
 <p class="{$modifiers}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -84,8 +84,7 @@ Styleguide 1.3.3
 /*
 Text variants
 
-Use class `.bold` to bold the letter.<br>
-Use only on this tags elements `<p>`, `<li>`, `<span>`, `dt` or `dd`
+Use class `.bold` to bold the content. Use only on the following tags: `<p>`, `<li>`, `<span>`, `dt` or `dd`.
 
 Markup:
 <p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -101,8 +100,7 @@ Styleguide 1.3.4
 /*
 Blockquotes
 
-Use `<blockquote>` tag when the text is quoted from another source.<br>
-Use `<cite>` tag to cite the reference.
+Use `<blockquote>` when the text is quoted from another source. Use `<cite>` to cite the reference.
 
 Markup:
 <blockquote class="{$modifiers}">
