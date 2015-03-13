@@ -98,9 +98,33 @@ body {
         color: $day-blue;
     }
 
+    h2,
+    h3 {
+        color: $dark-silk;
+    }
+
     h2 {
         font-size: 20px;
-        color: $dark-silk;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    .img {
+        margin: 0;
+    }
+
+    .link {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     /*.margin-top {
