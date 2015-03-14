@@ -44,7 +44,7 @@ module.exports = function(grunt) {
     shell: {
       kss: {
 //          command: 'kss-node css styleguide --css css/styles.doc.css'
-          command: 'kss-node css styleguide --template templates/infojobs'
+          command: 'kss-node css styleguide --template templates/infojobs --helpers templates/helpers'
       }
     }
   });

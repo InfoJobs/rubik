@@ -46,8 +46,7 @@
 /*
 Buttons
 
-Use class `.btn` to create a button in `<a>` element (text element) or `<button>` element (form element), followed by classes listed as `{$modifiers}`.
-
+Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms), followed by classes listed as `{$modifiers}`.
 
 Markup:
 <a href="#" class="btn {$modifiers}">Link Button</a>
@@ -240,7 +239,7 @@ Styleguide 1.5.1
 /*
 Buttons with text and icon
 
-Use class `.iconfont-[name]` to display the icon it's needed.
+Use class `.iconfont-[name]` to display the needed icon.
 
 Markup:
 <a href="#" class="btn btn-primary btn-medium iconfont-Facebook">Link Button</a>
@@ -292,8 +291,7 @@ button:active[disabled],
 /*
 Button annex
 
-Use class `.btn-annex` to add an adjacent element close to the button.
-
+Use class `.btn-annex` to add an element adjacent to the button.
 
 Markup:
 <a href="#" class="btn btn-primary btn-medium btn-annex">Button</a>
@@ -334,7 +332,7 @@ Styleguide 1.5.4
 /*
 Buttons display
 
-Use class `.btn-form-inline` to display button with full width.
+Use class `.btn-form-inline` to display a full width button.
 
 Markup:
 <a href="#" class="btn btn-primary btn-form-inline">Button Element</a>

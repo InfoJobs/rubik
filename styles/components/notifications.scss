@@ -8,17 +8,36 @@
 /*
 Notifications
 
-###Notification
-Loremew eqwfwaerg sefg sdfg sdfgsdfg sdfg sdfg sdf gsdf gsdfgsdfgsdfg
+###Notifications
+Contextual messages for confirmation messages.<br>
+The modifier classes are `.notification-error` for errors, `.notification-success` for success and `.notification-info` for information.    .
 
 Markup:
-<div class="{$modifiers}">
-<button class="btn-close" type="button">x</button>
-<p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
-<p class="contrast">Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="contrast link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
+<!-- Notification error -->
+<div class="notification notification-error notification-dismissable">
+	<button class="btn-close" type="button">×</button>
+	<p class="title">Lorem ipsum dolor sit</p>
+	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
 </div>
-
-.notification -
+<!-- /Notification error -->
+<div class="container-expanded">
+<!-- Notification success -->
+<div class="notification notification-success notification-dismissable">
+	<button class="btn-close" type="button">×</button>
+	<p class="title">Lorem ipsum dolor sit</p>
+	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
+</div>
+<!-- /Notification success -->
+</div>
+<div class="container-expanded">
+<!-- Notification info -->
+<div class="notification notification-info notification-dismissable">
+	<button class="btn-close" type="button">×</button>
+	<p class="title">Lorem ipsum dolor sit</p>
+	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
+</div>
+<!-- /Notification info -->
+</div>
 
 Styleguide 2.12
 */
