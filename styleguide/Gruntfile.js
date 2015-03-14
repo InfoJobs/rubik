@@ -13,7 +13,7 @@ module.exports = function(grunt) {
       },
       allStyles: {
         files: [
-          { src: ['css/styles.css'], dest: 'styleguide/public/styles.css'}
+          { src: ['css/rubik.css'], dest: 'styleguide/public/rubik.css'}
         ]
       },
       copyFonts: {
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: [
-          { src: ['rubik-styleguide.scss'], dest: 'css/styles.doc.css'}
+          { src: ['rubik-styleguide.scss'], dest: 'css/rubik.doc.css'}
         ]
       },
       production: {
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: [
-          { src: ['rubik-styleguide.scss'], dest: 'css/styles.css'}
+          { src: ['rubik-styleguide.scss'], dest: 'css/rubik.css'}
         ]
 
       }
