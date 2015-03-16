@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Rubik Styleguide</title>
+  <link rel="stylesheet" type="text/css" href="../../styleguide/public/style.css" />
+  <!--[if lt IE 9]>
+    <script src="public/html5shiv.js"></script>
+  <![endif]-->
+</head>
+  <body>
+      <div class="modal-layer modal-fade-in" id="layer-send_email">
+          <div class="modal-inner" id="inner-send_email" style="width: 370px; height: 579px; top: 20px;">
+              <div id="header-send_email" class="modal-header"><a title="" class="close-modal iconfont-Close iconfont-22px hit-area" href="#"></a><h1 class="title">Compartir oferta por e-mail </h1> </div>
+              <div class="modal-content" id="content-send_email" style="height: 522px; max-height: 522px; overflow-x: hidden;">
+      			<div class="inner">
+      				<form method="post" name="sendMailForm" id="sendMailForm" action="/shared/share-by-mail.xhtml">
+      					<fieldset>
+      						<legend>Enviar a un amigo</legend>
+      						<fieldset>
+      							<legend>Datos de contacto</legend>
+      							<ul class="form--field-block clearfix">
+      								<li id="li_correo">
+      									<input type="hidden" value="http://www.infojobs.net/tarragona/comercial-comarca-tarragones-vanguardia/of-ie2e091461c4765b1f68cd31ee88bf5/nv-oAd-caSm" name="urlToShare">
+      									<input type="hidden" value="Enviar_amigo_link_oferta" name="xitiMail">
+      									<input type="hidden" value="sharever-oferta" name="xitiLink">
+      									<input type="hidden" id="subject" name="subject">
+      									<input type="hidden" value="Comercial Comarca Tarragonès La Vanguardia" name="contentTitle">
+      									<label for="receiverEmail">E-mail del destinatario</label>
+      									<input type="text" maxlength="200" class="val_email" name="receiverEmail" id="receiverEmail">
+      								</li>
+
+      								<li id="li_tu_correo">
+      									<label for="senderEmail">Tu e-mail</label>
+      									<input type="text" maxlength="200" class="val_email" name="senderEmail" id="senderEmail">
+      								</li>
+
+      								<li id="li_nombre">
+      									<label for="senderName">Tu nombre</label>
+      									<input type="text" maxlength="250" class="val_field200" name="senderName" id="senderName">
+      								</li>
+      								<li id="li_comentarios">
+      									<label for="comment">Tu mensaje </label>
+      									<div class="textarea">
+      										<textarea value="Hola,&lt;br&gt;&lt;/textarea&gt;Me gustaría compartir contigo esta oferta de trabajo de tu interés que he encontrado en InfoJobs.&lt;br/&gt;Saludos,?noEscape" class="val_textarea1000" onchange="updateCount(event,this,'contador_comment',maxChars)" onkeyup="updateCount(event,this,'contador_comment',maxChars)" onkeypress="updateCount(event,this,'contador_comment',maxChars)" name="comment" id="comment">Hola, Me gustar&iacute;a compartir contigo esta oferta de trabajo de tu inter&eacute;s que he encontrado en InfoJobs. Saludos,</textarea>
+      										<p class="info alternative small"><span id="contador_comment">120</span>/<span>250</span></p>
+      									</div>
+      								</li>
+      							</ul>
+      						</fieldset>
+      						<!--<fieldset>
+      							<legend>Control de seguridad </legend>
+      							<h2 class="title">Control de seguridad </h2>
+      							<ul class="form--field-block clearfix">
+      								<li id="li_sCaptcha">
+      									<label for="captchaId">Introduce el texto de la imagen</label>
+      									<input type="text" name="sCaptcha" id="sCaptcha">
+      								</li>
+      								<li class="imgcaptcha">
+      									<img id="imgCaptcha" src="/scaptcha.ij?dgv=1426521452217">
+      									<p>
+      										<span class="info alternative small">¿No puedes leerlo?</span>
+      										<a onclick="javascript:refrescarCaptcha('/scaptcha.ij','imgCaptcha');" class="link" href="javascript:void(0);" tabindex="500" id="refreshCaptchaLink">Mostrar otro</a>
+      									</p>
+      								</li>
+      							</ul>
+      						</fieldset>
+      						<button onclick="validarMailModal();return false;" type="submit" class="btn btn-primary" id="button">Enviar</button>
+      					</fieldset>-->
+      				</form>
+      			</div>
+      		</div>
+        </div>
+    </div>
+  </body>
+</html>
