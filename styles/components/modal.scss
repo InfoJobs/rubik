@@ -176,6 +176,8 @@ Styleguide 3.1.3
 	//problems with iOS & safari
     //-webkit-animation: modal-flipinX .3s both;
     animation: modal-flipinX .3s both;
+	-webkit-transition: height 600ms;
+	        transition: height 600ms;
 
 	@include mediaquery ($bp-tablet - 1) {
 		//top: 50%;
