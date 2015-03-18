@@ -12,7 +12,6 @@
 		width: 100%;
 		overflow: hidden;
 		border-bottom: 1px solid $katana-slash; //TODO: idem .list-divider except paddings and margins
-		background-color: $shiro;
 
 		&:last-child {
 			border: none;
@@ -34,32 +33,12 @@
 			}
 		}
 
-		@at-root #{&}.main .cell-1 [class*=" iconfont-"]::after {
-				position: absolute;
-				top: 0;
-				left: 50%;
-				width: 30px;
-				height: 30px;
-				padding-top: 13px;
-				font-family: 'Icons';
-				content: "\e62a";
-				border: 2px solid #e2e5e6;
-				border-radius: 50%;
-				color: $shiro;
-				background-color: $bamboo;
-		}
-
-		@at-root #{&}.main .kind {
-				color: $bamboo;
-		}
 
 	}
 
 	[class^="cell-"],
 	[class*=" cell-"] {
-		padding: 20px 10px; //TODO: placeholder .inner??
 		vertical-align: top;
-		background-color: $shiro;
 
 		@include mediaquery ($bp-tablet) {
 			vertical-align: middle;
@@ -121,26 +100,6 @@
 			margin-bottom: 5px;
 	}
 
-	.cell-1 [class^="iconfont-"],
-	.cell-1 [class*=" iconfont-"] {
-		position: relative; //needed to position .iconfont-Flag applied by .main class
-
-		@include mediaquery ($bp-desktop) {
-			padding-bottom: 10px;
-		}
-	}
-
-	.cell-1 [class^="iconfont-"]::before,
-	.cell-1 [class*=" iconfont-"]::before {
-			display: block;
-			top: 0;
-			color: $soft-script;
-
-			.main & {
-				display: inline-block;
-			}
-	}
-
 	.title {
 		margin-bottom: 0;
 		font-size: $medium-font-size;
@@ -159,32 +118,30 @@
 	.kind {
 		display: none;
 
+		@include mediaquery ($bp-tablet) {
+
+			display: inline-block;
+		  	margin-top: 8px;
+		}
+
 		@include mediaquery ($bp-desktop) {
-			display: block;
 			position: relative;
 			font-size: $small-font-size;
 			line-height: $small-line-height;
-			color: $soft-script;
+			color: $shiro;
 		}
 	}
 
-	.btn,
-	.link {
-		display: inline-block;
-	  	margin-top: 8px;
+	.actions {
+		margin-top: 8px;
 	}
 
 	.fade-out {
-		-webkit-transition-duration: 400ms;
-		   -moz-transition-duration: 400ms;
-			 -o-transition-duration: 400ms;
-		  		transition-duration: 400ms;
+		@include vendor-prefix('transition-duration', '400ms');
 	}
 
 	.close-animate {
-		-webkit-transition-duration: 200ms;
-		   -moz-transition-duration: 200ms;
-	         -o-transition-duration: 200ms;
-	            transition-duration: 200ms;
+		@include vendor-prefix('transition-duration', '200ms');
 	}
+
 }
