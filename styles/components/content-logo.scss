@@ -50,7 +50,6 @@ Styleguide 2.3
 	align-items: center;
 
 	@media print {
-
 		min-height: auto;
 	}
 
@@ -96,14 +95,23 @@ Styleguide 2.3
 	-ms-flex: none;
 	flex: none;
 	margin-left: 20px;
+	background-color: $shiro;
 
 	a {
 	    width: 100px;
 	    height: 100px;
+	}
 
-	    img {
-	        width: 100px;
-	    }
+	img {
+		display: block;
+		width: 110px;
+		padding: 4px;
+		border: 1px solid $darkest-shiro;
+	}
 
+	.fig-thumbnail-logo img {
+		border: none;
+		padding: 0;
+		width: 100px;
 	}
 }
