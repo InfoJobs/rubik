@@ -350,8 +350,8 @@ Styleguide 1.5.5
 Button group
 
 Use class `.btn-group` to create a button group structure.
-Use class `.btn-default` for button group buttons.
-Use class `.active` to highlight button the selected.
+Use class `.btn-default` for buttons inside buttons group.
+Use class `.active` to highlight the selected button.
 
 Markup:
 <div class="btn-group">
@@ -426,7 +426,7 @@ Styleguide 1.5.6
 /*
 Button group justified
 
-Use class `.btn-group-justified` to display `.btn-group` buttons with full width.
+Use class `.btn-group-justified` to display `.btn-group` full width buttons.
 
 
 Markup:
@@ -448,7 +448,7 @@ Styleguide 1.5.7
 /*
 Button group with icon
 
-Use class `.iconfont-[name]` to display the icon it's needed.
+Use class `.iconfont-[name]` to display the needed icon.
 
 Markup:
 <div class="btn-group">
