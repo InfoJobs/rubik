@@ -79,14 +79,12 @@
 		}
 
 		&-2 {
-			margin-left: 70px;
 
 			@include mediaquery ($bp-tablet) {
 				//Define a flex grow
   				@include flex(2);
 				width: auto;
 				padding-top: 20px;
-				margin-left: 0;
 			}
 
 		}
