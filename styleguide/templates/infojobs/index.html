@@ -14,7 +14,7 @@
 
     	<nav class="menu">
             <div class="logo">
-                <img src="public/logo.png">
+                <img src="public/media/logo.png">
             </div>
         	<ul>
         		<li>
@@ -38,7 +38,6 @@
                                 </span>
                                 {{header}}
                             </a>
-
                             {{#if overview}}
                             {{else}}
 
@@ -62,100 +61,134 @@
         </nav>
         <div class="overlay"></div>
 
-        <div>
-            <header class="header">
-                <a id="burgerMenu" class="iconfont-BurguerMenu"></a>
-                <h1>
-                    {{#if homepage}}
-                    Rubik Components
-                    {{/if}}
-                </h1>
-            </header>
-            <section class="content wrapper">
-
+        <header class="header">
+            <a id="burgerMenu" class="iconfont-BurguerMenu"></a>
+            <h1>
                 {{#if homepage}}
-                {{! - HOME -------------------------------------------------- }}
-                <div class="grid">
-                    <div class="col-8">
-                        <div class="box-row">
-                        {{{homepage}}}
+                Rubik Components
+                {{/if}}
+            </h1>
+        </header>
+        <section class="content wrapper">
+
+            {{#if homepage}}
+            {{! - HOME -------------------------------------------------- }}
+            <img src="./public/media/index.jpg">
+            <h1>Heading</h1>
+            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+
+            <h2>Heading</h2>
+            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+
+            <div class="row-faux">
+                  <div class="col-4">
+                    <div class="col-child panel-canvas">
+                        <img src="./public/media/index.jpg" class="img">
+                        <div class="inner">
+                            <h3>Heading</h3>
+                            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
                         </div>
                     </div>
-                    <div class="col-4">{{test}}...</div>
-                </div>
-
-                {{else}}
-                {{! - SECTIONS ---------------------------------------------- }}
-
-                {{#eachSection rootName}}
-                    {{#if markup}}
-                        <div id="rubik-{{reference}}" class="grid styleguide-block">
-                            <div class="col-8">
-                                <header class="styleguide-header">
-                                    <h3>{{{header}}}</h3>
-                                </header>
-                                {{#if description}}
-                                    <div class="styleguide-description">
-                                        {{{description}}}
-
-                                    </div>
-                                {{/if}}
-
-                                {{#if markup}}
-                                    <div class="kss-modifier__wrapper">
-                                        <div class="kss-modifier__heading kss-style">
-                                            Example{{#if modifiers}}s{{/if}}
-                                        </div>
-                                        {{#if modifiers}}
-                                            <div class="kss-modifier__default-name kss-style">
-                                            Default styling
-                                        </div>
-                                        {{/if}}
-                                        <div class="kss-modifier__example">
-                                            {{{markup}}}
-                                        </div>
-                                        {{#eachModifier}}
-                                            <div class="kss-modifier__name kss-style">
-                                                {{name}}
-                                            </div>
-                                            <div class="kss-modifier__description kss-style">
-                                                {{{description}}}
-                                            </div>
-                                            <div class="kss-modifier__example">
-                                                {{{markup}}}
-                                            </div>
-                                        {{/eachModifier}}
-                                    </div>
-
-                                    <div class="kss-markup kss-style">
-                                        <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
-                                    </div>
-                                {{/if}}
-
-
+                  </div>
+                  <div class="col-4">
+                      <div class="col-child panel-canvas">
+                          <img src="./public/media/index.jpg" class="img">
+                          <div class="inner">
+                              <h3>Heading</h3>
+                              <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-4">
+                        <div class="col-child panel-canvas">
+                            <img src="./public/media/index.jpg" class="img">
+                            <div class="inner">
+                                <h3>Heading</h3>
+                                <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
                             </div>
-                            <div class="col-4"></div>
                         </div>
+                  </div>
+            </div>
 
-                    {{else}}
 
-                            <header class="example-header">
-                                <h1>{{{header}}}</h1>
+            <div class="grid">
+                <div class="col-8">
+                    <div class="box-row">
+                       <h2>Heading</h2>
+                       <p>Quid sed cernantur et noster <a href="#">in et nostrud relinqueret</a>.</p>
+                    </div>
+                </div>
+                <div class="col-4"></div>
+            </div>
+
+            {{else}}
+            {{! - SECTIONS ---------------------------------------------- }}
+
+            {{#eachSection rootName}}
+                {{#if markup}}
+                    <div id="rubik-{{reference}}" class="grid styleguide-block">
+                        <div class="col-12">
+                            <header class="styleguide-header">
+                                <h3>{{{header}}}</h3>
                             </header>
                             {{#if description}}
-                                <div class="markdown-body">
+                                <div class="styleguide-description">
                                     {{{description}}}
+
                                 </div>
                             {{/if}}
-                    {{/if}}
-                {{/eachSection}}
 
+                            {{#if markup}}
+
+                                    {{#if modifiers}}
+                                    {{/if}}
+
+                                    {{#isntCaster markup}}
+                                        <div class="view">
+                                            {{{markup}}}
+                                        </div>
+
+                                        {{#eachModifier}}
+                                            <div class="">
+                                                {{name}} <span>{{{description}}}</span>
+                                            </div>
+                                            {{#isntCaster markup}}
+                                            <div class="view">
+                                                {{{markup}}}
+                                            </div>
+                                            {{/isntCaster}}
+                                        {{/eachModifier}}
+                                    {{/isntCaster}}
+
+                                    <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
+                            {{/if}}
+
+                        </div>
+                    </div>
+
+                {{else}}
+                <div id="rubik-{{reference}}" class="grid styleguide-block">
+                    <div class="col-12">
+                        <header class="example-header">
+                            <h1>{{{header}}}</h1>
+                        </header>
+                        {{#if description}}
+                            <div class="markdown-body">
+                                {{{description}}}
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
                 {{/if}}
-            </section>
-            <section class=" footer wrapper">
-            © Infojobs 2015
-            </section>
-        </div>
+            {{/eachSection}}
+
+            {{/if}}
+        </section>
+        <section class=" footer wrapper">
+        © Infojobs 2015
+        </section>
+
 
         <script src="public/jquery-2.1.0.min.js"></script>
         <script src="public/kss.js"></script>
@@ -164,165 +197,3 @@
         <script src="public/main.js"></script>
     </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html>
-
-    <head>
-        <meta charset="utf-8">
-        <title>InfoJobs Design Styleguides</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="stylesheet" href="public/style.css">
-
-        <link rel="stylesheet" href="public/kss.css">
-        {{{styles}}}
-    </head>
-    <body id="kss-node">
-
-        <div class="kss-sidebar kss-style">
-            <header class="kss-header">
-                <h1 class="kss-doc-title">kss-node<br>Style Guide</h1>
-            </header>
-            <nav class="kss-nav">
-                <ul class="kss-nav__menu">
-                <li class="kss-nav__menu-item">
-                    <a href="./">
-                        <span class="kss-nav__ref">0</span><span class="kss-nav__name">Overview</span>
-                    </a>
-                </li>
-                {{#eachRoot}}
-                <li class="kss-nav__menu-item">
-                    <a href="section-{{referenceURI}}.html">
-                        <span class="kss-nav__ref">
-                        {{#ifNumeric reference}}{{reference}}{{else}}{{autoincrement}}{{/ifNumeric}}
-                        </span>
-                        <span class="kss-nav__name">{{header}}</span>
-                    </a>
-                    {{#ifReference ../rootName}}
-                    <ul class="kss-nav__menu-child">
-                        {{#eachSection reference}}
-                        {{#ifDepth 2}}
-                        <li class="kss-nav__menu-item">
-                            <a href="section-{{../../referenceURI}}.html#kssref-{{referenceURI}}">
-                                <span class="kss-nav__ref">{{#ifNumeric reference}}{{reference}}{{else}}{{autoincrement}}{{/ifNumeric}}</span>
-                                <span class="kss-nav__name">{{header}}</span>
-                            </a>
-                        </li>
-                        {{/ifDepth}}
-                        {{/eachSection}}
-                    </ul>
-                    {{/ifReference}}
-                </li>
-                {{/eachRoot}}
-                </ul>
-            </nav>
-        </div>
-        <article role="main" class="kss-main">
-        {{#if homepage}}
-        <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-        {{{homepage}}}
-        </div>
-        {{else}}
-
-        {{!
-        Display each section, in order.
-
-        The "root" element comes first in this loop, and can be detected using
-        the "#ifDepth 1" block as seen below.
-        }}
-        {{#eachSection rootName}}
-        {{#ifDepth 1}}
-        <div     id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}}">
-        {{else}}
-        <section id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}}">
-        {{/ifDepth}}
-
-        <div class="kss-style">
-        <h{{depth}} class="kss-title kss-title--level-{{depth}}">
-        <a class="kss-title__permalink" href="#kssref-{{referenceURI}}">
-        <span class="kss-title__ref">{{#ifNumeric reference}}{{reference}}{{else}}{{autoincrement}}{{/ifNumeric}}</span
-        >{{header}}
-        <span class="kss-title__permalink-hash">#permalink</span>
-        </a>
-        </h{{depth}}>
-
-        {{#if parameters}}
-        <ul class="kss-parameters">
-        {{#eachParameter}}
-        <li class="kss-parameters__item">
-        <code class="kss-parameters__name">{{name}}</code>
-        <div class="kss-parameters__description">{{{description}}}</div>
-        </li>
-        {{/eachParameter}}
-        </ul>
-        {{/if}}
-
-        {{#if description}}
-        <div class="kss-description">
-        {{{description}}}
-        </div>
-        {{/if}}
-        </div>
-
-        {{#if markup}}
-        <div class="kss-modifier__wrapper">
-        <div class="kss-modifier__heading kss-style">
-        Example{{#if modifiers}}s{{/if}}
-        </div>
-        {{#if modifiers}}
-        <div class="kss-modifier__default-name kss-style">
-        Default styling
-        </div>
-        {{/if}}
-        <div class="kss-modifier__example">
-        {{{markup}}}
-        </div>
-        {{#eachModifier}}
-        <div class="kss-modifier__name kss-style">
-        {{name}}
-        </div>
-        <div class="kss-modifier__description kss-style">
-        {{{description}}}
-        </div>
-        <div class="kss-modifier__example">
-        {{{markup}}}
-        </div>
-        {{/eachModifier}}
-        </div>
-
-        <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
-        </div>
-        {{/if}}
-
-        {{#ifDepth 1}}
-        </div>
-        {{else}}
-        </section>
-        {{/ifDepth}}
-        {{/eachSection}}
-        {{/if}}
-        </article>
-
-        SCRIPTS
-        <script src="public/kss.js"></script>
-        <script src="public/prettify.js"></script>
-        <script>
-        prettyPrint();
-        </script>
-        {{{scripts}}}
-
-        {{! This will only be included in the demo page. }}
-        {{#if argv.xdemo}}
-        <footer class="kss-github">
-        https://github.com/blog/273-github-ribbons
-        <a href="https://github.com/kss-node/kss-node"><img src="public/github-fork--black.png" alt="Fork me on GitHub"></a>
-        </footer>
-        {{/if}}
-
-    Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>.
-    </body>
-</html>
- -->

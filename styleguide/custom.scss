@@ -4,12 +4,10 @@ body {
 }
 
 body {
-    background: none;
+    background: #f7f7f7;
 }
 
 .guide {
-    background-color: $shiro;
-    font-family: Courier;
     font-size: 13px;
 
     //Grid
@@ -18,7 +16,7 @@ body {
     //[class*="col-"]
         padding: 10px;
         text-align: center;
-        background-color: $darkest-shiro;
+        background-color: $shiro;
         overflow: hidden;
     }
 
@@ -135,7 +133,8 @@ body {
         }
     }*/
 
-    .selector {
+    .selector,
+    .styleguide-description code {
         margin-right: 0;
         padding: 3px 5px;
         -webkit-border-radius: 3px;
@@ -168,4 +167,16 @@ body {
         background-color: $darkest-shiro;
 
     }
+}
+
+.footer {
+    background: none;
+
+    &:before {
+        background: none;
+    }
+}
+
+.styleguide-block {
+    margin-top: 60px;
 }
