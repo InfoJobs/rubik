@@ -443,12 +443,51 @@ your content.
   </div>
 </div>
 
+<div  class="guide">
+    <div class="inner">
+        <ul class="clearfix color">
+            <li class="contrast panel-executive">
+                .contrast
+            </li>
+
+            <li class="disabled">
+                .disabled
+            </li>
+
+            <li class="marked">
+                .marked
+            </li>
+
+            <li class="marked-contrast">
+                .marked-contrast
+            </li>
+
+            <li class="alternative">
+                .alternative
+            </li>
+
+            <li class="highlight">
+                .highlight
+            </li>
+
+            <li class="script">
+                .script
+            </li>
+
+            <li class="soft-script">
+                .soft-script
+            </li>
+        </ul>
+    <div>
+</div>
+
 
 Markup:
 <div class="row casper">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-8"><div class="col-child">...</div></div>
 </div>
+<!-- Hello -->
 <div class="row">
 	<div class="col-8"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
@@ -917,23 +956,49 @@ h3,
     $COLORS
 \*------------------------------------*/
 /*
-Colors
+Colors #disabled#
 
-Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum
-comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam
-illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a
-laborum, malis offendit graviterque in mentitum fugiat senserit laborum.
+Apply any class specified above to provide color to any html element.
+`.contrast` class needs a dark background.
+`.marked-contrast` and `.highlight` classes adds their own background.
 
-Markup: colors.hbs
+<div  class="guide">
+    <div class="inner">
+        <ul class="clearfix color">
+            <li class="contrast panel-executive">
+                .contrast
+            </li>
 
-.contrast			- Color: White
-.disabled			- Color: White
-.marked				- Color: Mint
-.marked-contrast	- Color: White into mint
-.alternative		- Color: Grey
-.highlight			- Color: Yellow
-.script				- Color: Grey
-.soft-script		- Color: Grey
+            <li class="disabled">
+                .disabled
+            </li>
+
+            <li class="marked">
+                .marked
+            </li>
+
+            <li class="marked-contrast">
+                .marked-contrast
+            </li>
+
+            <li class="alternative">
+                .alternative
+            </li>
+
+            <li class="highlight">
+                .highlight
+            </li>
+
+            <li class="script">
+                .script
+            </li>
+
+            <li class="soft-script">
+                .soft-script
+            </li>
+        </ul>
+    <div>
+</div>
 
 
 

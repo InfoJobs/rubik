@@ -5,24 +5,13 @@
 \*------------------------------------*/
 
 /*
-Colors
+Colors #disabled#
 
-Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum
-comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam
-illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a
-laborum, malis offendit graviterque in mentitum fugiat senserit laborum.
+Apply any class specified above to provide color to any html element.
+`.contrast` class needs a dark background.
+`.marked-contrast` and `.highlight` classes adds their own background.
 
-Markup: colors.hbs
-
-.contrast			- Color: White
-.disabled			- Color: White
-.marked				- Color: Mint
-.marked-contrast	- Color: White into mint
-.alternative		- Color: Grey
-.highlight			- Color: Yellow
-.script				- Color: Grey
-.soft-script		- Color: Grey
-
+@@include('../templates/partials/colors.html')
 
 
 Styleguide 1.1

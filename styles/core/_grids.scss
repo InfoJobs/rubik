@@ -16,12 +16,14 @@ your content.
 - Include the container `<div class="col-child">` as immediate children of `.col-[number]`.
 
 @@include('../templates/partials/grid.html')
+@@include('../templates/partials/colors.html')
 
 Markup:
 <div class="row casper">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-8"><div class="col-child">...</div></div>
 </div>
+<!-- Hello -->
 <div class="row">
 	<div class="col-8"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>

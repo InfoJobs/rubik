@@ -7,6 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="stylesheet" href="public/kss.css">
         <link rel="stylesheet" href="public/styleguide.css">
         <link rel="stylesheet" href="public/rubik.css">
     </head>
@@ -29,13 +30,6 @@
         				{{#eachRoot}}
                         <li>
                             <a href="section-{{referenceURI}}.html" class="js-itemMenu">
-            					<span class="kss-nav__ref">
-                                {{#ifNumeric reference}}
-                                    ({{reference}})
-                                {{else}}
-                                    {{autoincrement}}
-                                {{/ifNumeric}}
-                                </span>
                                 {{header}}
                             </a>
                             {{#if overview}}
@@ -72,7 +66,7 @@
         <section class="content wrapper">
 
             {{#if homepage}}
-            {{! - HOME -------------------------------------------------- }}
+            {{! - HOME ------------------------------------------------------ }}
             <img src="./public/media/index.jpg">
             <h1>Heading</h1>
             <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
@@ -123,7 +117,7 @@
             </div>
 
             {{else}}
-            {{! - SECTIONS ---------------------------------------------- }}
+            {{! - SECTIONS -------------------------------------------------- }}
 
             {{#eachSection rootName}}
                 {{#if markup}}
@@ -170,11 +164,11 @@
                 {{else}}
                 <div id="rubik-{{reference}}" class="grid styleguide-block">
                     <div class="col-12">
-                        <header class="example-header">
+                        <header class="styleguide-header">
                             <h1>{{{header}}}</h1>
                         </header>
                         {{#if description}}
-                            <div class="markdown-body">
+                            <div class="styleguide-description">
                                 {{{description}}}
                             </div>
                         {{/if}}
