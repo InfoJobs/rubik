@@ -20,9 +20,9 @@
 /*
 Icons
 
-The icons are generated as font,<br>
-color and size can be modified in the same way as text.
-Use these classes for icon type, you can use any tag.
+The icons are generated as fonts.<br>
+Color and size can be modified as texts.
+Use these classes to specify an icon for any tag.
 
 Styleguide 1.6
 */
@@ -105,22 +105,6 @@ $iconfont-size: (16, 18, 22, 30, 100); //TODO: resolve problem when it s moved t
 /*------------------------------------*\
 	$ICONSIMAGE
 \*------------------------------------*/
-
-/*
-Icons image and size
-
-Icons as a background image, not an icon font.<br>
-Use class `.icon-[size]` to modify the image size.
-
-Markup:
-<span class="icon-50px icon-candidaturas"></span>
-<span class="icon-50px icon-CV"></span>
-<span class="icon-50px icon-contactos"></span>
-</ul>
-
-Styleguide 1.6.2
-*/
-
 .icon-candidaturas {
 		background: url("#{$path-backgrounds}/icon-candidaturas.png") no-repeat 0 0;
 }
