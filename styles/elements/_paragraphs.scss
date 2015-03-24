@@ -1,3 +1,5 @@
+// Text elements
+
 /*------------------------------------*\
 $PARAGRAPHS
 \*------------------------------------*/
@@ -5,8 +7,10 @@ $PARAGRAPHS
 /*
 Paragraphs
 
+Use tag `<p>` for a basic paragraph. Don't use `<span>` or `<div>` as a text tag, it's not semantic.
+
 Markup:
-<p>Loremew eqwfwaerg sefg sdfg sdfgsdfg sdfg sdfg sdf gsdf gsdfgsdfgsdfg</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
 Styleguide 1.3.2
 */
@@ -53,19 +57,18 @@ $font-size: (small, base, medium); //TODO: resolve problem when it s moved to _v
 	}
 
 }
-
 /*
-Text variants
+Text size
+
+Use class `.base` or `.medium` to change the size of the text.
 
 Markup:
-<p class="{$modifiers}">Loremew eqwfwaerg sefg sdfg sdfgsdfg sdfg sdfg sdf gsdf gsdfgsdfgsdfg</p>
+<p class="{$modifiers}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+{$modifiers}:
 
 .base				- Size: To force body copy size
 .medium				- Size: To increase text size
-
-.bold				- Style: To bold the letter
-
-.quote				- Type: To identify a cite
 
 Styleguide 1.3.3
 */
@@ -78,6 +81,18 @@ Styleguide 1.3.3
 	@extend %font-medium-line;
 }
 
+/*
+Text variants
+
+Use class `.bold` to bold the content. Use only on the following tags: `<p>`, `<li>`, `<span>`, `dt` or `dd`.
+
+Markup:
+<p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+Styleguide 1.3.4
+*/
+
+
 .bold { //TODO: used in whatever kind of copy text (p, a, li...). Get out of _paragraphs.scss
 	font-family: $base-font-family-bold;
 }
@@ -85,15 +100,22 @@ Styleguide 1.3.3
 /*
 Blockquotes
 
+Use `<blockquote>` when the text is quoted from another source. Use `<cite>` to cite the reference.
+
 Markup:
-<blockquote class="small-quote base">
-<span>The blockquote element represents a section that is quoted from another source.</span>
-<cite class="small alternative">The Idol</cite>
+<blockquote class="{$modifiers}">
+	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</span>
+	<cite>Lorem ipsum</cite>
 </blockquote>
 
-Styleguide 1.3.4
-*/
+{$modifiers}:
 
+.vip-quote			- Size: big size and Slabo font-family
+.quote				- Type: with quotation mark
+
+Styleguide 1.3.6
+*/
+//TODO: move a blockquote.css
 .quote {
 	@extend %font-base-line;
 	display: block;
@@ -102,8 +124,10 @@ Styleguide 1.3.4
 	background: url(#{$path-media}/appgrade/pictures/pic-quote-executive.png) center 0 no-repeat;
 }
 
-.small-quote {
-	font-style: italic;
+.vip-quote {
+	font-family: $alternative-font-family;
+	font-size: $large-font-size;
+	line-height: $large-line-height;
 
 	span:after,
 	span:before {
@@ -111,10 +135,10 @@ Styleguide 1.3.4
 	}
 
 	cite {
-		white-space: nowrap;
-	}
-	
-	cite:before {
-		content: "- ";
+		display: block;
+		margin-top: 10px;
+		font-family: $base-font-family;
+		font-size: $base-font-size;
+		line-height: $base-line-height;
 	}
 }

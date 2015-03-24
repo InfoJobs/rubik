@@ -14,9 +14,69 @@ Styleguide 3
 /*
 Modal
 
+Use the following classes structure to create a modal window:
+
+- Use class `.modal-layer` to create the structure and class `.modal-fade-in` to apply the animation that shows it.
+- Then nest `<div class="modal-inner">` to build the layout.
+- Include the container `<div class="modal-header">` with the header structure.
+- Include the container `<div class="modal-content">` with the content structure.
+
+(Show modal example)
+
+Markup:
+<div class="modal-layer modal-fade-in hide">
+	<div class="modal-inner">
+		<div class="modal-header">
+			...
+		</div>
+		<div class="modal-content">
+			...
+		</div>
+	</div>
+</div>
+
 Styleguide 3.1
 */
 
+/*
+Modal size
+
+Apply width and height styles in the container `.modal-inner` for rewrite the default modal size.
+
+Markup:
+<div class="modal-inner hide" style="width: 370px; height: 579px;">
+	...
+</div>
+
+Styleguide 3.1.1
+*/
+
+/*
+Modal header
+
+Use the following structure inside the `.modal-header`, to define the closing action and the heading text.
+
+Markup:
+<div class="modal-header">
+	<a title="" class="close-modal iconfont-Close iconfont-22px hit-area" href="#"></a>
+	<h1 class="title">Title</h1>
+</div>
+
+Styleguide 3.1.2
+*/
+
+/*
+Modal content
+
+Use the structure it's needed inside the `.modal-content` to create the layout.
+
+Markup:
+<div class="modal-content">
+	<p>Text content.</p>
+</div>
+
+Styleguide 3.1.3
+*/
 
 .modal-hidden {/*por defecto oculto*/
 	display: none;
@@ -116,6 +176,8 @@ Styleguide 3.1
 	//problems with iOS & safari
     //-webkit-animation: modal-flipinX .3s both;
     animation: modal-flipinX .3s both;
+	-webkit-transition: height 600ms;
+	        transition: height 600ms;
 
 	@include mediaquery ($bp-tablet - 1) {
 		//top: 50%;

@@ -8,21 +8,28 @@
 //Revisar componente - font-size's
 
 /*
-Thumbnail
+Thumbnail logo
 
-###Thumbnail basic
-- Image with caption at the bottom , if the picture is clickable add tag `<a>` as the example
+###Thumbnail logo
+Logo with caption at bottom.
+The combination of classes `.slide-up` in `<figure>` and `.slide-item` in `<figcaption>` is used to show the caption on hovering with the mouse over the logo.
 
 
 Markup:
-<figure class="fig-thumbnail slide-up">
-	<a href="#">
-		<img border="0" src="http://www.infojobs.net/logo/logo/do-get.xhtml?id=20727600872&" alt="">
-	</a>
-	<figcaption class="fig-thumbnail-caption slide-item">
-		<p class="fig-thumbnail-details">Ver ofertas</p>
-	</figcaption>
-</figure>
+<div class="row">
+	<div class="col-4">
+	<!-- Thumbnail logo -->
+	<figure class="fig-thumbnail fig-thumbnail-logo slide-up">
+		<a href="#">
+			<img style="width: 100%;" border="0" alt="" src="http://zsc.scmspain.com/RealMedia/ads/Creatives/InfojobsES/LI-CGI/CGI.jpg/1406023376">
+			<figcaption class="fig-thumbnail-caption slide-item">
+				<p class="fig-thumbnail-details">Ver ofertas</p>
+			</figcaption>
+		</a>
+	</figure>
+	<!-- /Thumbnail logo -->
+	</div>
+</div>
 
 Styleguide 2.20
 */

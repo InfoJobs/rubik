@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/style.css" />
+
+<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/modal.css" />
+<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css" />
+<script type="text/javascript" src="../../jquery-2.1.0.js"></script>
+<script type="text/javascript" src="../js/jquery.modal.js" ></script>
+
+</head>
+<body>
+<div class="modal-layer modal-fade-in">
+    <div class="container panel-canvas">
+        <div class="modal-inner" style="height: 100%; top: 0px; width: 370px;">
+            <div class="modal-header">
+                <a title="" class="close-modal iconfont-Close iconfont-22px hit-area" href="#"></a>
+                <h1 class="title">Tu opinión nos ayuda</h1>
+            </div>
+            <div class="modal-content">
+                <div class="inner">
+                    <h2 class="medium">&iquest;Es probable que recomiendes InfoJobs a un amigo?</h2>
+                    <form>
+                        <fieldset>
+                        <p class="small">De 0 "Nada probable" a 10 "Muy probable"</p>
+                        <ul class="form--field-block margin-top clearfix">
+                            <li class="rating-nps">
+                        		<fieldset>
+                                    <ul class="range-group margin-top">
+    					                <li id="minRange" class="range">Nada probable</li>
+    					                <li id="maxRange" class="range">Muy probable</li>
+    				                </ul>
+
+                        			<ul class="radio-group clearfix">
+                        	        	<li>
+                        	            	<input type="radio" name="nps" value="" id="nps0">
+                        					<label for="nps0">0</label>
+                        	            </li>
+                        	        	<li>
+                        	            	<input type="radio" name="nps" value="" id="nps1">
+                        					<label for="nps1">1</label>
+                        	            </li>
+                        	        	<li>
+                        	            	<input type="radio" name="nps" value="" id="nps2">
+                        					<label for="nps2">2</label>
+                        	            </li>
+                        	        	<li>
+                        	            	<input type="radio" name="nps" value="" id="nps3">
+                        					<label for="nps3">3</label>
+                        	            </li>
+                        	        	<li>
+                        	            	<input type="radio" name="nps" value="" id="nps4">
+                        					<label for="nps4">4</label>
+                        	            </li>
+                        	        	<li>
+                        	            	<input type="radio" name="nps" value="" id="nps5">
+                        					<label for="nps5">5</label>
+                        	            </li>
+                        	        	<li>
+                        	            	<input type="radio" name="nps" value="" id="nps6">
+                        					<label for="nps6">6</label>
+                        	            </li>
+                        	        	<li>
+                        	            	<input type="radio" name="nps" value="" id="nps7">
+                        					<label for="nps7">7</label>
+                        	            </li>
+                        	        	<li>
+                        	            	<input type="radio" name="nps" value="" id="nps8">
+                        					<label for="nps8">8</label>
+                        	            </li>
+                        	        	<li>
+                        	            	<input type="radio" name="nps" value="" id="nps9">
+                        					<label for="nps9">9</label>
+                        	            </li>
+                        	        	<li>
+                        	            	<input type="radio" name="nps" value="" id="nps10">
+                        					<label for="nps10">10</label>
+                        	            </li>
+                        	        </ul>
+                        		</fieldset>
+                            </li>
+                            <li>
+                                <label for="explanation">	&iquest;Nos podr&iacute;as explicar brevemente tu puntuaci&oacute;n? &iexcl;Gracias por contestar!</label>
+                                <div class="textarea">
+                                    <textarea></textarea>
+				                    <p class="info alternative small">120/250</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <button type="submit" class="btn btn-primary btn-large">Enviar</button>
+
+                        </fieldset>
+
+                    </form>
+                </div>
+            </div>
+
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+			$(".modal").modalWindow();
+			});
+	</script>
+</body>

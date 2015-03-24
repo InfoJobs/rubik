@@ -15,7 +15,8 @@ $PANELS
 		background-color: $shiro;
 	}
 
-	&-executive {
+	&-executive,
+	&-contrast {
 		color: $shiro;
 		background-color: $dark-silk;
 
@@ -30,7 +31,36 @@ $PANELS
 	}
 }
 
-.row-panel-8-4 {
+[class^="col-"].panel .col-child,
+[class^="col-"].panel + [class^="col-"] .col-child,
+[class*="col-"].panel .col-child,
+[class*="col-"].panel + [class*="col-"] .col-child {
+	margin-bottom: 0;
+}
+
+[class^="col-"].panel + [class^="col-"] .col-child,
+[class^="col-"].panel:not(:first-child) .col-child,
+[class*="col-"].panel + [class*="col-"] .col-child,
+[class*="col-"].panel:not(:first-child) .col-child {
+
+	@include mediaquery ($bp-tablet) {
+		margin-left: 0;
+	}
+}
+
+.col-12-medium.panel + .col-12-medium .col-child,
+.col-12-medium.panel:not(:first-child) .col-child {
+
+	@include mediaquery ($bp-tablet) {
+		margin-left: 10px;
+	}
+
+	@include mediaquery ($bp-desktop) {
+		margin-left: 0;
+	}
+}
+
+.row-panel-8-4 { //DEPRECATED
 	color: $shiro;
 	overflow: hidden;
 

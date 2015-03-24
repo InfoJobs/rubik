@@ -35,6 +35,14 @@
 }
 
 @font-face {
+  font-family: 'Slabo-regular';
+  src: url('#{$path-font}slabo-regular.eot?') format('eot'),
+	  url('#{$path-font}slabo-regular.woff') format('woff'),
+	  url('#{$path-font}slabo-regular.otf') format('opentype'),
+	  url('#{$path-font}slabo-regular.ttf') format('truetype');
+}
+
+@font-face {
 	font-family: 'Icons';
 	src:url('#{$path-font}infojobs.eot?') format('eot'),
 		url('#{$path-font}infojobs.woff') format('woff'),
@@ -94,9 +102,10 @@ a:focus {
 	outline:none;
 }
 
-.underline,
-.underline:hover {
-    text-decoration: underline;
+.link-underline,
+.link-underline:hover,
+.link:hover {
+ 	text-decoration: underline;
 }
 
 strong {
@@ -160,7 +169,7 @@ Styleguide 1.2.2
 /*
 Inner containers
 
-Inner create 20px gutters (gaps between content) via padding using .inner class as a wrapper of content.
+Inner creates 20px gutters (gaps between content) via padding using `.inner` class as a wrapper of the content.
 Inner can be nested several times.
 
 Markup:
@@ -299,4 +308,13 @@ hr {
 body {
 	//for logo print
 	background: url(#{$path-media}/appgrade/backgrounds/bg-logo-claim-empleo.svg) no-repeat -9999px -9999px;
+}
+
+// to apply on container needs min-height
+.inner-freak {
+	min-height: 250px;
+
+	&:only-of-type {
+		min-height: 400px;
+	}
 }

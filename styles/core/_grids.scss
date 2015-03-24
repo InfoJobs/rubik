@@ -5,61 +5,68 @@
 /*
 Grid System
 
+**We are using a mobile first 12 column fluid responsive grid system that helps you to build solid multi-device layouts.**
+
 Grid system is used for creating page layout through a series of rows and columns that house
 your content.
 
-- Rows must be placed within a .container (fixed-width) for proper alignment and padding.
-- Use rows to create horizontal groups of columns.
-- Content should be placed within columns, and only columns may be immediate children of rows.
-- Predefined grid classes like .row and .col-4 are available for quickly making grid layouts.
-- Columns create gutters (gaps between columns content) via padding using .col-child class as inmediate children of col-4.
-- Grid columns are created by specifying the number of twelve available columns you wish to span.
-For example, three equal columns would use three .col-4.
-- If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.
-- Grid classes apply to devices with screen widths greater than or equal to the breakpoint sizes,
-and override grid classes targeted at smaller devices.
-Therefore, applying any .col-12-medium class to an element force content adjust to 100% width defined for medium devices.
-```
-.row				- To create a row of columns
-.row-bleed			- To create a row of columns without natural padding
-.col-child 			- To create gaps between columns content
-.col-child-content	- To Padding inside column content
-```
+
+- Use class `.row` to create a horizontal group of columns.
+- Then nest as many containers `<div class="col-[number]">` as columns are necessary to build the layout
+- Include the container `<div class="col-child">` as immediate children of `.col-[number]`.
+
+@@include('../templates/partials/grid.html')
+@@include('../templates/partials/colors.html')
 
 Markup:
-<div class="row row-bleed clearfix">
-<div class="{$modifiers}">
-<div class="col-child">
-...
+<div class="row casper">
+	<div class="col-4"><div class="col-child">...</div></div>
+	<div class="col-8"><div class="col-child">...</div></div>
 </div>
+<!-- Hello -->
+<div class="row">
+	<div class="col-8"><div class="col-child">...</div></div>
+	<div class="col-4"><div class="col-child">...</div></div>
 </div>
+<div class="row">
+	<div class="col-4"><div class="col-child">...</div></div>
+	<div class="col-4"><div class="col-child">...</div></div>
+	<div class="col-4"><div class="col-child">...</div></div>
 </div>
-
-.col-3 				- To create 25% column width
-.col-4 				- To create 33.33% column width
-.col-6 				- To create 50% column width
-.col-8 				- To create 66.66% column width
-.col-12				- To create 100% column width
+<div class="row">
+	<div class="col-3"><div class="col-child">...</div></div>
+	<div class="col-3"><div class="col-child">...</div></div>
+	<div class="col-3"><div class="col-child">...</div></div>
+	<div class="col-3"><div class="col-child">...</div></div>
+</div>
 
 
 Styleguide 1.2.1
 */
-
-$gridColumns: 12;
 
 @mixin row {
 	margin: 0 0 0 -10px;
 	clear: both;
 	position: relative;
 
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+
 	@media print {
 		margin: 0;
 	}
 }
 
-
 .row {
 	@include row;
+
+	> [class^="col-"]:last-of-type .col-child,
+	> [class*="col-"]:last-of-type .col-child {
+			margin-bottom: 0;
+	}
 
 	.aside-wrapper & {
 		display: table;
@@ -67,7 +74,7 @@ $gridColumns: 12;
 		margin-left: 0;
 	}
 
-	& + .row {
+	+ .row {
 		margin-bottom: 10px;
 
 		@media print {
@@ -76,60 +83,94 @@ $gridColumns: 12;
 	}
 }
 
-@for $i from 1 through $gridColumns {
-	.col-#{$i} {
-		width: ((100 / $gridColumns) * $i) * 1%;
-		float: left;
+/*
+Medium devices
+
+Therefore, applying at any column the class `.col-6-medium` content will adjust to 50% width or `.col-12-medium` 100% width defined for medium devices.
+
+(Show devices behaviour)
+
+Markup:
+<div class="row">
+	<div class="col-8 col-6-medium"><div class="col-child">...</div></div>
+	<div class="col-4 col-6-medium"><div class="col-child">...</div></div>
+</div>
+<div class="row">
+	<div class="col-8 col-12-medium"><div class="col-child">...</div></div>
+	<div class="col-4 col-12-medium"><div class="col-child">...</div></div>
+</div>
+
+Styleguide 1.2.1.2
+*/
+
+$gridColumns: 12;
+
+@include mediaquery ($bp-tablet) {
+	@for $i from 1 through $gridColumns {
+		.col-#{$i} {
+			width: ((100 / $gridColumns) * $i) * 1%;
+			float: left;
+		}
+	}
+
+	.col-6-medium {
+		width: 50%;
+	}
+
+	.col-12-medium {
+		width: 100%;
+	}
+
+}
+
+@include mediaquery ($bp-desktop) {
+
+	@for $i from 1 through $gridColumns {
+
+		.col-#{$i}.col-6-medium,
+		.col-#{$i}.col-12-medium {
+			width: ((100 / $gridColumns) * $i) * 1%;
+		}
+	}
+
+}
+
+[class^="col-"],
+[class*="col-"] {
+
+	.inner & {
+		margin-right: -10px;
+
+		@include mediaquery ($bp-tablet) {
+			margin-right: 0;
+		}
+	}
+
+	@media print {
+		width: 100%;
+		float: none;
+	}
+
+	.aside-wrapper & {
+		float: none;
+		display: table-cell;
 	}
 }
 
-@for $i from 1 through $gridColumns {
-	.col-#{$i} {
 
-		.inner & {
-			margin-right: -10px;
+.col-child {
+	margin: 0 0 10px 10px;
 
-			@include mediaquery ($bp-tablet) {
-				margin-right: 0;
-			}
-		}
+	@include mediaquery ($bp-tablet) {
+		margin-bottom: 0;
+	}
 
-		.row-bleed & .col-child {
-			@include mediaquery ($bp-tablet) {
-				margin-right: 10px;
-			}
-			@include mediaquery ($bp-desktop) {
-				margin-right: 0;
-			}
-		}
+	.aside-wrapper & {
+		margin-left: 0;
+	}
 
-		.row-bleed &:last-of-type .col-child {
-			@include mediaquery ($bp-desktop) {
-				margin-right: 10px;
-			}
-		}
-
-		.col-child {
-			margin: 0 0 10px 10px;
-
-			.aside-wrapper & {
-				margin-left: 0;
-			}
-
-			@media print {
-				margin: 0;
-			}
-		}
-
-		@media print {
-			width: 100%;
-			float: none;
-		}
-
-		.aside-wrapper & {
-			float: none;
-			display: table-cell;
-		}
+	@media print {
+		margin: 0;
 	}
 }
 
@@ -149,85 +190,79 @@ $gridColumns: 12;
 	}
 }
 
-.row-bleed { //TODO: related with panel- structure
+.row-bleed { //DEPRECATED: only used in 'view-offer' and 'home-executive'
 	@include row;
 	margin: 0;
 	padding-top: 10px;
-}
 
-@media only screen and (max-width: $tablet-start) {
-
-	.col-6-medium {
-		width: 50%;
-	}
-
-	.col-12-medium {
-		width: 100%;
-
-		.aside-wrapper & {
-			display: block;
+	.col-child {
+		@include mediaquery ($bp-tablet) {
+			margin-right: 10px;
 		}
-	}
-}
-
-@media only screen and (max-width: $mobile-start) {
-
-	@for $i from 1 through $gridColumns {
-		.col-#{$i},
-		.col-#{$i}-medium {
-
-			float: none;
-			width: auto;
+		@include mediaquery ($bp-desktop) {
+			margin-right: 0;
 		}
 	}
 
-	.col-6-mobile {
-		width: 50%;
-		float: left;
-
-		.col-child {
-			margin: 0 0 10px 10px;
-
-			@media print {
-				margin: 0;
-			}
-		}
-
-		@media print {
-			width: 100%;
-			float: none;
+	&:last-of-type .col-child {
+		@include mediaquery ($bp-desktop) {
+			margin-right: 10px;
 		}
 	}
-
-	.row {
-		& > [class^="col-"]:last-of-type .col-child,
-		& > [class*="col-"]:last-of-type .col-child {
-				margin-bottom: 0;
-		}
-	}
-
 }
 
 /*------------------------------------*\
-$ROW FAUX
+	$ROW FAUX
 \*------------------------------------*/
 
-@include mediaquery ($bp-tablet) {
+/*
+Equal height columns
 
-	.row-faux {
-		display: table;
-		height: 100%;
+Use class `.row-faux` instead of `.row` to build an equal height columns structure.
+
+(Show faux)
+
+Markup:
+<div class="row-faux">
+	<div class="col-4"><div class="col-child">...</div></div>
+	<div class="col-4"><div class="col-child">...</div></div>
+	<div class="col-4"><div class="col-child">...</div></div>
+</div>
+
+Styleguide 1.2.1.3
+*/
+
+.row-faux {
+
+	@include row;
+
+	@include mediaquery ($bp-tablet) {
+
+		@include display-flex;
+		@include vendor-prefix('flex-flow', 'row wrap');
 
 		[class^="col-"],
 		[class*="col-"] {
-			display: table-cell;
-			vertical-align: top;
+			@include display-flex;
 			float: none;
-			height: 100%;
+		}
+
+		.col-12-medium {
+			display: block;
 		}
 
 		.col-child {
 			display: block;
+			@include flex;
+		}
+
+	}
+
+	@include mediaquery ($bp-desktop) {
+
+		.col-6-medium,
+		.col-12-medium  {
+			@include display-flex;
 		}
 
 	}

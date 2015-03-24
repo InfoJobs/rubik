@@ -1,0 +1,182 @@
+html,
+body {
+    height: auto;
+}
+
+body {
+    background: #f7f7f7;
+}
+
+.guide {
+    font-size: 13px;
+
+    //Grid
+    .col-child {
+    //[class^="col-"],
+    //[class*="col-"]
+        padding: 10px;
+        text-align: center;
+        background-color: $shiro;
+        overflow: hidden;
+    }
+
+    .col-6-medium {
+        width: 50%;
+    }
+
+    .row {
+        margin-bottom: 10px;
+    }
+
+    //Colors
+    .color {
+        margin-bottom: 10px;
+
+        li {
+            padding: 10px 20px;
+            text-align: center;
+            border: 1px solid #2D3133;
+            float: left;
+            margin: 0 10px 10px 0;
+        }
+    }
+
+    //Icons
+    &.icons ul {
+		overflow: hidden;
+        display: inline-block;
+        width: 100%;
+
+	    li {
+			height: 100px;
+			margin: 0px;
+			outline: 1px solid white;
+			font-size: 14px;
+			text-align: center;
+			background-color: $darkest-shiro;
+			float: left;
+			width: 50%;
+
+			@include mediaquery ($bp-tablet) {
+				width: 25%;
+
+			}
+
+			@include mediaquery ($bp-desktop) {
+				width: 16.666%;
+
+			}
+
+        }
+
+		li::after,
+        li::before {
+			display: block;
+			padding: 30px;
+			text-align: center;
+			font-size: 30px;
+		}
+    }
+}
+
+.content {
+    //Styleguide theme
+    h1,
+    h2 {
+        margin-bottom: 10px;
+        margin-top: 70px;
+
+        &:first-child {
+            margin-top: 40px;
+        }
+    }
+
+    h1 {
+        font-size: 25px;
+        color: $day-blue;
+    }
+
+    h2,
+    h3 {
+        color: $dark-silk;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    .img {
+        margin: 0;
+    }
+
+    .link {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    /*.margin-top {
+        margin-top: 70px;
+
+        &:first-child {
+            margin-top: 40px;
+        }
+    }*/
+
+    .selector,
+    .styleguide-description code {
+        margin-right: 0;
+        padding: 3px 5px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        background-color: $darkest-shiro;
+        font-family: Courier;
+        font-size: 13px;
+        color: #dc1a6c;
+    }
+
+    .view {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid $darkest-shiro;
+
+        &::before {
+            content: 'Example';
+            display: block;
+            height: 30px;
+            color: $darkest-shiro;
+        }
+    }
+
+    pre {
+        border-top: 1px solid $darkest-shiro;
+        padding: 20px;
+        font-family: Courier;
+        font-size: 13px;
+        background-color: $darkest-shiro;
+
+    }
+}
+
+.footer {
+    background: none;
+
+    &:before {
+        background: none;
+    }
+}
+
+.styleguide-block {
+    margin-top: 60px;
+}

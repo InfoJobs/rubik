@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-15">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi InfoJobs</title>
+<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/style.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" /><link rel="stylesheet" type="text/css" href="../styles/components/tips-list.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/crop-image.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/kpi.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/custom-background.css" />
+
+<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
+</head>
+
+<body>
+
+<div class="kpi">
+	<h2 class="kpi-title">Ofertas para ti</h2>
+	<a href="#" id="kpi-indicator-offers"
+	data-endval="59"
+	data-duration="1"
+	class="kpi-indicator">158</a>
+	<p>Basada en tus últimas búsquedas</p>
+	<a class="link-underline" href="#">Buscar ofertas</a>
+</div>
+
+<script type="text/javascript" src="../js/count-up.js"></script>
+<script>
+	(function(){
+		var numAnim = new countUp('kpi-indicator-offers');
+		numAnim.start();
+
+	})();
+</script>
+</body>
+
+</html>

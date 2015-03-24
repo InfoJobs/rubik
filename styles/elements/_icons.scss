@@ -1,10 +1,6 @@
 //generics
 @import "../generics/generics";
 
-/*------------------------------------*\
-	$ICONS
-\*------------------------------------*/
-
 //Applies to elements containing a class that begin with icon-
 
 [class^="icon-"],
@@ -18,48 +14,15 @@
 }
 
 /*------------------------------------*\
-	$ICONSIMAGE
-\*------------------------------------*/
-$icon-size: (50); //TODO: resolve problem when it s moved to _vars
-
-@each $value in $icon-size {
-
-	.icon-#{$value}px {
-		width: #{$value}px;
-		height: #{$value}px;
-		background-size: 100% auto;
-	}
-}
-
-.icon-candidaturas {
-		background: url("#{$path-backgrounds}/icon-candidaturas.png") no-repeat 0 0;
-}
-.icon-CV {
-		background: url("#{$path-backgrounds}/icon-CV.png") no-repeat 0 0;
-}
-.icon-contactos {
-		background: url("#{$path-backgrounds}/icon-contacts.png") no-repeat 0 0;
-}
-
-/*------------------------------------*\
-	$ICONSFONTS
+	$ICONS
 \*------------------------------------*/
 
 /*
-Icons size
+Icons
 
-Markup:
-<ul>
-<li class="{$modifiers}">Executive</li>
-<li class="{$modifiers}">Acepta candidatos...</li>
-<li class="{$modifiers}">Urgente</li>
-</ul>
-
-.iconfont-16px
-.iconfont-18px
-.iconfont-22px
-.iconfont-30px
-.iconfont-100px
+The icons are generated as fonts.<br>
+Color and size can be modified as texts.
+Use these classes to specify an icon for any tag.
 
 Styleguide 1.6
 */
@@ -75,7 +38,6 @@ Styleguide 1.6
 	text-transform: none;
 	line-height: 0;
 	left: 0;
-
 
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
@@ -103,6 +65,27 @@ Styleguide 1.6
 	}
 }
 
+/*
+Icons size
+
+Use these classes to modify the icon size in px.
+
+Markup:
+<ul>
+	<li class="iconfont-Company {$modifiers}"><span class="hide">Icon name</span></li>
+</ul>
+
+{$modifiers}:
+
+.iconfont-16px	- 16px
+.iconfont-18px	- 18px
+.iconfont-22px	- 22px
+.iconfont-30px	- 30px
+.iconfont-100px	- 100px
+
+Styleguide 1.6.1
+*/
+
 $iconfont-size: (16, 18, 22, 30, 100); //TODO: resolve problem when it s moved to _vars
 
 @each $value in $iconfont-size {
@@ -115,60 +98,43 @@ $iconfont-size: (16, 18, 22, 30, 100); //TODO: resolve problem when it s moved t
 	}
 }
 
-/*
-Icon color
-
-Markup:
-<ul>
-<li class="iconfont-30px {$modifiers}">Executive</li>
-<li class="iconfont-30px {$modifiers}">Acepta candidatos...</li>
-<li class="iconfont-30px {$modifiers}">Urgente</li>
-</ul>
-
-.iconfont-soft-script		- Color: To change text color applied in the icon
-
-Styleguide 1.6.1
-*/
-
 .iconfont-soft-script::before {
 	color: $soft-script;
 }
 
-/*
-Icon function
+/*------------------------------------*\
+	$ICONSIMAGE
+\*------------------------------------*/
+.icon-candidaturas {
+		background: url("#{$path-backgrounds}/icon-candidaturas.png") no-repeat 0 0;
+}
+.icon-CV {
+		background: url("#{$path-backgrounds}/icon-CV.png") no-repeat 0 0;
+}
+.icon-contactos {
+		background: url("#{$path-backgrounds}/icon-contacts.png") no-repeat 0 0;
+}
 
-```
-.iconfont-img
-```
-Markup:
-<span class="iconfont-100px">Executive</span>
 
-Styleguide 1.6.2
-*/
+$icon-size: (50); //TODO: resolve problem when it s moved to _vars
+
+@each $value in $icon-size {
+
+	.icon-#{$value}px {
+		display: block;
+		width: #{$value}px;
+		height: #{$value}px;
+		background-size: 100% auto;
+	}
+}
+
+//Icon function
 
 .iconfont-img::before {
 	position: relative;
 }
 
-/*
-Icons type
-
-Markup:
-<ul>
-<li class="iconfont-30px iconfont-soft-script {$modifiers}">Executive</li>
-<li class="iconfont-30px {$modifiers}">Acepta candidatos...</li>
-<li class="iconfont-30px {$modifiers}">Urgente</li>
-</ul>
-
-.iconfont-ArrowDown			- Type: To apply arrow down icon
-.iconfont-ArrowLeft			- Type: To apply arrow left icon
-.iconfont-ArrowUp			- Type: To apply arrow up icon
-.iconfont-Arrow				- Type: To apply arrow right icon
-.iconfont-BurguerMenu		- Type: To apply mobile menu icon
-...
-
-Styleguide 1.6.3
-*/
+//Icon types
 
 .iconfont-ArrowDown::before {
 	content: "\e600";
@@ -340,4 +306,25 @@ Styleguide 1.6.3
 }
 .iconfont-Alert-circle::before {
 	content: "\e638";
+}
+.iconfont-Save:before {
+	content: "\e639";
+}
+.iconfont-SaveAs:before {
+	content: "\e63a";
+}
+.iconfont-OneTime:before {
+	content: "\e63b";
+}
+.iconfont-Applications:before {
+	content: "\e63c";
+}
+.iconfont-Attach:before {
+	content: "\e63d";
+}
+.iconfont-Phone:before {
+	content: "\e63e";
+}
+.iconfont-Website:before {
+	content: "\e63f";
 }

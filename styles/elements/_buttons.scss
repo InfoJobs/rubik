@@ -2,82 +2,64 @@
     $BUTTONS
 \*------------------------------------*/
 
-// mixins interessants a implementar
-//	en enllasos/botons
-//		cursor
-//		overflow
-//		white-space
-//		transition
-//		...
+.btn {
+    /*@include transition;*/
+    display: inline-block;
+    width: auto;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    color: $shiro;
+    cursor: pointer;
+    font-size: $small-font-size;
+    font-weight: normal;
+    line-height: 18px;
+    overflow: visible;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+
+    &:hover {
+      @include transition;
+    }
+
+    @at-root button#{&} {
+      height: 30px;
+    }
+
+    @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
+        font-size: $medium-font-size;
+    }
+
+    p > & {
+        margin-left: 10px;
+
+        @media only screen and (max-width: $mobile-start) {
+            display: block;
+            margin: 10px 0 0;
+        }
+    }
+}
+
 
 /*
 Buttons
 
-Markup:
-<a href="#" class="btn btn-default {$modifiers}">Link Button</a>
-<button class="btn btn-default {$modifiers}">Button Element</button>
+Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms), followed by classes listed as `{$modifiers}`.
 
-.btn-medium			- Size: Medium iuoipeu proiquwe poiewqu
-.btn-large 			- Size: Large
-.btn-disabled		- Disabled
+Markup:
+<a href="#" class="btn {$modifiers}">Link Button</a>
+<button class="btn {$modifiers}">Button Element</button>
+
+{$modifiers}:
+
+.btn-default		   - Applies default action style
+.btn-primary 		   - Applies primary action style
+.btn-primary-contrast  - Applies primary action style over dark background
 
 Styleguide 1.5
 */
-
-.btn {
-  /*@include transition;*/
-  display: inline-block;
-  width: auto;
-  padding: 5px 10px;
-  border: 1px solid transparent;
-  color: $shiro;
-  cursor: pointer;
-  font-size: $small-font-size;
-  font-weight: normal;
-  line-height: 18px;
-  overflow: visible;
-  text-decoration: none;
-  text-align: center;
-  white-space: nowrap;
-  -webkit-appearance: none;
-  -webkit-border-radius: 0;
-}
-
-.btn:hover {
-  @include transition;
-}
-
-.btn-annex {
-    margin-right: 15px;
-
-    & + .link {
-      white-space: nowrap;  //TODO: solve margin-top when .link fall down below .btn
-      font-size: $small-font-size;
-    }
-
-    @at-root #{&}.btn-medium + .link {
-        font-size: $medium-font-size;
-    }
-
-    @at-root #{&}.btn-large + .link {
-        font-size: $large-font-size;
-    }
-
-    & + .field-annex { //needed for a check/radiobutton/link structure close to the btn
-
-      display: inline-block;
-        margin-top: 10px;
-
-      input[type="checkbox"] + label {
-        width: auto;
-      }
-    }
-
-}
-
-button.btn {
-  height: 30px;
-}
 
 .btn-default {
   color: $dark-silk;
@@ -119,19 +101,6 @@ button.btn {
 	}
 }
 
-/*
-Primary
-
-Markup:
-<a href="#" class="btn btn-primary {$modifiers}">Link Button</a>
-<button class="btn btn-primary {$modifiers}">Button Element</button>
-
-.btn-medium		- Size: Medium
-.btn-large 		- Size: Large
-
-Styleguide 1.5.1
-*/
-
 .btn-primary {
   color: $shiro;
   background-color: $day-blue;
@@ -156,22 +125,6 @@ Styleguide 1.5.1
 .btn-primary:active {
   background-color: $night-blue;
 }
-
-/*
-Primary contrast
-
-Button Primary contrast
-
-Markup:
-<a href="#" class="btn btn-primary-contrast {$modifiers}">Link Button</a>
-<button class="btn btn-primary-contrast {$modifiers}">Button Element</button>
-<input type="button" class="btn btn-primary-contrast {$modifiers}" value="Input Element"/>
-
-.btn-medium		- Size: Medium
-.btn-large 		- Size: Large
-
-Styleguide 1.5.2
-*/
 
 .btn-primary-contrast {
   color: $shiro;
@@ -200,15 +153,7 @@ Styleguide 1.5.2
   }
 }
 
-/*
-Link Primary
-
-Markup:
-<a href="#" class="btn btn-link-primary">Link Button</a>
-
-Styleguide 1.5.3
-*/
-
+///*DEPRECATED: .btn-link-primary only used in header and 'ver_oferta.html'*/
 .btn-link-primary {
   color: $day-blue;
 }
@@ -224,15 +169,7 @@ Styleguide 1.5.3
   padding-left: 0;
 }
 
-/*
-Link Secondary
-
-Markup:
-<a href="#" class="btn btn-link-secondary">Link Button</a>
-
-Styleguide 1.5.4
-*/
-
+///*DEPRECATED: .btn-link-secondary only used in header*/
 .btn-link-secondary {
   color: $mid-script;
 }
@@ -242,15 +179,7 @@ Styleguide 1.5.4
   color: $dark-silk;
 }
 
-/*
-Link Company
-
-Markup:
-<a href="#" class="btn btn-link-company">Link Button</a>
-
-Styleguide 1.5.5
-*/
-
+///*DEPRECATED: .btn-link-company only used in header*/
 .btn-link-company {
   color: $soft-script;
 }
@@ -260,58 +189,76 @@ Styleguide 1.5.5
   color: $shiro;
 }
 
+
+/*
+Buttons sizes
+
+Use classes listed as `{$modifiers}` to change buttons size.
+
+Markup:
+<a href="#" class="btn btn-default {$modifiers}">Link Button</a>
+<button class="btn btn-default {$modifiers}">Button Element</button>
+
+{$modifiers}:
+
+.btn-medium			- Size: Medium
+.btn-large 			- Size: Large
+
+Styleguide 1.5.1
+*/
+
 .btn-medium {
     padding: 0 10px;
     font-size: $medium-font-size;
     line-height: 38px;
+
+    @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
+        font-size: 22px;
+    }
 }
+
 .btn-large {
-	  padding: 0 20px;
-	  font-size: $large-font-size;
+    padding: 0 20px;
+    font-size: $large-font-size;
     line-height: 40px;
+
+    @media only screen and (max-width: $mobile-start) {
+        font-size: $medium-font-size;
+    }
+
+    @at-root button#{&} {
+        height: 42px;
+    }
+
+    @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
+        font-size: 30px;
+    }
 }
 
-button.btn-large {
-  height: 42px;
-}
-
-.btn-icon,
-.btn-icon:hover  {
-    background-attachment: scroll;
-    background-clip: border-box;
-    background-origin: padding-box;
-    background-repeat: no-repeat;
-    padding-left: 50px;
-}
 
 /*
-Icon Update
+Buttons with text and icon
 
-Button with icon update.
-Used in home
+Use class `.iconfont-[name]` to display the needed icon.
 
 Markup:
-<button class="btn btn-icon btn-icon-update">Button Element</button>
-<input type="button" class="btn btn-icon btn-icon-update" value="Input Element"/>
+<a href="#" class="btn btn-primary btn-medium iconfont-Facebook">Link Button</a>
+<button class="btn btn-primary btn-medium iconfont-Facebook">Button Element</button>
 
-Styleguide 1.5.7
+Styleguide 1.5.2
 */
 
-.btn-icon-update,
-.btn-icon-update:hover {
-    background-image: url("#{$path-media}/appgrade/backgrounds/bg-update.png");
-    background-position: 20px 50%;
-}
+/*
+Buttons status
 
-.btn-iconfont  {
-    padding: 4px 10px;
-    font-size: 18px;
-}
+Use class `.btn-disabled` to show button as disabled.
 
-.btn-iconfont:before  {
-    position: relative;
-    top: 2px;
-}
+Markup:
+<a href="#" class="btn btn-default btn-medium btn-disabled">Link Button</a>
+<button class="btn btn-default btn-medium btn-disabled">Button Element</button>
+
+Styleguide 1.5.3
+*/
 
 button[disabled],
 button:hover[disabled],
@@ -322,6 +269,7 @@ button:active[disabled],
 .btn-disabled:focus {
    background: $shiro;
    color: $wood-katana-smash;
+   text-decoration: none;
    cursor: default;
 
    // review this rule (not work without background, border,...)
@@ -331,23 +279,97 @@ button:active[disabled],
    }
 }
 
+
+/*
+Button annex
+
+Use class `.btn-annex` to add an element adjacent to the button.
+
+Markup:
+<a href="#" class="btn btn-primary btn-medium btn-annex">Button</a>
+<a href="#" class="link">Link</a>
+
+Styleguide 1.5.4
+*/
+
+.btn-annex {
+    margin-right: 15px;
+
+    & + .link {
+      white-space: nowrap;  //TODO: solve margin-top when .link fall down below .btn
+      font-size: $small-font-size;
+    }
+
+    @at-root #{&}.btn-medium + .link {
+        font-size: $medium-font-size;
+    }
+
+    @at-root #{&}.btn-large + .link {
+        font-size: $large-font-size;
+    }
+
+    & + .field-annex { //needed for a check/radiobutton/link structure close to the btn
+
+      display: inline-block;
+        margin-top: 10px;
+
+      input[type="checkbox"] + label {
+        width: auto;
+      }
+    }
+
+}
+
+
+/*
+Buttons display
+
+Use class `.btn-form-inline` to display a full width button.
+
+Markup:
+<a href="#" class="btn btn-primary btn-form-inline">Button Element</a>
+<button class="btn btn-default btn-form-inline">Button Element</button>
+
+Styleguide 1.5.5
+*/
+
+.btn-form-inline { //only used on search-bar and filters
+  width: 100%;
+
+    @media only screen and (max-width: $tablet-start) {
+        @at-root button#{&} {
+            height: auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+    }
+}
+
+
 /*
 Button group
 
-Buttons are action items.
+Use class `.btn-group` to create a button group structure.
+Use class `.btn-default` for buttons inside buttons group.
+Use class `.active` to highlight the selected button.
 
 Markup:
-<a href="#" class="button {$modifiers}">Link Button</a>
-<button class="button {$modifiers}">Button Element</button>
-<input type="button" class="button {$modifiers}" value="Input Element"/>
+<div class="btn-group">
+    <div class="active">
+        <button class="btn btn-default" type="button">year</button>
+    </div>
+    <div>
+        <button class="btn btn-default" type="button">month</button>
+    </div>
+    <div>
+        <button class="btn btn-default" type="button">hour</button>
+    </div>
+</div>
 
-.btn-medium			  - ...
-.btn-large 			  - ...
-
-Styleguide 1.5.8
+Styleguide 1.5.6
 */
 
-.btn-group {
+.btn-group { //TODO: Add hide text for empty buttons
     display: table;
 
     & > div {
@@ -375,6 +397,7 @@ Styleguide 1.5.8
   				background-color: $mediterranean-sea;
   			}
   		}
+
   		&.btn-disabled:hover {
   			background: $shiro;
   		}
@@ -400,26 +423,65 @@ Styleguide 1.5.8
   	}
 }
 
-.btn-group-justified {
+/*
+Button group justified
+
+Use class `.btn-group-justified` to display `.btn-group` full width buttons.
+
+
+Markup:
+<div class="btn-group btn-group-justified">
+    <div class="active">
+        <button class="btn btn-default" type="button">year</button>
+    </div>
+    <div>
+        <button class="btn btn-default" type="button">month</button>
+    </div>
+    <div>
+        <button class="btn btn-default" type="button">hour</button>
+    </div>
+</div>
+
+Styleguide 1.5.7
+*/
+
+/*
+Button group with icon
+
+Use class `.iconfont-[name]` to display the needed icon.
+
+Markup:
+<div class="btn-group">
+    <div>
+        <a class="btn btn-default iconfont-Facebook" href="#" title="Comparte esta oferta en Facebook"></a>
+    </div>
+    <div>
+        <a class="btn btn-default iconfont-Twitter" href="#" title="Tweetea esta oferta"></a>
+    </div>
+</div>
+
+Styleguide 1.5.8
+*/
+
+.btn-group-justified { //TODO: same properties than .btn-form-inline class
      width: 100%;
 
     .btn {
         width: 100%;
     }
-  }
+}
 
+///*DEPRECATED: .btn-divider and .btn-divider-company only used on header*/
 .btn-divider {
   border-right: 1px solid $darkest-shiro;
 }
 
+///*DEPRECATED: .btn-divider and .btn-divider-company only used on header*/
 .btn-divider-company {
   border-right:  1px solid $mid-script;
 }
 
-.btn-form-inline {
-  width: 100%;
-}
-
+///*DEPRECATED: .btn-close only used on .toast, .notifications and red_de_contactos*/
 .btn-close {
     padding: 0;
     font-size: 33px;
@@ -429,67 +491,4 @@ Styleguide 1.5.8
     border: 0 none;
     background: none repeat scroll 0 0 transparent;
     cursor: pointer;
-}
-
-//button group width social networks icons
-/*.btn-group .btn{
-  &.fb-small,
-  &.tw-small,
-  &.gplus-small {
-    width: auto;
-  }
-}*/
-
-.fb-small,
-.fb-small:hover,
-.tw-small,
-.tw-small:hover,
-.gplus-small,
-.gplus-small:hover {
-  padding: 15px 17px;
-  background-repeat: no-repeat;
-}
-
-.fb-small,
-.fb-small:hover {
-  background-image: url("#{$path-sprites}/sprite-social-18x18.png");
-  background-position: center 6px;
-}
-.tw-small,
-.tw-small:hover {
-  background-image: url("#{$path-sprites}/sprite-social-18x18.png");
-  background-position: center -20px;
-}
-.gplus-small,
-.gplus-small:hover {
-  background-image: url("#{$path-sprites}/sprite-social-18x18.png");
-  background-position: center -44px;
-}
-
-//class en contenedor para dejar correctamente margin superior cuando hay un button seguido de un texto
-.btn-expanded-small-text {
-  margin-top: 10px;
-}
-
-p > .btn {
-    margin-left: 10px;
-}
-
-@media only screen and (max-width: $tablet-start) {
-  button.btn-form-inline {
-    height: auto;
-    padding: 10px;
-    font-size: 16px;
-  }
-}
-
-@media only screen and (max-width: $mobile-start) {
-	.btn-large {
-		font-size: $medium-font-size;
-	}
-
-	p > .btn {
-	    display: block;
-	    margin: 10px 0 0;
-	}
 }

@@ -11,7 +11,6 @@
 
 		width: 100%;
 		overflow: hidden;
-		margin-top: 10px;
 		border-bottom: 1px solid $katana-slash; //TODO: idem .list-divider except paddings and margins
 		background-color: $shiro;
 
@@ -20,9 +19,10 @@
 		}
 
 		& > div {
-			// First create a flex layout context
-			display: flex;
 
+			@include mediaquery ($bp-tablet) {
+			// First create a flex layout context
+			@include display-flex;
 			///* Define the flow direction and if it's allowed the items to wrap. Default values are:
 			//* flex-direction: row;
 			//* flex-wrap: nowrap;
@@ -30,14 +30,8 @@
 			//* This is the same as:
 			//* flex-flow: row nowrap;
 			//*/
-
-			@include mediaquery ($bp-tablet) {
-				align-items: center;
+			align-items: center;
 			}
-		}
-
-		@include mediaquery ($bp-tablet) {
-			margin-top: 0;
 		}
 
 		@at-root #{&}.main .cell-1 [class*=" iconfont-"]::after {
@@ -76,15 +70,17 @@
 	.cell {
 
 		&-1 {
-			//Define a flex grow
-			flex: 1;
 			text-align: center;
 			max-width: 70px;
 			width: 70px;
+			float: left;
 
 			@include mediaquery ($bp-tablet) {
+				//Define a flex grow
+  				@include flex;
 				max-width: 140px;
 				width: 140px;
+				float: none;
 			}
 
 			@include mediaquery ($bp-desktop) {
@@ -104,12 +100,14 @@
 		}
 
 		&-2 {
-			//Define a flex grow
-			flex: 2;
+			margin-left: 70px;
 
 			@include mediaquery ($bp-tablet) {
+				//Define a flex grow
+  				@include flex(2);
 				width: auto;
 				padding-top: 20px;
+				margin-left: 0;
 			}
 
 		}
@@ -145,20 +143,17 @@
 
 	.title {
 		margin-bottom: 0;
-
-		& + p {
-			margin-bottom: 0;
-		}
-
-		@include mediaquery ($bp-tablet) {
-			font-size: $medium-font-size;
-			line-height: $medium-line-height;
-		}
+		font-size: $medium-font-size;
+		line-height: $medium-line-height;
 
 		@include mediaquery ($bp-desktop) {
 			font-size: $large-font-size;
 			line-height: $large-line-height;
 		}
+	}
+
+	& p {
+		margin-bottom: 0;
 	}
 
 	.kind {
@@ -173,8 +168,23 @@
 		}
 	}
 
-	.btn {
+	.btn,
+	.link {
+		display: inline-block;
 	  	margin-top: 8px;
 	}
 
+	.fade-out {
+		-webkit-transition-duration: 400ms;
+		   -moz-transition-duration: 400ms;
+			 -o-transition-duration: 400ms;
+		  		transition-duration: 400ms;
+	}
+
+	.close-animate {
+		-webkit-transition-duration: 200ms;
+		   -moz-transition-duration: 200ms;
+	         -o-transition-duration: 200ms;
+	            transition-duration: 200ms;
+	}
 }

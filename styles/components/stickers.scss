@@ -1,8 +1,8 @@
 @import "../generics/generics";
 
 //refactor
-@import "../core/fonts";
-@import "../core/colors";
+//@import "../core/fonts";
+//@import "../core/colors";
 
 /*------------------------------------*\
     $STICKERS
@@ -57,4 +57,31 @@
 .sticker-executive {
     color: $shiro;
 	background-color: $dark-silk;
+}
+
+/*
+Sticker Tag group
+
+Use class `.tag-group` and `.tag-group-sticker` for list items inline of stickers.
+
+Markup:
+<ul class="tag-group tag-group-sticker">
+    <li><a href="#" class="sticker sticker-skill">Javascript</a></li>
+    <li><a href="#" class="sticker sticker-skill">Office</a></li>
+    <li><a href="#" class="sticker sticker-skill">HTML</a></li>
+    <li><a href="#" class="sticker sticker-skill">Java</a></li>
+</ul>
+
+*/
+
+.tag-group-sticker li {
+    padding-right: 0;
+}
+
+@include mediaquery ($bp-desktop) {
+
+    .tag-group li.tag-sticker {
+        float: left;
+    }
+
 }
