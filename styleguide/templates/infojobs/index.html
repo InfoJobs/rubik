@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>InfoJobs Rubik Styleguides</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="public/kss.css">
+        <link rel="stylesheet" href="public/styleguide.css">
+        <link rel="stylesheet" href="public/rubik.css">
+    </head>
+    <body id="kss-node">
+
+    	<nav class="menu">
+            <div class="logo">
+                <img src="public/media/logo.png">
+            </div>
+        	<ul>
+        		<li>
+        			<div class="section">Introduction</div>
+        			<ul>
+        				<li><a href="./index.html" id="home">Design principles</a></li>
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="section">Styleguide</div>
+        			<ul>
+        				{{#eachRoot}}
+                        <li>
+                            <a href="section-{{referenceURI}}.html" class="js-itemMenu">
+                                {{header}}
+                            </a>
+                            {{#if overview}}
+                            {{else}}
+
+                            <ul class="submenu">
+                                {{#eachSection reference}}
+                                    {{#ifDepth 2}}
+                                    <li>
+                                        <a href="section-{{../../reference}}.html#rubik-{{{reference}}}">{{header}}</a>
+                                    </li>
+                                    {{/ifDepth}}
+                                {{/eachSection}}
+                            </ul>
+
+                            {{/if}}
+
+        				</li>
+        				{{/eachRoot}}
+        			</ul>
+        		</li>
+        	</ul>
+        </nav>
+        <div class="overlay"></div>
+
+        <header class="header">
+            <a id="burgerMenu" class="iconfont-BurguerMenu"></a>
+            <h1>
+                {{#if homepage}}
+                Rubik Components
+                {{/if}}
+            </h1>
+        </header>
+        <section class="content wrapper">
+
+            {{#if homepage}}
+            {{! - HOME ------------------------------------------------------ }}
+            <img src="./public/media/index.jpg">
+            <h1>Heading</h1>
+            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+
+            <h2>Heading</h2>
+            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+
+            <div class="row-faux">
+                  <div class="col-4">
+                    <div class="col-child panel-canvas">
+                        <img src="./public/media/index.jpg" class="img">
+                        <div class="inner">
+                            <h3>Heading</h3>
+                            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                      <div class="col-child panel-canvas">
+                          <img src="./public/media/index.jpg" class="img">
+                          <div class="inner">
+                              <h3>Heading</h3>
+                              <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-4">
+                        <div class="col-child panel-canvas">
+                            <img src="./public/media/index.jpg" class="img">
+                            <div class="inner">
+                                <h3>Heading</h3>
+                                <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+                            </div>
+                        </div>
+                  </div>
+            </div>
+
+
+            <div class="grid">
+                <div class="col-8">
+                    <div class="box-row">
+                       <h2>Heading</h2>
+                       <p>Quid sed cernantur et noster <a href="#">in et nostrud relinqueret</a>.</p>
+                    </div>
+                </div>
+                <div class="col-4"></div>
+            </div>
+
+            {{else}}
+            {{! - SECTIONS -------------------------------------------------- }}
+
+            {{#eachSection rootName}}
+                {{#if markup}}
+                    <div id="rubik-{{reference}}" class="grid styleguide-block">
+                        <div class="col-12">
+                            <header class="styleguide-header">
+                                <h3>{{{header}}}</h3>
+                            </header>
+                            {{#if description}}
+                                <div class="styleguide-description">
+                                    {{{description}}}
+
+                                </div>
+                            {{/if}}
+
+                            {{#if markup}}
+
+                                    {{#if modifiers}}
+                                    {{/if}}
+
+                                    {{#isntCaster markup}}
+                                        <div class="view">
+                                            {{{markup}}}
+                                        </div>
+
+                                        {{#eachModifier}}
+                                            <div class="">
+                                                {{name}} <span>{{{description}}}</span>
+                                            </div>
+                                            {{#isntCaster markup}}
+                                            <div class="view">
+                                                {{{markup}}}
+                                            </div>
+                                            {{/isntCaster}}
+                                        {{/eachModifier}}
+                                    {{/isntCaster}}
+
+                                    <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
+                            {{/if}}
+
+                        </div>
+                    </div>
+
+                {{else}}
+                <div id="rubik-{{reference}}" class="grid styleguide-block">
+                    <div class="col-12">
+                        <header class="styleguide-header">
+                            <h1>{{{header}}}</h1>
+                        </header>
+                        {{#if description}}
+                            <div class="styleguide-description">
+                                {{{description}}}
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
+                {{/if}}
+            {{/eachSection}}
+
+            {{/if}}
+        </section>
+        <section class=" footer wrapper">
+        © Infojobs 2015
+        </section>
+
+
+        <script src="public/jquery-2.1.0.min.js"></script>
+        <script src="public/kss.js"></script>
+        <script src="public/prettify.js"></script>
+        <script src="public/plugins.js"></script>
+        <script src="public/main.js"></script>
+    </body>
+</html>
