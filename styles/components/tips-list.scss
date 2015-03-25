@@ -208,23 +208,15 @@
 		}
 	}
 
-	.btn,
-	.link {
-		display: inline-block;
-	  	margin-top: 8px;
+	.actions {
+		margin-top: 8px;
 	}
 
 	.fade-out {
-		-webkit-transition-duration: 400ms;
-		   -moz-transition-duration: 400ms;
-			 -o-transition-duration: 400ms;
-		  		transition-duration: 400ms;
+		@include vendor-prefix('transition-duration', '400ms');
 	}
 
 	.close-animate {
-		-webkit-transition-duration: 200ms;
-		   -moz-transition-duration: 200ms;
-	         -o-transition-duration: 200ms;
-	            transition-duration: 200ms;
+		@include vendor-prefix('transition-duration', '200ms');
 	}
 }
