@@ -89,7 +89,6 @@
 	[class*=" cell-"] {
 		padding: 20px 10px; //TODO: placeholder .inner??
 		vertical-align: top;
-		background-color: $shiro;
 
 		@include mediaquery ($bp-tablet) {
 			vertical-align: middle;
@@ -206,7 +205,6 @@
 			position: relative;
 			font-size: $small-font-size;
 			line-height: $small-line-height;
-			color: $soft-script;
 		}
 	}
 
