@@ -1634,9 +1634,9 @@ $query2     = width, device-width
 /*
 Icons
 
-The icons are generated as font,<br>
-color and size can be modified in the same way as text.
-Use these classes for icon type, you can use any tag.
+The icons are generated as fonts.<br>
+Color and size can be modified as texts.
+Use these classes to specify an icon for any tag.
 
 Styleguide 1.6
 */
@@ -1715,20 +1715,6 @@ Styleguide 1.6.1
 /*------------------------------------*\
 	$ICONSIMAGE
 \*------------------------------------*/
-/*
-Icons image and size
-
-Icons as a background image, not an icon font.<br>
-Use class `.icon-[size]` to modify the image size.
-
-Markup:
-<span class="icon-50px icon-candidaturas"></span>
-<span class="icon-50px icon-CV"></span>
-<span class="icon-50px icon-contactos"></span>
-</ul>
-
-Styleguide 1.6.2
-*/
 .icon-candidaturas {
   background: url("http://media.infojobs.net/appgrade/backgrounds//icon-candidaturas.png") no-repeat 0 0;
 }
@@ -2235,12 +2221,6 @@ Markup:
 
 Styleguide 1.5.2
 */
-.btn-icon-update,
-.btn-icon-update:hover {
-  background-image: url("http://media.infojobs.net/appgrade/backgrounds/bg-update.png");
-  background-position: 20px 50%;
-}
-
 /*
 Buttons status
 
@@ -2333,8 +2313,8 @@ Styleguide 1.5.5
 Button group
 
 Use class `.btn-group` to create a button group structure.
-Use class `.btn-default` for button group buttons.
-Use class `.active` to highlight button the selected.
+Use class `.btn-default` for buttons inside buttons group.
+Use class `.active` to highlight the selected button.
 
 Markup:
 <div class="btn-group">
@@ -2403,7 +2383,7 @@ Styleguide 1.5.6
 /*
 Button group justified
 
-Use class `.btn-group-justified` to display `.btn-group` buttons with full width.
+Use class `.btn-group-justified` to display `.btn-group` full width buttons.
 
 
 Markup:
@@ -2424,7 +2404,7 @@ Styleguide 1.5.7
 /*
 Button group with icon
 
-Use class `.iconfont-[name]` to display the icon it's needed.
+Use class `.iconfont-[name]` to display the needed icon.
 
 Markup:
 <div class="btn-group">
@@ -3687,7 +3667,7 @@ $query2     = width, device-width
 /*
 Board
 
-Use class `.board` followed by the nested structure `.text`, `.child` and `.child-center` to create a container with text content vertically centered.
+Use class `.board` followed by the nested structure `.text`, `.child` and `.child-center` to create a container with vertically centered text content.<br />
 Use class `.claim` to format the main title.
 
 Use class `.board-executive` to apply a background image.
@@ -6622,6 +6602,8 @@ Styleguide 3.1.3
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
   z-index: 9999;
   animation: modal-flipinX .3s both;
+  -webkit-transition: height 600ms;
+  transition: height 600ms;
 }
 @media only screen and (min-width: 480px) {
   .modal-inner {
@@ -6837,8 +6819,8 @@ $query2     = width, device-width
 Notifications
 
 ###Notifications
-Contextual messages for confirmation messages.<br>
-The modifier classes are `.notification-error` for errors, `.notification-success` for success and `.notification-info` for information.    .
+Contextual notificitions for confirmation messages.<br>
+The modifier classes are `.notification-error` for errors, `.notification-success` for success and `.notification-info` for information.
 
 Markup:
 <!-- Notification error -->
@@ -7227,7 +7209,7 @@ $query2     = width, device-width
 Pagination
 
 ###Pagination
-For pagination wrap a `.btn-group` structure with class `.pagination`.<br>
+For pagination wrap a `.btn-group` structure with class `.pagination` as a parent.<br>
 Use class `.active` for the active button.
 
 Markup:
@@ -8474,8 +8456,8 @@ $query2     = width, device-width
 Thumbnail logo
 
 ###Thumbnail logo
-Logo with caption at bottom,<br>
-the combination of classes `.slide-up` in `<figure>` and `.slide-item` in `<figcapcion>` is for display the caption with effect.
+Logo with caption at bottom.
+The combination of classes `.slide-up` in `<figure>` and `.slide-item` in `<figcaption>` is used to show the caption on hovering with the mouse over the logo.
 
 
 Markup:
