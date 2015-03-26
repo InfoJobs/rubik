@@ -13,33 +13,41 @@
 		overflow: hidden;
 		border-bottom: 1px solid $katana-slash; //TODO: idem .list-divider except paddings and margins
 
-		-webkit-animation: opentip 1.2s;
-			    animation: opentip 1.2s;
+		&.open-tip {
+			max-height: 0;
+			-webkit-animation: opentip 2s 1.5s;
+			        animation: opentip 2s 1.5s;
+	 		-webkit-animation-iteration-count: 1;
+			-webkit-animation-fill-mode: forwards;
+			        animation-iteration-count: 1;
+			    	animation-fill-mode: forwards;
 
-		@keyframes opentip {
+			@keyframes opentip {
 
-			from {
-				opacity: 0;
-				max-height: 0;
+				from {
+					opacity: 0;
+					max-height: 0;
+				}
+
+				to {
+					opacity: 1;
+					max-height: 280px;
+				}
+
 			}
 
-			to {
-				opacity: 1;
-				max-height: 280px;
-			}
+			@-webkit-keyframes opentip {
 
-		}
+				from {
+					opacity: 0;
+					max-height: 0;
+				}
 
-		@-webkit-keyframes opentip {
+				to {
+					opacity: 1;
+					max-height: 250px;
+				}
 
-			from {
-				opacity: 0;
-				max-height: 0;
-			}
-
-			to {
-				opacity: 1;
-				max-height: 250px;
 			}
 
 		}
