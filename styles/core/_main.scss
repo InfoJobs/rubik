@@ -199,9 +199,12 @@ Styleguide 1.2.4
 }
 
 .inner-expanded {
-	padding-top: 40px;
-	padding-bottom: 40px;
 
+    @include mediaquery ($bp-tablet) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    
     & > .inner:first-child,
     & > .inner:only-child {
 		padding-top: 0;
@@ -219,6 +222,7 @@ Styleguide 1.2.4
             padding-top: 40px;
         }
     }
+
 }
 
 .section-divider:before {
