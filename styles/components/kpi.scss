@@ -11,12 +11,8 @@ KPI
 Markup:
 <div class="kpi">
 	<h2 class="kpi-title">Ofertas para ti</h2>
-	<a href="#" id="kpi-indicator-offers"
-	data-endval="59"
-	data-duration="1"
-	class="kpi-indicator">158</a>
-	<p>Basada en tus últimas búsquedas</p>
-	<a class="link-underline" href="#">Buscar ofertas</a>
+	<a href="#"><span class="kpi-indicator iconfont-Viewdetails">15</span></a>
+	<p>Lorem ipsum <br><a href="#">Link</a></p>
 </div>
 
 Styleguide 2.25
@@ -25,29 +21,39 @@ Styleguide 2.25
 
 .kpi {
 	margin: 0 auto;
-	text-align: center;
 
 	p {
 		margin: 0;
+	}
+
+	.arrow {
+		margin-left: 10px;
+		padding-top: 5px;
 	}
 
 }
 
 
 .kpi-title {
-	margin-bottom: 10px;
+	margin-bottom: 0;
+	padding-top: 3px;
 	font-size: $medium-font-size;
 	line-height: $medium-line-height;
 
 	@include mediaquery ($bp-tablet	) {
 		font-size: $large-font-size;
 		line-height: $large-line-height;
+		padding-top: 0;
 	}
 }
 
 .kpi-indicator {
-	display: block;
-	margin-bottom: 5px;
-	font-size: 60px;
-	line-height: 60px;
+	font-size: 27px;
+	line-height: 23px;
+
+	@include mediaquery ($bp-tablet	) {
+		display: block;
+		font-size: 48px;
+		line-height: 41px;
+	}
 }
