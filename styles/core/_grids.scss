@@ -10,36 +10,35 @@ Grid System
 Grid system is used for creating page layout through a series of rows and columns that house
 your content.
 
+@@include('../templates/partials/grid.html')
 
 - Use class `.row` to create a horizontal group of columns.
 - Then nest as many containers `<div class="col-[number]">` as columns are necessary to build the layout
 - Include the container `<div class="col-child">` as immediate children of `.col-[number]`.
 
-@@include('../templates/partials/grid.html')
-@@include('../templates/partials/colors.html')
+@@include('../templates/partials/grid-layouts.html')
+
 
 Markup:
 <div class="row casper">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-8"><div class="col-child">...</div></div>
 </div>
-<!-- Hello -->
-<div class="row">
+<div class="row casper">
 	<div class="col-8"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
-<div class="row">
+<div class="row casper">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
-<div class="row">
+<div class="row casper">
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
 </div>
-
 
 Styleguide 1.2.1
 */
@@ -88,14 +87,14 @@ Medium devices
 
 Therefore, applying at any column the class `.col-6-medium` content will adjust to 50% width or `.col-12-medium` 100% width defined for medium devices.
 
-(Show devices behaviour)
+@@include('../templates/partials/grid-devices.html')
 
 Markup:
-<div class="row">
+<div class="row casper">
 	<div class="col-8 col-6-medium"><div class="col-child">...</div></div>
 	<div class="col-4 col-6-medium"><div class="col-child">...</div></div>
 </div>
-<div class="row">
+<div class="row casper">
 	<div class="col-8 col-12-medium"><div class="col-child">...</div></div>
 	<div class="col-4 col-12-medium"><div class="col-child">...</div></div>
 </div>
@@ -220,10 +219,10 @@ Equal height columns
 
 Use class `.row-faux` instead of `.row` to build an equal height columns structure.
 
-(Show faux)
+@@include('../templates/partials/grid-equal.html')
 
 Markup:
-<div class="row-faux">
+<div class="row-faux casper">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
