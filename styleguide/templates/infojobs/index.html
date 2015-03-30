@@ -39,7 +39,7 @@
                                 {{#eachSection reference}}
                                     {{#ifDepth 2}}
                                     <li>
-                                        <a href="section-{{../../reference}}.html#rubik-{{{reference}}}">{{header}}</a>
+                                        <a href="section-{{../../reference}}.html#rubik-{{{reference}}}" {{#isDisabled header}}class="disabled js-disabled"{{/isDisabled}}>{{header}}</a>
                                     </li>
                                     {{/ifDepth}}
                                 {{/eachSection}}
