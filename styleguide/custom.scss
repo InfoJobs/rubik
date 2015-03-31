@@ -3,12 +3,12 @@ body {
     height: auto;
 }
 
-body {
-    background: none;
+body#kss-node {
+    background: #f7f7f7;
 }
 
-.guide {
-    background-color: $shiro;
+.sg-guide {
+    font-size: 13px;
 
     //Grid
     .col-child {
@@ -77,4 +77,108 @@ body {
 			font-size: 30px;
 		}
     }
+}
+
+.sg-content {
+    //Styleguide theme
+    h1,
+    h2 {
+        margin-bottom: 10px;
+        margin-top: 70px;
+
+        &:first-child {
+            margin-top: 40px;
+        }
+    }
+
+    h1 {
+        font-size: 25px;
+        color: $day-blue;
+    }
+
+    h2,
+    h3 {
+        font-family: 'Proximanovasemibold';
+        color: $dark-silk;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    .sg-img {
+        margin: 0;
+    }
+
+    .sg-link {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    /*.margin-top {
+        margin-top: 70px;
+
+        &:first-child {
+            margin-top: 40px;
+        }
+    }*/
+
+    .sg-selector,
+    .sg-block-description code {
+        margin-right: 0;
+        padding: 3px 5px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        background-color: $darkest-shiro;
+        font-family: Courier;
+        font-size: 13px;
+        color: #dc1a6c;
+    }
+
+    .sg-view {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid $darkest-shiro;
+
+        &::before {
+            content: 'Example';
+            display: block;
+            height: 30px;
+            color: $darkest-shiro;
+        }
+    }
+
+    pre {
+        overflow: scroll;
+        border-top: 1px solid $darkest-shiro;
+        padding: 20px;
+        font-family: Courier;
+        font-size: 13px;
+        background-color: $darkest-shiro;
+
+    }
+}
+
+.sg-footer {
+    background: none;
+
+    &:before {
+        background: none;
+    }
+}
+
+.sg-block {
+    margin-top: 60px;
 }

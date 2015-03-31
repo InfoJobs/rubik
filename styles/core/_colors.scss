@@ -5,20 +5,14 @@
 \*------------------------------------*/
 
 /*
-Colors
+Colors #disabled#
 
-Markup:
-<p class="{$modifiers}">Color</p>
+Apply any class specified above to provide color to any html element.
+`.contrast` class needs a dark background.
+`.marked-contrast` and `.highlight` classes adds their own background.
 
-.contrast			- Color: White
-.disabled			- Color: White
-.marked				- Color: Mint
-.marked-contrast	- Color: White into mint
-.alternative		- Color: Grey
-.highlight			- Color: Yellow
-.script				- Color: Grey
-.soft-script		- Color: Grey
-...
+@@include('../templates/partials/colors.html')
+
 
 Styleguide 1.1
 */
