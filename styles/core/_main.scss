@@ -125,14 +125,14 @@ Styleguide 1.2
 /*
 Containers
 
-```
-.wrapper				- To create page structure
-.container 				- To create block content
-.container-expanded		- To create gap between block contents via margin-top
-```
+- Use class `.wrapper` to wrap all page content.
+- Use class `.container` to create blocks content.
+- Use class `.container-expanded` to create a top gap between blocks contents.
+
+@@include('../templates/partials/container.html')
 
 Markup:
-<div class="wrapper">
+<div class="wrapper casper">
     <div class="container container-expanded">
         ...
     </div>
@@ -169,16 +169,13 @@ Styleguide 1.2.2
 /*
 Inner containers
 
-Inner creates 20px gutters (gaps between content) via padding using `.inner` class as a wrapper of the content.
-Inner can be nested several times.
+- Use class `.inner` to create a 20 pixels gap between previous, next, left and right containers. Class `.inner` can be nested several times.
+- Use class `.inner-expanded` to create a 40 pixels gap between previous and next container
 
 Markup:
 <div class="inner">
     ...
 </div>
-
-.inner				    - To create a 20 pixels gap between previous, next, left and right containers
-.inner-expanded			- To create a 40 pixels gap between previous and next container
 
 Styleguide 1.2.4
 */

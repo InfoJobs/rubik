@@ -212,14 +212,14 @@ Styleguide 1.2
 /*
 Containers
 
-```
-.wrapper				- To create page structure
-.container 				- To create block content
-.container-expanded		- To create gap between block contents via margin-top
-```
+- Use class `.wrapper` to wrap all page content.
+- Use class `.container` to create blocks content.
+- Use class `.container-expanded` to create a top gap between blocks contents.
+
+
 
 Markup:
-<div class="wrapper">
+<div class="wrapper casper">
     <div class="container container-expanded">
         ...
     </div>
@@ -254,16 +254,13 @@ Styleguide 1.2.2
 /*
 Inner containers
 
-Inner creates 20px gutters (gaps between content) via padding using `.inner` class as a wrapper of the content.
-Inner can be nested several times.
+- Use class `.inner` to create a 20 pixels gap between previous, next, left and right containers. Class `.inner` can be nested several times.
+- Use class `.inner-expanded` to create a 40 pixels gap between previous and next container
 
 Markup:
 <div class="inner">
     ...
 </div>
-
-.inner				    - To create a 20 pixels gap between previous, next, left and right containers
-.inner-expanded			- To create a 40 pixels gap between previous and next container
 
 Styleguide 1.2.4
 */
@@ -394,47 +391,44 @@ Grid System
 Grid system is used for creating page layout through a series of rows and columns that house
 your content.
 
-<div class="sg-view">
-    <div class="sg-guide">
-      <div class="row-faux clearfix">
-          <div class="col-1">
-              <div class="col-child">.col-1 (more content)</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
+//<div class="sg-guide">
+  <div class="row-faux clearfix">
+      <div class="col-1">
+          <div class="col-child">.col-1 (more content)</div>
       </div>
-
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
   </div>
 </div>
 
@@ -443,7 +437,7 @@ your content.
 - Then nest as many containers `<div class="col-[number]">` as columns are necessary to build the layout
 - Include the container `<div class="col-child">` as immediate children of `.col-[number]`.
 
-<div class="sg-view">
+//<div class="sg-view">
     <div class="sg-guide">
           <!-- ROW 4/8-->
           <div class="row clearfix">
@@ -560,7 +554,7 @@ Medium devices
 
 Therefore, applying at any column the class `.col-6-medium` content will adjust to 50% width or `.col-12-medium` 100% width defined for medium devices.
 
-<div class="sg-view">
+//<div class="sg-view">
     <div class="sg-guide">
           <!-- ROW tablet 50%-->
           <div class="row clearfix">
@@ -823,7 +817,7 @@ Equal height columns
 
 Use class `.row-faux` instead of `.row` to build an equal height columns structure.
 
-<div class="sg-view">
+//<div class="sg-view">
     <div class="sg-guide">
           <!--ROW-FAUX-->
           <div class="row-faux clearfix">
