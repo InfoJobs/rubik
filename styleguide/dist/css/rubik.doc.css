@@ -4729,18 +4729,18 @@ Styleguide 2.4.3
 */
 .range-group {
   display: -webkit-box;
-  /* iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
   display: -ms-flexbox;
-  /* IE 10 */
   display: -webkit-flex;
-  /* Chrome */
   display: flex;
-  /* Opera 12.1, Firefox 20+ */
-  -webkit-flex-flow: column wrap;
-  flex-flow: column wrap;
+  -webkit-flex-flow: row wrap-reverse;
   flex-flow: row wrap-reverse;
   height: 35px;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
+  -webkit-align-content: space-between;
+  align-content: space-between;
+  border: 1px solid red;
 }
 
 .range {
@@ -9480,7 +9480,7 @@ Styleguide 2.24
 
 .overlay-60 {
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 .overlay-60::before {
   content: "";
