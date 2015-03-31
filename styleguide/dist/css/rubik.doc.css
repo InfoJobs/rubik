@@ -502,7 +502,7 @@ your content.
 
 
 Markup:
-<div class="row casper">
+<div class="row g-casper">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-8"><div class="col-child">...</div></div>
 </div>
@@ -3724,6 +3724,8 @@ Styleguide 1.2.3
 .wrapper-slotbanner .slotbanner-top object,
 .wrapper-slotbanner .slotbanner-aside object {
   display: block;
+  margin: 0 auto;
+  text-align: center;
 }
 .wrapper-slotbanner .slotbanner-fixed {
   position: fixed;
@@ -3734,7 +3736,10 @@ Styleguide 1.2.3
   margin-bottom: 10px;
 }
 
-.slotbanner,
+.slotbanner {
+  max-width: 970px;
+}
+
 .half-page-ad .slotbanner {
   max-width: 1280px;
 }
@@ -6304,7 +6309,7 @@ $query2     = width, device-width
   -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
-  min-height: 200px;
+  min-height: 180px;
   background-color: rgba(0, 0, 0, 0.5);
 }
 .media-board .item1 .caption {
@@ -9529,26 +9534,26 @@ KPI
 Markup:
 <div class="kpi">
 	<h2 class="kpi-title">Ofertas para ti</h2>
-	<a href="#" id="kpi-indicator-offers"
-	data-endval="59"
-	data-duration="1"
-	class="kpi-indicator">158</a>
-	<p>Basada en tus últimas búsquedas</p>
-	<a class="link-underline" href="#">Buscar ofertas</a>
+	<a href="#"><span class="kpi-indicator iconfont-Viewdetails">15</span></a>
+	<p>Lorem ipsum <br><a href="#">Link</a></p>
 </div>
 
 Styleguide 2.25
 */
 .kpi {
   margin: 0 auto;
-  text-align: center;
 }
 .kpi p {
   margin: 0;
 }
+.kpi .arrow {
+  margin-left: 10px;
+  padding-top: 5px;
+}
 
 .kpi-title {
-  margin-bottom: 10px;
+  margin-bottom: 0;
+  padding-top: 3px;
   font-size: 18px;
   line-height: 22px;
 }
@@ -9556,14 +9561,20 @@ Styleguide 2.25
   .kpi-title {
     font-size: 20px;
     line-height: 24px;
+    padding-top: 0;
   }
 }
 
 .kpi-indicator {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 60px;
-  line-height: 60px;
+  font-size: 27px;
+  line-height: 23px;
+}
+@media only screen and (min-width: 481px) {
+  .kpi-indicator {
+    display: block;
+    font-size: 48px;
+    line-height: 38px;
+  }
 }
 
 /* Variables =================================================== */
