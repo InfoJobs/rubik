@@ -75,7 +75,6 @@
 
 .sg-footer {
   text-align: center;
-  margin-bottom: 20px;
   color: #999999;
   padding-top: 80px;
 }
@@ -166,6 +165,12 @@
     visibility: visible;
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
+}
+
+.sg-menu li a.disabled,
+.sg-menu li a.disabled:hover {
+    text-decoration: line-through;
+    color: #999999;
 }
 
 @media screen and (min-width: 1200px) {

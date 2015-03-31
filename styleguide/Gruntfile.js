@@ -61,15 +61,15 @@ module.exports = function(grunt) {
         src: ['styleguide/*.html'],
         overwrite: true,                 // overwrite matched source files
         replacements: [{
-          from: ' g-casper',
+          from: ' casper',
           to: ''
         },
         {
-          from: 'g-casper ',
+          from: 'casper ',
           to: ''
         },
         {
-          from: 'class="g-casper"',
+          from: 'class="casper"',
           to: ''
       },
       {
