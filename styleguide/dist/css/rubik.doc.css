@@ -494,7 +494,7 @@ your content.
 
 
 Markup:
-<div class="row casper">
+<div class="row g-casper">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-8"><div class="col-child">...</div></div>
 </div>
@@ -3674,6 +3674,8 @@ Styleguide 1.2.3
 .wrapper-slotbanner .slotbanner-top object,
 .wrapper-slotbanner .slotbanner-aside object {
   display: block;
+  margin: 0 auto;
+  text-align: center;
 }
 .wrapper-slotbanner .slotbanner-fixed {
   position: fixed;
@@ -3684,7 +3686,10 @@ Styleguide 1.2.3
   margin-bottom: 10px;
 }
 
-.slotbanner,
+.slotbanner {
+  max-width: 970px;
+}
+
 .half-page-ad .slotbanner {
   max-width: 1280px;
 }
@@ -6246,7 +6251,7 @@ $query2     = width, device-width
   -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
-  min-height: 200px;
+  min-height: 180px;
   background-color: rgba(0, 0, 0, 0.5);
 }
 .media-board .item1 .caption {

@@ -39,7 +39,7 @@
                                 {{#eachSection reference}}
                                     {{#ifDepth 2}}
                                     <li>
-                                        <a href="section-{{../../reference}}.html#rubik-{{{reference}}}">{{header}}</a>
+                                        <a href="section-{{../../reference}}.html#rubik-{{{reference}}}" {{#isDisabled header}}class="disabled js-disabled"{{/isDisabled}}>{{header}}</a>
                                     </li>
                                     {{/ifDepth}}
                                 {{/eachSection}}
@@ -121,61 +121,70 @@
             {{! - SECTIONS -------------------------------------------------- }}
 
             {{#eachSection rootName}}
-                {{#if markup}}
+
+                {{#isDisabled header}}
+
+                    {{! - If header have ##deisabled## don't render section --}}
+
+                {{else}}
+
+
+                    {{#if markup}}
+                        <div id="rubik-{{reference}}" class="sg-grid sg-block">
+                                <div class="sg-col-12">
+                                <header class="sg-block-header">
+                                    <h3>{{{header}}}</h3>
+                                </header>
+                                {{#if description}}
+                                    <div class="sg-block-description">
+                                        {{{description}}}
+
+                                    </div>
+                                {{/if}}
+
+                                {{#if markup}}
+
+                                        {{#if modifiers}}
+                                        {{/if}}
+
+                                        {{#isntCaster markup}}
+                                            <div class="sg-view">
+                                                {{{markup}}}
+                                            </div>
+
+                                            {{#eachModifier}}
+                                                <div class="">
+                                                    {{name}} <span>{{{description}}}</span>
+                                                </div>
+                                                {{#isntCaster markup}}
+                                                <div class="sg-view">
+                                                    {{{markup}}}
+                                                </div>
+                                                {{/isntCaster}}
+                                            {{/eachModifier}}
+                                        {{/isntCaster}}
+
+                                        <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
+                                {{/if}}
+
+                            </div>
+                        </div>
+
+                    {{else}}
                     <div id="rubik-{{reference}}" class="sg-grid sg-block">
-                            <div class="sg-col-12">
+                        <div class="sg-col-12">
                             <header class="sg-block-header">
-                                <h3>{{{header}}}</h3>
+                                <h1>{{{header}}}</h1>
                             </header>
                             {{#if description}}
                                 <div class="sg-block-description">
                                     {{{description}}}
-
                                 </div>
                             {{/if}}
-
-                            {{#if markup}}
-
-                                    {{#if modifiers}}
-                                    {{/if}}
-
-                                    {{#isntCaster markup}}
-                                        <div class="sg-view">
-                                            {{{markup}}}
-                                        </div>
-
-                                        {{#eachModifier}}
-                                            <div class="">
-                                                {{name}} <span>{{{description}}}</span>
-                                            </div>
-                                            {{#isntCaster markup}}
-                                            <div class="sg-view">
-                                                {{{markup}}}
-                                            </div>
-                                            {{/isntCaster}}
-                                        {{/eachModifier}}
-                                    {{/isntCaster}}
-
-                                    <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
-                            {{/if}}
-
                         </div>
                     </div>
-
-                {{else}}
-                <div id="rubik-{{reference}}" class="sg-grid sg-block">
-                    <div class="sg-col-12">
-                        <header class="sg-block-header">
-                            <h1>{{{header}}}</h1>
-                        </header>
-                        {{#if description}}
-                            <div class="sg-block-description">
-                                {{{description}}}
-                            </div>
-                        {{/if}}
-                    </div>
-                </div>
-                {{/if}}
+                    {{/if}}
+                {{/isDisabled}}
             {{/eachSection}}
 
             {{/if}}

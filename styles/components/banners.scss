@@ -80,6 +80,8 @@ Styleguide 1.2.3
 	.slotbanner-top object,
 	.slotbanner-aside object {
 		display: block;
+		margin: 0 auto;
+		text-align: center;
 	}
 	.slotbanner-fixed {
 		position: fixed;
@@ -96,7 +98,10 @@ Styleguide 1.2.3
 
 //formatos banner
 
-.slotbanner,
+.slotbanner {
+	max-width: 970px;
+}
+
 .half-page-ad .slotbanner {
 	max-width: 1280px;
 }
