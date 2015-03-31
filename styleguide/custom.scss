@@ -83,12 +83,7 @@ body#kss-node {
     //Styleguide theme
     h1,
     h2 {
-        margin-bottom: 10px;
-        margin-top: 70px;
-
-        &:first-child {
-            margin-top: 40px;
-        }
+        margin: 0;
     }
 
     h1 {
@@ -114,8 +109,14 @@ body#kss-node {
         margin-bottom: 20px;
     }
 
+    p:last-child {
+        margin-bottom: 0;
+    }
+
     .sg-img {
+        width: 100%;
         margin: 0;
+
     }
 
     .sg-link {
@@ -177,8 +178,4 @@ body#kss-node {
     &:before {
         background: none;
     }
-}
-
-.sg-block {
-    margin-top: 60px;
 }

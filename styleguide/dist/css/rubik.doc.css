@@ -10420,12 +10420,7 @@ body#kss-node {
 }
 .sg-content h1,
 .sg-content h2 {
-  margin-bottom: 10px;
-  margin-top: 70px;
-}
-.sg-content h1:first-child,
-.sg-content h2:first-child {
-  margin-top: 40px;
+  margin: 0;
 }
 .sg-content h1 {
   font-size: 25px;
@@ -10445,7 +10440,11 @@ body#kss-node {
 .sg-content p {
   margin-bottom: 20px;
 }
+.sg-content p:last-child {
+  margin-bottom: 0;
+}
 .sg-content .sg-img {
+  width: 100%;
   margin: 0;
 }
 .sg-content .sg-link {
@@ -10491,10 +10490,6 @@ body#kss-node {
 }
 .sg-footer:before {
   background: none;
-}
-
-.sg-block {
-  margin-top: 60px;
 }
 
 /*# sourceMappingURL=rubik.doc.css.map */

@@ -77,7 +77,8 @@
   text-align: center;
   margin-bottom: 20px;
   color: #999999;
-  padding-top: 80px; }
+  padding-top: 80px;
+}
 
 /*------------------------------------*\
   $GRID
@@ -323,4 +324,7 @@ $STYLEGUIDE
 \*------------------------------------*/
 .sg-block {
   margin-top: 60px;
+}
+.sg-block:first-child {
+  margin-top: 0;
 }
