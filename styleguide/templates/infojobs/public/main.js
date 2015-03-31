@@ -102,7 +102,7 @@
 
 			}
 
-			if( classie.has( aItemSumenu[i], 'disabled' ) ) {
+			if( classie.has( aItemSumenu[i], 'js-disabled' ) ) {
 				aItemSumenu[i].addEventListener( 'click', function(event) {
 					event.preventDefault();
 				});
