@@ -7,6 +7,16 @@ body#kss-node {
     background: #f7f7f7;
 }
 
+.sg-menu {
+    li {
+        a.disabled,
+        a.disabled:hover {
+            text-decoration: line-through;
+            color: #999999;
+        }
+    }
+}
+
 .sg-guide {
     font-size: 13px;
 

@@ -8,11 +8,11 @@
 /*
 Pagination
 
-###Pagination
 For pagination wrap a `.btn-group` structure with class `.pagination` as a parent.<br>
 Use class `.active` for the active button.
 
 Markup:
+<!-- Default pagination -->
 <div class="pagination">
 	<div class="btn-group">
 		<div class="active">
@@ -50,6 +50,8 @@ Markup:
 		</div>
 	</div>
 </div>
+<!-- /Default pagination -->
+<!-- Pagination states -->
 <div class="pagination">
 	<div class="btn-group">
 		<div>
@@ -90,10 +92,10 @@ Markup:
 		</div>
 	</div>
 </div>
+<!-- /Pagination states -->
 
 Styleguide 2.9
 */
-
 
 .pagination {
 	@include inner;

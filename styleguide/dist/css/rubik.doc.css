@@ -210,7 +210,7 @@ Layouts
 Styleguide 1.2
 */
 /*
-Containers
+Containers #disabled#
 
 - Use class `.wrapper` to wrap all page content.
 - Use class `.container` to create blocks content.
@@ -252,7 +252,7 @@ Styleguide 1.2.2
 }
 
 /*
-Inner containers
+Inner containers #disabled#
 
 - Use class `.inner` to create a 20 pixels gap between previous, next, left and right containers. Class `.inner` can be nested several times.
 - Use class `.inner-expanded` to create a 40 pixels gap between previous and next container
@@ -391,7 +391,7 @@ Grid System
 Grid system is used for creating page layout through a series of rows and columns that house
 your content.
 
-//<div class="sg-guide">
+<div class="sg-guide">
   <div class="row-faux clearfix">
       <div class="col-1">
           <div class="col-child">.col-1 (more content)</div>
@@ -437,7 +437,7 @@ your content.
 - Then nest as many containers `<div class="col-[number]">` as columns are necessary to build the layout
 - Include the container `<div class="col-child">` as immediate children of `.col-[number]`.
 
-//<div class="sg-view">
+<div class="sg-view">
     <div class="sg-guide">
           <!-- ROW 4/8-->
           <div class="row clearfix">
@@ -554,7 +554,7 @@ Medium devices
 
 Therefore, applying at any column the class `.col-6-medium` content will adjust to 50% width or `.col-12-medium` 100% width defined for medium devices.
 
-//<div class="sg-view">
+<div class="sg-view">
     <div class="sg-guide">
           <!-- ROW tablet 50%-->
           <div class="row clearfix">
@@ -817,7 +817,7 @@ Equal height columns
 
 Use class `.row-faux` instead of `.row` to build an equal height columns structure.
 
-//<div class="sg-view">
+<div class="sg-view">
     <div class="sg-guide">
           <!--ROW-FAUX-->
           <div class="row-faux clearfix">
@@ -3202,7 +3202,7 @@ input[type="radio"] + label,
 }
 
 /*
-Forms structure
+Forms structure #disabled#
 
 ```
 .form--field-block 	- Fields disposition: block
@@ -3276,7 +3276,7 @@ form ul .form-field-inline ul {
     margin-bottom: 5px;
 }*/
 /*
-Radio buttons / Checkbox
+Radio buttons / Checkbox #disabled#
 
 ```
 .fieldset-title - To format radio button/checkbox's title
@@ -3317,7 +3317,7 @@ Markup:
 Styleguide 1.4.1
 */
 /*
-Radio buttons's inline
+Radio buttons's inline #disabled#
 
 ```
 .radio-group - To create a radio button's group with inline structure
@@ -3369,7 +3369,7 @@ Styleguide 1.4.2
 }
 
 /*
-Selects
+Selects #disabled#
 
 ```
 .form-select -  Field select
@@ -3443,7 +3443,7 @@ Styleguide 1.4.3
 }
 
 /*
-Input group
+Input group #disabled#
 
 ```
 .input-group
@@ -3480,7 +3480,7 @@ Styleguide 1.4.4
 }
 
 /*
-Fieldset title
+Fieldset title #disabled#
 
 Styleguide 1.4.5
 */
@@ -3493,7 +3493,7 @@ Styleguide 1.4.5
 }
 
 /*
-Field error
+Field error #disabled#
 
 ```
 .error-info - Error description
@@ -3607,7 +3607,7 @@ $query2     = width, device-width
     $BANNERS
 \*------------------------------------*/
 /*
-Banners's containers
+Banners's containers #disabled#
 
 ```
 .wrapper-slotbanner
@@ -4450,7 +4450,7 @@ h3,
     $FILTERS
 \*------------------------------------*/
 /*
-Filters
+Filters #disabled#
 
 Styleguide 2.4
 */
@@ -4526,7 +4526,7 @@ Styleguide 2.4
 }
 
 /*
-Filter keyword
+Filter keyword #disabled#
 
 Markup:
 <div class="form filters">
@@ -4617,7 +4617,7 @@ a.closed-list:after {
 }
 
 /*
-Slider one range
+Slider one range #disabled#
 
 ```
 .js-ui-slider-pips
@@ -4634,7 +4634,7 @@ Markup:
 Styleguide 2.4.2
 */
 /*
-Slider range group
+Slider range group #disabled#
 
 ```
 .slider-value
@@ -7290,11 +7290,11 @@ $query2     = width, device-width
 /*
 Pagination
 
-###Pagination
 For pagination wrap a `.btn-group` structure with class `.pagination` as a parent.<br>
 Use class `.active` for the active button.
 
 Markup:
+<!-- Default pagination -->
 <div class="pagination">
 	<div class="btn-group">
 		<div class="active">
@@ -7332,6 +7332,8 @@ Markup:
 		</div>
 	</div>
 </div>
+<!-- /Default pagination -->
+<!-- Pagination states -->
 <div class="pagination">
 	<div class="btn-group">
 		<div>
@@ -7372,6 +7374,7 @@ Markup:
 		</div>
 	</div>
 </div>
+<!-- /Pagination states -->
 
 Styleguide 2.9
 */
@@ -10348,6 +10351,12 @@ body {
 
 body#kss-node {
   background: #f7f7f7;
+}
+
+.sg-menu li a.disabled,
+.sg-menu li a.disabled:hover {
+  text-decoration: line-through;
+  color: #999999;
 }
 
 .sg-guide {
