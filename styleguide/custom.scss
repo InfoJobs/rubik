@@ -3,11 +3,11 @@ body {
     height: auto;
 }
 
-body {
+body#kss-node {
     background: #f7f7f7;
 }
 
-.guide {
+.sg-guide {
     font-size: 13px;
 
     //Grid
@@ -16,7 +16,7 @@ body {
     //[class*="col-"]
         padding: 10px;
         text-align: center;
-        background-color: $shiro;
+        background-color: $darkest-shiro;
         overflow: hidden;
     }
 
@@ -79,16 +79,11 @@ body {
     }
 }
 
-.content {
+.sg-content {
     //Styleguide theme
     h1,
     h2 {
-        margin-bottom: 10px;
-        margin-top: 70px;
-
-        &:first-child {
-            margin-top: 40px;
-        }
+        margin: 0;
     }
 
     h1 {
@@ -98,6 +93,7 @@ body {
 
     h2,
     h3 {
+        font-family: 'Proximanovasemibold';
         color: $dark-silk;
     }
 
@@ -113,11 +109,17 @@ body {
         margin-bottom: 20px;
     }
 
-    .img {
-        margin: 0;
+    p:last-child {
+        margin-bottom: 0;
     }
 
-    .link {
+    .sg-img {
+        width: 100%;
+        margin: 0;
+
+    }
+
+    .sg-link {
         text-decoration: none;
 
         &:hover {
@@ -133,8 +135,8 @@ body {
         }
     }*/
 
-    .selector,
-    .styleguide-description code {
+    .sg-selector,
+    .sg-block-description code {
         margin-right: 0;
         padding: 3px 5px;
         -webkit-border-radius: 3px;
@@ -146,7 +148,7 @@ body {
         color: #dc1a6c;
     }
 
-    .view {
+    .sg-view {
         margin-top: 20px;
         padding: 20px;
         border: 1px solid $darkest-shiro;
@@ -160,6 +162,7 @@ body {
     }
 
     pre {
+        overflow: scroll;
         border-top: 1px solid $darkest-shiro;
         padding: 20px;
         font-family: Courier;
@@ -169,14 +172,10 @@ body {
     }
 }
 
-.footer {
+.sg-footer {
     background: none;
 
     &:before {
         background: none;
     }
-}
-
-.styleguide-block {
-    margin-top: 60px;
 }

@@ -394,13 +394,8 @@ Grid System
 Grid system is used for creating page layout through a series of rows and columns that house
 your content.
 
-
-- Use class `.row` to create a horizontal group of columns.
-- Then nest as many containers `<div class="col-[number]">` as columns are necessary to build the layout
-- Include the container `<div class="col-child">` as immediate children of `.col-[number]`.
-
-<div class="view">
-    <div class="guide">
+<div class="sg-view">
+    <div class="sg-guide">
       <div class="row-faux clearfix">
           <div class="col-1">
               <div class="col-child">.col-1 (more content)</div>
@@ -443,43 +438,65 @@ your content.
   </div>
 </div>
 
-<div  class="guide">
-    <div class="inner">
-        <ul class="clearfix color">
-            <li class="contrast panel-executive">
-                .contrast
-            </li>
 
-            <li class="disabled">
-                .disabled
-            </li>
+- Use class `.row` to create a horizontal group of columns.
+- Then nest as many containers `<div class="col-[number]">` as columns are necessary to build the layout
+- Include the container `<div class="col-child">` as immediate children of `.col-[number]`.
 
-            <li class="marked">
-                .marked
-            </li>
+<div class="sg-view">
+    <div class="sg-guide">
+          <!-- ROW 4/8-->
+          <div class="row clearfix">
+              <div class="col-4">
+                  <div class="col-child">.col-4</div>
+              </div>
+              <div class="col-8">
+                  <div class="col-child">.col-8</div>
+              </div>
+          </div>
+          <!--/ROW 4/8-->
+          <!-- ROW 8/4-->
+          <div class="row clearfix">
+              <div class="col-8">
+                  <div class="col-child">.col-8</div>
+              </div>
+              <div class="col-4">
+                  <div class="col-child">.col-4</div>
+              </div>
+          </div>
+          <!--/ROW 8/4-->
+          <!-- ROW 4/4/4-->
+          <div class="row clearfix">
+              <div class="col-4">
+                  <div class="col-child">.col-4</div>
+              </div>
+              <div class="col-4">
+                  <div class="col-child">.col-4</div>
+              </div>
+              <div class="col-4">
+                  <div class="col-child">.col-4</div>
+              </div>
+          </div>
+          <!--/ROW 4/4/4-->
+          <!-- ROW 3/3/3-->
+          <div class="row clearfix">
+              <div class="col-3">
+                  <div class="col-child">.col-3</div>
+              </div>
+              <div class="col-3">
+                  <div class="col-child">.col-3</div>
+              </div>
+              <div class="col-3">
+                  <div class="col-child">.col-3</div>
+              </div>
+              <div class="col-3">
+                  <div class="col-child">.col-3</div>
+              </div>
+          </div>
+          <!--/ROW 4/4/4-->
+      </div>
+  </div>
 
-            <li class="marked-contrast">
-                .marked-contrast
-            </li>
-
-            <li class="alternative">
-                .alternative
-            </li>
-
-            <li class="highlight">
-                .highlight
-            </li>
-
-            <li class="script">
-                .script
-            </li>
-
-            <li class="soft-script">
-                .soft-script
-            </li>
-        </ul>
-    <div>
-</div>
 
 
 Markup:
@@ -487,23 +504,21 @@ Markup:
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-8"><div class="col-child">...</div></div>
 </div>
-<!-- Hello -->
-<div class="row">
+<div class="row casper">
 	<div class="col-8"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
-<div class="row">
+<div class="row casper">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
-<div class="row">
+<div class="row casper">
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
 </div>
-
 
 Styleguide 1.2.1
 */
@@ -545,14 +560,38 @@ Medium devices
 
 Therefore, applying at any column the class `.col-6-medium` content will adjust to 50% width or `.col-12-medium` 100% width defined for medium devices.
 
-(Show devices behaviour)
+<div class="sg-view">
+    <div class="sg-guide">
+          <!-- ROW tablet 50%-->
+          <div class="row clearfix">
+              <div class="col-8 col-6-medium">
+                  <div class="col-child">.col-8 .col-6-medium</div>
+              </div>
+              <div class="col-4 col-6-medium">
+                  <div class="col-child">.col-4 .col-6-medium</div>
+              </div>
+          </div>
+          <!--/ROW tablet 50%-->
+          <!-- ROW tablet 100%-->
+          <div class="row clearfix">
+              <div class="col-8 col-12-medium">
+                  <div class="col-child">.col-8 .col-12-medium</div>
+              </div>
+              <div class="col-4 col-12-medium">
+                  <div class="col-child">.col-4 .col-12-medium</div>
+              </div>
+          </div>
+          <!--/ROW tablet 100%-->
+      </div>
+  </div>
+
 
 Markup:
-<div class="row">
+<div class="row casper">
 	<div class="col-8 col-6-medium"><div class="col-child">...</div></div>
 	<div class="col-4 col-6-medium"><div class="col-child">...</div></div>
 </div>
-<div class="row">
+<div class="row casper">
 	<div class="col-8 col-12-medium"><div class="col-child">...</div></div>
 	<div class="col-4 col-12-medium"><div class="col-child">...</div></div>
 </div>
@@ -784,10 +823,54 @@ Equal height columns
 
 Use class `.row-faux` instead of `.row` to build an equal height columns structure.
 
-(Show faux)
+<div class="sg-view">
+    <div class="sg-guide">
+          <!--ROW-FAUX-->
+          <div class="row-faux clearfix">
+              <div class="col-1">
+                  <div class="col-child">.col-1 (more content)</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+          </div>
+          <!--/ROW-FAUX-->
+      </div>
+  </div>
+
 
 Markup:
-<div class="row-faux">
+<div class="row-faux casper">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
@@ -962,7 +1045,7 @@ Apply any class specified above to provide color to any html element.
 `.contrast` class needs a dark background.
 `.marked-contrast` and `.highlight` classes adds their own background.
 
-<div  class="guide">
+<div  class="sg-guide">
     <div class="inner">
         <ul class="clearfix color">
             <li class="contrast panel-executive">
@@ -4889,7 +4972,7 @@ $query2     = width, device-width
   font-size: 20px;
   text-decoration: none;
   color: #2d3133;
-  background-image: url(//media.infojobs.net/appgrade/backgrounds/bg-header-microsite-arrow-icon.png);
+  background-image: url(//media.infojobs.net/appgrade/backgrounds/bheader-microsite-arrow-icon.png);
   background-position: right center;
   background-repeat: no-repeat;
 }
@@ -9313,7 +9396,7 @@ Use class `.custom-bg` responsive to make the image responsive.
 Use modifier `.overlay-60` to apply an overlay.
 
 Markup:
-<div class="custom-bg {$modifiers}" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-header-grid-01.jpg');">
+<div class="custom-bg {$modifiers}" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg');">
     <div class="inner">
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
@@ -9481,7 +9564,7 @@ Styleguide 2.27
 crop-image
 
 Markup:
-<div class="crop-image" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-header-grid-01.jpg')"></div>
+<div class="crop-image" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg')"></div>
 
 Styleguide 2.27.1
 */
@@ -9489,7 +9572,7 @@ Styleguide 2.27.1
 crop-circle
 
 Markup:
-<div class="crop-circle" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-header-grid-01.jpg')"></div>
+<div class="crop-circle" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg')"></div>
 
 Styleguide 2.27.2
 */
@@ -10269,41 +10352,41 @@ body {
   height: auto;
 }
 
-body {
+body#kss-node {
   background: #f7f7f7;
 }
 
-.guide {
+.sg-guide {
   font-size: 13px;
 }
-.guide .col-child {
+.sg-guide .col-child {
   padding: 10px;
   text-align: center;
-  background-color: #fff;
+  background-color: #e2e5e6;
   overflow: hidden;
 }
-.guide .col-6-medium {
+.sg-guide .col-6-medium {
   width: 50%;
 }
-.guide .row {
+.sg-guide .row {
   margin-bottom: 10px;
 }
-.guide .color {
+.sg-guide .color {
   margin-bottom: 10px;
 }
-.guide .color li {
+.sg-guide .color li {
   padding: 10px 20px;
   text-align: center;
   border: 1px solid #2D3133;
   float: left;
   margin: 0 10px 10px 0;
 }
-.guide.icons ul {
+.sg-guide.icons ul {
   overflow: hidden;
   display: inline-block;
   width: 100%;
 }
-.guide.icons ul li {
+.sg-guide.icons ul li {
   height: 100px;
   margin: 0px;
   outline: 1px solid white;
@@ -10314,24 +10397,24 @@ body {
   width: 50%;
 }
 @media only screen and (min-width: 481px) {
-  .guide.icons ul li {
+  .sg-guide.icons ul li {
     width: 25%;
   }
 }
 @media only screen and (min-width: 769px) {
-  .guide.icons ul li {
+  .sg-guide.icons ul li {
     width: 16.666%;
   }
 }
-.guide.icons ul li::after,
-.guide.icons ul li::before {
+.sg-guide.icons ul li::after,
+.sg-guide.icons ul li::before {
   display: block;
   padding: 30px;
   text-align: center;
   font-size: 30px;
 }
 
-.content {
+.sg-content {
     /*.margin-top {
         margin-top: 70px;
 
@@ -10340,43 +10423,43 @@ body {
         }
     }*/
 }
-.content h1,
-.content h2 {
-  margin-bottom: 10px;
-  margin-top: 70px;
+.sg-content h1,
+.sg-content h2 {
+  margin: 0;
 }
-.content h1:first-child,
-.content h2:first-child {
-  margin-top: 40px;
-}
-.content h1 {
+.sg-content h1 {
   font-size: 25px;
   color: #2088c2;
 }
-.content h2,
-.content h3 {
+.sg-content h2,
+.sg-content h3 {
+  font-family: 'Proximanovasemibold';
   color: #2d3133;
 }
-.content h2 {
+.sg-content h2 {
   font-size: 20px;
 }
-.content h3 {
+.sg-content h3 {
   font-size: 18px;
 }
-.content p {
+.sg-content p {
   margin-bottom: 20px;
 }
-.content .img {
+.sg-content p:last-child {
+  margin-bottom: 0;
+}
+.sg-content .sg-img {
+  width: 100%;
   margin: 0;
 }
-.content .link {
+.sg-content .sg-link {
   text-decoration: none;
 }
-.content .link:hover {
+.sg-content .sg-link:hover {
   text-decoration: underline;
 }
-.content .selector,
-.content .styleguide-description code {
+.sg-content .sg-selector,
+.sg-content .sg-block-description code {
   margin-right: 0;
   padding: 3px 5px;
   -webkit-border-radius: 3px;
@@ -10387,18 +10470,19 @@ body {
   font-size: 13px;
   color: #dc1a6c;
 }
-.content .view {
+.sg-content .sg-view {
   margin-top: 20px;
   padding: 20px;
   border: 1px solid #e2e5e6;
 }
-.content .view::before {
+.sg-content .sg-view::before {
   content: 'Example';
   display: block;
   height: 30px;
   color: #e2e5e6;
 }
-.content pre {
+.sg-content pre {
+  overflow: scroll;
   border-top: 1px solid #e2e5e6;
   padding: 20px;
   font-family: Courier;
@@ -10406,15 +10490,11 @@ body {
   background-color: #e2e5e6;
 }
 
-.footer {
+.sg-footer {
   background: none;
 }
-.footer:before {
+.sg-footer:before {
   background: none;
-}
-
-.styleguide-block {
-  margin-top: 60px;
 }
 
 /*# sourceMappingURL=rubik.doc.css.map */
