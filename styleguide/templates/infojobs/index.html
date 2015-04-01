@@ -13,19 +13,19 @@
     </head>
     <body id="kss-node">
 
-    	<nav class="menu">
-            <div class="logo">
-                <img src="public/media/logo.png">
+    	<nav class="sg-menu">
+            <div class="sg-logo">
+                <a href="./index.html" id="logo"><img src="public/media/logo.png"></a>
             </div>
         	<ul>
         		<li>
-        			<div class="section">Introduction</div>
+        			<div class="sg-section">Introduction</div>
         			<ul>
         				<li><a href="./index.html" id="home">Design principles</a></li>
         			</ul>
         		</li>
         		<li>
-        			<div class="section">Styleguide</div>
+        			<div class="sg-section">Styleguide</div>
         			<ul>
         				{{#eachRoot}}
                         <li>
@@ -35,7 +35,7 @@
                             {{#if overview}}
                             {{else}}
 
-                            <ul class="submenu">
+                            <ul class="sg-submenu">
                                 {{#eachSection reference}}
                                     {{#ifDepth 2}}
                                     <li>
@@ -53,9 +53,9 @@
         		</li>
         	</ul>
         </nav>
-        <div class="overlay"></div>
+        <div class="sg-overlay"></div>
 
-        <header class="header">
+        <header class="sg-header">
             <a id="burgerMenu" class="iconfont-BurguerMenu"></a>
             <h1>
                 {{#if homepage}}
@@ -63,7 +63,7 @@
                 {{/if}}
             </h1>
         </header>
-        <section class="content wrapper">
+        <section class="sg-content sg-wrapper">
 
             {{#if homepage}}
             {{! - HOME ------------------------------------------------------ }}
@@ -78,7 +78,7 @@
             <div class="row-faux">
                   <div class="col-4">
                     <div class="col-child panel-canvas">
-                        <img src="./public/media/index.jpg" class="img">
+                        <img src="./public/media/index.jpg" class="sg-img">
                         <div class="inner">
                             <h3>Heading</h3>
                             <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
@@ -87,7 +87,7 @@
                   </div>
                   <div class="col-4">
                       <div class="col-child panel-canvas">
-                          <img src="./public/media/index.jpg" class="img">
+                          <img src="./public/media/index.jpg" class="sg-img">
                           <div class="inner">
                               <h3>Heading</h3>
                               <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
@@ -96,7 +96,7 @@
                   </div>
                   <div class="col-4">
                         <div class="col-child panel-canvas">
-                            <img src="./public/media/index.jpg" class="img">
+                            <img src="./public/media/index.jpg" class="sg-img">
                             <div class="inner">
                                 <h3>Heading</h3>
                                 <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
@@ -106,14 +106,14 @@
             </div>
 
 
-            <div class="grid">
-                <div class="col-8">
-                    <div class="box-row">
+            <div class="sg-grid">
+                <div class="sg-col-8">
+                    <div class="sg-box-row">
                        <h2>Heading</h2>
                        <p>Quid sed cernantur et noster <a href="#">in et nostrud relinqueret</a>.</p>
                     </div>
                 </div>
-                <div class="col-4"></div>
+                <div class="sg-col-4"></div>
             </div>
 
             {{else}}
@@ -121,13 +121,13 @@
 
             {{#eachSection rootName}}
                 {{#if markup}}
-                    <div id="rubik-{{reference}}" class="grid styleguide-block">
-                        <div class="col-12">
-                            <header class="styleguide-header">
+                    <div id="rubik-{{reference}}" class="sg-grid sg-block">
+                            <div class="sg-col-12">
+                            <header class="sg-block-header">
                                 <h3>{{{header}}}</h3>
                             </header>
                             {{#if description}}
-                                <div class="styleguide-description">
+                                <div class="sg-block-description">
                                     {{{description}}}
 
                                 </div>
@@ -139,7 +139,7 @@
                                     {{/if}}
 
                                     {{#isntCaster markup}}
-                                        <div class="view">
+                                        <div class="sg-view">
                                             {{{markup}}}
                                         </div>
 
@@ -148,7 +148,7 @@
                                                 {{name}} <span>{{{description}}}</span>
                                             </div>
                                             {{#isntCaster markup}}
-                                            <div class="view">
+                                            <div class="sg-view">
                                                 {{{markup}}}
                                             </div>
                                             {{/isntCaster}}
@@ -162,13 +162,13 @@
                     </div>
 
                 {{else}}
-                <div id="rubik-{{reference}}" class="grid styleguide-block">
-                    <div class="col-12">
-                        <header class="styleguide-header">
+                <div id="rubik-{{reference}}" class="sg-grid sg-block">
+                    <div class="sg-col-12">
+                        <header class="sg-block-header">
                             <h1>{{{header}}}</h1>
                         </header>
                         {{#if description}}
-                            <div class="styleguide-description">
+                            <div class="sg-block-description">
                                 {{{description}}}
                             </div>
                         {{/if}}
@@ -179,7 +179,7 @@
 
             {{/if}}
         </section>
-        <section class=" footer wrapper">
+        <section class="sg-footer sg-wrapper">
         © Infojobs 2015
         </section>
 

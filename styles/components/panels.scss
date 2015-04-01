@@ -29,6 +29,17 @@ $PANELS
 		color: $shiro;
 		background-color: $dark-softened;
 	}
+
+	&-focus {
+		color: $shiro;
+		background-color: $day-blue;
+	}
+
+	&-overlay {
+		color: $shiro;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+
 }
 
 [class^="col-"].panel .col-child,
