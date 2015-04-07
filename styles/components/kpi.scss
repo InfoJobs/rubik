@@ -23,7 +23,11 @@ Styleguide 2.25
 	margin: 0 auto;
 
 	p {
-		margin: 0;
+		margin-bottom: 10px;
+	}
+
+	p:last-of-type {
+		margin-bottom: 0;
 	}
 
 	.arrow {
@@ -32,7 +36,6 @@ Styleguide 2.25
 	}
 
 }
-
 
 .kpi-title {
 	margin-bottom: 0;
