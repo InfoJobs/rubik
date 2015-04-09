@@ -39,7 +39,16 @@
                                 {{#eachSection reference}}
                                     {{#ifDepth 2}}
                                     <li>
-                                        <a href="section-{{../../reference}}.html#rubik-{{{reference}}}" {{#isDisabled header}}class="disabled js-disabled"{{/isDisabled}}>{{header}}</a>
+                                        <a href="section-{{../../reference}}.html#rubik-{{{reference}}}" class="js-itemMenu {{#isDisabled header}}disabled js-disabled{{/isDisabled}}" data-link="true">{{header}}</a>
+                                        <ul class="sg-second-submenu">
+                                        {{#eachSection reference}}
+                                            {{#ifDepth 3}}
+                                            <li>
+                                                <a href="section-{{../../../../reference}}.html#rubik-{{{reference}}}" {{#isDisabled header}}class="disabled js-disabled"{{/isDisabled}}>{{header}}</a>
+                                            </li>
+                                            {{/ifDepth}}
+                                        {{/eachSection}}
+                                        </ul>
                                     </li>
                                     {{/ifDepth}}
                                 {{/eachSection}}

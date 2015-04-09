@@ -5,7 +5,8 @@
 	var elContainer = d.querySelector('body'),
 		eventType = mobilecheck() ? 'touchstart' : 'click',
 		aItemMenu = d.querySelectorAll('.js-itemMenu'),
-		aItemSumenu = d.querySelectorAll('.submenu a'),
+		aItemSubmenu = d.querySelectorAll('.submenu a'),
+		aItemSecondSubmenu = d.querySelectorAll('.sg-second-submenu a'),
 		fnResetMenu = function() {
 			classie.remove( elContainer, 'menu-open' );
 			elContainer.style.overflow = 'auto';
@@ -87,29 +88,33 @@
 
 
 
-		for ( var i=0; i < aItemSumenu.length; i++ ) {
+		for ( var i=0; i < aItemSubmenu.length; i++ ) {
 
-            if( aItemSumenu[i].getAttribute('href').indexOf( '.html' ) > -1 ) {
+            if( aItemSubmenu[i].getAttribute('href').indexOf( '.html' ) > -1 ) {
 
 				classie.removeClass( document.getElementById('home'), 'active');
-                if( aItemSumenu[i].getAttribute('href') == current ) {
-					aItemSumenu[i].className = 'active';
+                if( aItemSubmenu[i].getAttribute('href') == current ) {
+					aItemSubmenu[i].className = 'active';
 
-					if( hasParentClass( aItemSumenu[i], 'submenu' ) ) {
-						classie.addClass(aItemSumenu[i].parentNode.parentNode, 'selected');
+					if( hasParentClass( aItemSubmenu[i], 'submenu' ) ) {
+						classie.addClass(aItemSubmenu[i].parentNode.parentNode, 'selected');
 					}
 				}
 
 			}
 
-			if( classie.has( aItemSumenu[i], 'js-disabled' ) ) {
-				aItemSumenu[i].addEventListener( 'click', function(event) {
+			if( classie.has( aItemSubmenu[i], 'js-disabled' ) ) {
+				aItemSubmenu[i].addEventListener( eventType, function(event) {
 					event.preventDefault();
 				});
 			}
+
+			/*
+
+			*/
 		}
 
-        if(d.querySelector('.submenu.selected')) {
+        if( d.querySelector('.submenu.selected') ) {
           d.querySelector('.submenu.selected').style.height = d.querySelector('.submenu.selected').clientHeight+'px';
         }
 
@@ -118,10 +123,14 @@
         }
 	}
 
+	function gotoSection( element ) {
+		window.scrollTop( element.scrollTop - 100 );
+	}
+
 
 
 	// Listeners ---------------------------------------------------------------
-	d.getElementById('burgerMenu').addEventListener('click', function(e) {
+	d.getElementById('burgerMenu').addEventListener( eventType, function(e) {
 		elContainer.style.overflow = 'hidden';
 		setTimeout( function() {
 			classie.addClass(elContainer, 'menu-open');
@@ -137,7 +146,7 @@
 
 	for ( var i=0; i < aItemMenu.length; i++ ) {
 
-		aItemMenu[i].addEventListener('click', function(e){
+		aItemMenu[i].addEventListener( eventType, function(e){
 			e.preventDefault();
 			e.stopPropagation();
 
@@ -150,8 +159,10 @@
 
 			if(elItemMenu.clientHeight == 0) {
 				elItemMenu.style.height = nElements+'px';
+				elItemMenu.parentNode.parentNode.style.height = (Number(elItemMenu.parentNode.parentNode.style.height.replace('px','')) + nElements)+'px';
 			} else {
 				elItemMenu.style.height = '0';
+				elItemMenu.parentNode.parentNode.style.height = (Number(elItemMenu.parentNode.parentNode.style.height.replace('px','')) - nElements)+'px';
 			}
 		});
 	}
