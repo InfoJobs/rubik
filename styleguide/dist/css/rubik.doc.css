@@ -9543,7 +9543,10 @@ Styleguide 2.25
   margin: 0 auto;
 }
 .kpi p {
-  margin: 0;
+  margin-bottom: 10px;
+}
+.kpi p:last-child {
+  margin-bottom: 0;
 }
 .kpi .arrow {
   margin-left: 10px;
