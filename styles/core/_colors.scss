@@ -5,16 +5,23 @@
 \*------------------------------------*/
 
 /*
-Colors #disabled#
+Text colors
 
-Apply any class specified above to provide color to any html element.
-`.contrast` class needs a dark background.
-`.marked-contrast` and `.highlight` classes adds their own background.
+Use following classes to define text color when it's needed:
 
+- Use class `.script` to force text color as the default text color
+- Use class `.soft-script` to force a text color as a secondary text
+- Use class `.alternative` to mark text that contains details information
+- Use class `.disabled` to mark a text option as disabled
+- Use class `.marked` to focus attention in it
+- Use class `.marked-contrast` to focus attention in it
+- Use class `.contrast` to define a text over dark background color
+- Use class `.highlight` to highlight words as a result of a search
+<br>
 @@include('../templates/partials/colors.html')
 
 
-Styleguide 1.1
+Styleguide 1.3.5
 */
 
 //white text
