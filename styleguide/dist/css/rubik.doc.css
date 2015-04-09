@@ -207,9 +207,9 @@ strong {
 /*
 Layouts
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
 
-Styleguide 1.2
+Styleguide 1.1
 */
 /*
 Containers #disabled#
@@ -515,7 +515,7 @@ Markup:
 	<div class="col-3"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.2.1
+Styleguide 1.1.1
 */
 .row {
   margin: 0 0 0 -10px;
@@ -591,7 +591,7 @@ Markup:
 	<div class="col-4 col-12-medium"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.2.1.2
+Styleguide 1.1.1.2
 */
 @media only screen and (min-width: 481px) {
   .col-1 {
@@ -871,7 +871,7 @@ Markup:
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.2.1.3
+Styleguide 1.1.1.3
 */
 .row-faux {
   margin: 0 0 0 -10px;
@@ -1036,56 +1036,82 @@ h3,
 /*
 Text colors
 
-Use following classes to define text color when it's needed:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
 
-- Use class `.script` to force text color as the default text color
-- Use class `.soft-script` to force a text color as a secondary text
-- Use class `.alternative` to mark text that contains details information
-- Use class `.disabled` to mark a text option as disabled
-- Use class `.marked` to focus attention in it
-- Use class `.marked-contrast` to focus attention in it
-- Use class `.contrast` to define a text over dark background color
-- Use class `.highlight` to highlight words as a result of a search
-<br>
-<div  class="sg-guide">
-    <ul class="clearfix sg-colors">
-        <li class="contrast panel-executive">
-            .contrast
-        </li>
+Styleguide 1.3
+*/
+/*
+Default text color
 
-        <li class="disabled">
-            .disabled
-        </li>
+Use class `.script` to force text color as the default text color
 
-        <li class="marked">
-            .marked
-        </li>
+Markup:
+<p>Lorem ipsum dolor sit amet, <a href="#" class="script">consectetur adipiscing</a> elit.</p>
 
-        <li class="marked-contrast">
-            .marked-contrast
-        </li>
+Styleguide 1.3.1
+*/
+/*
+Secondary text color
 
-        <li class="alternative">
-            .alternative
-        </li>
+Use class `.soft-script` to force a text color as a secondary text
 
-        <li class="highlight">
-            .highlight
-        </li>
+Markup:
+<p>Lorem ipsum dolor sit amet, <a href="#" class="soft-script">consectetur adipiscing</a> elit.</p>
 
-        <li class="script">
-            .script
-        </li>
+Styleguide 1.3.2
+*/
+/*
+Details text color
 
-        <li class="soft-script">
-            .soft-script
-        </li>
-    </ul>
-</div>
+Use class `.alternative` to mark text that contains details information
 
+Markup:
+<p class="alternative">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
+Styleguide 1.3.3
+*/
+/*
+Disabled text color
+
+Use class `.disabled` to mark a text option as disabled
+
+Markup:
+<p>Lorem ipsum dolor sit amet, <a href="#" class="disabled">consectetur adipiscing elit</a>.</p>
+
+Styleguide 1.3.4
+*/
+/*
+Focus text color
+
+Use class `.marked` to focus attention in it
+
+Markup:
+<p>Lorem ipsum <span class="marked">6m ago</p>
 
 Styleguide 1.3.5
+*/
+/*
+Contrasted text color
+
+Use class `.contrast` to define a text over dark background color
+
+Markup:
+<div class="inner panel-info">
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	<a href="#" class="contrast">Curabitur varius</a>
+</div>
+
+Styleguide 1.3.6
+*/
+/*
+Highlighted text color
+
+Use class `.highlight` to highlight words as a result of a search
+
+Markup:
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing <span class="highlight">elit</span>.</p>
+
+Styleguide 1.3.7
 */
 .contrast {
   color: #fff;
@@ -2594,7 +2620,7 @@ Text elements
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
 
-Styleguide 1.3
+Styleguide 1.2
 */
 /*------------------------------------*\
 $HEADINGS
@@ -2613,7 +2639,7 @@ Markup:
 <h2>Heading level 2</h2>
 <h3>Heading level 3</h3>
 
-Styleguide 1.3.1
+Styleguide 1.2.1
 */
 h1,
 h2,
@@ -2684,7 +2710,7 @@ Markup:
 	<p>Lorem ipsum</p>
 </div>
 
-Styleguide 1.3.1.1
+Styleguide 1.2.1.1
 */
 .heading-addons h1 {
   margin: 0;
@@ -2703,7 +2729,7 @@ Use class `.heading-mega` for a big size heading.
 Markup:
 <h1 class="heading-mega">Heading mega</h1>
 
-Styleguide 1.3.1.2
+Styleguide 1.2.1.2
 */
 .heading-mega {
   font-size: 25px;
@@ -2753,7 +2779,7 @@ Use tag `<p>` for a basic paragraph. Don't use `<span>` or `<div>` as a text tag
 Markup:
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.3.2
+Styleguide 1.2.2
 */
 p {
   margin-bottom: 15px;
@@ -2790,7 +2816,7 @@ Markup:
 .base				- Size: To force body copy size
 .medium				- Size: To increase text size
 
-Styleguide 1.3.3
+Styleguide 1.2.3
 */
 /*
 Text variants
@@ -2800,7 +2826,7 @@ Use class `.bold` to bold the content. Use only on the following tags: `<p>`, `<
 Markup:
 <p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.3.4
+Styleguide 1.2.4
 */
 .bold {
   font-family: Proximanovabold, Helvetica, Arial, sans-serif;
@@ -2822,7 +2848,7 @@ Markup:
 .vip-quote			- Size: big size and Slabo font-family
 .quote				- Type: with quotation mark
 
-Styleguide 1.3.6
+Styleguide 1.2.6
 */
 .quote {
   display: block;
@@ -2874,7 +2900,7 @@ Markup:
     <dd>De duracion determinada, jornada completa</dd>
 </dl>
 
-Styleguide 1.3.7
+Styleguide 1.2.7
 */
 .list-default > li, .list-default > dt {
   display: block;
@@ -2907,7 +2933,7 @@ Markup:
     <li>Tipo de oferta: de duracion determinada, jornada completa</li>
 </ul>
 
-Styleguide 1.3.7.1
+Styleguide 1.2.7.1
 */
 .list-bullet-default > li,
 .list-bullet-default > dt,
@@ -2949,7 +2975,7 @@ Markup:
     <li class="iconfont-Check iconfont-30px iconfont-soft-script">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo</li>
 </ul>
 
-Styleguide 1.3.7.2
+Styleguide 1.2.7.2
 */
 .list-bullet-icon > .iconfont-30px {
   padding-left: 40px;
@@ -3029,7 +3055,7 @@ Markup:
     <li>Lorem ipsum dolor</li>
 </ul>
 
-Styleguide 1.3.7.5
+Styleguide 1.2.7.5
 */
 .tag-group {
   overflow: hidden;
@@ -3063,7 +3089,7 @@ Markup:
     <li class>Lorem ipsum</li>
 </ul>
 
-Styleguide 1.3.7.5.1
+Styleguide 1.2.7.5.1
 */
 .tag-group li.tag-divider {
   margin-right: 10px;
@@ -3092,7 +3118,7 @@ Markup:
 </ul>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.3.7.5.2
+Styleguide 1.2.7.5.2
 */
 .tag-group-top {
   margin-bottom: 10px;
@@ -3128,7 +3154,7 @@ Markup:
     <li>Lorem ipsum</li>
 </ul>
 
-Styleguide 1.3.7.5.4
+Styleguide 1.2.7.5.4
 */
 .tag-group .ellipsis {
   display: block;
