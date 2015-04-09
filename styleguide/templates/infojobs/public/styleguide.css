@@ -1,12 +1,22 @@
 .sg-wrapper {
   max-width: 1200px;
   width: 100%;
-  padding: 0 10px;
+}
+
+.sg-wrapper,
+.sg-header {
+    padding: 0 10px;
+}
+
+@media all and (min-width: 480px) {
+    .sg-wrapper,
+    .sg-header {
+        padding: 0 20px;
+    }
 }
 
 .sg-header {
     background-color: #2088c2;
-    padding: 3px 40px 0;
     height: 60px;
     display: block;
     color: white;
@@ -31,7 +41,6 @@
   color: white;
   display: block;
   float: left;
-  margin-top: 12px;
   margin-right: 40px;
 
   white-space: nowrap;
@@ -82,7 +91,7 @@
 /*------------------------------------*\
   $GRID
 \*------------------------------------*/
-.sg-grid {
+/*.sg-grid {
     display: flex;
     align-items: stretch;
     padding: 0 10px;
@@ -145,7 +154,7 @@
 
 .sg-col-12 {
     flex-basis: 100%;
-}
+}*/
 
 /*------------------------------------*\
   $MENU
@@ -283,14 +292,14 @@
 $CONTENT
 \*------------------------------------*/
 .sg-content {
-  padding: 140px 20px 80px;
-  background-color: #f7f7f7; }
+  background-color: $dark-shiro;
+}
 
-  @media all and (min-width: 1200px) {
-      .sg-content {
-          padding-left: 360px;
-      }
+@media all and (min-width: 1200px) {
+  .sg-content {
+      padding-left: 360px;
   }
+}
 
 /*------------------------------------*\
 $OVERLAY
@@ -321,7 +330,7 @@ $OVERLAY
 $STYLEGUIDE
 \*------------------------------------*/
 .sg-block {
-  margin-top: 60px;
+  margin-top: 80px;
 }
 .sg-block:first-child {
   margin-top: 0;

@@ -4,7 +4,8 @@ body {
 }
 
 body#kss-node {
-    background: #f7f7f7;
+    padding: 0;
+    background: $dark-shiro;
 }
 
 .sg-guide {
@@ -29,20 +30,22 @@ body#kss-node {
     }
 
     //Colors
-    .color {
-        margin-bottom: 10px;
+    .sg-colors {
+        overflow: hidden;
+        display: inline-block;
+        width: 100%;
 
         li {
-            padding: 10px 20px;
-            text-align: center;
-            border: 1px solid #2D3133;
-            float: left;
-            margin: 0 10px 10px 0;
+			float: left;
+			width: 25%;
+            padding: 20px;
+            font-size: 14px;
+			text-align: center;
         }
     }
 
     //Icons
-    &.icons ul {
+    &.sg-icons ul {
 		overflow: hidden;
         display: inline-block;
         width: 100%;
@@ -50,7 +53,7 @@ body#kss-node {
 	    li {
 			height: 100px;
 			margin: 0px;
-			outline: 1px solid white;
+			outline: 10px solid $dark-shiro;
 			font-size: 14px;
 			text-align: center;
 			background-color: $darkest-shiro;
@@ -63,7 +66,7 @@ body#kss-node {
 			}
 
 			@include mediaquery ($bp-desktop) {
-				width: 16.666%;
+                width: 25%;
 
 			}
 
@@ -99,6 +102,7 @@ body#kss-node {
 
     h2 {
         font-size: 20px;
+        margin-bottom: 10px;
     }
 
     h3 {
@@ -163,12 +167,14 @@ body#kss-node {
 
     pre {
         overflow: scroll;
-        border-top: 1px solid $darkest-shiro;
+        //width: 102%;
         padding: 20px;
         font-family: Courier;
         font-size: 13px;
+        word-break: normal;
+        //white-space: nowrap;
+        border-top: 1px solid $darkest-shiro;
         background-color: $darkest-shiro;
-
     }
 }
 
