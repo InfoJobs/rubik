@@ -21,7 +21,7 @@ Use the following classes structure to create a modal window:
 - Include the container `<div class="modal-header">` with the header structure.
 - Include the container `<div class="modal-content">` with the content structure.
 
-(Show modal example)
+@@include('../templates/partials/modal.html')
 
 Markup:
 <div class="modal-layer modal-fade-in hide">
