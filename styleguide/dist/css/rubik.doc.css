@@ -2171,13 +2171,13 @@ Styleguide 1.6.1
   /*@include transition;*/
   display: inline-block;
   width: auto;
-  padding: 5px 10px;
+  padding: 0 10px;
   border: 1px solid transparent;
   color: #fff;
   cursor: pointer;
   font-size: 14px;
   font-weight: normal;
-  line-height: 18px;
+  line-height: 28px;
   overflow: visible;
   text-decoration: none;
   text-align: center;
@@ -2189,7 +2189,7 @@ Styleguide 1.6.1
   transition: all 0.3s ease-in-out 0s;
 }
 button.btn {
-  height: 30px;
+  border: 0 none;
 }
 .btn[class*="iconfont-"]::before {
   font-size: 18px;
@@ -2373,9 +2373,6 @@ Styleguide 1.5.1
     font-size: 18px;
   }
 }
-button.btn-large {
-  height: 42px;
-}
 .btn-large[class*="iconfont-"]::before {
   font-size: 30px;
 }
@@ -2509,6 +2506,8 @@ Styleguide 1.5.6
 }
 .btn-group .btn {
   border-color: #bac7cc;
+  border-width: 1px;
+  border-style: solid;
 }
 .btn-group button {
   /* fix iOS buttons separation */
@@ -3660,12 +3659,12 @@ Styleguide 1.4.7
   }
 }
 /*
-Common CSS
+Common CSS #casper#
 
 Styleguide 1
 */
 /*
-Components
+Components #casper#
 
 Styleguide 2
 */
@@ -6597,7 +6596,7 @@ $query2     = width, device-width
 }
 
 /*
-Javascript Components
+Javascript Components #casper#
 
 Styleguide 3
 */
@@ -10523,11 +10522,12 @@ body#kss-node {
   overflow: hidden;
   display: inline-block;
   width: 100%;
+  margin-left: -5px;
 }
 .sg-guide.sg-icons ul li {
-  height: 100px;
+  height: 140px;
   margin: 0px;
-  outline: 10px solid #f2f2f2;
+  border: 5px solid #f2f2f2;
   font-size: 14px;
   text-align: center;
   background-color: #e2e5e6;
@@ -10617,6 +10617,7 @@ body#kss-node {
 .sg-content .sg-view::before {
   content: 'Example';
   display: block;
+  height: 30px;
   color: #999;
 }
 .sg-content .sg-modifiers {
