@@ -207,7 +207,7 @@ strong {
 /*
 Layouts
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
 
 Styleguide 1.2
 */
@@ -217,7 +217,6 @@ Containers #disabled#
 - Use class `.wrapper` to wrap all page content.
 - Use class `.container` to create blocks content.
 - Use class `.container-expanded` to create a top gap between blocks contents.
-
 
 
 Markup:
@@ -499,16 +498,16 @@ Markup:
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-8"><div class="col-child">...</div></div>
 </div>
-<div class="row casper">
+<div class="row">
 	<div class="col-8"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
-<div class="row casper">
+<div class="row">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
-<div class="row casper">
+<div class="row">
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
@@ -10551,6 +10550,9 @@ body#kss-node {
   display: block;
   height: 30px;
   color: #e2e5e6;
+}
+.sg-content .sg-modifiers {
+  margin-bottom: 10px;
 }
 .sg-content pre {
   overflow: scroll;

@@ -26,7 +26,7 @@
         		</li>
         		<li>
         			<div class="sg-section">Styleguide</div>
-        			<ul>
+        			<ul id="sg-menu">
         				{{#eachRoot}}
                         <li>
                             <a href="section-{{referenceURI}}.html" class="js-itemMenu">
@@ -154,24 +154,31 @@
                                 {{#if markup}}
 
                                         {{#if modifiers}}
+                                                {{#eachModifier}}
+                                                    <div class="">
+                                                        {{name}} | <span>{{{description}}}</span>
+                                                    </div>
+                                                {{/eachModifier}}
+
                                         {{/if}}
 
-                                        {{#isntCaster markup}}
+                                        {{#if modifiers}}
+                                            {{#isntCasper markup}}
+                                                <div class="sg-view">
+                                                    {{#eachModifier}}
+                                                        <div class="sg-modifiers">
+                                                            {{{markup}}}
+                                                        </div>
+                                                    {{/eachModifier}}
+                                                </div>
+                                            {{/isntCasper}}
+                                        {{else}}
+                                            {{#isntCasper markup}}
                                             <div class="sg-view">
                                                 {{{markup}}}
                                             </div>
-
-                                            {{#eachModifier}}
-                                                <div class="">
-                                                    {{name}} <span>{{{description}}}</span>
-                                                </div>
-                                                {{#isntCaster markup}}
-                                                <div class="sg-view">
-                                                    {{{markup}}}
-                                                </div>
-                                                {{/isntCaster}}
-                                            {{/eachModifier}}
-                                        {{/isntCaster}}
+                                            {{/isntCasper}}
+                                        {{/if}}
 
                                         <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
                                 {{/if}}
