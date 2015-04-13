@@ -6642,7 +6642,10 @@ Use the following classes structure to create a modal window:
 - Include the container `<div class="modal-header">` with the header structure.
 - Include the container `<div class="modal-content">` with the content structure.
 
-<div class="sg-view hide">
+<a href="#" class="modal-click">Abrir modal</a>
+
+
+<div class="sg-view" id="sendMailModal">
     <div class="sg-guide">
         <div class="modal-layer" data-close="" data-headermodal="Modal title">
             <div class="modal-inner">
@@ -6685,6 +6688,15 @@ Use the following classes structure to create a modal window:
         </div>
       </div>
   </div>
+
+
+  <script src="public/custom.js"></script>
+
+  <script type="text/javascript">
+			$(document).ready(function(){
+				$("#sendMailModal").modalWindow(modalOptions);
+			});
+		</script>
 
 
 Markup:

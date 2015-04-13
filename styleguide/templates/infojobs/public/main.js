@@ -68,7 +68,7 @@
 
 			}
 
-			if( classie.has( aItemSubmenu[i], 'js-disabled' ) || classie.has( aItemSubmenu[i], 'js-itemMenu' )) {
+			if( classie.has( aItemSubmenu[i], 'js-disabled') ) {
 				aItemSubmenu[i].addEventListener( eventType, function(e) {
 					e.preventDefault();
 				});

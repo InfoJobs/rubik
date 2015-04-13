@@ -186,7 +186,9 @@
 }
 
 .sg-menu li a.disabled,
-.sg-menu li a.disabled:hover {
+.sg-menu li a.disabled:hover,
+.sg-menu .sg-submenu li a.disabled:hover
+ {
     text-decoration: line-through;
     color: #999999;
 }
