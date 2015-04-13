@@ -307,6 +307,10 @@ $CONTENT
   background-color: $dark-shiro;
 }
 
+.sg-content pre {
+    word-wrap: break-word;
+}
+
 @media all and (min-width: 1200px) {
   .sg-content {
       padding-left: 360px;
