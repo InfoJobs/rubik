@@ -68,22 +68,18 @@
 
 			}
 
-			if( classie.has( aItemSubmenu[i], 'js-disabled' ) ) {
+			if( classie.has( aItemSubmenu[i], 'js-disabled' ) || classie.has( aItemSubmenu[i], 'js-itemMenu' )) {
 				aItemSubmenu[i].addEventListener( eventType, function(e) {
 					e.preventDefault();
 				});
 			} else {
 				aItemSubmenu[i].addEventListener( eventType, function(e) {
-					e.preventDefault();
+					//e.preventDefault();
 					unActive();
 					classie.addClass(e.target, 'sg-active');
 					gotoSection(e.target);
 				});
 			}
-
-			/*
-
-			*/
 		}
 
         if( d.querySelector('.submenu.sg-selected') ) {
@@ -102,7 +98,7 @@
 	}
 
 	function gotoSection( element ) {
-		console.log(element)
+		console.log(element.scrollTop)
 		// window.scrollTop( element.scrollTop - 100 );
 	}
 
@@ -154,5 +150,9 @@
 
 
 	prettyPrint();
+
+	$(window).on("hashchange load", function () {
+	    window.scrollTo(window.scrollX, window.scrollY - 100);
+	});
 
 })(document, window);

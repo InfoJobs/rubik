@@ -138,68 +138,70 @@
                 {{else}}
 
 
-                    {{#if markup}}
+                    {{#isntCasper header}}
+                        {{#if markup}}
+                            <div id="rubik-{{reference}}" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>{{{header}}}</h2>
+                                    </header>
+                                    {{#if description}}
+                                        <div class="sg-block-description">
+                                            {{{description}}}
+
+                                        </div>
+                                    {{/if}}
+
+                                    {{#if markup}}
+
+                                            {{#if modifiers}}
+                                                    {{#eachModifier}}
+                                                        <div class="">
+                                                            {{name}} | <span>{{{description}}}</span>
+                                                        </div>
+                                                    {{/eachModifier}}
+
+                                            {{/if}}
+
+                                            {{#if modifiers}}
+                                                {{#isntCasper markup}}
+                                                    <div class="sg-view">
+                                                        {{#eachModifier}}
+                                                            <div class="sg-modifiers">
+                                                                {{{markup}}}
+                                                            </div>
+                                                        {{/eachModifier}}
+                                                    </div>
+                                                {{/isntCasper}}
+                                            {{else}}
+                                                {{#isntCasper markup}}
+                                                <div class="sg-view">
+                                                    {{{markup}}}
+                                                </div>
+                                                {{/isntCasper}}
+                                            {{/if}}
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
+                                    {{/if}}
+
+                                </div>
+                            </div>
+
+                        {{else}}
                         <div id="rubik-{{reference}}" class="sg-grid sg-block">
-                                <div class="sg-col-12">
+                            <div class="sg-col-12">
                                 <header class="sg-block-header">
-                                    <h2>{{{header}}}</h2>
+                                    <h1>{{{header}}}</h1>
                                 </header>
                                 {{#if description}}
                                     <div class="sg-block-description">
                                         {{{description}}}
-
                                     </div>
                                 {{/if}}
-
-                                {{#if markup}}
-
-                                        {{#if modifiers}}
-                                                {{#eachModifier}}
-                                                    <div class="">
-                                                        {{name}} | <span>{{{description}}}</span>
-                                                    </div>
-                                                {{/eachModifier}}
-
-                                        {{/if}}
-
-                                        {{#if modifiers}}
-                                            {{#isntCasper markup}}
-                                                <div class="sg-view">
-                                                    {{#eachModifier}}
-                                                        <div class="sg-modifiers">
-                                                            {{{markup}}}
-                                                        </div>
-                                                    {{/eachModifier}}
-                                                </div>
-                                            {{/isntCasper}}
-                                        {{else}}
-                                            {{#isntCasper markup}}
-                                            <div class="sg-view">
-                                                {{{markup}}}
-                                            </div>
-                                            {{/isntCasper}}
-                                        {{/if}}
-
-                                        <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
-                                {{/if}}
-
                             </div>
                         </div>
-
-                    {{else}}
-                    <div id="rubik-{{reference}}" class="sg-grid sg-block">
-                        <div class="sg-col-12">
-                            <header class="sg-block-header">
-                                <h1>{{{header}}}</h1>
-                            </header>
-                            {{#if description}}
-                                <div class="sg-block-description">
-                                    {{{description}}}
-                                </div>
-                            {{/if}}
-                        </div>
-                    </div>
-                    {{/if}}
+                        {{/if}}
+                    {{/isntCasper}}
                 {{/isDisabled}}
             {{/eachSection}}
 
