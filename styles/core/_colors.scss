@@ -7,22 +7,85 @@
 /*
 Text colors
 
-Use following classes to define text color when it's needed:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
 
-- Use class `.script` to force text color as the default text color
-- Use class `.soft-script` to force a text color as a secondary text
-- Use class `.alternative` to mark text that contains details information
-- Use class `.disabled` to mark a text option as disabled
-- Use class `.marked` to focus attention in it
-- Use class `.marked-contrast` to focus attention in it
-- Use class `.contrast` to define a text over dark background color
-- Use class `.highlight` to highlight words as a result of a search
-<br>
-@@include('../templates/partials/colors.html')
+Styleguide 1.3
+*/
 
+/*
+Default text color
+
+Use class `.script` to force text color as the default text color
+
+Markup:
+<p>Lorem ipsum dolor sit amet, <a href="#" class="script">consectetur adipiscing</a> elit.</p>
+
+Styleguide 1.3.1
+*/
+/*
+Secondary text color
+
+Use class `.soft-script` to force a text color as a secondary text
+
+Markup:
+<p>Lorem ipsum dolor sit amet, <a href="#" class="soft-script">consectetur adipiscing</a> elit.</p>
+
+Styleguide 1.3.2
+*/
+/*
+Details text color
+
+Use class `.alternative` to mark text that contains details information
+
+Markup:
+<p class="alternative">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+Styleguide 1.3.3
+*/
+/*
+Disabled text color
+
+Use class `.disabled` to mark a text option as disabled
+
+Markup:
+<p>Lorem ipsum dolor sit amet, <a href="#" class="disabled">consectetur adipiscing elit</a>.</p>
+
+Styleguide 1.3.4
+*/
+/*
+Focus text color
+
+Use class `.marked` to focus attention in it
+
+Markup:
+<p>Lorem ipsum <span class="marked">6m ago</p>
 
 Styleguide 1.3.5
 */
+/*
+Contrasted text color
+
+Use class `.contrast` to define a text over dark background color
+
+Markup:
+<div class="inner panel-info">
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	<a href="#" class="contrast">Curabitur varius</a>
+</div>
+
+Styleguide 1.3.6
+*/
+/*
+Highlighted text color
+
+Use class `.highlight` to highlight words as a result of a search
+
+Markup:
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing <span class="highlight">elit</span>.</p>
+
+Styleguide 1.3.7
+*/
+
 
 //white text
 .contrast {
