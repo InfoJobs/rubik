@@ -63,9 +63,9 @@ Text size
 Use class `.base` or `.medium` to change the size of the text.
 
 Markup:
-<p class="{$modifiers}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-{$modifiers}:
+{{modifier_class}}:
 
 .base				- Size: To force body copy size
 .medium				- Size: To increase text size
@@ -103,12 +103,12 @@ Blockquotes
 Use `<blockquote>` when the text is quoted from another source. Use `<cite>` to cite the reference.
 
 Markup:
-<blockquote class="{$modifiers}">
+<blockquote class="{{modifier_class}}">
 	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
 	<cite>Lorem ipsum</cite>
 </blockquote>
 
-{$modifiers}:
+{{modifier_class}}:
 
 .vip-quote			- Size: big size and Slabo font-family
 .quote				- Type: with quotation mark
