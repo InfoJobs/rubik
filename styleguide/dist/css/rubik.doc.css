@@ -10617,8 +10617,7 @@ body#kss-node {
 .sg-content .sg-view::before {
   content: 'Example';
   display: block;
-  height: 30px;
-  color: #e2e5e6;
+  color: #999;
 }
 .sg-content .sg-modifiers {
   margin-bottom: 10px;

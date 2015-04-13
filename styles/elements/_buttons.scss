@@ -6,13 +6,13 @@
     /*@include transition;*/
     display: inline-block;
     width: auto;
-    padding: 5px 10px;
+    padding: 0 10px;
     border: 1px solid transparent;
     color: $shiro;
     cursor: pointer;
     font-size: $small-font-size;
     font-weight: normal;
-    line-height: 18px;
+    line-height: 28px;
     overflow: visible;
     text-decoration: none;
     text-align: center;
@@ -25,7 +25,7 @@
     }
 
     @at-root button#{&} {
-      height: 30px;
+      border: 0 none;
     }
 
     @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
@@ -215,6 +215,7 @@ Styleguide 1.5.1
     @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
         font-size: 22px;
     }
+
 }
 
 .btn-large {
@@ -224,10 +225,6 @@ Styleguide 1.5.1
 
     @media only screen and (max-width: $mobile-start) {
         font-size: $medium-font-size;
-    }
-
-    @at-root button#{&} {
-        height: 42px;
     }
 
     @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
@@ -378,6 +375,8 @@ Styleguide 1.5.6
 
     .btn {
         border-color: $katana-slash;
+        border-width: 1px;
+        border-style: solid;
     }
 
   	button { /* fix iOS buttons separation */
