@@ -342,6 +342,11 @@ $STYLEGUIDE
 .sg-block {
   margin-top: 80px;
 }
+
+.row.sg-block {
+  margin-top: 80px;
+}
+
 .sg-block:first-child {
   margin-top: 0;
 }
