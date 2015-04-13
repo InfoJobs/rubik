@@ -263,7 +263,8 @@
     color: #2088c2;
 }
 
-.sg-menu .sg-submenu {
+.sg-menu .sg-submenu,
+.sg-menu .sg-second-submenu {
     height: 0;
     overflow: hidden;
     -webkit-transition: height 350ms ease;
@@ -271,8 +272,8 @@
     -o-transition: height 350ms ease;
     transition: height 350ms ease;
 }
-
-.sg-menu .sg-submenu.sg-selected {
+.sg-menu .sg-submenu.sg-selected,
+.sg-menu .sg-second-submenu.sg-selected {
     height: auto;
 }
 
