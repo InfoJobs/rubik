@@ -56,7 +56,7 @@ Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (o
 
 Markup:
 <a href="#" class="btn {{modifier_class}}">Link Button</a>
-<button class="btn {{$modifier_class}}">Button Element</button>
+<button class="btn {{modifier_class}}">Button Element</button>
 
 Styleguide 1.5
 */
