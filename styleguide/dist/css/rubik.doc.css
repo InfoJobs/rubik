@@ -1845,10 +1845,10 @@ Use these classes to modify the icon size in px.
 
 Markup:
 <ul>
-	<li class="iconfont-Company {$modifiers}"><span class="hide">Icon name</span></li>
+	<li class="iconfont-Company {{modifier_class}}"><span class="hide">Icon name</span></li>
 </ul>
 
-{$modifiers}:
+{{modifier_class}}:
 
 .iconfont-16px	- 16px
 .iconfont-18px	- 18px
@@ -2207,17 +2207,17 @@ p > .btn {
 /*
 Buttons
 
-Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms), followed by classes listed as `{$modifiers}`.
+Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms), followed by classes listed as `{{modifier_class}}`.
 
-Markup:
-<a href="#" class="btn {$modifiers}">Link Button</a>
-<button class="btn {$modifiers}">Button Element</button>
-
-{$modifiers}:
+{{modifier_class}}:
 
 .btn-default		   - Applies default action style
 .btn-primary 		   - Applies primary action style
 .btn-primary-contrast  - Applies primary action style over dark background
+
+Markup:
+<a href="#" class="btn {{modifier_class}}">Link Button</a>
+<button class="btn {{$modifier_class}}">Button Element</button>
 
 Styleguide 1.5
 */
@@ -2341,13 +2341,13 @@ Styleguide 1.5
 /*
 Buttons sizes
 
-Use classes listed as `{$modifiers}` to change buttons size.
+Use classes listed as `{{modifier_class}}` to change buttons size.
 
 Markup:
-<a href="#" class="btn btn-default {$modifiers}">Link Button</a>
-<button class="btn btn-default {$modifiers}">Button Element</button>
+<a href="#" class="btn btn-default {{modifier_class}}">Link Button</a>
+<button class="btn btn-default {{modifier_class}}">Button Element</button>
 
-{$modifiers}:
+{{modifier_class}}:
 
 .btn-medium			- Size: Medium
 .btn-large 			- Size: Large
@@ -2807,9 +2807,9 @@ Text size
 Use class `.base` or `.medium` to change the size of the text.
 
 Markup:
-<p class="{$modifiers}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-{$modifiers}:
+{{modifier_class}}:
 
 .base				- Size: To force body copy size
 .medium				- Size: To increase text size
@@ -2836,12 +2836,12 @@ Blockquotes
 Use `<blockquote>` when the text is quoted from another source. Use `<cite>` to cite the reference.
 
 Markup:
-<blockquote class="{$modifiers}">
+<blockquote class="{{modifier_class}}">
 	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
 	<cite>Lorem ipsum</cite>
 </blockquote>
 
-{$modifiers}:
+{{modifier_class}}:
 
 .vip-quote			- Size: big size and Slabo font-family
 .quote				- Type: with quotation mark
@@ -7134,7 +7134,7 @@ Notifications
 Loremew eqwfwaerg sefg sdfg sdfgsdfg sdfg sdfg sdf gsdf gsdfgsdfgsdfg
 
 Markup:
-<div class="notification {$modifiers}">
+<div class="notification {{modifier_class}}">
 <p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
 <p class="contrast">Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="contrast link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
 </div>
@@ -9542,14 +9542,14 @@ Use class `.custom-bg` responsive to make the image responsive.
 Use modifier `.overlay-60` to apply an overlay.
 
 Markup:
-<div class="custom-bg {$modifiers}" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg');">
+<div class="custom-bg {{modifier_class}}" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg');">
     <div class="inner">
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
     </div>
 </div>
 
-{$modifiers}:
+{{modifier_class}}:
 .overlay-60		- Overlay in background image
 
 

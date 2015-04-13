@@ -73,10 +73,10 @@ Use these classes to modify the icon size in px.
 
 Markup:
 <ul>
-	<li class="iconfont-Company {$modifiers}"><span class="hide">Icon name</span></li>
+	<li class="iconfont-Company {{modifier_class}}"><span class="hide">Icon name</span></li>
 </ul>
 
-{$modifiers}:
+{{modifier_class}}:
 
 .iconfont-16px	- 16px
 .iconfont-18px	- 18px

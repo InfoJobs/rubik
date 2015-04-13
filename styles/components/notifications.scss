@@ -98,7 +98,7 @@ Notifications
 Loremew eqwfwaerg sefg sdfg sdfgsdfg sdfg sdfg sdf gsdf gsdfgsdfgsdfg
 
 Markup:
-<div class="notification {$modifiers}">
+<div class="notification {{modifier_class}}">
 <p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
 <p class="contrast">Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="contrast link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
 </div>

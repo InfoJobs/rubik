@@ -193,15 +193,12 @@
                                     {{#if markup}}
 
                                             {{#if modifiers}}
-                                                    {{#eachModifier}}
-                                                        <div class="">
-                                                            {{name}} | <span>{{{description}}}</span>
-                                                        </div>
-                                                    {{/eachModifier}}
+                                                {{#eachModifier}}
+                                                    <div class="">
+                                                        {{name}} | <span>{{{description}}}</span>
+                                                    </div>
+                                                {{/eachModifier}}
 
-                                            {{/if}}
-
-                                            {{#if modifiers}}
                                                 {{#isntCasper markup}}
                                                     <div class="sg-view">
                                                         {{#eachModifier}}
