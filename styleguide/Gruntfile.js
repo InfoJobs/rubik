@@ -75,6 +75,10 @@ module.exports = function(grunt) {
       {
         from: '#disabled#',
         to: ''
+      },
+      {
+        from: '#casper#',
+        to: ''
       }]
       }
     },

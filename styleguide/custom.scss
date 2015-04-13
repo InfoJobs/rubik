@@ -49,11 +49,12 @@ body#kss-node {
 		overflow: hidden;
         display: inline-block;
         width: 100%;
+        margin-left: -5px;
 
 	    li {
-			height: 100px;
+			height: 140px;
 			margin: 0px;
-			outline: 10px solid $dark-shiro;
+			border: 5px solid $dark-shiro;
 			font-size: 14px;
 			text-align: center;
 			background-color: $darkest-shiro;
@@ -161,7 +162,7 @@ body#kss-node {
             content: 'Example';
             display: block;
             height: 30px;
-            color: $darkest-shiro;
+            color: $soft-script;
         }
     }
 
