@@ -6644,45 +6644,45 @@ Use the following classes structure to create a modal window:
 - Include the container `<div class="modal-header">` with the header structure.
 - Include the container `<div class="modal-content">` with the content structure.
 
-<div class="sg-view">
+<div class="sg-view hide">
     <div class="sg-guide">
-        <div class="modal" data-close="" data-headermodal="Comparte tu b�squeda">
+        <div class="modal-layer" data-close="" data-headermodal="Modal title">
             <div class="modal-inner">
-                <div class="notification notification-error">
-                    <p class="contrast">Hemos visto que hay algunos errores....</p>
+                <div class="modal-header">
+                    <a title="" class="close-modal iconfont-Close iconfont-22px hit-area" href="#"></a>
+                    <h1 class="title">Modal title</h1>
                 </div>
-                <div class="inner">
-                    <p class="alternative">* Todos los campos son obligatorios</p>
-                       <form action="#">
-                           <fieldset>
-                               <legend>Compartir por email</legend>
-
-                            <fieldset>
-                                <legend>Datos de contacto</legend>
-                                <ul class="form--field-block clearfix">
-                                    <li class="error">
-                                        <label for="emailsend">Email del destinatario</label>
-                                        <input type="email" maxlength="200" id="emailsend" name="emailsend">
-                                        <p class="error-info">error</p>
-                                    </li>
-                                    <li>
-                                        <label for="email">Tu email</label>
-                                        <input type="email" maxlength="200" id="email" name="email">
-                                    </li>
-                                    <li>
-                                        <label for="name">Tu nombre</label>
-                                        <input maxlength="200" id="name" name="name">
-                                    </li>
-                                    <li>
-                                        <label for="email">Tu mensaje</label>
-                                        <textarea type="" rows="3" cols="20"></textarea>
-                                        <p class="info alternative small">1/100</p>
-                                    </li>
-                                   </ul>
-                           </fieldset>
-                    </form>
+                <div class="modal-content">
+                    <div class="inner">
+                        <p class="alternative">* Todos los campos son obligatorios</p>
+                           <form action="#">
+                               <fieldset>
+                                   <legend>Compartir por email</legend>
+                                <fieldset>
+                                    <legend>Datos de contacto</legend>
+                                    <ul class="form--field-block clearfix">
+                                        <li>
+                                            <label for="emailsend">Email del destinatario</label>
+                                            <input type="email" maxlength="200" id="emailsend" name="emailsend">
+                                        </li>
+                                        <li>
+                                            <label for="email">Tu email</label>
+                                            <input type="email" maxlength="200" id="email" name="email">
+                                        </li>
+                                        <li>
+                                            <label for="name">Tu nombre</label>
+                                            <input maxlength="200" id="name" name="name">
+                                        </li>
+                                        <li>
+                                            <label for="email">Tu mensaje</label>
+                                            <textarea type="" rows="3" cols="20"></textarea>
+                                            <p class="info alternative small">1/100</p>
+                                        </li>
+                                       </ul>
+                               </fieldset>
+                        </form>
+                    </div>
                 </div>
-
             </div>
         </div>
       </div>
@@ -10618,8 +10618,7 @@ body#kss-node {
 .sg-content .sg-view::before {
   content: 'Example';
   display: block;
-  height: 30px;
-  color: #e2e5e6;
+  color: #999;
 }
 .sg-content pre {
   overflow: scroll;
