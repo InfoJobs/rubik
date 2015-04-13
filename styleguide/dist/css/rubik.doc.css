@@ -3659,12 +3659,12 @@ Styleguide 1.4.7
   }
 }
 /*
-Common CSS
+Common CSS #casper#
 
 Styleguide 1
 */
 /*
-Components
+Components #casper#
 
 Styleguide 2
 */
@@ -6596,7 +6596,7 @@ $query2     = width, device-width
 }
 
 /*
-Javascript Components
+Javascript Components #casper#
 
 Styleguide 3
 */
@@ -10617,6 +10617,7 @@ body#kss-node {
 .sg-content .sg-view::before {
   content: 'Example';
   display: block;
+  height: 30px;
   color: #999;
 }
 .sg-content .sg-modifiers {

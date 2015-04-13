@@ -1,17 +1,25 @@
 .sg-wrapper {
   max-width: 1200px;
   width: 100%;
+  padding-top: 80px;
 }
 
 .sg-wrapper,
 .sg-header {
-    padding: 0 10px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 @media all and (min-width: 480px) {
+
+    .sg-wrapper {
+      padding-top: 100px;
+    }
+
     .sg-wrapper,
     .sg-header {
-        padding: 0 20px;
+        padding-right: 20px;
+        padding-left: 20px;
     }
 }
 
