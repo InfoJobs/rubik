@@ -10,6 +10,9 @@
         <link rel="stylesheet" href="public/kss.css">
         <link rel="stylesheet" href="public/styleguide.css">
         <link rel="stylesheet" href="public/rubik.css">
+
+        <script src="public/jquery-2.1.0.min.js"></script>
+        <script src="public/jquery.modal.js"></script>
     </head>
     <body id="kss-node">
 
@@ -29,7 +32,7 @@
         			<ul id="sg-menu">
                         <li>
                             <a href="section-1.html" class="js-itemMenu">
-                                Common CSS
+                                Common CSS 
                             </a>
 
                             <ul class="sg-submenu">
@@ -38,6 +41,12 @@
                                         <ul class="sg-second-submenu">
                                             <li>
                                                 <a href="section-1.html#rubik-1.1.1" >Grid System</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.1.2" class="disabled js-disabled">Containers </a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.1.3" class="disabled js-disabled">Banners&#x27;s containers </a>
                                             </li>
                                         </ul>
                                     </li>
@@ -49,12 +58,6 @@
                                             </li>
                                             <li>
                                                 <a href="section-1.html#rubik-1.2.2" >Paragraphs</a>
-                                            </li>
-                                            <li>
-                                                <a href="section-1.html#rubik-1.2.2" class="disabled js-disabled">Containers </a>
-                                            </li>
-                                            <li>
-                                                <a href="section-1.html#rubik-1.2.3" class="disabled js-disabled">Banners&#x27;s containers </a>
                                             </li>
                                             <li>
                                                 <a href="section-1.html#rubik-1.2.3" >Text size</a>
@@ -165,15 +168,20 @@
         				</li>
                         <li>
                             <a href="section-2.html" class="js-itemMenu">
-                                Components
+                                Components 
                             </a>
 
                             <ul class="sg-submenu">
                                     <li>
                                         <a href="section-2.html#rubik-2.1" class="js-itemMenu " data-link="true">Board</a>
                                         <ul class="sg-second-submenu">
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-2.html#rubik-2.2" class="js-itemMenu " data-link="true">Notifications</a>
+                                        <ul class="sg-second-submenu">
                                             <li>
-                                                <a href="section-2.html#rubik-2.12.1" >Notifications</a>
+                                                <a href="section-2.html#rubik-2.2.1" >Notifications</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -212,14 +220,6 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="section-2.html#rubik-2.12" class="js-itemMenu " data-link="true">Notifications</a>
-                                        <ul class="sg-second-submenu">
-                                            <li>
-                                                <a href="section-2.html#rubik-2.12.1" >Notifications</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
                                         <a href="section-2.html#rubik-2.16" class="js-itemMenu " data-link="true"></a>
                                         <ul class="sg-second-submenu">
                                         </ul>
@@ -245,17 +245,6 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="section-2.html#rubik-2.27" class="js-itemMenu " data-link="true">Crop image</a>
-                                        <ul class="sg-second-submenu">
-                                            <li>
-                                                <a href="section-2.html#rubik-2.27.1" >crop-image</a>
-                                            </li>
-                                            <li>
-                                                <a href="section-2.html#rubik-2.27.2" >crop-circle</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
                                         <a href="section-2.html#rubik-2.28" class="js-itemMenu " data-link="true">Form rating NPS</a>
                                         <ul class="sg-second-submenu">
                                         </ul>
@@ -266,7 +255,7 @@
         				</li>
                         <li>
                             <a href="section-3.html" class="js-itemMenu">
-                                Javascript Components
+                                Javascript Components 
                             </a>
 
                             <ul class="sg-submenu">
@@ -307,18 +296,11 @@
 
 
 
-                        <div id="rubik-1" class="sg-grid sg-block">
-                            <div class="sg-col-12">
-                                <header class="sg-block-header">
-                                    <h1>Common CSS</h1>
-                                </header>
-                            </div>
-                        </div>
 
 
 
-                        <div id="rubik-1.1" class="sg-grid sg-block">
-                            <div class="sg-col-12">
+                        <div id="rubik-1.1" class="row sg-block">
+                            <div class="col-12">
                                 <header class="sg-block-header">
                                     <h1>Layouts</h1>
                                 </header>
@@ -331,8 +313,8 @@
 
 
 
-                            <div id="rubik-1.1.1" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.1.1" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Grid System</h2>
                                     </header>
@@ -342,9 +324,9 @@
 your content.
 <br></p>
 <div class="sg-guide">
-  <div class="row-faux clearfix">
+  <div class="row clearfix">
       <div class="col-1">
-          <div class="col-child">.col-1 (more content)</div>
+          <div class="col-child">.col-1 (content)</div>
       </div>
       <div class="col-1">
           <div class="col-child">.col-1</div>
@@ -447,7 +429,6 @@ your content.
 
 
 
-
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;row&quot;&gt;
 	&lt;div class=&quot;col-4&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;col-8&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
@@ -474,8 +455,8 @@ your content.
 
 
 
-                            <div id="rubik-1.1.1.2" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.1.1.2" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Medium devices</h2>
                                     </header>
@@ -510,7 +491,6 @@ your content.
 
 
 
-
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;row&quot;&gt;
 	&lt;div class=&quot;col-8 col-6-medium&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;col-4 col-6-medium&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
@@ -526,8 +506,8 @@ your content.
 
 
 
-                            <div id="rubik-1.1.1.3" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.1.1.3" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Equal height columns</h2>
                                     </header>
@@ -582,7 +562,6 @@ your content.
 
 
 
-
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;row-faux&quot;&gt;
 	&lt;div class=&quot;col-4&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;col-4&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
@@ -595,8 +574,14 @@ your content.
 
 
 
-                        <div id="rubik-1.2" class="sg-grid sg-block">
-                            <div class="sg-col-12">
+
+
+
+
+
+
+                        <div id="rubik-1.2" class="row sg-block">
+                            <div class="col-12">
                                 <header class="sg-block-header">
                                     <h1>Text elements</h1>
                                 </header>
@@ -609,8 +594,8 @@ your content.
 
 
 
-                            <div id="rubik-1.2.1" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.2.1" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Headings</h2>
                                     </header>
@@ -623,7 +608,6 @@ your content.
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -642,8 +626,8 @@ your content.
 
 
 
-                            <div id="rubik-1.2.1.1" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.2.1.1" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Heading-addons</h2>
                                     </header>
@@ -652,7 +636,6 @@ your content.
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -673,8 +656,8 @@ your content.
 
 
 
-                            <div id="rubik-1.2.1.2" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.2.1.2" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Heading mega</h2>
                                     </header>
@@ -683,7 +666,6 @@ your content.
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -698,8 +680,8 @@ your content.
 
 
 
-                            <div id="rubik-1.2.2" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.2.2" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Paragraphs</h2>
                                     </header>
@@ -710,20 +692,11 @@ your content.
                                         </div>
 
 
-
                                                 <div class="sg-view">
-                                                    <div class="wrapper">
-    <div class="container container-expanded">
-        ...
-    </div>
-</div>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                                 </div>
 
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;wrapper&quot;&gt;
-    &lt;div class=&quot;container container-expanded&quot;&gt;
-        ...
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;</code></pre>
 
                                 </div>
                             </div>
@@ -731,14 +704,8 @@ your content.
 
 
 
-
-
-
-
-
-
-                            <div id="rubik-1.2.3" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.2.3" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Text size</h2>
                                     </header>
@@ -750,13 +717,12 @@ your content.
                                         </div>
 
 
-                                                        <div class="">
-                                                            .base | <span>Size: To force body copy size</span>
-                                                        </div>
-                                                        <div class="">
-                                                            .medium | <span>Size: To increase text size</span>
-                                                        </div>
-
+                                                    <div class="">
+                                                        .base | <span>Size: To force body copy size</span>
+                                                    </div>
+                                                    <div class="">
+                                                        .medium | <span>Size: To increase text size</span>
+                                                    </div>
 
                                                     <div class="sg-view">
                                                             <div class="sg-modifiers">
@@ -775,8 +741,8 @@ your content.
 
 
 
-                            <div id="rubik-1.2.4" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.2.4" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Text variants</h2>
                                     </header>
@@ -785,7 +751,6 @@ your content.
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -807,8 +772,8 @@ your content.
 
 
 
-                            <div id="rubik-1.2.6" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.2.6" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Blockquotes</h2>
                                     </header>
@@ -820,31 +785,30 @@ your content.
                                         </div>
 
 
-                                                        <div class="">
-                                                            .vip-quote | <span>Size: big size and Slabo font-family</span>
-                                                        </div>
-                                                        <div class="">
-                                                            .quote | <span>Type: with quotation mark</span>
-                                                        </div>
-
+                                                    <div class="">
+                                                        .vip-quote | <span>Size: big size and Slabo font-family</span>
+                                                    </div>
+                                                    <div class="">
+                                                        .quote | <span>Type: with quotation mark</span>
+                                                    </div>
 
                                                     <div class="sg-view">
                                                             <div class="sg-modifiers">
                                                                 <blockquote class="{$modifiers}">
-	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</span>
+	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
 	<cite>Lorem ipsum</cite>
 </blockquote>
                                                             </div>
                                                             <div class="sg-modifiers">
                                                                 <blockquote class="{$modifiers}">
-	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</span>
+	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
 	<cite>Lorem ipsum</cite>
 </blockquote>
                                                             </div>
                                                     </div>
 
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;blockquote class=&quot;{$modifiers}&quot;&gt;
-	&lt;span&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et&lt;/span&gt;
+	&lt;span&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/span&gt;
 	&lt;cite&gt;Lorem ipsum&lt;/cite&gt;
 &lt;/blockquote&gt;</code></pre>
 
@@ -854,8 +818,8 @@ your content.
 
 
 
-                            <div id="rubik-1.2.7" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.2.7" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Lists</h2>
                                     </header>
@@ -868,7 +832,6 @@ your content.
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -903,8 +866,8 @@ your content.
 
 
 
-                            <div id="rubik-1.2.7.1" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.2.7.1" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Lists with bullets</h2>
                                     </header>
@@ -913,7 +876,6 @@ your content.
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -936,8 +898,8 @@ your content.
 
 
 
-                            <div id="rubik-1.2.7.2" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.2.7.2" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Lists with icons</h2>
                                     </header>
@@ -950,17 +912,16 @@ Visit the <a href="#section-1.6.1">icons guide</a>.</p>
                                         </div>
 
 
-
                                                 <div class="sg-view">
                                                     <ul class="list-default list-bullet-icon">
-    <li class="iconfont-CV iconfont-30px iconfont-soft-script">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo </li>
-    <li class="iconfont-Check iconfont-30px iconfont-soft-script">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo</li>
+    <li class="iconfont-CV iconfont-30px iconfont-soft-script">Lorem ipsum dolor sit amet </li>
+    <li class="iconfont-Check iconfont-30px iconfont-soft-script">Lorem ipsum dolor</li>
 </ul>
                                                 </div>
 
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul class=&quot;list-default list-bullet-icon&quot;&gt;
-    &lt;li class=&quot;iconfont-CV iconfont-30px iconfont-soft-script&quot;&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo &lt;/li&gt;
-    &lt;li class=&quot;iconfont-Check iconfont-30px iconfont-soft-script&quot;&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo&lt;/li&gt;
+    &lt;li class=&quot;iconfont-CV iconfont-30px iconfont-soft-script&quot;&gt;Lorem ipsum dolor sit amet &lt;/li&gt;
+    &lt;li class=&quot;iconfont-Check iconfont-30px iconfont-soft-script&quot;&gt;Lorem ipsum dolor&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
 
                                 </div>
@@ -969,8 +930,8 @@ Visit the <a href="#section-1.6.1">icons guide</a>.</p>
 
 
 
-                            <div id="rubik-1.2.7.5" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.2.7.5" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Tag group</h2>
                                     </header>
@@ -979,7 +940,6 @@ Visit the <a href="#section-1.6.1">icons guide</a>.</p>
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -1002,8 +962,8 @@ Visit the <a href="#section-1.6.1">icons guide</a>.</p>
 
 
 
-                            <div id="rubik-1.2.7.5.1" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.2.7.5.1" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Tag divider</h2>
                                     </header>
@@ -1012,7 +972,6 @@ Visit the <a href="#section-1.6.1">icons guide</a>.</p>
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -1033,8 +992,8 @@ Visit the <a href="#section-1.6.1">icons guide</a>.</p>
 
 
 
-                            <div id="rubik-1.2.7.5.2" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.2.7.5.2" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Tag group top</h2>
                                     </header>
@@ -1043,7 +1002,6 @@ Visit the <a href="#section-1.6.1">icons guide</a>.</p>
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -1068,8 +1026,8 @@ Visit the <a href="#section-1.6.1">icons guide</a>.</p>
 
 
 
-                            <div id="rubik-1.2.7.5.4" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.2.7.5.4" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Tag group with ellipsis</h2>
                                     </header>
@@ -1081,17 +1039,16 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
                                         </div>
 
 
-
                                                 <div class="sg-view">
                                                     <ul class="tag-group">
     <li class="tag-divider tag-ellipsis-cols2">
-        <span class="ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+        <span class="ellipsis">Consectetur</span>
     </li>
     <li>Lorem ipsum</li>
 </ul>
 <ul class="tag-group">
     <li class="tag-divider tag-ellipsis-cols3">
-        <span class="ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+        <span class="ellipsis">Lorem ipsum</span>
     </li>
     <li>Lorem ipsum</li>
     <li>Lorem ipsum</li>
@@ -1100,13 +1057,13 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul class=&quot;tag-group&quot;&gt;
     &lt;li class=&quot;tag-divider tag-ellipsis-cols2&quot;&gt;
-        &lt;span class=&quot;ellipsis&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/span&gt;
+        &lt;span class=&quot;ellipsis&quot;&gt;Consectetur&lt;/span&gt;
     &lt;/li&gt;
     &lt;li&gt;Lorem ipsum&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ul class=&quot;tag-group&quot;&gt;
     &lt;li class=&quot;tag-divider tag-ellipsis-cols3&quot;&gt;
-        &lt;span class=&quot;ellipsis&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/span&gt;
+        &lt;span class=&quot;ellipsis&quot;&gt;Lorem ipsum&lt;/span&gt;
     &lt;/li&gt;
     &lt;li&gt;Lorem ipsum&lt;/li&gt;
     &lt;li&gt;Lorem ipsum&lt;/li&gt;
@@ -1118,8 +1075,8 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
 
-                        <div id="rubik-1.3" class="sg-grid sg-block">
-                            <div class="sg-col-12">
+                        <div id="rubik-1.3" class="row sg-block">
+                            <div class="col-12">
                                 <header class="sg-block-header">
                                     <h1>Text colors</h1>
                                 </header>
@@ -1132,8 +1089,8 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
 
-                            <div id="rubik-1.3.1" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.3.1" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Default text color</h2>
                                     </header>
@@ -1142,7 +1099,6 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -1157,8 +1113,8 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
 
-                            <div id="rubik-1.3.2" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.3.2" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Secondary text color</h2>
                                     </header>
@@ -1167,7 +1123,6 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -1182,8 +1137,8 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
 
-                            <div id="rubik-1.3.3" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.3.3" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Details text color</h2>
                                     </header>
@@ -1192,7 +1147,6 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -1207,8 +1161,8 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
 
-                            <div id="rubik-1.3.4" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.3.4" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Disabled text color</h2>
                                     </header>
@@ -1217,7 +1171,6 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -1232,8 +1185,8 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
 
-                            <div id="rubik-1.3.5" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.3.5" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Focus text color</h2>
                                     </header>
@@ -1242,7 +1195,6 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -1257,8 +1209,8 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
 
-                            <div id="rubik-1.3.6" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.3.6" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Contrasted text color</h2>
                                     </header>
@@ -1267,7 +1219,6 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -1288,8 +1239,8 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
 
-                            <div id="rubik-1.3.7" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.3.7" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Highlighted text color</h2>
                                     </header>
@@ -1298,7 +1249,6 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -1334,47 +1284,46 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
 
-                            <div id="rubik-1.5" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.5" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Buttons</h2>
                                     </header>
                                         <div class="sg-block-description">
-                                            <p>Use class <code>.btn</code> to create a button using <code>&lt;a&gt;</code> (outside forms) or <code>&lt;button&gt;</code> (only inside forms), followed by classes listed as <code>{$modifiers}</code>.</p>
-<p>{$modifiers}:</p>
+                                            <p>Use class <code>.btn</code> to create a button using <code>&lt;a&gt;</code> (outside forms) or <code>&lt;button&gt;</code> (only inside forms), followed by classes listed as <code>{{modifier_class}}</code>.</p>
+<p>{{modifier_class}}:</p>
 
 
                                         </div>
 
 
-                                                        <div class="">
-                                                            .btn-default | <span>Applies default action style</span>
-                                                        </div>
-                                                        <div class="">
-                                                            .btn-primary | <span>Applies primary action style</span>
-                                                        </div>
-                                                        <div class="">
-                                                            .btn-primary-contrast | <span>Applies primary action style over dark background</span>
-                                                        </div>
-
+                                                    <div class="">
+                                                        .btn-default | <span>Applies default action style</span>
+                                                    </div>
+                                                    <div class="">
+                                                        .btn-primary | <span>Applies primary action style</span>
+                                                    </div>
+                                                    <div class="">
+                                                        .btn-primary-contrast | <span>Applies primary action style over dark background</span>
+                                                    </div>
 
                                                     <div class="sg-view">
                                                             <div class="sg-modifiers">
-                                                                <a href="#" class="btn {$modifiers}">Link Button</a>
-<button class="btn {$modifiers}">Button Element</button>
+                                                                <a href="#" class="btn btn-default">Link Button</a>
+<button class="btn ">Button Element</button>
                                                             </div>
                                                             <div class="sg-modifiers">
-                                                                <a href="#" class="btn {$modifiers}">Link Button</a>
-<button class="btn {$modifiers}">Button Element</button>
+                                                                <a href="#" class="btn btn-primary">Link Button</a>
+<button class="btn ">Button Element</button>
                                                             </div>
                                                             <div class="sg-modifiers">
-                                                                <a href="#" class="btn {$modifiers}">Link Button</a>
-<button class="btn {$modifiers}">Button Element</button>
+                                                                <a href="#" class="btn btn-primary-contrast">Link Button</a>
+<button class="btn ">Button Element</button>
                                                             </div>
                                                     </div>
 
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn {$modifiers}&quot;&gt;Link Button&lt;/a&gt;
-&lt;button class=&quot;btn {$modifiers}&quot;&gt;Button Element&lt;/button&gt;</code></pre>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn &quot;&gt;Link Button&lt;/a&gt;
+&lt;button class=&quot;btn &quot;&gt;Button Element&lt;/button&gt;</code></pre>
 
                                 </div>
                             </div>
@@ -1382,40 +1331,39 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
 
-                            <div id="rubik-1.5.1" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.5.1" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Buttons sizes</h2>
                                     </header>
                                         <div class="sg-block-description">
-                                            <p>Use classes listed as <code>{$modifiers}</code> to change buttons size.</p>
-<p>{$modifiers}:</p>
+                                            <p>Use classes listed as <code>{{modifier_class}}</code> to change buttons size.</p>
+<p>{{modifier_class}}:</p>
 
 
                                         </div>
 
 
-                                                        <div class="">
-                                                            .btn-medium | <span>Size: Medium</span>
-                                                        </div>
-                                                        <div class="">
-                                                            .btn-large | <span>Size: Large</span>
-                                                        </div>
-
+                                                    <div class="">
+                                                        .btn-medium | <span>Size: Medium</span>
+                                                    </div>
+                                                    <div class="">
+                                                        .btn-large | <span>Size: Large</span>
+                                                    </div>
 
                                                     <div class="sg-view">
                                                             <div class="sg-modifiers">
-                                                                <a href="#" class="btn btn-default {$modifiers}">Link Button</a>
-<button class="btn btn-default {$modifiers}">Button Element</button>
+                                                                <a href="#" class="btn btn-default btn-medium">Link Button</a>
+<button class="btn btn-default btn-medium">Button Element</button>
                                                             </div>
                                                             <div class="sg-modifiers">
-                                                                <a href="#" class="btn btn-default {$modifiers}">Link Button</a>
-<button class="btn btn-default {$modifiers}">Button Element</button>
+                                                                <a href="#" class="btn btn-default btn-large">Link Button</a>
+<button class="btn btn-default btn-large">Button Element</button>
                                                             </div>
                                                     </div>
 
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn btn-default {$modifiers}&quot;&gt;Link Button&lt;/a&gt;
-&lt;button class=&quot;btn btn-default {$modifiers}&quot;&gt;Button Element&lt;/button&gt;</code></pre>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn btn-default &quot;&gt;Link Button&lt;/a&gt;
+&lt;button class=&quot;btn btn-default &quot;&gt;Button Element&lt;/button&gt;</code></pre>
 
                                 </div>
                             </div>
@@ -1423,8 +1371,8 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
 
-                            <div id="rubik-1.5.2" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.5.2" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Buttons with text and icon</h2>
                                     </header>
@@ -1433,7 +1381,6 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -1450,8 +1397,8 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
 
-                            <div id="rubik-1.5.3" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.5.3" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Buttons status</h2>
                                     </header>
@@ -1460,7 +1407,6 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -1477,8 +1423,8 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
 
-                            <div id="rubik-1.5.4" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.5.4" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Button annex</h2>
                                     </header>
@@ -1487,7 +1433,6 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -1504,8 +1449,8 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
 
-                            <div id="rubik-1.5.5" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.5.5" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Buttons display</h2>
                                     </header>
@@ -1514,7 +1459,6 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -1531,8 +1475,8 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
 
-                            <div id="rubik-1.5.6" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.5.6" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Button group</h2>
                                     </header>
@@ -1543,7 +1487,6 @@ Use class <code>.active</code> to highlight the selected button.</p>
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -1578,8 +1521,8 @@ Use class <code>.active</code> to highlight the selected button.</p>
 
 
 
-                            <div id="rubik-1.5.7" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.5.7" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Button group justified</h2>
                                     </header>
@@ -1588,7 +1531,6 @@ Use class <code>.active</code> to highlight the selected button.</p>
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -1623,8 +1565,8 @@ Use class <code>.active</code> to highlight the selected button.</p>
 
 
 
-                            <div id="rubik-1.5.8" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.5.8" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Button group with icon</h2>
                                     </header>
@@ -1633,7 +1575,6 @@ Use class <code>.active</code> to highlight the selected button.</p>
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -1662,8 +1603,8 @@ Use class <code>.active</code> to highlight the selected button.</p>
 
 
 
-                        <div id="rubik-1.6" class="sg-grid sg-block">
-                            <div class="sg-col-12">
+                        <div id="rubik-1.6" class="row sg-block">
+                            <div class="col-12">
                                 <header class="sg-block-header">
                                     <h1>Icons</h1>
                                 </header>
@@ -1737,66 +1678,65 @@ Use the following classes to apply an icon on a tag.</p>
 
 
 
-                            <div id="rubik-1.6.1" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-1.6.1" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Icons size</h2>
                                     </header>
                                         <div class="sg-block-description">
                                             <p>Use these classes to modify the icon size in px.</p>
-<p>{$modifiers}:</p>
+<p>{{modifier_class}}:</p>
 
 
                                         </div>
 
 
-                                                        <div class="">
-                                                            .iconfont-16px | <span>16px</span>
-                                                        </div>
-                                                        <div class="">
-                                                            .iconfont-18px | <span>18px</span>
-                                                        </div>
-                                                        <div class="">
-                                                            .iconfont-22px | <span>22px</span>
-                                                        </div>
-                                                        <div class="">
-                                                            .iconfont-30px | <span>30px</span>
-                                                        </div>
-                                                        <div class="">
-                                                            .iconfont-100px | <span>100px</span>
-                                                        </div>
-
+                                                    <div class="">
+                                                        .iconfont-16px | <span>16px</span>
+                                                    </div>
+                                                    <div class="">
+                                                        .iconfont-18px | <span>18px</span>
+                                                    </div>
+                                                    <div class="">
+                                                        .iconfont-22px | <span>22px</span>
+                                                    </div>
+                                                    <div class="">
+                                                        .iconfont-30px | <span>30px</span>
+                                                    </div>
+                                                    <div class="">
+                                                        .iconfont-100px | <span>100px</span>
+                                                    </div>
 
                                                     <div class="sg-view">
                                                             <div class="sg-modifiers">
                                                                 <ul>
-	<li class="iconfont-Company {$modifiers}"><span class="hide">Icon name</span></li>
+	<li class="iconfont-Company iconfont-16px"><span class="hide">Icon name</span></li>
 </ul>
                                                             </div>
                                                             <div class="sg-modifiers">
                                                                 <ul>
-	<li class="iconfont-Company {$modifiers}"><span class="hide">Icon name</span></li>
+	<li class="iconfont-Company iconfont-18px"><span class="hide">Icon name</span></li>
 </ul>
                                                             </div>
                                                             <div class="sg-modifiers">
                                                                 <ul>
-	<li class="iconfont-Company {$modifiers}"><span class="hide">Icon name</span></li>
+	<li class="iconfont-Company iconfont-22px"><span class="hide">Icon name</span></li>
 </ul>
                                                             </div>
                                                             <div class="sg-modifiers">
                                                                 <ul>
-	<li class="iconfont-Company {$modifiers}"><span class="hide">Icon name</span></li>
+	<li class="iconfont-Company iconfont-30px"><span class="hide">Icon name</span></li>
 </ul>
                                                             </div>
                                                             <div class="sg-modifiers">
                                                                 <ul>
-	<li class="iconfont-Company {$modifiers}"><span class="hide">Icon name</span></li>
+	<li class="iconfont-Company iconfont-100px"><span class="hide">Icon name</span></li>
 </ul>
                                                             </div>
                                                     </div>
 
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul&gt;
-	&lt;li class=&quot;iconfont-Company {$modifiers}&quot;&gt;&lt;span class=&quot;hide&quot;&gt;Icon name&lt;/span&gt;&lt;/li&gt;
+	&lt;li class=&quot;iconfont-Company &quot;&gt;&lt;span class=&quot;hide&quot;&gt;Icon name&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
 
                                 </div>
@@ -1809,7 +1749,7 @@ Use the following classes to apply an icon on a tag.</p>
         </section>
     </div>
 
-        <script src="public/jquery-2.1.0.min.js"></script>
+
         <script src="public/kss.js"></script>
         <script src="public/prettify.js"></script>
         <script src="public/plugins.js"></script>

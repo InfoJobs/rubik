@@ -10,6 +10,9 @@
         <link rel="stylesheet" href="public/kss.css">
         <link rel="stylesheet" href="public/styleguide.css">
         <link rel="stylesheet" href="public/rubik.css">
+
+        <script src="public/jquery-2.1.0.min.js"></script>
+        <script src="public/jquery.modal.js"></script>
     </head>
     <body id="kss-node">
 
@@ -29,7 +32,7 @@
         			<ul id="sg-menu">
                         <li>
                             <a href="section-1.html" class="js-itemMenu">
-                                Common CSS
+                                Common CSS 
                             </a>
 
                             <ul class="sg-submenu">
@@ -38,6 +41,12 @@
                                         <ul class="sg-second-submenu">
                                             <li>
                                                 <a href="section-1.html#rubik-1.1.1" >Grid System</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.1.2" class="disabled js-disabled">Containers </a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.1.3" class="disabled js-disabled">Banners&#x27;s containers </a>
                                             </li>
                                         </ul>
                                     </li>
@@ -49,12 +58,6 @@
                                             </li>
                                             <li>
                                                 <a href="section-1.html#rubik-1.2.2" >Paragraphs</a>
-                                            </li>
-                                            <li>
-                                                <a href="section-1.html#rubik-1.2.2" class="disabled js-disabled">Containers </a>
-                                            </li>
-                                            <li>
-                                                <a href="section-1.html#rubik-1.2.3" class="disabled js-disabled">Banners&#x27;s containers </a>
                                             </li>
                                             <li>
                                                 <a href="section-1.html#rubik-1.2.3" >Text size</a>
@@ -165,15 +168,20 @@
         				</li>
                         <li>
                             <a href="section-2.html" class="js-itemMenu">
-                                Components
+                                Components 
                             </a>
 
                             <ul class="sg-submenu">
                                     <li>
                                         <a href="section-2.html#rubik-2.1" class="js-itemMenu " data-link="true">Board</a>
                                         <ul class="sg-second-submenu">
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-2.html#rubik-2.2" class="js-itemMenu " data-link="true">Notifications</a>
+                                        <ul class="sg-second-submenu">
                                             <li>
-                                                <a href="section-2.html#rubik-2.12.1" >Notifications</a>
+                                                <a href="section-2.html#rubik-2.2.1" >Notifications</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -212,14 +220,6 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="section-2.html#rubik-2.12" class="js-itemMenu " data-link="true">Notifications</a>
-                                        <ul class="sg-second-submenu">
-                                            <li>
-                                                <a href="section-2.html#rubik-2.12.1" >Notifications</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
                                         <a href="section-2.html#rubik-2.16" class="js-itemMenu " data-link="true"></a>
                                         <ul class="sg-second-submenu">
                                         </ul>
@@ -245,17 +245,6 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="section-2.html#rubik-2.27" class="js-itemMenu " data-link="true">Crop image</a>
-                                        <ul class="sg-second-submenu">
-                                            <li>
-                                                <a href="section-2.html#rubik-2.27.1" >crop-image</a>
-                                            </li>
-                                            <li>
-                                                <a href="section-2.html#rubik-2.27.2" >crop-circle</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
                                         <a href="section-2.html#rubik-2.28" class="js-itemMenu " data-link="true">Form rating NPS</a>
                                         <ul class="sg-second-submenu">
                                         </ul>
@@ -266,7 +255,7 @@
         				</li>
                         <li>
                             <a href="section-3.html" class="js-itemMenu">
-                                Javascript Components
+                                Javascript Components 
                             </a>
 
                             <ul class="sg-submenu">
@@ -304,61 +293,110 @@
         <section class="sg-content">
 
             <img src="./public/media/index.jpg" class="sg-img">
-            <h1 class="sg-block">Heading</h1>
-            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
-            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
 
-            <h2 class="sg-block">Heading</h2>
-            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+            <div class="margin-top">
+                <h1>Rubik frontend framework</h1>
 
-            <div class="row-faux">
-                  <div class="col-4">
-                    <div class="col-child panel-canvas">
-                        <img src="./public/media/index.jpg" class="sg-img">
-                        <div class="inner">
-                            <h3>Heading</h3>
-                            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-4">
+                <p>Rubik es el framework interno del portal InfoJobs. Rubik permite utilizar componentes CSS y elementos Javascript para construir las páginas del portal. </p>
+
+                <p>Objetivos de Rubik:</p>
+
+                <ol>
+                    <li>- Estandarizar y reutilizar elementos y componentes.</li>
+                    <li>- Hacer más autónomo al equipo de desarrollo.<li>
+                </ol>
+            </div>
+            <div class="sg-block">
+                <h2>¿En qué se basa Rubik?</h2>
+
+                <p>Rubik se basa en cuatro pilares básicos.</p>
+
+                <div class="row-faux margin-bottom">
+                    <div class="col-4">
                       <div class="col-child panel-canvas">
-                          <img src="./public/media/index.jpg" class="sg-img">
+                          <img src="./public/media/MOBILE-FIRST.jpg" class="sg-img">
                           <div class="inner">
-                              <h3>Heading</h3>
-                              <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+                              <h3>Mobile first</h3>
+                              <p>Mobile first se centra en jerarquizar y estructurar el contenido partiendo de la resolución de una pantalla móvil.</p>
                           </div>
                       </div>
-                  </div>
-                  <div class="col-4">
+                    </div>
+
+                    <div class="col-4">
+                      <div class="col-child panel-canvas">
+                          <img src="./public/media/RESPONSIVE.jpg" class="sg-img">
+                          <div class="inner">
+                              <h3>Responsive design</h3>
+                              <p>Responsive design ofrece una correcta visualización y experiencia en las distintas resoluciones y dispositivos.</p>
+                          </div>
+                      </div>
+                    </div>
+
+                      <div class="col-4">
                         <div class="col-child panel-canvas">
-                            <img src="./public/media/index.jpg" class="sg-img">
+                            <img src="./public/media/OOCSS.jpg" class="sg-img">
                             <div class="inner">
-                                <h3>Heading</h3>
-                                <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+                                <h3>OOCSS</h3>
+                                <p>Oriented Object CSS promueve la creación de componentes reutilizables, escalables y fáciles de mantener, separando los estilos que definen la estructura de los que definen la presentación.</p>
                             </div>
                         </div>
-                  </div>
-            </div>
-
-
-            <div class="sg-grid sg-block">
-                <div class="sg-col-8">
-                    <div class="sg-box-row">
-                       <h2>Heading</h2>
-                       <p>Quid sed cernantur et noster <a href="#">in et nostrud relinqueret</a>.</p>
-                    </div>
+                      </div>
                 </div>
-                <div class="sg-col-4"></div>
-            </div>
 
+                <div class="row-faux">
+                      <div class="col-4">
+                        <div class="col-child panel-canvas">
+                            <img src="./public/media/SASS.jpg" class="sg-img">
+                            <div class="inner">
+                                <h3>Sass</h3>
+                                <p>Syntactically Awesome Stylesheets es un preprocesador CSS que simplifica la escritura y estructura de las hojas de estilo dando como resultado una CSS más limpia y ordenada.</p>
+                            </div>
+                        </div>
+                      </div>
+
+                      <div class="col-4">
+                        <div class="col-child panel-canvas">
+                            <img src="./public/media/JS.jpg" class="sg-img">
+                            <div class="inner">
+                                <h3>Javascript</h3>
+
+                                <p>Javascript nos ayuda a enriquecer la interfaz e implementar comportamientos a nivel de interacción.</p>
+                            </div>
+                        </div>
+                      </div>
+
+                        <div class="col-4">
+                          <div class="col-child panel-canvas">
+                              <img src="./public/media/HTMLSEMANTICO.jpg" class="sg-img">
+                              <div class="inner">
+                                  <h3>HTML semántico</h3>
+
+                                  <p>El HTML semántico se utiliza para reforzar la coherencia entre las etiquetas HTML y el contenido, haciendo un uso correcto de los estándares web.</p>
+                              </div>
+                          </div>
+                        </div>
+
+                </div>
+
+            </div>
+            <!-- <div class="sg-block">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="sg-box-row">
+                           <h2>Heading</h2>
+                           <p>Quid sed cernantur et noster <a href="#">in et nostrud relinqueret</a>.</p>
+                        </div>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+            </div> -->
         </section>
         <section class="sg-content sg-footer">
         © Infojobs 2015
         </section>
     </div>
 
-        <script src="public/jquery-2.1.0.min.js"></script>
+
         <script src="public/kss.js"></script>
         <script src="public/prettify.js"></script>
         <script src="public/plugins.js"></script>

@@ -10,6 +10,9 @@
         <link rel="stylesheet" href="public/kss.css">
         <link rel="stylesheet" href="public/styleguide.css">
         <link rel="stylesheet" href="public/rubik.css">
+
+        <script src="public/jquery-2.1.0.min.js"></script>
+        <script src="public/jquery.modal.js"></script>
     </head>
     <body id="kss-node">
 
@@ -29,7 +32,7 @@
         			<ul id="sg-menu">
                         <li>
                             <a href="section-1.html" class="js-itemMenu">
-                                Common CSS
+                                Common CSS 
                             </a>
 
                             <ul class="sg-submenu">
@@ -38,6 +41,12 @@
                                         <ul class="sg-second-submenu">
                                             <li>
                                                 <a href="section-1.html#rubik-1.1.1" >Grid System</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.1.2" class="disabled js-disabled">Containers </a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.1.3" class="disabled js-disabled">Banners&#x27;s containers </a>
                                             </li>
                                         </ul>
                                     </li>
@@ -49,12 +58,6 @@
                                             </li>
                                             <li>
                                                 <a href="section-1.html#rubik-1.2.2" >Paragraphs</a>
-                                            </li>
-                                            <li>
-                                                <a href="section-1.html#rubik-1.2.2" class="disabled js-disabled">Containers </a>
-                                            </li>
-                                            <li>
-                                                <a href="section-1.html#rubik-1.2.3" class="disabled js-disabled">Banners&#x27;s containers </a>
                                             </li>
                                             <li>
                                                 <a href="section-1.html#rubik-1.2.3" >Text size</a>
@@ -165,15 +168,20 @@
         				</li>
                         <li>
                             <a href="section-2.html" class="js-itemMenu">
-                                Components
+                                Components 
                             </a>
 
                             <ul class="sg-submenu">
                                     <li>
                                         <a href="section-2.html#rubik-2.1" class="js-itemMenu " data-link="true">Board</a>
                                         <ul class="sg-second-submenu">
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-2.html#rubik-2.2" class="js-itemMenu " data-link="true">Notifications</a>
+                                        <ul class="sg-second-submenu">
                                             <li>
-                                                <a href="section-2.html#rubik-2.12.1" >Notifications</a>
+                                                <a href="section-2.html#rubik-2.2.1" >Notifications</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -212,14 +220,6 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="section-2.html#rubik-2.12" class="js-itemMenu " data-link="true">Notifications</a>
-                                        <ul class="sg-second-submenu">
-                                            <li>
-                                                <a href="section-2.html#rubik-2.12.1" >Notifications</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
                                         <a href="section-2.html#rubik-2.16" class="js-itemMenu " data-link="true"></a>
                                         <ul class="sg-second-submenu">
                                         </ul>
@@ -245,17 +245,6 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="section-2.html#rubik-2.27" class="js-itemMenu " data-link="true">Crop image</a>
-                                        <ul class="sg-second-submenu">
-                                            <li>
-                                                <a href="section-2.html#rubik-2.27.1" >crop-image</a>
-                                            </li>
-                                            <li>
-                                                <a href="section-2.html#rubik-2.27.2" >crop-circle</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
                                         <a href="section-2.html#rubik-2.28" class="js-itemMenu " data-link="true">Form rating NPS</a>
                                         <ul class="sg-second-submenu">
                                         </ul>
@@ -266,7 +255,7 @@
         				</li>
                         <li>
                             <a href="section-3.html" class="js-itemMenu">
-                                Javascript Components
+                                Javascript Components 
                             </a>
 
                             <ul class="sg-submenu">
@@ -307,18 +296,11 @@
 
 
 
-                        <div id="rubik-2" class="sg-grid sg-block">
-                            <div class="sg-col-12">
-                                <header class="sg-block-header">
-                                    <h1>Components</h1>
-                                </header>
-                            </div>
-                        </div>
 
 
 
-                            <div id="rubik-2.1" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-2.1" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Board</h2>
                                     </header>
@@ -329,7 +311,6 @@ Use class <code>.claim</code> to format the main title.</p>
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -366,8 +347,116 @@ Use class <code>.claim</code> to format the main title.</p>
 
 
 
-                            <div id="rubik-2.3" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-2.2" class="row sg-block">
+                                    <div class="col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Notifications</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <h3 id="notifications">Notifications</h3>
+<p>Contextual notificitions for confirmation messages.<br>
+The modifier classes are <code>.notification-error</code> for errors, <code>.notification-success</code> for success and <code>.notification-info</code> for information.</p>
+
+
+                                        </div>
+
+
+                                                <div class="sg-view">
+                                                    <!-- Notification error -->
+<div class="notification notification-error notification-dismissable">
+	<button class="btn-close" type="button">×</button>
+	<p class="title">Lorem ipsum dolor sit</p>
+	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
+</div>
+<!-- /Notification error -->
+<div class="container-expanded">
+<!-- Notification success -->
+<div class="notification notification-success notification-dismissable">
+	<button class="btn-close" type="button">×</button>
+	<p class="title">Lorem ipsum dolor sit</p>
+	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
+</div>
+<!-- /Notification success -->
+</div>
+<div class="container-expanded">
+<!-- Notification info -->
+<div class="notification notification-info notification-dismissable">
+	<button class="btn-close" type="button">×</button>
+	<p class="title">Lorem ipsum dolor sit</p>
+	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
+</div>
+<!-- /Notification info -->
+</div>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;!-- Notification error --&gt;
+&lt;div class=&quot;notification notification-error notification-dismissable&quot;&gt;
+	&lt;button class=&quot;btn-close&quot; type=&quot;button&quot;&gt;×&lt;/button&gt;
+	&lt;p class=&quot;title&quot;&gt;Lorem ipsum dolor sit&lt;/p&gt;
+	&lt;p class=&quot;contrast&quot;&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. &lt;a href=&quot;#&quot; class=&quot;contrast link-underline&quot;&gt;Link underline&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- /Notification error --&gt;
+&lt;div class=&quot;container-expanded&quot;&gt;
+&lt;!-- Notification success --&gt;
+&lt;div class=&quot;notification notification-success notification-dismissable&quot;&gt;
+	&lt;button class=&quot;btn-close&quot; type=&quot;button&quot;&gt;×&lt;/button&gt;
+	&lt;p class=&quot;title&quot;&gt;Lorem ipsum dolor sit&lt;/p&gt;
+	&lt;p class=&quot;contrast&quot;&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. &lt;a href=&quot;#&quot; class=&quot;contrast link-underline&quot;&gt;Link underline&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- /Notification success --&gt;
+&lt;/div&gt;
+&lt;div class=&quot;container-expanded&quot;&gt;
+&lt;!-- Notification info --&gt;
+&lt;div class=&quot;notification notification-info notification-dismissable&quot;&gt;
+	&lt;button class=&quot;btn-close&quot; type=&quot;button&quot;&gt;×&lt;/button&gt;
+	&lt;p class=&quot;title&quot;&gt;Lorem ipsum dolor sit&lt;/p&gt;
+	&lt;p class=&quot;contrast&quot;&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. &lt;a href=&quot;#&quot; class=&quot;contrast link-underline&quot;&gt;Link underline&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- /Notification info --&gt;
+&lt;/div&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-2.2.1" class="row sg-block">
+                                    <div class="col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Notifications</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Loremew eqwfwaerg sefg sdfg sdfgsdfg sdfg sdfg sdf gsdf gsdfgsdfgsdfg</p>
+<p>.notification-error -
+.notification-success -
+.notification-info -
+.notification-dismissable -</p>
+
+
+                                        </div>
+
+
+                                                <div class="sg-view">
+                                                    <div class="notification ">
+<p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
+<p class="contrast">Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="contrast link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
+</div>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;notification &quot;&gt;
+&lt;p class=&quot;title&quot;&gt;Actualiza tu navegador para poder usar InfoJobs &lt;/p&gt;
+&lt;p class=&quot;contrast&quot;&gt;Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. &lt;a href=&quot;#&quot; class=&quot;contrast link-underline&quot;&gt;Consulta esta pagina para actualizar tu navegador&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-2.3" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Content logo</h2>
                                     </header>
@@ -377,7 +466,6 @@ Use class <code>.claim</code> to format the main title.</p>
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -436,8 +524,8 @@ Use class <code>.claim</code> to format the main title.</p>
 
 
 
-                        <div id="rubik-2.5" class="sg-grid sg-block">
-                            <div class="sg-col-12">
+                        <div id="rubik-2.5" class="row sg-block">
+                            <div class="col-12">
                                 <header class="sg-block-header">
                                     <h1></h1>
                                 </header>
@@ -446,8 +534,8 @@ Use class <code>.claim</code> to format the main title.</p>
 
 
 
-                        <div id="rubik-2.8" class="sg-grid sg-block">
-                            <div class="sg-col-12">
+                        <div id="rubik-2.8" class="row sg-block">
+                            <div class="col-12">
                                 <header class="sg-block-header">
                                     <h1></h1>
                                 </header>
@@ -456,8 +544,8 @@ Use class <code>.claim</code> to format the main title.</p>
 
 
 
-                            <div id="rubik-2.9" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-2.9" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Pagination</h2>
                                     </header>
@@ -467,7 +555,6 @@ Use class <code>.active</code> for the active button.</p>
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -642,118 +729,8 @@ Use class <code>.active</code> for the active button.</p>
 
 
 
-                            <div id="rubik-2.12" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
-                                    <header class="sg-block-header">
-                                        <h2>Notifications</h2>
-                                    </header>
-                                        <div class="sg-block-description">
-                                            <h3 id="notifications">Notifications</h3>
-<p>Contextual notificitions for confirmation messages.<br>
-The modifier classes are <code>.notification-error</code> for errors, <code>.notification-success</code> for success and <code>.notification-info</code> for information.</p>
-
-
-                                        </div>
-
-
-
-                                                <div class="sg-view">
-                                                    <!-- Notification error -->
-<div class="notification notification-error notification-dismissable">
-	<button class="btn-close" type="button">×</button>
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
-</div>
-<!-- /Notification error -->
-<div class="container-expanded">
-<!-- Notification success -->
-<div class="notification notification-success notification-dismissable">
-	<button class="btn-close" type="button">×</button>
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
-</div>
-<!-- /Notification success -->
-</div>
-<div class="container-expanded">
-<!-- Notification info -->
-<div class="notification notification-info notification-dismissable">
-	<button class="btn-close" type="button">×</button>
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
-</div>
-<!-- /Notification info -->
-</div>
-                                                </div>
-
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;!-- Notification error --&gt;
-&lt;div class=&quot;notification notification-error notification-dismissable&quot;&gt;
-	&lt;button class=&quot;btn-close&quot; type=&quot;button&quot;&gt;×&lt;/button&gt;
-	&lt;p class=&quot;title&quot;&gt;Lorem ipsum dolor sit&lt;/p&gt;
-	&lt;p class=&quot;contrast&quot;&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. &lt;a href=&quot;#&quot; class=&quot;contrast link-underline&quot;&gt;Link underline&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- /Notification error --&gt;
-&lt;div class=&quot;container-expanded&quot;&gt;
-&lt;!-- Notification success --&gt;
-&lt;div class=&quot;notification notification-success notification-dismissable&quot;&gt;
-	&lt;button class=&quot;btn-close&quot; type=&quot;button&quot;&gt;×&lt;/button&gt;
-	&lt;p class=&quot;title&quot;&gt;Lorem ipsum dolor sit&lt;/p&gt;
-	&lt;p class=&quot;contrast&quot;&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. &lt;a href=&quot;#&quot; class=&quot;contrast link-underline&quot;&gt;Link underline&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- /Notification success --&gt;
-&lt;/div&gt;
-&lt;div class=&quot;container-expanded&quot;&gt;
-&lt;!-- Notification info --&gt;
-&lt;div class=&quot;notification notification-info notification-dismissable&quot;&gt;
-	&lt;button class=&quot;btn-close&quot; type=&quot;button&quot;&gt;×&lt;/button&gt;
-	&lt;p class=&quot;title&quot;&gt;Lorem ipsum dolor sit&lt;/p&gt;
-	&lt;p class=&quot;contrast&quot;&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. &lt;a href=&quot;#&quot; class=&quot;contrast link-underline&quot;&gt;Link underline&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- /Notification info --&gt;
-&lt;/div&gt;</code></pre>
-
-                                </div>
-                            </div>
-
-
-
-
-                            <div id="rubik-2.12.1" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
-                                    <header class="sg-block-header">
-                                        <h2>Notifications</h2>
-                                    </header>
-                                        <div class="sg-block-description">
-                                            <p>Loremew eqwfwaerg sefg sdfg sdfgsdfg sdfg sdfg sdf gsdf gsdfgsdfgsdfg</p>
-<p>.notification-error -
-.notification-success -
-.notification-info -
-.notification-dismissable -</p>
-
-
-                                        </div>
-
-
-
-                                                <div class="sg-view">
-                                                    <div class="notification {$modifiers}">
-<p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
-<p class="contrast">Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="contrast link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
-</div>
-                                                </div>
-
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;notification {$modifiers}&quot;&gt;
-&lt;p class=&quot;title&quot;&gt;Actualiza tu navegador para poder usar InfoJobs &lt;/p&gt;
-&lt;p class=&quot;contrast&quot;&gt;Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. &lt;a href=&quot;#&quot; class=&quot;contrast link-underline&quot;&gt;Consulta esta pagina para actualizar tu navegador&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-
-                                </div>
-                            </div>
-
-
-
-
-                        <div id="rubik-2.16" class="sg-grid sg-block">
-                            <div class="sg-col-12">
+                        <div id="rubik-2.16" class="row sg-block">
+                            <div class="col-12">
                                 <header class="sg-block-header">
                                     <h1></h1>
                                 </header>
@@ -762,8 +739,8 @@ The modifier classes are <code>.notification-error</code> for errors, <code>.not
 
 
 
-                            <div id="rubik-2.20" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-2.20" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Thumbnail logo</h2>
                                     </header>
@@ -774,7 +751,6 @@ The combination of classes <code>.slide-up</code> in <code>&lt;figure&gt;</code>
 
 
                                         </div>
-
 
 
                                                 <div class="sg-view">
@@ -815,8 +791,8 @@ The combination of classes <code>.slide-up</code> in <code>&lt;figure&gt;</code>
 
 
 
-                        <div id="rubik-2.22" class="sg-grid sg-block">
-                            <div class="sg-col-12">
+                        <div id="rubik-2.22" class="row sg-block">
+                            <div class="col-12">
                                 <header class="sg-block-header">
                                     <h1>User Feedback</h1>
                                 </header>
@@ -825,8 +801,8 @@ The combination of classes <code>.slide-up</code> in <code>&lt;figure&gt;</code>
 
 
 
-                            <div id="rubik-2.24" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-2.24" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Custom Background</h2>
                                     </header>
@@ -834,16 +810,15 @@ The combination of classes <code>.slide-up</code> in <code>&lt;figure&gt;</code>
                                             <p>To create custom backgrounds use a style attribute in html for the background-image.<br>
 Use class <code>.custom-bg</code> responsive to make the image responsive.
 Use modifier <code>.overlay-60</code> to apply an overlay.</p>
-<p>{$modifiers}:
+<p>{{modifier_class}}:
 .overlay-60        - Overlay in background image</p>
 
 
                                         </div>
 
 
-
                                                 <div class="sg-view">
-                                                    <div class="custom-bg {$modifiers}" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg');">
+                                                    <div class="custom-bg " style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg');">
     <div class="inner">
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
@@ -851,7 +826,7 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
 </div>
                                                 </div>
 
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;custom-bg {$modifiers}&quot; style=&quot;background-image: url(&#x27;http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg&#x27;);&quot;&gt;
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;custom-bg &quot; style=&quot;background-image: url(&#x27;http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg&#x27;);&quot;&gt;
     &lt;div class=&quot;inner&quot;&gt;
         &lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et &lt;/p&gt;
         &lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et &lt;/p&gt;
@@ -864,12 +839,11 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
 
 
 
-                            <div id="rubik-2.25" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-2.25" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>KPI</h2>
                                     </header>
-
 
 
                                                 <div class="sg-view">
@@ -900,58 +874,8 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
 
 
 
-                        <div id="rubik-2.27" class="sg-grid sg-block">
-                            <div class="sg-col-12">
-                                <header class="sg-block-header">
-                                    <h1>Crop image</h1>
-                                </header>
-                            </div>
-                        </div>
-
-
-
-                            <div id="rubik-2.27.1" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
-                                    <header class="sg-block-header">
-                                        <h2>crop-image</h2>
-                                    </header>
-
-
-
-                                                <div class="sg-view">
-                                                    <div class="crop-image" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg')"></div>
-                                                </div>
-
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;crop-image&quot; style=&quot;background-image: url(&#x27;http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg&#x27;)&quot;&gt;&lt;/div&gt;</code></pre>
-
-                                </div>
-                            </div>
-
-
-
-
-                            <div id="rubik-2.27.2" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
-                                    <header class="sg-block-header">
-                                        <h2>crop-circle</h2>
-                                    </header>
-
-
-
-                                                <div class="sg-view">
-                                                    <div class="crop-circle" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg')"></div>
-                                                </div>
-
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;crop-circle&quot; style=&quot;background-image: url(&#x27;http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg&#x27;)&quot;&gt;&lt;/div&gt;</code></pre>
-
-                                </div>
-                            </div>
-
-
-
-
-                        <div id="rubik-2.28" class="sg-grid sg-block">
-                            <div class="sg-col-12">
+                        <div id="rubik-2.28" class="row sg-block">
+                            <div class="col-12">
                                 <header class="sg-block-header">
                                     <h1>Form rating NPS</h1>
                                 </header>
@@ -964,7 +888,7 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
         </section>
     </div>
 
-        <script src="public/jquery-2.1.0.min.js"></script>
+
         <script src="public/kss.js"></script>
         <script src="public/prettify.js"></script>
         <script src="public/plugins.js"></script>
