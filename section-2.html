@@ -10,6 +10,9 @@
         <link rel="stylesheet" href="public/kss.css">
         <link rel="stylesheet" href="public/styleguide.css">
         <link rel="stylesheet" href="public/rubik.css">
+
+        <script src="public/jquery-2.1.0.min.js"></script>
+        <script src="public/jquery.modal.js"></script>
     </head>
     <body id="kss-node">
 
@@ -29,7 +32,7 @@
         			<ul id="sg-menu">
                         <li>
                             <a href="section-1.html" class="js-itemMenu">
-                                Common CSS
+                                Common CSS 
                             </a>
 
                             <ul class="sg-submenu">
@@ -38,6 +41,12 @@
                                         <ul class="sg-second-submenu">
                                             <li>
                                                 <a href="section-1.html#rubik-1.1.1" >Grid System</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.1.2" class="disabled js-disabled">Containers </a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.1.3" class="disabled js-disabled">Banners&#x27;s containers </a>
                                             </li>
                                         </ul>
                                     </li>
@@ -51,19 +60,13 @@
                                                 <a href="section-1.html#rubik-1.2.2" >Paragraphs</a>
                                             </li>
                                             <li>
-                                                <a href="section-1.html#rubik-1.2.2" class="disabled js-disabled">Containers </a>
-                                            </li>
-                                            <li>
-                                                <a href="section-1.html#rubik-1.2.3" class="disabled js-disabled">Banners&#x27;s containers </a>
-                                            </li>
-                                            <li>
                                                 <a href="section-1.html#rubik-1.2.3" >Text size</a>
                                             </li>
                                             <li>
-                                                <a href="section-1.html#rubik-1.2.4" >Text variants</a>
+                                                <a href="section-1.html#rubik-1.2.4" class="disabled js-disabled">Inner containers </a>
                                             </li>
                                             <li>
-                                                <a href="section-1.html#rubik-1.2.4" class="disabled js-disabled">Inner containers </a>
+                                                <a href="section-1.html#rubik-1.2.4" >Text variants</a>
                                             </li>
                                             <li>
                                                 <a href="section-1.html#rubik-1.2.6" >Blockquotes</a>
@@ -165,7 +168,7 @@
         				</li>
                         <li>
                             <a href="section-2.html" class="js-itemMenu">
-                                Components
+                                Components 
                             </a>
 
                             <ul class="sg-submenu">
@@ -266,7 +269,7 @@
         				</li>
                         <li>
                             <a href="section-3.html" class="js-itemMenu">
-                                Javascript Components
+                                Javascript Components 
                             </a>
 
                             <ul class="sg-submenu">
@@ -307,18 +310,11 @@
 
 
 
-                        <div id="rubik-2" class="sg-grid sg-block">
-                            <div class="sg-col-12">
-                                <header class="sg-block-header">
-                                    <h1>Components</h1>
-                                </header>
-                            </div>
-                        </div>
 
 
 
-                            <div id="rubik-2.1" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-2.1" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Board</h2>
                                     </header>
@@ -366,8 +362,8 @@ Use class <code>.claim</code> to format the main title.</p>
 
 
 
-                            <div id="rubik-2.3" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-2.3" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Content logo</h2>
                                     </header>
@@ -436,8 +432,8 @@ Use class <code>.claim</code> to format the main title.</p>
 
 
 
-                        <div id="rubik-2.5" class="sg-grid sg-block">
-                            <div class="sg-col-12">
+                        <div id="rubik-2.5" class="row sg-block">
+                            <div class="col-12">
                                 <header class="sg-block-header">
                                     <h1></h1>
                                 </header>
@@ -446,8 +442,8 @@ Use class <code>.claim</code> to format the main title.</p>
 
 
 
-                        <div id="rubik-2.8" class="sg-grid sg-block">
-                            <div class="sg-col-12">
+                        <div id="rubik-2.8" class="row sg-block">
+                            <div class="col-12">
                                 <header class="sg-block-header">
                                     <h1></h1>
                                 </header>
@@ -456,8 +452,8 @@ Use class <code>.claim</code> to format the main title.</p>
 
 
 
-                            <div id="rubik-2.9" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-2.9" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Pagination</h2>
                                     </header>
@@ -642,8 +638,8 @@ Use class <code>.active</code> for the active button.</p>
 
 
 
-                            <div id="rubik-2.12" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-2.12" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Notifications</h2>
                                     </header>
@@ -717,8 +713,8 @@ The modifier classes are <code>.notification-error</code> for errors, <code>.not
 
 
 
-                            <div id="rubik-2.12.1" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-2.12.1" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Notifications</h2>
                                     </header>
@@ -752,8 +748,8 @@ The modifier classes are <code>.notification-error</code> for errors, <code>.not
 
 
 
-                        <div id="rubik-2.16" class="sg-grid sg-block">
-                            <div class="sg-col-12">
+                        <div id="rubik-2.16" class="row sg-block">
+                            <div class="col-12">
                                 <header class="sg-block-header">
                                     <h1></h1>
                                 </header>
@@ -762,8 +758,8 @@ The modifier classes are <code>.notification-error</code> for errors, <code>.not
 
 
 
-                            <div id="rubik-2.20" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-2.20" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Thumbnail logo</h2>
                                     </header>
@@ -815,8 +811,8 @@ The combination of classes <code>.slide-up</code> in <code>&lt;figure&gt;</code>
 
 
 
-                        <div id="rubik-2.22" class="sg-grid sg-block">
-                            <div class="sg-col-12">
+                        <div id="rubik-2.22" class="row sg-block">
+                            <div class="col-12">
                                 <header class="sg-block-header">
                                     <h1>User Feedback</h1>
                                 </header>
@@ -825,8 +821,8 @@ The combination of classes <code>.slide-up</code> in <code>&lt;figure&gt;</code>
 
 
 
-                            <div id="rubik-2.24" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-2.24" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>Custom Background</h2>
                                     </header>
@@ -864,8 +860,8 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
 
 
 
-                            <div id="rubik-2.25" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-2.25" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>KPI</h2>
                                     </header>
@@ -900,8 +896,8 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
 
 
 
-                        <div id="rubik-2.27" class="sg-grid sg-block">
-                            <div class="sg-col-12">
+                        <div id="rubik-2.27" class="row sg-block">
+                            <div class="col-12">
                                 <header class="sg-block-header">
                                     <h1>Crop image</h1>
                                 </header>
@@ -910,8 +906,8 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
 
 
 
-                            <div id="rubik-2.27.1" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-2.27.1" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>crop-image</h2>
                                     </header>
@@ -930,8 +926,8 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
 
 
 
-                            <div id="rubik-2.27.2" class="sg-grid sg-block">
-                                    <div class="sg-col-12">
+                            <div id="rubik-2.27.2" class="row sg-block">
+                                    <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2>crop-circle</h2>
                                     </header>
@@ -950,8 +946,8 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
 
 
 
-                        <div id="rubik-2.28" class="sg-grid sg-block">
-                            <div class="sg-col-12">
+                        <div id="rubik-2.28" class="row sg-block">
+                            <div class="col-12">
                                 <header class="sg-block-header">
                                     <h1>Form rating NPS</h1>
                                 </header>
@@ -964,7 +960,7 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
         </section>
     </div>
 
-        <script src="public/jquery-2.1.0.min.js"></script>
+
         <script src="public/kss.js"></script>
         <script src="public/prettify.js"></script>
         <script src="public/plugins.js"></script>
