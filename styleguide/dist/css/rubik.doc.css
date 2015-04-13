@@ -219,7 +219,6 @@ Containers #disabled#
 - Use class `.container-expanded` to create a top gap between blocks contents.
 
 
-
 Markup:
 <div class="wrapper casper">
     <div class="container container-expanded">
@@ -499,16 +498,16 @@ Markup:
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-8"><div class="col-child">...</div></div>
 </div>
-<div class="row casper">
+<div class="row">
 	<div class="col-8"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
-<div class="row casper">
+<div class="row">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
-<div class="row casper">
+<div class="row">
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
@@ -10620,6 +10619,9 @@ body#kss-node {
   display: block;
   height: 30px;
   color: #e2e5e6;
+}
+.sg-content .sg-modifiers {
+  margin-bottom: 10px;
 }
 .sg-content pre {
   overflow: scroll;
