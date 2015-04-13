@@ -711,7 +711,7 @@ your content.
                                     </header>
                                         <div class="sg-block-description">
                                             <p>Use class <code>.base</code> or <code>.medium</code> to change the size of the text.</p>
-<p>{$modifiers}:</p>
+<p>{{modifier_class}}:</p>
 
 
                                         </div>
@@ -726,14 +726,14 @@ your content.
 
                                                     <div class="sg-view">
                                                             <div class="sg-modifiers">
-                                                                <p class="{$modifiers}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                                <p class="base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                                             </div>
                                                             <div class="sg-modifiers">
-                                                                <p class="{$modifiers}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                                <p class="medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                                             </div>
                                                     </div>
 
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;p class=&quot;{$modifiers}&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;</code></pre>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;p class=&quot;&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;</code></pre>
 
                                 </div>
                             </div>
@@ -779,7 +779,7 @@ your content.
                                     </header>
                                         <div class="sg-block-description">
                                             <p>Use <code>&lt;blockquote&gt;</code> when the text is quoted from another source. Use <code>&lt;cite&gt;</code> to cite the reference.</p>
-<p>{$modifiers}:</p>
+<p>{{modifier_class}}:</p>
 
 
                                         </div>
@@ -794,20 +794,20 @@ your content.
 
                                                     <div class="sg-view">
                                                             <div class="sg-modifiers">
-                                                                <blockquote class="{$modifiers}">
+                                                                <blockquote class="vip-quote">
 	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
 	<cite>Lorem ipsum</cite>
 </blockquote>
                                                             </div>
                                                             <div class="sg-modifiers">
-                                                                <blockquote class="{$modifiers}">
+                                                                <blockquote class="quote">
 	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
 	<cite>Lorem ipsum</cite>
 </blockquote>
                                                             </div>
                                                     </div>
 
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;blockquote class=&quot;{$modifiers}&quot;&gt;
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;blockquote class=&quot;&quot;&gt;
 	&lt;span&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/span&gt;
 	&lt;cite&gt;Lorem ipsum&lt;/cite&gt;
 &lt;/blockquote&gt;</code></pre>
