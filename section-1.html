@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>InfoJobs Rubik Styleguides</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="public/kss.css">
+        <link rel="stylesheet" href="public/styleguide.css">
+        <link rel="stylesheet" href="public/rubik.css">
+    </head>
+    <body id="kss-node">
+
+    	<nav class="sg-menu">
+            <div class="sg-logo">
+                <a href="./index.html" id="logo"><img src="public/media/logo.png"></a>
+            </div>
+        	<ul>
+        		<li>
+        			<div class="sg-section">Introduction</div>
+        			<ul>
+        				<li><a href="./index.html" id="home">Design principles</a></li>
+        			</ul>
+        		</li>
+        		<li>
+        			<div class="sg-section">Styleguide</div>
+        			<ul id="sg-menu">
+                        <li>
+                            <a href="section-1.html" class="js-itemMenu">
+                                Common CSS
+                            </a>
+
+                            <ul class="sg-submenu">
+                                    <li>
+                                        <a href="section-1.html#rubik-1.1" class="js-itemMenu " data-link="true">Layouts</a>
+                                        <ul class="sg-second-submenu">
+                                            <li>
+                                                <a href="section-1.html#rubik-1.1.1" >Grid System</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-1.html#rubik-1.2" class="js-itemMenu " data-link="true">Text elements</a>
+                                        <ul class="sg-second-submenu">
+                                            <li>
+                                                <a href="section-1.html#rubik-1.2.1" >Headings</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.2.2" >Paragraphs</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.2.2" class="disabled js-disabled">Containers </a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.2.3" class="disabled js-disabled">Banners&#x27;s containers </a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.2.3" >Text size</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.2.4" >Text variants</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.2.4" class="disabled js-disabled">Inner containers </a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.2.6" >Blockquotes</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.2.7" >Lists</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-1.html#rubik-1.3" class="js-itemMenu " data-link="true">Text colors</a>
+                                        <ul class="sg-second-submenu">
+                                            <li>
+                                                <a href="section-1.html#rubik-1.3.1" >Default text color</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.3.2" >Secondary text color</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.3.3" >Details text color</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.3.4" >Disabled text color</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.3.5" >Focus text color</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.3.6" >Contrasted text color</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.3.7" >Highlighted text color</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-1.html#rubik-1.4" class="js-itemMenu disabled js-disabled" data-link="true">Forms structure </a>
+                                        <ul class="sg-second-submenu">
+                                            <li>
+                                                <a href="section-1.html#rubik-1.4.1" class="disabled js-disabled">Radio buttons / Checkbox </a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.4.2" class="disabled js-disabled">Radio buttons&#x27;s inline </a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.4.3" class="disabled js-disabled">Selects </a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.4.4" class="disabled js-disabled">Input group </a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.4.5" class="disabled js-disabled">Fieldset title </a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.4.7" class="disabled js-disabled">Field error </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-1.html#rubik-1.5" class="js-itemMenu " data-link="true">Buttons</a>
+                                        <ul class="sg-second-submenu">
+                                            <li>
+                                                <a href="section-1.html#rubik-1.5.1" >Buttons sizes</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.5.2" >Buttons with text and icon</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.5.3" >Buttons status</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.5.4" >Button annex</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.5.5" >Buttons display</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.5.6" >Button group</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.5.7" >Button group justified</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.5.8" >Button group with icon</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-1.html#rubik-1.6" class="js-itemMenu " data-link="true">Icons</a>
+                                        <ul class="sg-second-submenu">
+                                            <li>
+                                                <a href="section-1.html#rubik-1.6.1" >Icons size</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </ul>
+
+
+        				</li>
+                        <li>
+                            <a href="section-2.html" class="js-itemMenu">
+                                Components
+                            </a>
+
+                            <ul class="sg-submenu">
+                                    <li>
+                                        <a href="section-2.html#rubik-2.1" class="js-itemMenu " data-link="true">Board</a>
+                                        <ul class="sg-second-submenu">
+                                            <li>
+                                                <a href="section-2.html#rubik-2.12.1" >Notifications</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-2.html#rubik-2.3" class="js-itemMenu " data-link="true">Content logo</a>
+                                        <ul class="sg-second-submenu">
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-2.html#rubik-2.4" class="js-itemMenu disabled js-disabled" data-link="true">Filters </a>
+                                        <ul class="sg-second-submenu">
+                                            <li>
+                                                <a href="section-2.html#rubik-2.4.1" class="disabled js-disabled">Filter keyword </a>
+                                            </li>
+                                            <li>
+                                                <a href="section-2.html#rubik-2.4.2" class="disabled js-disabled">Slider one range </a>
+                                            </li>
+                                            <li>
+                                                <a href="section-2.html#rubik-2.4.3" class="disabled js-disabled">Slider range group </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-2.html#rubik-2.5" class="js-itemMenu " data-link="true"></a>
+                                        <ul class="sg-second-submenu">
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-2.html#rubik-2.8" class="js-itemMenu " data-link="true"></a>
+                                        <ul class="sg-second-submenu">
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-2.html#rubik-2.9" class="js-itemMenu " data-link="true">Pagination</a>
+                                        <ul class="sg-second-submenu">
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-2.html#rubik-2.12" class="js-itemMenu " data-link="true">Notifications</a>
+                                        <ul class="sg-second-submenu">
+                                            <li>
+                                                <a href="section-2.html#rubik-2.12.1" >Notifications</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-2.html#rubik-2.16" class="js-itemMenu " data-link="true"></a>
+                                        <ul class="sg-second-submenu">
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-2.html#rubik-2.20" class="js-itemMenu " data-link="true">Thumbnail logo</a>
+                                        <ul class="sg-second-submenu">
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-2.html#rubik-2.22" class="js-itemMenu " data-link="true">User Feedback</a>
+                                        <ul class="sg-second-submenu">
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-2.html#rubik-2.24" class="js-itemMenu " data-link="true">Custom Background</a>
+                                        <ul class="sg-second-submenu">
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-2.html#rubik-2.25" class="js-itemMenu " data-link="true">KPI</a>
+                                        <ul class="sg-second-submenu">
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-2.html#rubik-2.27" class="js-itemMenu " data-link="true">Crop image</a>
+                                        <ul class="sg-second-submenu">
+                                            <li>
+                                                <a href="section-2.html#rubik-2.27.1" >crop-image</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-2.html#rubik-2.27.2" >crop-circle</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="section-2.html#rubik-2.28" class="js-itemMenu " data-link="true">Form rating NPS</a>
+                                        <ul class="sg-second-submenu">
+                                        </ul>
+                                    </li>
+                            </ul>
+
+
+        				</li>
+                        <li>
+                            <a href="section-3.html" class="js-itemMenu">
+                                Javascript Components
+                            </a>
+
+                            <ul class="sg-submenu">
+                                    <li>
+                                        <a href="section-3.html#rubik-3.1" class="js-itemMenu " data-link="true">Modal</a>
+                                        <ul class="sg-second-submenu">
+                                            <li>
+                                                <a href="section-3.html#rubik-3.1.1" >Modal size</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-3.html#rubik-3.1.2" >Modal header</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-3.html#rubik-3.1.3" >Modal content</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </ul>
+
+
+        				</li>
+        			</ul>
+        		</li>
+        	</ul>
+        </nav>
+        <div class="sg-overlay"></div>
+
+        <header class="sg-header">
+            <a id="burgerMenu" class="iconfont-BurguerMenu"></a>
+            <h1>
+                
+            </h1>
+        </header>
+        <div class="sg-wrapper">
+        <section class="sg-content">
+
+
+
+
+
+                        <div id="rubik-1" class="sg-grid sg-block">
+                            <div class="sg-col-12">
+                                <header class="sg-block-header">
+                                    <h1>Common CSS</h1>
+                                </header>
+                            </div>
+                        </div>
+
+
+
+                        <div id="rubik-1.1" class="sg-grid sg-block">
+                            <div class="sg-col-12">
+                                <header class="sg-block-header">
+                                    <h1>Layouts</h1>
+                                </header>
+                                    <div class="sg-block-description">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.</p>
+
+                                    </div>
+                            </div>
+                        </div>
+
+
+
+                            <div id="rubik-1.1.1" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Grid System</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p><strong>We are using a mobile first 12 column fluid responsive grid system that helps you to build solid multi-device layouts.</strong></p>
+<p>Grid system is used for creating page layout through a series of rows and columns that house
+your content.
+<br></p>
+<div class="sg-guide">
+  <div class="row-faux clearfix">
+      <div class="col-1">
+          <div class="col-child">.col-1 (more content)</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+  </div>
+</div>
+
+<p><br></p>
+<ul>
+<li>Use class <code>.row</code> to create a horizontal group of columns.</li>
+<li>Then nest as many containers <code>&lt;div class=&quot;col-[number]&quot;&gt;</code> as columns are necessary to build the layout</li>
+<li>Include the container <code>&lt;div class=&quot;col-child&quot;&gt;</code> as immediate children of <code>.col-[number]</code>.
+<br><div class="sg-view">
+  <div class="sg-guide">
+        <!-- ROW 4/8-->
+        <div class="row clearfix">
+            <div class="col-4">
+                <div class="col-child">.col-4</div>
+            </div>
+            <div class="col-8">
+                <div class="col-child">.col-8</div>
+            </div>
+        </div>
+        <!--/ROW 4/8-->
+        <!-- ROW 8/4-->
+        <div class="row clearfix">
+            <div class="col-8">
+                <div class="col-child">.col-8</div>
+            </div>
+            <div class="col-4">
+                <div class="col-child">.col-4</div>
+            </div>
+        </div>
+        <!--/ROW 8/4-->
+        <!-- ROW 4/4/4-->
+        <div class="row clearfix">
+            <div class="col-4">
+                <div class="col-child">.col-4</div>
+            </div>
+            <div class="col-4">
+                <div class="col-child">.col-4</div>
+            </div>
+            <div class="col-4">
+                <div class="col-child">.col-4</div>
+            </div>
+        </div>
+        <!--/ROW 4/4/4-->
+        <!-- ROW 3/3/3-->
+        <div class="row clearfix">
+            <div class="col-3">
+                <div class="col-child">.col-3</div>
+            </div>
+            <div class="col-3">
+                <div class="col-child">.col-3</div>
+            </div>
+            <div class="col-3">
+                <div class="col-child">.col-3</div>
+            </div>
+            <div class="col-3">
+                <div class="col-child">.col-3</div>
+            </div>
+        </div>
+        <!--/ROW 4/4/4-->
+    </div>
+</div></li>
+</ul>
+
+
+                                        </div>
+
+
+
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col-4&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-8&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col-8&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-4&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col-4&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-4&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-4&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col-3&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-3&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-3&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-3&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.1.1.2" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Medium devices</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Therefore, applying at any column the class <code>.col-6-medium</code> content will adjust to 50% width or <code>.col-12-medium</code> 100% width defined for medium devices.</p>
+<div class="sg-view">
+    <div class="sg-guide">
+          <!-- ROW tablet 50%-->
+          <div class="row clearfix">
+              <div class="col-8 col-6-medium">
+                  <div class="col-child">.col-8 .col-6-medium</div>
+              </div>
+              <div class="col-4 col-6-medium">
+                  <div class="col-child">.col-4 .col-6-medium</div>
+              </div>
+          </div>
+          <!--/ROW tablet 50%-->
+          <!-- ROW tablet 100%-->
+          <div class="row clearfix">
+              <div class="col-8 col-12-medium">
+                  <div class="col-child">.col-8 .col-12-medium</div>
+              </div>
+              <div class="col-4 col-12-medium">
+                  <div class="col-child">.col-4 .col-12-medium</div>
+              </div>
+          </div>
+          <!--/ROW tablet 100%-->
+      </div>
+  </div>
+
+                                        </div>
+
+
+
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col-8 col-6-medium&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-4 col-6-medium&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col-8 col-12-medium&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-4 col-12-medium&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.1.1.3" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Equal height columns</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.row-faux</code> instead of <code>.row</code> to build an equal height columns structure.</p>
+<div class="sg-view">
+    <div class="sg-guide">
+          <!--ROW-FAUX-->
+          <div class="row-faux clearfix">
+              <div class="col-1">
+                  <div class="col-child">.col-1 (more content)</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+          </div>
+          <!--/ROW-FAUX-->
+      </div>
+  </div>
+
+                                        </div>
+
+
+
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;row-faux&quot;&gt;
+	&lt;div class=&quot;col-4&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-4&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-4&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                        <div id="rubik-1.2" class="sg-grid sg-block">
+                            <div class="sg-col-12">
+                                <header class="sg-block-header">
+                                    <h1>Text elements</h1>
+                                </header>
+                                    <div class="sg-block-description">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.</p>
+
+                                    </div>
+                            </div>
+                        </div>
+
+
+
+                            <div id="rubik-1.2.1" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Headings</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Definition of differents levels of titles: <br>
+<code>&lt;h1&gt;</code> for level 1,<br>
+<code>&lt;h2&gt;</code> for level 2,<br>
+<code>&lt;h3&gt;</code> for level 3.<br>
+<code>&lt;h1&gt;</code> defines the most important heading. Only one <code>&lt;h1&gt;</code> per page or <code>&lt;section&gt;</code>.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <h1>Heading level 1</h1>
+<h2>Heading level 2</h2>
+<h3>Heading level 3</h3>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;h1&gt;Heading level 1&lt;/h1&gt;
+&lt;h2&gt;Heading level 2&lt;/h2&gt;
+&lt;h3&gt;Heading level 3&lt;/h3&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.2.1.1" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Heading-addons</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.heading-addons</code> to reset margin defined for generic <code>&lt;h1&gt;</code>.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <div class="heading-addons">
+	<h1>Header Level 1</h1>
+	<p>Lorem ipsum</p>
+</div>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;heading-addons&quot;&gt;
+	&lt;h1&gt;Header Level 1&lt;/h1&gt;
+	&lt;p&gt;Lorem ipsum&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.2.1.2" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Heading mega</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.heading-mega</code> for a big size heading.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <h1 class="heading-mega">Heading mega</h1>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;h1 class=&quot;heading-mega&quot;&gt;Heading mega&lt;/h1&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.2.2" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Paragraphs</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use tag <code>&lt;p&gt;</code> for a basic paragraph. Don&#39;t use <code>&lt;span&gt;</code> or <code>&lt;div&gt;</code> as a text tag, it&#39;s not semantic.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <div class="wrapper">
+    <div class="container container-expanded">
+        ...
+    </div>
+</div>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;wrapper&quot;&gt;
+    &lt;div class=&quot;container container-expanded&quot;&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+                            <div id="rubik-1.2.3" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Text size</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.base</code> or <code>.medium</code> to change the size of the text.</p>
+<p>{$modifiers}:</p>
+
+
+                                        </div>
+
+
+                                                        <div class="">
+                                                            .base | <span>Size: To force body copy size</span>
+                                                        </div>
+                                                        <div class="">
+                                                            .medium | <span>Size: To increase text size</span>
+                                                        </div>
+
+
+                                                    <div class="sg-view">
+                                                            <div class="sg-modifiers">
+                                                                <p class="{$modifiers}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                            </div>
+                                                            <div class="sg-modifiers">
+                                                                <p class="{$modifiers}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                            </div>
+                                                    </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;p class=&quot;{$modifiers}&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.2.4" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Text variants</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.bold</code> to bold the content. Use only on the following tags: <code>&lt;p&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;span&gt;</code>, <code>dt</code> or <code>dd</code>.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <div class="inner">
+    ...
+</div>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;inner&quot;&gt;
+    ...
+&lt;/div&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+                            <div id="rubik-1.2.6" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Blockquotes</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use <code>&lt;blockquote&gt;</code> when the text is quoted from another source. Use <code>&lt;cite&gt;</code> to cite the reference.</p>
+<p>{$modifiers}:</p>
+
+
+                                        </div>
+
+
+                                                        <div class="">
+                                                            .vip-quote | <span>Size: big size and Slabo font-family</span>
+                                                        </div>
+                                                        <div class="">
+                                                            .quote | <span>Type: with quotation mark</span>
+                                                        </div>
+
+
+                                                    <div class="sg-view">
+                                                            <div class="sg-modifiers">
+                                                                <blockquote class="{$modifiers}">
+	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</span>
+	<cite>Lorem ipsum</cite>
+</blockquote>
+                                                            </div>
+                                                            <div class="sg-modifiers">
+                                                                <blockquote class="{$modifiers}">
+	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</span>
+	<cite>Lorem ipsum</cite>
+</blockquote>
+                                                            </div>
+                                                    </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;blockquote class=&quot;{$modifiers}&quot;&gt;
+	&lt;span&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et&lt;/span&gt;
+	&lt;cite&gt;Lorem ipsum&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.2.7" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Lists</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use the following tags to create semantic lists:
+<code>&lt;ul&gt;</code> for unordered lists,<br>
+<code>&lt;ol&gt;</code> for ordered lists,<br>
+<code>&lt;dl&gt;</code> for definition lists.<br></p>
+<p>Use class <code>.list-default</code> for a basic list without decoration.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <ul class="list-default">
+    <li>Salario no disponible</li>
+    <li>Experiencia minima: no requerida</li>
+    <li>Tipo de oferta: de duracion determinada, jornada completa</li>
+</ul>
+<dl class="list-default">
+    <dt>Salario:</dt>
+    <dd>No disponible</dd>
+    <dt>Tipo de oferta:</dt>
+    <dd>De duracion determinada, jornada completa</dd>
+</dl>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul class=&quot;list-default&quot;&gt;
+    &lt;li&gt;Salario no disponible&lt;/li&gt;
+    &lt;li&gt;Experiencia minima: no requerida&lt;/li&gt;
+    &lt;li&gt;Tipo de oferta: de duracion determinada, jornada completa&lt;/li&gt;
+&lt;/ul&gt;
+&lt;dl class=&quot;list-default&quot;&gt;
+    &lt;dt&gt;Salario:&lt;/dt&gt;
+    &lt;dd&gt;No disponible&lt;/dd&gt;
+    &lt;dt&gt;Tipo de oferta:&lt;/dt&gt;
+    &lt;dd&gt;De duracion determinada, jornada completa&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.2.7.1" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Lists with bullets</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.list-bullet-default</code> to add default bullets to the list.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <ul class="list-default list-bullet-default">
+    <li>Salario no disponible</li>
+    <li>Experiencia minima: no requerida</li>
+    <li>Tipo de oferta: de duracion determinada, jornada completa</li>
+</ul>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul class=&quot;list-default list-bullet-default&quot;&gt;
+    &lt;li&gt;Salario no disponible&lt;/li&gt;
+    &lt;li&gt;Experiencia minima: no requerida&lt;/li&gt;
+    &lt;li&gt;Tipo de oferta: de duracion determinada, jornada completa&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.2.7.2" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Lists with icons</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.list-default</code> and <code>.list-bullet-icon</code> to show icons in a list.<br>
+Use class <code>.iconfont-[name]</code> for icon type and <code>.iconfont-[size]</code> for icon size.
+Visit the <a href="#section-1.6.1">icons guide</a>.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <ul class="list-default list-bullet-icon">
+    <li class="iconfont-CV iconfont-30px iconfont-soft-script">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo </li>
+    <li class="iconfont-Check iconfont-30px iconfont-soft-script">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo</li>
+</ul>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul class=&quot;list-default list-bullet-icon&quot;&gt;
+    &lt;li class=&quot;iconfont-CV iconfont-30px iconfont-soft-script&quot;&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo &lt;/li&gt;
+    &lt;li class=&quot;iconfont-Check iconfont-30px iconfont-soft-script&quot;&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.2.7.5" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Tag group</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.tag-group</code> to display list items in the same line.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <ul class="tag-group">
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum dolor</li>
+</ul>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul class=&quot;tag-group&quot;&gt;
+    &lt;li&gt;Lorem ipsum dolor sit amet&lt;/li&gt;
+    &lt;li&gt;Lorem ipsum&lt;/li&gt;
+    &lt;li&gt;Lorem ipsum dolor&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.2.7.5.1" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Tag divider</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.tag-divider</code> to divide tag group items, showing them in the same line with a divider in between.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <ul class="tag-group">
+    <li class="tag-divider">Lorem ipsum dolor</li>
+    <li class>Lorem ipsum</li>
+</ul>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul class=&quot;tag-group&quot;&gt;
+    &lt;li class=&quot;tag-divider&quot;&gt;Lorem ipsum dolor&lt;/li&gt;
+    &lt;li class&gt;Lorem ipsum&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.2.7.5.2" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Tag group top</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.tag-group-top</code> to add a gap between this tag and the following.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <ul class="tag-group tag-group-top">
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
+</ul>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul class=&quot;tag-group tag-group-top&quot;&gt;
+    &lt;li&gt;Lorem ipsum&lt;/li&gt;
+    &lt;li&gt;Lorem ipsum&lt;/li&gt;
+    &lt;li&gt;Lorem ipsum&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.2.7.5.4" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Tag group with ellipsis</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.ellipsis</code> in <code>&lt;span&gt;</code> to generate ellipsis in the text of an item of the tag group.
+Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> in <code>&lt;li&gt;</code> when the tag group contains two or three items.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <ul class="tag-group">
+    <li class="tag-divider tag-ellipsis-cols2">
+        <span class="ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+    </li>
+    <li>Lorem ipsum</li>
+</ul>
+<ul class="tag-group">
+    <li class="tag-divider tag-ellipsis-cols3">
+        <span class="ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+    </li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
+</ul>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul class=&quot;tag-group&quot;&gt;
+    &lt;li class=&quot;tag-divider tag-ellipsis-cols2&quot;&gt;
+        &lt;span class=&quot;ellipsis&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Lorem ipsum&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class=&quot;tag-group&quot;&gt;
+    &lt;li class=&quot;tag-divider tag-ellipsis-cols3&quot;&gt;
+        &lt;span class=&quot;ellipsis&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Lorem ipsum&lt;/li&gt;
+    &lt;li&gt;Lorem ipsum&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                        <div id="rubik-1.3" class="sg-grid sg-block">
+                            <div class="sg-col-12">
+                                <header class="sg-block-header">
+                                    <h1>Text colors</h1>
+                                </header>
+                                    <div class="sg-block-description">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.</p>
+
+                                    </div>
+                            </div>
+                        </div>
+
+
+
+                            <div id="rubik-1.3.1" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Default text color</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.script</code> to force text color as the default text color</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <p>Lorem ipsum dolor sit amet, <a href="#" class="script">consectetur adipiscing</a> elit.</p>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;p&gt;Lorem ipsum dolor sit amet, &lt;a href=&quot;#&quot; class=&quot;script&quot;&gt;consectetur adipiscing&lt;/a&gt; elit.&lt;/p&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.3.2" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Secondary text color</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.soft-script</code> to force a text color as a secondary text</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <p>Lorem ipsum dolor sit amet, <a href="#" class="soft-script">consectetur adipiscing</a> elit.</p>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;p&gt;Lorem ipsum dolor sit amet, &lt;a href=&quot;#&quot; class=&quot;soft-script&quot;&gt;consectetur adipiscing&lt;/a&gt; elit.&lt;/p&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.3.3" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Details text color</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.alternative</code> to mark text that contains details information</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <p class="alternative">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;p class=&quot;alternative&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.3.4" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Disabled text color</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.disabled</code> to mark a text option as disabled</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <p>Lorem ipsum dolor sit amet, <a href="#" class="disabled">consectetur adipiscing elit</a>.</p>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;p&gt;Lorem ipsum dolor sit amet, &lt;a href=&quot;#&quot; class=&quot;disabled&quot;&gt;consectetur adipiscing elit&lt;/a&gt;.&lt;/p&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.3.5" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Focus text color</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.marked</code> to focus attention in it</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <p>Lorem ipsum <span class="marked">6m ago</p>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;p&gt;Lorem ipsum &lt;span class=&quot;marked&quot;&gt;6m ago&lt;/p&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.3.6" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Contrasted text color</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.contrast</code> to define a text over dark background color</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <div class="inner panel-info">
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	<a href="#" class="contrast">Curabitur varius</a>
+</div>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;inner panel-info&quot;&gt;
+	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+	&lt;a href=&quot;#&quot; class=&quot;contrast&quot;&gt;Curabitur varius&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.3.7" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Highlighted text color</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.highlight</code> to highlight words as a result of a search</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing <span class="highlight">elit</span>.</p>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing &lt;span class=&quot;highlight&quot;&gt;elit&lt;/span&gt;.&lt;/p&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div id="rubik-1.5" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Buttons</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.btn</code> to create a button using <code>&lt;a&gt;</code> (outside forms) or <code>&lt;button&gt;</code> (only inside forms), followed by classes listed as <code>{$modifiers}</code>.</p>
+<p>{$modifiers}:</p>
+
+
+                                        </div>
+
+
+                                                        <div class="">
+                                                            .btn-default | <span>Applies default action style</span>
+                                                        </div>
+                                                        <div class="">
+                                                            .btn-primary | <span>Applies primary action style</span>
+                                                        </div>
+                                                        <div class="">
+                                                            .btn-primary-contrast | <span>Applies primary action style over dark background</span>
+                                                        </div>
+
+
+                                                    <div class="sg-view">
+                                                            <div class="sg-modifiers">
+                                                                <a href="#" class="btn {$modifiers}">Link Button</a>
+<button class="btn {$modifiers}">Button Element</button>
+                                                            </div>
+                                                            <div class="sg-modifiers">
+                                                                <a href="#" class="btn {$modifiers}">Link Button</a>
+<button class="btn {$modifiers}">Button Element</button>
+                                                            </div>
+                                                            <div class="sg-modifiers">
+                                                                <a href="#" class="btn {$modifiers}">Link Button</a>
+<button class="btn {$modifiers}">Button Element</button>
+                                                            </div>
+                                                    </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn {$modifiers}&quot;&gt;Link Button&lt;/a&gt;
+&lt;button class=&quot;btn {$modifiers}&quot;&gt;Button Element&lt;/button&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.5.1" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Buttons sizes</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use classes listed as <code>{$modifiers}</code> to change buttons size.</p>
+<p>{$modifiers}:</p>
+
+
+                                        </div>
+
+
+                                                        <div class="">
+                                                            .btn-medium | <span>Size: Medium</span>
+                                                        </div>
+                                                        <div class="">
+                                                            .btn-large | <span>Size: Large</span>
+                                                        </div>
+
+
+                                                    <div class="sg-view">
+                                                            <div class="sg-modifiers">
+                                                                <a href="#" class="btn btn-default {$modifiers}">Link Button</a>
+<button class="btn btn-default {$modifiers}">Button Element</button>
+                                                            </div>
+                                                            <div class="sg-modifiers">
+                                                                <a href="#" class="btn btn-default {$modifiers}">Link Button</a>
+<button class="btn btn-default {$modifiers}">Button Element</button>
+                                                            </div>
+                                                    </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn btn-default {$modifiers}&quot;&gt;Link Button&lt;/a&gt;
+&lt;button class=&quot;btn btn-default {$modifiers}&quot;&gt;Button Element&lt;/button&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.5.2" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Buttons with text and icon</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.iconfont-[name]</code> to display the needed icon.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <a href="#" class="btn btn-primary btn-medium iconfont-Facebook">Link Button</a>
+<button class="btn btn-primary btn-medium iconfont-Facebook">Button Element</button>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn btn-primary btn-medium iconfont-Facebook&quot;&gt;Link Button&lt;/a&gt;
+&lt;button class=&quot;btn btn-primary btn-medium iconfont-Facebook&quot;&gt;Button Element&lt;/button&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.5.3" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Buttons status</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.btn-disabled</code> to show button as disabled.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <a href="#" class="btn btn-default btn-medium btn-disabled">Link Button</a>
+<button class="btn btn-default btn-medium btn-disabled">Button Element</button>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn btn-default btn-medium btn-disabled&quot;&gt;Link Button&lt;/a&gt;
+&lt;button class=&quot;btn btn-default btn-medium btn-disabled&quot;&gt;Button Element&lt;/button&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.5.4" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Button annex</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.btn-annex</code> to add an element adjacent to the button.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <a href="#" class="btn btn-primary btn-medium btn-annex">Button</a>
+<a href="#" class="link">Link</a>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn btn-primary btn-medium btn-annex&quot;&gt;Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link&quot;&gt;Link&lt;/a&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.5.5" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Buttons display</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.btn-form-inline</code> to display a full width button.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <a href="#" class="btn btn-primary btn-form-inline">Button Element</a>
+<button class="btn btn-default btn-form-inline">Button Element</button>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn btn-primary btn-form-inline&quot;&gt;Button Element&lt;/a&gt;
+&lt;button class=&quot;btn btn-default btn-form-inline&quot;&gt;Button Element&lt;/button&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.5.6" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Button group</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.btn-group</code> to create a button group structure.
+Use class <code>.btn-default</code> for buttons inside buttons group.
+Use class <code>.active</code> to highlight the selected button.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <div class="btn-group">
+    <div class="active">
+        <button class="btn btn-default" type="button">year</button>
+    </div>
+    <div>
+        <button class="btn btn-default" type="button">month</button>
+    </div>
+    <div>
+        <button class="btn btn-default" type="button">hour</button>
+    </div>
+</div>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;btn-group&quot;&gt;
+    &lt;div class=&quot;active&quot;&gt;
+        &lt;button class=&quot;btn btn-default&quot; type=&quot;button&quot;&gt;year&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;button class=&quot;btn btn-default&quot; type=&quot;button&quot;&gt;month&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;button class=&quot;btn btn-default&quot; type=&quot;button&quot;&gt;hour&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.5.7" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Button group justified</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.btn-group-justified</code> to display <code>.btn-group</code> full width buttons.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <div class="btn-group btn-group-justified">
+    <div class="active">
+        <button class="btn btn-default" type="button">year</button>
+    </div>
+    <div>
+        <button class="btn btn-default" type="button">month</button>
+    </div>
+    <div>
+        <button class="btn btn-default" type="button">hour</button>
+    </div>
+</div>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;btn-group btn-group-justified&quot;&gt;
+    &lt;div class=&quot;active&quot;&gt;
+        &lt;button class=&quot;btn btn-default&quot; type=&quot;button&quot;&gt;year&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;button class=&quot;btn btn-default&quot; type=&quot;button&quot;&gt;month&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;button class=&quot;btn btn-default&quot; type=&quot;button&quot;&gt;hour&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.5.8" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Button group with icon</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.iconfont-[name]</code> to display the needed icon.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <div class="btn-group">
+    <div>
+        <a class="btn btn-default iconfont-Facebook" href="#" title="Comparte esta oferta en Facebook"></a>
+    </div>
+    <div>
+        <a class="btn btn-default iconfont-Twitter" href="#" title="Tweetea esta oferta"></a>
+    </div>
+</div>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;btn-group&quot;&gt;
+    &lt;div&gt;
+        &lt;a class=&quot;btn btn-default iconfont-Facebook&quot; href=&quot;#&quot; title=&quot;Comparte esta oferta en Facebook&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;a class=&quot;btn btn-default iconfont-Twitter&quot; href=&quot;#&quot; title=&quot;Tweetea esta oferta&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                        <div id="rubik-1.6" class="sg-grid sg-block">
+                            <div class="sg-col-12">
+                                <header class="sg-block-header">
+                                    <h1>Icons</h1>
+                                </header>
+                                    <div class="sg-block-description">
+                                        <p>Icons are generated as fonts. Color and size can be modified as texts.
+Use the following classes to apply an icon on a tag.</p>
+<div class="sg-guide sg-icons">
+    <ul class="list-default">
+        <li class="iconfont-ArrowDown">iconfont-ArrowDown</li>
+        <li class="iconfont-ArrowLeft">iconfont-ArrowLeft</li>
+        <li class="iconfont-ArrowUp">iconfont-ArrowUp</li>
+        <li class="iconfont-Arrow">iconfont-Arrow</li>
+        <li class="iconfont-BurguerMenu">iconfont-BurguerMenu</li>
+        <li class="iconfont-Calendar">iconfont-Calendar</li>
+        <li class="iconfont-Candidaturas">iconfont-Candidaturas</li>
+        <li class="iconfont-Category">iconfont-Category</li>
+        <li class="iconfont-Check">iconfont-Check</li>
+        <li class="iconfont-Clock">iconfont-Clock</li>
+        <li class="iconfont-Close">iconfont-Close</li>
+        <li class="iconfont-Company">iconfont-Company</li>
+        <li class="iconfont-Config">iconfont-Config</li>
+        <li class="iconfont-CV">iconfont-CV</li>
+        <li class="iconfont-Euro">iconfont-Euro</li>
+        <li class="iconfont-Facebook">iconfont-Facebook</li>
+        <li class="iconfont-GooglePlus">iconfont-GooglePlus</li>
+        <li class="iconfont-Location">iconfont-Location</li>
+        <li class="iconfont-Mail">iconfont-Mail</li>
+        <li class="iconfont-Reload">iconfont-Reload</li>
+        <li class="iconfont-Search">iconfont-Search</li>
+        <li class="iconfont-State">iconfont-State</li>
+        <li class="iconfont-Suitecase">iconfont-Suitecase</li>
+        <li class="iconfont-Twitter">iconfont-Twitter</li>
+        <li class="iconfont-User">iconfont-User</li>
+        <li class="iconfont-LinkedIn">iconfont-LinkedIn</li>
+        <li class="iconfont-Viewdetails">iconfont-Viewdetails</li>
+        <li class="iconfont-EditCv">iconfont-EditCv</li>
+        <li class="iconfont-Home">iconfont-Home</li>
+        <li class="iconfont-QR">iconfont-QR</li>
+        <li class="iconfont-Config-alt">iconfont-Config-alt</li>
+        <li class="iconfont-Edit">iconfont-Edit</li>
+        <li class="iconfont-Help">iconfont-Help</li>
+        <li class="iconfont-Info">iconfont-Info</li>
+        <li class="iconfont-Plus">iconfont-Plus</li>
+        <li class="iconfont-Smile">iconfont-Smile</li>
+        <li class="iconfont-Wifi">iconfont-Wifi</li>
+        <li class="iconfont-Alert">iconfont-Alert</li>
+        <li class="iconfont-Connect">iconfont-Connect</li>
+        <li class="iconfont-AlertProfile">iconfont-AlertProfile</li>
+        <li class="iconfont-Hide">iconfont-Hide</li>
+        <li class="iconfont-News">iconfont-News</li>
+        <li class="iconfont-Flag">iconfont-Flag</li>
+        <li class="iconfont-Offers">iconfont-Offers</li>
+        <li class="iconfont-Big-check">iconfont-Big-check</li>
+        <li class="iconfont-BigArrowDown">iconfont-BigArrowDown</li>
+        <li class="iconfont-BigArrowLeft">iconfont-BigArrowLeft</li>
+        <li class="iconfont-BigArrowUp">iconfont-BigArrowUp</li>
+        <li class="iconfont-BigArrowRight">iconfont-BigArrowRight</li>
+        <li class="iconfont-BigArrowObliqueLeftDown">iconfont-BigArrowObliqueLeftDown</li>
+        <li class="iconfont-BigArrowObliqueRightDown">iconfont-BigArrowObliqueRightDown</li>
+        <li class="iconfont-BigArrowObliqueLeftUp">iconfont-BigArrowObliqueLeftUp</li>
+        <li class="iconfont-BigArrowObliqueRightUp">iconfont-BigArrowObliqueRightUp</li>
+        <li class="iconfont-Star">iconfont-Star</li>
+        <li class="iconfont-Lock">iconfont-Lock</li>
+        <li class="iconfont-Menumore">iconfont-Menumore</li>
+        <li class="iconfont-Alert-circle">iconfont-Alert-circle</li>
+    </ul>
+</div>
+                                    </div>
+                            </div>
+                        </div>
+
+
+
+                            <div id="rubik-1.6.1" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Icons size</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use these classes to modify the icon size in px.</p>
+<p>{$modifiers}:</p>
+
+
+                                        </div>
+
+
+                                                        <div class="">
+                                                            .iconfont-16px | <span>16px</span>
+                                                        </div>
+                                                        <div class="">
+                                                            .iconfont-18px | <span>18px</span>
+                                                        </div>
+                                                        <div class="">
+                                                            .iconfont-22px | <span>22px</span>
+                                                        </div>
+                                                        <div class="">
+                                                            .iconfont-30px | <span>30px</span>
+                                                        </div>
+                                                        <div class="">
+                                                            .iconfont-100px | <span>100px</span>
+                                                        </div>
+
+
+                                                    <div class="sg-view">
+                                                            <div class="sg-modifiers">
+                                                                <ul>
+	<li class="iconfont-Company {$modifiers}"><span class="hide">Icon name</span></li>
+</ul>
+                                                            </div>
+                                                            <div class="sg-modifiers">
+                                                                <ul>
+	<li class="iconfont-Company {$modifiers}"><span class="hide">Icon name</span></li>
+</ul>
+                                                            </div>
+                                                            <div class="sg-modifiers">
+                                                                <ul>
+	<li class="iconfont-Company {$modifiers}"><span class="hide">Icon name</span></li>
+</ul>
+                                                            </div>
+                                                            <div class="sg-modifiers">
+                                                                <ul>
+	<li class="iconfont-Company {$modifiers}"><span class="hide">Icon name</span></li>
+</ul>
+                                                            </div>
+                                                            <div class="sg-modifiers">
+                                                                <ul>
+	<li class="iconfont-Company {$modifiers}"><span class="hide">Icon name</span></li>
+</ul>
+                                                            </div>
+                                                    </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul&gt;
+	&lt;li class=&quot;iconfont-Company {$modifiers}&quot;&gt;&lt;span class=&quot;hide&quot;&gt;Icon name&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+        </section>
+        <section class="sg-content sg-footer">
+        © Infojobs 2015
+        </section>
+    </div>
+
+        <script src="public/jquery-2.1.0.min.js"></script>
+        <script src="public/kss.js"></script>
+        <script src="public/prettify.js"></script>
+        <script src="public/plugins.js"></script>
+        <script src="public/main.js"></script>
+        <script>
+
+        </script>
+    </body>
+</html>

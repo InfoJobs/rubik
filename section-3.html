@@ -297,60 +297,203 @@
         <header class="sg-header">
             <a id="burgerMenu" class="iconfont-BurguerMenu"></a>
             <h1>
-                Rubik Components
+                
             </h1>
         </header>
         <div class="sg-wrapper">
         <section class="sg-content">
 
-            <img src="./public/media/index.jpg" class="sg-img">
-            <h1 class="sg-block">Heading</h1>
-            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
-            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
 
-            <h2 class="sg-block">Heading</h2>
-            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
 
-            <div class="row-faux">
-                  <div class="col-4">
-                    <div class="col-child panel-canvas">
-                        <img src="./public/media/index.jpg" class="sg-img">
-                        <div class="inner">
-                            <h3>Heading</h3>
-                            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                      <div class="col-child panel-canvas">
-                          <img src="./public/media/index.jpg" class="sg-img">
-                          <div class="inner">
-                              <h3>Heading</h3>
-                              <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-4">
-                        <div class="col-child panel-canvas">
-                            <img src="./public/media/index.jpg" class="sg-img">
-                            <div class="inner">
-                                <h3>Heading</h3>
-                                <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+
+
+                        <div id="rubik-3" class="sg-grid sg-block">
+                            <div class="sg-col-12">
+                                <header class="sg-block-header">
+                                    <h1>Javascript Components</h1>
+                                </header>
                             </div>
                         </div>
-                  </div>
-            </div>
 
 
-            <div class="sg-grid sg-block">
-                <div class="sg-col-8">
-                    <div class="sg-box-row">
-                       <h2>Heading</h2>
-                       <p>Quid sed cernantur et noster <a href="#">in et nostrud relinqueret</a>.</p>
+
+                            <div id="rubik-3.1" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Modal</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use the following classes structure to create a modal window:</p>
+<ul>
+<li>Use class <code>.modal-layer</code> to create the structure and class <code>.modal-fade-in</code> to apply the animation that shows it.</li>
+<li>Then nest <code>&lt;div class=&quot;modal-inner&quot;&gt;</code> to build the layout.</li>
+<li>Include the container <code>&lt;div class=&quot;modal-header&quot;&gt;</code> with the header structure.</li>
+<li>Include the container <code>&lt;div class=&quot;modal-content&quot;&gt;</code> with the content structure.</li>
+</ul>
+<div class="sg-view hide">
+    <div class="sg-guide">
+        <div class="modal-layer" data-close="" data-headermodal="Modal title">
+            <div class="modal-inner">
+                <div class="modal-header">
+                    <a title="" class="close-modal iconfont-Close iconfont-22px hit-area" href="#"></a>
+                    <h1 class="title">Modal title</h1>
+                </div>
+                <div class="modal-content">
+                    <div class="inner">
+                        <p class="alternative">* Todos los campos son obligatorios</p>
+                           <form action="#">
+                               <fieldset>
+                                   <legend>Compartir por email</legend>
+                                <fieldset>
+                                    <legend>Datos de contacto</legend>
+                                    <ul class="form--field-block clearfix">
+                                        <li>
+                                            <label for="emailsend">Email del destinatario</label>
+                                            <input type="email" maxlength="200" id="emailsend" name="emailsend">
+                                        </li>
+                                        <li>
+                                            <label for="email">Tu email</label>
+                                            <input type="email" maxlength="200" id="email" name="email">
+                                        </li>
+                                        <li>
+                                            <label for="name">Tu nombre</label>
+                                            <input maxlength="200" id="name" name="name">
+                                        </li>
+                                        <li>
+                                            <label for="email">Tu mensaje</label>
+                                            <textarea type="" rows="3" cols="20"></textarea>
+                                            <p class="info alternative small">1/100</p>
+                                        </li>
+                                       </ul>
+                               </fieldset>
+                        </form>
                     </div>
                 </div>
-                <div class="sg-col-4"></div>
             </div>
+        </div>
+      </div>
+  </div>
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <div class="modal-layer modal-fade-in hide">
+	<div class="modal-inner">
+		<div class="modal-header">
+			...
+		</div>
+		<div class="modal-content">
+			...
+		</div>
+	</div>
+</div>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;modal-layer modal-fade-in hide&quot;&gt;
+	&lt;div class=&quot;modal-inner&quot;&gt;
+		&lt;div class=&quot;modal-header&quot;&gt;
+			...
+		&lt;/div&gt;
+		&lt;div class=&quot;modal-content&quot;&gt;
+			...
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-3.1.1" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Modal size</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Apply width and height styles in the container <code>.modal-inner</code> for rewrite the default modal size.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <div class="modal-inner hide" style="width: 370px; height: 579px;">
+	...
+</div>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;modal-inner hide&quot; style=&quot;width: 370px; height: 579px;&quot;&gt;
+	...
+&lt;/div&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-3.1.2" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Modal header</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use the following structure inside the <code>.modal-header</code>, to define the closing action and the heading text.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <div class="modal-header">
+	<a title="" class="close-modal iconfont-Close iconfont-22px hit-area" href="#"></a>
+	<h1 class="title">Title</h1>
+</div>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;modal-header&quot;&gt;
+	&lt;a title=&quot;&quot; class=&quot;close-modal iconfont-Close iconfont-22px hit-area&quot; href=&quot;#&quot;&gt;&lt;/a&gt;
+	&lt;h1 class=&quot;title&quot;&gt;Title&lt;/h1&gt;
+&lt;/div&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-3.1.3" class="sg-grid sg-block">
+                                    <div class="sg-col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Modal content</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use the structure it&#39;s needed inside the <code>.modal-content</code> to create the layout.</p>
+
+
+                                        </div>
+
+
+
+                                                <div class="sg-view">
+                                                    <div class="modal-content">
+	<p>Text content.</p>
+</div>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;modal-content&quot;&gt;
+	&lt;p&gt;Text content.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+                                </div>
+                            </div>
+
 
         </section>
         <section class="sg-content sg-footer">
