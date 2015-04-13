@@ -1,4 +1,4 @@
-<div class="sg-view hide">
+<div class="sg-view" id="sendMailModal">
     <div class="sg-guide">
         <div class="modal-layer" data-close="" data-headermodal="Modal title">
             <div class="modal-inner">
@@ -41,3 +41,12 @@
         </div>
       </div>
   </div>
+
+
+  <script src="public/custom.js"></script>
+
+  <script type="text/javascript">
+			$(document).ready(function(){
+				$("#sendMailModal").modalWindow(modalOptions);
+			});
+		</script>
