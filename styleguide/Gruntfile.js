@@ -24,6 +24,12 @@ module.exports = function(grunt) {
         files: [
           { src: ['fonts/*'], dest: 'styleguide/'}
         ]
+      },
+      copyRubik: {
+        expand: true,
+        cwd: 'styleguide/',
+        src: ['**'],
+        dest: '../../rubik.public/'
       }
     },
     // Sass --------------------------------------------------------------------
@@ -111,5 +117,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
 
   grunt.registerTask('default', ['clean', 'sass', 'copy:styleguide', 'includereplace', 'less', 'shell', 'replace', 'copy:allStyles', 'copy:copyFonts']);
+  grunt.registerTask('public', ['copy:copyRubik']);
 
 };
