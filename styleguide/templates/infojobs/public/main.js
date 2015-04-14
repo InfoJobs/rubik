@@ -7,7 +7,7 @@
 		aItemMenu = d.querySelectorAll('.js-itemMenu'),
 		aItemSubmenu = d.querySelectorAll('.sg-submenu a'),
 		fnResetMenu = function() {
-			classie.remove( elContainer, 'menu-open' );
+			classie.remove( elContainer, 'sg-menu-open' );
 			elContainer.style.overflow = 'auto';
 		},
 		fnBodyClick = function(e) {
@@ -100,7 +100,7 @@
 	d.getElementById('burgerMenu').addEventListener( eventType, function(e) {
 		elContainer.style.overflow = 'hidden';
 		setTimeout( function() {
-			classie.addClass(elContainer, 'menu-open');
+			classie.addClass(elContainer, 'sg-menu-open');
 		}, 25 );
 		d.addEventListener( eventType, fnBodyClick );
 	});
