@@ -74,16 +74,14 @@
 				});
 			} else {
 				aItemSubmenu[i].addEventListener( eventType, function(e) {
-					//e.preventDefault();
 					unActive();
 					classie.addClass(e.target, 'sg-active');
-					gotoSection(e.target);
 				});
 			}
 		}
 
-        if( d.querySelector('.submenu.sg-selected') ) {
-          d.querySelector('.submenu.sg-selected').style.height = d.querySelector('.submenu.sg-selected').clientHeight+'px';
+        if( d.querySelector('.sg-submenu.sg-selected') ) {
+          d.querySelector('.sg-submenu.sg-selected').style.height = d.querySelector('.sg-submenu.sg-selected').clientHeight+'px';
         }
 
         if( w.location.pathname.indexOf( '.html' ) < 0 ) {
@@ -96,12 +94,6 @@
 			classie.removeClass( aItemSubmenu[i], 'sg-active');
 		}
 	}
-
-	function gotoSection( element ) {
-		console.log(element.scrollTop)
-		// window.scrollTop( element.scrollTop - 100 );
-	}
-
 
 
 	// Listeners ---------------------------------------------------------------
