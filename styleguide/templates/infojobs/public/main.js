@@ -74,10 +74,8 @@
 				});
 			} else {
 				aItemSubmenu[i].addEventListener( eventType, function(e) {
-					//e.preventDefault();
 					unActive();
 					classie.addClass(e.target, 'sg-active');
-					gotoSection(e.target);
 				});
 			}
 		}
@@ -96,12 +94,6 @@
 			classie.removeClass( aItemSubmenu[i], 'sg-active');
 		}
 	}
-
-	function gotoSection( element ) {
-		console.log(element.scrollTop)
-		// window.scrollTop( element.scrollTop - 100 );
-	}
-
 
 
 	// Listeners ---------------------------------------------------------------
