@@ -82,8 +82,8 @@
 			}
 		}
 
-        if( d.querySelector('.submenu.sg-selected') ) {
-          d.querySelector('.submenu.sg-selected').style.height = d.querySelector('.submenu.sg-selected').clientHeight+'px';
+        if( d.querySelector('.sg-submenu.sg-selected') ) {
+          d.querySelector('.sg-submenu.sg-selected').style.height = d.querySelector('.sg-submenu.sg-selected').clientHeight+'px';
         }
 
         if( w.location.pathname.indexOf( '.html' ) < 0 ) {
