@@ -94,6 +94,7 @@
 
   .border-#{$value}  {
     border-#{$value}: 1px solid $darkest-shiro;
+	margin: 0;//only border, reset margins
   }
 
 }

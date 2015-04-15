@@ -9691,35 +9691,6 @@ $query2     = width, device-width
   overflow: hidden;
   border-bottom: 1px solid #bac7cc;
 }
-.tips-list li.open-tip {
-  max-height: 0;
-  -webkit-animation: opentip 2s 1.5s;
-  animation: opentip 2s 1.5s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-@keyframes opentip {
-  from {
-    opacity: 0;
-    max-height: 0;
-  }
-  to {
-    opacity: 1;
-    max-height: 280px;
-  }
-}
-@-webkit-keyframes opentip {
-  from {
-    opacity: 0;
-    max-height: 0;
-  }
-  to {
-    opacity: 1;
-    max-height: 250px;
-  }
-}
 .tips-list li:last-child {
   border: none;
 }
@@ -9730,8 +9701,10 @@ $query2     = width, device-width
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    align-items: center;
   }
+}
+.tips-list li > div.middle {
+  align-items: center;
 }
 .tips-list li.main .cell-1 [class*=" iconfont-"]::after {
   position: absolute;
@@ -9749,18 +9722,6 @@ $query2     = width, device-width
 }
 .tips-list li.main .kind {
   color: #00a550;
-}
-.tips-list [class^="cell-"],
-.tips-list [class*=" cell-"] {
-  padding: 20px 10px;
-  vertical-align: top;
-}
-@media only screen and (min-width: 481px) {
-  .tips-list [class^="cell-"],
-  .tips-list [class*=" cell-"] {
-    vertical-align: middle;
-    padding: 20px;
-  }
 }
 .tips-list .cell-1 {
   text-align: center;
@@ -9816,7 +9777,6 @@ $query2     = width, device-width
     -ms-flex: 2;
     flex: 2;
     width: auto;
-    padding-top: 20px;
     margin-left: 0;
   }
 }
@@ -9847,7 +9807,7 @@ $query2     = width, device-width
   display: inline-block;
 }
 .tips-list .title {
-  margin-bottom: 0;
+  margin-bottom: 10px;
   font-size: 18px;
   line-height: 22px;
 }
@@ -9873,7 +9833,7 @@ $query2     = width, device-width
 }
 .tips-list .actions a {
   display: inline-block;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 .tips-list .fade-out {
   -webkit-transition-duration: 400ms;
@@ -9889,7 +9849,35 @@ $query2     = width, device-width
   -o-transition-duration: 200ms;
   transition-duration: 200ms;
 }
-
+.tips-list.open-tip {
+  max-height: 0;
+  -webkit-animation: opentip 2s 1.5s;
+  animation: opentip 2s 1.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes opentip {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 280px;
+  }
+}
+@-webkit-keyframes opentip {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 250px;
+  }
+}
 /* Variables =================================================== */
 /*------------------------------------*\
     $FUNCTIONS
@@ -10209,6 +10197,86 @@ $query2     = width, device-width
   border-radius: 0;
 }
 
+/*------------------------------------*\
+	$CONTENT MEDIA
+\*------------------------------------*/
+/*
+Content media
+
+
+Usa la clase `.content-img` para construir una estructura con una imagen a un lado de un bloque de contenido.
+
+
+Markup:
+<div class="content-media">
+</div>
+
+*/
+.content-media .media,
+.content-media .body {
+  display: table-cell;
+  vertical-align: top;
+}
+.content-media .media {
+  padding-right: 20px;
+  width: 70px;
+}
+@media only screen and (min-width: 481px) {
+  .content-media .media {
+    width: 80px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .content-media .media {
+    width: 100px;
+  }
+}
+.content-media .title {
+  margin: 0;
+}
+@media only screen and (min-width: 769px) {
+  .content-media img {
+    width: 80px;
+    height: 80px;
+  }
+}
+li.content-media + .content-media::before {
+  position: relative;
+  display: block;
+  content: "";
+  border-top: 1px solid #e2e5e6;
+  top: -20px;
+}
+
+/* Variables =================================================== */
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+/**
+ * cross multiplication percentages
+ */
+/**
+ * Turn numbers with units into unitless numbers
+ */
+/*------------------------------------*\
+$MIXINS
+\*------------------------------------*/
+/*
+Mediaqueries
+
+$breakpoint = $bp-tablet, $bp-desktop or specific
+$query1     = min or max
+$query2     = width, device-width
+
+*/
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+.tag-group li.tag-divider, .links-bar li {
+  border-right: 1px solid #e2e5e6;
+  border-radius: 0;
+}
+
 /* Variables =================================================== */
 /*------------------------------------*\
     $PRINT
@@ -10388,18 +10456,22 @@ $query2     = width, device-width
 \*------------------------------------*/
 .border-top {
   border-top: 1px solid #e2e5e6;
+  margin: 0;
 }
 
 .border-right {
   border-right: 1px solid #e2e5e6;
+  margin: 0;
 }
 
 .border-bottom {
   border-bottom: 1px solid #e2e5e6;
+  margin: 0;
 }
 
 .border-left {
   border-left: 1px solid #e2e5e6;
+  margin: 0;
 }
 
 .border-divider {
