@@ -9554,28 +9554,25 @@ Styleguide 2.25
 }
 
 .kpi-title {
-  margin-bottom: 0;
-  padding-top: 3px;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
 }
-@media only screen and (min-width: 481px) {
-  .kpi-title {
-    font-size: 20px;
-    line-height: 24px;
-    padding-top: 0;
-  }
+
+.kpi-body {
+  margin: 15px 0 0 0;
 }
 
 .kpi-indicator {
-  font-size: 27px;
-  line-height: 23px;
+  float: left;
+  padding: 0 10px 0 0;
+  font-size: 36px;
+  color: #2088c2;
 }
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 769px) {
   .kpi-indicator {
-    display: block;
-    font-size: 48px;
-    line-height: 38px;
+    color: inherit;
   }
 }
 
@@ -10203,12 +10200,17 @@ $query2     = width, device-width
 /*
 Content media
 
-
-Usa la clase `.content-img` para construir una estructura con una imagen a un lado de un bloque de contenido.
-
+Usa la clase `.content-media` para construir una estructura con una imagen a un lado de un bloque de contenido de texto.
 
 Markup:
-<div class="content-media">
+<div class="content-media inner">
+	<div class="media">
+		<img class="crop-circle" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" alt="">
+	</div>
+	<div class="body">
+		<h3 class="title"><a href="#">Juan Manuel RodrÃÂguez</a></h3>
+		<p>Account Manager jasdlf sadf dsakfjasd lfkjasd <span class="alternative">en Schibsted Classified Media Spain</span></p>
+	</div>
 </div>
 
 */
