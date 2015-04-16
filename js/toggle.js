@@ -26,7 +26,8 @@ function hideContainer() {
 	    	target.nCollapsibleChildrenHeight = 0;
 
 	    	for (i = 0; i < target.children.length; i++ ) {
-	            target.nCollapsibleChildrenHeight += target.children[i].getBoundingClientRect().height + Number( document.defaultView.getComputedStyle(target.children[i]).getPropertyValue("margin-bottom").replace('px','') );
+	            target.nCollapsibleChildrenHeight += target.children[i].getBoundingClientRect().height +
+	            getRealStyle(target.children[i], 'margin-bottom' );
 	        }
 
 	    	target.classList.add('slide-toggle');
@@ -38,6 +39,11 @@ function hideContainer() {
 	});
 
 }
+
+function getRealStyle(element, style ) {
+	return Number( document.defaultView.getComputedStyle(element).getPropertyValue(style).replace('px','') );
+}
+
 function listeners(event){
 	event.stopPropagation();
 	if(this.bOcult) {
