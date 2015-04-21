@@ -9702,26 +9702,9 @@ $query2     = width, device-width
     display: -webkit-flex;
     display: flex;
   }
-}
-.tips-list li > div.middle {
-  align-items: center;
-}
-.tips-list li.main .cell-1 [class*=" iconfont-"]::after {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 30px;
-  height: 30px;
-  padding-top: 13px;
-  font-family: 'Icons';
-  content: "\e62a";
-  border: 2px solid #e2e5e6;
-  border-radius: 50%;
-  color: #fff;
-  background-color: #00a550;
-}
-.tips-list li.main .kind {
-  color: #00a550;
+  .tips-list li > div.middle {
+    align-items: center;
+  }
 }
 .tips-list .cell-1 {
   text-align: center;
@@ -9802,10 +9785,6 @@ $query2     = width, device-width
   top: 0;
   color: #999;
 }
-.main .tips-list .cell-1 [class^="iconfont-"]::before, .main
-.tips-list .cell-1 [class*=" iconfont-"]::before {
-  display: inline-block;
-}
 .tips-list .title {
   margin-bottom: 10px;
   font-size: 18px;
@@ -9849,7 +9828,7 @@ $query2     = width, device-width
   -o-transition-duration: 200ms;
   transition-duration: 200ms;
 }
-.tips-list.open-tip {
+.tips-list .open-tip {
   max-height: 0;
   -webkit-animation: opentip 2s 1.5s;
   animation: opentip 2s 1.5s;
@@ -9875,7 +9854,7 @@ $query2     = width, device-width
   }
   to {
     opacity: 1;
-    max-height: 250px;
+    max-height: 280px;
   }
 }
 /* Variables =================================================== */
@@ -10203,12 +10182,17 @@ $query2     = width, device-width
 /*
 Content media
 
-
-Usa la clase `.content-img` para construir una estructura con una imagen a un lado de un bloque de contenido.
-
+Usa la clase `.content-media` para construir una estructura con una imagen a un lado de un bloque de contenido de texto.
 
 Markup:
-<div class="content-media">
+<div class="content-media inner">
+	<div class="media">
+		<img class="crop-circle" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" alt="">
+	</div>
+	<div class="body">
+		<h3 class="title"><a href="#">Juan Manuel RodrÃÂguez</a></h3>
+		<p>Account Manager jasdlf sadf dsakfjasd lfkjasd <span class="alternative">en Schibsted Classified Media Spain</span></p>
+	</div>
 </div>
 
 */

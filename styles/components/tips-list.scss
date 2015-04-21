@@ -21,42 +21,24 @@
 
 			@include mediaquery ($bp-tablet) {
 			// First create a flex layout context
-			@include display-flex;
-			///* Define the flow direction and if it's allowed the items to wrap. Default values are:
-			//* flex-direction: row;
-			//* flex-wrap: nowrap;
-			//*
-			//* This is the same as:
-			//* flex-flow: row nowrap;
-			//*/
+				@include display-flex;
+				///* Define the flow direction and if it's allowed the items to wrap. Default values are:
+				//* flex-direction: row;
+				//* flex-wrap: nowrap;
+				//*
+				//* This is the same as:
+				//* flex-flow: row nowrap;
+				//*/
+
+				&.middle {
+					align-items: center;
+
+				}
 			}
-
-			&.middle {
-				align-items: center;
-
-			}
-		}
-
-		@at-root #{&}.main .cell-1 [class*=" iconfont-"]::after {
-				position: absolute;
-				top: 0;
-				left: 50%;
-				width: 30px;
-				height: 30px;
-				padding-top: 13px;
-				font-family: 'Icons';
-				content: "\e62a";
-				border: 2px solid #e2e5e6;
-				border-radius: 50%;
-				color: $shiro;
-				background-color: $bamboo;
-		}
-
-		@at-root #{&}.main .kind {
-				color: $bamboo;
 		}
 
 	}
+
 
 	.cell {
 
@@ -138,9 +120,6 @@
 			top: 0;
 			color: $soft-script;
 
-			.main & {
-				display: inline-block;
-			}
 	}
 
 	.title {
@@ -188,7 +167,7 @@
 		@include vendor-prefix('transition-duration', '200ms');
 	}
 
-	&.open-tip {
+	.open-tip {
 		max-height: 0;
 		-webkit-animation: opentip 2s 1.5s;
 		        animation: opentip 2s 1.5s;
@@ -196,35 +175,35 @@
 		-webkit-animation-fill-mode: forwards;
 		        animation-iteration-count: 1;
 		    	animation-fill-mode: forwards;
+	}
 
-		@keyframes opentip {
+	@keyframes opentip {
 
-			from {
-				opacity: 0;
-				max-height: 0;
-			}
-
-			to {
-				opacity: 1;
-				max-height: 280px;
-			}
-
+		from {
+			opacity: 0;
+			max-height: 0;
 		}
 
-		@-webkit-keyframes opentip {
-
-			from {
-				opacity: 0;
-				max-height: 0;
-			}
-
-			to {
-				opacity: 1;
-				max-height: 250px;
-			}
-
+		to {
+			opacity: 1;
+			max-height: 280px;
 		}
 
 	}
+
+	@-webkit-keyframes opentip {
+
+		from {
+			opacity: 0;
+			max-height: 0;
+		}
+
+		to {
+			opacity: 1;
+			max-height: 280px;
+		}
+
+	}
+
 
 }
