@@ -38,25 +38,25 @@ Styleguide 2.25
 }
 
 .kpi-title {
-	margin-bottom: 0;
-	padding-top: 3px;
-	font-size: $medium-font-size;
-	line-height: $medium-line-height;
+	display: inline;
+	margin: 0;
+	padding: 0;
+	font-size: $large-font-size;
+	line-height: $large-line-height;
+}
 
-	@include mediaquery ($bp-tablet	) {
-		font-size: $large-font-size;
-		line-height: $large-line-height;
-		padding-top: 0;
-	}
+.kpi-body {
+	padding-top:10px;
 }
 
 .kpi-indicator {
-	font-size: 27px;
-	line-height: 23px;
+	padding: 0 10px 0 0;
+	font-size: 36px;
+	line-height: 27px;
+	color: $day-blue;
 
-	@include mediaquery ($bp-tablet	) {
-		display: block;
-		font-size: 48px;
-		line-height: 38px;
+    @include mediaquery ($bp-desktop) {
+		color: $dark-silk;
 	}
+
 }

@@ -9554,28 +9554,25 @@ Styleguide 2.25
 }
 
 .kpi-title {
-  margin-bottom: 0;
-  padding-top: 3px;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
 }
-@media only screen and (min-width: 481px) {
-  .kpi-title {
-    font-size: 20px;
-    line-height: 24px;
-    padding-top: 0;
-  }
+
+.kpi-body {
+  margin: 15px 0 0 0;
 }
 
 .kpi-indicator {
-  font-size: 27px;
-  line-height: 23px;
+  float: left;
+  padding: 0 10px 0 0;
+  font-size: 36px;
+  color: #2088c2;
 }
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 769px) {
   .kpi-indicator {
-    display: block;
-    font-size: 48px;
-    line-height: 38px;
+    color: inherit;
   }
 }
 
