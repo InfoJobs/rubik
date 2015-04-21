@@ -18,7 +18,6 @@
 		}
 
 		& > div {
-			position: relative;
 
 			@include mediaquery ($bp-tablet) {
 			// First create a flex layout context
