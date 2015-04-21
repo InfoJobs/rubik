@@ -1839,6 +1839,10 @@ Styleguide 1.6.1
   background: url("http://media.infojobs.net/appgrade/backgrounds//icon-contacts.png") no-repeat 0 0;
 }
 
+.icon-alerts {
+  background: url("http://media.infojobs.net/appgrade/backgrounds//icon-alert.png") no-repeat 0 0;
+}
+
 .icon-50px {
   display: block;
   width: 50px;
@@ -2582,14 +2586,14 @@ Styleguide 1.3.1
 */
 h1,
 h2,
-.h2
+.h2,
 h3,
 .h3 {
   font-family: Proximanovabold, Helvetica, Arial, sans-serif;
 }
 .skin-executive h1, .skin-executive
 h2, .skin-executive
-.h2
+.h2, .skin-executive
 h3, .skin-executive
 .h3 {
   font-family: Proximanovalight, Helvetica, Arial, sans-serif;
@@ -7845,6 +7849,7 @@ Styleguide 2.16
   list-style: none;
   line-height: 15px;
   -webkit-touch-callout: none;
+  color: #2d3133;
 }
 
 .chosen-container .chosen-results li.active-result {
@@ -9554,25 +9559,26 @@ Styleguide 2.25
 }
 
 .kpi-title {
-  font-size: 20px;
-  line-height: 24px;
+  display: inline;
   margin: 0;
   padding: 0;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .kpi-body {
-  margin: 15px 0 0 0;
+  padding-top: 10px;
 }
 
 .kpi-indicator {
-  float: left;
   padding: 0 10px 0 0;
   font-size: 36px;
+  line-height: 27px;
   color: #2088c2;
 }
 @media only screen and (min-width: 769px) {
   .kpi-indicator {
-    color: inherit;
+    color: #2d3133;
   }
 }
 
@@ -9690,6 +9696,9 @@ $query2     = width, device-width
 }
 .tips-list li:last-child {
   border: none;
+}
+.tips-list li > div {
+  position: relative;
 }
 @media only screen and (min-width: 481px) {
   .tips-list li > div {
@@ -9810,6 +9819,13 @@ $query2     = width, device-width
 .tips-list .actions a {
   display: inline-block;
   margin-top: 10px;
+}
+.tips-list .btn-close {
+  float: right;
+  position: relative;
+  top: -10px;
+  margin-left: 5px;
+  color: inherit;
 }
 .tips-list .fade-out {
   -webkit-transition-duration: 400ms;
