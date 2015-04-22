@@ -29,7 +29,7 @@ Styleguide 1.6
 
 @mixin iconfont {
 	position: relative;
-	top: 2px;
+	top: 4px;
 	font-family: 'Icons';
 	speak: none;
 	font-style: normal;
@@ -55,7 +55,6 @@ Styleguide 1.6
 [class*=" iconfont-"]::before {
 
 	@at-root .btn#{&} {
-		display: inline-block;
 		margin-right: 8px; //needed to separate icon from the text
 	}
 
