@@ -10,13 +10,17 @@ function hideContainer() {
 	eToggleContainer = document.querySelectorAll('.js-toggle-container');
 
 	if (window.innerWidth < 481) {
-		[].forEach.call(eToggleContainer, function(content){
-			content.bOcult = true;
-			content.addEventListener('click', listeners, false);
+		[].forEach.call(eToggleContainer, function(content) {
+			if(!content._hasEvent) {
+				content.addEventListener('click', listeners, false);
+				content._hasEvent = true;
+				content.bOcult = true;
+			}
 		});
 	} else {
 		[].forEach.call(eToggleContainer, function(content){
 			content.removeEventListener('click', listeners , false);
+			content._hasEvent = false;
 		});
 	}
 
@@ -67,5 +71,3 @@ function listeners(event){
 }
 window.addEventListener('load', hideContainer);
 window.addEventListener('resize', hideContainer);
-
-        
