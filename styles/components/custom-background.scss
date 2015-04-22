@@ -9,7 +9,7 @@ Use class `.custom-bg` responsive to make the image responsive.
 Use modifier `.overlay-60` to apply an overlay.
 
 Markup:
-<div class="custom-bg {$modifiers}" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-header-grid-01.jpg');">
+<div class="custom-bg {$modifiers}" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg');">
     <div class="inner">
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
@@ -52,7 +52,7 @@ $overlay-opacity: (60);
 	.overlay-#{$value} {
 
         position: relative;
-        z-index: 1;
+        z-index: 0;
 
 		&::before {
             content: "";

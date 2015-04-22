@@ -175,6 +175,42 @@
 
 }
 
+//slide-down
+
+	.slide-down {
+	  -webkit-animation-name: slidedown;
+	          animation-name: slidedown;
+	  -webkit-animation-duration: 1s;
+	          animation-duration: 1s;
+	}
+
+	@keyframes slidedown  {
+		
+	  0% {
+	    height: 0;
+
+	  }
+	  100% {
+	    height: 100%;
+
+	  }
+
+	}
+
+	@-webkit-keyframes slidedown {
+
+	  0% {
+	    height: 0;
+
+	  }
+	  100% {
+	    height: 100%;
+
+	  }
+
+	}
+
+
 //move
 
 @keyframes move-up {
@@ -343,7 +379,7 @@
 	to {
 		-webkit-transform:rotate(360deg);
 	}
-	
+
 }
 
 

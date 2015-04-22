@@ -284,9 +284,11 @@ Styleguide 1.2.4
   }
 }
 
-.inner-expanded {
-  padding-top: 40px;
-  padding-bottom: 40px;
+@media only screen and (min-width: 481px) {
+  .inner-expanded {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 .inner-expanded > .inner:first-child, .inner-expanded > .inner:only-child {
   padding-top: 0;
@@ -394,13 +396,8 @@ Grid System
 Grid system is used for creating page layout through a series of rows and columns that house
 your content.
 
-
-- Use class `.row` to create a horizontal group of columns.
-- Then nest as many containers `<div class="col-[number]">` as columns are necessary to build the layout
-- Include the container `<div class="col-child">` as immediate children of `.col-[number]`.
-
-<div class="view">
-    <div class="guide">
+<div class="sg-view">
+    <div class="sg-guide">
       <div class="row-faux clearfix">
           <div class="col-1">
               <div class="col-child">.col-1 (more content)</div>
@@ -443,67 +440,87 @@ your content.
   </div>
 </div>
 
-<div  class="guide">
-    <div class="inner">
-        <ul class="clearfix color">
-            <li class="contrast panel-executive">
-                .contrast
-            </li>
 
-            <li class="disabled">
-                .disabled
-            </li>
+- Use class `.row` to create a horizontal group of columns.
+- Then nest as many containers `<div class="col-[number]">` as columns are necessary to build the layout
+- Include the container `<div class="col-child">` as immediate children of `.col-[number]`.
 
-            <li class="marked">
-                .marked
-            </li>
+<div class="sg-view">
+    <div class="sg-guide">
+          <!-- ROW 4/8-->
+          <div class="row clearfix">
+              <div class="col-4">
+                  <div class="col-child">.col-4</div>
+              </div>
+              <div class="col-8">
+                  <div class="col-child">.col-8</div>
+              </div>
+          </div>
+          <!--/ROW 4/8-->
+          <!-- ROW 8/4-->
+          <div class="row clearfix">
+              <div class="col-8">
+                  <div class="col-child">.col-8</div>
+              </div>
+              <div class="col-4">
+                  <div class="col-child">.col-4</div>
+              </div>
+          </div>
+          <!--/ROW 8/4-->
+          <!-- ROW 4/4/4-->
+          <div class="row clearfix">
+              <div class="col-4">
+                  <div class="col-child">.col-4</div>
+              </div>
+              <div class="col-4">
+                  <div class="col-child">.col-4</div>
+              </div>
+              <div class="col-4">
+                  <div class="col-child">.col-4</div>
+              </div>
+          </div>
+          <!--/ROW 4/4/4-->
+          <!-- ROW 3/3/3-->
+          <div class="row clearfix">
+              <div class="col-3">
+                  <div class="col-child">.col-3</div>
+              </div>
+              <div class="col-3">
+                  <div class="col-child">.col-3</div>
+              </div>
+              <div class="col-3">
+                  <div class="col-child">.col-3</div>
+              </div>
+              <div class="col-3">
+                  <div class="col-child">.col-3</div>
+              </div>
+          </div>
+          <!--/ROW 4/4/4-->
+      </div>
+  </div>
 
-            <li class="marked-contrast">
-                .marked-contrast
-            </li>
-
-            <li class="alternative">
-                .alternative
-            </li>
-
-            <li class="highlight">
-                .highlight
-            </li>
-
-            <li class="script">
-                .script
-            </li>
-
-            <li class="soft-script">
-                .soft-script
-            </li>
-        </ul>
-    <div>
-</div>
 
 
 Markup:
+<div class="row g-casper">
+	<div class="col-4"><div class="col-child">...</div></div>
+	<div class="col-8"><div class="col-child">...</div></div>
+</div>
+<div class="row casper">
+	<div class="col-8"><div class="col-child">...</div></div>
+	<div class="col-4"><div class="col-child">...</div></div>
+</div>
 <div class="row casper">
 	<div class="col-4"><div class="col-child">...</div></div>
-	<div class="col-8"><div class="col-child">...</div></div>
-</div>
-<!-- Hello -->
-<div class="row">
-	<div class="col-8"><div class="col-child">...</div></div>
-	<div class="col-4"><div class="col-child">...</div></div>
-</div>
-<div class="row">
-	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
-<div class="row">
+<div class="row casper">
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
 </div>
-
 
 Styleguide 1.2.1
 */
@@ -545,14 +562,38 @@ Medium devices
 
 Therefore, applying at any column the class `.col-6-medium` content will adjust to 50% width or `.col-12-medium` 100% width defined for medium devices.
 
-(Show devices behaviour)
+<div class="sg-view">
+    <div class="sg-guide">
+          <!-- ROW tablet 50%-->
+          <div class="row clearfix">
+              <div class="col-8 col-6-medium">
+                  <div class="col-child">.col-8 .col-6-medium</div>
+              </div>
+              <div class="col-4 col-6-medium">
+                  <div class="col-child">.col-4 .col-6-medium</div>
+              </div>
+          </div>
+          <!--/ROW tablet 50%-->
+          <!-- ROW tablet 100%-->
+          <div class="row clearfix">
+              <div class="col-8 col-12-medium">
+                  <div class="col-child">.col-8 .col-12-medium</div>
+              </div>
+              <div class="col-4 col-12-medium">
+                  <div class="col-child">.col-4 .col-12-medium</div>
+              </div>
+          </div>
+          <!--/ROW tablet 100%-->
+      </div>
+  </div>
+
 
 Markup:
-<div class="row">
+<div class="row casper">
 	<div class="col-8 col-6-medium"><div class="col-child">...</div></div>
 	<div class="col-4 col-6-medium"><div class="col-child">...</div></div>
 </div>
-<div class="row">
+<div class="row casper">
 	<div class="col-8 col-12-medium"><div class="col-child">...</div></div>
 	<div class="col-4 col-12-medium"><div class="col-child">...</div></div>
 </div>
@@ -784,10 +825,54 @@ Equal height columns
 
 Use class `.row-faux` instead of `.row` to build an equal height columns structure.
 
-(Show faux)
+<div class="sg-view">
+    <div class="sg-guide">
+          <!--ROW-FAUX-->
+          <div class="row-faux clearfix">
+              <div class="col-1">
+                  <div class="col-child">.col-1 (more content)</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+              <div class="col-1">
+                  <div class="col-child">.col-1</div>
+              </div>
+          </div>
+          <!--/ROW-FAUX-->
+      </div>
+  </div>
+
 
 Markup:
-<div class="row-faux">
+<div class="row-faux casper">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
@@ -809,6 +894,10 @@ Styleguide 1.2.1.3
   .row-faux {
     margin: 0;
   }
+}
+.row-faux > [class^="col-"]:last-of-type .col-child,
+.row-faux > [class*="col-"]:last-of-type .col-child {
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 481px) {
   .row-faux {
@@ -962,7 +1051,7 @@ Apply any class specified above to provide color to any html element.
 `.contrast` class needs a dark background.
 `.marked-contrast` and `.highlight` classes adds their own background.
 
-<div  class="guide">
+<div  class="sg-guide">
     <div class="inner">
         <ul class="clearfix color">
             <li class="contrast panel-executive">
@@ -1232,6 +1321,29 @@ a.soft-script:active {
   100% {
     opacity: 1;
     -webkit-transform: translateY(0px);
+  }
+}
+.slide-down {
+  -webkit-animation-name: slidedown;
+  animation-name: slidedown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+@keyframes slidedown {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@-webkit-keyframes slidedown {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
   }
 }
 @keyframes move-up {
@@ -1634,9 +1746,9 @@ $query2     = width, device-width
 /*
 Icons
 
-The icons are generated as font,<br>
-color and size can be modified in the same way as text.
-Use these classes for icon type, you can use any tag.
+The icons are generated as fonts.<br>
+Color and size can be modified as texts.
+Use these classes to specify an icon for any tag.
 
 Styleguide 1.6
 */
@@ -1715,20 +1827,6 @@ Styleguide 1.6.1
 /*------------------------------------*\
 	$ICONSIMAGE
 \*------------------------------------*/
-/*
-Icons image and size
-
-Icons as a background image, not an icon font.<br>
-Use class `.icon-[size]` to modify the image size.
-
-Markup:
-<span class="icon-50px icon-candidaturas"></span>
-<span class="icon-50px icon-CV"></span>
-<span class="icon-50px icon-contactos"></span>
-</ul>
-
-Styleguide 1.6.2
-*/
 .icon-candidaturas {
   background: url("http://media.infojobs.net/appgrade/backgrounds//icon-candidaturas.png") no-repeat 0 0;
 }
@@ -2235,12 +2333,6 @@ Markup:
 
 Styleguide 1.5.2
 */
-.btn-icon-update,
-.btn-icon-update:hover {
-  background-image: url("http://media.infojobs.net/appgrade/backgrounds/bg-update.png");
-  background-position: 20px 50%;
-}
-
 /*
 Buttons status
 
@@ -2333,8 +2425,8 @@ Styleguide 1.5.5
 Button group
 
 Use class `.btn-group` to create a button group structure.
-Use class `.btn-default` for button group buttons.
-Use class `.active` to highlight button the selected.
+Use class `.btn-default` for buttons inside buttons group.
+Use class `.active` to highlight the selected button.
 
 Markup:
 <div class="btn-group">
@@ -2403,7 +2495,7 @@ Styleguide 1.5.6
 /*
 Button group justified
 
-Use class `.btn-group-justified` to display `.btn-group` buttons with full width.
+Use class `.btn-group-justified` to display `.btn-group` full width buttons.
 
 
 Markup:
@@ -2424,7 +2516,7 @@ Styleguide 1.5.7
 /*
 Button group with icon
 
-Use class `.iconfont-[name]` to display the icon it's needed.
+Use class `.iconfont-[name]` to display the needed icon.
 
 Markup:
 <div class="btn-group">
@@ -2824,9 +2916,24 @@ Markup:
 
 Styleguide 1.3.5.2
 */
-.list-bullet-icon > .iconfont-30px {
-  padding-left: 40px;
+.list-default [class^="iconfont-"],
+.list-default [class*="iconfont-"] {
   position: relative;
+}
+.list-default .iconfont-16px {
+  padding-left: 26px;
+}
+.list-default .iconfont-18px {
+  padding-left: 28px;
+}
+.list-default .iconfont-22px {
+  padding-left: 32px;
+}
+.list-default .iconfont-30px {
+  padding-left: 40px;
+}
+.list-default .iconfont-100px {
+  padding-left: 110px;
 }
 
 .list-bullet-icon [class^="iconfont-"]:before,
@@ -3617,6 +3724,8 @@ Styleguide 1.2.3
 .wrapper-slotbanner .slotbanner-top object,
 .wrapper-slotbanner .slotbanner-aside object {
   display: block;
+  margin: 0 auto;
+  text-align: center;
 }
 .wrapper-slotbanner .slotbanner-fixed {
   position: fixed;
@@ -3627,7 +3736,10 @@ Styleguide 1.2.3
   margin-bottom: 10px;
 }
 
-.slotbanner,
+.slotbanner {
+  max-width: 970px;
+}
+
 .half-page-ad .slotbanner {
   max-width: 1280px;
 }
@@ -3687,7 +3799,7 @@ $query2     = width, device-width
 /*
 Board
 
-Use class `.board` followed by the nested structure `.text`, `.child` and `.child-center` to create a container with text content vertically centered.
+Use class `.board` followed by the nested structure `.text`, `.child` and `.child-center` to create a container with vertically centered text content.<br />
 Use class `.claim` to format the main title.
 
 Use class `.board-executive` to apply a background image.
@@ -4297,12 +4409,21 @@ Styleguide 2.3
   -ms-flex: none;
   flex: none;
   margin-left: 20px;
+  background-color: #fff;
 }
 .content-logo-media a {
   width: 100px;
   height: 100px;
 }
-.content-logo-media a img {
+.content-logo-media img {
+  display: block;
+  width: 110px;
+  padding: 4px;
+  border: 1px solid #e2e5e6;
+}
+.content-logo-media .fig-thumbnail-logo img {
+  border: none;
+  padding: 0;
   width: 100px;
 }
 
@@ -4608,18 +4729,17 @@ Styleguide 2.4.3
 */
 .range-group {
   display: -webkit-box;
-  /* iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
   display: -ms-flexbox;
-  /* IE 10 */
   display: -webkit-flex;
-  /* Chrome */
   display: flex;
-  /* Opera 12.1, Firefox 20+ */
-  -webkit-flex-flow: column wrap;
-  flex-flow: column wrap;
+  -webkit-flex-flow: row wrap-reverse;
   flex-flow: row wrap-reverse;
   height: 35px;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
+  -webkit-align-content: space-between;
+  align-content: space-between;
 }
 
 .range {
@@ -4904,7 +5024,7 @@ $query2     = width, device-width
   font-size: 20px;
   text-decoration: none;
   color: #2d3133;
-  background-image: url(//media.infojobs.net/appgrade/backgrounds/bg-header-microsite-arrow-icon.png);
+  background-image: url(//media.infojobs.net/appgrade/backgrounds/bheader-microsite-arrow-icon.png);
   background-position: right center;
   background-repeat: no-repeat;
 }
@@ -5685,7 +5805,6 @@ Styleguide 2.8
   margin-bottom: 20px;
   background: #fff;
   border-top: 1px solid #e2e5e6;
-  border-bottom: 1px solid #e2e5e6;
 }
 .result-list-header + .result-list {
   margin-top: 0;
@@ -6189,7 +6308,7 @@ $query2     = width, device-width
   -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
-  min-height: 200px;
+  min-height: 180px;
   background-color: rgba(0, 0, 0, 0.5);
 }
 .media-board .item1 .caption {
@@ -6622,6 +6741,8 @@ Styleguide 3.1.3
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
   z-index: 9999;
   animation: modal-flipinX .3s both;
+  -webkit-transition: height 600ms;
+  transition: height 600ms;
 }
 @media only screen and (min-width: 480px) {
   .modal-inner {
@@ -6837,8 +6958,8 @@ $query2     = width, device-width
 Notifications
 
 ###Notifications
-Contextual messages for confirmation messages.<br>
-The modifier classes are `.notification-error` for errors, `.notification-success` for success and `.notification-info` for information.    .
+Contextual notificitions for confirmation messages.<br>
+The modifier classes are `.notification-error` for errors, `.notification-success` for success and `.notification-info` for information.
 
 Markup:
 <!-- Notification error -->
@@ -7227,7 +7348,7 @@ $query2     = width, device-width
 Pagination
 
 ###Pagination
-For pagination wrap a `.btn-group` structure with class `.pagination`.<br>
+For pagination wrap a `.btn-group` structure with class `.pagination` as a parent.<br>
 Use class `.active` for the active button.
 
 Markup:
@@ -7312,52 +7433,40 @@ Markup:
 Styleguide 2.9
 */
 .pagination {
-  padding: 20px 10px;
-  background-color: #fff;
-  border-top: 1px solid #e2e5e6;
   background: #fff;
 }
-@media only screen and (min-width: 481px) {
-  .pagination {
-    padding: 20px;
-  }
-}
-
 .pagination .btn-group {
   margin: 0 auto;
   width: 100%;
 }
-
-.pagination .btn-group .btn {
-  width: 100%;
-}
-
 @media only screen and (min-width: 481px) {
   .pagination .btn-group {
     width: 440px;
-  }
-
-  .pagination .btn-group .btn {
-    width: 100%;
-  }
-
-  .pagination-top-microsite {
-    padding: 20px;
-  }
-
-  .pagination-top-microsite + .inner {
-    padding-top: 0;
   }
 }
 @media only screen and (min-width: 769px) {
   .pagination .btn-group {
     width: auto;
   }
-
-  .pagination .btn-group .btn {
+}
+.pagination .btn {
+  width: 100%;
+}
+@media only screen and (min-width: 769px) {
+  .pagination .btn {
     width: auto;
   }
 }
+
+@media only screen and (min-width: 481px) {
+  .pagination-top-microsite {
+    padding: 20px;
+  }
+  .pagination-top-microsite + .inner {
+    padding-top: 0;
+  }
+}
+
 /* Variables =================================================== */
 /*------------------------------------*\
     $FUNCTIONS
@@ -7406,6 +7515,14 @@ $PANELS
 .panel-info {
   color: #fff;
   background-color: #393939;
+}
+.panel-focus {
+  color: #fff;
+  background-color: #2088c2;
+}
+.panel-overlay {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 [class^="col-"].panel .col-child,
@@ -8474,8 +8591,8 @@ $query2     = width, device-width
 Thumbnail logo
 
 ###Thumbnail logo
-Logo with caption at bottom,<br>
-the combination of classes `.slide-up` in `<figure>` and `.slide-item` in `<figcapcion>` is for display the caption with effect.
+Logo with caption at bottom.
+The combination of classes `.slide-up` in `<figure>` and `.slide-item` in `<figcaption>` is used to show the caption on hovering with the mouse over the logo.
 
 
 Markup:
@@ -9326,7 +9443,7 @@ Use class `.custom-bg` responsive to make the image responsive.
 Use modifier `.overlay-60` to apply an overlay.
 
 Markup:
-<div class="custom-bg {$modifiers}" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-header-grid-01.jpg');">
+<div class="custom-bg {$modifiers}" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg');">
     <div class="inner">
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
@@ -9362,7 +9479,7 @@ Styleguide 2.24
 
 .overlay-60 {
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 .overlay-60::before {
   content: "";
@@ -9416,41 +9533,47 @@ KPI
 Markup:
 <div class="kpi">
 	<h2 class="kpi-title">Ofertas para ti</h2>
-	<a href="#" id="kpi-indicator-offers"
-	data-endval="59"
-	data-duration="1"
-	class="kpi-indicator">158</a>
-	<p>Basada en tus últimas búsquedas</p>
-	<a class="link-underline" href="#">Buscar ofertas</a>
+	<a href="#"><span class="kpi-indicator iconfont-Viewdetails">15</span></a>
+	<p>Lorem ipsum <br><a href="#">Link</a></p>
 </div>
 
 Styleguide 2.25
 */
 .kpi {
   margin: 0 auto;
-  text-align: center;
 }
 .kpi p {
-  margin: 0;
+  margin-bottom: 10px;
+}
+.kpi p:last-child {
+  margin-bottom: 0;
+}
+.kpi .arrow {
+  margin-left: 10px;
+  padding-top: 5px;
 }
 
 .kpi-title {
-  margin-bottom: 10px;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
 }
-@media only screen and (min-width: 481px) {
-  .kpi-title {
-    font-size: 20px;
-    line-height: 24px;
-  }
+
+.kpi-body {
+  margin: 15px 0 0 0;
 }
 
 .kpi-indicator {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 60px;
-  line-height: 60px;
+  float: left;
+  padding: 0 10px 0 0;
+  font-size: 36px;
+  color: #2088c2;
+}
+@media only screen and (min-width: 769px) {
+  .kpi-indicator {
+    color: inherit;
+  }
 }
 
 /* Variables =================================================== */
@@ -9494,7 +9617,7 @@ Styleguide 2.27
 crop-image
 
 Markup:
-<div class="crop-image" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-header-grid-01.jpg')"></div>
+<div class="crop-image" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg')"></div>
 
 Styleguide 2.27.1
 */
@@ -9502,7 +9625,7 @@ Styleguide 2.27.1
 crop-circle
 
 Markup:
-<div class="crop-circle" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-header-grid-01.jpg')"></div>
+<div class="crop-circle" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg')"></div>
 
 Styleguide 2.27.2
 */
@@ -9564,7 +9687,6 @@ $query2     = width, device-width
   width: 100%;
   overflow: hidden;
   border-bottom: 1px solid #bac7cc;
-  background-color: #fff;
 }
 .tips-list li:last-child {
   border: none;
@@ -9576,37 +9698,9 @@ $query2     = width, device-width
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    align-items: center;
   }
-}
-.tips-list li.main .cell-1 [class*=" iconfont-"]::after {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 30px;
-  height: 30px;
-  padding-top: 13px;
-  font-family: 'Icons';
-  content: "\e62a";
-  border: 2px solid #e2e5e6;
-  border-radius: 50%;
-  color: #fff;
-  background-color: #00a550;
-}
-.tips-list li.main .kind {
-  color: #00a550;
-}
-.tips-list [class^="cell-"],
-.tips-list [class*=" cell-"] {
-  padding: 20px 10px;
-  vertical-align: top;
-  background-color: #fff;
-}
-@media only screen and (min-width: 481px) {
-  .tips-list [class^="cell-"],
-  .tips-list [class*=" cell-"] {
-    vertical-align: middle;
-    padding: 20px;
+  .tips-list li > div.middle {
+    align-items: center;
   }
 }
 .tips-list .cell-1 {
@@ -9614,6 +9708,9 @@ $query2     = width, device-width
   max-width: 70px;
   width: 70px;
   float: left;
+}
+.tips-list .cell-1.hide-small-device + .cell-2 {
+  margin-left: 0;
 }
 @media only screen and (min-width: 481px) {
   .tips-list .cell-1 {
@@ -9642,6 +9739,14 @@ $query2     = width, device-width
     height: 60px;
   }
 }
+.tips-list .cell-1 .fig-thumbnail-logo {
+  width: 50px;
+}
+@media only screen and (min-width: 481px) {
+  .tips-list .cell-1 .fig-thumbnail-logo {
+    width: 60px;
+  }
+}
 .tips-list .cell-2 {
   margin-left: 70px;
 }
@@ -9652,7 +9757,6 @@ $query2     = width, device-width
     -ms-flex: 2;
     flex: 2;
     width: auto;
-    padding-top: 20px;
     margin-left: 0;
   }
 }
@@ -9678,12 +9782,8 @@ $query2     = width, device-width
   top: 0;
   color: #999;
 }
-.main .tips-list .cell-1 [class^="iconfont-"]::before, .main
-.tips-list .cell-1 [class*=" iconfont-"]::before {
-  display: inline-block;
-}
 .tips-list .title {
-  margin-bottom: 0;
+  margin-bottom: 10px;
   font-size: 18px;
   line-height: 22px;
 }
@@ -9705,27 +9805,55 @@ $query2     = width, device-width
     position: relative;
     font-size: 14px;
     line-height: 18px;
-    color: #999;
   }
 }
-.tips-list .btn,
-.tips-list .link {
+.tips-list .actions a {
   display: inline-block;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 .tips-list .fade-out {
   -webkit-transition-duration: 400ms;
   -moz-transition-duration: 400ms;
+  -ms-transition-duration: 400ms;
   -o-transition-duration: 400ms;
   transition-duration: 400ms;
 }
 .tips-list .close-animate {
   -webkit-transition-duration: 200ms;
   -moz-transition-duration: 200ms;
+  -ms-transition-duration: 200ms;
   -o-transition-duration: 200ms;
   transition-duration: 200ms;
 }
-
+.tips-list .open-tip {
+  max-height: 0;
+  -webkit-animation: opentip 2s 1.5s;
+  animation: opentip 2s 1.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes opentip {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 280px;
+  }
+}
+@-webkit-keyframes opentip {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 280px;
+  }
+}
 /* Variables =================================================== */
 /*------------------------------------*\
     $FUNCTIONS
@@ -9881,6 +10009,61 @@ $query2     = width, device-width
 }
 
 /*------------------------------------*\
+    $COLLAPSIBLE
+\*------------------------------------*/
+.collapsible {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+.collapsible .gradient {
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background: linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 105px;
+}
+
+.collapsible-toggle {
+  display: none;
+}
+
+/* Variables =================================================== */
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+/**
+ * cross multiplication percentages
+ */
+/**
+ * Turn numbers with units into unitless numbers
+ */
+/*------------------------------------*\
+$MIXINS
+\*------------------------------------*/
+/*
+Mediaqueries
+
+$breakpoint = $bp-tablet, $bp-desktop or specific
+$query1     = min or max
+$query2     = width, device-width
+
+*/
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+.tag-group li.tag-divider, .links-bar li {
+  border-right: 1px solid #e2e5e6;
+  border-radius: 0;
+}
+
+/*------------------------------------*\
     $FONTS
 \*------------------------------------*/
 .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
@@ -9959,6 +10142,91 @@ Styleguide 2.28
 .rating-nps .radio-group label {
   display: block;
   width: auto;
+}
+
+/* Variables =================================================== */
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+/**
+ * cross multiplication percentages
+ */
+/**
+ * Turn numbers with units into unitless numbers
+ */
+/*------------------------------------*\
+$MIXINS
+\*------------------------------------*/
+/*
+Mediaqueries
+
+$breakpoint = $bp-tablet, $bp-desktop or specific
+$query1     = min or max
+$query2     = width, device-width
+
+*/
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+.tag-group li.tag-divider, .links-bar li {
+  border-right: 1px solid #e2e5e6;
+  border-radius: 0;
+}
+
+/*------------------------------------*\
+	$CONTENT MEDIA
+\*------------------------------------*/
+/*
+Content media
+
+Usa la clase `.content-media` para construir una estructura con una imagen a un lado de un bloque de contenido de texto.
+
+Markup:
+<div class="content-media inner">
+	<div class="media">
+		<img class="crop-circle" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" alt="">
+	</div>
+	<div class="body">
+		<h3 class="title"><a href="#">Juan Manuel RodrÃÂguez</a></h3>
+		<p>Account Manager jasdlf sadf dsakfjasd lfkjasd <span class="alternative">en Schibsted Classified Media Spain</span></p>
+	</div>
+</div>
+
+*/
+.content-media .media,
+.content-media .body {
+  display: table-cell;
+  vertical-align: top;
+}
+.content-media .media {
+  padding-right: 20px;
+  width: 70px;
+}
+@media only screen and (min-width: 481px) {
+  .content-media .media {
+    width: 80px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .content-media .media {
+    width: 100px;
+  }
+}
+.content-media .title {
+  margin: 0;
+}
+@media only screen and (min-width: 769px) {
+  .content-media img {
+    width: 80px;
+    height: 80px;
+  }
+}
+li.content-media + .content-media::before {
+  position: relative;
+  display: block;
+  content: "";
+  border-top: 1px solid #e2e5e6;
+  top: -20px;
 }
 
 /* Variables =================================================== */
@@ -10169,18 +10437,22 @@ $query2     = width, device-width
 \*------------------------------------*/
 .border-top {
   border-top: 1px solid #e2e5e6;
+  margin: 0;
 }
 
 .border-right {
   border-right: 1px solid #e2e5e6;
+  margin: 0;
 }
 
 .border-bottom {
   border-bottom: 1px solid #e2e5e6;
+  margin: 0;
 }
 
 .border-left {
   border-left: 1px solid #e2e5e6;
+  margin: 0;
 }
 
 .border-divider {
@@ -10191,11 +10463,15 @@ $query2     = width, device-width
 .inner .border-divider {
   margin-left: -10px;
   margin-right: -10px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 @media only screen and (min-width: 481px) {
   .inner .border-divider {
     margin-left: -20px;
     margin-right: -20px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }
 .border-divider:last-child {
@@ -10221,6 +10497,10 @@ $query2     = width, device-width
 
 .margin-left {
   margin-left: 20px;
+}
+
+.link-annex {
+  margin-right: 20px;
 }
 
 .border-top-expanded {
@@ -10277,46 +10557,54 @@ $query2     = width, device-width
     display: none;
   }
 }
+/*------------------------------------*\
+    $IMG
+\*------------------------------------*/
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
 html,
 body {
   height: auto;
 }
 
-body {
+body#kss-node {
   background: #f7f7f7;
 }
 
-.guide {
+.sg-guide {
   font-size: 13px;
 }
-.guide .col-child {
+.sg-guide .col-child {
   padding: 10px;
   text-align: center;
-  background-color: #fff;
+  background-color: #e2e5e6;
   overflow: hidden;
 }
-.guide .col-6-medium {
+.sg-guide .col-6-medium {
   width: 50%;
 }
-.guide .row {
+.sg-guide .row {
   margin-bottom: 10px;
 }
-.guide .color {
+.sg-guide .color {
   margin-bottom: 10px;
 }
-.guide .color li {
+.sg-guide .color li {
   padding: 10px 20px;
   text-align: center;
   border: 1px solid #2D3133;
   float: left;
   margin: 0 10px 10px 0;
 }
-.guide.icons ul {
+.sg-guide.icons ul {
   overflow: hidden;
   display: inline-block;
   width: 100%;
 }
-.guide.icons ul li {
+.sg-guide.icons ul li {
   height: 100px;
   margin: 0px;
   outline: 1px solid white;
@@ -10327,24 +10615,24 @@ body {
   width: 50%;
 }
 @media only screen and (min-width: 481px) {
-  .guide.icons ul li {
+  .sg-guide.icons ul li {
     width: 25%;
   }
 }
 @media only screen and (min-width: 769px) {
-  .guide.icons ul li {
+  .sg-guide.icons ul li {
     width: 16.666%;
   }
 }
-.guide.icons ul li::after,
-.guide.icons ul li::before {
+.sg-guide.icons ul li::after,
+.sg-guide.icons ul li::before {
   display: block;
   padding: 30px;
   text-align: center;
   font-size: 30px;
 }
 
-.content {
+.sg-content {
     /*.margin-top {
         margin-top: 70px;
 
@@ -10353,43 +10641,44 @@ body {
         }
     }*/
 }
-.content h1,
-.content h2 {
+.sg-content h1,
+.sg-content h2 {
   margin-bottom: 10px;
   margin-top: 70px;
 }
-.content h1:first-child,
-.content h2:first-child {
+.sg-content h1:first-child,
+.sg-content h2:first-child {
   margin-top: 40px;
 }
-.content h1 {
+.sg-content h1 {
   font-size: 25px;
   color: #2088c2;
 }
-.content h2,
-.content h3 {
+.sg-content h2,
+.sg-content h3 {
+  font-family: 'Proximanovasemibold';
   color: #2d3133;
 }
-.content h2 {
+.sg-content h2 {
   font-size: 20px;
 }
-.content h3 {
+.sg-content h3 {
   font-size: 18px;
 }
-.content p {
+.sg-content p {
   margin-bottom: 20px;
 }
-.content .img {
+.sg-content .sg-img {
   margin: 0;
 }
-.content .link {
+.sg-content .sg-link {
   text-decoration: none;
 }
-.content .link:hover {
+.sg-content .sg-link:hover {
   text-decoration: underline;
 }
-.content .selector,
-.content .styleguide-description code {
+.sg-content .sg-selector,
+.sg-content .sg-block-description code {
   margin-right: 0;
   padding: 3px 5px;
   -webkit-border-radius: 3px;
@@ -10400,18 +10689,19 @@ body {
   font-size: 13px;
   color: #dc1a6c;
 }
-.content .view {
+.sg-content .sg-view {
   margin-top: 20px;
   padding: 20px;
   border: 1px solid #e2e5e6;
 }
-.content .view::before {
+.sg-content .sg-view::before {
   content: 'Example';
   display: block;
   height: 30px;
   color: #e2e5e6;
 }
-.content pre {
+.sg-content pre {
+  overflow: scroll;
   border-top: 1px solid #e2e5e6;
   padding: 20px;
   font-family: Courier;
@@ -10419,14 +10709,14 @@ body {
   background-color: #e2e5e6;
 }
 
-.footer {
+.sg-footer {
   background: none;
 }
-.footer:before {
+.sg-footer:before {
   background: none;
 }
 
-.styleguide-block {
+.sg-block {
   margin-top: 60px;
 }
 

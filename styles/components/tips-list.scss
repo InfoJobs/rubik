@@ -12,7 +12,6 @@
 		width: 100%;
 		overflow: hidden;
 		border-bottom: 1px solid $katana-slash; //TODO: idem .list-divider except paddings and margins
-		background-color: $shiro;
 
 		&:last-child {
 			border: none;
@@ -22,50 +21,24 @@
 
 			@include mediaquery ($bp-tablet) {
 			// First create a flex layout context
-			@include display-flex;
-			///* Define the flow direction and if it's allowed the items to wrap. Default values are:
-			//* flex-direction: row;
-			//* flex-wrap: nowrap;
-			//*
-			//* This is the same as:
-			//* flex-flow: row nowrap;
-			//*/
-			align-items: center;
+				@include display-flex;
+				///* Define the flow direction and if it's allowed the items to wrap. Default values are:
+				//* flex-direction: row;
+				//* flex-wrap: nowrap;
+				//*
+				//* This is the same as:
+				//* flex-flow: row nowrap;
+				//*/
+
+				&.middle {
+					align-items: center;
+
+				}
 			}
 		}
 
-		@at-root #{&}.main .cell-1 [class*=" iconfont-"]::after {
-				position: absolute;
-				top: 0;
-				left: 50%;
-				width: 30px;
-				height: 30px;
-				padding-top: 13px;
-				font-family: 'Icons';
-				content: "\e62a";
-				border: 2px solid #e2e5e6;
-				border-radius: 50%;
-				color: $shiro;
-				background-color: $bamboo;
-		}
-
-		@at-root #{&}.main .kind {
-				color: $bamboo;
-		}
-
 	}
 
-	[class^="cell-"],
-	[class*=" cell-"] {
-		padding: 20px 10px; //TODO: placeholder .inner??
-		vertical-align: top;
-		background-color: $shiro;
-
-		@include mediaquery ($bp-tablet) {
-			vertical-align: middle;
-			padding: 20px;
-		}
-	}
 
 	.cell {
 
@@ -74,6 +47,10 @@
 			max-width: 70px;
 			width: 70px;
 			float: left;
+
+			&.hide-small-device + .cell-2 {
+				margin-left: 0;
+			}
 
 			@include mediaquery ($bp-tablet) {
 				//Define a flex grow
@@ -97,6 +74,14 @@
 					height: 60px;
 				}
 			}
+
+			.fig-thumbnail-logo {
+				width: 50px;
+
+				@include mediaquery ($bp-tablet) {
+					width: 60px;
+				}
+			}
 		}
 
 		&-2 {
@@ -106,7 +91,6 @@
 				//Define a flex grow
   				@include flex(2);
 				width: auto;
-				padding-top: 20px;
 				margin-left: 0;
 			}
 
@@ -136,13 +120,10 @@
 			top: 0;
 			color: $soft-script;
 
-			.main & {
-				display: inline-block;
-			}
 	}
 
 	.title {
-		margin-bottom: 0;
+		margin-bottom: 10px;
 		font-size: $medium-font-size;
 		line-height: $medium-line-height;
 
@@ -164,27 +145,65 @@
 			position: relative;
 			font-size: $small-font-size;
 			line-height: $small-line-height;
-			color: $soft-script;
 		}
 	}
 
-	.btn,
-	.link {
-		display: inline-block;
-	  	margin-top: 8px;
+	.actions {
+
+		a {
+			display: inline-block;
+			margin-top: 10px;
+
+		}
 	}
 
+	//animations
+
 	.fade-out {
-		-webkit-transition-duration: 400ms;
-		   -moz-transition-duration: 400ms;
-			 -o-transition-duration: 400ms;
-		  		transition-duration: 400ms;
+		@include vendor-prefix('transition-duration', '400ms');
 	}
 
 	.close-animate {
-		-webkit-transition-duration: 200ms;
-		   -moz-transition-duration: 200ms;
-	         -o-transition-duration: 200ms;
-	            transition-duration: 200ms;
+		@include vendor-prefix('transition-duration', '200ms');
 	}
+
+	.open-tip {
+		max-height: 0;
+		-webkit-animation: opentip 2s 1.5s;
+		        animation: opentip 2s 1.5s;
+ 		-webkit-animation-iteration-count: 1;
+		-webkit-animation-fill-mode: forwards;
+		        animation-iteration-count: 1;
+		    	animation-fill-mode: forwards;
+	}
+
+	@keyframes opentip {
+
+		from {
+			opacity: 0;
+			max-height: 0;
+		}
+
+		to {
+			opacity: 1;
+			max-height: 280px;
+		}
+
+	}
+
+	@-webkit-keyframes opentip {
+
+		from {
+			opacity: 0;
+			max-height: 0;
+		}
+
+		to {
+			opacity: 1;
+			max-height: 280px;
+		}
+
+	}
+
+
 }
