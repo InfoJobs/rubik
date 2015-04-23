@@ -218,7 +218,6 @@ Containers #disabled#
 - Use class `.container` to create blocks content.
 - Use class `.container-expanded` to create a top gap between blocks contents.
 
-
 Markup:
 <div class="wrapper casper">
     <div class="container container-expanded">
@@ -231,11 +230,6 @@ Styleguide 1.1.2
 .wrapper {
   min-height: 100%;
   position: relative;
-}
-@media only screen and (min-width: 769px) {
-  .wrapper {
-    overflow: hidden;
-  }
 }
 
 .container {
@@ -283,8 +277,14 @@ Styleguide 1.2.4
 }
 
 .inner-expanded {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+@media only screen and (min-width: 481px) {
+  .inner-expanded {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 .inner-expanded > .inner:first-child, .inner-expanded > .inner:only-child {
   padding-top: 0;
@@ -379,6 +379,12 @@ body {
 }
 .inner-freak:only-of-type {
   min-height: 400px;
+}
+
+.divider:after {
+  content: "|";
+  padding-left: 5px;
+  color: #e2e5e6;
 }
 
 /*------------------------------------*\
@@ -1848,7 +1854,7 @@ Markup:
 	<li class="iconfont-Company {{modifier_class}}"><span class="hide">Icon name</span></li>
 </ul>
 
-{{modifier_class}}:
+{modifier_class}:
 
 .iconfont-16px	- 16px
 .iconfont-18px	- 18px
@@ -2171,6 +2177,7 @@ Styleguide 1.6.1
   /*@include transition;*/
   display: inline-block;
   width: auto;
+  height: 30px;
   padding: 0 10px;
   border: 1px solid transparent;
   color: #fff;
@@ -2209,15 +2216,14 @@ Buttons
 
 Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms), followed by classes listed as `{modifier_class}`.
 
-{{modifier_class}}:
+{modifier_class}:
 
 .btn-default		   - Applies default action style
 .btn-primary 		   - Applies primary action style
 .btn-primary-contrast  - Applies primary action style over dark background
 
 Markup:
-<a href="#" class="btn {{modifier_class}} {modifier_class}">Link Button</a>
-<button class="btn {{modifier_class}} {modifier_class}">Button Element</button>
+<a href="#" class="btn {{modifier_class}}">Link Button</a>
 
 Styleguide 1.5
 */
@@ -2345,9 +2351,8 @@ Use classes listed as `{modifier_class}` to change buttons size.
 
 Markup:
 <a href="#" class="btn btn-default {{modifier_class}}">Link Button</a>
-<button class="btn btn-default {{modifier_class}}">Button Element</button>
 
-{{modifier_class}}:
+{modifier_class}:
 
 .btn-medium			- Size: Medium
 .btn-large 			- Size: Large
@@ -2355,18 +2360,26 @@ Markup:
 Styleguide 1.5.1
 */
 .btn-medium {
+  height: 40px;
   padding: 0 10px;
   font-size: 18px;
   line-height: 38px;
+  /*@at-root button.btn-medium {
+      height: 40px;
+  }*/
 }
 .btn-medium[class*="iconfont-"]::before {
   font-size: 22px;
 }
 
 .btn-large {
+  height: 42px;
   padding: 0 20px;
   font-size: 20px;
   line-height: 40px;
+  /*@at-root button.btn-large {
+      height: 42px;
+  }*/
 }
 @media only screen and (max-width: 480px) {
   .btn-large {
@@ -2374,6 +2387,7 @@ Styleguide 1.5.1
   }
 }
 .btn-large[class*="iconfont-"]::before {
+  top: 7px;
   font-size: 30px;
 }
 
@@ -2384,7 +2398,6 @@ Use class `.iconfont-[name]` to display the needed icon.
 
 Markup:
 <a href="#" class="btn btn-primary btn-medium iconfont-Facebook">Link Button</a>
-<button class="btn btn-primary btn-medium iconfont-Facebook">Button Element</button>
 
 Styleguide 1.5.2
 */
@@ -2395,7 +2408,6 @@ Use class `.btn-disabled` to show button as disabled.
 
 Markup:
 <a href="#" class="btn btn-default btn-medium btn-disabled">Link Button</a>
-<button class="btn btn-default btn-medium btn-disabled">Button Element</button>
 
 Styleguide 1.5.3
 */
@@ -2461,7 +2473,6 @@ Use class `.btn-form-inline` to display a full width button.
 
 Markup:
 <a href="#" class="btn btn-primary btn-form-inline">Button Element</a>
-<button class="btn btn-default btn-form-inline">Button Element</button>
 
 Styleguide 1.5.5
 */
@@ -2809,7 +2820,7 @@ Use class `.base` or `.medium` to change the size of the text.
 Markup:
 <p class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-{{modifier_class}}:
+{modifier_class}:
 
 .base				- Size: To force body copy size
 .medium				- Size: To increase text size
@@ -2841,7 +2852,7 @@ Markup:
 	<cite>Lorem ipsum</cite>
 </blockquote>
 
-{{modifier_class}}:
+{modifier_class}:
 
 .vip-quote			- Size: big size and Slabo font-family
 .quote				- Type: with quotation mark
@@ -9549,7 +9560,7 @@ Markup:
     </div>
 </div>
 
-{{modifier_class}}:
+{modifier_class}:
 .overlay-60		- Overlay in background image
 
 
