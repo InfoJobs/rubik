@@ -4,11 +4,11 @@ module.exports.register = function(handlebars) {
   /**
    * Test if markup have caster class. e.g:
    *
-   * {{#isntCaster markup}}
+   * {{#isntCasper markup}}
    *    {{markup}}
-   * {{/isntCaster}}
+   * {{/isntCasper}}
    */
-    handlebars.registerHelper('isntCaster', function(string, options) {
+    handlebars.registerHelper('isntCasper', function(string, options) {
         if(string.indexOf('casper') > -1) {
             return options.inverse(this);
         }

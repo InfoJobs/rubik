@@ -20,9 +20,10 @@
 /*
 Icons
 
-The icons are generated as fonts.<br>
-Color and size can be modified as texts.
-Use these classes to specify an icon for any tag.
+Icons are generated as fonts. Color and size can be modified as texts.
+Use the following classes to apply an icon on a tag.
+
+@@include('../templates/partials/icons.html')
 
 Styleguide 1.6
 */
@@ -71,10 +72,10 @@ Use these classes to modify the icon size in px.
 
 Markup:
 <ul>
-	<li class="iconfont-Company {$modifiers}"><span class="hide">Icon name</span></li>
+	<li class="iconfont-Company {{modifier_class}}"><span class="hide">Icon name</span></li>
 </ul>
 
-{$modifiers}:
+{modifier_class}:
 
 .iconfont-16px	- 16px
 .iconfont-18px	- 18px

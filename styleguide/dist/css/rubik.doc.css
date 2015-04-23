@@ -207,34 +207,29 @@ strong {
 /*
 Layouts
 
-Styleguide 1.2
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Styleguide 1.1
 */
 /*
-Containers
+Containers #disabled#
 
-```
-.wrapper				- To create page structure
-.container 				- To create block content
-.container-expanded		- To create gap between block contents via margin-top
-```
+- Use class `.wrapper` to wrap all page content.
+- Use class `.container` to create blocks content.
+- Use class `.container-expanded` to create a top gap between blocks contents.
 
 Markup:
-<div class="wrapper">
+<div class="wrapper casper">
     <div class="container container-expanded">
         ...
     </div>
 </div>
 
-Styleguide 1.2.2
+Styleguide 1.1.2
 */
 .wrapper {
   min-height: 100%;
   position: relative;
-}
-@media only screen and (min-width: 769px) {
-  .wrapper {
-    overflow: hidden;
-  }
 }
 
 .container {
@@ -252,18 +247,15 @@ Styleguide 1.2.2
 }
 
 /*
-Inner containers
+Inner containers #disabled#
 
-Inner creates 20px gutters (gaps between content) via padding using `.inner` class as a wrapper of the content.
-Inner can be nested several times.
+- Use class `.inner` to create a 20 pixels gap between previous, next, left and right containers. Class `.inner` can be nested several times.
+- Use class `.inner-expanded` to create a 40 pixels gap between previous and next container
 
 Markup:
 <div class="inner">
     ...
 </div>
-
-.inner				    - To create a 20 pixels gap between previous, next, left and right containers
-.inner-expanded			- To create a 40 pixels gap between previous and next container
 
 Styleguide 1.2.4
 */
@@ -284,6 +276,16 @@ Styleguide 1.2.4
   }
 }
 
+.inner-expanded {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+@media only screen and (min-width: 481px) {
+  .inner-expanded {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
 @media only screen and (min-width: 481px) {
   .inner-expanded {
     padding-top: 40px;
@@ -385,6 +387,12 @@ body {
   min-height: 400px;
 }
 
+.divider:after {
+  content: "|";
+  padding-left: 5px;
+  color: #e2e5e6;
+}
+
 /*------------------------------------*\
 	$GRIDS
 \*------------------------------------*/
@@ -395,56 +403,53 @@ Grid System
 
 Grid system is used for creating page layout through a series of rows and columns that house
 your content.
-
-<div class="sg-view">
-    <div class="sg-guide">
-      <div class="row-faux clearfix">
-          <div class="col-1">
-              <div class="col-child">.col-1 (more content)</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
-          <div class="col-1">
-              <div class="col-child">.col-1</div>
-          </div>
+<br>
+<div class="sg-guide">
+  <div class="row clearfix">
+      <div class="col-1">
+          <div class="col-child">.col-1 (content)</div>
       </div>
-
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
+      <div class="col-1">
+          <div class="col-child">.col-1</div>
+      </div>
   </div>
 </div>
 
-
+<br>
 - Use class `.row` to create a horizontal group of columns.
 - Then nest as many containers `<div class="col-[number]">` as columns are necessary to build the layout
 - Include the container `<div class="col-child">` as immediate children of `.col-[number]`.
-
+<br>
 <div class="sg-view">
     <div class="sg-guide">
           <!-- ROW 4/8-->
@@ -500,29 +505,28 @@ your content.
   </div>
 
 
-
 Markup:
-<div class="row g-casper">
+<div class="row casper">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-8"><div class="col-child">...</div></div>
 </div>
-<div class="row casper">
+<div class="row">
 	<div class="col-8"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
-<div class="row casper">
+<div class="row">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
-<div class="row casper">
+<div class="row">
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.2.1
+Styleguide 1.1.1
 */
 .row {
   margin: 0 0 0 -10px;
@@ -598,7 +602,7 @@ Markup:
 	<div class="col-4 col-12-medium"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.2.1.2
+Styleguide 1.1.1.2
 */
 @media only screen and (min-width: 481px) {
   .col-1 {
@@ -878,7 +882,7 @@ Markup:
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.2.1.3
+Styleguide 1.1.1.3
 */
 .row-faux {
   margin: 0 0 0 -10px;
@@ -1045,53 +1049,84 @@ h3,
     $COLORS
 \*------------------------------------*/
 /*
-Colors #disabled#
+Text colors
 
-Apply any class specified above to provide color to any html element.
-`.contrast` class needs a dark background.
-`.marked-contrast` and `.highlight` classes adds their own background.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
 
-<div  class="sg-guide">
-    <div class="inner">
-        <ul class="clearfix color">
-            <li class="contrast panel-executive">
-                .contrast
-            </li>
+Styleguide 1.3
+*/
+/*
+Default text color
 
-            <li class="disabled">
-                .disabled
-            </li>
+Use class `.script` to force text color as the default text color
 
-            <li class="marked">
-                .marked
-            </li>
+Markup:
+<p>Lorem ipsum dolor sit amet, <a href="#" class="script">consectetur adipiscing</a> elit.</p>
 
-            <li class="marked-contrast">
-                .marked-contrast
-            </li>
+Styleguide 1.3.1
+*/
+/*
+Secondary text color
 
-            <li class="alternative">
-                .alternative
-            </li>
+Use class `.soft-script` to force a text color as a secondary text
 
-            <li class="highlight">
-                .highlight
-            </li>
+Markup:
+<p>Lorem ipsum dolor sit amet, <a href="#" class="soft-script">consectetur adipiscing</a> elit.</p>
 
-            <li class="script">
-                .script
-            </li>
+Styleguide 1.3.2
+*/
+/*
+Details text color
 
-            <li class="soft-script">
-                .soft-script
-            </li>
-        </ul>
-    <div>
+Use class `.alternative` to mark text that contains details information
+
+Markup:
+<p class="alternative">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+Styleguide 1.3.3
+*/
+/*
+Disabled text color
+
+Use class `.disabled` to mark a text option as disabled
+
+Markup:
+<p>Lorem ipsum dolor sit amet, <a href="#" class="disabled">consectetur adipiscing elit</a>.</p>
+
+Styleguide 1.3.4
+*/
+/*
+Focus text color
+
+Use class `.marked` to focus attention in it
+
+Markup:
+<p>Lorem ipsum <span class="marked">6m ago</p>
+
+Styleguide 1.3.5
+*/
+/*
+Contrasted text color
+
+Use class `.contrast` to define a text over dark background color
+
+Markup:
+<div class="inner panel-info">
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	<a href="#" class="contrast">Curabitur varius</a>
 </div>
 
+Styleguide 1.3.6
+*/
+/*
+Highlighted text color
 
+Use class `.highlight` to highlight words as a result of a search
 
-Styleguide 1.1
+Markup:
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing <span class="highlight">elit</span>.</p>
+
+Styleguide 1.3.7
 */
 .contrast {
   color: #fff;
@@ -1746,9 +1781,71 @@ $query2     = width, device-width
 /*
 Icons
 
-The icons are generated as fonts.<br>
-Color and size can be modified as texts.
-Use these classes to specify an icon for any tag.
+Icons are generated as fonts. Color and size can be modified as texts.
+Use the following classes to apply an icon on a tag.
+
+<div class="sg-guide sg-icons">
+    <ul class="list-default">
+    	<li class="iconfont-ArrowDown">iconfont-ArrowDown</li>
+    	<li class="iconfont-ArrowLeft">iconfont-ArrowLeft</li>
+    	<li class="iconfont-ArrowUp">iconfont-ArrowUp</li>
+    	<li class="iconfont-Arrow">iconfont-Arrow</li>
+    	<li class="iconfont-BurguerMenu">iconfont-BurguerMenu</li>
+    	<li class="iconfont-Calendar">iconfont-Calendar</li>
+    	<li class="iconfont-Candidaturas">iconfont-Candidaturas</li>
+    	<li class="iconfont-Category">iconfont-Category</li>
+    	<li class="iconfont-Check">iconfont-Check</li>
+    	<li class="iconfont-Clock">iconfont-Clock</li>
+    	<li class="iconfont-Close">iconfont-Close</li>
+    	<li class="iconfont-Company">iconfont-Company</li>
+    	<li class="iconfont-Config">iconfont-Config</li>
+    	<li class="iconfont-CV">iconfont-CV</li>
+    	<li class="iconfont-Euro">iconfont-Euro</li>
+    	<li class="iconfont-Facebook">iconfont-Facebook</li>
+    	<li class="iconfont-GooglePlus">iconfont-GooglePlus</li>
+    	<li class="iconfont-Location">iconfont-Location</li>
+    	<li class="iconfont-Mail">iconfont-Mail</li>
+    	<li class="iconfont-Reload">iconfont-Reload</li>
+    	<li class="iconfont-Search">iconfont-Search</li>
+    	<li class="iconfont-State">iconfont-State</li>
+    	<li class="iconfont-Suitecase">iconfont-Suitecase</li>
+    	<li class="iconfont-Twitter">iconfont-Twitter</li>
+    	<li class="iconfont-User">iconfont-User</li>
+    	<li class="iconfont-LinkedIn">iconfont-LinkedIn</li>
+    	<li class="iconfont-Viewdetails">iconfont-Viewdetails</li>
+    	<li class="iconfont-EditCv">iconfont-EditCv</li>
+    	<li class="iconfont-Home">iconfont-Home</li>
+    	<li class="iconfont-QR">iconfont-QR</li>
+    	<li class="iconfont-Config-alt">iconfont-Config-alt</li>
+    	<li class="iconfont-Edit">iconfont-Edit</li>
+    	<li class="iconfont-Help">iconfont-Help</li>
+    	<li class="iconfont-Info">iconfont-Info</li>
+    	<li class="iconfont-Plus">iconfont-Plus</li>
+    	<li class="iconfont-Smile">iconfont-Smile</li>
+    	<li class="iconfont-Wifi">iconfont-Wifi</li>
+    	<li class="iconfont-Alert">iconfont-Alert</li>
+    	<li class="iconfont-Connect">iconfont-Connect</li>
+    	<li class="iconfont-AlertProfile">iconfont-AlertProfile</li>
+    	<li class="iconfont-Hide">iconfont-Hide</li>
+    	<li class="iconfont-News">iconfont-News</li>
+    	<li class="iconfont-Flag">iconfont-Flag</li>
+    	<li class="iconfont-Offers">iconfont-Offers</li>
+    	<li class="iconfont-Big-check">iconfont-Big-check</li>
+    	<li class="iconfont-BigArrowDown">iconfont-BigArrowDown</li>
+    	<li class="iconfont-BigArrowLeft">iconfont-BigArrowLeft</li>
+    	<li class="iconfont-BigArrowUp">iconfont-BigArrowUp</li>
+    	<li class="iconfont-BigArrowRight">iconfont-BigArrowRight</li>
+    	<li class="iconfont-BigArrowObliqueLeftDown">iconfont-BigArrowObliqueLeftDown</li>
+    	<li class="iconfont-BigArrowObliqueRightDown">iconfont-BigArrowObliqueRightDown</li>
+    	<li class="iconfont-BigArrowObliqueLeftUp">iconfont-BigArrowObliqueLeftUp</li>
+    	<li class="iconfont-BigArrowObliqueRightUp">iconfont-BigArrowObliqueRightUp</li>
+    	<li class="iconfont-Star">iconfont-Star</li>
+    	<li class="iconfont-Lock">iconfont-Lock</li>
+    	<li class="iconfont-Menumore">iconfont-Menumore</li>
+    	<li class="iconfont-Alert-circle">iconfont-Alert-circle</li>
+    </ul>
+</div>
+
 
 Styleguide 1.6
 */
@@ -1757,7 +1854,7 @@ Styleguide 1.6
 [class^="iconfont-"]::after,
 [class*=" iconfont-"]::after {
   position: relative;
-  top: 2px;
+  top: 4px;
   font-family: 'Icons';
   speak: none;
   font-style: normal;
@@ -1772,7 +1869,6 @@ Styleguide 1.6
 }
 
 .btn[class*=" iconfont-"]::before {
-  display: inline-block;
   margin-right: 8px;
 }
 .btn-group .btn[class*=" iconfont-"]::before {
@@ -1787,10 +1883,10 @@ Use these classes to modify the icon size in px.
 
 Markup:
 <ul>
-	<li class="iconfont-Company {$modifiers}"><span class="hide">Icon name</span></li>
+	<li class="iconfont-Company {{modifier_class}}"><span class="hide">Icon name</span></li>
 </ul>
 
-{$modifiers}:
+{modifier_class}:
 
 .iconfont-16px	- 16px
 .iconfont-18px	- 18px
@@ -1837,6 +1933,10 @@ Styleguide 1.6.1
 
 .icon-contactos {
   background: url("http://media.infojobs.net/appgrade/backgrounds//icon-contacts.png") no-repeat 0 0;
+}
+
+.icon-alerts {
+  background: url("http://media.infojobs.net/appgrade/backgrounds//icon-alert.png") no-repeat 0 0;
 }
 
 .icon-50px {
@@ -2113,13 +2213,14 @@ Styleguide 1.6.1
   /*@include transition;*/
   display: inline-block;
   width: auto;
-  padding: 5px 10px;
+  height: 30px;
+  padding: 0 10px;
   border: 1px solid transparent;
   color: #fff;
   cursor: pointer;
   font-size: 14px;
   font-weight: normal;
-  line-height: 18px;
+  line-height: 28px;
   overflow: visible;
   text-decoration: none;
   text-align: center;
@@ -2131,7 +2232,7 @@ Styleguide 1.6.1
   transition: all 0.3s ease-in-out 0s;
 }
 button.btn {
-  height: 30px;
+  border: 0 none;
 }
 .btn[class*="iconfont-"]::before {
   font-size: 18px;
@@ -2149,17 +2250,16 @@ p > .btn {
 /*
 Buttons
 
-Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms), followed by classes listed as `{$modifiers}`.
+Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms), followed by classes listed as `{modifier_class}`.
 
-Markup:
-<a href="#" class="btn {$modifiers}">Link Button</a>
-<button class="btn {$modifiers}">Button Element</button>
-
-{$modifiers}:
+{modifier_class}:
 
 .btn-default		   - Applies default action style
 .btn-primary 		   - Applies primary action style
 .btn-primary-contrast  - Applies primary action style over dark background
+
+Markup:
+<a href="#" class="btn {{modifier_class}}">Link Button</a>
 
 Styleguide 1.5
 */
@@ -2283,13 +2383,12 @@ Styleguide 1.5
 /*
 Buttons sizes
 
-Use classes listed as `{$modifiers}` to change buttons size.
+Use classes listed as `{modifier_class}` to change buttons size.
 
 Markup:
-<a href="#" class="btn btn-default {$modifiers}">Link Button</a>
-<button class="btn btn-default {$modifiers}">Button Element</button>
+<a href="#" class="btn btn-default {{modifier_class}}">Link Button</a>
 
-{$modifiers}:
+{modifier_class}:
 
 .btn-medium			- Size: Medium
 .btn-large 			- Size: Large
@@ -2297,28 +2396,34 @@ Markup:
 Styleguide 1.5.1
 */
 .btn-medium {
+  height: 40px;
   padding: 0 10px;
   font-size: 18px;
   line-height: 38px;
+  /*@at-root button.btn-medium {
+      height: 40px;
+  }*/
 }
 .btn-medium[class*="iconfont-"]::before {
   font-size: 22px;
 }
 
 .btn-large {
+  height: 42px;
   padding: 0 20px;
   font-size: 20px;
   line-height: 40px;
+  /*@at-root button.btn-large {
+      height: 42px;
+  }*/
 }
 @media only screen and (max-width: 480px) {
   .btn-large {
     font-size: 18px;
   }
 }
-button.btn-large {
-  height: 42px;
-}
 .btn-large[class*="iconfont-"]::before {
+  top: 7px;
   font-size: 30px;
 }
 
@@ -2329,7 +2434,6 @@ Use class `.iconfont-[name]` to display the needed icon.
 
 Markup:
 <a href="#" class="btn btn-primary btn-medium iconfont-Facebook">Link Button</a>
-<button class="btn btn-primary btn-medium iconfont-Facebook">Button Element</button>
 
 Styleguide 1.5.2
 */
@@ -2340,7 +2444,6 @@ Use class `.btn-disabled` to show button as disabled.
 
 Markup:
 <a href="#" class="btn btn-default btn-medium btn-disabled">Link Button</a>
-<button class="btn btn-default btn-medium btn-disabled">Button Element</button>
 
 Styleguide 1.5.3
 */
@@ -2406,7 +2509,6 @@ Use class `.btn-form-inline` to display a full width button.
 
 Markup:
 <a href="#" class="btn btn-primary btn-form-inline">Button Element</a>
-<button class="btn btn-default btn-form-inline">Button Element</button>
 
 Styleguide 1.5.5
 */
@@ -2451,6 +2553,8 @@ Styleguide 1.5.6
 }
 .btn-group .btn {
   border-color: #bac7cc;
+  border-width: 1px;
+  border-style: solid;
 }
 .btn-group button {
   /* fix iOS buttons separation */
@@ -2559,7 +2663,9 @@ Styleguide 1.5.8
 /*
 Text elements
 
-Styleguide 1.3
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Styleguide 1.2
 */
 /*------------------------------------*\
 $HEADINGS
@@ -2578,18 +2684,18 @@ Markup:
 <h2>Heading level 2</h2>
 <h3>Heading level 3</h3>
 
-Styleguide 1.3.1
+Styleguide 1.2.1
 */
 h1,
 h2,
-.h2
+.h2,
 h3,
 .h3 {
   font-family: Proximanovabold, Helvetica, Arial, sans-serif;
 }
 .skin-executive h1, .skin-executive
 h2, .skin-executive
-.h2
+.h2, .skin-executive
 h3, .skin-executive
 .h3 {
   font-family: Proximanovalight, Helvetica, Arial, sans-serif;
@@ -2649,7 +2755,7 @@ Markup:
 	<p>Lorem ipsum</p>
 </div>
 
-Styleguide 1.3.1.1
+Styleguide 1.2.1.1
 */
 .heading-addons h1 {
   margin: 0;
@@ -2668,7 +2774,7 @@ Use class `.heading-mega` for a big size heading.
 Markup:
 <h1 class="heading-mega">Heading mega</h1>
 
-Styleguide 1.3.1.2
+Styleguide 1.2.1.2
 */
 .heading-mega {
   font-size: 25px;
@@ -2716,9 +2822,9 @@ Paragraphs
 Use tag `<p>` for a basic paragraph. Don't use `<span>` or `<div>` as a text tag, it's not semantic.
 
 Markup:
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.3.2
+Styleguide 1.2.2
 */
 p {
   margin-bottom: 15px;
@@ -2748,14 +2854,14 @@ Text size
 Use class `.base` or `.medium` to change the size of the text.
 
 Markup:
-<p class="{$modifiers}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-{$modifiers}:
+{modifier_class}:
 
 .base				- Size: To force body copy size
 .medium				- Size: To increase text size
 
-Styleguide 1.3.3
+Styleguide 1.2.3
 */
 /*
 Text variants
@@ -2765,7 +2871,7 @@ Use class `.bold` to bold the content. Use only on the following tags: `<p>`, `<
 Markup:
 <p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.3.4
+Styleguide 1.2.4
 */
 .bold {
   font-family: Proximanovabold, Helvetica, Arial, sans-serif;
@@ -2777,17 +2883,17 @@ Blockquotes
 Use `<blockquote>` when the text is quoted from another source. Use `<cite>` to cite the reference.
 
 Markup:
-<blockquote class="{$modifiers}">
-	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</span>
+<blockquote class="{{modifier_class}}">
+	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
 	<cite>Lorem ipsum</cite>
 </blockquote>
 
-{$modifiers}:
+{modifier_class}:
 
 .vip-quote			- Size: big size and Slabo font-family
 .quote				- Type: with quotation mark
 
-Styleguide 1.3.6
+Styleguide 1.2.6
 */
 .quote {
   display: block;
@@ -2839,7 +2945,7 @@ Markup:
     <dd>De duracion determinada, jornada completa</dd>
 </dl>
 
-Styleguide 1.3.5
+Styleguide 1.2.7
 */
 .list-default > li, .list-default > dt {
   display: block;
@@ -2872,7 +2978,7 @@ Markup:
     <li>Tipo de oferta: de duracion determinada, jornada completa</li>
 </ul>
 
-Styleguide 1.3.5.1
+Styleguide 1.2.7.1
 */
 .list-bullet-default > li,
 .list-bullet-default > dt,
@@ -2910,11 +3016,11 @@ Visit the <a href="#section-1.6.1">icons guide</a>.
 
 Markup:
 <ul class="list-default list-bullet-icon">
-    <li class="iconfont-CV iconfont-30px iconfont-soft-script">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo </li>
-    <li class="iconfont-Check iconfont-30px iconfont-soft-script">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo</li>
+    <li class="iconfont-CV iconfont-30px iconfont-soft-script">Lorem ipsum dolor sit amet </li>
+    <li class="iconfont-Check iconfont-30px iconfont-soft-script">Lorem ipsum dolor</li>
 </ul>
 
-Styleguide 1.3.5.2
+Styleguide 1.2.7.2
 */
 .list-default [class^="iconfont-"],
 .list-default [class*="iconfont-"] {
@@ -3009,7 +3115,7 @@ Markup:
     <li>Lorem ipsum dolor</li>
 </ul>
 
-Styleguide 1.3.5.5
+Styleguide 1.2.7.5
 */
 .tag-group {
   overflow: hidden;
@@ -3043,7 +3149,7 @@ Markup:
     <li class>Lorem ipsum</li>
 </ul>
 
-Styleguide 1.3.5.5.1
+Styleguide 1.2.7.5.1
 */
 .tag-group li.tag-divider {
   margin-right: 10px;
@@ -3072,7 +3178,7 @@ Markup:
 </ul>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.3.5.5.2
+Styleguide 1.2.7.5.2
 */
 .tag-group-top {
   margin-bottom: 10px;
@@ -3096,19 +3202,19 @@ Add also the `.tag-ellipsis-col2` or `.tag-ellipsis-col3` in `<li>` when the tag
 Markup:
 <ul class="tag-group">
     <li class="tag-divider tag-ellipsis-cols2">
-        <span class="ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+        <span class="ellipsis">Consectetur</span>
     </li>
     <li>Lorem ipsum</li>
 </ul>
 <ul class="tag-group">
     <li class="tag-divider tag-ellipsis-cols3">
-        <span class="ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+        <span class="ellipsis">Lorem ipsum</span>
     </li>
     <li>Lorem ipsum</li>
     <li>Lorem ipsum</li>
 </ul>
 
-Styleguide 1.3.5.5.4
+Styleguide 1.2.7.5.4
 */
 .tag-group .ellipsis {
   display: block;
@@ -3252,7 +3358,7 @@ input[type="radio"] + label,
 }
 
 /*
-Forms structure
+Forms structure #disabled#
 
 ```
 .form--field-block 	- Fields disposition: block
@@ -3326,7 +3432,7 @@ form ul .form-field-inline ul {
     margin-bottom: 5px;
 }*/
 /*
-Radio buttons / Checkbox
+Radio buttons / Checkbox #disabled#
 
 ```
 .fieldset-title - To format radio button/checkbox's title
@@ -3367,7 +3473,7 @@ Markup:
 Styleguide 1.4.1
 */
 /*
-Radio buttons's inline
+Radio buttons's inline #disabled#
 
 ```
 .radio-group - To create a radio button's group with inline structure
@@ -3419,7 +3525,7 @@ Styleguide 1.4.2
 }
 
 /*
-Selects
+Selects #disabled#
 
 ```
 .form-select -  Field select
@@ -3493,7 +3599,7 @@ Styleguide 1.4.3
 }
 
 /*
-Input group
+Input group #disabled#
 
 ```
 .input-group
@@ -3530,7 +3636,7 @@ Styleguide 1.4.4
 }
 
 /*
-Fieldset title
+Fieldset title #disabled#
 
 Styleguide 1.4.5
 */
@@ -3543,7 +3649,7 @@ Styleguide 1.4.5
 }
 
 /*
-Field error
+Field error #disabled#
 
 ```
 .error-info - Error description
@@ -3615,12 +3721,12 @@ Styleguide 1.4.7
   }
 }
 /*
-Common CSS
+Common CSS #casper#
 
 Styleguide 1
 */
 /*
-Components
+Components #casper#
 
 Styleguide 2
 */
@@ -3657,7 +3763,7 @@ $query2     = width, device-width
     $BANNERS
 \*------------------------------------*/
 /*
-Banners's containers
+Banners's containers #disabled#
 
 ```
 .wrapper-slotbanner
@@ -3687,7 +3793,7 @@ Markup:
 	</div>
 </div>
 
-Styleguide 1.2.3
+Styleguide 1.1.3
 */
 .wrapper-slotbanner .slotbanner {
   margin: 0 auto;
@@ -4509,7 +4615,7 @@ h3,
     $FILTERS
 \*------------------------------------*/
 /*
-Filters
+Filters #disabled#
 
 Styleguide 2.4
 */
@@ -4585,7 +4691,7 @@ Styleguide 2.4
 }
 
 /*
-Filter keyword
+Filter keyword #disabled#
 
 Markup:
 <div class="form filters">
@@ -4676,7 +4782,7 @@ a.closed-list:after {
 }
 
 /*
-Slider one range
+Slider one range #disabled#
 
 ```
 .js-ui-slider-pips
@@ -4693,7 +4799,7 @@ Markup:
 Styleguide 2.4.2
 */
 /*
-Slider range group
+Slider range group #disabled#
 
 ```
 .slider-value
@@ -6559,7 +6665,7 @@ $query2     = width, device-width
 }
 
 /*
-Javascript Components
+Javascript Components #casper#
 
 Styleguide 3
 */
@@ -6605,7 +6711,62 @@ Use the following classes structure to create a modal window:
 - Include the container `<div class="modal-header">` with the header structure.
 - Include the container `<div class="modal-content">` with the content structure.
 
-(Show modal example)
+<a href="#" class="modal-click">Abrir modal</a>
+
+
+<div class="sg-view" id="sendMailModal">
+    <div class="sg-guide">
+        <div class="modal-layer" data-close="" data-headermodal="Modal title">
+            <div class="modal-inner">
+                <div class="modal-header">
+                    <a title="" class="close-modal iconfont-Close iconfont-22px hit-area" href="#"></a>
+                    <h1 class="title">Modal title</h1>
+                </div>
+                <div class="modal-content">
+                    <div class="inner">
+                        <p class="alternative">* Todos los campos son obligatorios</p>
+                           <form action="#">
+                               <fieldset>
+                                   <legend>Compartir por email</legend>
+                                <fieldset>
+                                    <legend>Datos de contacto</legend>
+                                    <ul class="form--field-block clearfix">
+                                        <li>
+                                            <label for="emailsend">Email del destinatario</label>
+                                            <input type="email" maxlength="200" id="emailsend" name="emailsend">
+                                        </li>
+                                        <li>
+                                            <label for="email">Tu email</label>
+                                            <input type="email" maxlength="200" id="email" name="email">
+                                        </li>
+                                        <li>
+                                            <label for="name">Tu nombre</label>
+                                            <input maxlength="200" id="name" name="name">
+                                        </li>
+                                        <li>
+                                            <label for="email">Tu mensaje</label>
+                                            <textarea type="" rows="3" cols="20"></textarea>
+                                            <p class="info alternative small">1/100</p>
+                                        </li>
+                                       </ul>
+                               </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+
+
+  <script src="public/custom.js"></script>
+
+  <script type="text/javascript">
+			$(document).ready(function(){
+				$("#sendMailModal").modalWindow(modalOptions);
+			});
+		</script>
+
 
 Markup:
 <div class="modal-layer modal-fade-in hide">
@@ -6988,7 +7149,7 @@ Markup:
 <!-- /Notification info -->
 </div>
 
-Styleguide 2.12
+Styleguide 2.2
 */
 .notification {
   color: #fff;
@@ -7042,7 +7203,7 @@ Notifications
 Loremew eqwfwaerg sefg sdfg sdfgsdfg sdfg sdfg sdf gsdf gsdfgsdfgsdfg
 
 Markup:
-<div class="notification {$modifiers}">
+<div class="notification {{modifier_class}}">
 <p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
 <p class="contrast">Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="contrast link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
 </div>
@@ -7053,7 +7214,7 @@ Markup:
 .notification-dismissable -
 
 
-Styleguide 2.12.1
+Styleguide 2.2.1
 */
 .notification-error {
   background: #bf2102;
@@ -7347,11 +7508,11 @@ $query2     = width, device-width
 /*
 Pagination
 
-###Pagination
 For pagination wrap a `.btn-group` structure with class `.pagination` as a parent.<br>
 Use class `.active` for the active button.
 
 Markup:
+<!-- Default pagination -->
 <div class="pagination">
 	<div class="btn-group">
 		<div class="active">
@@ -7389,6 +7550,8 @@ Markup:
 		</div>
 	</div>
 </div>
+<!-- /Default pagination -->
+<!-- Pagination states -->
 <div class="pagination">
 	<div class="btn-group">
 		<div>
@@ -7429,6 +7592,7 @@ Markup:
 		</div>
 	</div>
 </div>
+<!-- /Pagination states -->
 
 Styleguide 2.9
 */
@@ -7845,6 +8009,7 @@ Styleguide 2.16
   list-style: none;
   line-height: 15px;
   -webkit-touch-callout: none;
+  color: #2d3133;
 }
 
 .chosen-container .chosen-results li.active-result {
@@ -9443,14 +9608,14 @@ Use class `.custom-bg` responsive to make the image responsive.
 Use modifier `.overlay-60` to apply an overlay.
 
 Markup:
-<div class="custom-bg {$modifiers}" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg');">
+<div class="custom-bg {{modifier_class}}" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg');">
     <div class="inner">
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
     </div>
 </div>
 
-{$modifiers}:
+{modifier_class}:
 .overlay-60		- Overlay in background image
 
 
@@ -9554,25 +9719,26 @@ Styleguide 2.25
 }
 
 .kpi-title {
-  font-size: 20px;
-  line-height: 24px;
+  display: inline;
   margin: 0;
   padding: 0;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .kpi-body {
-  margin: 15px 0 0 0;
+  padding-top: 10px;
 }
 
 .kpi-indicator {
-  float: left;
   padding: 0 10px 0 0;
   font-size: 36px;
+  line-height: 27px;
   color: #2088c2;
 }
 @media only screen and (min-width: 769px) {
   .kpi-indicator {
-    color: inherit;
+    color: #2d3133;
   }
 }
 
@@ -9611,7 +9777,6 @@ $CROP-IMAGE
 /*
 Crop image
 
-Styleguide 2.27
 */
 /*
 crop-image
@@ -9619,15 +9784,14 @@ crop-image
 Markup:
 <div class="crop-image" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg')"></div>
 
-Styleguide 2.27.1
+Styleguide
 */
 /*
-crop-circle
+crop-circle #casper#
 
 Markup:
 <div class="crop-circle" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg')"></div>
 
-Styleguide 2.27.2
 */
 .crop-image,
 .crop-circle {
@@ -10571,7 +10735,8 @@ body {
 }
 
 body#kss-node {
-  background: #f7f7f7;
+  padding: 0;
+  background: #f2f2f2;
 }
 
 .sg-guide {
@@ -10589,25 +10754,28 @@ body#kss-node {
 .sg-guide .row {
   margin-bottom: 10px;
 }
-.sg-guide .color {
-  margin-bottom: 10px;
-}
-.sg-guide .color li {
-  padding: 10px 20px;
-  text-align: center;
-  border: 1px solid #2D3133;
-  float: left;
-  margin: 0 10px 10px 0;
-}
-.sg-guide.icons ul {
+.sg-guide .sg-colors {
   overflow: hidden;
   display: inline-block;
   width: 100%;
 }
-.sg-guide.icons ul li {
-  height: 100px;
+.sg-guide .sg-colors li {
+  float: left;
+  width: 25%;
+  padding: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+.sg-guide.sg-icons ul {
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  margin-left: -5px;
+}
+.sg-guide.sg-icons ul li {
+  height: 140px;
   margin: 0px;
-  outline: 1px solid white;
+  border: 5px solid #f2f2f2;
   font-size: 14px;
   text-align: center;
   background-color: #e2e5e6;
@@ -10615,17 +10783,17 @@ body#kss-node {
   width: 50%;
 }
 @media only screen and (min-width: 481px) {
-  .sg-guide.icons ul li {
+  .sg-guide.sg-icons ul li {
     width: 25%;
   }
 }
 @media only screen and (min-width: 769px) {
-  .sg-guide.icons ul li {
-    width: 16.666%;
+  .sg-guide.sg-icons ul li {
+    width: 25%;
   }
 }
-.sg-guide.icons ul li::after,
-.sg-guide.icons ul li::before {
+.sg-guide.sg-icons ul li::after,
+.sg-guide.sg-icons ul li::before {
   display: block;
   padding: 30px;
   text-align: center;
@@ -10643,12 +10811,7 @@ body#kss-node {
 }
 .sg-content h1,
 .sg-content h2 {
-  margin-bottom: 10px;
-  margin-top: 70px;
-}
-.sg-content h1:first-child,
-.sg-content h2:first-child {
-  margin-top: 40px;
+  margin: 0;
 }
 .sg-content h1 {
   font-size: 25px;
@@ -10661,6 +10824,7 @@ body#kss-node {
 }
 .sg-content h2 {
   font-size: 20px;
+  margin-bottom: 10px;
 }
 .sg-content h3 {
   font-size: 18px;
@@ -10668,7 +10832,11 @@ body#kss-node {
 .sg-content p {
   margin-bottom: 20px;
 }
+.sg-content p:last-child {
+  margin-bottom: 0;
+}
 .sg-content .sg-img {
+  width: 100%;
   margin: 0;
 }
 .sg-content .sg-link {
@@ -10698,14 +10866,18 @@ body#kss-node {
   content: 'Example';
   display: block;
   height: 30px;
-  color: #e2e5e6;
+  color: #999;
+}
+.sg-content .sg-modifiers {
+  margin-bottom: 10px;
 }
 .sg-content pre {
   overflow: scroll;
-  border-top: 1px solid #e2e5e6;
   padding: 20px;
   font-family: Courier;
   font-size: 13px;
+  word-break: normal;
+  border-top: 1px solid #e2e5e6;
   background-color: #e2e5e6;
 }
 
@@ -10714,10 +10886,6 @@ body#kss-node {
 }
 .sg-footer:before {
   background: none;
-}
-
-.sg-block {
-  margin-top: 60px;
 }
 
 /*# sourceMappingURL=rubik.doc.css.map */
