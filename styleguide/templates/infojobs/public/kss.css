@@ -504,9 +504,6 @@
   list-style-type: none;
   /* Alternate shading for lines */
 }
-#kss-node ol.linenums li {
-  padding: 0 10px;
-}
 #kss-node ol.linenums li:first-child {
   padding-top: 3px;
 }
