@@ -65,7 +65,7 @@ Use class `.base` or `.medium` to change the size of the text.
 Markup:
 <p class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-{{modifier_class}}:
+{modifier_class}:
 
 .base				- Size: To force body copy size
 .medium				- Size: To increase text size
@@ -108,7 +108,7 @@ Markup:
 	<cite>Lorem ipsum</cite>
 </blockquote>
 
-{{modifier_class}}:
+{modifier_class}:
 
 .vip-quote			- Size: big size and Slabo font-family
 .quote				- Type: with quotation mark

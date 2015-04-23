@@ -2207,7 +2207,7 @@ p > .btn {
 /*
 Buttons
 
-Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms), followed by classes listed as `{{modifier_class}}`.
+Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms), followed by classes listed as `{modifier_class}`.
 
 {{modifier_class}}:
 
@@ -2216,8 +2216,8 @@ Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (o
 .btn-primary-contrast  - Applies primary action style over dark background
 
 Markup:
-<a href="#" class="btn {{modifier_class}}">Link Button</a>
-<button class="btn {{modifier_class}}">Button Element</button>
+<a href="#" class="btn {{modifier_class}} {modifier_class}">Link Button</a>
+<button class="btn {{modifier_class}} {modifier_class}">Button Element</button>
 
 Styleguide 1.5
 */
@@ -2341,7 +2341,7 @@ Styleguide 1.5
 /*
 Buttons sizes
 
-Use classes listed as `{{modifier_class}}` to change buttons size.
+Use classes listed as `{modifier_class}` to change buttons size.
 
 Markup:
 <a href="#" class="btn btn-default {{modifier_class}}">Link Button</a>

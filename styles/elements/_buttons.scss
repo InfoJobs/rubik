@@ -46,9 +46,9 @@
 /*
 Buttons
 
-Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms), followed by classes listed as `{{modifier_class}}`.
+Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms), followed by classes listed as `{modifier_class}`.
 
-{{modifier_class}}:
+{modifier_class}:
 
 .btn-default		   - Applies default action style
 .btn-primary 		   - Applies primary action style
@@ -193,13 +193,13 @@ Styleguide 1.5
 /*
 Buttons sizes
 
-Use classes listed as `{{modifier_class}}` to change buttons size.
+Use classes listed as `{modifier_class}` to change buttons size.
 
 Markup:
 <a href="#" class="btn btn-default {{modifier_class}}">Link Button</a>
 <button class="btn btn-default {{modifier_class}}">Button Element</button>
 
-{{modifier_class}}:
+{modifier_class}:
 
 .btn-medium			- Size: Medium
 .btn-large 			- Size: Large
