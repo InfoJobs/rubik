@@ -1,173 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-15">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mi InfoJobs</title>
+	<meta charset="ISO-8859-15">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mi InfoJobs</title>
+	<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
 
-<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/style.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
 
-<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
-
-<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
-<link rel="stylesheet" type="text/css" href="../styles/components/tips-list.css" />
-<link rel="stylesheet" type="text/css" href="../styles/components/crop-image.css" />
-<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
-<link rel="stylesheet" type="text/css" href="../styles/components/kpi.css" />
-<link rel="stylesheet" type="text/css" href="../styles/components/custom-background.css" />
-<link rel="stylesheet" type="text/css" href="../styles/components/search.css" />
-<link rel="stylesheet" type="text/css" href="../styles/components/job-list.css" />
-<link rel="stylesheet" type="text/css" href="../styles/components/sticker.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/components/tips-list.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/components/crop-image.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/components/kpi.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/components/custom-background.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/components/search.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/components/job-list.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/components/sticker.css" />
 
 
-<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
+	<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
+
 </head>
 
 <body>
+	<div class="wrapper">
+		<div class="container">
+			<div class="heading-addons custom-bg" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-mi-infojobs-morning.png');">
+				<h1 class="inner inner-expanded heading-mega">Buenas PEPITO</h1>
 
-<div class="wrapper">
-	<div class="container">
-		<div class="heading-addons custom-bg" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-mi-infojobs-morning.png');">
-			<h1 class="inner inner-expanded heading-mega">Buenas PEPITO</h1>
-			<div class="search-bar-main search-bar panel-overlay">
-				<form method="post" name="offersSearch" id="offersSearch" role="form" class="form" action="/jobsearch/search-results/list.xhtml">
-					<fieldset>
-						<legend>Opciones de b�squeda</legend>
-					    	<ul class="clearfix">
-					        	<li class="form-field-inline search-keyword-field">
-					            	<label for="palabra">Busco ofertas de...</label>
-					                <input type="text" maxlength="200" id="palabra" name="palabra" placeholder="Android, director de marketing, cocinero">
-					            </li>
-					            <li class="form-field-inline search-country-field js-show-field">
-					            	<ul class="radio-group clearfix">
-					                	<li>
-					                    	<input type="radio" onclick="actualizaZonaBusqueda();" checked="checked" name="region" value="local" id="local"><label for="local">en Espa�a</label>
-					                    </li>
-					                    <li>
-					                    	<input type="radio" onclick="actualizaZonaBusqueda();" name="region" value="foreign" id="foreign"><label for="foreign">en el extranjero</label>
-					                    </li>
-					                </ul>
-					                <div id="provinciasDiv" class="form-select">
-					                	<select name="of_provincia" id="of_provincia" data-placeholder="Cualquier provincia" class="chosen-select" tabindex="-1" style="display: none;">
-					                	 	 <option selected="selected" value="0">Cualquier provincia</option>
-					                	 	 <optgroup label="M�s comunes">
-					                	 	 	<option value="33">Madrid</option><option value="9">Barcelona</option><option value="49">Valencia/Val�ncia</option><option value="43">Sevilla</option>
-					                		 </optgroup>
-					                		 <optgroup label="Todas">
-					                		 	<option value="28">A Coru�a</option><option value="2">�lava/Araba</option><option value="3">Albacete</option><option value="4">Alicante/Alacant</option><option value="5">Almer�a</option><option value="6">Asturias</option><option value="7">�vila</option><option value="8">Badajoz</option><option value="9">Barcelona</option><option value="10">Burgos</option><option value="11">C�ceres</option><option value="12">C�diz</option><option value="13">Cantabria</option><option value="14">Castell�n/Castell�</option><option value="15">Ceuta</option><option value="16">Ciudad Real</option><option value="17">C�rdoba</option><option value="18">Cuenca</option><option value="19">Girona</option><option value="21">Granada</option><option value="22">Guadalajara</option><option value="23">Guip�zcoa/Gipuzkoa</option><option value="24">Huelva</option><option value="25">Huesca</option><option value="26">Illes Balears</option><option value="27">Ja�n</option><option value="29">La Rioja</option><option value="20">Las Palmas</option><option value="30">Le�n</option><option value="31">Lleida</option><option value="32">Lugo</option><option value="33">Madrid</option><option value="34">M�laga</option><option value="35">Melilla</option><option value="36">Murcia</option><option value="37">Navarra</option><option value="38">Ourense</option><option value="39">Palencia</option><option value="40">Pontevedra</option><option value="41">Salamanca</option><option value="46">Santa Cruz de Tenerife</option><option value="42">Segovia</option><option value="43">Sevilla</option><option value="44">Soria</option><option value="45">Tarragona</option><option value="47">Teruel</option><option value="48">Toledo</option><option value="49">Valencia/Val�ncia</option><option value="50">Valladolid</option><option value="51">Vizcaya/Bizkaia</option><option value="52">Zamora</option><option value="53">Zaragoza</option>
-											</optgroup>
-										</select><div class="chosen-container chosen-container-single" style="width: 100%;" title="" id="of_provincia_chosen"><a tabindex="-1" class="chosen-single chosen-default"><span>Cualquier provincia</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" tabindex="-1"></div><ul class="chosen-results"></ul></div></div>
-					                 </div>
-					                 <div id="paisesDiv" style="display:none;" class="form-select form-select-disabled">
-					                	<select data-placeholder="En todo el extranjero" tabindex="-1" id="of_pais" name="of_pais" disabled="disabled">
-					                		<option selected="selected" value="0">En todo el extranjero</option>
-										</select>
-					                 </div>
-					             </li>
-					             <li class="form-field-inline search-submit-field js-show-field">
-					             	<button onclick="javascript:prepareSearch(); return true;" title="Buscar trabajo con mis preferencias" class="btn btn-primary-contrast btn-form-inline" type="submit" id="searchOffers">Buscar</button>
-					             </li>
-					       </ul>
-					 </fieldset>
-				</form>
-			</div>
-		</div>
-		<div class="container-expanded">
-			<div class="row-faux">
-				<div class="col-4">
-					<div class="col-child panel-canvas inner ">
-						<!-- component kpi -->
-						<div class="kpi">
-							<h2 class="kpi-title">Ofertas para ti</h2>
-							<a href="#" id="kpi-indicator-offers"
-							data-endval="59"
-							data-duration="1"
-							class="kpi-indicator">158</a>
-							<p>Basada en tus últimas búsquedas</p>
-							<a class="link-underline" href="#">Buscar ofertas</a>
-						</div>
-						<!-- /component kpi -->
-					</div>
-				</div>
-				<div class="col-4">
-					<div class="col-child panel-canvas inner">
-						<!-- component kpi -->
-						<div class="kpi">
-							<h2 class="kpi-title">Ofertas para ti</h2>
-							<a  class="kpi-indicator" href="#">15</a>
-							<p><a class="link-underline" href="#">1 persona</a> ha visto tu perfil en las últimas 2 semanas</p>
-						</div>
-						<!-- component kpi -->
-					</div>
-				</div>
-				<div class="col-4">
-					<div class="col-child inner custom-bg" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-header-grid-01.jpg');">
-						<blockquote class="vip-quote">
-							<span>The blockquote element represents a section that is quoted from another source.</span>
-							<cite>The Idol</cite>
-						</blockquote>
-					</div>
+				<div class="search-bar-main search-bar panel-overlay">
+					<form method="post" name="offersSearch" role="form" class="form" action="">
+						<fieldset>
+							<legend>Opciones de búsqueda</legend>
+			    				<ul class="clearfix">
+			        				<li class="form-field-inline search-keyword-field">
+			            				<label for="palabra">Busco ofertas de...</label>
+			                			<input type="text" maxlength="200" id="palabra" name="palabra" placeholder="Android, director de marketing, cocinero">
+			            			</li>
+			            			<li class="form-field-inline search-country-field js-show-field">
+				            			<ul class="radio-group clearfix">
+						                	<li>
+						                    	<input type="radio" checked="checked" name="region" value="local" id="local">
+												<label for="local">en España</label>
+						                    </li>
+						                    <li>
+						                    	<input type="radio" name="region" value="foreign" id="foreign">
+												<label for="foreign">en el extranjero</label>
+						                    </li>
+						                </ul>
+
+			                			<div class="form-select">
+
+			                				<select name="of_provincia" data-placeholder="Cualquier provincia" class="chosen-select" tabindex="-1" style="display: none;">
+			                	 	 			<option selected="selected" value="0">Cualquier provincia</option>
+						                	 	 <optgroup label="Más comunes">
+						                	 	 	<option value="33">Madrid</option>
+													<option value="9">Barcelona</option>
+						                		 </optgroup>
+						                		 <optgroup label="Todas">
+						                		 	<option value="28">A Coruña</option>
+													<option value="8">Badajoz</option>
+												</optgroup>
+											</select>
+			                 			</div>
+
+						             </li>
+
+						             <li class="form-field-inline search-submit-field js-show-field">
+						             	<button title="Buscar trabajo con mis preferencias" class="btn btn-primary-contrast btn-form-inline" type="submit">Buscar</button>
+						             </li>
+						       </ul>
+						 </fieldset>
+					</form>
+
+					<script type="text/javascript">
+						/* &lt;![CDATA[*/
+							var canal_codigo_ext = '124';
+							initSearchBox();
+						/*]]&gt;*/
+					</script>
 				</div>
 			</div>
-		</div>
-			<!-- Component -->
-			<ul class="tips-list container-expanded">
-				<li class="main">
-					<div class="js-animation" data-delay="1000" data-duration="500">
-						<div class="cell-1">
-							<span class="icon-candidaturas icon-50px iconfont-30px"></span>
-							<p class="kind">Candidaturas</p>
+			<ul class="container-expanded tips-list panel-focus">
+				<li class="open-tip">
+					<div class="js-animation middle">
+						<div class="cell-1 inner">
+			      			<img class="fig-thumbnail-logo" title="Tel�fonos, L�neas y Centrales (TELICE) - Ofertas de trabajo" src="https://zsc.scmspain.com/RealMedia/ads/Creatives/InfojobsES/LI-VODAFONE/vodafone.jpg/1412249768" alt="Tel�fonos, L�neas y Centrales (TELICE) - Ofertas de trabajo">
 						</div>
-						<div class="cell-2">
+						<div class="cell-2 inner">
 							<div class="text">
-								<h2 class="title">¡Hay novedades en tus candidaturas!</h2>
-								<a class="btn btn-primary btn-small js-action" href="#">Ver candidaturas</a>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="js-animation">
-						<div class="cell-1">
-							<span class="icon-CV icon-50px iconfont-30px"></span>
-							<p class="kind">Mis Cvs</p>
-						</div>
-						<div class="cell-2">
-							<div class="text">
-								<h2 class="title">¡Hay novedades en tus candidaturas!</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis congue mi, a tempor ipsum luctus non. Integer molestie diam sed lorem molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis congue mi, a tempor ipsum l</p>
-								<a class="btn btn-primary btn-annex iconfont-Reload rotate js-action" href="#">Actualizar fecha CV</a>
-								<a class="link" href="#">Editar CV</a>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="js-animation">
-						<div class="cell-1">
-							<span class="icon-contactos icon-50px iconfont-30px"></span>
-							<p class="kind">Contactos</p>
-						</div>
-						<div class="cell-2">
-							<div class="text">
-								<h2 class="title">¡Hay novedades en tus candidaturas!</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis congue mi, a tempor ipsum luctus non. Integer molestie diam sed lorem molestie.</p>
-								<a class="btn btn-primary btn-small js-action" href="#">Añadir contactos</a>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="js-animation">
-						<div class="cell-1">
-							<div class="crop-circle" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-header-grid-01.jpg')"></div>
-						</div>
-						<div class="cell-2">
-							<div class="text">
-								<h2 class="title"><a href="#">Manuel González</a> quiere contactar contigo</h2>
-								<p>Diseñador en InfoJobs</p>
-								<a class="btn btn-primary btn-annex js-action" href="#">Aceptar</a>
-								<a class="link" href="#">Ignorar</a>
+								<h2 class="title" id="actualiza-cv-tip">Una empresa est� interesada en tu perfil</h2>
+								<p class="hide-small-device" id="actualiza-cv-tip-texto1">[Nombre Empresa] te ha encontrado en nuestra base de datos, y tu perfil le ha llamado la atenci� n para un puesto de <titulo de la oferta>. �Estar�as interesado?</p>
+								<p class="hide-small-device" id="actualiza-cv-tip-texto2">Si tienes algo nuevo que a�adir, edita tu CV. Las empresas prefieren candidatos activos.</p>
+								<div class="actions">
+									<a class="link-underline link-annex contrast js-action" href="#">S�, me interesa</a>
+									<a class="link-underline contrast js-action" href="#">Ahora no, gracias</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -175,101 +104,177 @@
 			</ul>
 			<!-- /Component -->
 
-		<div class="container-expanded panel-canvas">
-			<div class="row clearfix">
-				<section class="col-8 col-12-medium inner-expanded">
-					<div class="col-child inner">
-
-						<div class="heading-addons">
-							<h1>hello</h1>
-							<p>62 ofertas de ingenieros técnicos en Barcelona</p>
+			<div class="container-expanded">
+				<div class="row-faux">
+					<div class="col-4">
+						<div class="col-child inner panel-canvas">
+							<div class="kpi js-toggle-container" id="kpi-container-offers">
+	            				<div class="clearfix">
+	                				<span class="arrow iconfont-ArrowDown iconfont-22px hit-area pull-right alternative hide-medium-device hide-large-device"></span>
+	                				<span class="kpi-indicator" data-duration="1" data-endval="15" id="KPIOfertasComponent">0</span>
+	                				<h2 class="kpi-title">No hay ofertas nuevas </h2>
+	            				</div>
+	            				<div class="js-toggle kpi-body hide-small-device">
+	    							<p>Nada nuevo en tu última búsqueda</p>
+	                    			<a href="#" class="link-underline">Hacer una nueva búsqueda</a>
+	            				</div>
+							</div>
 						</div>
-						<ul class="result-list" id="offer-list">
-							<li value="0" class=" " id="of_4a2b692d6b41fe8df329f50af2e1eb">
+					</div>
+					<div class="col-4">
+				<div class="col-child inner panel-canvas">
+					<div class="kpi js-toggle-container" id="kpi-container-visits">
+						<div class="clearfix">
+	                		<span title="" class="arrow iconfont-ArrowDown iconfont-22px hit-area pull-right alternative hide-medium-device hide-large-device"></span>
+	        				<span class="kpi-indicator" data-duration="1" data-endval="10" id="KPIVisitasComponent">0</span>
+	                		<h2 class="kpi-title">Visitas a tu CV</h2>
+	            		</div>
+	            		<div class="js-toggle kpi-body hide-small-device">
+	    					<p>
+	    						<a href="#" class="link-underline">Añade conocimientos</a> a tu CV
+	    						<br>
+	    						<a href="/candidate/contacts/candidate-contacts-suggestions/candidate-contacts-suggestions.xhtml?dgv=4076897562280743044" onclick="xt_click(this,'C',infojobs.pageConfig.getXitiPortalLevelTwo(),'kpi_visitas_ca','N'); return true;" class="link-underline">invita a nuevos contactos</a>
+			    				a tu red <br>para aumentar tu visibilidad.
+	    					</p>
+	            		</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="col-child inner panel-canvas">
+	        		<div class="kpi js-toggle-container" id="kpi-container-candidaturas">
+	            		<div class="clearfix">
+		                	<span title="" class="arrow iconfont-ArrowDown iconfont-22px hit-area pull-right alternative hide-medium-device hide-large-device"></span>
+		                	<span class="kpi-indicator" data-duration="1" data-endval="8" id="KPICandidaturasComponent">0</span>
+		                	<h2 class="kpi-title">Candidaturas activas</h2>
+		            	</div>
+			            <div class="js-toggle kpi-body hide-small-device">
+			                <p>No te has inscrito en ninguna oferta recientemente</p>
+			                <a href="#" class="link-underline">Buscar ofertas de empleo</a>
+			            </div>
+	        		</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- Component -->
+
+
+
+	<div class="container-expanded">
+		<div class="row-faux clearfix">
+			<section class="col-8 col-12-medium">
+				<div class="col-child inner inner-expanded panel-canvas">
+					<h2>hello</h2>
+					<p>62 ofertas de ingenieros técnicos en Barcelona</p>
+					<ul class="result-list" id="offer-list">
+						<li value="0" class=" " id="of_4a2b692d6b41fe8df329f50af2e1eb">
+							<h2 class="result-list-title">
+								<a onclick="javascript:relaunchView('item_form_codigo','4a2b692d6b41fe8df329f50af2e1eb', '//www.infojobs.net/manresa/coordinador-tecnico-proyectos/of-i4a2b692d6b41fe8df329f50af2e1eb');return false;" title="Coordinador/a Técnico de Proyectos" id="table_results_offer0" class="lines-2 clamp" href="//www.infojobs.net/manresa/coordinador-tecnico-proyectos/of-i4a2b692d6b41fe8df329f50af2e1eb">Coordinador/a Técnico de Proyectos</a>
+							</h2>
+							<h3 class="result-list-subtitle">
+								<span class="ellipsis">
+									<a id="table_results_company0" href="//tous.ofertas-trabajo.infojobs.net/">TOUS</a>
+								</span>
+							</h3>
+							<ul class="tag-group">
+								<li class="tag-divider tag-ellipsis-cols2">
+									<span class="ellipsis">Manresa</span></li>
+									<li>
+										<span class="marked">Hace 4m</span>
+										<span class="sticker sticker-marked">Nueva</span>
+									</li>
+								</ul>
+								<ul class="tag-group hide-small-device">
+									<li class="tag-divider">Contrato no especificado</li>
+									<li class="tag-divider">Jornada completa</li>
+									<li>Salario no especificado</li>
+								</ul>
+							</li>
+							<li value="0" id="">
 								<h2 class="result-list-title">
 									<a onclick="javascript:relaunchView('item_form_codigo','4a2b692d6b41fe8df329f50af2e1eb', '//www.infojobs.net/manresa/coordinador-tecnico-proyectos/of-i4a2b692d6b41fe8df329f50af2e1eb');return false;" title="Coordinador/a Técnico de Proyectos" id="table_results_offer0" class="lines-2 clamp" href="//www.infojobs.net/manresa/coordinador-tecnico-proyectos/of-i4a2b692d6b41fe8df329f50af2e1eb">Coordinador/a Técnico de Proyectos</a>
 								</h2>
 								<h3 class="result-list-subtitle">
 									<span class="ellipsis">
-										<a id="table_results_company0" href="//tous.ofertas-trabajo.infojobs.net/">TOUS</a>
+										<a id="" href="//tous.ofertas-trabajo.infojobs.net/">TOUS</a>
 									</span>
 								</h3>
 								<ul class="tag-group">
 									<li class="tag-divider tag-ellipsis-cols2">
-										<span class="ellipsis">Manresa</span></li>
-										<li>
-											<span class="marked">Hace 4m</span>
-											<span class="sticker sticker-marked">Nueva</span>
-										</li>
-									</ul>
-									<ul class="tag-group hide-small-device">
-										<li class="tag-divider">Contrato no especificado</li>
-										<li class="tag-divider">Jornada completa</li>
-										<li>Salario no especificado</li>
-									</ul>
-								</li>
-								<li value="0" class=" " id="">
-									<h2 class="result-list-title">
-										<a onclick="javascript:relaunchView('item_form_codigo','4a2b692d6b41fe8df329f50af2e1eb', '//www.infojobs.net/manresa/coordinador-tecnico-proyectos/of-i4a2b692d6b41fe8df329f50af2e1eb');return false;" title="Coordinador/a Técnico de Proyectos" id="table_results_offer0" class="lines-2 clamp" href="//www.infojobs.net/manresa/coordinador-tecnico-proyectos/of-i4a2b692d6b41fe8df329f50af2e1eb">Coordinador/a Técnico de Proyectos</a>
-									</h2>
-									<h3 class="result-list-subtitle">
-										<span class="ellipsis">
-											<a id="" href="//tous.ofertas-trabajo.infojobs.net/">TOUS</a>
-										</span>
-									</h3>
-									<ul class="tag-group">
-										<li class="tag-divider tag-ellipsis-cols2">
-											<span class="ellipsis">Manresa</span></li>
-										<li>
-											<span class="marked">Hace 4m</span>
-											<span class="sticker sticker-marked">Nueva</span>
-										</li>
-									</ul>
-									<ul class="tag-group hide-small-device">
-										<li class="tag-divider">Contrato no especificado</li>
-										<li class="tag-divider">Jornada completa</li>
-										<li>Salario no especificado</li>
-									</ul>
-								</li>
-							</ul>
-							<a class="link" href="#">Ver 59 ofertas más como éstas</a>
-					</div>
-				</section>
-				<section class="col-4 col-12-medium inner-expanded">
-					<div class="col-child inner">
-						<div class="panel-default">
-							<div class="inner">
-								<h3>Últimas búsquedas</h3>
-								<div class="inner-expanded text-center hide-small-device hide-medium-device">
-									<span class="iconfont-img iconfont-Search iconfont-100px darkest-shiro"></span>
-								</div>
-								<p class="alternative">Aquí verás las últimas búsquedas que has realizado. Encuentra nuevas ofertas con los mismos criterios a un colo click.</p>
-								<a class="link" href="#">Realiza tu primer búsqueda ahora</a>
+										<span class="ellipsis">Manresa</span>
+									</li>
 
-								<!--<ul class="list-default list-divider list-divider-bleed">
-									<li><a class="link" href="#">Ingeniero Técnico en Barcelona (26)</a></li>
-									<li><a class="link" href="#">Ingeniero Técnico en Barcelona (26)</a></li>
-									<li><a class="link" href="#">Ingeniero Técnico en Barcelona (26)</a></li>
-									<li><a class="link" href="#">Ingeniero Técnico en Barcelona (26)</a></li>
-								</ul>-->
-							</div>
+									<li>
+										<span class="marked">Hace 4m</span>
+										<span class="sticker sticker-marked">Nueva</span>
+									</li>
+								</ul>
+								<ul class="tag-group hide-small-device">
+									<li class="tag-divider">Contrato no especificado</li>
+									<li class="tag-divider">Jornada completa</li>
+									<li>Salario no especificado</li>
+								</ul>
+							</li>
+						</ul>
+						<a class="link" href="#">Ver 59 ofertas más como éstas</a>
+				</div>
+			</section>
+			<section class="col-4 col-12-medium">
+				<div class="col-child inner-expanded panel-default">
+					<h2 class="medium inner border-bottom">Contactos sugeridos</h2>
+						<!-- contactos social -->
+						<ul>
+							<li class="content-media inner">
+								<div class="media">
+									<img alt="" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" class="crop-circle">
+								</div>
+								<div class="body">
+	            					<h3 class="title"><a href="#">Juan Manuel RodrÃguez</a></h3>
+	            					<p>Account Manager jasdlf sadf dsakfjasd lfkjasd <span class="alternative">en Schibsted Classified Media Spain</span></p>
+									<a href="#" class="link-underline">Contactar</a>
+								</div>
+							</li>
+							<li class="content-media inner">
+								<div class="media">
+									<img alt="" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" class="crop-circle">
+								</div>
+								<div class="body">
+	            					<h3 class="title"><a href="#">Juan Manuel RodrÃguez</a></h3>
+	            					<p>Account Manager jasdlf sadf dsakfjasd lfkjasd <span class="alternative">en Schibsted Classified Media Spain</span></p>
+								</div>
+							</li>
+						</ul>
+
+						<!-- /contactos social -->
+						<div class="inner text-center border-top">
+							<a href="#" class="link-underline">Ver más sugerencias</a>
+
 						</div>
 					</div>
-				</section>
-			</div>
+				</div>
+			</section>
 		</div>
-
-
 	</div>
-</div>
-<script type="text/javascript" src="../js/count-up.js"></script>
-<script>
-	(function(){
-		var numAnim = new countUp('kpi-indicator-offers');
-		numAnim.start();
 
-	})();
-</script>
+
+
+
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/count-up.js"></script>
+	<script>
+		(function(){
+			var kpiOfertasComponent = new countUp('KPIOfertasComponent');
+			kpiOfertasComponent.start();
+
+			var kpiVisitasComponent = new countUp('KPIVisitasComponent');
+			kpiVisitasComponent.start();
+
+			var kpiCandidaturasComponent = new countUp('KPICandidaturasComponent');
+			kpiCandidaturasComponent.start();
+		})();
+	</script>
 </body>
-
 </html>

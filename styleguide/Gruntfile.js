@@ -71,7 +71,11 @@ module.exports = function(grunt) {
         {
           from: 'class="g-casper"',
           to: ''
-        }]
+      },
+      {
+        from: '#disabled#',
+        to: ''
+      }]
       }
     },
     less: {

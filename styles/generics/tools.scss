@@ -94,6 +94,7 @@
 
   .border-#{$value}  {
     border-#{$value}: 1px solid $darkest-shiro;
+	margin: 0;//only border, reset margins
   }
 
 }
@@ -135,6 +136,10 @@
 	   margin-#{$value}: $padding;
 	}
 
+}
+
+.link-annex {
+	margin-right: 20px;
 }
 
 .border-top-expanded  {
