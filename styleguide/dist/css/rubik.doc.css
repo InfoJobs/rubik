@@ -9872,6 +9872,9 @@ $query2     = width, device-width
 .tips-list li:last-child {
   border: none;
 }
+.tips-list li > div {
+  position: relative;
+}
 @media only screen and (min-width: 481px) {
   .tips-list li > div {
     display: -webkit-box;
@@ -9991,6 +9994,13 @@ $query2     = width, device-width
 .tips-list .actions a {
   display: inline-block;
   margin-top: 10px;
+}
+.tips-list .btn-close {
+  float: right;
+  position: relative;
+  top: -10px;
+  margin-left: 5px;
+  color: inherit;
 }
 .tips-list .fade-out {
   -webkit-transition-duration: 400ms;
