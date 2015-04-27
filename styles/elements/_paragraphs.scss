@@ -10,9 +10,9 @@ Paragraphs
 Use tag `<p>` for a basic paragraph. Don't use `<span>` or `<div>` as a text tag, it's not semantic.
 
 Markup:
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.3.2
+Styleguide 1.2.2
 */
 
 p {
@@ -63,14 +63,14 @@ Text size
 Use class `.base` or `.medium` to change the size of the text.
 
 Markup:
-<p class="{$modifiers}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-{$modifiers}:
+{modifier_class}:
 
 .base				- Size: To force body copy size
 .medium				- Size: To increase text size
 
-Styleguide 1.3.3
+Styleguide 1.2.3
 */
 
 .base { //TODO: used in whatever kind of copy text (p, a, li...). Get out of _paragraphs.scss
@@ -89,7 +89,7 @@ Use class `.bold` to bold the content. Use only on the following tags: `<p>`, `<
 Markup:
 <p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.3.4
+Styleguide 1.2.4
 */
 
 
@@ -103,17 +103,17 @@ Blockquotes
 Use `<blockquote>` when the text is quoted from another source. Use `<cite>` to cite the reference.
 
 Markup:
-<blockquote class="{$modifiers}">
-	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</span>
+<blockquote class="{{modifier_class}}">
+	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
 	<cite>Lorem ipsum</cite>
 </blockquote>
 
-{$modifiers}:
+{modifier_class}:
 
 .vip-quote			- Size: big size and Slabo font-family
 .quote				- Type: with quotation mark
 
-Styleguide 1.3.6
+Styleguide 1.2.6
 */
 //TODO: move a blockquote.css
 .quote {

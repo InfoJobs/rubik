@@ -9,38 +9,37 @@ Grid System
 
 Grid system is used for creating page layout through a series of rows and columns that house
 your content.
-
+<br>
 @@include('../templates/partials/grid.html')
-
+<br>
 - Use class `.row` to create a horizontal group of columns.
 - Then nest as many containers `<div class="col-[number]">` as columns are necessary to build the layout
 - Include the container `<div class="col-child">` as immediate children of `.col-[number]`.
-
+<br>
 @@include('../templates/partials/grid-layouts.html')
 
-
 Markup:
-<div class="row g-casper">
+<div class="row casper">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-8"><div class="col-child">...</div></div>
 </div>
-<div class="row casper">
+<div class="row">
 	<div class="col-8"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
-<div class="row casper">
+<div class="row">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
-<div class="row casper">
+<div class="row">
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
 	<div class="col-3"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.2.1
+Styleguide 1.1.1
 */
 
 @mixin row {
@@ -99,7 +98,7 @@ Markup:
 	<div class="col-4 col-12-medium"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.2.1.2
+Styleguide 1.1.1.2
 */
 
 $gridColumns: 12;
@@ -228,7 +227,7 @@ Markup:
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.2.1.3
+Styleguide 1.1.1.3
 */
 
 .row-faux {

@@ -10,6 +10,9 @@
         <link rel="stylesheet" href="public/kss.css">
         <link rel="stylesheet" href="public/styleguide.css">
         <link rel="stylesheet" href="public/rubik.css">
+
+        <script src="public/jquery-2.1.0.min.js"></script>
+        <script src="public/jquery.modal.js"></script>
     </head>
     <body id="kss-node">
 
@@ -26,7 +29,7 @@
         		</li>
         		<li>
         			<div class="sg-section">Styleguide</div>
-        			<ul>
+        			<ul id="sg-menu">
         				{{#eachRoot}}
                         <li>
                             <a href="section-{{referenceURI}}.html" class="js-itemMenu">
@@ -39,7 +42,16 @@
                                 {{#eachSection reference}}
                                     {{#ifDepth 2}}
                                     <li>
-                                        <a href="section-{{../../reference}}.html#rubik-{{{reference}}}" {{#isDisabled header}}class="disabled js-disabled"{{/isDisabled}}>{{header}}</a>
+                                        <a href="section-{{../../reference}}.html#rubik-{{{reference}}}" class="js-itemMenu {{#isDisabled header}}disabled js-disabled{{/isDisabled}}" data-link="true">{{header}}</a>
+                                        <ul class="sg-second-submenu">
+                                        {{#eachSection reference}}
+                                            {{#ifDepth 3}}
+                                            <li>
+                                                <a href="section-{{../../../../reference}}.html#rubik-{{{reference}}}" {{#isDisabled header}}class="disabled js-disabled"{{/isDisabled}}>{{header}}</a>
+                                            </li>
+                                            {{/ifDepth}}
+                                        {{/eachSection}}
+                                        </ul>
                                     </li>
                                     {{/ifDepth}}
                                 {{/eachSection}}
@@ -60,134 +72,204 @@
             <h1>
                 {{#if homepage}}
                 Rubik Components
+                {{else}}
+                {{header}}
                 {{/if}}
             </h1>
         </header>
-        <section class="sg-content sg-wrapper">
+        <div class="sg-wrapper">
+        <section class="sg-content">
 
             {{#if homepage}}
             {{! - HOME ------------------------------------------------------ }}
-            <img src="./public/media/index.jpg">
-            <h1>Heading</h1>
-            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
-            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+            <img src="./public/media/index.jpg" class="sg-img">
 
-            <h2>Heading</h2>
-            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+            <div class="margin-top">
+                <h1>Rubik frontend framework</h1>
 
-            <div class="row-faux">
-                  <div class="col-4">
-                    <div class="col-child panel-canvas">
-                        <img src="./public/media/index.jpg" class="sg-img">
-                        <div class="inner">
-                            <h3>Heading</h3>
-                            <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-4">
+                <p>Rubik es el framework interno del portal InfoJobs. Rubik permite utilizar componentes CSS y elementos Javascript para construir las páginas del portal. </p>
+
+                <p>Objetivos de Rubik:</p>
+
+                <ol>
+                    <li>- Estandarizar y reutilizar elementos y componentes.</li>
+                    <li>- Hacer más autónomo al equipo de desarrollo.<li>
+                </ol>
+            </div>
+            <div class="sg-block">
+                <h2>¿En qué se basa Rubik?</h2>
+
+                <p>Rubik se basa en cuatro pilares básicos.</p>
+
+                <div class="row-faux margin-bottom">
+                    <div class="col-4">
                       <div class="col-child panel-canvas">
-                          <img src="./public/media/index.jpg" class="sg-img">
+                          <img src="./public/media/MOBILE-FIRST.jpg" class="sg-img">
                           <div class="inner">
-                              <h3>Heading</h3>
-                              <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+                              <h3>Mobile first</h3>
+                              <p>Mobile first se centra en jerarquizar y estructurar el contenido partiendo de la resolución de una pantalla móvil.</p>
                           </div>
                       </div>
-                  </div>
-                  <div class="col-4">
+                    </div>
+
+                    <div class="col-4">
+                      <div class="col-child panel-canvas">
+                          <img src="./public/media/RESPONSIVE.jpg" class="sg-img">
+                          <div class="inner">
+                              <h3>Responsive design</h3>
+                              <p>Responsive design ofrece una correcta visualización y experiencia en las distintas resoluciones y dispositivos.</p>
+                          </div>
+                      </div>
+                    </div>
+
+                      <div class="col-4">
                         <div class="col-child panel-canvas">
-                            <img src="./public/media/index.jpg" class="sg-img">
+                            <img src="./public/media/OOCSS.jpg" class="sg-img">
                             <div class="inner">
-                                <h3>Heading</h3>
-                                <p>Quid sed cernantur et noster in et nostrud relinqueret. Malis admodum comprehenderit non id elit ne illum e o quis veniam de laboris ad quibusdam illum an tempor sempiternum o quo arbitror firmissimum do senserit graviterque a laborum, malis offendit graviterque in mentitum fugiat senserit laborum.</p>
+                                <h3>OOCSS</h3>
+                                <p>Oriented Object CSS promueve la creación de componentes reutilizables, escalables y fáciles de mantener, separando los estilos que definen la estructura de los que definen la presentación.</p>
                             </div>
                         </div>
-                  </div>
-            </div>
-
-
-            <div class="sg-grid">
-                <div class="sg-col-8">
-                    <div class="sg-box-row">
-                       <h2>Heading</h2>
-                       <p>Quid sed cernantur et noster <a href="#">in et nostrud relinqueret</a>.</p>
-                    </div>
+                      </div>
                 </div>
-                <div class="sg-col-4"></div>
-            </div>
 
+                <div class="row-faux">
+                      <div class="col-4">
+                        <div class="col-child panel-canvas">
+                            <img src="./public/media/SASS.jpg" class="sg-img">
+                            <div class="inner">
+                                <h3>Sass</h3>
+                                <p>Syntactically Awesome Stylesheets es un preprocesador CSS que simplifica la escritura y estructura de las hojas de estilo dando como resultado una CSS más limpia y ordenada.</p>
+                            </div>
+                        </div>
+                      </div>
+
+                      <div class="col-4">
+                        <div class="col-child panel-canvas">
+                            <img src="./public/media/JS.jpg" class="sg-img">
+                            <div class="inner">
+                                <h3>Javascript</h3>
+
+                                <p>Javascript nos ayuda a enriquecer la interfaz e implementar comportamientos a nivel de interacción.</p>
+                            </div>
+                        </div>
+                      </div>
+
+                        <div class="col-4">
+                          <div class="col-child panel-canvas">
+                              <img src="./public/media/HTMLSEMANTICO.jpg" class="sg-img">
+                              <div class="inner">
+                                  <h3>HTML semántico</h3>
+
+                                  <p>El HTML semántico se utiliza para reforzar la coherencia entre las etiquetas HTML y el contenido, haciendo un uso correcto de los estándares web.</p>
+                              </div>
+                          </div>
+                        </div>
+
+                </div>
+
+            </div>
+            <!-- <div class="sg-block">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="sg-box-row">
+                           <h2>Heading</h2>
+                           <p>Quid sed cernantur et noster <a href="#">in et nostrud relinqueret</a>.</p>
+                        </div>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+            </div> -->
             {{else}}
             {{! - SECTIONS -------------------------------------------------- }}
 
             {{#eachSection rootName}}
-                {{#if markup}}
-                    <div id="rubik-{{reference}}" class="sg-grid sg-block">
-                            <div class="sg-col-12">
-                            <header class="sg-block-header">
-                                <h3>{{{header}}}</h3>
-                            </header>
-                            {{#if description}}
-                                <div class="sg-block-description">
-                                    {{{description}}}
 
-                                </div>
-                            {{/if}}
+                {{#isDisabled header}}
 
-                            {{#if markup}}
-
-                                    {{#if modifiers}}
-                                    {{/if}}
-
-                                    {{#isntCaster markup}}
-                                        <div class="sg-view">
-                                            {{{markup}}}
-                                        </div>
-
-                                        {{#eachModifier}}
-                                            <div class="">
-                                                {{name}} <span>{{{description}}}</span>
-                                            </div>
-                                            {{#isntCaster markup}}
-                                            <div class="sg-view">
-                                                {{{markup}}}
-                                            </div>
-                                            {{/isntCaster}}
-                                        {{/eachModifier}}
-                                    {{/isntCaster}}
-
-                                    <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
-                            {{/if}}
-
-                        </div>
-                    </div>
+                    {{! - If header have ##disabled## don't render section --}}
 
                 {{else}}
-                <div id="rubik-{{reference}}" class="sg-grid sg-block">
-                    <div class="sg-col-12">
-                        <header class="sg-block-header">
-                            <h1>{{{header}}}</h1>
-                        </header>
-                        {{#if description}}
-                            <div class="sg-block-description">
-                                {{{description}}}
+
+
+                    {{#isntCasper header}}
+                        {{#if markup}}
+                            <div id="rubik-{{reference}}" class="row sg-block">
+                                    <div class="col-12">
+                                    <header class="sg-block-header">
+                                        <h2>{{{header}}}</h2>
+                                    </header>
+                                    {{#if description}}
+                                        <div class="sg-block-description">
+                                            {{{description}}}
+
+                                        </div>
+                                    {{/if}}
+
+                                    {{#if markup}}
+
+                                            {{#if modifiers}}
+                                                {{#eachModifier}}
+                                                    <div class="">
+                                                        {{name}} | <span>{{{description}}}</span>
+                                                    </div>
+                                                {{/eachModifier}}
+
+                                                {{#isntCasper markup}}
+                                                    <div class="sg-view">
+                                                        {{#eachModifier}}
+                                                            <div class="sg-modifiers">
+                                                                {{{markup}}}
+                                                            </div>
+                                                        {{/eachModifier}}
+                                                    </div>
+                                                {{/isntCasper}}
+                                            {{else}}
+                                                {{#isntCasper markup}}
+                                                <div class="sg-view">
+                                                    {{{markup}}}
+                                                </div>
+                                                {{/isntCasper}}
+                                            {{/if}}
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
+                                    {{/if}}
+
+                                </div>
                             </div>
+
+                        {{else}}
+                        <div id="rubik-{{reference}}" class="row sg-block">
+                            <div class="col-12">
+                                <header class="sg-block-header">
+                                    <h1>{{{header}}}</h1>
+                                </header>
+                                {{#if description}}
+                                    <div class="sg-block-description">
+                                        {{{description}}}
+                                    </div>
+                                {{/if}}
+                            </div>
+                        </div>
                         {{/if}}
-                    </div>
-                </div>
-                {{/if}}
+                    {{/isntCasper}}
+                {{/isDisabled}}
             {{/eachSection}}
 
             {{/if}}
         </section>
-        <section class="sg-footer sg-wrapper">
+        <section class="sg-content sg-footer">
         © Infojobs 2015
         </section>
+    </div>
 
 
-        <script src="public/jquery-2.1.0.min.js"></script>
         <script src="public/kss.js"></script>
         <script src="public/prettify.js"></script>
         <script src="public/plugins.js"></script>
         <script src="public/main.js"></script>
+        <script>
+
+        </script>
     </body>
 </html>

@@ -24,6 +24,12 @@ module.exports = function(grunt) {
         files: [
           { src: ['fonts/*'], dest: 'styleguide/'}
         ]
+      },
+      copyRubik: {
+        expand: true,
+        cwd: 'styleguide/',
+        src: ['**'],
+        dest: '../../rubik.public/'
       }
     },
     // Sass --------------------------------------------------------------------
@@ -61,19 +67,23 @@ module.exports = function(grunt) {
         src: ['styleguide/*.html'],
         overwrite: true,                 // overwrite matched source files
         replacements: [{
-          from: ' g-casper',
+          from: ' casper',
           to: ''
         },
         {
-          from: 'g-casper ',
+          from: 'casper ',
           to: ''
         },
         {
-          from: 'class="g-casper"',
+          from: 'class="casper"',
           to: ''
       },
       {
         from: '#disabled#',
+        to: ''
+      },
+      {
+        from: '#casper#',
         to: ''
       }]
       }
@@ -94,6 +104,7 @@ module.exports = function(grunt) {
         kss: {
 //          command: 'kss-node css styleguide --css css/styles.doc.css'
           command: 'kss-node dist/css styleguide --template templates/infojobs --helpers templates/helpers'
+        //   command: 'kss-node dist/css styleguide --helpers templates/helpers'
         }
     }
   });
@@ -107,5 +118,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
 
   grunt.registerTask('default', ['clean', 'sass', 'copy:styleguide', 'includereplace', 'less', 'shell', 'replace', 'copy:allStyles', 'copy:copyFonts']);
+  grunt.registerTask('public', ['copy:copyRubik']);
 
 };

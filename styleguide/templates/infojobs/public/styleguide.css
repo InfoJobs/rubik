@@ -1,12 +1,30 @@
 .sg-wrapper {
   max-width: 1200px;
   width: 100%;
-  padding: 0 10px;
+  padding-top: 80px;
+}
+
+.sg-wrapper,
+.sg-header {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+@media all and (min-width: 480px) {
+
+    .sg-wrapper {
+      padding-top: 100px;
+    }
+
+    .sg-wrapper,
+    .sg-header {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
 }
 
 .sg-header {
     background-color: #2088c2;
-    padding: 3px 40px 0;
     height: 60px;
     display: block;
     color: white;
@@ -31,7 +49,6 @@
   color: white;
   display: block;
   float: left;
-  margin-top: 12px;
   margin-right: 40px;
 
   white-space: nowrap;
@@ -75,14 +92,14 @@
 
 .sg-footer {
   text-align: center;
-  margin-bottom: 20px;
   color: #999999;
-  padding-top: 80px; }
+  padding-top: 80px;
+}
 
 /*------------------------------------*\
   $GRID
 \*------------------------------------*/
-.sg-grid {
+/*.sg-grid {
     display: flex;
     align-items: stretch;
     padding: 0 10px;
@@ -95,64 +112,57 @@
 }
 
 .sg-col-1 {
-flex-basis: 8.3333333333%; }
-.sg-col-1 .sg-box-row {
-  padding: 0 10px; }
+    flex-basis: 8.3333333333%;
+}
+
+[class^="sg-col-"] .sg-box-row,
+[class*=" sg-col-"] .sg-box-row {
+  padding: 0 10px;
+}
 
 .sg-col-2 {
-flex-basis: 16.6666666667%; }
-.sg-col-2 .sg-box-row {
-  padding: 0 10px; }
+    flex-basis: 16.6666666667%;
+}
 
 .sg-col-3 {
-flex-basis: 25%; }
-.sg-col-3 .sg-box-row {
-  padding: 0 10px; }
+    flex-basis: 25%;
+}
 
 .sg-col-4 {
-flex-basis: 33.3333333333%; }
-.sg-col-4 .sg-box-row {
-  padding: 0 10px; }
+    flex-basis: 33.3333333333%;
+}
 
 .sg-col-5 {
-flex-basis: 41.6666666667%; }
-.sg-col-5 .sg-box-row {
-  padding: 0 10px; }
+    flex-basis: 41.6666666667%;
+}
 
 .sg-col-6 {
-flex-basis: 50%; }
-.sg-col-6 .sg-box-row {
-  padding: 0 10px; }
+    flex-basis: 50%;
+}
 
 .sg-col-7 {
-flex-basis: 58.3333333333%; }
-.sg-col-7 .sg-box-row {
-  padding: 0 10px; }
+    flex-basis: 58.3333333333%;
+}
 
 .sg-col-8 {
-flex-basis: 66.6666666667%; }
-.sg-col-8 .sg-box-row {
-  padding: 0 10px; }
+    flex-basis: 66.6666666667%;
+}
 
 .sg-col-9 {
-flex-basis: 75%; }
-.sg-col-9 .sg-box-row {
-  padding: 0 10px; }
+    flex-basis: 75%;
+}
 
 .sg-col-10 {
-flex-basis: 83.3333333333%; }
-.sg-col-10 .sg-box-row {
-  padding: 0 10px; }
+    flex-basis: 83.3333333333%;
+}
 
 .sg-col-11 {
-flex-basis: 91.6666666667%; }
-.sg-col-11 .sg-box-row {
-  padding: 0 10px; }
+    flex-basis: 91.6666666667%;
+}
 
 .sg-col-12 {
-flex-basis: 100%; }
-.sg-col-12 .sg-box-row {
-  padding: 0 10px; }
+    flex-basis: 100%;
+}*/
 
 /*------------------------------------*\
   $MENU
@@ -172,6 +182,15 @@ flex-basis: 100%; }
     visibility: visible;
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
+    border-right: 1px solid #e2e5e6; /* TODO: only show when menu is open by default */
+}
+
+.sg-menu li a.disabled,
+.sg-menu li a.disabled:hover,
+.sg-menu .sg-submenu li a.disabled:hover
+ {
+    text-decoration: line-through;
+    color: #999999;
 }
 
 @media screen and (min-width: 1200px) {
@@ -253,7 +272,8 @@ flex-basis: 100%; }
     color: #2088c2;
 }
 
-.sg-menu .sg-submenu {
+.sg-menu .sg-submenu,
+.sg-menu .sg-second-submenu {
     height: 0;
     overflow: hidden;
     -webkit-transition: height 350ms ease;
@@ -261,8 +281,8 @@ flex-basis: 100%; }
     -o-transition: height 350ms ease;
     transition: height 350ms ease;
 }
-
-.sg-menu .sg-submenu.sg-selected {
+.sg-menu .sg-submenu.sg-selected,
+.sg-menu .sg-second-submenu.sg-selected {
     height: auto;
 }
 
@@ -284,14 +304,18 @@ flex-basis: 100%; }
 $CONTENT
 \*------------------------------------*/
 .sg-content {
-  padding: 140px 20px 80px;
-  background-color: #f7f7f7; }
+  background-color: $dark-shiro;
+}
 
-  @media all and (min-width: 1200px) {
-      .sg-content {
-          padding-left: 360px;
-      }
+.sg-content pre {
+    word-wrap: break-word;
+}
+
+@media all and (min-width: 1200px) {
+  .sg-content {
+      padding-left: 360px;
   }
+}
 
 /*------------------------------------*\
 $OVERLAY
@@ -322,5 +346,13 @@ $OVERLAY
 $STYLEGUIDE
 \*------------------------------------*/
 .sg-block {
-  margin-top: 60px;
+  margin-top: 80px;
+}
+
+.row.sg-block {
+  margin-top: 80px;
+}
+
+.sg-block:first-child {
+  margin-top: 0;
 }

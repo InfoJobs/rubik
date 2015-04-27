@@ -1,7 +1,9 @@
 /*
 Text elements
 
-Styleguide 1.3
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Styleguide 1.2
 */
 
 
@@ -22,7 +24,7 @@ Markup:
 <h2>Heading level 2</h2>
 <h3>Heading level 3</h3>
 
-Styleguide 1.3.1
+Styleguide 1.2.1
 */
 
 h1,
@@ -88,7 +90,7 @@ Markup:
 	<p>Lorem ipsum</p>
 </div>
 
-Styleguide 1.3.1.1
+Styleguide 1.2.1.1
 */
 
 .heading-addons { //TODO: modificar nomenclatura de esta clase
@@ -111,7 +113,7 @@ Use class `.heading-mega` for a big size heading.
 Markup:
 <h1 class="heading-mega">Heading mega</h1>
 
-Styleguide 1.3.1.2
+Styleguide 1.2.1.2
 */
 
 .heading-mega {
@@ -130,6 +132,25 @@ Styleguide 1.3.1.2
 		line-height: $xxxlarge-line-height;
 	}
 
+}
+
+
+/*
+Heading-middle
+
+Use class `.heading-middle` to adjust headings in vertical align content.
+
+Markup:
+<div class="heading-addons content-logo-text">
+	<h1 class="heading-middle">Header Level 1</h1>
+	<p>Lorem ipsum</p>
+</div>
+
+Styleguide 1.3.1.3
+*/
+
+.heading-middle {
+	padding-top: 10px;
 }
 
 .heading-divider {

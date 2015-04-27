@@ -6,13 +6,14 @@
     /*@include transition;*/
     display: inline-block;
     width: auto;
-    padding: 5px 10px;
+    height: 30px;
+    padding: 0 10px;
     border: 1px solid transparent;
     color: $shiro;
     cursor: pointer;
     font-size: $small-font-size;
     font-weight: normal;
-    line-height: 18px;
+    line-height: 28px;
     overflow: visible;
     text-decoration: none;
     text-align: center;
@@ -25,7 +26,7 @@
     }
 
     @at-root button#{&} {
-      height: 30px;
+      border: 0 none; //TODO: pending a crossbrowser solution
     }
 
     @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
@@ -46,17 +47,16 @@
 /*
 Buttons
 
-Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms), followed by classes listed as `{$modifiers}`.
+Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms), followed by classes listed as `{modifier_class}`.
 
-Markup:
-<a href="#" class="btn {$modifiers}">Link Button</a>
-<button class="btn {$modifiers}">Button Element</button>
-
-{$modifiers}:
+{modifier_class}:
 
 .btn-default		   - Applies default action style
 .btn-primary 		   - Applies primary action style
 .btn-primary-contrast  - Applies primary action style over dark background
+
+Markup:
+<a href="#" class="btn {{modifier_class}}">Link Button</a>
 
 Styleguide 1.5
 */
@@ -193,13 +193,12 @@ Styleguide 1.5
 /*
 Buttons sizes
 
-Use classes listed as `{$modifiers}` to change buttons size.
+Use classes listed as `{modifier_class}` to change buttons size.
 
 Markup:
-<a href="#" class="btn btn-default {$modifiers}">Link Button</a>
-<button class="btn btn-default {$modifiers}">Button Element</button>
+<a href="#" class="btn btn-default {{modifier_class}}">Link Button</a>
 
-{$modifiers}:
+{modifier_class}:
 
 .btn-medium			- Size: Medium
 .btn-large 			- Size: Large
@@ -208,6 +207,7 @@ Styleguide 1.5.1
 */
 
 .btn-medium {
+    height: 40px;
     padding: 0 10px;
     font-size: $medium-font-size;
     line-height: 38px;
@@ -215,9 +215,15 @@ Styleguide 1.5.1
     @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
         font-size: 22px;
     }
+
+    /*@at-root button#{&} {
+        height: 40px;
+    }*/
+
 }
 
 .btn-large {
+    height: 42px;
     padding: 0 20px;
     font-size: $large-font-size;
     line-height: 40px;
@@ -226,13 +232,14 @@ Styleguide 1.5.1
         font-size: $medium-font-size;
     }
 
-    @at-root button#{&} {
-        height: 42px;
-    }
-
     @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
+        top: 7px;
         font-size: 30px;
     }
+
+    /*@at-root button#{&} {
+        height: 42px;
+    }*/
 }
 
 
@@ -243,7 +250,6 @@ Use class `.iconfont-[name]` to display the needed icon.
 
 Markup:
 <a href="#" class="btn btn-primary btn-medium iconfont-Facebook">Link Button</a>
-<button class="btn btn-primary btn-medium iconfont-Facebook">Button Element</button>
 
 Styleguide 1.5.2
 */
@@ -255,7 +261,6 @@ Use class `.btn-disabled` to show button as disabled.
 
 Markup:
 <a href="#" class="btn btn-default btn-medium btn-disabled">Link Button</a>
-<button class="btn btn-default btn-medium btn-disabled">Button Element</button>
 
 Styleguide 1.5.3
 */
@@ -328,7 +333,6 @@ Use class `.btn-form-inline` to display a full width button.
 
 Markup:
 <a href="#" class="btn btn-primary btn-form-inline">Button Element</a>
-<button class="btn btn-default btn-form-inline">Button Element</button>
 
 Styleguide 1.5.5
 */
@@ -378,6 +382,8 @@ Styleguide 1.5.6
 
     .btn {
         border-color: $katana-slash;
+        border-width: 1px;
+        border-style: solid;
     }
 
   	button { /* fix iOS buttons separation */
