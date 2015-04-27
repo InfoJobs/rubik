@@ -234,6 +234,12 @@ Styleguide 1.2.4
 	height: auto;
 }
 
+img[alt] {
+    background: none;
+    border: 0;
+    word-wrap: break-word;
+}
+
 .section { //TODO: only used at home and red_de_contactos.html
     background-color: $shiro;
 	padding: 10px;
