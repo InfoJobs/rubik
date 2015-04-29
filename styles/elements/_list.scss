@@ -6,10 +6,10 @@
 /*
 Lists
 
-Use the following tags to create semantic lists:
+Use the following tags to create semantic lists:<br>
 `<ul>` for unordered lists,<br>
 `<ol>` for ordered lists,<br>
-`<dl>` for definition lists.<br>
+`<dl>` for definition lists.
 
 Use class `.list-default` for a basic list without decoration.
 
@@ -58,7 +58,7 @@ Styleguide 1.2.7
 /*
 Lists with bullets
 
-Use class `.list-bullet-default` to add default bullets to the list.
+Use class `.list-default` and `.list-bullet-default` to add default bullets to the list.
 
 Markup:
 <ul class="list-default list-bullet-default">
@@ -97,7 +97,7 @@ Styleguide 1.2.7.1
 Lists with icons
 
 Use class `.list-default` and `.list-bullet-icon` to show icons in a list.<br>
-Use class `.iconfont-[name]` for icon type and `.iconfont-[size]` for icon size.
+Use class `.iconfont-[name]` for icon type, `.iconfont-[size]` for icon size and `.iconfont-[color]` for icon color.<br>
 Visit the <a href="#section-1.6.1">icons guide</a>.
 
 Markup:
