@@ -56,7 +56,6 @@ Styleguide 1.6
 [class*=" iconfont-"]::before {
 
 	@at-root .btn#{&} {
-		display: inline-block;
 		margin-right: 8px; //needed to separate icon from the text
 	}
 
@@ -114,6 +113,9 @@ $iconfont-size: (16, 18, 22, 30, 100); //TODO: resolve problem when it s moved t
 }
 .icon-contactos {
 		background: url("#{$path-backgrounds}/icon-contacts.png") no-repeat 0 0;
+}
+.icon-alerts {
+		background: url("#{$path-backgrounds}/icon-alert.png") no-repeat 0 0;
 }
 
 

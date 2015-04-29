@@ -11,12 +11,8 @@ KPI
 Markup:
 <div class="kpi">
 	<h2 class="kpi-title">Ofertas para ti</h2>
-	<a href="#" id="kpi-indicator-offers"
-	data-endval="59"
-	data-duration="1"
-	class="kpi-indicator">158</a>
-	<p>Basada en tus últimas búsquedas</p>
-	<a class="link-underline" href="#">Buscar ofertas</a>
+	<a href="#"><span class="kpi-indicator iconfont-Viewdetails">15</span></a>
+	<p>Lorem ipsum <br><a href="#">Link</a></p>
 </div>
 
 Styleguide 2.25
@@ -25,29 +21,42 @@ Styleguide 2.25
 
 .kpi {
 	margin: 0 auto;
-	text-align: center;
 
 	p {
-		margin: 0;
+		margin-bottom: 10px;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	.arrow {
+		margin-left: 10px;
+		padding-top: 5px;
 	}
 
 }
 
-
 .kpi-title {
-	margin-bottom: 10px;
-	font-size: $medium-font-size;
-	line-height: $medium-line-height;
+	display: inline;
+	margin: 0;
+	padding: 0;
+	font-size: $large-font-size;
+	line-height: $large-line-height;
+}
 
-	@include mediaquery ($bp-tablet	) {
-		font-size: $large-font-size;
-		line-height: $large-line-height;
-	}
+.kpi-body {
+	padding-top:10px;
 }
 
 .kpi-indicator {
-	display: block;
-	margin-bottom: 5px;
-	font-size: 60px;
-	line-height: 60px;
+	padding: 0 10px 0 0;
+	font-size: 36px;
+	line-height: 27px;
+	color: $day-blue;
+
+    @include mediaquery ($bp-desktop) {
+		color: $dark-silk;
+	}
+
 }

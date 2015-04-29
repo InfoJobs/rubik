@@ -109,11 +109,32 @@ Markup:
 Styleguide 1.2.7.2
 */
 
-//DEPRECATED: only used on login page //TODO Delete this, refactor?
-.list-bullet-icon > .iconfont-30px {
-    padding-left: 40px;
-    position: relative;
+$iconfont-size: (16, 18, 22, 30, 100);
+
+.list-default {
+
+    [class^="iconfont-"],
+    [class*="iconfont-"] {
+        position: relative;
+    }
+
+    @each $val in $iconfont-size {
+      .iconfont-#{$val}px {
+        padding-left: #{$val + 10}px;
+      }
+    }
 }
+
+//@each $val in $iconfont-size {
+//	.iconfont-#{$val}px {
+//    @if ($val < 50) {
+//		padding-left: #{$val + 10}px;
+//	}
+//	@else {
+//		padding-left: #{$val + 20}px;
+//		}
+//	}
+//}
 
 .list-bullet-icon [class^="iconfont-"]:before,
 .list-bullet-icon [class*=" iconfont-"]:before {

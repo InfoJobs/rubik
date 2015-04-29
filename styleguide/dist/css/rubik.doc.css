@@ -286,6 +286,12 @@ Styleguide 1.2.4
     padding-bottom: 40px;
   }
 }
+@media only screen and (min-width: 481px) {
+  .inner-expanded {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
 .inner-expanded > .inner:first-child, .inner-expanded > .inner:only-child {
   padding-top: 0;
 }
@@ -893,6 +899,10 @@ Styleguide 1.1.1.3
     margin: 0;
   }
 }
+.row-faux > [class^="col-"]:last-of-type .col-child,
+.row-faux > [class*="col-"]:last-of-type .col-child {
+  margin-bottom: 0;
+}
 @media only screen and (min-width: 481px) {
   .row-faux {
     display: -webkit-box;
@@ -1346,6 +1356,29 @@ a.soft-script:active {
   100% {
     opacity: 1;
     -webkit-transform: translateY(0px);
+  }
+}
+.slide-down {
+  -webkit-animation-name: slidedown;
+  animation-name: slidedown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+@keyframes slidedown {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@-webkit-keyframes slidedown {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
   }
 }
 @keyframes move-up {
@@ -1836,7 +1869,6 @@ Styleguide 1.6
 }
 
 .btn[class*=" iconfont-"]::before {
-  display: inline-block;
   margin-right: 8px;
 }
 .btn-group .btn[class*=" iconfont-"]::before {
@@ -1901,6 +1933,10 @@ Styleguide 1.6.1
 
 .icon-contactos {
   background: url("http://media.infojobs.net/appgrade/backgrounds//icon-contacts.png") no-repeat 0 0;
+}
+
+.icon-alerts {
+  background: url("http://media.infojobs.net/appgrade/backgrounds//icon-alert.png") no-repeat 0 0;
 }
 
 .icon-50px {
@@ -2652,14 +2688,14 @@ Styleguide 1.2.1
 */
 h1,
 h2,
-.h2
+.h2,
 h3,
 .h3 {
   font-family: Proximanovabold, Helvetica, Arial, sans-serif;
 }
 .skin-executive h1, .skin-executive
 h2, .skin-executive
-.h2
+.h2, .skin-executive
 h3, .skin-executive
 .h3 {
   font-family: Proximanovalight, Helvetica, Arial, sans-serif;
@@ -2757,6 +2793,23 @@ Styleguide 1.2.1.2
     font-size: 36px;
     line-height: 37px;
   }
+}
+
+/*
+Heading-middle
+
+Use class `.heading-middle` to adjust headings in vertical align content.
+
+Markup:
+<div class="heading-addons content-logo-text">
+	<h1 class="heading-middle">Header Level 1</h1>
+	<p>Lorem ipsum</p>
+</div>
+
+Styleguide 1.3.1.3
+*/
+.heading-middle {
+  padding-top: 10px;
 }
 
 .heading-divider {
@@ -2986,9 +3039,24 @@ Markup:
 
 Styleguide 1.2.7.2
 */
-.list-bullet-icon > .iconfont-30px {
-  padding-left: 40px;
+.list-default [class^="iconfont-"],
+.list-default [class*="iconfont-"] {
   position: relative;
+}
+.list-default .iconfont-16px {
+  padding-left: 26px;
+}
+.list-default .iconfont-18px {
+  padding-left: 28px;
+}
+.list-default .iconfont-22px {
+  padding-left: 32px;
+}
+.list-default .iconfont-30px {
+  padding-left: 40px;
+}
+.list-default .iconfont-100px {
+  padding-left: 110px;
 }
 
 .list-bullet-icon [class^="iconfont-"]:before,
@@ -4464,12 +4532,21 @@ Styleguide 2.3
   -ms-flex: none;
   flex: none;
   margin-left: 20px;
+  background-color: #fff;
 }
 .content-logo-media a {
   width: 100px;
   height: 100px;
 }
-.content-logo-media a img {
+.content-logo-media img {
+  display: block;
+  width: 110px;
+  padding: 4px;
+  border: 1px solid #e2e5e6;
+}
+.content-logo-media .fig-thumbnail-logo img {
+  border: none;
+  padding: 0;
   width: 100px;
 }
 
@@ -4775,18 +4852,17 @@ Styleguide 2.4.3
 */
 .range-group {
   display: -webkit-box;
-  /* iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
   display: -ms-flexbox;
-  /* IE 10 */
   display: -webkit-flex;
-  /* Chrome */
   display: flex;
-  /* Opera 12.1, Firefox 20+ */
-  -webkit-flex-flow: column wrap;
-  flex-flow: column wrap;
+  -webkit-flex-flow: row wrap-reverse;
   flex-flow: row wrap-reverse;
   height: 35px;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
+  -webkit-align-content: space-between;
+  align-content: space-between;
 }
 
 .range {
@@ -5852,7 +5928,6 @@ Styleguide 2.8
   margin-bottom: 20px;
   background: #fff;
   border-top: 1px solid #e2e5e6;
-  border-bottom: 1px solid #e2e5e6;
 }
 .result-list-header + .result-list {
   margin-top: 0;
@@ -7539,52 +7614,40 @@ Markup:
 Styleguide 2.9
 */
 .pagination {
-  padding: 20px 10px;
-  background-color: #fff;
-  border-top: 1px solid #e2e5e6;
   background: #fff;
 }
-@media only screen and (min-width: 481px) {
-  .pagination {
-    padding: 20px;
-  }
-}
-
 .pagination .btn-group {
   margin: 0 auto;
   width: 100%;
 }
-
-.pagination .btn-group .btn {
-  width: 100%;
-}
-
 @media only screen and (min-width: 481px) {
   .pagination .btn-group {
     width: 440px;
-  }
-
-  .pagination .btn-group .btn {
-    width: 100%;
-  }
-
-  .pagination-top-microsite {
-    padding: 20px;
-  }
-
-  .pagination-top-microsite + .inner {
-    padding-top: 0;
   }
 }
 @media only screen and (min-width: 769px) {
   .pagination .btn-group {
     width: auto;
   }
-
-  .pagination .btn-group .btn {
+}
+.pagination .btn {
+  width: 100%;
+}
+@media only screen and (min-width: 769px) {
+  .pagination .btn {
     width: auto;
   }
 }
+
+@media only screen and (min-width: 481px) {
+  .pagination-top-microsite {
+    padding: 20px;
+  }
+  .pagination-top-microsite + .inner {
+    padding-top: 0;
+  }
+}
+
 /* Variables =================================================== */
 /*------------------------------------*\
     $FUNCTIONS
@@ -7633,6 +7696,14 @@ $PANELS
 .panel-info {
   color: #fff;
   background-color: #393939;
+}
+.panel-focus {
+  color: #fff;
+  background-color: #2088c2;
+}
+.panel-overlay {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 [class^="col-"].panel .col-child,
@@ -7955,6 +8026,7 @@ Styleguide 2.16
   list-style: none;
   line-height: 15px;
   -webkit-touch-callout: none;
+  color: #2d3133;
 }
 
 .chosen-container .chosen-results li.active-result {
@@ -9589,7 +9661,7 @@ Styleguide 2.24
 
 .overlay-60 {
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 .overlay-60::before {
   content: "";
@@ -9643,41 +9715,48 @@ KPI
 Markup:
 <div class="kpi">
 	<h2 class="kpi-title">Ofertas para ti</h2>
-	<a href="#" id="kpi-indicator-offers"
-	data-endval="59"
-	data-duration="1"
-	class="kpi-indicator">158</a>
-	<p>Basada en tus últimas búsquedas</p>
-	<a class="link-underline" href="#">Buscar ofertas</a>
+	<a href="#"><span class="kpi-indicator iconfont-Viewdetails">15</span></a>
+	<p>Lorem ipsum <br><a href="#">Link</a></p>
 </div>
 
 Styleguide 2.25
 */
 .kpi {
   margin: 0 auto;
-  text-align: center;
 }
 .kpi p {
-  margin: 0;
+  margin-bottom: 10px;
+}
+.kpi p:last-child {
+  margin-bottom: 0;
+}
+.kpi .arrow {
+  margin-left: 10px;
+  padding-top: 5px;
 }
 
 .kpi-title {
-  margin-bottom: 10px;
-  font-size: 18px;
-  line-height: 22px;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  line-height: 24px;
 }
-@media only screen and (min-width: 481px) {
-  .kpi-title {
-    font-size: 20px;
-    line-height: 24px;
-  }
+
+.kpi-body {
+  padding-top: 10px;
 }
 
 .kpi-indicator {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 60px;
-  line-height: 60px;
+  padding: 0 10px 0 0;
+  font-size: 36px;
+  line-height: 27px;
+  color: #2088c2;
+}
+@media only screen and (min-width: 769px) {
+  .kpi-indicator {
+    color: #2d3133;
+  }
 }
 
 /* Variables =================================================== */
@@ -9789,10 +9868,12 @@ $query2     = width, device-width
   width: 100%;
   overflow: hidden;
   border-bottom: 1px solid #bac7cc;
-  background-color: #fff;
 }
 .tips-list li:last-child {
   border: none;
+}
+.tips-list li > div {
+  position: relative;
 }
 @media only screen and (min-width: 481px) {
   .tips-list li > div {
@@ -9801,37 +9882,9 @@ $query2     = width, device-width
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    align-items: center;
   }
-}
-.tips-list li.main .cell-1 [class*=" iconfont-"]::after {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 30px;
-  height: 30px;
-  padding-top: 13px;
-  font-family: 'Icons';
-  content: "\e62a";
-  border: 2px solid #e2e5e6;
-  border-radius: 50%;
-  color: #fff;
-  background-color: #00a550;
-}
-.tips-list li.main .kind {
-  color: #00a550;
-}
-.tips-list [class^="cell-"],
-.tips-list [class*=" cell-"] {
-  padding: 20px 10px;
-  vertical-align: top;
-  background-color: #fff;
-}
-@media only screen and (min-width: 481px) {
-  .tips-list [class^="cell-"],
-  .tips-list [class*=" cell-"] {
-    vertical-align: middle;
-    padding: 20px;
+  .tips-list li > div.middle {
+    align-items: center;
   }
 }
 .tips-list .cell-1 {
@@ -9839,6 +9892,9 @@ $query2     = width, device-width
   max-width: 70px;
   width: 70px;
   float: left;
+}
+.tips-list .cell-1.hide-small-device + .cell-2 {
+  margin-left: 0;
 }
 @media only screen and (min-width: 481px) {
   .tips-list .cell-1 {
@@ -9867,6 +9923,14 @@ $query2     = width, device-width
     height: 60px;
   }
 }
+.tips-list .cell-1 .fig-thumbnail-logo {
+  width: 50px;
+}
+@media only screen and (min-width: 481px) {
+  .tips-list .cell-1 .fig-thumbnail-logo {
+    width: 60px;
+  }
+}
 .tips-list .cell-2 {
   margin-left: 70px;
 }
@@ -9877,7 +9941,6 @@ $query2     = width, device-width
     -ms-flex: 2;
     flex: 2;
     width: auto;
-    padding-top: 20px;
     margin-left: 0;
   }
 }
@@ -9903,12 +9966,8 @@ $query2     = width, device-width
   top: 0;
   color: #999;
 }
-.main .tips-list .cell-1 [class^="iconfont-"]::before, .main
-.tips-list .cell-1 [class*=" iconfont-"]::before {
-  display: inline-block;
-}
 .tips-list .title {
-  margin-bottom: 0;
+  margin-bottom: 10px;
   font-size: 18px;
   line-height: 22px;
 }
@@ -9930,27 +9989,62 @@ $query2     = width, device-width
     position: relative;
     font-size: 14px;
     line-height: 18px;
-    color: #999;
   }
 }
-.tips-list .btn,
-.tips-list .link {
+.tips-list .actions a {
   display: inline-block;
-  margin-top: 8px;
+  margin-top: 10px;
+}
+.tips-list .btn-close {
+  float: right;
+  position: relative;
+  top: -10px;
+  margin-left: 5px;
+  color: inherit;
 }
 .tips-list .fade-out {
   -webkit-transition-duration: 400ms;
   -moz-transition-duration: 400ms;
+  -ms-transition-duration: 400ms;
   -o-transition-duration: 400ms;
   transition-duration: 400ms;
 }
 .tips-list .close-animate {
   -webkit-transition-duration: 200ms;
   -moz-transition-duration: 200ms;
+  -ms-transition-duration: 200ms;
   -o-transition-duration: 200ms;
   transition-duration: 200ms;
 }
-
+.tips-list .open-tip {
+  max-height: 0;
+  -webkit-animation: opentip 2s 1.5s;
+  animation: opentip 2s 1.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes opentip {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 280px;
+  }
+}
+@-webkit-keyframes opentip {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 280px;
+  }
+}
 /* Variables =================================================== */
 /*------------------------------------*\
     $FUNCTIONS
@@ -10106,6 +10200,61 @@ $query2     = width, device-width
 }
 
 /*------------------------------------*\
+    $COLLAPSIBLE
+\*------------------------------------*/
+.collapsible {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+.collapsible .gradient {
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background: linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 105px;
+}
+
+.collapsible-toggle {
+  display: none;
+}
+
+/* Variables =================================================== */
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+/**
+ * cross multiplication percentages
+ */
+/**
+ * Turn numbers with units into unitless numbers
+ */
+/*------------------------------------*\
+$MIXINS
+\*------------------------------------*/
+/*
+Mediaqueries
+
+$breakpoint = $bp-tablet, $bp-desktop or specific
+$query1     = min or max
+$query2     = width, device-width
+
+*/
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+.tag-group li.tag-divider, .links-bar li {
+  border-right: 1px solid #e2e5e6;
+  border-radius: 0;
+}
+
+/*------------------------------------*\
     $FONTS
 \*------------------------------------*/
 .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
@@ -10184,6 +10333,91 @@ Styleguide 2.28
 .rating-nps .radio-group label {
   display: block;
   width: auto;
+}
+
+/* Variables =================================================== */
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+/**
+ * cross multiplication percentages
+ */
+/**
+ * Turn numbers with units into unitless numbers
+ */
+/*------------------------------------*\
+$MIXINS
+\*------------------------------------*/
+/*
+Mediaqueries
+
+$breakpoint = $bp-tablet, $bp-desktop or specific
+$query1     = min or max
+$query2     = width, device-width
+
+*/
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+.tag-group li.tag-divider, .links-bar li {
+  border-right: 1px solid #e2e5e6;
+  border-radius: 0;
+}
+
+/*------------------------------------*\
+	$CONTENT MEDIA
+\*------------------------------------*/
+/*
+Content media
+
+Usa la clase `.content-media` para construir una estructura con una imagen a un lado de un bloque de contenido de texto.
+
+Markup:
+<div class="content-media inner">
+	<div class="media">
+		<img class="crop-circle" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" alt="">
+	</div>
+	<div class="body">
+		<h3 class="title"><a href="#">Juan Manuel RodrÃÂguez</a></h3>
+		<p>Account Manager jasdlf sadf dsakfjasd lfkjasd <span class="alternative">en Schibsted Classified Media Spain</span></p>
+	</div>
+</div>
+
+*/
+.content-media .media,
+.content-media .body {
+  display: table-cell;
+  vertical-align: top;
+}
+.content-media .media {
+  padding-right: 20px;
+  width: 70px;
+}
+@media only screen and (min-width: 481px) {
+  .content-media .media {
+    width: 80px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .content-media .media {
+    width: 100px;
+  }
+}
+.content-media .title {
+  margin: 0;
+}
+@media only screen and (min-width: 769px) {
+  .content-media img {
+    width: 80px;
+    height: 80px;
+  }
+}
+li.content-media + .content-media::before {
+  position: relative;
+  display: block;
+  content: "";
+  border-top: 1px solid #e2e5e6;
+  top: -20px;
 }
 
 /* Variables =================================================== */
@@ -10394,18 +10628,22 @@ $query2     = width, device-width
 \*------------------------------------*/
 .border-top {
   border-top: 1px solid #e2e5e6;
+  margin: 0;
 }
 
 .border-right {
   border-right: 1px solid #e2e5e6;
+  margin: 0;
 }
 
 .border-bottom {
   border-bottom: 1px solid #e2e5e6;
+  margin: 0;
 }
 
 .border-left {
   border-left: 1px solid #e2e5e6;
+  margin: 0;
 }
 
 .border-divider {
@@ -10416,11 +10654,15 @@ $query2     = width, device-width
 .inner .border-divider {
   margin-left: -10px;
   margin-right: -10px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 @media only screen and (min-width: 481px) {
   .inner .border-divider {
     margin-left: -20px;
     margin-right: -20px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }
 .border-divider:last-child {
@@ -10446,6 +10688,10 @@ $query2     = width, device-width
 
 .margin-left {
   margin-left: 20px;
+}
+
+.link-annex {
+  margin-right: 20px;
 }
 
 .border-top-expanded {
@@ -10502,6 +10748,14 @@ $query2     = width, device-width
     display: none;
   }
 }
+/*------------------------------------*\
+    $IMG
+\*------------------------------------*/
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
 html,
 body {
   height: auto;

@@ -6,12 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title></title>
-<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/style.css" />
+<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
 
-<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/style.css" />
-
-<!-- <link rel="stylesheet" type="text/css" href="../styles/components/tips.css" />
-<link rel="stylesheet" type="text/css" href="../styles/components/crop-image.css" /> -->
+<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/thumbnail.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/crop-image.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/tips-list.css" />
+<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css" />
 </head>
 
 <body>
@@ -20,63 +22,90 @@
 	<div class="container">
 		<div class="container-expanded">
 			<!-- Component -->
-			<ul class="tips-list">
-				<li class="main">
-					<div class="js-animation">
-						<div class="cell-1">
+			<ul class="tips-list panel-focus">
+				<li>
+					<div class="js-animation middle">
+						<div class="cell-1 inner hide-small-device">
 							<span class="icon-candidaturas icon-50px iconfont-30px"></span>
 							<p class="kind">Candidaturas</p>
 						</div>
-						<div class="cell-2">
+						<div class="cell-2 inner">
+
+		    	<button type="button" class="btn-close">&times;</button>
 							<div class="text">
 								<h2 class="title">¡Hay novedades en tus candidaturas!</h2>
-								<a class="btn btn-primary btn-small js-action" href="#">Ver candidaturas</a>
+								<div class="actions">
+									<a class="link-underline contrast js-action" href="#">Ver candidaturas</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</li>
 				<li>
-					<div class="js-animation">
-						<div class="cell-1">
+					<div class="js-animation middle">
+						<div class="cell-1 inner hide-small-device">
 							<span class="icon-CV icon-50px iconfont-30px"></span>
 							<p class="kind">Mis Cvs</p>
 						</div>
-						<div class="cell-2">
+						<div class="cell-2 inner">
 							<div class="text">
 								<h2 class="title">¡Hay novedades en tus candidaturas!</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis congue mi, a tempor ipsum luctus non. Integer molestie diam sed lorem molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis congue mi, a tempor ipsum l</p>
-								<a class="btn btn-primary btn-annex iconfont-Reload rotate js-action" href="#">Actualizar fecha CV</a>
-								<a class="link" href="#">Editar CV</a>
-							</div>
+								<div class="actions">
+									<a class="link-underline contrast" href="#">Editar CV</a>
+								</div>
+						</div>
 						</div>
 					</div>
 				</li>
 				<li>
-					<div class="animation">
-						<div class="cell-1">
+					<div class="js-animation middle">
+						<div class="cell-1 inner hide-small-device">
 							<span class="icon-contactos icon-50px iconfont-30px"></span>
 							<p class="kind">Contactos</p>
 						</div>
-						<div class="cell-2">
+						<div class="cell-2 inner">
 							<div class="text">
 								<h2 class="title">¡Hay novedades en tus candidaturas!</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis congue mi, a tempor ipsum luctus non. Integer molestie diam sed lorem molestie.</p>
-								<a class="btn btn-primary btn-small js-action" href="#">Añadir contactos</a>
+								<div class="actions">
+									<a class="link-underline contrast js-action" href="#">Añadir contactos</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</li>
 				<li>
-					<div class="animation">
-						<div class="cell-1">
-							<div class="crop-circle" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg')"></div>
+					<div class="js-animation middle">
+						<div class="cell-1 inner">
+							<div class="crop-circle" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-header-grid-01.jpg')"></div>
 						</div>
-						<div class="cell-2">
+						<div class="cell-2 inner">
 							<div class="text">
-								<h2 class="title"><a href="#">Manuel González</a> quiere contactar contigo</h2>
+								<h2 class="title"><a href="#" class="contrast">Manuel González</a> quiere contactar contigo</h2>
 								<p>Diseñador en InfoJobs</p>
-								<a class="btn btn-primary btn-annex js-action" href="#">Aceptar</a>
-								<a class="link" href="#">Ignorar</a>
+								<div class="actions">
+									<a class="link-annex link-underline contrast js-action" href="#">Aceptar</a>
+									<a class="link-underline contrast" href="#">Ignorar</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="js-animation middle" data-delay="1000" data-duration="500">
+						<div class="cell-1 inner">
+			      			<img class="fig-thumbnail-logo" title="Tel�fonos, L�neas y Centrales (TELICE) - Ofertas de trabajo" src="https://zsc.scmspain.com/RealMedia/ads/Creatives/InfojobsES/LI-VODAFONE/vodafone.jpg/1412249768" alt="Tel�fonos, L�neas y Centrales (TELICE) - Ofertas de trabajo">
+						</div>
+						<div class="cell-2 inner">
+							<div class="text">
+								<h2 class="title" id="actualiza-cv-tip">Una empresa est� interesada en tu perfil</h2>
+								<p class="hide-small-device" id="actualiza-cv-tip-texto1">[Nombre Empresa] te ha encontrado en nuestra base de datos, y tu perfil le ha llamado la atenci� n para un puesto de <titulo de la oferta>. �Estar�as interesado?</p>
+								<p class="hide-small-device" id="actualiza-cv-tip-texto2">Si tienes algo nuevo que a�adir, edita tu CV. Las empresas prefieren candidatos activos.</p>
+								<div class="actions">
+									<a class="link-underline link-annex contrast js-action" href="#">S�, me interesa</a>
+									<a class="link-underline contrast js-action" href="#">Ahora no, gracias</a>
+								</div>
 							</div>
 						</div>
 					</div>

@@ -52,7 +52,7 @@ $overlay-opacity: (60);
 	.overlay-#{$value} {
 
         position: relative;
-        z-index: 1;
+        z-index: 0;
 
 		&::before {
             content: "";
