@@ -26,7 +26,7 @@ Markup:
     <dd>De duracion determinada, jornada completa</dd>
 </dl>
 
-Styleguide 1.2.7
+Styleguide 1.2.4
 */
 
 .list-default {
@@ -67,7 +67,7 @@ Markup:
     <li>Tipo de oferta: de duracion determinada, jornada completa</li>
 </ul>
 
-Styleguide 1.2.7.1
+Styleguide 1.2.4.1
 */
 
 .list-bullet-default > li,
@@ -98,7 +98,7 @@ Lists with icons
 
 Use class `.list-default` and `.list-bullet-icon` to show icons in a list.<br>
 Use class `.iconfont-[name]` for icon type, `.iconfont-[size]` for icon size and `.iconfont-[color]` for icon color.<br>
-Visit the <a href="#section-1.6.1">icons guide</a>.
+Visit the <a href="#rubik-1.6">icons guide</a>.
 
 Markup:
 <ul class="list-default list-bullet-icon">
@@ -106,7 +106,7 @@ Markup:
     <li class="iconfont-Check iconfont-30px iconfont-soft-script">Lorem ipsum dolor</li>
 </ul>
 
-Styleguide 1.2.7.2
+Styleguide 1.2.4.2
 */
 
 $iconfont-size: (16, 18, 22, 30, 100);
@@ -219,7 +219,7 @@ Markup:
     <li>Lorem ipsum dolor</li>
 </ul>
 
-Styleguide 1.2.7.5
+Styleguide
 */
 
 .tag-group {
@@ -256,7 +256,7 @@ Markup:
     <li class>Lorem ipsum</li>
 </ul>
 
-Styleguide 1.2.7.5.1
+Styleguide
 */
 
 .tag-group li.tag-divider {
@@ -287,7 +287,7 @@ Markup:
 </ul>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.2.7.5.2
+Styleguide
 */
 
 .tag-group-top {
@@ -323,7 +323,7 @@ Markup:
     <li>Lorem ipsum</li>
 </ul>
 
-Styleguide 1.2.7.5.4
+Styleguide
 */
 .tag-group .ellipsis { //TODO: nest with '& tag-group'. Use truncate class?
     display: block;

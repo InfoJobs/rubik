@@ -1,6 +1,10 @@
 //generics
 @import "../generics/generics";
 
+/*------------------------------------*\
+	$ICONS
+\*------------------------------------*/
+
 //Applies to elements containing a class that begin with icon-
 
 [class^="icon-"],
@@ -13,9 +17,6 @@
 	}
 }
 
-/*------------------------------------*\
-	$ICONS
-\*------------------------------------*/
 
 /*
 Icons
@@ -23,9 +24,18 @@ Icons
 Icons are generated as fonts. Color and size can be modified as texts.
 Use the following classes to apply an icon on a tag.
 
+Styleguide 1.6
+*/
+
+
+/*
+Icons type
+
+List of icons.
+
 @@include('../templates/partials/icons.html')
 
-Styleguide 1.6
+Styleguide 1.6.1
 */
 
 @mixin iconfont {
@@ -83,7 +93,7 @@ Markup:
 .iconfont-22px
 .iconfont-30px
 
-Styleguide 1.6.1
+Styleguide 1.6.2
 */
 
 $iconfont-size: (16, 18, 22, 30, 100); //TODO: resolve problem when it s moved to _vars
@@ -117,7 +127,9 @@ $iconfont-size: (16, 18, 22, 30, 100); //TODO: resolve problem when it s moved t
 .icon-alerts {
 		background: url("#{$path-backgrounds}/icon-alert.png") no-repeat 0 0;
 }
-
+.icon-email-banned {
+		background: url("#{$path-backgrounds}/icon-email-banned.png") no-repeat 0 0;
+}
 
 $icon-size: (50); //TODO: resolve problem when it s moved to _vars
 
