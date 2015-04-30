@@ -13,8 +13,7 @@ body#kss-node {
 
     //Grid
     .col-child {
-    //[class^="col-"],
-    //[class*="col-"]
+
         padding: 10px;
         text-align: center;
         background-color: $darkest-shiro;
@@ -38,7 +37,6 @@ body#kss-node {
     .row-matrioska .col-child {
         background-color: $dark-shiro;
     }
-
 
     //Colors
     .sg-colors {
@@ -143,13 +141,12 @@ body#kss-node {
         }
     }
 
-    /*.margin-top {
-        margin-top: 70px;
+    //borders to visual guide
 
-        &:first-child {
-            margin-top: 40px;
-        }
-    }*/
+    .heading-middle {
+
+        border: 1px dashed $darkest-shiro;
+    }
 
     .sg-selector,
     .sg-block-description code {
