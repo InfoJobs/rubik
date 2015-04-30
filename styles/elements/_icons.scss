@@ -68,7 +68,8 @@ Styleguide 1.6
 /*
 Icons size
 
-Use these classes to modify the icon size in px.
+Use the following classes to modify the icon size: `.iconfont-16px`, `.iconfont-18px`, `.iconfont-22px` or `.iconfont-30px`
+
 
 Markup:
 <ul>
@@ -77,11 +78,10 @@ Markup:
 
 {modifier_class}:
 
-.iconfont-16px	- 16px
-.iconfont-18px	- 18px
-.iconfont-22px	- 22px
-.iconfont-30px	- 30px
-.iconfont-100px	- 100px
+.iconfont-16px
+.iconfont-18px
+.iconfont-22px
+.iconfont-30px
 
 Styleguide 1.6.1
 */
