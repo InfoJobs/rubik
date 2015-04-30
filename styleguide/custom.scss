@@ -27,7 +27,18 @@ body#kss-node {
 
     .row {
         margin-bottom: 10px;
+
+        .row-matrioska {
+
+            margin-bottom: 0;
+
+        }
     }
+
+    .row-matrioska .col-child {
+        background-color: $dark-shiro;
+    }
+
 
     //Colors
     .sg-colors {

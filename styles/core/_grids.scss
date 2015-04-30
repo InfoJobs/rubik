@@ -236,6 +236,33 @@ $gridColumns: 12;
 		}
 	}
 }
+/*------------------------------------*\
+	$ROW MATRIOSKA
+\*------------------------------------*/
+
+/*
+Nested row
+
+Use class `.row` and `.row-matrioska` to nested rows.
+
+@@include('../templates/partials/grid-nested.html')
+
+Markup:
+<div class="row casper">
+	<div class="col-6">
+		<div class="col-child">
+			<div class="row row-matrioska">
+				<div class="col-6"><div class="col-child">...</div></div>
+				<div class="col-6"><div class="col-child">...</div></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-6"><div class="col-child">...</div></div>
+</div>
+
+Styleguide 1.1.1.3
+*/
+
 
 /*------------------------------------*\
 	$ROW FAUX
@@ -244,18 +271,18 @@ $gridColumns: 12;
 /*
 Equal height columns
 
-Use class `.row-faux` instead of `.row` to build an equal height columns structure.
+Add class `.row` and `.row-faux` to build an equal height columns structure.
 
 @@include('../templates/partials/grid-equal.html')
 
 Markup:
-<div class="row-faux casper">
+<div class="row row-faux casper">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.1.1.3
+Styleguide 1.1.1.4
 */
 
 .row-faux {
