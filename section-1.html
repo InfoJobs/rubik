@@ -63,10 +63,10 @@
                                                 <a href="section-1.html#rubik-1.2.3" >Text size</a>
                                             </li>
                                             <li>
-                                                <a href="section-1.html#rubik-1.2.4" >Text variants</a>
+                                                <a href="section-1.html#rubik-1.2.4" class="disabled js-disabled">Inner containers </a>
                                             </li>
                                             <li>
-                                                <a href="section-1.html#rubik-1.2.4" class="disabled js-disabled">Inner containers </a>
+                                                <a href="section-1.html#rubik-1.2.4" >Text variants</a>
                                             </li>
                                             <li>
                                                 <a href="section-1.html#rubik-1.2.6" >Blockquotes</a>
@@ -711,7 +711,7 @@ your content.
                                     </header>
                                         <div class="sg-block-description">
                                             <p>Use class <code>.base</code> or <code>.medium</code> to change the size of the text.</p>
-<p>{{modifier_class}}:</p>
+<p>{modifier_class}:</p>
 
 
                                         </div>
@@ -741,6 +741,9 @@ your content.
 
 
 
+
+
+
                             <div id="rubik-1.2.4" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
@@ -754,20 +757,13 @@ your content.
 
 
                                                 <div class="sg-view">
-                                                    <div class="inner">
-    ...
-</div>
+                                                    <p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                                 </div>
 
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;inner&quot;&gt;
-    ...
-&lt;/div&gt;</code></pre>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;p class=&quot;bold&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;</code></pre>
 
                                 </div>
                             </div>
-
-
-
 
 
 
@@ -779,7 +775,7 @@ your content.
                                     </header>
                                         <div class="sg-block-description">
                                             <p>Use <code>&lt;blockquote&gt;</code> when the text is quoted from another source. Use <code>&lt;cite&gt;</code> to cite the reference.</p>
-<p>{{modifier_class}}:</p>
+<p>{modifier_class}:</p>
 
 
                                         </div>
@@ -1113,6 +1109,36 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
 
 
+                            <div id="rubik-1.3.1.3" class="row sg-block">
+                                    <div class="col-12">
+                                    <header class="sg-block-header">
+                                        <h2>Heading-middle</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.heading-middle</code> to adjust headings in vertical align content.</p>
+
+
+                                        </div>
+
+
+                                                <div class="sg-view">
+                                                    <div class="heading-addons content-logo-text">
+	<h1 class="heading-middle">Header Level 1</h1>
+	<p>Lorem ipsum</p>
+</div>
+                                                </div>
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;heading-addons content-logo-text&quot;&gt;
+	&lt;h1 class=&quot;heading-middle&quot;&gt;Header Level 1&lt;/h1&gt;
+	&lt;p&gt;Lorem ipsum&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+                                </div>
+                            </div>
+
+
+
+
                             <div id="rubik-1.3.2" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
@@ -1290,8 +1316,8 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
                                         <h2>Buttons</h2>
                                     </header>
                                         <div class="sg-block-description">
-                                            <p>Use class <code>.btn</code> to create a button using <code>&lt;a&gt;</code> (outside forms) or <code>&lt;button&gt;</code> (only inside forms), followed by classes listed as <code>{{modifier_class}}</code>.</p>
-<p>{{modifier_class}}:</p>
+                                            <p>Use class <code>.btn</code> to create a button using <code>&lt;a&gt;</code> (outside forms) or <code>&lt;button&gt;</code> (only inside forms), followed by classes listed as <code>{modifier_class}</code>.</p>
+<p>{modifier_class}:</p>
 
 
                                         </div>
@@ -1310,20 +1336,16 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
                                                     <div class="sg-view">
                                                             <div class="sg-modifiers">
                                                                 <a href="#" class="btn btn-default">Link Button</a>
-<button class="btn btn-default">Button Element</button>
                                                             </div>
                                                             <div class="sg-modifiers">
                                                                 <a href="#" class="btn btn-primary">Link Button</a>
-<button class="btn btn-primary">Button Element</button>
                                                             </div>
                                                             <div class="sg-modifiers">
                                                                 <a href="#" class="btn btn-primary-contrast">Link Button</a>
-<button class="btn btn-primary-contrast">Button Element</button>
                                                             </div>
                                                     </div>
 
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn &quot;&gt;Link Button&lt;/a&gt;
-&lt;button class=&quot;btn &quot;&gt;Button Element&lt;/button&gt;</code></pre>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn &quot;&gt;Link Button&lt;/a&gt;</code></pre>
 
                                 </div>
                             </div>
@@ -1337,8 +1359,8 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
                                         <h2>Buttons sizes</h2>
                                     </header>
                                         <div class="sg-block-description">
-                                            <p>Use classes listed as <code>{{modifier_class}}</code> to change buttons size.</p>
-<p>{{modifier_class}}:</p>
+                                            <p>Use classes listed as <code>{modifier_class}</code> to change buttons size.</p>
+<p>{modifier_class}:</p>
 
 
                                         </div>
@@ -1354,16 +1376,13 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
                                                     <div class="sg-view">
                                                             <div class="sg-modifiers">
                                                                 <a href="#" class="btn btn-default btn-medium">Link Button</a>
-<button class="btn btn-default btn-medium">Button Element</button>
                                                             </div>
                                                             <div class="sg-modifiers">
                                                                 <a href="#" class="btn btn-default btn-large">Link Button</a>
-<button class="btn btn-default btn-large">Button Element</button>
                                                             </div>
                                                     </div>
 
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn btn-default &quot;&gt;Link Button&lt;/a&gt;
-&lt;button class=&quot;btn btn-default &quot;&gt;Button Element&lt;/button&gt;</code></pre>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn btn-default &quot;&gt;Link Button&lt;/a&gt;</code></pre>
 
                                 </div>
                             </div>
@@ -1385,11 +1404,9 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
                                                 <div class="sg-view">
                                                     <a href="#" class="btn btn-primary btn-medium iconfont-Facebook">Link Button</a>
-<button class="btn btn-primary btn-medium iconfont-Facebook">Button Element</button>
                                                 </div>
 
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn btn-primary btn-medium iconfont-Facebook&quot;&gt;Link Button&lt;/a&gt;
-&lt;button class=&quot;btn btn-primary btn-medium iconfont-Facebook&quot;&gt;Button Element&lt;/button&gt;</code></pre>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn btn-primary btn-medium iconfont-Facebook&quot;&gt;Link Button&lt;/a&gt;</code></pre>
 
                                 </div>
                             </div>
@@ -1411,11 +1428,9 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
                                                 <div class="sg-view">
                                                     <a href="#" class="btn btn-default btn-medium btn-disabled">Link Button</a>
-<button class="btn btn-default btn-medium btn-disabled">Button Element</button>
                                                 </div>
 
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn btn-default btn-medium btn-disabled&quot;&gt;Link Button&lt;/a&gt;
-&lt;button class=&quot;btn btn-default btn-medium btn-disabled&quot;&gt;Button Element&lt;/button&gt;</code></pre>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn btn-default btn-medium btn-disabled&quot;&gt;Link Button&lt;/a&gt;</code></pre>
 
                                 </div>
                             </div>
@@ -1463,11 +1478,9 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
 
                                                 <div class="sg-view">
                                                     <a href="#" class="btn btn-primary btn-form-inline">Button Element</a>
-<button class="btn btn-default btn-form-inline">Button Element</button>
                                                 </div>
 
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn btn-primary btn-form-inline&quot;&gt;Button Element&lt;/a&gt;
-&lt;button class=&quot;btn btn-default btn-form-inline&quot;&gt;Button Element&lt;/button&gt;</code></pre>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;btn btn-primary btn-form-inline&quot;&gt;Button Element&lt;/a&gt;</code></pre>
 
                                 </div>
                             </div>
@@ -1685,7 +1698,7 @@ Use the following classes to apply an icon on a tag.</p>
                                     </header>
                                         <div class="sg-block-description">
                                             <p>Use these classes to modify the icon size in px.</p>
-<p>{{modifier_class}}:</p>
+<p>{modifier_class}:</p>
 
 
                                         </div>
