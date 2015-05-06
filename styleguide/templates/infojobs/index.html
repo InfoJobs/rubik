@@ -242,7 +242,11 @@
                         <div id="rubik-{{reference}}" class="row sg-block">
                             <div class="col-12">
                                 <header class="sg-block-header">
+                                    {{#ifDepth 2}}
                                     <h1>{{{header}}}</h1>
+                                    {{else}}
+                                    <h2>{{{header}}}</h2>
+                                    {{/ifDepth}}
                                 </header>
                                 {{#if description}}
                                     <div class="sg-block-description">
