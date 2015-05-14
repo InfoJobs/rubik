@@ -2947,12 +2947,12 @@ Text size
 Use class `.base` to force body copy size or `.medium` to increase the text size.
 
 Markup:
-<p class="{modifier_class}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-{modifier_class}:
+{{modifier_class}}:
 
-.base
-.medium
+.base	- a
+.medium - a
 
 Styleguide 1.2.5
 */

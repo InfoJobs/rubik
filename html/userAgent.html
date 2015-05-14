@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-15">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>userAgent</title>
+    </head>
+
+    <body>
+      <div class="wrapper">
+        <div class="container content-wrapper">
+
+        </div>
+      </div>
+      <script src="../js/loadJS.js"></script>
+      <script src="../js/loadCSS.js"></script>
+      <script>
+        (function( w ) {
+
+            var browsersMeter = /(msie|safari|android)/gi;
+            if( w.navigator.userAgent.search( browsersMeter ) > -1 ) {
+                loadJS('meter.js');
+                loadCSS('meter.css');
+            }
+            
+        })( window );
+      </script>
+    </body>
+</html>
