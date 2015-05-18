@@ -47,13 +47,18 @@
 /*
 Buttons
 
-Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms), followed by classes listed as `{modifier_class}`.
+Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms).
+<br>
+Also add one of the following classes to give it format:
+
+`.btn-default` for a default action style<br>
+`.btn-primary` for a primary action style<br>
+`.btn-primary-contrast`for a primary action style over dark background
 
 {modifier_class}:
-
-.btn-default		   - Applies default action style
-.btn-primary 		   - Applies primary action style
-.btn-primary-contrast  - Applies primary action style over dark background
+.btn-default
+.btn-primary
+.btn-primary-contrast
 
 Markup:
 <a href="#" class="btn {{modifier_class}}">Link Button</a>
@@ -193,23 +198,23 @@ Styleguide 1.5
 /*
 Buttons sizes
 
-Use classes listed as `{modifier_class}` to change buttons size.
+Use class `.btn-medium` or `.btn-large` to change buttons size.
 
 Markup:
 <a href="#" class="btn btn-default {{modifier_class}}">Link Button</a>
 
 {modifier_class}:
 
-.btn-medium			- Size: Medium
-.btn-large 			- Size: Large
+.btn-medium
+.btn-large
 
 Styleguide 1.5.1
 */
 
 .btn-medium {
     height: 40px;
-    padding: 0 20px;
-    font-size: $base-font-size;
+    padding: 0 10px;
+    font-size: $medium-font-size;
     line-height: 38px;
 
     @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
@@ -246,7 +251,7 @@ Styleguide 1.5.1
 /*
 Buttons with text and icon
 
-Use class `.iconfont-[name]` to display the needed icon.
+Use class `.iconfont-[name]` to display an icon inside the button.
 
 Markup:
 <a href="#" class="btn btn-primary btn-medium iconfont-Facebook">Link Button</a>
@@ -353,9 +358,9 @@ Styleguide 1.5.5
 /*
 Button group
 
-Use class `.btn-group` to create a button group structure.
-Use class `.btn-default` for buttons inside buttons group.
-Use class `.active` to highlight the selected button.
+Use class `.btn-group` to create a button group structure.<br>
+Use class `.btn-default` for buttons inside buttons group.<br>
+Use class `.active` to highlight the selected button.<br>
 
 Markup:
 <div class="btn-group">
@@ -454,7 +459,7 @@ Styleguide 1.5.7
 /*
 Button group with icon
 
-Use class `.iconfont-[name]` to display the needed icon.
+Use class `.iconfont-[name]` to display an icon inside the button.
 
 Markup:
 <div class="btn-group">
