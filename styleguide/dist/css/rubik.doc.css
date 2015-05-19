@@ -10831,7 +10831,7 @@ $query2     = width, device-width
     $IMG
 \*------------------------------------*/
 .img-responsive {
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -10912,6 +10912,18 @@ body#kss-node {
   font-size: 30px;
 }
 
+.sg-content .intro-header {
+  height: 100%;
+  width: 100%;
+  padding-top: 100px;
+  background-color: #2088c2;
+  -webkit-transition: -webkit-transform 500ms ease;
+  transition: transform 500ms ease;
+}
+.sg-content .intro-header img {
+  display: block;
+  margin: 0 auto;
+}
 .sg-content h1,
 .sg-content h2 {
   margin: 0;

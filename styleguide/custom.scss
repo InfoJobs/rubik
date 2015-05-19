@@ -92,7 +92,23 @@ body#kss-node {
     }
 }
 
+
+
 .sg-content {
+    .intro-header {
+        height: 100%;
+        width: 100%;
+        padding-top: 100px;
+        background-color: $day-blue;
+        -webkit-transition: -webkit-transform 500ms ease;
+        transition: transform 500ms ease;
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
     //Styleguide theme
     h1,
     h2 {

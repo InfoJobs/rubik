@@ -57,7 +57,8 @@ module.exports = function(grunt) {
       dist: {
         options: {},
         files: [
-          {src: 'css/rubik.doc.css', dest: 'dist/', expand: true, cwd: ''}
+          {src: 'css/rubik.doc.css', dest: 'dist/', expand: true, cwd: ''},
+          {src: 'templates/infojobs/index.html', dest: '', expand: true, cwd: ''}
         ]
       }
     },
