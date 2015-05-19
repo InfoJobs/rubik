@@ -22,13 +22,13 @@
             </div>
         	<ul>
         		<li>
-        			<div class="sg-section">Introduction</div>
+        			<div class="sg-section">Rubik</div>
         			<ul>
-        				<li><a href="./index.html" id="home">Design principles</a></li>
+        				<li><a href="./index.html" id="home">Introducion</a></li>
         			</ul>
         		</li>
         		<li>
-        			<div class="sg-section">Styleguide</div>
+        			<div class="sg-section">Web Components</div>
         			<ul id="sg-menu">
         				{{#eachRoot}}
                         <li>
@@ -61,6 +61,8 @@
 
         				</li>
         				{{/eachRoot}}
+                        <li><a href="#">Pages</a></li>
+                        <li><a href="#">Templates</a></li>
         			</ul>
         		</li>
         	</ul>
@@ -210,9 +212,11 @@
 
                                             {{#if modifiers}}
                                                 {{#eachModifier}}
-                                                    <div class="">
-                                                        {{name}} | <span>{{{description}}}</span>
+                                                    {{!
+                                                    <div>
+                                                        {{name}} <span style="display:none;">{{{description}}}</span>
                                                     </div>
+                                                    }}
                                                 {{/eachModifier}}
 
                                                 {{#isntCasper markup}}
@@ -231,8 +235,11 @@
                                                 </div>
                                                 {{/isntCasper}}
                                             {{/if}}
-
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">
+{{#isModifiers markup}}
+{{markup}}
+{{/isModifiers}}
+</code></pre>
                                     {{/if}}
 
                                 </div>
