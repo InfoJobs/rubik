@@ -39,7 +39,7 @@
 
 @media all and (min-width: 1200px) {
     .sg-header {
-        padding-left: 360px;
+        padding-left: 300px;
     }
 }
 
@@ -313,7 +313,7 @@ $CONTENT
 
 @media all and (min-width: 1200px) {
   .sg-content {
-      padding-left: 360px;
+      padding-left: 300px;
   }
 }
 
