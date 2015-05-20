@@ -8,35 +8,25 @@
 /*
 Notifications
 
-###Notifications
 Contextual notificitions for confirmation messages.<br>
-The modifier classes are `.notification-error` for errors, `.notification-success` for success and `.notification-info` for information.
+
+The modifier classes are:<br>
+`.notification-error` for errors<br>
+`.notification-success` for success<br>
+`.notification-info` for information<br>
+`.notification-warning` for warning<br>
+
+{modifier_class}:
+
+.notification-error
+.notification-success
+.notification-info
+.notification-warning
 
 Markup:
-<!-- Notification error -->
-<div class="notification notification-error notification-dismissable">
-	<button class="btn-close" type="button">×</button>
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
-</div>
-<!-- /Notification error -->
-<div class="container-expanded">
-<!-- Notification success -->
-<div class="notification notification-success notification-dismissable">
-	<button class="btn-close" type="button">×</button>
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
-</div>
-<!-- /Notification success -->
-</div>
-<div class="container-expanded">
-<!-- Notification info -->
-<div class="notification notification-info notification-dismissable">
-	<button class="btn-close" type="button">×</button>
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
-</div>
-<!-- /Notification info -->
+<div class="notification {{modifier_class}}">
+	<p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
+	<p class="contrast">Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="contrast link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
 </div>
 
 Styleguide 2.2
@@ -92,26 +82,6 @@ Styleguide 2.2
 	color: $shiro;
 }
 
-/*
-Notifications
-
-Loremew eqwfwaerg sefg sdfg sdfgsdfg sdfg sdfg sdf gsdf gsdfgsdfgsdfg
-
-Markup:
-<div class="notification {{modifier_class}}">
-<p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
-<p class="contrast">Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="contrast link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
-</div>
-
-.notification-error -
-.notification-success -
-.notification-info -
-.notification-dismissable -
-
-
-Styleguide 2.2.1
-*/
-
 .notification-error {
 	background: $trueblood;
 }
@@ -133,6 +103,22 @@ Styleguide 2.2.1
 		color: $dark-silk;
 	}
 }
+
+/*
+Notification dismissable
+
+Add class `.notification-dismissable` and tag `<button>` for a notification dismissable.
+
+Markup:
+<div class="notification notification-success notification-dismissable">
+	<button class="btn-close" type="button">×</button>
+	<p class="title">Lorem ipsum dolor sit</p>
+	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
+</div>
+
+Styleguide 2.2.1.1
+*/
+
 .notification-dismissable {
 	position: relative;
 	padding-right: 70px;
