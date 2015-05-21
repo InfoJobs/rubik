@@ -218,6 +218,10 @@
 	text-align: left;
 }
 
+.nav-bar-top-right > li:last-child  > a.btn-link-secondary {
+	line-height: 18px;
+}
+
 .nav-bar-top-right > li > a.btn-link-secondary {
 	color: $mid-script;
 }
@@ -249,6 +253,7 @@
 
 		margin-top: 24px;
 		padding: 5px 10px;
+		line-height: 20px;
 
 	}
 }
