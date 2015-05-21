@@ -11,8 +11,7 @@
         <link rel="stylesheet" href="public/styleguide.css">
         <link rel="stylesheet" href="public/rubik.css">
 
-        <script src="public/jquery-2.1.0.min.js"></script>
-        <script src="public/jquery.modal.js"></script>
+
     </head>
     <body id="kss-node">
 
@@ -182,7 +181,7 @@
                             <div id="rubik-{{reference}}" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
-                                        <h2>{{{header}}}</h2>
+                                        <h2 class="sg-block-title">{{{header}}}</h2>
                                     </header>
                                     {{#if description}}
                                         <div class="sg-block-description">
@@ -233,9 +232,9 @@
                             <div class="col-12">
                                 <header class="sg-block-header">
                                     {{#ifDepth 2}}
-                                    <h1>{{{header}}}</h1>
+                                    <h1 class="sg-block-title">{{{header}}}</h1>
                                     {{else}}
-                                    <h2>{{{header}}}</h2>
+                                    <h2 class="sg-block-title">{{{header}}}</h2>
                                     {{/ifDepth}}
                                 </header>
                                 {{#if description}}
@@ -257,12 +256,33 @@
         © Infojobs 2015
         </section>
 
+        <script src="public/jquery-2.1.0.min.js"></script>
+        <script src="public/jquery.modal.js"></script>
+        <script src="public/jquery.scrollspy.js"></script>
         <script src="public/kss.js"></script>
         <script src="public/prettify.js"></script>
         <script src="public/plugins.js"></script>
         <script src="public/main.js"></script>
         <script>
-
+        $(document).ready(function() {
+			$('.sg-block-title').each(function(i) {
+				var position = $(this).position();
+				console.log( position );
+				console.log( 'min: ' + position.top + ' / max: ' + parseInt(position.top + $(this).height()) );
+				$(this).scrollspy({
+					min: position.top,
+					max: position.top + $(this).height(),
+					onEnter: function(element, position) {
+						if(console) console.log('entering ' +  element.innerHTML);
+						// $("body").css('background-color', element.id);
+					},
+					onLeave: function(element, position) {
+						if(console) console.log('leaving ' +  element.innerHTML);
+					//	$('body').css('background-color','#eee');
+					}
+				});
+			});
+		});
         </script>
     </body>
 </html>
