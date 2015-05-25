@@ -73,7 +73,7 @@ Styleguide 1.1.1
 	}
 
 	+ .row {
-		margin-bottom: 10px;
+		margin-top: 10px;
 
 		@media print {
 			margin: 0;
@@ -301,6 +301,7 @@ Styleguide 1.1.1.4
 		[class*="col-"] {
 			@include display-flex;
 			float: none;
+			overflow: hidden;
 		}
 
 		.col-12-medium {

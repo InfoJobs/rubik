@@ -84,17 +84,18 @@
             {{#if homepage}}
             {{! - HOME ------------------------------------------------------ }}
 
-            <div class="intro-header">
-               <div class="intro-content">
-                   <img src="./public/media/rubik.png">
+            <div class="home-intro">
+               <div class="intro-content text-center row-centered">
+                   <img src="../../media/logo-rubik.png" alt="Logo Rubik framework">
+                   <p class="contrast inner">Rubik es el framework interno del portal InfoJobs. Rubik permite utilizar componentes CSS y elementos Javascript para construir las p&aacute;ginas del portal. </p>
                </div>
             </div>
-            <div class="sg-wrapper">
+            <div class="sg-wrapper home-content">
                 <div class="sg-block">
-                      <div class="row-faux margin-bottom">
+                      <div class="row row-faux">
                           <div class="col-4">
                             <div class="col-child panel-canvas">
-                                <img src="./public/media/MOBILE-FIRST.jpg" class="sg-img">
+                                <img src="../../media/img-mobilefirst.png" class="sg-img" alt="Logo Mobile First">
                                 <div class="inner">
                                     <h3>Mobile first</h3>
                                     <p>Mobile first se centra en jerarquizar y estructurar el contenido partiendo de la resolución de una pantalla móvil.</p>
@@ -104,7 +105,7 @@
 
                           <div class="col-4">
                             <div class="col-child panel-canvas">
-                                <img src="./public/media/RESPONSIVE.jpg" class="sg-img">
+                                <img src="../../media/img-responsive.png" class="sg-img" alt="Logo Responsive Design">
                                 <div class="inner">
                                     <h3>Responsive design</h3>
                                     <p>Responsive design ofrece una correcta visualización y experiencia en las distintas resoluciones y dispositivos.</p>
@@ -114,7 +115,7 @@
 
                             <div class="col-4">
                               <div class="col-child panel-canvas">
-                                  <img src="./public/media/OOCSS.jpg" class="sg-img">
+                                  <img src="../../media/img-oocss.png" class="sg-img" alt="Logo OOCSS">
                                   <div class="inner">
                                       <h3>OOCSS</h3>
                                       <p>Oriented Object CSS promueve la creación de componentes reutilizables, escalables y fáciles de mantener, separando los estilos que definen la estructura de los que definen la presentación.</p>
@@ -123,10 +124,10 @@
                             </div>
                       </div>
 
-                      <div class="row-faux">
+                      <div class="row row-faux">
                             <div class="col-4">
                               <div class="col-child panel-canvas">
-                                  <img src="./public/media/SASS.jpg" class="sg-img">
+                                  <img src="../../media/img-sass.png" class="sg-img" alt="Logo Sass">
                                   <div class="inner">
                                       <h3>Sass</h3>
                                       <p>Syntactically Awesome Stylesheets es un preprocesador CSS que simplifica la escritura y estructura de las hojas de estilo dando como resultado una CSS más limpia y ordenada.</p>
@@ -136,7 +137,7 @@
 
                             <div class="col-4">
                               <div class="col-child panel-canvas">
-                                  <img src="./public/media/JS.jpg" class="sg-img">
+                                  <img src="../../media/img-javascript.png" class="sg-img" alt="Logo Javascript">
                                   <div class="inner">
                                       <h3>Javascript</h3>
 
@@ -147,9 +148,9 @@
 
                               <div class="col-4">
                                 <div class="col-child panel-canvas">
-                                    <img src="./public/media/HTMLSEMANTICO.jpg" class="sg-img">
+                                    <img src="../../media/img-html.png" class="sg-img" alt="Logo Semantic HTML">
                                     <div class="inner">
-                                        <h3>HTML semántico</h3>
+                                        <h3>HTML sem&aacute;ntico</h3>
 
                                         <p>El HTML semántico se utiliza para reforzar la coherencia entre las etiquetas HTML y el contenido, haciendo un uso correcto de los estándares web.</p>
                                     </div>
@@ -222,6 +223,7 @@
 {{markup}}
 {{/isModifiers}}
 </code></pre>
+<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
                                     {{/if}}
 
                                 </div>
