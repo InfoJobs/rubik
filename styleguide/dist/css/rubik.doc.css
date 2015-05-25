@@ -5018,7 +5018,7 @@ $query2     = width, device-width
 \*------------------------------------*/
 /*
 
-Styleguide 2.5
+//Styleguide 2.5
 */
 .help-footer p {
   color: #666;
@@ -5999,7 +5999,7 @@ $query2     = width, device-width
 /*
 
 
-Styleguide 2.8
+//Styleguide 2.8
 */
 .result-list {
   margin-bottom: 20px;
@@ -7591,46 +7591,6 @@ For pagination wrap a `.btn-group` structure with class `.pagination` as a paren
 Use class `.active` for the active button.
 
 Markup:
-<!-- Default pagination -->
-<div class="pagination">
-	<div class="btn-group">
-		<div class="active">
-			<button class="btn btn-default" id="page1" type="button">1</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page2" type="button">2</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page3" type="button">3</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page4" type="button">4</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page5" type="button">5</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page6" type="button">6</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page7" type="button">7</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page8" type="button">8</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page9" type="button">9</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page10" type="button">10</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="pageNext" type="button" title="Siguiente">Siguiente</button>
-		</div>
-	</div>
-</div>
-<!-- /Default pagination -->
-<!-- Pagination states -->
 <div class="pagination">
 	<div class="btn-group">
 		<div>
@@ -7646,38 +7606,13 @@ Markup:
 			<button class="btn btn-default" id="page3" type="button">3</button>
 		</div>
 		<div>
-			<button class="btn btn-default" id="page4" type="button">4</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page5" type="button">5</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page6" type="button">6</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page7" type="button">7</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page8" type="button">8</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page9" type="button">9</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page10" type="button">10</button>
-		</div>
-		<div>
 			<button class="btn btn-default" id="pageNext" type="button" title="Siguiente">Siguiente</button>
 		</div>
 	</div>
 </div>
-<!-- /Pagination states -->
 
 Styleguide 2.9
 */
-.pagination {
-  background: #fff;
-}
 .pagination .btn-group {
   margin: 0 auto;
   width: 100%;
@@ -10990,8 +10925,21 @@ body#kss-node {
   margin: 0 auto;
 }
 .sg-content .home-intro p {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  color: #FFF;
   font-size: 20px;
   line-height: 24px;
+}
+@media all and (max-width: 768px) {
+  .sg-content .home-intro p {
+    width: 100%;
+  }
+}
+.sg-content .home-intro div {
+  width: 100%;
+  max-width: 1200px;
 }
 .sg-content .home-content {
   padding-top: 40px;

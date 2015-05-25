@@ -112,8 +112,21 @@ body#kss-node {
         }
 
         p {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            color: #FFF;
             font-size: 20px;
             line-height: 24px;
+
+            @media all and (max-width: 768px) {
+                width: 100%;
+            }
+        }
+
+        div {
+            width: 100%;
+            max-width: 1200px;
         }
     }
 

@@ -29,7 +29,13 @@
     z-index: 2;
     font-size: 25px;
     font-size: 1.5625rem;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media all and (max-width: 1200px) {
+    .sg-header {
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+
+    }
 }
 
 @media all and (min-width: 1200px) {
@@ -70,7 +76,7 @@
     transition: all 150ms ease;
 }
 
-@media all and (min-width: 780px) {
+@media all and (min-width: 768px) {
     .sg-wrapper,
     .sg-header {
         padding-right: 20px;
