@@ -11,8 +11,7 @@
         <link rel="stylesheet" href="public/styleguide.css">
         <link rel="stylesheet" href="public/rubik.css">
 
-        <script src="public/jquery-2.1.0.min.js"></script>
-        <script src="public/jquery.modal.js"></script>
+
     </head>
     <body id="kss-node">
 
@@ -24,7 +23,7 @@
         		<li>
         			<div class="sg-section">Rubik</div>
         			<ul>
-        				<li><a href="./index.html" id="home">Introducion</a></li>
+        				<li><a href="./index.html" id="home">Introduction</a></li>
         			</ul>
         		</li>
         		<li>
@@ -337,12 +336,33 @@
         © Infojobs 2015
         </section>
 
+        <script src="public/jquery-2.1.0.min.js"></script>
+        <script src="public/jquery.modal.js"></script>
+        <script src="public/jquery.scrollspy.js"></script>
         <script src="public/kss.js"></script>
         <script src="public/prettify.js"></script>
         <script src="public/plugins.js"></script>
         <script src="public/main.js"></script>
         <script>
-
+        $(document).ready(function() {
+			$('.sg-block-title').each(function(i) {
+				var position = $(this).position();
+				console.log( position );
+				console.log( 'min: ' + position.top + ' / max: ' + parseInt(position.top + $(this).height()) );
+				$(this).scrollspy({
+					min: position.top,
+					max: position.top + $(this).height(),
+					onEnter: function(element, position) {
+						if(console) console.log('entering ' +  element.innerHTML);
+						// $("body").css('background-color', element.id);
+					},
+					onLeave: function(element, position) {
+						if(console) console.log('leaving ' +  element.innerHTML);
+					//	$('body').css('background-color','#eee');
+					}
+				});
+			});
+		});
         </script>
     </body>
 </html>

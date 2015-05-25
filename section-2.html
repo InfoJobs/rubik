@@ -11,8 +11,7 @@
         <link rel="stylesheet" href="public/styleguide.css">
         <link rel="stylesheet" href="public/rubik.css">
 
-        <script src="public/jquery-2.1.0.min.js"></script>
-        <script src="public/jquery.modal.js"></script>
+
     </head>
     <body id="kss-node">
 
@@ -24,7 +23,7 @@
         		<li>
         			<div class="sg-section">Rubik</div>
         			<ul>
-        				<li><a href="./index.html" id="home">Introducion</a></li>
+        				<li><a href="./index.html" id="home">Introduction</a></li>
         			</ul>
         		</li>
         		<li>
@@ -264,7 +263,7 @@
                             <div id="rubik-2.1" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
-                                        <h2>Board</h2>
+                                        <h2 class="sg-block-title">Board</h2>
                                     </header>
                                         <div class="sg-block-description">
                                             <p>Use class <code>.board</code> followed by the nested structure <code>.text</code>, <code>.child</code> and <code>.child-center</code> to create a container with vertically centered text content.<br />
@@ -313,7 +312,7 @@ Use class <code>.claim</code> to format the main title.</p>
                             <div id="rubik-2.2" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
-                                        <h2>Notifications</h2>
+                                        <h2 class="sg-block-title">Notifications</h2>
                                     </header>
                                         <div class="sg-block-description">
                                             <p>Contextual notificitions for confirmation messages.<br></p>
@@ -354,7 +353,7 @@ Use class <code>.claim</code> to format the main title.</p>
                             <div id="rubik-2.2.1.1" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
-                                        <h2>###Notification dismissable</h2>
+                                        <h2 class="sg-block-title">Notification dismissable</h2>
                                     </header>
                                         <div class="sg-block-description">
                                             <p>Add class <code>.notification-dismissable</code> and tag <code>&lt;button&gt;</code> for a notification dismissable.</p>
@@ -387,7 +386,7 @@ Use class <code>.claim</code> to format the main title.</p>
                             <div id="rubik-2.3" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
-                                        <h2>Content logo</h2>
+                                        <h2 class="sg-block-title">Content logo</h2>
                                     </header>
                                         <div class="sg-block-description">
                                             <p>Use class <code>.content-logo</code> nested with <code>.heading-addons</code> to center vertically text with logo.</p>
@@ -457,7 +456,7 @@ Use class <code>.claim</code> to format the main title.</p>
                         <div id="rubik-2.5" class="row sg-block">
                             <div class="col-12">
                                 <header class="sg-block-header">
-                                    <h1></h1>
+                                    <h1 class="sg-block-title"></h1>
                                 </header>
                             </div>
                         </div>
@@ -467,7 +466,7 @@ Use class <code>.claim</code> to format the main title.</p>
                         <div id="rubik-2.8" class="row sg-block">
                             <div class="col-12">
                                 <header class="sg-block-header">
-                                    <h1></h1>
+                                    <h1 class="sg-block-title"></h1>
                                 </header>
                             </div>
                         </div>
@@ -477,7 +476,7 @@ Use class <code>.claim</code> to format the main title.</p>
                             <div id="rubik-2.9" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
-                                        <h2>Pagination</h2>
+                                        <h2 class="sg-block-title">Pagination</h2>
                                     </header>
                                         <div class="sg-block-description">
                                             <p>For pagination wrap a <code>.btn-group</code> structure with class <code>.pagination</code> as a parent.<br>
@@ -663,7 +662,7 @@ Use class <code>.active</code> for the active button.</p>
                         <div id="rubik-2.16" class="row sg-block">
                             <div class="col-12">
                                 <header class="sg-block-header">
-                                    <h1></h1>
+                                    <h1 class="sg-block-title"></h1>
                                 </header>
                             </div>
                         </div>
@@ -673,7 +672,7 @@ Use class <code>.active</code> for the active button.</p>
                             <div id="rubik-2.20" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
-                                        <h2>Thumbnail logo</h2>
+                                        <h2 class="sg-block-title">Thumbnail logo</h2>
                                     </header>
                                         <div class="sg-block-description">
                                             <h3 id="thumbnail-logo">Thumbnail logo</h3>
@@ -726,7 +725,7 @@ The combination of classes <code>.slide-up</code> in <code>&lt;figure&gt;</code>
                         <div id="rubik-2.22" class="row sg-block">
                             <div class="col-12">
                                 <header class="sg-block-header">
-                                    <h1>User Feedback</h1>
+                                    <h1 class="sg-block-title">User Feedback</h1>
                                 </header>
                             </div>
                         </div>
@@ -736,7 +735,7 @@ The combination of classes <code>.slide-up</code> in <code>&lt;figure&gt;</code>
                             <div id="rubik-2.24" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
-                                        <h2>Custom Background</h2>
+                                        <h2 class="sg-block-title">Custom Background</h2>
                                     </header>
                                         <div class="sg-block-description">
                                             <p>To create custom backgrounds use a style attribute in html for the background-image.<br>
@@ -782,12 +781,33 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
         © Infojobs 2015
         </section>
 
+        <script src="public/jquery-2.1.0.min.js"></script>
+        <script src="public/jquery.modal.js"></script>
+        <script src="public/jquery.scrollspy.js"></script>
         <script src="public/kss.js"></script>
         <script src="public/prettify.js"></script>
         <script src="public/plugins.js"></script>
         <script src="public/main.js"></script>
         <script>
-
+        $(document).ready(function() {
+			$('.sg-block-title').each(function(i) {
+				var position = $(this).position();
+				console.log( position );
+				console.log( 'min: ' + position.top + ' / max: ' + parseInt(position.top + $(this).height()) );
+				$(this).scrollspy({
+					min: position.top,
+					max: position.top + $(this).height(),
+					onEnter: function(element, position) {
+						if(console) console.log('entering ' +  element.innerHTML);
+						// $("body").css('background-color', element.id);
+					},
+					onLeave: function(element, position) {
+						if(console) console.log('leaving ' +  element.innerHTML);
+					//	$('body').css('background-color','#eee');
+					}
+				});
+			});
+		});
         </script>
     </body>
 </html>
