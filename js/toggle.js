@@ -12,14 +12,14 @@ function hideContainer() {
 	if (window.innerWidth < 481) {
 		[].forEach.call(eToggleContainer, function(content) {
 			if(!content._hasEvent) {
-				content.addEventListener('click', listeners, false);
+			    content.querySelector('.js-toggle-switch').addEventListener('click', listeners, false);
 				content._hasEvent = true;
 				content.bOcult = true;
 			}
 		});
 	} else {
 		[].forEach.call(eToggleContainer, function(content){
-			content.removeEventListener('click', listeners , false);
+			content.querySelector('.js-toggle-switch').removeEventListener('click', listeners , false);
 			content._hasEvent = false;
 		});
 	}
@@ -50,23 +50,23 @@ function getRealStyle(element, style ) {
 
 function listeners(event){
 	event.stopPropagation();
-	if(this.bOcult) {
-		this.querySelector('.js-toggle').style.height = Math.round(this.querySelector('.js-toggle').nCollapsibleChildrenHeight) + 'px';
+	if(this.parentNode.bOcult) {
+		this.parentNode.querySelector('.js-toggle').style.height = Math.round(this.parentNode.querySelector('.js-toggle').nCollapsibleChildrenHeight) + 'px';
 
 		eArrow = this.querySelectorAll('.iconfont-ArrowDown');
 		[].forEach.call(eArrow, function(arrow){
 			arrow.classList.remove("iconfont-ArrowDown");
 			arrow.classList.add("iconfont-ArrowUp");
 		});
-		this.bOcult = false;
+		this.parentNode.bOcult = false;
 	} else {
-		this.querySelector('.js-toggle').style.height = 0;
-		eArrow = this.querySelectorAll('.iconfont-ArrowUp');
+		this.parentNode.querySelector('.js-toggle').style.height = 0;
+		eArrow = this.parentNode.querySelectorAll('.iconfont-ArrowUp');
 		[].forEach.call(eArrow, function(arrow){
 			arrow.classList.remove("iconfont-ArrowUp");
 			arrow.classList.add("iconfont-ArrowDown");
 		});
-		this.bOcult = true;
+		this.parentNode.bOcult = true;
 	}
 }
 window.addEventListener('load', hideContainer);

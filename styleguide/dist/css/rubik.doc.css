@@ -559,7 +559,7 @@ Styleguide 1.1.1
   margin-left: 0;
 }
 .row + .row {
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 @media print {
   .row + .row {
@@ -983,6 +983,7 @@ Styleguide 1.1.1.4
     display: -webkit-flex;
     display: flex;
     float: none;
+    overflow: hidden;
   }
   .row-faux .col-12-medium {
     display: block;
@@ -1841,7 +1842,7 @@ Icons
 Icons are generated as fonts. Color and size can be modified as texts.
 Use the following classes to apply an icon on a tag.
 
-Styleguide 1.6
+Styleguide 1.7
 */
 /*
 Icons type
@@ -1911,7 +1912,8 @@ List of icons.
 </div>
 
 
-Styleguide 1.6.1
+Styleguide 1.7.1
+
 */
 [class^="iconfont-"]::before,
 [class*=" iconfont-"]::before,
@@ -1958,7 +1960,7 @@ Markup:
 .iconfont-22px
 .iconfont-30px
 
-Styleguide 1.6.2
+Styleguide 1.7.2
 */
 .iconfont-16px::before {
   font-size: 16px;
@@ -2274,6 +2276,13 @@ Styleguide 1.6.2
   content: "\e63f";
 }
 
+/*
+Buttons
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Styleguide 1.5
+*/
 /*------------------------------------*\
     $BUTTONS
 \*------------------------------------*/
@@ -2316,7 +2325,7 @@ p > .btn {
 }
 
 /*
-Buttons
+Buttons type
 
 Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms).
 <br>
@@ -2334,7 +2343,7 @@ Also add one of the following classes to give it format:
 Markup:
 <a href="#" class="btn {{modifier_class}}">Link Button</a>
 
-Styleguide 1.5
+Styleguide 1.5.1.1
 */
 .btn-default {
   color: #2d3133;
@@ -2454,7 +2463,7 @@ Styleguide 1.5
 }
 
 /*
-Buttons sizes
+Buttons size
 
 Use class `.btn-medium` or `.btn-large` to change buttons size.
 
@@ -2466,7 +2475,7 @@ Markup:
 .btn-medium
 .btn-large
 
-Styleguide 1.5.1
+Styleguide 1.5.1.2
 */
 .btn-medium {
   height: 40px;
@@ -2508,7 +2517,7 @@ Use class `.iconfont-[name]` to display an icon inside the button.
 Markup:
 <a href="#" class="btn btn-primary btn-medium iconfont-Facebook">Link Button</a>
 
-Styleguide 1.5.2
+Styleguide 1.5.1.3
 */
 /*
 Buttons status
@@ -2518,7 +2527,7 @@ Use class `.btn-disabled` to show button as disabled.
 Markup:
 <a href="#" class="btn btn-default btn-medium btn-disabled">Link Button</a>
 
-Styleguide 1.5.3
+Styleguide 1.5.1.4
 */
 button[disabled],
 button:hover[disabled],
@@ -2552,7 +2561,7 @@ Markup:
 <a href="#" class="btn btn-primary btn-medium btn-annex">Button</a>
 <a href="#" class="link">Link</a>
 
-Styleguide 1.5.4
+Styleguide 1.5.1.5
 */
 .btn-annex {
   margin-right: 15px;
@@ -2583,7 +2592,7 @@ Use class `.btn-form-inline` to display a full width button.
 Markup:
 <a href="#" class="btn btn-primary btn-form-inline">Button Element</a>
 
-Styleguide 1.5.5
+Styleguide 1.5.1.6
 */
 .btn-form-inline {
   width: 100%;
@@ -2598,6 +2607,14 @@ Styleguide 1.5.5
 
 /*
 Button group
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Styleguide 1.6
+
+*/
+/*
+Button group structure
 
 Use class `.btn-group` to create a button group structure.<br>
 Use class `.btn-default` for buttons inside buttons group.<br>
@@ -2616,7 +2633,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 1.5.6
+Styleguide 1.6.1.1
 */
 .btn-group {
   display: table;
@@ -2688,7 +2705,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 1.5.7
+Styleguide 1.6.1.2
 */
 /*
 Button group with icon
@@ -2705,7 +2722,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 1.5.8
+Styleguide 1.6.1.3
 */
 .btn-group-justified {
   width: 100%;
@@ -2950,8 +2967,8 @@ Markup:
 <p class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
 
-.base - .
-.medium - .
+.base
+.medium
 
 Styleguide 1.2.5
 */
@@ -7218,35 +7235,25 @@ $query2     = width, device-width
 /*
 Notifications
 
-###Notifications
 Contextual notificitions for confirmation messages.<br>
-The modifier classes are `.notification-error` for errors, `.notification-success` for success and `.notification-info` for information.
+
+The modifier classes are:<br>
+`.notification-error` for errors<br>
+`.notification-success` for success<br>
+`.notification-info` for information<br>
+`.notification-warning` for warning<br>
+
+{modifier_class}:
+
+.notification-error
+.notification-success
+.notification-info
+.notification-warning
 
 Markup:
-<!-- Notification error -->
-<div class="notification notification-error notification-dismissable">
-	<button class="btn-close" type="button">×</button>
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
-</div>
-<!-- /Notification error -->
-<div class="container-expanded">
-<!-- Notification success -->
-<div class="notification notification-success notification-dismissable">
-	<button class="btn-close" type="button">×</button>
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
-</div>
-<!-- /Notification success -->
-</div>
-<div class="container-expanded">
-<!-- Notification info -->
-<div class="notification notification-info notification-dismissable">
-	<button class="btn-close" type="button">×</button>
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
-</div>
-<!-- /Notification info -->
+<div class="notification {{modifier_class}}">
+	<p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
+	<p class="contrast">Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="contrast link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
 </div>
 
 Styleguide 2.2
@@ -7297,25 +7304,6 @@ Styleguide 2.2
   color: #fff;
 }
 
-/*
-Notifications
-
-Loremew eqwfwaerg sefg sdfg sdfgsdfg sdfg sdfg sdf gsdf gsdfgsdfgsdfg
-
-Markup:
-<div class="notification {{modifier_class}}">
-<p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
-<p class="contrast">Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="contrast link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
-</div>
-
-.notification-error -
-.notification-success -
-.notification-info -
-.notification-dismissable -
-
-
-Styleguide 2.2.1
-*/
 .notification-error {
   background: #bf2102;
 }
@@ -7337,6 +7325,20 @@ Styleguide 2.2.1
   color: #2d3133;
 }
 
+/*
+Notification dismissable
+
+Add class `.notification-dismissable` and tag `<button>` for a notification dismissable.
+
+Markup:
+<div class="notification notification-success notification-dismissable">
+	<button class="btn-close" type="button">×</button>
+	<p class="title">Lorem ipsum dolor sit</p>
+	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
+</div>
+
+Styleguide 2.2.1.1
+*/
 .notification-dismissable {
   position: relative;
   padding-right: 70px;
@@ -10457,18 +10459,27 @@ Markup:
 		<img class="crop-circle" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" alt="">
 	</div>
 	<div class="body">
-		<h3 class="title"><a href="#">Juan Manuel RodrÃÂguez</a></h3>
-		<p>Account Manager jasdlf sadf dsakfjasd lfkjasd <span class="alternative">en Schibsted Classified Media Spain</span></p>
+		<h3 class="title"><a href="#">Juan Manuel Rodriguez</a></h3>
+		<p>Account Manager <span class="alternative">en Schibsted Classified Media Spain</span></p>
 	</div>
 </div>
 
 */
-.content-media .media,
 .content-media .body {
-  display: table-cell;
-  vertical-align: top;
+  margin-left: 70px;
+}
+@media only screen and (min-width: 481px) {
+  .content-media .body {
+    margin-left: 80px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .content-media .body {
+    margin-left: 100px;
+  }
 }
 .content-media .media {
+  float: left;
   padding-right: 20px;
   width: 70px;
 }
@@ -10484,6 +10495,7 @@ Markup:
 }
 .content-media .title {
   margin: 0;
+  word-wrap: break-word;
 }
 @media only screen and (min-width: 769px) {
   .content-media img {
@@ -10497,6 +10509,81 @@ li.content-media + .content-media::before {
   content: "";
   border-top: 1px solid #e2e5e6;
   top: -20px;
+}
+li.content-media + .content-media.margin-top::before {
+  border: none;
+}
+.content-media .btn-close {
+  position: relative;
+  top: -10px;
+  float: right;
+}
+
+/* Variables =================================================== */
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+/**
+ * cross multiplication percentages
+ */
+/**
+ * Turn numbers with units into unitless numbers
+ */
+/*------------------------------------*\
+$MIXINS
+\*------------------------------------*/
+/*
+Mediaqueries
+
+$breakpoint = $bp-tablet, $bp-desktop or specific
+$query1     = min or max
+$query2     = width, device-width
+
+*/
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+.tag-group li.tag-divider, .links-bar li {
+  border-right: 1px solid #e2e5e6;
+  border-radius: 0;
+}
+
+/*------------------------------------*\
+    $STEPS
+\*------------------------------------*/
+.steps {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  -o-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+.steps li {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0 10px;
+  overflow: hidden;
+  color: #999;
+  border-bottom: 2px solid;
+}
+.steps li + li {
+  margin-left: 10px;
+}
+.steps .step-focus {
+  color: inherit;
+  border-bottom: 2px solid #2088c2;
 }
 
 /* Variables =================================================== */
@@ -10912,18 +10999,41 @@ body#kss-node {
   font-size: 30px;
 }
 
-.sg-content .intro-header {
+.sg-content .home-intro {
   height: 100%;
   width: 100%;
   padding-top: 100px;
+  padding-bottom: 40px;
   background-color: #2088c2;
   -webkit-transition: -webkit-transform 500ms ease;
   transition: transform 500ms ease;
 }
-.sg-content .intro-header img {
+.sg-content .home-intro img {
   display: block;
   margin: 0 auto;
 }
+.sg-content .home-intro p {
+  font-size: 20px;
+  line-height: 24px;
+}
+.sg-content .home-content {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+@media only screen and (min-width: 769px) {
+  .sg-content .home-content .row + .row {
+    margin-top: 20px;
+  }
+  .sg-content .home-content .col-child {
+    margin: 0 0 20px 20px;
+  }
+}
+@media only screen and (min-width: 769px) and (min-width: 481px) {
+  .sg-content .home-content .col-child {
+    margin-bottom: 0;
+  }
+}
+
 .sg-content h1,
 .sg-content h2 {
   margin: 0;
@@ -10949,6 +11059,7 @@ body#kss-node {
 }
 .sg-content p:last-child {
   margin-bottom: 0;
+  padding-bottom: 0;
 }
 .sg-content .sg-img {
   width: 100%;

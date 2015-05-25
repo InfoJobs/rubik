@@ -95,10 +95,11 @@ body#kss-node {
 
 
 .sg-content {
-    .intro-header {
+    .home-intro {
         height: 100%;
         width: 100%;
         padding-top: 100px;
+        padding-bottom: 40px;
         background-color: $day-blue;
         -webkit-transition: -webkit-transform 500ms ease;
         transition: transform 500ms ease;
@@ -107,6 +108,32 @@ body#kss-node {
             display: block;
             margin: 0 auto;
         }
+
+        p {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+
+    .home-content {
+        padding-top: 40px;
+        padding-bottom: 60px;
+
+        @include mediaquery ($bp-desktop) {
+
+            .row + .row {
+                margin-top: 20px;
+            }
+
+            .col-child {
+                margin: 0 0 20px 20px;
+
+                @include mediaquery ($bp-tablet) {
+            		margin-bottom: 0;
+            	}
+            }
+        }
+
     }
 
     //Styleguide theme
@@ -141,6 +168,7 @@ body#kss-node {
 
     p:last-child {
         margin-bottom: 0;
+        padding-bottom: 0;
     }
 
     .sg-img {
