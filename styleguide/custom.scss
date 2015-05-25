@@ -90,6 +90,8 @@ body#kss-node {
 			font-size: 30px;
 		}
     }
+
+
 }
 
 
@@ -205,6 +207,11 @@ body#kss-node {
         border-top: 1px solid $darkest-shiro;
         background-color: $darkest-shiro;
     }
+
+        .list-default + .list-default {
+
+            margin-top: 20px;
+        }
 }
 
 .sg-footer {
