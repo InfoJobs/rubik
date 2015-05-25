@@ -16,11 +16,6 @@
       padding-top: 100px;
     }
 
-    .sg-wrapper,
-    .sg-header {
-        padding-right: 20px;
-        padding-left: 20px;
-    }
 }
 
 .sg-header {
@@ -49,7 +44,7 @@
   color: white;
   display: block;
   float: left;
-  margin-right: 40px;
+  margin-right: 10px;
 
   white-space: nowrap;
   overflow: hidden;
@@ -75,6 +70,18 @@
     transition: all 150ms ease;
 }
 
+@media all and (min-width: 780px) {
+    .sg-wrapper,
+    .sg-header {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .sg-header a {
+        margin-right: 20px;
+    }
+}
+
 .sg-header h1 {
   font-size: 25px;
   font-size: 1.5625rem;
@@ -83,7 +90,13 @@
   line-height: 60px;
   margin-bottom: 0;
   display: inline;
- }
+}
+
+@media all and (min-width: 1200px) {
+  .sg-header h1 {
+       margin-left: 20px;
+   }
+}
 
 .sg-header span {
   margin: 0 10px;
