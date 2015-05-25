@@ -32,11 +32,6 @@ Markup:
 		@include mediaquery ($bp-tablet) {
 			margin-left: 80px;
 		}
-
-		@include mediaquery ($bp-desktop) {
-			margin-left: 100px;
-		}
-
 	}
 
 	.media {
@@ -47,11 +42,6 @@ Markup:
 		@include mediaquery ($bp-tablet) {
 			width: 80px;
 		}
-
-		@include mediaquery ($bp-desktop) {
-			width: 100px;
-		}
-
 	}
 
 	.title {
@@ -60,12 +50,8 @@ Markup:
 	}
 
 	img {
-
-		@include mediaquery ($bp-desktop) {
-			width: 80px;
-			height: 80px;
-		}
-
+		object-fit: cover;
+		object-position: 0 0;
 	}
 
 	@at-root li#{&} + &::before {
