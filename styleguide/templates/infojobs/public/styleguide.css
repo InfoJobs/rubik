@@ -349,7 +349,8 @@ $STYLEGUIDE
   margin-top: 80px;
 }
 
-.row.sg-block {
+.row.sg-block,
+.row.sg-block + .row.sg-block {
   margin-top: 80px;
 }
 
