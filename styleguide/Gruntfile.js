@@ -25,6 +25,11 @@ module.exports = function(grunt) {
           { src: ['fonts/*'], dest: 'styleguide/'}
         ]
       },
+      copyMedia: {
+        files: [
+          { src: ['../media/*'], dest: 'styleguide/public/'}
+        ]
+      },
       copyRubik: {
         expand: true,
         cwd: 'styleguide/',
@@ -118,7 +123,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('default', ['clean', 'sass', 'copy:styleguide', 'includereplace', 'less', 'shell', 'replace', 'copy:allStyles', 'copy:copyFonts']);
+  grunt.registerTask('default', ['clean', 'sass', 'copy:styleguide', 'includereplace', 'less', 'shell', 'replace', 'copy:allStyles', 'copy:copyFonts', 'copy:copyMedia']);
   grunt.registerTask('public', ['copy:copyRubik']);
 
 };
