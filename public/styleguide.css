@@ -2,6 +2,7 @@
   max-width: 1200px;
   width: 100%;
   padding-top: 80px;
+  margin: 0 auto;
 }
 
 .sg-wrapper,
@@ -371,6 +372,7 @@ $STYLEGUIDE
 .row.sg-block,
 .row.sg-block + .row.sg-block {
   margin-top: 80px;
+  margin-left: 0;
 }
 
 .sg-block:first-child {
