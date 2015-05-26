@@ -10940,6 +10940,7 @@ body#kss-node {
 .sg-content .home-intro div {
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
 }
 .sg-content .home-content {
   padding-top: 40px;
