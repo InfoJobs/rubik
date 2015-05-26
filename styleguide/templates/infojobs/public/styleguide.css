@@ -16,11 +16,6 @@
       padding-top: 100px;
     }
 
-    .sg-wrapper,
-    .sg-header {
-        padding-right: 20px;
-        padding-left: 20px;
-    }
 }
 
 .sg-header {
@@ -34,7 +29,13 @@
     z-index: 2;
     font-size: 25px;
     font-size: 1.5625rem;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media all and (max-width: 1200px) {
+    .sg-header {
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+
+    }
 }
 
 @media all and (min-width: 1200px) {
@@ -49,7 +50,7 @@
   color: white;
   display: block;
   float: left;
-  margin-right: 40px;
+  margin-right: 10px;
 
   white-space: nowrap;
   overflow: hidden;
@@ -75,6 +76,18 @@
     transition: all 150ms ease;
 }
 
+@media all and (min-width: 768px) {
+    .sg-wrapper,
+    .sg-header {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .sg-header a {
+        margin-right: 20px;
+    }
+}
+
 .sg-header h1 {
   font-size: 25px;
   font-size: 1.5625rem;
@@ -83,7 +96,13 @@
   line-height: 60px;
   margin-bottom: 0;
   display: inline;
- }
+}
+
+@media all and (min-width: 1200px) {
+  .sg-header h1 {
+       margin-left: 20px;
+   }
+}
 
 .sg-header span {
   margin: 0 10px;
@@ -349,7 +368,8 @@ $STYLEGUIDE
   margin-top: 80px;
 }
 
-.row.sg-block {
+.row.sg-block,
+.row.sg-block + .row.sg-block {
   margin-top: 80px;
 }
 

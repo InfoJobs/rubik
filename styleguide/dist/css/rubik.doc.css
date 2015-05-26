@@ -246,6 +246,20 @@ Styleguide 1.1.2
   }
 }
 
+.row-centered {
+  width: 100%;
+}
+@media only screen and (min-width: 769px) {
+  .row-centered {
+    width: 486px;
+    margin: 0 auto;
+  }
+}
+.row-centered input,
+.row-centered textarea {
+  width: 100%;
+}
+
 /*
 Inner containers #disabled#
 
@@ -559,7 +573,7 @@ Styleguide 1.1.1
   margin-left: 0;
 }
 .row + .row {
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 @media print {
   .row + .row {
@@ -983,6 +997,7 @@ Styleguide 1.1.1.4
     display: -webkit-flex;
     display: flex;
     float: none;
+    overflow: hidden;
   }
   .row-faux .col-12-medium {
     display: block;
@@ -1110,57 +1125,26 @@ h3,
 /*
 Text colors
 
+* Use class `.script` to force text color as the default text color
+* Use class `.soft-script` to force a text color as a secondary text
+* Use class `.alternative` to mark text that contains details information
+* Use class `.disabled` to mark a text option as disabled
+* Use class `.marked` to focus attention in it
+* Use class `.highlight` to highlight words as a result of a search
+
+{modifier_class}:
+
+.script
+.notification-success
+.alternative
+.disabled
+.marked
+.highlight
+
+Markup:
+<p>Lorem ipsum dolor sit amet, <span class="{{modifier_class}}">consectetur adipiscing</span> elit.</p>
+
 Styleguide 1.2.7
-*/
-/*
-Default text color
-
-Use class `.script` to force text color as the default text color
-
-Markup:
-<p>Lorem ipsum dolor sit amet, <a href="#" class="script">consectetur adipiscing</a> elit.</p>
-
-Styleguide 1.2.7.1
-*/
-/*
-Secondary text color
-
-Use class `.soft-script` to force a text color as a secondary text
-
-Markup:
-<p>Lorem ipsum dolor sit amet, <a href="#" class="soft-script">consectetur adipiscing</a> elit.</p>
-
-Styleguide 1.2.7.2
-*/
-/*
-Details text color
-
-Use class `.alternative` to mark text that contains details information
-
-Markup:
-<p class="alternative">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-Styleguide 1.2.7.3
-*/
-/*
-Disabled text color
-
-Use class `.disabled` to mark a text option as disabled
-
-Markup:
-<p>Lorem ipsum dolor sit amet, <a href="#" class="disabled">consectetur adipiscing elit</a>.</p>
-
-Styleguide 1.2.7.4
-*/
-/*
-Focus text color
-
-Use class `.marked` to focus attention in it
-
-Markup:
-<p>Lorem ipsum <span class="marked">6m ago</p>
-
-Styleguide 1.2.7.5
 */
 /*
 Contrasted text color
@@ -1173,17 +1157,7 @@ Markup:
 	<a href="#" class="contrast">Curabitur varius</a>
 </div>
 
-Styleguide 1.2.7.6
-*/
-/*
-Highlighted text color
-
-Use class `.highlight` to highlight words as a result of a search
-
-Markup:
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing <span class="highlight">elit</span>.</p>
-
-Styleguide 1.2.7.7
+Styleguide 1.2.7.1
 */
 .contrast {
   color: #fff;
@@ -1912,7 +1886,7 @@ List of icons.
 
 
 Styleguide 1.7.1
-*/
+
 [class^="iconfont-"]::before,
 [class*=" iconfont-"]::before,
 [class^="iconfont-"]::after,
@@ -1958,7 +1932,11 @@ Markup:
 .iconfont-22px
 .iconfont-30px
 
+<<<<<<< HEAD
 Styleguide 1.7.2
+=======
+Styleguide 1.7.2.1
+>>>>>>> 3943563ca500ccd7be47ad465244111d1736a343
 */
 .iconfont-16px::before {
   font-size: 16px;
@@ -3040,19 +3018,23 @@ Styleguide 1.2.3
 /*
 Lists
 
-Use the following tags to create semantic lists:<br>
-`<ul>` for unordered lists,<br>
-`<ol>` for ordered lists,<br>
-`<dl>` for definition lists.
+Use the following tags to create semantic lists:
 
+* `<ul>` for unordered lists
+* `<ol>` for ordered lists
+* `<dl>` for definition lists
+
+<br>
 Use class `.list-default` for a basic list without decoration.
 
 Markup:
+<!-- Example for unordered and ordered list. -->
 <ul class="list-default">
     <li>Salario no disponible</li>
     <li>Experiencia minima: no requerida</li>
     <li>Tipo de oferta: de duracion determinada, jornada completa</li>
 </ul>
+<!-- Example for definition list. -->
 <dl class="list-default">
     <dt>Salario:</dt>
     <dd>No disponible</dd>
@@ -5039,7 +5021,7 @@ $query2     = width, device-width
 \*------------------------------------*/
 /*
 
-Styleguide 2.5
+//Styleguide 2.5
 */
 .help-footer p {
   color: #666;
@@ -6020,7 +6002,7 @@ $query2     = width, device-width
 /*
 
 
-Styleguide 2.8
+//Styleguide 2.8
 */
 .result-list {
   margin-bottom: 20px;
@@ -7612,46 +7594,6 @@ For pagination wrap a `.btn-group` structure with class `.pagination` as a paren
 Use class `.active` for the active button.
 
 Markup:
-<!-- Default pagination -->
-<div class="pagination">
-	<div class="btn-group">
-		<div class="active">
-			<button class="btn btn-default" id="page1" type="button">1</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page2" type="button">2</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page3" type="button">3</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page4" type="button">4</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page5" type="button">5</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page6" type="button">6</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page7" type="button">7</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page8" type="button">8</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page9" type="button">9</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page10" type="button">10</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="pageNext" type="button" title="Siguiente">Siguiente</button>
-		</div>
-	</div>
-</div>
-<!-- /Default pagination -->
-<!-- Pagination states -->
 <div class="pagination">
 	<div class="btn-group">
 		<div>
@@ -7667,38 +7609,13 @@ Markup:
 			<button class="btn btn-default" id="page3" type="button">3</button>
 		</div>
 		<div>
-			<button class="btn btn-default" id="page4" type="button">4</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page5" type="button">5</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page6" type="button">6</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page7" type="button">7</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page8" type="button">8</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page9" type="button">9</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page10" type="button">10</button>
-		</div>
-		<div>
 			<button class="btn btn-default" id="pageNext" type="button" title="Siguiente">Siguiente</button>
 		</div>
 	</div>
 </div>
-<!-- /Pagination states -->
 
 Styleguide 2.9
 */
-.pagination {
-  background: #fff;
-}
 .pagination .btn-group {
   margin: 0 auto;
   width: 100%;
@@ -10457,18 +10374,27 @@ Markup:
 		<img class="crop-circle" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" alt="">
 	</div>
 	<div class="body">
-		<h3 class="title"><a href="#">Juan Manuel RodrÃÂguez</a></h3>
-		<p>Account Manager jasdlf sadf dsakfjasd lfkjasd <span class="alternative">en Schibsted Classified Media Spain</span></p>
+		<h3 class="title"><a href="#">Juan Manuel Rodriguez</a></h3>
+		<p>Account Manager <span class="alternative">en Schibsted Classified Media Spain</span></p>
 	</div>
 </div>
 
 */
-.content-media .media,
 .content-media .body {
-  display: table-cell;
-  vertical-align: top;
+  margin-left: 70px;
+}
+@media only screen and (min-width: 481px) {
+  .content-media .body {
+    margin-left: 80px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .content-media .body {
+    margin-left: 100px;
+  }
 }
 .content-media .media {
+  float: left;
   padding-right: 20px;
   width: 70px;
 }
@@ -10484,6 +10410,7 @@ Markup:
 }
 .content-media .title {
   margin: 0;
+  word-wrap: break-word;
 }
 @media only screen and (min-width: 769px) {
   .content-media img {
@@ -10497,6 +10424,81 @@ li.content-media + .content-media::before {
   content: "";
   border-top: 1px solid #e2e5e6;
   top: -20px;
+}
+li.content-media + .content-media.margin-top::before {
+  border: none;
+}
+.content-media .btn-close {
+  position: relative;
+  top: -10px;
+  float: right;
+}
+
+/* Variables =================================================== */
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+/**
+ * cross multiplication percentages
+ */
+/**
+ * Turn numbers with units into unitless numbers
+ */
+/*------------------------------------*\
+$MIXINS
+\*------------------------------------*/
+/*
+Mediaqueries
+
+$breakpoint = $bp-tablet, $bp-desktop or specific
+$query1     = min or max
+$query2     = width, device-width
+
+*/
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+.tag-group li.tag-divider, .links-bar li {
+  border-right: 1px solid #e2e5e6;
+  border-radius: 0;
+}
+
+/*------------------------------------*\
+    $STEPS
+\*------------------------------------*/
+.steps {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  -o-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+.steps li {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0 10px;
+  overflow: hidden;
+  color: #999;
+  border-bottom: 2px solid;
+}
+.steps li + li {
+  margin-left: 10px;
+}
+.steps .step-focus {
+  color: inherit;
+  border-bottom: 2px solid #2088c2;
 }
 
 /* Variables =================================================== */
@@ -10912,18 +10914,53 @@ body#kss-node {
   font-size: 30px;
 }
 
-.sg-content .intro-header {
+.sg-content .home-intro {
   height: 100%;
   width: 100%;
   padding-top: 100px;
+  padding-bottom: 40px;
   background-color: #2088c2;
   -webkit-transition: -webkit-transform 500ms ease;
   transition: transform 500ms ease;
 }
-.sg-content .intro-header img {
+.sg-content .home-intro img {
   display: block;
   margin: 0 auto;
 }
+.sg-content .home-intro p {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  color: #FFF;
+  font-size: 20px;
+  line-height: 24px;
+}
+@media all and (max-width: 768px) {
+  .sg-content .home-intro p {
+    width: 100%;
+  }
+}
+.sg-content .home-intro div {
+  width: 100%;
+  max-width: 1200px;
+}
+.sg-content .home-content {
+  padding-top: 40px;
+}
+@media only screen and (min-width: 769px) {
+  .sg-content .home-content .row + .row {
+    margin-top: 20px;
+  }
+  .sg-content .home-content .col-child {
+    margin: 0 0 20px 20px;
+  }
+}
+@media only screen and (min-width: 769px) and (min-width: 481px) {
+  .sg-content .home-content .col-child {
+    margin-bottom: 0;
+  }
+}
+
 .sg-content h1,
 .sg-content h2 {
   margin: 0;
@@ -10949,6 +10986,7 @@ body#kss-node {
 }
 .sg-content p:last-child {
   margin-bottom: 0;
+  padding-bottom: 0;
 }
 .sg-content .sg-img {
   width: 100%;
@@ -10997,6 +11035,9 @@ body#kss-node {
   word-break: normal;
   border-top: 1px solid #e2e5e6;
   background-color: #e2e5e6;
+}
+.sg-content .list-default + .list-default {
+  margin-top: 20px;
 }
 
 .sg-footer {

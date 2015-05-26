@@ -1,7 +1,7 @@
 /*
 	Modal
 	version - 0.3.0
-	
+
 */
 ;(function ( $, window, document, undefined ) {
 
@@ -12,7 +12,8 @@
         $modalWrapper,
         $modalContent,
         $modalHeader,
-        minTopMargin	= 40; // Margin to apply when the modal won't fit in window height.
+        minTopMargin	= 40, // Margin to apply when the modal won't fit in window height.
+        browsers = /(android)/gi;
 
 	$.fn.modalWindow = function( options ) {
 		// Defaul options
@@ -43,7 +44,7 @@
                               '</h1> </div>',
                 structure = '<div id="layer-'+openElement+'" class="modal-hidden modal-layer"><div id="inner-'+openElement+'" class="modal-inner"><div id="content-'+openElement+'" class="modal-content"></div></div></div>';
 		        width = $this.data().width || settings.width;
-		        
+
 
 			$('#'+contentWrapper).remove();
 
@@ -53,7 +54,7 @@
 				$('.wrapper').append(structure);
 				$('#inner-'+openElement).prepend(headerModal);
 				$('#content-'+openElement).append(content);
-				
+
 				$modalInner = $('#inner-'+openElement);
 				$modalLayer = $('#layer-'+openElement);
 				$modalWrapper = $('#content-'+openElement);
@@ -71,7 +72,7 @@
                     });
 
                 $.fn.modalWindow.resizeModal();
-                
+
                 if(callback) {
                     eval(callback);
                 }
@@ -79,23 +80,23 @@
             });
 		});
 	};
-	
+
 	$.fn.modalWindow.resizeModal = function () {
 		if($modalInner && $modalHeader){
 			var headerHeight = $modalHeader.innerHeight();
-			
+
 			// If width of window is greater than settings.width
-			if( $( window ).width() > width) {			
+			if( $( window ).width() > width) {
 				$modalInner.css({
 					'width': width+'px'
 				});
 			}
-	
+
 			if(window.innerHeight < ($modalContent.innerHeight() + headerHeight + minTopMargin)) {
 				if($( window ).width() > $modalInner.width()) {
 					innerHeight = window.innerHeight - headerHeight - minTopMargin;
 					$modalInner.css({
-						'height': (window.innerHeight - minTopMargin) + 'px',
+						//'height': (window.innerHeight - minTopMargin) + 'px',
 						'top': '20px'
 					});
 	                $modalWrapper.css({
@@ -103,9 +104,21 @@
 						'max-height': innerHeight + 'px',
 						'overflow-x': 'hidden'
 					});
+
+    	            if( window.navigator.userAgent.search( browsers ) > -1 ) {
+
+    	            	var left = ($(window).width() - $modalInner.width()) / 2;
+
+    	                $modalInner.css({
+    	                	'left': left + 'px',
+    	                	'margin': '0'
+    	                });
+    	            }
+
 				} else {
 					$modalInner.css({
-						'height': window.innerHeight + 'px',
+						//'height': window.innerHeight + 'px',
+
 						'top': '0px'
 					});
 	                $modalWrapper.css({
@@ -113,25 +126,34 @@
 						'max-height': (window.innerHeight - headerHeight) + 'px',
 						'overflow-x': 'hidden'
 					});
+
+    	            if( window.navigator.userAgent.search( browsers ) > -1 ) {
+
+    	                $modalInner.css({
+    	                	'left': '0',
+    	                	'margin': '0'
+    	                });
+    	            }
 				}
-			} 
+			}
 			else if ($( window ).width() > 480) {
 				contentInnerHeight = $modalContent.innerHeight();
 	            $modalWrapper.css({
 					'max-height': contentInnerHeight + 'px',
 					'height': contentInnerHeight + 'px'
 				});
-				var top = (window.innerHeight - $modalInner.innerHeight()) / 2;
+	            var top = (window.innerHeight - (contentInnerHeight + $modalHeader.innerHeight())) / 2;
+
 	            $modalInner.css({
-					'top': top + 'px',
-					'height': $modalInner.innerHeight() + 'px'
+	            	//'height': $modalInner.innerHeight() + 'px',
+	            	'top': top + 'px'
 				});
 			}
 			else if ($( window ).width() < 481) {
 				contentInnerHeight = $modalContent.innerHeight();
 	            $modalWrapper.css({
 	            	'max-height': contentInnerHeight + 'px',
-					'height': contentInnerHeight + 'px'					
+					'height': contentInnerHeight + 'px'
 				});
 				var top = (window.innerHeight - $modalInner.innerHeight()) / 2;
 	            $modalInner.css({
@@ -139,7 +161,7 @@
 					'height': '100%'
 				});
 			}
-		}	
+		}
 	};
 
 	$.fn.modalWindow.closeModalWindow = function() {

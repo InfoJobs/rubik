@@ -16,8 +16,8 @@ Markup:
 		<img class="crop-circle" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" alt="">
 	</div>
 	<div class="body">
-		<h3 class="title"><a href="#">Juan Manuel RodrÃÂguez</a></h3>
-		<p>Account Manager jasdlf sadf dsakfjasd lfkjasd <span class="alternative">en Schibsted Classified Media Spain</span></p>
+		<h3 class="title"><a href="#">Juan Manuel Rodriguez</a></h3>
+		<p>Account Manager <span class="alternative">en Schibsted Classified Media Spain</span></p>
 	</div>
 </div>
 
@@ -25,14 +25,22 @@ Markup:
 
 .content-media {
 
-	.media,
+
 	.body {
-		display: table-cell;
-		vertical-align: top;
+        margin-left: 70px;
+
+		@include mediaquery ($bp-tablet) {
+			margin-left: 80px;
+		}
+
+		@include mediaquery ($bp-desktop) {
+			margin-left: 100px;
+		}
 
 	}
 
 	.media {
+        float: left;
 		padding-right: 20px;
 		width: 70px;
 
@@ -48,6 +56,7 @@ Markup:
 
 	.title {
 		margin: 0;
+        word-wrap: break-word;
 	}
 
 	img {
@@ -65,6 +74,16 @@ Markup:
 		content: "";
 		border-top: 1px solid $darkest-shiro;
 		top: -20px;
+	}
+
+	@at-root li#{&} + &.margin-top::before {
+		border: none;
+	}
+
+	.btn-close {
+	    position: relative;
+    	top: -10px;
+		float: right;
 	}
 
 }

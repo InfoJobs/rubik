@@ -1,0 +1,34 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+    $STEPS
+\*------------------------------------*/
+
+.steps {
+
+	@include display-flex;
+	@include vendor-prefix('flex-flow', 'row wrap');
+
+    li {
+
+		@include display-flex;
+        @include flex;
+        padding: 0 10px;
+		overflow: hidden;
+        color: $soft-script;
+        border-bottom: 2px solid;
+
+        & + li {
+            margin-left: 10px;
+            }
+
+        }
+
+    .step-focus {
+        color: inherit;
+        border-bottom: 2px solid $day-blue;
+
+    }
+
+}

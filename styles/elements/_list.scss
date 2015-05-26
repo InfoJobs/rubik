@@ -6,19 +6,23 @@
 /*
 Lists
 
-Use the following tags to create semantic lists:<br>
-`<ul>` for unordered lists,<br>
-`<ol>` for ordered lists,<br>
-`<dl>` for definition lists.
+Use the following tags to create semantic lists:
 
+* `<ul>` for unordered lists
+* `<ol>` for ordered lists
+* `<dl>` for definition lists
+
+<br>
 Use class `.list-default` for a basic list without decoration.
 
 Markup:
+<!-- Example for unordered and ordered list. -->
 <ul class="list-default">
     <li>Salario no disponible</li>
     <li>Experiencia minima: no requerida</li>
     <li>Tipo de oferta: de duracion determinada, jornada completa</li>
 </ul>
+<!-- Example for definition list. -->
 <dl class="list-default">
     <dt>Salario:</dt>
     <dd>No disponible</dd>
