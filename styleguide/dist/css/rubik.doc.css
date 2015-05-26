@@ -1885,9 +1885,8 @@ List of icons.
 </div>
 
 
-Styleguide 1.7.1.1
+Styleguide 1.7.1
 
-*/
 [class^="iconfont-"]::before,
 [class*=" iconfont-"]::before,
 [class^="iconfont-"]::after,
@@ -1933,7 +1932,11 @@ Markup:
 .iconfont-22px
 .iconfont-30px
 
+<<<<<<< HEAD
+Styleguide 1.7.2
+=======
 Styleguide 1.7.2.1
+>>>>>>> 3943563ca500ccd7be47ad465244111d1736a343
 */
 .iconfont-16px::before {
   font-size: 16px;
