@@ -17,7 +17,7 @@
 
     	<nav class="sg-menu">
             <div class="sg-logo">
-                <a href="./index.html" id="logo"><img src="./media/logo.png"></a>
+                <a href="./index.html" id="logo"><img src="./media/pictures/pic-logo-infojobs.png"></a>
             </div>
         	<ul>
         		<li>
@@ -534,7 +534,7 @@ The combination of classes <code>.slide-up</code> in <code>&lt;figure&gt;</code>
 	<!-- Thumbnail logo -->
 	<figure class="fig-thumbnail fig-thumbnail-logo slide-up">
 		<a href="#">
-			<img style="width: 100%;" border="0" alt="" src="http://zsc.scmspain.com/RealMedia/ads/Creatives/InfojobsES/LI-CGI/CGI.jpg/1406023376">
+			<img style="width: 100%;" border="0" alt="" src="./media/pictures/pic-logo-empresa-default.png">
 			<figcaption class="fig-thumbnail-caption slide-item">
 				<p class="fig-thumbnail-details">Ver ofertas</p>
 			</figcaption>
@@ -550,7 +550,7 @@ The combination of classes <code>.slide-up</code> in <code>&lt;figure&gt;</code>
 	&lt;!-- Thumbnail logo --&gt;
 	&lt;figure class=&quot;fig-thumbnail fig-thumbnail-logo slide-up&quot;&gt;
 		&lt;a href=&quot;#&quot;&gt;
-			&lt;img style=&quot;width: 100%;&quot; border=&quot;0&quot; alt=&quot;&quot; src=&quot;http://zsc.scmspain.com/RealMedia/ads/Creatives/InfojobsES/LI-CGI/CGI.jpg/1406023376&quot;&gt;
+			&lt;img style=&quot;width: 100%;&quot; border=&quot;0&quot; alt=&quot;&quot; src=&quot;./media/pictures/pic-logo-empresa-default.png&quot;&gt;
 			&lt;figcaption class=&quot;fig-thumbnail-caption slide-item&quot;&gt;
 				&lt;p class=&quot;fig-thumbnail-details&quot;&gt;Ver ofertas&lt;/p&gt;
 			&lt;/figcaption&gt;
@@ -655,6 +655,55 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
 				});
 			});
 		});
+        </script>
+
+        <script>
+
+          var elHeader = document.querySelector('header');
+
+          function scrollHeader () {
+              var scrollY = window.pageYOffset;
+
+              if (window.innerWidth > 1200) {
+
+                  if( scrollY > 20 ){
+                   elHeader.classList.add('sg-header-scroll');
+                   document.querySelector('h1').style.display = 'block';
+                   document.querySelector('h1').style.paddingLeft = '280px';
+                   document.querySelector('.sg-header-scroll').style = 'box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);';
+
+                  } else { // to repeat animation
+                   document.querySelector('h1').style.display = 'none';
+                   document.querySelector('h1').style.paddingLeft = '0';
+                   document.querySelector('.sg-header-scroll').style = 'box-shadow: none;';
+
+                   // elHeader.classList.remove('sg-header-scroll');
+
+                  }
+              } else {
+
+                  if( scrollY > 20 ){
+                   elHeader.classList.add('sg-header-scroll');
+                   document.querySelector('h1').style.display = 'block';
+                   document.querySelector('h1').style.paddingLeft = '0';
+                   document.querySelector('.sg-header-scroll').style = 'box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);';
+
+                  } else { // to repeat animation
+                   document.querySelector('h1').style.display = 'none';
+                   document.querySelector('h1').style.paddingLeft = '0';
+                   document.querySelector('.sg-header-scroll').style = 'box-shadow: none;';
+
+                   // elHeader.classList.remove('sg-header-scroll');
+
+                  }
+              }
+
+            }
+
+            window.addEventListener('scroll', scrollHeader);
+            window.addEventListener('load', scrollHeader);
+            window.addEventListener('resize', scrollHeader);
+
         </script>
     </body>
 </html>
