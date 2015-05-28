@@ -27,7 +27,7 @@ module.exports = function(grunt) {
       },
       copyMedia: {
         files: [
-          { src: ['./media/*'], dest: 'styleguide/'}
+          { src: ['./media/**'], dest: 'styleguide/'}
         ]
       },
       copyRubik: {
