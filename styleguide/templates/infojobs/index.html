@@ -265,75 +265,27 @@
         <script src="public/prettify.js"></script>
         <script src="public/plugins.js"></script>
         <script src="public/main.js"></script>
+        <script src="js/scrollHeader.js"></script>
         <script>
-        $(document).ready(function() {
-			$('.sg-block-title').each(function(i) {
-				var position = $(this).position();
-				console.log( position );
-				console.log( 'min: ' + position.top + ' / max: ' + parseInt(position.top + $(this).height()) );
-				$(this).scrollspy({
-					min: position.top,
-					max: position.top + $(this).height(),
-					onEnter: function(element, position) {
-						if(console) console.log('entering ' +  element.innerHTML);
-						// $("body").css('background-color', element.id);
-					},
-					onLeave: function(element, position) {
-						if(console) console.log('leaving ' +  element.innerHTML);
-					//	$('body').css('background-color','#eee');
-					}
-				});
-			});
-		});
-        </script>
-
-        <script>
-
-          var elHeader = document.querySelector('header');
-
-          function scrollHeader () {
-              var scrollY = window.pageYOffset;
-
-              if (window.innerWidth > 1200) {
-
-                  if( scrollY > 20 ){
-                   elHeader.classList.add('sg-header-scroll');
-                   document.querySelector('h1').style.display = 'block';
-                   document.querySelector('h1').style.paddingLeft = '280px';
-                   document.querySelector('.sg-header-scroll').style = 'box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);';
-
-                  } else { // to repeat animation
-                   document.querySelector('h1').style.display = 'none';
-                   document.querySelector('h1').style.paddingLeft = '0';
-                   document.querySelector('.sg-header-scroll').style = 'box-shadow: none;';
-
-                   // elHeader.classList.remove('sg-header-scroll');
-
-                  }
-              } else {
-
-                  if( scrollY > 20 ){
-                   elHeader.classList.add('sg-header-scroll');
-                   document.querySelector('h1').style.display = 'block';
-                   document.querySelector('h1').style.paddingLeft = '0';
-                   document.querySelector('.sg-header-scroll').style = 'box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);';
-
-                  } else { // to repeat animation
-                   document.querySelector('h1').style.display = 'none';
-                   document.querySelector('h1').style.paddingLeft = '0';
-                   document.querySelector('.sg-header-scroll').style = 'box-shadow: none;';
-
-                   // elHeader.classList.remove('sg-header-scroll');
-
-                  }
-              }
-
-            }
-
-            window.addEventListener('scroll', scrollHeader);
-            window.addEventListener('load', scrollHeader);
-            window.addEventListener('resize', scrollHeader);
-
+            $(document).ready(function() {
+    			$('.sg-block-title').each(function(i) {
+    				var position = $(this).position();
+    				console.log( position );
+    				console.log( 'min: ' + position.top + ' / max: ' + parseInt(position.top + $(this).height()) );
+    				$(this).scrollspy({
+    					min: position.top,
+    					max: position.top + $(this).height(),
+    					onEnter: function(element, position) {
+    						if(console) console.log('entering ' +  element.innerHTML);
+    						// $("body").css('background-color', element.id);
+    					},
+    					onLeave: function(element, position) {
+    						if(console) console.log('leaving ' +  element.innerHTML);
+    					//	$('body').css('background-color','#eee');
+    					}
+    				});
+    			});
+    		});
         </script>
     </body>
 </html>
