@@ -17,7 +17,7 @@
 
     	<nav class="sg-menu">
             <div class="sg-logo">
-                <a href="./index.html" id="logo"><img src="public/media/logo.png"></a>
+                <a href="./index.html" id="logo"><img src="./media/pictures/pic-logo-infojobs.png"></a>
             </div>
         	<ul>
         		<li>
@@ -114,12 +114,6 @@
                                     <li>
                                         <a href="section-1.html#rubik-1.7" class="js-itemMenu " data-link="true">Icons</a>
                                         <ul class="sg-second-submenu">
-                                            <li>
-                                                <a href="section-1.html#rubik-1.7.1" >Icons type</a>
-                                            </li>
-                                            <li>
-                                                <a href="section-1.html#rubik-1.7.2" >Icons size</a>
-                                            </li>
                                         </ul>
                                     </li>
                             </ul>
@@ -159,16 +153,6 @@
                                             <li>
                                                 <a href="section-2.html#rubik-2.4.3" class="disabled js-disabled">Slider range group </a>
                                             </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="section-2.html#rubik-2.5" class="js-itemMenu " data-link="true"></a>
-                                        <ul class="sg-second-submenu">
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="section-2.html#rubik-2.8" class="js-itemMenu " data-link="true"></a>
-                                        <ul class="sg-second-submenu">
                                         </ul>
                                     </li>
                                     <li>
@@ -283,26 +267,27 @@
         <script src="public/prettify.js"></script>
         <script src="public/plugins.js"></script>
         <script src="public/main.js"></script>
+        <script src="js/scrollHeader.js"></script>
         <script>
-        $(document).ready(function() {
-			$('.sg-block-title').each(function(i) {
-				var position = $(this).position();
-				console.log( position );
-				console.log( 'min: ' + position.top + ' / max: ' + parseInt(position.top + $(this).height()) );
-				$(this).scrollspy({
-					min: position.top,
-					max: position.top + $(this).height(),
-					onEnter: function(element, position) {
-						if(console) console.log('entering ' +  element.innerHTML);
-						// $("body").css('background-color', element.id);
-					},
-					onLeave: function(element, position) {
-						if(console) console.log('leaving ' +  element.innerHTML);
-					//	$('body').css('background-color','#eee');
-					}
-				});
-			});
-		});
+            $(document).ready(function() {
+    			$('.sg-block-title').each(function(i) {
+    				var position = $(this).position();
+    				console.log( position );
+    				console.log( 'min: ' + position.top + ' / max: ' + parseInt(position.top + $(this).height()) );
+    				$(this).scrollspy({
+    					min: position.top,
+    					max: position.top + $(this).height(),
+    					onEnter: function(element, position) {
+    						if(console) console.log('entering ' +  element.innerHTML);
+    						// $("body").css('background-color', element.id);
+    					},
+    					onLeave: function(element, position) {
+    						if(console) console.log('leaving ' +  element.innerHTML);
+    					//	$('body').css('background-color','#eee');
+    					}
+    				});
+    			});
+    		});
         </script>
     </body>
 </html>
