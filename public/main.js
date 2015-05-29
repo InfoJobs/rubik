@@ -76,6 +76,7 @@
 				aItemSubmenu[i].addEventListener( eventType, function(e) {
 					unActive();
 					classie.addClass(e.target, 'sg-active');
+					console.log(e);
 				});
 			}
 		}
@@ -114,7 +115,7 @@
 	for ( var i=0; i < aItemMenu.length; i++ ) {
 
 		aItemMenu[i].addEventListener( eventType, function(e){
-			e.preventDefault();
+			//e.preventDefault();
 			e.stopPropagation();
 
 			var elItemMenu = e.target.parentNode.lastElementChild,

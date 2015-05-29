@@ -2,6 +2,7 @@
   max-width: 1200px;
   width: 100%;
   padding-top: 80px;
+  margin: 0 auto;
 }
 
 .sg-wrapper,
@@ -16,11 +17,6 @@
       padding-top: 100px;
     }
 
-    .sg-wrapper,
-    .sg-header {
-        padding-right: 20px;
-        padding-left: 20px;
-    }
 }
 
 .sg-header {
@@ -31,10 +27,13 @@
     line-height: 60px;
     position: fixed;
     width: 100%;
-    z-index: 2;
+    z-index: 999999;
     font-size: 25px;
     font-size: 1.5625rem;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sg-header-scroll {
+    transition: box-shadow 300ms ease 0s;
 }
 
 @media all and (min-width: 1200px) {
@@ -49,7 +48,7 @@
   color: white;
   display: block;
   float: left;
-  margin-right: 40px;
+  margin-right: 10px;
 
   white-space: nowrap;
   overflow: hidden;
@@ -75,6 +74,18 @@
     transition: all 150ms ease;
 }
 
+@media all and (min-width: 768px) {
+    .sg-wrapper,
+    .sg-header {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .sg-header a {
+        margin-right: 20px;
+    }
+}
+
 .sg-header h1 {
   font-size: 25px;
   font-size: 1.5625rem;
@@ -83,7 +94,13 @@
   line-height: 60px;
   margin-bottom: 0;
   display: inline;
- }
+}
+
+@media all and (min-width: 1200px) {
+  .sg-header h1 {
+       margin-left: 20px;
+   }
+}
 
 .sg-header span {
   margin: 0 10px;
@@ -349,8 +366,10 @@ $STYLEGUIDE
   margin-top: 80px;
 }
 
-.row.sg-block {
+.row.sg-block,
+.row.sg-block + .row.sg-block {
   margin-top: 80px;
+  margin-left: 0;
 }
 
 .sg-block:first-child {
