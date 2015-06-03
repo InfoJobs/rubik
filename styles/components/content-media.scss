@@ -11,20 +11,21 @@ Content media
 Usa la clase `.content-media` para construir una estructura con una imagen a un lado de un bloque de contenido de texto.
 
 Markup:
-<div class="content-media inner">
+<div class="content-media content-media-dismissable inner">
+	<button type="button" class="btn-close soft-script iconfont-18px iconfont-Close"><span class="hide">Ignorar</span></button>
 	<div class="media">
-		<img class="crop-circle" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" alt="">
+		<img alt="" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" class="crop-circle">
 	</div>
 	<div class="body">
 		<h3 class="title"><a href="#">Juan Manuel Rodriguez</a></h3>
-		<p>Account Manager <span class="alternative">en Schibsted Classified Media Spain</span></p>
+		<p>Account Manager lorem ipsum <span class="alternative">en Schibsted Classified Media Spain</span></p>
+		<a href="#" class="link-underline">Contactar</a>
 	</div>
 </div>
 
 */
 
 .content-media {
-
 
 	.body {
         margin-left: 70px;
@@ -47,6 +48,10 @@ Markup:
 	.title {
 		margin: 0;
         word-wrap: break-word;
+
+		a {
+			display: block;
+		}
 	}
 
 	img {
@@ -60,6 +65,20 @@ Markup:
 		content: "";
 		border-top: 1px solid $darkest-shiro;
 		top: -20px;
+	}
+
+	.btn-close {
+	    position: relative;
+    	top: -16px;
+		float: right;
+	}
+
+}
+
+.content-media-dismissable {
+
+	.body {
+		margin-right: 20px;
 	}
 
 }
