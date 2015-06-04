@@ -27,7 +27,7 @@
     line-height: 60px;
     position: fixed;
     width: 100%;
-    z-index: 999999;
+    z-index: 999998;
     font-size: 25px;
     font-size: 1.5625rem;
 }
@@ -192,7 +192,7 @@
     background-color: white;
     color: white;
     width: 300px;
-    z-index: 200;
+    z-index: 999999;
     overflow: auto;
     padding-bottom: 40px;
     transition: all 0.3s ease;
