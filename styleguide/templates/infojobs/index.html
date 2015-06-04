@@ -98,7 +98,7 @@
                                 <img src="./media/pictures/pic-mobilefirst.png" class="sg-img" alt="Logo Mobile First">
                                 <div class="inner">
                                     <h3>Mobile first</h3>
-                                    <p>Mobile first se centra en jerarquizar y estructurar el contenido partiendo de la resolución de una pantalla móvil.</p>
+                                    <p>Mobile first se centra en jerarquizar y estructurar el contenido partiendo de la resoluciÃ³n de una pantalla mÃ³vil.</p>
                                 </div>
                             </div>
                           </div>
@@ -108,7 +108,7 @@
                                 <img src="./media/pictures/pic-responsive.png" class="sg-img" alt="Logo Responsive Design">
                                 <div class="inner">
                                     <h3>Responsive design</h3>
-                                    <p>Responsive design ofrece una correcta visualización y experiencia en las distintas resoluciones y dispositivos.</p>
+                                    <p>Responsive design ofrece una correcta visualizaciÃ³n y experiencia en las distintas resoluciones y dispositivos.</p>
                                 </div>
                             </div>
                           </div>
@@ -118,7 +118,7 @@
                                   <img src="./media/pictures/pic-oocss.png" class="sg-img" alt="Logo OOCSS">
                                   <div class="inner">
                                       <h3>OOCSS</h3>
-                                      <p>Oriented Object CSS promueve la creación de componentes reutilizables, escalables y fáciles de mantener, separando los estilos que definen la estructura de los que definen la presentación.</p>
+                                      <p>Oriented Object CSS promueve la creaciÃ³n de componentes reutilizables, escalables y fÃ¡ciles de mantener, separando los estilos que definen la estructura de los que definen la presentaciÃ³n.</p>
                                   </div>
                               </div>
                             </div>
@@ -130,7 +130,7 @@
                                   <img src="./media/pictures/pic-sass.png" class="sg-img" alt="Logo Sass">
                                   <div class="inner">
                                       <h3>Sass</h3>
-                                      <p>Syntactically Awesome Stylesheets es un preprocesador CSS que simplifica la escritura y estructura de las hojas de estilo dando como resultado una CSS más limpia y ordenada.</p>
+                                      <p>Syntactically Awesome Stylesheets es un preprocesador CSS que simplifica la escritura y estructura de las hojas de estilo dando como resultado una CSS mÃ¡s limpia y ordenada.</p>
                                   </div>
                               </div>
                             </div>
@@ -141,7 +141,7 @@
                                   <div class="inner">
                                       <h3>Javascript</h3>
 
-                                      <p>Javascript nos ayuda a enriquecer la interfaz e implementar comportamientos a nivel de interacción.</p>
+                                      <p>Javascript nos ayuda a enriquecer la interfaz e implementar comportamientos a nivel de interacciÃ³n.</p>
                                   </div>
                               </div>
                             </div>
@@ -152,7 +152,7 @@
                                     <div class="inner">
                                         <h3>HTML sem&aacute;ntico</h3>
 
-                                        <p>El HTML semántico se utiliza para reforzar la coherencia entre las etiquetas HTML y el contenido, haciendo un uso correcto de los estándares web.</p>
+                                        <p>El HTML semÃ¡ntico se utiliza para reforzar la coherencia entre las etiquetas HTML y el contenido, haciendo un uso correcto de los estÃ¡ndares web.</p>
                                     </div>
                                 </div>
                               </div>
@@ -255,7 +255,7 @@
 
         </section>
         <section class="sg-content sg-footer">
-        © Infojobs 2015
+        Â© Infojobs 2015
         </section>
 
         <script src="public/jquery-2.1.0.min.js"></script>
@@ -266,6 +266,7 @@
         <script src="public/plugins.js"></script>
         <script src="public/main.js"></script>
         <script src="js/scrollHeader.js"></script>
+        <script src="js/scrollMenu.js"></script>
         <script>
             $(document).ready(function() {
     			$('.sg-block-title').each(function(i) {
@@ -287,5 +288,61 @@
     			});
     		});
         </script>
+
+        <script>
+            var elMenu = document.getElementById('sg-menu');
+            //var elMenuItem = document.querySelector('.js-itemMenu');
+            var elMenuSections = elMenu.getElementsByTagName('a');
+            var elHref;
+            var elHeading = document.querySelectorAll('.sg-block');
+            // var elHeading = document.getElementById('rubik-1.2.1');
+
+
+            function scrollspy () {
+
+                var topPos;
+                var myScroll;
+                var scrollY = window.pageYOffset; // desplazamiento scroll
+                var total = window.innerHeight; // alto ventana offset
+                var elHrefId;
+
+
+                for ( var i = 0; i < elHeading.length; i++) {
+
+                    console.log(elHeading[i].id);
+
+                    topPos = elHeading[i].offsetTop; // distancia del top del offset (viewport)
+                    myScroll = topPos - (total + scrollY); // posicion del objeto en la ventana offset
+
+                    for ( var j = 0; j < elMenuSections.length; j++) {
+
+
+                        elHref = elMenuSections[j].getAttribute('href').split('#');
+                        elHrefId = elHref[elHref.length - 1];
+                        // //elHrefId = elMenuSections[1].getAttribute('href').substring(elHref);
+                        console.log(elHeading[j].id +' == '+ elHrefId);
+                        //
+                        // if ( elHeading.id === elHrefId) {
+                        //
+                        //     elMenuSections[i].style = 'color: red;';
+                        //     document.querySelector('h1').innerHTML = elMenuSections[i].innerHTML;
+                        //
+                        // }
+                    }
+
+
+
+                }
+
+
+
+              }
+
+              window.addEventListener('scroll', scrollspy);
+              window.addEventListener('load', scrollspy);
+              window.addEventListener('resize', scrollspy);
+
+
+</script>
     </body>
 </html>
