@@ -20,7 +20,7 @@
         } else { // to repeat animation
          document.querySelector('h1').style.display = 'none';
          document.querySelector('h1').style.paddingLeft = sPaddingLeft;
-         document.querySelector('.sg-header-scroll').style = 'box-shadow: none;';
+         document.querySelector('.sg-header-scroll').style = 'box-shadow: none;'; 
 
         }
 
