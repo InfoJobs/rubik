@@ -879,6 +879,7 @@ Use class `.row` and `.row-matrioska` to nested rows.
           <div class="row clearfix">
               <div class="col-6">
                   <div class="col-child">
+                         .col-6
                         <div class="row row-matrioska">
                         	<div class="col-6"><div class="col-child">.col-6</div></div>
                         	<div class="col-6"><div class="col-child">.col-6</div></div>
@@ -1885,8 +1886,9 @@ List of icons.
 </div>
 
 
-Styleguide 1.7.1
+Styleguide 1.7.1.1
 
+*/
 [class^="iconfont-"]::before,
 [class*=" iconfont-"]::before,
 [class^="iconfont-"]::after,
@@ -1932,11 +1934,7 @@ Markup:
 .iconfont-22px
 .iconfont-30px
 
-<<<<<<< HEAD
-Styleguide 1.7.2
-=======
 Styleguide 1.7.2.1
->>>>>>> 3943563ca500ccd7be47ad465244111d1736a343
 */
 .iconfont-16px::before {
   font-size: 16px;
@@ -4548,7 +4546,7 @@ Markup:
 		<div class="content-logo-media">
 			<a href="#">
 				<figure class="fig-thumbnail fig-thumbnail-logo slide-up">
-					<img title="BROS GROUP - Ofertas de trabajo" src="https://www.infojobs.net/logo/logo/do-get.xhtml?id=20790330118" alt="Lorem ipsum dolor sit amet">
+					<img title="BROS GROUP - Ofertas de trabajo" src="./media/pictures/pic-company-logo.png" alt="Lorem ipsum dolor sit amet">
 					<figcaption class="fig-thumbnail-caption slide-item">
 						<p class="fig-thumbnail-details">Lorem ipsum</p>
 					</figcaption>
@@ -8782,7 +8780,7 @@ Markup:
 	<!-- Thumbnail logo -->
 	<figure class="fig-thumbnail fig-thumbnail-logo slide-up">
 		<a href="#">
-			<img style="width: 100%;" border="0" alt="" src="http://zsc.scmspain.com/RealMedia/ads/Creatives/InfojobsES/LI-CGI/CGI.jpg/1406023376">
+			<img style="width: 100%;" border="0" alt="" src="./media/pictures/pic-company-logo.png">
 			<figcaption class="fig-thumbnail-caption slide-item">
 				<p class="fig-thumbnail-details">Ver ofertas</p>
 			</figcaption>
@@ -9457,6 +9455,15 @@ $query2     = width, device-width
 /*
 User Feedback
 
+Use class `.user-feedback` followed by the nested structure `.link-user-feedback` to create the feedback container.
+
+
+Markup:
+<div class="user-feedback">
+	<a href="#" class="link-user-feedback">User Feedback</a>
+</div>
+
+
 Styleguide 2.22
 */
 .user-feedback {
@@ -9620,12 +9627,13 @@ $query2     = width, device-width
 Custom Background
 
 To create custom backgrounds use a style attribute in html for the background-image.<br>
-Use class `.custom-bg` responsive to make the image responsive.
+Use class `.custom-bg` responsive to make the image responsive.<br>
 Use modifier `.overlay-60` to apply an overlay.
 
 Markup:
-<div class="custom-bg {{modifier_class}}" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg');">
+<div class="custom-bg {{modifier_class}}" style="background-image: url('./media/backgrounds/bg-header-grid-01.jpg');">
     <div class="inner">
+        <h1>Custom background</h1>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
     </div>
@@ -10371,7 +10379,7 @@ Usa la clase `.content-media` para construir una estructura con una imagen a un 
 Markup:
 <div class="content-media inner">
 	<div class="media">
-		<img class="crop-circle" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" alt="">
+		<img class="crop-circle" src="./media/pictures/pic-company-logo.png" alt="">
 	</div>
 	<div class="body">
 		<h3 class="title"><a href="#">Juan Manuel Rodriguez</a></h3>
@@ -10863,6 +10871,7 @@ body#kss-node {
   margin-bottom: 10px;
 }
 .sg-guide .row .row-matrioska {
+  margin-top: 10px;
   margin-bottom: 0;
 }
 .sg-guide .row-matrioska .col-child {
@@ -10952,6 +10961,9 @@ body#kss-node {
   .sg-content .home-content .row + .row {
     margin-top: 20px;
   }
+  .sg-content .home-content .row {
+    margin-left: -20px;
+  }
   .sg-content .home-content .col-child {
     margin: 0 0 20px 20px;
   }
@@ -10966,7 +10978,7 @@ body#kss-node {
 .sg-content h2 {
   margin: 0;
 }
-.sg-content h1 {
+.sg-content h1.sg-block-title {
   font-size: 25px;
   color: #2088c2;
 }
@@ -11046,6 +11058,23 @@ body#kss-node {
 }
 .sg-footer:before {
   background: none;
+}
+
+/*------------------------------------*\
+$COMPONENTS OVERWRITE
+\*------------------------------------*/
+.user-feedback {
+  height: 40px;
+}
+.user-feedback .link-user-feedback {
+  position: absolute;
+}
+
+/*------------------------------------*\
+$KSS-NODE
+\*------------------------------------*/
+#kss-node ol.linenums {
+  white-space: pre-wrap;
 }
 
 /*# sourceMappingURL=rubik.doc.css.map */
