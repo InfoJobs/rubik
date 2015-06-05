@@ -250,7 +250,7 @@
                                 <img src="./media/pictures/pic-mobilefirst.png" class="sg-img" alt="Logo Mobile First">
                                 <div class="inner">
                                     <h3>Mobile first</h3>
-                                    <p>Mobile first se centra en jerarquizar y estructurar el contenido partiendo de la resolución de una pantalla móvil.</p>
+                                    <p>Mobile first se centra en jerarquizar y estructurar el contenido partiendo de la resoluciÃ³n de una pantalla mÃ³vil.</p>
                                 </div>
                             </div>
                           </div>
@@ -260,7 +260,7 @@
                                 <img src="./media/pictures/pic-responsive.png" class="sg-img" alt="Logo Responsive Design">
                                 <div class="inner">
                                     <h3>Responsive design</h3>
-                                    <p>Responsive design ofrece una correcta visualización y experiencia en las distintas resoluciones y dispositivos.</p>
+                                    <p>Responsive design ofrece una correcta visualizaciÃ³n y experiencia en las distintas resoluciones y dispositivos.</p>
                                 </div>
                             </div>
                           </div>
@@ -270,7 +270,7 @@
                                   <img src="./media/pictures/pic-oocss.png" class="sg-img" alt="Logo OOCSS">
                                   <div class="inner">
                                       <h3>OOCSS</h3>
-                                      <p>Oriented Object CSS promueve la creación de componentes reutilizables, escalables y fáciles de mantener, separando los estilos que definen la estructura de los que definen la presentación.</p>
+                                      <p>Oriented Object CSS promueve la creaciÃ³n de componentes reutilizables, escalables y fÃ¡ciles de mantener, separando los estilos que definen la estructura de los que definen la presentaciÃ³n.</p>
                                   </div>
                               </div>
                             </div>
@@ -282,7 +282,7 @@
                                   <img src="./media/pictures/pic-sass.png" class="sg-img" alt="Logo Sass">
                                   <div class="inner">
                                       <h3>Sass</h3>
-                                      <p>Syntactically Awesome Stylesheets es un preprocesador CSS que simplifica la escritura y estructura de las hojas de estilo dando como resultado una CSS más limpia y ordenada.</p>
+                                      <p>Syntactically Awesome Stylesheets es un preprocesador CSS que simplifica la escritura y estructura de las hojas de estilo dando como resultado una CSS mÃ¡s limpia y ordenada.</p>
                                   </div>
                               </div>
                             </div>
@@ -293,7 +293,7 @@
                                   <div class="inner">
                                       <h3>Javascript</h3>
 
-                                      <p>Javascript nos ayuda a enriquecer la interfaz e implementar comportamientos a nivel de interacción.</p>
+                                      <p>Javascript nos ayuda a enriquecer la interfaz e implementar comportamientos a nivel de interacciÃ³n.</p>
                                   </div>
                               </div>
                             </div>
@@ -304,7 +304,7 @@
                                     <div class="inner">
                                         <h3>HTML sem&aacute;ntico</h3>
 
-                                        <p>El HTML semántico se utiliza para reforzar la coherencia entre las etiquetas HTML y el contenido, haciendo un uso correcto de los estándares web.</p>
+                                        <p>El HTML semÃ¡ntico se utiliza para reforzar la coherencia entre las etiquetas HTML y el contenido, haciendo un uso correcto de los estÃ¡ndares web.</p>
                                     </div>
                                 </div>
                               </div>
@@ -318,37 +318,17 @@
 
         </section>
         <section class="sg-content sg-footer">
-        © Infojobs 2015
+        Â© Infojobs 2015
         </section>
 
         <script src="public/jquery-2.1.0.min.js"></script>
         <script src="public/jquery.modal.js"></script>
-        <script src="public/jquery.scrollspy.js"></script>
         <script src="public/kss.js"></script>
         <script src="public/prettify.js"></script>
         <script src="public/plugins.js"></script>
         <script src="public/main.js"></script>
         <script src="js/scrollHeader.js"></script>
-        <script>
-            $(document).ready(function() {
-    			$('.sg-block-title').each(function(i) {
-    				var position = $(this).position();
-    				console.log( position );
-    				console.log( 'min: ' + position.top + ' / max: ' + parseInt(position.top + $(this).height()) );
-    				$(this).scrollspy({
-    					min: position.top,
-    					max: position.top + $(this).height(),
-    					onEnter: function(element, position) {
-    						if(console) console.log('entering ' +  element.innerHTML);
-    						// $("body").css('background-color', element.id);
-    					},
-    					onLeave: function(element, position) {
-    						if(console) console.log('leaving ' +  element.innerHTML);
-    					//	$('body').css('background-color','#eee');
-    					}
-    				});
-    			});
-    		});
-        </script>
+        <script src="js/scrollMenu.js"></script>
+        
     </body>
 </html>

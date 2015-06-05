@@ -15,12 +15,12 @@
          elHeader.classList.add('sg-header-scroll');
          document.querySelector('h1').style.display = 'block';
          document.querySelector('h1').style.paddingLeft = sPaddingLeft;
-         document.querySelector('.sg-header-scroll').style = 'box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);';
+         document.querySelector('h1').parentNode.style = 'box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);';
 
         } else { // to repeat animation
          document.querySelector('h1').style.display = 'none';
          document.querySelector('h1').style.paddingLeft = sPaddingLeft;
-         document.querySelector('.sg-header-scroll').style = 'box-shadow: none;';
+         document.querySelector('h1').parentNode.style = 'box-shadow: none;'; 
 
         }
 
