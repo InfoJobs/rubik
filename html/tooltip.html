@@ -3,35 +3,36 @@
 <meta charset="ISO-8859-15">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tooltip</title>
-<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/style.css" />
+<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
 
-<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+<!-- <link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
 <link rel="stylesheet" type="text/css" href="../styles/components/tooltip.css" />
 <link rel="stylesheet" type="text/css" href="../styles/generics/tools.css" />
-<script type="text/javascript" src="../../jquery-2.1.0.js"></script>
-<script type="text/javascript" src="../js/jquery.tooltip.js" ></script>
+-->
 
 </head>
 
 <body>
 <div class="wrapper">
 	<div class="container content-wrapper">
-	<p>jdkjsdkajsdkj</p>
-	<div class="tooltip-wrapper" data-copyclose="Tancar">
-		<a href="#" class="js-tooltip-open circle">?</a>
-		<div class="tooltip-hidden tooltip-layer">
-			<div class="tooltip inner">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-				eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-				minim </p>
+
+
+		<div data-close="Cerrar" class="tooltip-wrapper">
+			<a class="js-tooltip-open iconfont-Info iconfont-18px alternative-action no-print" href="javascript:void(0);">
+			<span class="hide">Info</span></a>
+			<div class="tooltip-layer move-down-tooltip--mobile tooltip-fade-out">
+				<div class="tooltip inner" style="width: 480px;"><a title="Cerrar" class="close-tooltip" href="#">Cerrar</a>
+					<h3>Información de utilidad</h3>
+					<p>Algunas empresas prefieren no mostrar su nombre abiertamente en sus ofertas. Los motivos pueden ser varios:</p><ul class="list-default list-bullet-default small"><li>No dar información a la competencia sobre sus necesidades de recursos humanos</li><li>Cuando la empresa ha decidido no hacer comunicación interna de la vacante</li><li>Si se trata de una empresa muy conocida, evitar recibir CVs que no encajan debido a la capacidad de atracción de la marca</li></ul>
+				</div>
 			</div>
 		</div>
-	</div>
-
 
 
 	</div>
 </div>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="../js/jquery.tooltip.js" ></script>
 
 <script>
 
