@@ -38,6 +38,12 @@ Styleguide 2.2
 	font-size: 16px;
 	line-height: $base-line-height; //revisar line-height
 
+	a,
+	a:hover,
+	a:focus {
+		color: $shiro;
+	}
+
 	.notification-toast & {
 		opacity: .9;
 	}
@@ -99,7 +105,13 @@ Styleguide 2.2
 	color: $dark-silk;
 	background: #e1a900;
 
-	a {
+	a,
+	a:hover,
+	a:focus {
+		color: $dark-silk;
+	}
+
+	.title {
 		color: $dark-silk;
 	}
 }

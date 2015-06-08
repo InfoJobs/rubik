@@ -11,13 +11,15 @@ Content media
 Usa la clase `.content-media` para construir una estructura con una imagen a un lado de un bloque de contenido de texto.
 
 Markup:
-<div class="content-media inner">
+<div class="content-media content-media-dismissable inner">
+	<button type="button" class="btn-close soft-script iconfont-18px iconfont-Close"><span class="hide">Ignorar</span></button>
 	<div class="media">
 		<img class="crop-circle" src="./media/pictures/pic-company-logo.png" alt="">
 	</div>
 	<div class="body">
 		<h3 class="title"><a href="#">Juan Manuel Rodriguez</a></h3>
-		<p>Account Manager <span class="alternative">en Schibsted Classified Media Spain</span></p>
+		<p>Account Manager lorem ipsum <span class="alternative">en Schibsted Classified Media Spain</span></p>
+		<a href="#" class="link-underline">Contactar</a>
 	</div>
 </div>
 
@@ -25,18 +27,12 @@ Markup:
 
 .content-media {
 
-
 	.body {
         margin-left: 70px;
 
 		@include mediaquery ($bp-tablet) {
 			margin-left: 80px;
 		}
-
-		@include mediaquery ($bp-desktop) {
-			margin-left: 100px;
-		}
-
 	}
 
 	.media {
@@ -47,25 +43,20 @@ Markup:
 		@include mediaquery ($bp-tablet) {
 			width: 80px;
 		}
-
-		@include mediaquery ($bp-desktop) {
-			width: 100px;
-		}
-
 	}
 
 	.title {
 		margin: 0;
         word-wrap: break-word;
+
+		a {
+			display: block;
+		}
 	}
 
 	img {
-
-		@include mediaquery ($bp-desktop) {
-			width: 80px;
-			height: 80px;
-		}
-
+		object-fit: cover;
+		object-position: 0 0;
 	}
 
 	@at-root li#{&} + &::before {
@@ -82,8 +73,16 @@ Markup:
 
 	.btn-close {
 	    position: relative;
-    	top: -10px;
+    	top: -16px;
 		float: right;
+	}
+
+}
+
+.content-media-dismissable {
+
+	.body {
+		margin-right: 20px;
 	}
 
 }

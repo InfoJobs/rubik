@@ -222,7 +222,7 @@ Styleguide 1.5.1.2
 .btn-medium {
     height: 40px;
     padding: 0 10px;
-    font-size: $medium-font-size;
+    font-size: $base-font-size;
     line-height: 38px;
 
     @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text

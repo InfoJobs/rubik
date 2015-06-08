@@ -1,443 +1,360 @@
 <!DOCTYPE html>
 <head>
-<meta charset="ISO-8859-15"> <!-- default charset UTF-8 -->
+<meta charset="ISO-8859-15">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Header</title>
-<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/style.css" />
+<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
 
-<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
 
-<link rel="stylesheet" type="text/css" href="../styles/components/header.css" />
+<!-- <link rel="stylesheet" type="text/css" href="../styles/components/header.css" />
 <link rel="stylesheet" type="text/css" href="../styles/components/navigation.css" />
-
 <link rel="stylesheet" type="text/css" href="../styles/generics/tools.css" />
+-->
 
 </head>
 <body>
 <div class="wrapper">
-	<div class="container">
-	        <div class="container-expanded">
-	            <!-- Header no logado -->
-	            <header class="global-nav global-nav-applicant">
-	                <nav>
-	                    <ul>
-	                        <li>
-	                        	<a id="home-nologged-menu" onclick="xt_click(this,'C','1','hnl_header_menu','A'); return true;" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Men�</span></a>
-	                            <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
-	                                <li>
-	                                <!--  el logo se muestra como H1 solo en la cabecera de la home -->
-	                                    <a id="home-nologged-inicio" class=" active logo" onclick="xt_click(this,'C','1','hnl_header_title','N'); return true;" href="/responsive-home/index.xhtml">
-	                                    	<img alt="" src="//media.infojobs.net/appgrade/backgrounds/bg-logo.png">
-	                                    	<span>Inicio</span>
-	                                    </a>
-	                                </li>
-	                                <!-- active-top para una opci�n activa y a la vez tiene submen�  -->
-	                                <li> <a href="/ofertas-trabajo" onClick="xt_click(this,'C','1','hnl_header_search_job','N'); return true;" id="1"> Empleo</a>
-	                                    <ul class="nav-bar nav-bar-submenu">
-	                                    	<!-- active-submenu para opci�n activa en submen�  -->
-	                                        <li><a class="" href="/ofertas-trabajo" onClick="xt_click(this,'C','1','ca_menu_tab_ofertas','N'); return true;" id="5">Ofertas de trabajo </a></li>
-	                                        <li><a class="" href="/empleo-publico" onClick="xt_click(this,'C','1','ca_menu_tab_empleo_publico','N'); return true;" id="6">Empleo p�blico </a></li>
-	                                        <li><a class="" href="http://orientacion-laboral.infojobs.net" onClick="xt_click(this,'C','1','','N'); return true;" id="7">Orientaci�n laboral </a></li>
-	                                        <li><a class="" href="/servicios-i.xhtml?dgv=7753589806181239226" onClick="xt_click(this,'C','1','ca_menu_tab_servicios','N'); return true;" id="3">Servicios </a></li>
-	                                    </ul>
-	                                </li>
-	                                <li><a id="2" onclick="xt_click(this,'C','1','hnl_header_freelance','N'); return true;" href="https://freelance.infojobs.net">Freelance </a></li>
-	                                <li><a id="3" onclick="xt_click(this,'C','1','hnl_header_executive','N'); return true;" href="http://executive.infojobs.net/">Executive </a>
-	                                	<ul class="nav-bar nav-bar-submenu nav-bar-submenu--executive">
-                                        <li><a class="active-submenu active-submenu--executive" href="#">Cuenta Executive</a></li>
-                                        <li><a class="" href="#">Oportunidades laborales</a></li>
-                                        <li><a class="" href="#">Evaluaci�n de competencias</a></li>
-                                    </ul>
-	                                </li>
-	                                <li><a id="4" onclick="xt_click(this,'C','1','hnl_header_training','N'); return true;" href="http://formacion.infojobs.net">Formaci�n </a></li>
-	                            </ul>
-	                        </li>
-	                        <li>
-	                            <ul class="access-bar pull-right clearfix">
-	                                <li class="btn-divider"><a id="home-nologged-company" onclick="xt_click(this,'C','1','hnl_header_company','N'); return true;" href="/home_employer.xhtml?dgv=5571055436268630564" class="btn btn-link-secondary">Publicar una oferta </a></li>
-	                                <li><a id="candidate_login" href="#" class="btn btn-link-primary">Accede</a></li>
-	                                <li><a id="home-nologged-company" onclick="xt_click(this,'C','1','hnl_header_registration','N'); return true;" href="/candidate/registration/registration-index.xhtml?dgv=210979324725989341" class="btn btn-primary">Reg�strate</a></li>
-	                            </ul>
-	                            <a id="home-nologged-profile" href="#" class="nav-bar-top-toggle nav-bar-top-login"><img src="//media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png" alt="Nombre Apellido"><span style="display: none">Perfil usuario</span></a>
-	                        </li>
-	                    </ul>
-	                </nav>
-	            </header>
-	            <!-- / Header sin submenu no logado -->
-	        </div>
-	    </div>
-    <div class="container">
-        <div class="container-expanded">
-            <!-- Header no logado -->
-            <header class="global-nav global-nav-applicant">
-                <nav>
-                    <ul>
-                        <li>
-                        	<a id="home-nologged-menu" onclick="xt_click(this,'C','1','hnl_header_menu','A'); return true;" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Men�</span></a>
-                            <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
-                                <li>
-                                <!--  el logo se muestra como H1 solo en la cabecera de la home -->
-                                    <a id="home-nologged-inicio" class="logo" onclick="xt_click(this,'C','1','hnl_header_title','N'); return true;" href="/responsive-home/index.xhtml">
-                                    	<img alt="" src="//media.infojobs.net/appgrade/backgrounds/bg-logo.png">
-                                    	<span>Inicio</span>
-                                    </a>
-                                </li>
-                                <!-- active-top para una opci�n activa y a la vez tiene submen�  -->
-                                <li class=""> <a class="active-top" href="/ofertas-trabajo" onClick="xt_click(this,'C','1','hnl_header_search_job','N'); return true;" id="1"> Empleo</a>
-                                    <ul class="nav-bar nav-bar-submenu">
-                                    	<!-- active-submenu para opci�n activa en submen�  -->
-                                        <li><a class="active-submenu" href="/ofertas-trabajo" onClick="xt_click(this,'C','1','ca_menu_tab_ofertas','N'); return true;" id="5">Ofertas de trabajo </a></li>
-                                        <li><a class="" href="/empleo-publico" onClick="xt_click(this,'C','1','ca_menu_tab_empleo_publico','N'); return true;" id="6">Empleo p�blico </a></li>
-                                        <li><a class="" href="http://orientacion-laboral.infojobs.net" onClick="xt_click(this,'C','1','','N'); return true;" id="7">Orientaci�n laboral </a></li>
-                                        <li><a class="" href="/servicios-i.xhtml?dgv=7753589806181239226" onClick="xt_click(this,'C','1','ca_menu_tab_servicios','N'); return true;" id="3">Servicios </a></li>
-                                    </ul>
-                                </li>
-                                <li><a id="2" onclick="xt_click(this,'C','1','hnl_header_freelance','N'); return true;" href="https://freelance.infojobs.net">Freelance </a></li>
-                                <li><a id="3" onclick="xt_click(this,'C','1','hnl_header_executive','N'); return true;" href="http://executive.infojobs.net/">Executive </a></li>
-                                <li><a id="4" onclick="xt_click(this,'C','1','hnl_header_training','N'); return true;" href="http://formacion.infojobs.net">Formaci�n </a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul class="access-bar pull-right clearfix">
-                                <li class="btn-divider"><a id="home-nologged-company" onclick="xt_click(this,'C','1','hnl_header_company','N'); return true;" href="/home_employer.xhtml?dgv=5571055436268630564" class="btn btn-link-secondary">Publicar una oferta </a></li>
-                                <li><a id="candidate_login" href="#" class="btn btn-link-primary">Accede</a></li>
-                                <li><a id="home-nologged-company" onclick="xt_click(this,'C','1','hnl_header_registration','N'); return true;" href="/candidate/registration/registration-index.xhtml?dgv=210979324725989341" class="btn btn-primary">Reg�strate</a></li>
-                            </ul>
-                            <a id="home-nologged-profile" href="#" class="nav-bar-top-toggle nav-bar-top-login"><img src="//media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png" alt="Nombre Apellido"><span style="display: none">Perfil usuario</span></a>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-            <!-- / Header sin submenu no logado -->
-        </div>
+
+	<div class="container container-expanded">
+        <!-- Header sin submenu no logado -->
+        <header class="global-nav global-nav-applicant">
+            <nav>
+                <ul>
+                    <li>
+                        <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
+                            <li>
+                            <!--  el logo se muestra como H1 solo en la cabecera de la home -->
+                                <a id="home-nologged-inicio" class="active logo" href="#">
+                                	<img alt="" src="http://media.infojobs.net/appgrade/backgrounds/bg-logo.png">
+                                	<span class="iconfont-Home iconfont-22px">Inicio</span>
+                                </a>
+                            </li>
+                            <!-- active-top para una opcion activa -->
+                            <li><a id="1" class="active-top" href="#">Empleo</a></li>
+                            <li><a id="2" href="#">Freelance</a></li>
+                            <li><a id="3" href="#">Executuve</a></li>
+                            <li><a id="4" href="#">Consejos</a></li>
+                        </ul>
+                    	<a id="home-nologged-menu" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Menu</span></a>
+                    </li>
+                    <li>
+                        <ul class="access-bar pull-right clearfix">
+							<li><a id="link_soyUnaEmpresa" title="Publica una oferta de empleo y encuentra tu candidato" href="#" class="btn btn-link-secondary btn-divider">Soy una empresa</a></li>
+							<li><a id="candidate_login" title="Accede a tu área de candidato" class="btn btn-link-primary profile-ellipsis" href="#">Accede <span id="userReconizedName"></span></a></li>
+							<li><a id="sign_in_prueba_gratis" title="Tu CV en InfoJobs" class="btn btn-primary" href="#">Regístrate</a></li>
+						</ul>
+                        <a id="home-nologged-profile" href="#" class="nav-bar-top-toggle nav-bar-top-login"><img src="http://media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png" alt="Nombre Apellido"></a>
+
+					</li>
+                </ul>
+            </nav>
+        </header>
+        <!-- / Header sin submenu no logado -->
     </div>
-    <div class="container">
-        <div class="container-expanded">
-            <!-- Header no logado con submenu -->
-            <header class="global-nav global-nav-applicant global-nav-submenu global-nav-submenu-applicant">
-                <nav>
-                    <ul>
-                        <li>
-                        	<a id="home-nologged-menu" onclick="xt_click(this,'C','1','hnl_header_menu','A'); return true;" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Men�</span></a>
-                            <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
-                                <li>
-                                <!--  el logo se muestra como H1 solo en la cabecera de la home -->
-                                    <a id="home-nologged-inicio" class="logo" onclick="xt_click(this,'C','1','hnl_header_title','N'); return true;" href="/responsive-home/index.xhtml">
-                                    	<img alt="" src="//media.infojobs.net/appgrade/backgrounds/bg-logo-mini.png">
-                                    	<span>Inicio</span>
-                                    </a>
-                                </li>
-                                <!-- active-top-submenu - necesaria para que en responsive se marque el li que contiene el submenu  -->
-                                <li class="active-top-submenu"> <a class="active-top" href="/ofertas-trabajo" onClick="xt_click(this,'C','1','hnl_header_search_job','N'); return true;" id="1"> Empleo</a>
-                                    <ul class="nav-bar nav-bar-submenu">
-                                        <li><a class="active-submenu" href="/ofertas-trabajo" onClick="xt_click(this,'C','1','ca_menu_tab_ofertas','N'); return true;" id="5">Ofertas de trabajo </a></li>
-                                        <li><a class="" href="/empleo-publico" onClick="xt_click(this,'C','1','ca_menu_tab_empleo_publico','N'); return true;" id="6">Empleo p�blico </a></li>
-                                        <li><a class="" href="http://orientacion-laboral.infojobs.net" onClick="xt_click(this,'C','1','','N'); return true;" id="7">Orientaci�n laboral </a></li>
-                                        <li><a class="" href="/servicios-i.xhtml?dgv=7753589806181239226" onClick="xt_click(this,'C','1','ca_menu_tab_servicios','N'); return true;" id="3">Servicios </a></li>
-                                    </ul>
-                                </li>
-                                <li><a id="2" onclick="xt_click(this,'C','1','hnl_header_freelance','N'); return true;" href="https://freelance.infojobs.net">Freelance </a></li>
-                                <li><a id="3" onclick="xt_click(this,'C','1','hnl_header_executive','N'); return true;" href="http://executive.infojobs.net/">Executive </a></li>
-                                <li><a id="4" onclick="xt_click(this,'C','1','hnl_header_training','N'); return true;" href="http://formacion.infojobs.net">Formaci�n </a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul class="access-bar pull-right clearfix">
-                                <li class="btn-divider"><a id="home-nologged-company" onclick="xt_click(this,'C','1','hnl_header_company','N'); return true;" href="/home_employer.xhtml?dgv=5571055436268630564" class="btn btn-link-secondary">Publicar una oferta </a></li>
-                                <li><a id="candidate_login" href="#" class="btn btn-link-primary">Accede</a></li>
-                                <li><a id="home-nologged-company" onclick="xt_click(this,'C','1','hnl_header_registration','N'); return true;" href="/candidate/registration/registration-index.xhtml?dgv=210979324725989341" class="btn btn-primary">Reg�strate</a></li>
-                            </ul>
-                            <a id="home-nologged-profile" href="#" class="nav-bar-top-toggle nav-bar-top-login"><img src="//media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png" alt="Nombre Apellido"><span style="display: none">Perfil usuario</span></a>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-            <!-- / Header sin submenu no logado -->
-        </div>
+
+
+	<div class="container container-expanded">
+        <!-- Header sin submenu reconocido -->
+        <header class="global-nav global-nav-applicant">
+            <nav>
+                <ul>
+                    <li>
+                        <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
+                            <li>
+                            <!--  el logo se muestra como H1 solo en la cabecera de la home -->
+                                <a id="home-nologged-inicio" class="active logo" href="#">
+                                	<img alt="" src="http://media.infojobs.net/appgrade/backgrounds/bg-logo.png">
+                                	<span class="iconfont-Home iconfont-22px">Inicio</span>
+                                </a>
+                            </li>
+                            <!-- active-top para una opcion activa -->
+                            <li><a id="1" class="active-top" href="#">Empleo</a></li>
+                            <li><a id="2" href="#">Freelance</a></li>
+                            <li><a id="3" href="#">Executuve</a></li>
+                            <li><a id="4" href="#">Consejos</a></li>
+                        </ul>
+                    	<a id="home-nologged-menu" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Menu</span></a>
+                    </li>
+                    <li>
+                        <ul class="access-bar pull-right clearfix">
+							<li><a id="link_soyUnaEmpresa" title="Publica una oferta de empleo y encuentra tu candidato" href="#" class="btn btn-link-secondary btn-divider">Soy una empresa</a></li>
+							<li><a id="candidate_login" title="Accede a tu área de candidato" class="btn btn-link-primary profile-ellipsis" href="#">Accede <span id="userReconizedName">Pedro</span></a></li>
+							<li><a id="userNotReconizedName" href="#" class="btn btn-link-secondary" title="Tu CV en InfoJobs">Salir</a></li>
+						</ul>
+                        <a id="home-nologged-profile" href="#" class="nav-bar-top-toggle nav-bar-top-login"><img src="http://media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png" alt="Nombre Apellido"></a>
+
+					</li>
+                </ul>
+            </nav>
+        </header>
+        <!-- / Header sin submenu reconocido -->
     </div>
-    <div class="container">
-        <div class="container-expanded">
-        <!-- Header logado -->
-            <header class="global-nav global-nav-applicant global-nav-submenu global-nav-submenu-applicant">
-                <nav>
-                    <ul>
-                        <li>
-                        	<a id="home-nologged-menu" onclick="xt_click(this,'C','1','hnl_header_menu','A'); return true;" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Men�</span></a>
-                            <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
-                                <li>
-                                <!--  el logo se muestra como H1 solo en la cabecera de la home -->
-                                    <a id="home-nologged-inicio" class="logo" onclick="xt_click(this,'C','1','hnl_header_title','N'); return true;" href="/responsive-home/index.xhtml">
-                                    	<img alt="" src="//media.infojobs.net/appgrade/backgrounds/bg-logo-mini.png">
-                                    	<span>Inicio</span>
-                                    </a>
-                                </li>
-                                <li><a id="1" onclick="xt_click(this,'C','1','hnl_header_search_job','N'); return true;" href="/ofertas-trabajo">Empleo </a></li>
-                                <li><a id="2" onclick="xt_click(this,'C','1','hnl_header_freelance','N'); return true;" href="https://freelance.infojobs.net">Freelance </a></li>
-                                <li><a id="3" onclick="xt_click(this,'C','1','hnl_header_executive','N'); return true;" href="http://executive.infojobs.net/">Executive </a></li>
-                                <li><a id="4" onclick="xt_click(this,'C','1','hnl_header_training','N'); return true;" href="http://formacion.infojobs.net">Formaci�n </a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul id="nav-profile" class="nav-bar nav-bar-top nav-bar-top-right pull-right clearfix">
-                                <li class="active-top-submenu">
-                                	<a href="#" class="nav-bar-top-avatar active-top profile-ellipsis"> <span>Hola, Pedro</span> <span>Mi �rea</span> </a>
-                                    <ul class="nav-bar nav-bar-submenu">
-                                        <li><a href="#" class="active-submenu">Mi InfoJobs</a></li>
-                                        <li><a href="#">Mis Cvs</a></li>
-                                        <li><a href="#">Mis candidaturas</a></li>
-                                        <li><a href="#">Perfil p�blico</a></li>
-                                        <li><a href="#">Alertas</a></li>
-                                        <li><a href="#">Mis servicios</a></li>
-                                        <li><a href="#">Idiomas y tests</a></li>
-                                        <li><a href="#">Mi cuenta</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#" class="btn btn-link-secondary btn-link-exit">Salir</a></li>
-                            </ul>
-                        <a class="nav-bar-top-toggle nav-bar-top-profile" href="#" id="home-logged-profile"><img alt="Nombre Apellido" src="//media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png"></a> </li>
-                    </ul>
-                </nav>
-            </header>
-        <!-- / Header con submenu logado -->
-        </div>
+
+    <div class="container container-expanded">
+    <!-- Header logado sin submenu-->
+        <header class="global-nav global-nav-applicant">
+            <nav>
+                <ul>
+                    <li>
+                        <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
+                            <li>
+                            <!--  el logo se muestra como H1 solo en la cabecera de la home -->
+                                <a id="home-nologged-inicio" class="logo" href="#">
+                                	<img alt="" src="http://media.infojobs.net/appgrade/backgrounds/bg-logo.png">
+                                	<span>Inicio</span>
+                                </a>
+                            </li>
+                            <li><a id="1" class="active-top" href="#">Empleo </a></li>
+                            <li><a id="2" href="#">Freelance</a></li>
+                            <li><a id="3" href="#">Executive</a></li>
+                            <li><a id="4" href="#">Consejos</a></li>
+                        </ul>
+                    	<a id="home-nologged-menu" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Men�</span></a>
+                    </li>
+                    <li>
+                        <ul id="nav-profile" class="nav-bar nav-bar-top nav-bar-top-right pull-right clearfix">
+                            <li>
+                            	<a href="#" class="nav-bar-top-avatar profile-ellipsis"> <span>Hola, Pedro</span> <span>Mi �rea</span> </a>
+                            </li>
+                            <li><a href="#" class="btn btn-link-secondary btn-link-exit">Salir</a></li>
+                        </ul>
+                    	<a class="nav-bar-top-toggle nav-bar-top-profile" href="#" id="home-logged-profile"><img alt="Nombre Apellido" src="http://media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png"></a>
+					</li>
+                </ul>
+            </nav>
+        </header>
+    <!-- / Header logado sin submenu -->
     </div>
-    <div class="container">
-        <div class="container-expanded">
-            <!-- Header Executive con submenu -->
-            <header class="global-nav global-nav-applicant global-nav-submenu global-nav-submenu-applicant">
-                <nav>
-                    <ul>
-                        <li>
-                        	<a id="home-nologged-menu" onclick="xt_click(this,'C','1','hnl_header_menu','A'); return true;" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Men�</span></a>
-                            <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
-                                <li>
-                                <!--  el logo se muestra como H1 solo en la cabecera de la home -->
-                                    <a id="home-nologged-inicio" class="logo" onclick="xt_click(this,'C','1','hnl_header_title','N'); return true;" href="/responsive-home/index.xhtml">
-                                    	<img alt="" src="//media.infojobs.net/appgrade/backgrounds/bg-logo-mini.png">
-                                    	<span>Inicio</span>
-                                    </a>
-                                </li>
-                                <!-- active-top-submenu - necesaria para que en responsive se marque el li que contiene el submenu  -->
-                                <li><a href="/ofertas-trabajo" onClick="xt_click(this,'C','1','hnl_header_search_job','N'); return true;" id="1"> Empleo</a></li>
-                                <li><a id="2" onclick="xt_click(this,'C','1','hnl_header_freelance','N'); return true;" href="https://freelance.infojobs.net">Freelance </a></li>
-                                <li class="active-top-submenu"><a id="3" onclick="xt_click(this,'C','1','hnl_header_executive','N'); return true;" href="http://executive.infojobs.net/" class="active-top">Executive </a>
-                                	<ul class="nav-bar nav-bar-submenu nav-bar-submenu--executive">
-                                        <li><a class="active-submenu active-submenu--executive" href="#">Cuenta Executive</a></li>
-                                        <li><a class="" href="#">Oportunidades laborales</a></li>
-                                        <li><a class="" href="#">Evaluaci�n de competencias</a></li>
-                                    </ul>
-                                </li>
-                                <li><a id="4" onclick="xt_click(this,'C','1','hnl_header_training','N'); return true;" href="http://formacion.infojobs.net">Formaci�n </a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul class="access-bar pull-right clearfix">
-                                <li class="btn-divider"><a id="home-nologged-company" onclick="xt_click(this,'C','1','hnl_header_company','N'); return true;" href="/home_employer.xhtml?dgv=5571055436268630564" class="btn btn-link-secondary">Publicar una oferta </a></li>
-                                <li><a id="candidate_login" href="#" class="btn btn-link-primary">Accede</a></li>
-                                <li><a id="home-nologged-company" onclick="xt_click(this,'C','1','hnl_header_registration','N'); return true;" href="/candidate/registration/registration-index.xhtml?dgv=210979324725989341" class="btn btn-primary">Reg�strate</a></li>
-                            </ul>
-                            <a id="home-nologged-profile" href="#" class="nav-bar-top-toggle nav-bar-top-login"><img src="//media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png" alt="Nombre Apellido"><span style="display: none">Perfil usuario</span></a>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-            <!-- / Header sin submenu no logado -->
-        </div>
+
+    <div class="container container-expanded">
+    <!-- Header logado -->
+        <header class="global-nav global-nav-applicant global-nav-submenu global-nav-submenu-applicant">
+            <nav>
+                <ul>
+                    <li>
+                        <ul id="nav-mobile" class="nav-bar nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
+                            <li>
+                            <!--  el logo se muestra como H1 solo en la cabecera de la home -->
+                                <a id="home-nologged-inicio" class="logo"  href="#">
+                                	<img alt="" src="http://media.infojobs.net/appgrade/backgrounds/bg-logo-mini.png">
+                                	<span class="iconfont-Home iconfont-22px">Inicio</span>
+                                </a>
+                            </li>
+                            <li><a id="1" class="active-top" href="#">Empleo</a></li>
+                            <li><a id="2" href="#">Freelance</a></li>
+                            <li><a id="3" href="#">Executuve</a></li>
+                            <li><a id="4" href="#">Consejos</a></li>
+                        </ul>
+                    	<a href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Menu</span></a>
+
+                    </li>
+                    <li>
+                        <ul id="nav-profile" class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-right pull-right clearfix">
+                            <li class="active-top-submenu">
+                            	<a href="#" class="nav-bar-top-avatar active-top profile-ellipsis"> <span>Hola, Pedro</span></a>
+                                <ul class="nav-bar nav-bar-submenu">
+                                    <li><a href="#" class="active-submenu">Mi InfoJobs</a></li>
+                                    <li><a href="#">Mis Cvs</a></li>
+                                    <li><a href="#">Candidaturas</a></li>
+                                    <li class="nav-bar-notifications">
+										<a href="#">Contactos</a>
+										<span class="sticker sticker-marked">10</span>
+									</li>
+                                    <li><a href="#">Alertas</a></li>
+                                    <li><a href="#">Mis servicios</a></li>
+                                    <li><a href="#">Idiomas y tests</a></li>
+                                    <li><a href="#">Mi cuenta</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="btn btn-link-secondary btn-link-exit">Salir</a></li>
+                        </ul>
+                    	<a class="nav-bar-top-toggle nav-bar-top-profile" href="#" id="home-logged-profile"><img alt="Nombre Apellido" src="http://media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png"></a>
+					</li>
+                </ul>
+            </nav>
+        </header>
+    <!-- / Header con submenu logado -->
     </div>
-    <div class="container">
-        <div class="container-expanded shadow-all">
-        <!-- Header logado -->
-            <header class="global-nav global-nav-applicant global-nav-submenu global-nav-submenu-applicant">
-                <nav>
-                    <ul>
-                        <li>
-                        	<a id="home-nologged-menu" onclick="xt_click(this,'C','1','hnl_header_menu','A'); return true;" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Men�</span></a>
-                            <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
-                                <li>
-                                <!--  el logo se muestra como H1 solo en la cabecera de la home -->
-                                    <a id="home-nologged-inicio" class="logo" onclick="xt_click(this,'C','1','hnl_header_title','N'); return true;" href="/responsive-home/index.xhtml">
-                                    	<img alt="" src="//media.infojobs.net/appgrade/backgrounds/bg-logo-mini.png">
-                                    	<span>Inicio</span>
-                                    </a>
-                                </li>
-                                <li><a id="1" onclick="xt_click(this,'C','1','hnl_header_search_job','N'); return true;" href="/ofertas-trabajo">Empleo </a></li>
-                                <li><a id="2" onclick="xt_click(this,'C','1','hnl_header_freelance','N'); return true;" href="https://freelance.infojobs.net">Freelance </a></li>
-                                <li><a id="3" onclick="xt_click(this,'C','1','hnl_header_executive','N'); return true;" href="http://executive.infojobs.net/">Executive </a></li>
-                                <li><a id="4" onclick="xt_click(this,'C','1','hnl_header_training','N'); return true;" href="http://formacion.infojobs.net">Formaci�n </a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul id="nav-profile" class="nav-bar nav-bar-top nav-bar-top-right pull-right clearfix">
-                                <li class="active-top-submenu">
-                                	<a href="#" class="nav-bar-top-avatar active-top profile-ellipsis"> <span>Hola, Pedro</span> <span>Mi �rea</span> </a>
-                                    <ul class="nav-bar nav-bar-submenu nav-bar-submenu--executive">
-                                        <li><a href="#" class="active-submenu--executive">Mi InfoJobs</a></li>
-                                        <li><a href="#">Mis Cvs</a></li>
-                                        <li><a href="#">Mis candidaturas</a></li>
-                                        <li><a href="#">Perfil p�blico</a></li>
-                                        <li><a href="#">Alertas</a></li>
-                                        <li><a href="#">Mis servicios</a></li>
-                                        <li><a href="#">Idiomas y tests</a></li>
-                                        <li><a href="#">Mi cuenta</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#" class="btn btn-link-secondary btn-link-exit">Salir</a></li>
-                            </ul>
-                        <a class="nav-bar-top-toggle nav-bar-top-profile" href="#" id="home-logged-profile"><img alt="Nombre Apellido" src="//media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png"></a> </li>
-                    </ul>
-                </nav>
-            </header>
-        <!-- / Header con submenu logado -->
-        </div>
+
+    <div class="container container-expanded">
+        <!-- Header Executive con submenu no logado -->
+        <header class="global-nav global-nav-applicant global-nav-submenu global-nav-submenu-applicant">
+            <nav>
+                <ul>
+                    <li>
+                        <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
+                            <li>
+                            <!--  el logo se muestra como H1 solo en la cabecera de la home -->
+                                <a id="home-nologged-inicio" class="logo" href="#">
+                                	<img alt="" src="http://media.infojobs.net/appgrade/backgrounds/bg-logo-mini.png">
+                                	<span>Inicio</span>
+                                </a>
+                            </li>
+                            <!-- active-top-submenu - necesaria para que en responsive se marque el li que contiene el submenu  -->
+                            <li><a id="1" href="#"> Empleo</a></li>
+                            <li><a id="2" href="#">Freelance</a></li>
+                            <li class="active-top-submenu">
+								<a id="3" href="#" class="active-top">Executive </a>
+                            	<ul class="nav-bar nav-bar-submenu nav-bar-submenu--executive">
+                                    <li><a class="active-submenu active-submenu--executive" href="#">Cuenta Executive</a></li>
+                                    <li><a class="" href="#">Oportunidades laborales</a></li>
+                                    <li><a class="" href="#">Evaluaci�n de competencias</a></li>
+                                </ul>
+                            </li>
+                            <li><a id="4" href="#">Consejos</a></li>
+                        </ul>
+                    	<a id="home-nologged-menu" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Menu</span></a>
+                    </li>
+                    <li>
+                        <ul class="access-bar pull-right clearfix">
+							<li><a id="link_soyUnaEmpresa" title="Publica una oferta de empleo y encuentra tu candidato" href="#" class="btn btn-link-secondary btn-divider">Soy una empresa</a></li>
+							<li><a id="candidate_login" title="Accede a tu área de candidato" class="btn btn-link-primary profile-ellipsis" href="#">Accede <span id="userReconizedName"></span></a></li>
+							<li><a id="sign_in_prueba_gratis" title="Tu CV en InfoJobs" class="btn btn-primary" href="#">Regístrate</a></li>
+						</ul>
+                        <a id="home-nologged-profile" href="#" class="nav-bar-top-toggle nav-bar-top-login"><img src="http://media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png" alt="Nombre Apellido"></a>
+					</li>
+
+                </ul>
+            </nav>
+        </header>
+        <!-- /Header Executive con submenu no logado -->
     </div>
-    <div class="container">
-        <div class="container-expanded shadow-all">
-        <!-- Header logado sin submenu-->
-            <header class="global-nav global-nav-applicant">
-                <nav>
-                    <ul>
-                        <li>
-                        	<a id="home-nologged-menu" onclick="xt_click(this,'C','1','hnl_header_menu','A'); return true;" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Men�</span></a>
-                            <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
-                                <li>
-                                <!--  el logo se muestra como H1 solo en la cabecera de la home -->
-                                    <a id="home-nologged-inicio" class="logo" onclick="xt_click(this,'C','1','hnl_header_title','N'); return true;" href="/responsive-home/index.xhtml">
-                                    	<img alt="" src="//media.infojobs.net/appgrade/backgrounds/bg-logo.png">
-                                    	<span>Inicio</span>
-                                    </a>
-                                </li>
-                                <li><a id="1" onclick="xt_click(this,'C','1','hnl_header_search_job','N'); return true;" href="/ofertas-trabajo">Empleo </a></li>
-                                <li><a id="2" onclick="xt_click(this,'C','1','hnl_header_freelance','N'); return true;" href="https://freelance.infojobs.net">Freelance </a></li>
-                                <li><a id="3" onclick="xt_click(this,'C','1','hnl_header_executive','N'); return true;" href="http://executive.infojobs.net/">Executive </a></li>
-                                <li><a id="4" onclick="xt_click(this,'C','1','hnl_header_training','N'); return true;" href="http://formacion.infojobs.net">Formaci�n </a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul id="nav-profile" class="nav-bar nav-bar-top nav-bar-top-right pull-right clearfix">
-                                <li>
-                                	<a href="#" class="nav-bar-top-avatar profile-ellipsis"> <span>Hola, Pedro</span> <span>Mi �rea</span> </a>
-                                </li>
-                                <li><a href="#" class="btn btn-link-secondary btn-link-exit">Salir</a></li>
-                            </ul>
-                        <a class="nav-bar-top-toggle nav-bar-top-profile" href="#" id="home-logged-profile"><img alt="Nombre Apellido" src="//media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png"></a> </li>
-                    </ul>
-                </nav>
-            </header>
-        <!-- / Header logado sin submenu -->
-        </div>
+
+    <div class="container container-expanded">
+        <!-- Header Executive con submenu logado -->
+        <header class="global-nav global-nav-applicant global-nav-submenu global-nav-submenu-applicant">
+            <nav>
+                <ul>
+                    <li>
+                        <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
+                            <li>
+                            <!--  el logo se muestra como H1 solo en la cabecera de la home -->
+                                <a id="home-nologged-inicio" class="logo" href="#">
+                                	<img alt="" src="http://media.infojobs.net/appgrade/backgrounds/bg-logo-mini.png">
+                                	<span>Inicio</span>
+                                </a>
+                            </li>
+                            <li><a id="1" href="#">Empleo </a></li>
+                            <li><a id="2" href="#">Freelance</a></li>
+                            <li><a id="3" href="#" class="active-top">Executive </a></li>
+                            <li><a id="4" href="#">Consejos</a></li>
+                        </ul>
+                    	<a id="home-nologged-menu" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Menu</span></a>
+                    </li>
+                    <li>
+                        <ul id="nav-profile" class="nav-bar nav-bar-top nav-bar-top-right pull-right clearfix">
+                            <li class="active-top-submenu">
+                            	<a href="#" class="nav-bar-top-avatar active-top profile-ellipsis"> <span>Hola, Pedro</span> <span>Mi �rea</span> </a>
+                                <ul class="nav-bar nav-bar-submenu nav-bar-submenu--executive">
+                                    <li><a href="#" class="active-submenu--executive">Mi InfoJobs</a></li>
+                                    <li><a href="#">Mis Cvs</a></li>
+                                    <li><a href="#">Mis candidaturas</a></li>
+                                    <li><a href="#">Perfil p�blico</a></li>
+                                    <li><a href="#">Alertas</a></li>
+                                    <li><a href="#">Mis servicios</a></li>
+                                    <li><a href="#">Idiomas y tests</a></li>
+                                    <li><a href="#">Mi cuenta</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="btn btn-link-secondary btn-link-exit">Salir</a></li>
+                        </ul>
+                    <a class="nav-bar-top-toggle nav-bar-top-profile" href="#" id="home-logged-profile"><img alt="Nombre Apellido" src="http://media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png"></a> </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- /Header Executive con submenu logado -->
     </div>
-    <div class="container">
-        <div class="container-expanded">
-            <!-- Header reconocido -->
-            <header class="global-nav global-nav-applicant">
-                <nav>
-                    <ul>
-                        <li>
-                        	<a id="home-nologged-menu" onclick="xt_click(this,'C','1','hnl_header_menu','A'); return true;" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Men�</span></a>
-                            <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
-                                <li>
-                                <!--  el logo se muestra como H1 solo en la cabecera de la home -->
-                                    <a id="home-nologged-inicio" class="logo" onclick="xt_click(this,'C','1','hnl_header_title','N'); return true;" href="/responsive-home/index.xhtml">
-                                    	<img alt="" src="//media.infojobs.net/appgrade/backgrounds/bg-logo.png">
-                                    	<span>Inicio</span>
-                                    </a>
-                                </li>
-                                <li><a id="1" onclick="xt_click(this,'C','1','hnl_header_search_job','N'); return true;" href="/ofertas-trabajo">Empleo </a></li>
-                                <li><a id="2" onclick="xt_click(this,'C','1','hnl_header_freelance','N'); return true;" href="https://freelance.infojobs.net">Freelance </a></li>
-                                <li><a id="3" onclick="xt_click(this,'C','1','hnl_header_executive','N'); return true;" href="http://executive.infojobs.net/">Executive </a></li>
-                                <li><a id="4" onclick="xt_click(this,'C','1','hnl_header_training','N'); return true;" href="http://formacion.infojobs.net">Formaci�n </a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul class="access-bar pull-right clearfix">
-                            <li><a id="candidate_login" href="javascript:void(0);" class="btn btn-link-primary profile-ellipsis">Accede, <span id="userReconizedName">Pedro</span></a> </li>
-                            <li><a href="/logout.xhtml?dgv=6499936118908215934" class="btn btn-link-secondary btn-link-exit" id="userNotReconizedName">Salir</a></li>
-                            </ul>
-                            <a id="home-nologged-profile" href="javascript:void(0);" class="nav-bar-top-toggle nav-bar-top-login"> <img src="//media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png" alt=""> </a>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-            <!-- / Header sin submenu no logado -->
-        </div>
+
+
+	<div class="container container-expanded">
+		<!-- Header no logado empresa-->
+		<header class="global-nav global-nav-company">
+		    <nav>
+		        <ul>
+		            <li>
+		                <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-company nav-bar-top-left clearfix">
+		                    <li>
+		                    <!--  el logo se muestra como H1 solo en la cabecera de la home -->
+		                        <a id="home-nologged-inicio" class="logo" href="#">
+		                        	<img alt="" title="InfoJobs - Bolsa de empleo online líder en Europa" src="http://media.infojobs.net/appgrade/backgrounds/bg-logo-white.png">
+		                        	<span>Inicio</span>
+		                        </a>
+		                    </li>
+		                    <li><a id="1" href="#">Publica ofertas </a></li>
+		                    <li><a id="2" href="#">Busca CVs </a></li>
+		                    <li><a id="3" href="#">Consejos y noticias </a></li>
+		                </ul>
+		            	<a id="home-nologged-menu" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Menu</span></a>
+		            </li>
+		            <li>
+						<ul class="access-bar pull-right clearfix">
+							<li><a class="btn btn-link-secondary btn-link-company btn-divider-company" href="#" id="link_soyUnCandidato">Busco trabajo</a></li>
+							<li><a class="btn btn-link-primary profile-ellipsis" href="#" id="employee_login">Accede</a></li>
+							<li><a class="btn btn-primary" title="Date de alta en InfoJobs" href="#" id="sign_in_prueba_gratis">Regístrate</a></li>
+						</ul>
+		                <a id="home-nologged-profile" href="#" class="nav-bar-top-toggle nav-bar-top-login"><img src="http://media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png" alt="Nombre Apellido"></a>
+		            </li>
+		        </ul>
+		    </nav>
+		</header>
+		<!-- /Header no logado empresa-->
+	</div>
+
+    <div class="container container-expanded">
+    <!-- Header emresas logado -->
+        <header class="global-nav global-nav-company global-nav-submenu global-nav-submenu-company">
+            <nav>
+                <ul>
+                    <li>
+                        <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-company nav-bar-top-left clearfix">
+                            <li>
+                            <!--  el logo se muestra como H1 solo en la cabecera de la home -->
+                                <a id="home-nologged-inicio" class="logo"  href="#">
+                                	<img alt="" src="http://media.infojobs.net/appgrade/backgrounds/bg-logo-mini-white.png">
+                                	<span class="iconfont-Home iconfont-22px">Inicio</span>
+                                </a>
+                            </li>
+                            <li><a id="1" class="active-top" href="#">Empleo</a></li>
+                            <li><a id="2" href="#">Freelance</a></li>
+                            <li><a id="3" href="#">Executuve</a></li>
+                            <li><a id="4" href="#">Consejos</a></li>
+                        </ul>
+                    	<a href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Menu</span></a>
+
+                    </li>
+                    <li>
+                        <ul id="nav-profile" class="nav-bar nav-bar-top nav-bar-top-company nav-bar-top-right pull-right clearfix">
+                            <li><a class="btn btn-link-secondary btn-link-company" href="#">Ver zona candidatos</a></li>
+
+							<li class="active-top-submenu">
+                            	<a href="#" class="active-top nav-bar-top-noavatar profile-ellipsis"> <span>Hola, Pedro</span></a>
+                                <ul class="nav-bar nav-bar-submenu">
+                                    <li><a href="#" class="active-submenu">Lorem Ipsum</a></li>
+                                    <li><a href="#">Lorem Ipsum</a></li>
+                                    <li><a href="#">Lorem Ipsum</a></li>
+                                    <li><a href="#">Lorem Ipsum</a></li>
+                                    <li><a href="#">Lorem Ipsum</a></li>
+                                    <li><a href="#">Lorem Ipsum</a></li>
+                                    <li><a href="#">Lorem Ipsum</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="btn btn-link-secondary btn-link-exit">Salir</a></li>
+                        </ul>
+                    	<a class="nav-bar-top-toggle nav-bar-top-profile" href="#" id="home-logged-profile"><img alt="Nombre Apellido" src="http://media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png"></a>
+					</li>
+                </ul>
+            </nav>
+        </header>
+    <!-- / Header empresas logado -->
     </div>
-    <div class="container">
-        <div class="container-expanded">
-            <!-- Header no logado empresa-->
-            <header class="global-nav global-nav-company">
-                <nav>
-                    <ul>
-                        <li>
-                        	<a id="home-nologged-menu" onclick="xt_click(this,'C','1','hnl_header_menu','A'); return true;" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Men�</span></a>
-                            <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-company nav-bar-top-left clearfix">
-                                <li>
-                                <!--  el logo se muestra como H1 solo en la cabecera de la home -->
-                                    <a id="home-nologged-inicio" class="logo" onclick="xt_click(this,'C','1','hnl_header_title','N'); return true;" href="/responsive-home/index.xhtml">
-                                    	<img alt="" src="//media.infojobs.net/appgrade/backgrounds/bg-logo-white.png">
-                                    	<span>Inicio</span>
-                                    </a>
-                                </li>
-                                <li><a id="1" onclick="xt_click(this,'C','1','hnl_header_search_job','N'); return true;" href="/ofertas-trabajo">Publica ofertas </a></li>
-                                <li><a id="2" onclick="xt_click(this,'C','1','hnl_header_freelance','N'); return true;" href="https://freelance.infojobs.net">Busca CVs </a></li>
-                                <li><a id="3" onclick="xt_click(this,'C','1','hnl_header_executive','N'); return true;" href="http://executive.infojobs.net/">Consejos y noticias </a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul class="access-bar pull-right clearfix">
-                                <li class="btn-divider"><a id="home-nologged-company" onclick="xt_click(this,'C','1','hnl_header_company','N'); return true;" href="/home_employer.xhtml?dgv=5571055436268630564" class="btn btn-link-secondary btn-link-company">Busco trabajo </a></li>
-                                <li><a id="candidate_login" href="#" class="btn btn-link-primary">Accede</a></li>
-                                <li><a id="home-nologged-company" onclick="xt_click(this,'C','1','hnl_header_registration','N'); return true;" href="/candidate/registration/registration-index.xhtml?dgv=210979324725989341" class="btn btn-primary">Reg�strate</a></li>
-                            </ul>
-                            <a id="home-nologged-profile" href="#" class="nav-bar-top-toggle nav-bar-top-login"><img src="//media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png" alt="Nombre Apellido"></a>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-            <!-- /Header no logado empresa-->
-        </div>
-    </div>
-    <div class="container">
-        <div class="container-expanded">
-            <!-- Header no logado empresa submenu-->
-            <header class="global-nav global-nav-company global-nav-submenu global-nav-submenu-company">
-                <nav>
-                    <ul>
-                        <li>
-                        	<a id="home-nologged-menu" onclick="xt_click(this,'C','1','hnl_header_menu','A'); return true;" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Men�</span></a>
-                            <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-company nav-bar-top-left clearfix">
-                                <li>
-                                <!--  el logo se muestra como H1 solo en la cabecera de la home -->
-                                    <a id="home-nologged-inicio" class="logo" onclick="xt_click(this,'C','1','hnl_header_title','N'); return true;" href="/responsive-home/index.xhtml">
-                                    	<img alt="" src="//media.infojobs.net/appgrade/backgrounds/bg-logo-mini-white.png">
-                                    	<span>Inicio</span>
-                                    </a>
-                                </li>
-                                <li class="active-top-submenu"> <a class="active-top" href="/ofertas-trabajo" onClick="xt_click(this,'C','1','hnl_header_search_job','N'); return true;" id="1"> Publica ofertas</a>
-                                    <ul class="nav-bar nav-bar-submenu">
-                                        <li><a class="active-submenu" href="/ofertas-trabajo" onClick="xt_click(this,'C','1','ca_menu_tab_ofertas','N'); return true;" id="5">Opci�n 1 </a></li>
-                                        <li><a class="" href="/empleo-publico" onClick="xt_click(this,'C','1','ca_menu_tab_empleo_publico','N'); return true;" id="6">Opci�n 2</a></li>
-                                        <li><a class="" href="http://orientacion-laboral.infojobs.net" onClick="xt_click(this,'C','1','','N'); return true;" id="7">Opci�n 3 </a></li>
-                                        <li><a class="" href="/servicios-i.xhtml?dgv=7753589806181239226" onClick="xt_click(this,'C','1','ca_menu_tab_servicios','N'); return true;" id="3">Opci�n 4 </a></li>
-                                    </ul>
-                                </li>
-                                <li><a id="2" onclick="xt_click(this,'C','1','hnl_header_freelance','N'); return true;" href="https://freelance.infojobs.net">Busca CVs </a></li>
-                                <li><a id="3" onclick="xt_click(this,'C','1','hnl_header_executive','N'); return true;" href="http://executive.infojobs.net/">Consejos y noticias </a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul class="access-bar pull-right clearfix">
-                                <li class="btn-divider"><a id="home-nologged-company" onclick="xt_click(this,'C','1','hnl_header_company','N'); return true;" href="/home_employer.xhtml?dgv=5571055436268630564" class="btn btn-link-secondary btn-link-company">Busco trabajo </a></li>
-                                <li><a id="candidate_login" href="#" class="btn btn-link-primary">Accede</a></li>
-                                <li><a id="home-nologged-company" onclick="xt_click(this,'C','1','hnl_header_registration','N'); return true;" href="/candidate/registration/registration-index.xhtml?dgv=210979324725989341" class="btn btn-primary">Reg�strate</a></li>
-                            </ul>
-                            <a id="home-nologged-profile" href="#" class="nav-bar-top-toggle nav-bar-top-login"><img src="//media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png" alt="Nombre Apellido"><span style="display: none">Perfil usuario</span></a>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-            <!-- / Header no logado empresa submenu -->
-        </div>
-    </div>
+
+
+
+
+
+
+
+
     <div class="container">
         <div class="container-expanded">
         <!-- Header logado empresa -->
@@ -450,7 +367,7 @@
                                 <li>
                                 <!--  el logo se muestra como H1 solo en la cabecera de la home -->
                                     <a id="home-nologged-inicio" class="logo" onclick="xt_click(this,'C','1','hnl_header_title','N'); return true;" href="/responsive-home/index.xhtml">
-                                    	<img alt="" src="//media.infojobs.net/appgrade/backgrounds/bg-logo-mini-white.png">
+                                    	<img alt="" src="http://media.infojobs.net/appgrade/backgrounds/bg-logo-mini-white.png">
                                     	<span>Inicio</span>
                                     </a>
                                 </li>
@@ -473,85 +390,16 @@
                                 </li>
                                 <li><a href="#" class="btn btn-link-secondary btn-link-company btn-link-exit">Salir</a></li>
                             </ul>
-                        <a class="nav-bar-top-toggle nav-bar-top-profile" href="#" id="home-nologged-profile"><img alt="Nombre Apellido" src="//media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png"><span style="display:none">Perfil usuario</span></a> </li>
+                        <a class="nav-bar-top-toggle nav-bar-top-profile" href="#" id="home-nologged-profile"><img alt="Nombre Apellido" src="http://media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png"><span style="display:none">Perfil usuario</span></a> </li>
                     </ul>
                 </nav>
             </header>
         <!-- / Header logado empresa -->
         </div>
     </div>
-    <div class="container">
-        <div class="container-expanded">
-        <!-- Header logado sin submenu-->
-            <header class="global-nav global-nav-company">
-                <nav>
-                    <ul>
-                        <li>
-                        	<a id="home-nologged-menu" onclick="xt_click(this,'C','1','hnl_header_menu','A'); return true;" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Men�</span></a>
-                            <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-company nav-bar-top-left clearfix">
-                                <li>
-                                <!--  el logo se muestra como H1 solo en la cabecera de la home -->
-                                    <a id="home-nologged-inicio" class="logo" onclick="xt_click(this,'C','1','hnl_header_title','N'); return true;" href="/responsive-home/index.xhtml">
-                                    	<img alt="" src="//media.infojobs.net/appgrade/backgrounds/bg-logo-white.png">
-                                    	<span>Inicio</span>
-                                    </a>
-                                </li>
-                                <li><a id="1" onclick="xt_click(this,'C','1','hnl_header_search_job','N'); return true;" href="/ofertas-trabajo">Publica ofertas </a></li>
-                                <li><a id="2" onclick="xt_click(this,'C','1','hnl_header_freelance','N'); return true;" href="https://freelance.infojobs.net">Busca CVs </a></li>
-                                <li><a id="3" onclick="xt_click(this,'C','1','hnl_header_executive','N'); return true;" href="http://executive.infojobs.net/">Consejos y noticias </a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul id="nav-profile" class="nav-bar nav-bar-top nav-bar-top-company nav-bar-top-right pull-right clearfix">
-                                <li><a href="#" class="btn btn-link-secondary btn-link-company btn-divider-company">Ver zona candidatos</a></li>
-                                <li>
-                                	<a href="#" class="nav-bar-top-noavatar profile-ellipsis"> <span>Hola, Bimbo</span> <span>Mi �rea</span> </a>
-                                </li>
-                                <li><a href="#" class="btn btn-link-secondary btn-link-exit">Salir</a></li>
-                            </ul>
-                        <a class="nav-bar-top-toggle nav-bar-top-profile" href="#" id="home-logged-profile"><img alt="Nombre Apellido" src="//media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png"></a> </li>
-                    </ul>
-                </nav>
-            </header>
-        <!-- / Header logado sin submenu -->
-        </div>
-    </div>
-    <div class="container">
-        <div class="container-expanded">
-            <!-- Header empresa reconocido -->
-            <header class="global-nav global-nav-company">
-                <nav>
-                    <ul>
-                        <li>
-                        	<a id="home-nologged-menu" onclick="xt_click(this,'C','1','hnl_header_menu','A'); return true;" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Men�</span></a>
-                            <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-company nav-bar-top-left clearfix">
-                                <li>
-                                <!--  el logo se muestra como H1 solo en la cabecera de la home -->
-                                    <a id="home-nologged-inicio" class="logo" onclick="xt_click(this,'C','1','hnl_header_title','N'); return true;" href="/responsive-home/index.xhtml">
-                                    	<img alt="" src="//media.infojobs.net/appgrade/backgrounds/bg-logo-white.png">
-                                    	<span>Inicio</span>
-                                    </a>
-                                </li>
-                                <li><a id="1" onclick="xt_click(this,'C','1','hnl_header_search_job','N'); return true;" href="/ofertas-trabajo">Publica ofertas </a></li>
-                                <li><a id="2" onclick="xt_click(this,'C','1','hnl_header_freelance','N'); return true;" href="https://freelance.infojobs.net">Busca CVs </a></li>
-                                <li><a id="3" onclick="xt_click(this,'C','1','hnl_header_executive','N'); return true;" href="http://executive.infojobs.net/">Consejos y noticias </a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul class="access-bar pull-right clearfix">
-                            <li><a id="candidate_login" href="javascript:void(0);" class="btn btn-link-primary profile-ellipsis">Accede, <span id="userReconizedName">Bimbo</span></a> </li>
-                            <li><a href="/logout.xhtml?dgv=6499936118908215934" class="btn btn-link-secondary btn-link-company btn-link-exit" id="userNotReconizedName">Salir</a></li>
-                            </ul>
-                            <a id="home-nologged-profile" href="javascript:void(0);" class="nav-bar-top-toggle nav-bar-top-login"> <img src="//media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png" alt=""> </a>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-            <!-- / Header empresa reconocido -->
-        </div>
-    </div>
+
  </div>
-<script type="text/javascript" src="//es-static0.infojobs.com/jquery-1.7.1.min.js" ></script>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script type="text/javascript">
 /* <![CDATA[ */
 $(function(){
