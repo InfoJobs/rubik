@@ -52,7 +52,7 @@
 					    if (!container.is(event.target) // if the target of the click isn't the container...
 					        && container.has(event.target).length === 0) // ... nor a descendant of the container
 					    {
-							container.addClass('tooltip-hidden move-down-tooltip--mobile tooltip-fade-out');
+	                		$.fn.toolTip.closeTooltip();
 					    }
 					});
 
