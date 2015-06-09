@@ -11,6 +11,14 @@
 			// Defaul options
 			var settings = $.extend({}, $.fn.toolTip.defaults, options );
 
+	        // Close on ESC key
+	        $(document).on('keyup', function(event) {
+	            if(event.keyCode === 27) {
+	                $.fn.toolTip.closeTooltip();
+	            }
+	        });
+
+
 			return this.each(function() {
 
 				var $this 		= $( this ),
@@ -41,6 +49,8 @@
 				});
 
 				$this.find('.tooltip').prepend(closeButton);
+
+
 
 				$this.find('.close-tooltip').click(function(event) {
 					event.preventDefault();
