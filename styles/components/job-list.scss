@@ -17,7 +17,6 @@ Styleguide 2.8
 
 .result-list {
     margin-bottom: 20px;
-    background: $shiro;
     border-top: 1px solid $darkest-shiro;
 
     .result-list-header + & {
@@ -28,6 +27,10 @@ Styleguide 2.8
     & + .border-top { //parche a doc listado-ofertas
         margin-bottom: 0;
         border-top: none;
+    }
+
+    &:only-child {
+        border: none;
     }
 
     .inner & {
@@ -70,16 +73,16 @@ Styleguide 2.8
     p:last-child {
         margin-bottom: 5px;
     }
-}
 
-.result-list > li:last-child {
-    border-bottom: none;
-}
+    &:only-of-type {
+        border-bottom: none;
+    }
 
+    &.active {
+        background: #F2F2F2;
+        cursor: pointer;
+    }
 
-.result-list li.active {
-    background: #F2F2F2;
-    cursor: pointer;
 }
 
 // Es redefineix el color a gris perque per disseny no pot ser blau
@@ -107,6 +110,7 @@ Styleguide 2.8
     }
 }
 
+.result-list-subtitle a,
 .result-list-subtitle a:hover {
     text-decoration: underline;
 }
