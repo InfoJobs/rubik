@@ -12,7 +12,7 @@ Use tag `<p>` for a basic paragraph. Don't use `<span>` or `<div>` as a text tag
 Markup:
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.2.2
+Styleguide #{$sgi-paragraphs}
 */
 
 p {
@@ -70,7 +70,7 @@ Markup:
 .base				- Size: To force body copy size
 .medium				- Size: To increase text size
 
-Styleguide 1.2.3
+Styleguide #{$sgi-textSize}
 */
 
 .base { //TODO: used in whatever kind of copy text (p, a, li...). Get out of _paragraphs.scss
@@ -89,7 +89,7 @@ Use class `.bold` to bold the content. Use only on the following tags: `<p>`, `<
 Markup:
 <p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.2.4
+Styleguide #{$sgi-textVariants}
 */
 
 
@@ -113,7 +113,7 @@ Markup:
 .vip-quote			- Size: big size and Slabo font-family
 .quote				- Type: with quotation mark
 
-Styleguide 1.2.6
+Styleguide #{$sgi-blockquotes}
 */
 //TODO: move a blockquote.css
 .quote {

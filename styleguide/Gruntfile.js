@@ -103,7 +103,7 @@ module.exports = function(grunt) {
         // Kss-node ------------------------------------------------------------
         kss: {
 //          command: 'kss-node css styleguide --css css/styles.doc.css'
-          command: 'kss-node dist/css styleguide --template templates/infojobs --helpers templates/helpers'
+          command: 'node_modules/kss/bin/kss-node dist/css styleguide --template templates/infojobs --helpers templates/helpers'
         //   command: 'kss-node dist/css styleguide --helpers templates/helpers'
         }
     }
