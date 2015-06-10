@@ -121,7 +121,7 @@ Layouts
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
 
-Styleguide 1.1
+Styleguide #{$sgi-layouts}
 */
 
 /*
@@ -138,7 +138,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 1.1.2
+Styleguide  #{$sgi-containers}
 */
 
 .wrapper {
@@ -171,11 +171,10 @@ Markup:
     ...
 </div>
 
-Styleguide 1.2.4
+Styleguide #{$sgi-innerContainers}
 */
 
-.content-wrapper,
-.inner {
+%inner {
 	padding: 20px 10px;
 
     @include mediaquery ($bp-tablet) {
@@ -187,6 +186,11 @@ Styleguide 1.2.4
 	@media print {
 		padding: 0;
 	}
+}
+
+.content-wrapper,
+.inner {
+    @extend %inner;
 }
 
 .inner-expanded {
