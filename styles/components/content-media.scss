@@ -33,6 +33,10 @@ Markup:
 		@include mediaquery ($bp-tablet) {
 			margin-left: 80px;
 		}
+
+		p {
+			margin-bottom: 0;
+		}
 	}
 
 	.media {
@@ -43,15 +47,25 @@ Markup:
 		@include mediaquery ($bp-tablet) {
 			width: 80px;
 		}
+
+		&.connection {
+			position: relative;
+
+			.sticker {
+				position: absolute;
+				bottom: 0;
+				left: 5px;
+
+				@include mediaquery ($bp-tablet) {
+					left: 10px;
+				}
+			}
+		}
 	}
 
 	.title {
 		margin: 0;
         word-wrap: break-word;
-
-		a {
-			display: block;
-		}
 	}
 
 	img {
@@ -67,12 +81,23 @@ Markup:
 		top: -20px;
 	}
 
+	@at-root li#{&}.content-media-expanded + &::before {
+		border: none;
+	}
+
 	.btn-close {
 	    position: relative;
     	top: -16px;
 		float: right;
 	}
 
+	&-expanded {
+		margin-bottom: 10px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
 
 .content-media-dismissable {

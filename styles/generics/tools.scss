@@ -135,7 +135,10 @@
 	.margin-#{$value}  {
 	   margin-#{$value}: $padding;
 	}
+}
 
+.margin-bottom + .margin-top {
+	margin-top: 40px;
 }
 
 .link-annex {

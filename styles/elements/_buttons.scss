@@ -432,6 +432,22 @@ Styleguide 1.5.6
   			background-color: $mediterranean-sea;
   		}
   	}
+
+  	&.btn-group-expanded {
+		div {
+			padding-left: 10px;
+
+			.btn {
+				border-right-width: 1px;
+
+				&.disabled:hover {
+					background-color: white;
+					cursor: default;
+					border-right-width: 1px;
+				}
+			}
+		}
+	}
 }
 
 /*
@@ -481,6 +497,13 @@ Styleguide 1.5.8
         width: 100%;
     }
 }
+
+.btn-group-centered {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
 
 ///*DEPRECATED: .btn-divider and .btn-divider-company only used on header*/
 .btn-divider {
