@@ -174,8 +174,7 @@ Markup:
 Styleguide #{$sgi-innerContainers}
 */
 
-.content-wrapper,
-.inner {
+%inner {
 	padding: 20px 10px;
 
     @include mediaquery ($bp-tablet) {
@@ -187,6 +186,11 @@ Styleguide #{$sgi-innerContainers}
 	@media print {
 		padding: 0;
 	}
+}
+
+.content-wrapper,
+.inner {
+    @extend %inner;
 }
 
 .inner-expanded {

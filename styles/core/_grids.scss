@@ -39,7 +39,7 @@ Markup:
 	<div class="col-3"><div class="col-child">...</div></div>
 </div>
 
-Styleguide #{$sgi-gridSystem}
+Styleguide 1.1.1
 */
 
 @mixin row {
@@ -126,7 +126,7 @@ Markup:
 	<div class="col-4 col-12-medium"><div class="col-child">...</div></div>
 </div>
 
-Styleguide #{$sgi-mediumDevices}
+Styleguide 1.1.1.2
 */
 
 $gridColumns: 12;
@@ -255,7 +255,7 @@ Markup:
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
 
-Styleguide #{$sgi-equalHeightColumns}
+Styleguide 1.1.1.3
 */
 
 .row-faux {
