@@ -118,7 +118,7 @@
                             </li>
                             <li><a href="#" class="btn btn-link-secondary btn-link-exit">Salir</a></li>
                         </ul>
-                    	<a class="nav-bar-top-toggle nav-bar-top-profile" href="#" id="home-logged-profile"><img alt="Nombre Apellido" src="http://media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png"></a>
+                    	<a class="nav-bar-top-toggle nav-bar-top-profile" href="#"><img alt="Nombre Apellido" src="http://media.infojobs.net/appgrade/pictures/pic-menu-login-icon.png"></a>
 					</li>
                 </ul>
             </nav>
@@ -151,7 +151,7 @@
                     <li>
                         <ul id="nav-profile" class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-right pull-right clearfix">
                             <li class="active-top-submenu">
-                            	<a href="#" class="nav-bar-top-avatar active-top profile-ellipsis"> <span>Hola, Pedro</span></a>
+                            	<a href="#" class="nav-bar-top-avatar active-top profile-ellipsis"> <span>Holaaaaa, Pedro</span></a>
                                 <ul class="nav-bar nav-bar-submenu">
                                     <li><a href="#" class="active-submenu">Mi InfoJobs</a></li>
                                     <li><a href="#">Mis Cvs</a></li>
@@ -469,55 +469,127 @@ function toggleDivs() {
     }
 }
 
+
+var rux_time1 = (new Date()).getTime();
+
+function toggleDivs() {
+	var $inner = $("#nav-mobile");
+	var $screen = $( window ).width();
+
+	// Add overflow: hidden to wrapper for fix horizontal scroll
+	$('.wrapper').css('overflow','hidden');
+
+	if ($screen < 481 && $inner.position().left == 0) {
+		$(".container").animate({
+			marginRight: "0",
+			marginLeft: "0"
+		});
+		$inner.animate({
+			left: "-75%"
+		});
+		$(".global-nav-logo").animate({
+			left: "0"
+		});
+		// Remove overflow: hidden for filters
+		$('.wrapper').css('overflow','inherit');
+	}
+	else if ($screen < 481 && $inner.position().left != 0) {
+		$inner.animate({
+			left: "0"
+		});
+		$(".container").animate({
+			marginRight: "-75%",
+			marginLeft: "75%"
+		});
+		$(".global-nav-logo").animate({
+			left: "100%"
+		});
+	}
+	else if ($screen > 480 && $inner.position().left == 0) {
+		$(".container").animate({
+			marginRight: "0",
+			marginLeft: "0"
+		});
+		$inner.animate({
+			left: "-385px"
+		});
+		$(".global-nav-logo").animate({
+			left: "0"
+		});
+	// Remove overflow: hidden for filters
+		$('.wrapper').css('overflow','inherit');
+	}
+	else if ($screen > 480 && $inner.position().left != 0) {
+		$inner.animate({
+			left: "0"
+		});
+		$(".container").animate({
+			marginRight: "-310px",
+			marginLeft: "310px"
+		});
+		$(".global-nav-logo").animate({
+			left: "100%"
+		});
+	}
+}
+
 function toggleProfile() {
-    var $inner = $("#nav-profile");
-    var $screen = $( window ).width();
+	var $inner = $("#nav-profile");
+	var $screen = $( window ).width();
 
-    var link = $("#nav-profile");
-    //calculem on es posiciona el menu respecte left, ja que right no funciona
-    var positionRight = $(window).width() - link.width()+1;
+	var link = $("#nav-profile");
+	//calculem on es posiciona el menu respecte left, ja que right no funciona
+	var positionRight = $(window).width() - link.width()+1;
 
-    if ($screen < 481 && $(".container").hasClass("JsOpened")) {
-    	$(".container").animate({
-            marginLeft: "0",
-            marginRight: "0"
-    	}, 200);
-        $inner.animate({
-            right: "-320px"
-        }, 200);
-        $(".container").removeClass("JsOpened");
-    }
+	if( !$(".container").hasClass("JsOpened") ){
+		$inner.css("display" , "block");
+	}
+	else{
+		$inner.css("display" , "none");
+	}
+
+	if ($screen < 481 && $(".container").hasClass("JsOpened")) {
+		$(".container").animate({
+			marginLeft: "0",
+			marginRight: "0"
+		}, 200);
+		$inner.animate({
+			right: "-320px"
+		}, 200);
+		$(".container").removeClass("JsOpened");
+	}
 	else if ($screen < 481 && $inner.position().right != 0) {
 		$inner.animate({
-            right: "0"
+			right: "0"
 		}, 200);
-        $(".container").animate({
-            marginRight: "75%",
-            marginLeft: "-75%"
-        }, 200);
-        $(".container").addClass("JsOpened");
-    }
-     else if ($screen > 480 && $screen < 946  && $(".container").hasClass("JsOpened")) {
-     	$(".container").animate({
-             marginRight: "0",
-             marginLeft: "0"
-     	}, 200);
-         $inner.animate({
-             right: "-360px"
-         }, 200);
-         $(".container").removeClass("JsOpened");
-     }
-     else if ($screen > 480 && $screen < 946 && $inner.position().right != 0) {
-     	$inner.animate({
-             right: "0"
-     	}, 200);
-        $(".container").animate({
-            marginRight: "310px",
-           marginLeft: "-310px"
-        }, 200);
-        $(".container").addClass("JsOpened");
-    }
+		$(".container").animate({
+			marginRight: "74.5%",
+			marginLeft: "-74.5%"
+		}, 200);
+		$(".container").addClass("JsOpened");
+	}
+	else if ($screen > 480 && $screen < 946  && $(".container").hasClass("JsOpened")) {
+		$(".container").animate({
+			marginRight: "0",
+			marginLeft: "0"
+		}, 200);
+		$inner.animate({
+			right: "-360px"
+		}, 200);
+		$(".container").removeClass("JsOpened");
+	}
+	else if ($screen > 480 && $screen < 946 && $inner.position().right != 0) {
+		$inner.animate({
+			right: "0"
+		}, 200);
+		$(".container").animate({
+			marginRight: "310px",
+		marginLeft: "-310px"
+		}, 200);
+		$(".container").addClass("JsOpened");
+	}
 }
+
 
 $(function(){
     $(window).resize(function(){
