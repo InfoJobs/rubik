@@ -26,7 +26,7 @@ Markup:
     <dd>De duracion determinada, jornada completa</dd>
 </dl>
 
-Styleguide 1.2.7
+Styleguide #{$sgi-lists}
 */
 
 .list-default {
@@ -67,7 +67,7 @@ Markup:
     <li>Tipo de oferta: de duracion determinada, jornada completa</li>
 </ul>
 
-Styleguide 1.2.7.1
+Styleguide #{$sgi-listsWithBullets}
 */
 
 .list-bullet-default > li,
@@ -106,7 +106,7 @@ Markup:
     <li class="iconfont-Check iconfont-30px iconfont-soft-script">Lorem ipsum dolor</li>
 </ul>
 
-Styleguide 1.2.7.2
+Styleguide #{$sgi-listsWithIcons}
 */
 
 $iconfont-size: (16, 18, 22, 30, 100);
@@ -219,7 +219,7 @@ Markup:
     <li>Lorem ipsum dolor</li>
 </ul>
 
-Styleguide 1.2.7.5
+Styleguide #{$sgi-tagGroup}
 */
 
 .tag-group {
@@ -256,7 +256,7 @@ Markup:
     <li class>Lorem ipsum</li>
 </ul>
 
-Styleguide 1.2.7.5.1
+Styleguide #{$sgi-tagDivider}
 */
 
 .tag-group li.tag-divider {
@@ -287,7 +287,7 @@ Markup:
 </ul>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.2.7.5.2
+Styleguide #{$sgi-tagGroupTop}
 */
 
 .tag-group-top {
@@ -323,7 +323,7 @@ Markup:
     <li>Lorem ipsum</li>
 </ul>
 
-Styleguide 1.2.7.5.4
+Styleguide #{$sgi-tagGroupWithEllipsis}
 */
 .tag-group .ellipsis { //TODO: nest with '& tag-group'. Use truncate class?
     display: block;
