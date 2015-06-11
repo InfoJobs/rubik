@@ -3,31 +3,30 @@
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Login</title>
-<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/style.css" />
+<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
 
-<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
-
-<link rel="stylesheet" type="text/css" href="../styles/components/navigation.css" />
+<!--<link rel="stylesheet" type="text/css" href="../styles/components/navigation.css" />
 <link rel="stylesheet" type="text/css" href="../styles/components/notifications.css" />
 <link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+-->
 
 </head>
 <body>
 <div class="wrapper">
     <div class="container panel-canvas ">
-    		<div class="notification notification-error">
-				<p class="contrast">El email o contrase�a introducida no es correcto.</p>
-			</div>
+		<div class="notification notification-error">
+			<p class="contrast">El email o contrase�a introducida no es correcto.</p>
+		</div>
 
-			<div class="row clearfix">
+			<div class="row row-faux">
 				<div class="col-6 col-12-medium">
 					<div class="col-child inner-expanded">
-						<div class="inner">
-	      					<h1>Acceso a candidatos</h1>
+    						<div class="inner">
+    	      					<h1>Acceso candidatos</h1>
 
-	      					<form role="form" action="#" class="margin-bottom">
-								<fieldset>
-									<legend>Login</legend>
+    	      					<form role="form" action="#" class="margin-bottom">
+    								<fieldset>
+    									<legend>Login</legend>
 								    	<ul class="form--field-block clearfix">
 <!-- 									        <li>  -->
 <!-- 												<label for="email">Email</label>             -->
@@ -40,40 +39,42 @@
  											</li>
 
 								            <li>
-								            	<label for="password">Contrase�a</label>
+								            	<label for="password">contrase&ntilde;a</label>
 								                <input type="password" maxlength="200" id="password" name="password">
-								            </li>
-
-								             <li>
-								             	<button title="whatever" class="btn btn-primary" type="submit">Iniciar sesi�n</button>
-								             	<div class="field-annex">
-								                   	<input type="checkbox" id="recordar">
-								                   	<label for="recordar">
-								   	  					Recordar
-								   	  				</label>
-								   	  			</div>
-							                 </li>
+                                                <div class="input-link-annex">
+                                                    <a href="#" class="link-underline">Recordar contrase&ntilde;a</a>
+								                </div>
+                                            </li>
 								       </ul>
-								 </fieldset>
-							</form>
+						             	<button title="whatever" class="btn btn-primary btn-medium" type="submit">Iniciar sesi&oacute;n</button>
+						             	<div class="margin-top margin-bottom">
+						                   	<input type="checkbox" id="recordar">
+						                   	<label for="recordar">No cerrar sesi&oacute;n</label>
+                                        </div>
+                                        <p>&iquest;A&uacute;n no est&aacute;s en InfoJobs? <a href="#" class="link-underline">Date de alta</a></p>
 
-							<a class="link" href="#">He olvidado mi contrase�a</a>
+                                </fieldset>
+							</form>
 						</div>
 					</div>
 				</div>
-
 				<div class="col-6 col-12-medium">
-					<div class="col-child inner-expanded">
-						<div class="inner">
-							<h2>�Eres nuevo?</h2>
-							<p>Reg�strate en s�lo 3 minutos <a href="#" class="btn btn-primary">Date de alta</a></p>
-							<div class="panel-default inner">
-								<ul class="list-default list-bullet-icon">
-									<li class="iconfont-CV iconfont-30px iconfont-soft-script"><strong>Crea tu CV online</strong> y presentate como profesional ante las empresas</li>
-									<li class="iconfont-Check iconfont-30px iconfont-soft-script"><strong>Inscr�bete en ofertas</strong> de trabajo con tu perfil con un solo clic</li>
-									<li class="iconfont-User iconfont-30px iconfont-soft-script"><strong>Ampl�a tu red de contactos</strong> y descubre c�mo evoluciona tu sector</li>
-								</ul>
-							</div>
+					<div class="col-child inner-expanded panel-default">
+						<div class="inner ">
+							<h2>&iquest;Eres nuevo?</h2>
+                            <dl class="list-default list-bullet-icon padding-top">
+                                <dt class="h3 iconfont-CV iconfont-30px iconfont-soft-script">Crea tu CV online</dt>
+                                <dd>Pres&eacute;ntate como profesional ante las empresas.</dd>
+								<dt class="h3 iconfont-Check iconfont-30px iconfont-soft-script">Inscr&iacute;bete en ofertas</dt>
+                                <dd>Encuentra trabajo de tu perfil con un solo clic.</dd>
+								<dt class="h3 iconfont-Reload iconfont-30px iconfont-soft-script">Actualiza tu CV</dt>
+                                <dd>Haz que te encuentren las miles de empresas que usan InfoJobs para encontrar talento.</dd>
+								<dt class="h3 iconfont-User iconfont-30px iconfont-soft-script">Ampl&iacute;a tu red de contactos</dt>
+                                <dd>Descubre c&oacute;mo evoluciona tu sector</dd>
+                            </dl>
+                            <div class="margin-top">
+                                <a href="#" class="btn btn-primary btn-medium">Date de alta en solo 3 minutos</a>
+                            </div>
 						</div>
 					</div>
 				</div>
