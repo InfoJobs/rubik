@@ -49,7 +49,18 @@
 						             	<button title="whatever" class="btn btn-primary btn-medium" type="submit">Iniciar sesi&oacute;n</button>
 						             	<div class="margin-top margin-bottom">
 						                   	<input type="checkbox" id="recordar">
-						                   	<label for="recordar">No cerrar sesi&oacute;n</label>
+						                   	<label class="label-annex" for="recordar">No cerrar sesi&oacute;n</label>
+
+                                           <div data-close="Cerrar" class="tooltip-wrapper">
+                                       			<a class="js-tooltip-open iconfont-Info iconfont-18px alternative-action no-print" href="javascript:void(0);">
+                                       			<span class="hide">Info</span></a>
+                                       			<div class="tooltip-layer move-down-tooltip--mobile tooltip-fade-out">
+                                       				<div class="tooltip inner" style="width: 480px;"><a title="Cerrar" class="close-tooltip" href="#">Cerrar</a>
+                                       					<h3>Información de utilidad</h3>
+                                       					<p>Algunas empresas prefieren no mostrar su nombre abiertamente en sus ofertas. Los motivos pueden ser varios:</p><ul class="list-default list-bullet-default small"><li>No dar información a la competencia sobre sus necesidades de recursos humanos</li><li>Cuando la empresa ha decidido no hacer comunicación interna de la vacante</li><li>Si se trata de una empresa muy conocida, evitar recibir CVs que no encajan debido a la capacidad de atracción de la marca</li></ul>
+                                       				</div>
+                                       			</div>
+                                       		</div>
                                         </div>
                                         <p>&iquest;A&uacute;n no est&aacute;s en InfoJobs? <a href="#" class="link-underline">Date de alta</a></p>
 
@@ -82,3 +93,16 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery.tooltip.js" ></script>
+<script>
+
+	$(document).ready(function(){
+		$(".tooltip-wrapper").toolTip();
+	});
+	$(window).resize(function(){
+		$(".tooltip-wrapper").toolTip();
+	});
+
+</script>
+</html>
