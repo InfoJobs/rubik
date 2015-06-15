@@ -130,6 +130,10 @@ $iconfont-size: (16, 18, 22, 30, 100); //TODO: resolve problem when it s moved t
 .icon-email-banned {
 		background: url("#{$path-backgrounds}/icon-email-banned.png") no-repeat 0 0;
 }
+.icon-android {
+		background: url("#{$path-backgrounds}/icon-android-app.png") no-repeat 0 0;
+}
+
 
 $icon-size: (50); //TODO: resolve problem when it s moved to _vars
 
