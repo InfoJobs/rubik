@@ -99,9 +99,7 @@
 .global-nav-company .btn-link-primary:focus {
 	color: $day-blue;
 }
-.global-nav-company .nav-bar-top-profile {
-	display: none;
-}
+
 .global-nav-submenu {
 	height:100px;
 }
@@ -243,23 +241,7 @@
 .nav-bar-top-toggle {
 	display: none;
 }
-.nav-bar-top-toggle img {
-	display:block;
-}
-.nav-bar-top-login {
-	float:right;
-}
-.nav-bar-top-profile {
-	position:relative;
-	right:-45px;
-	float:right;
-	display:inline-block;
-	margin-top:24px;
-	margin-right: 5px;
-	width:30px;
-	height:30px;
-	overflow: hidden;
-}
+
 .nav-bar-top-avatar,
 .nav-bar-top-noavatar {
 	padding: 32px 15px;
@@ -279,9 +261,6 @@
 
 .nav-bar-top-avatar span {
 	padding-left:35px;
-}
-.global-nav-submenu .nav-bar-top-profile {
-	margin-top:6px;
 }
 .profile-ellipsis {
 	display: inline-block;
@@ -464,28 +443,14 @@
 		list-style-type: none;
 		cursor: pointer;
 	}
-	.nav-bar-top-toggle img {
-		padding: 10px 0 0 10px;
-	}
+
 	.nav-bar-top-toggle span{
 		display: none;
 	}
 	.global-nav .nav-bar-top-toggle {
 		margin: 0 10px;
 	}
-	.nav-bar-top-profile {
-		position: static;
-		float: right;
-		overflow: hidden;
-		width: 50px;
-		height:50px;
-		border-bottom: 10px solid transparent;
-		background: none;
-	}
-	.global-nav-company .nav-bar-top-profile,
-	.nav-bar-top-profile img {
-		display: block;
-	}
+
 	.nav-bar-top-avatar span {
 		padding-left:0;
 	}
