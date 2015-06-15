@@ -10,12 +10,15 @@
 	background: $shiro;
 	border-bottom: 1px solid $darkest-shiro;
 
+	h1 {
+		display: none;
+	}
+
 	a.logo,
 	a.logo:hover {
 		background: none;
 	}
 
-	a,
 	a:hover {
 		color: $day-blue;
 	}
@@ -53,11 +56,6 @@
 	}
 }
 
-.global-nav h1 {
-	display: none;
-}
-
-
 
 .global-nav li a.active-submenu,
 .global-nav .nav-bar-top > li > a.active-submenu:hover {
@@ -69,15 +67,15 @@
 	color: $mediterranean-sea;
 }
 
-
 .nav-bar-notifications {
 	position: relative;
 }
 
 .access-bar {
 	margin-top: 25px;
+	float: right;
 }
-.access-bar > li { //replace header class="btn-group"
+.access-bar > li {
 	float: left;
 }
 
@@ -135,26 +133,9 @@
 	display: none;
 }
 
-.nav-bar-top-right > li > a.btn-link-secondary:hover {
-	background:none;
-}
-
-.nav-bar-top-right > li:last-child  > a.btn-link-secondary,
 .access-bar > li:last-child  > a.btn-link-secondary {
 	padding-right: 0;
 	text-align: left;
-}
-
-.nav-bar-top-right > li:last-child  > a.btn-link-secondary {
-	line-height: 18px;
-}
-
-.nav-bar-top-right > li > a.btn-link-secondary {
-	color: $mid-script;
-}
-
-.nav-bar-top-right span + span {
-	display: none;
 }
 
 .nav-bar-top-applicant > li > a {
@@ -274,13 +255,28 @@
 			//bg logo it
 			background-image: url(#{$path-media}/portales/it/appgrade/backgrounds/bg-logo-reduced.png);
 		}
-		
+
 		&.global-nav-landing {
 			background-image: url(#{$path-media}/appgrade/backgrounds/bg-logo-reduced-white.png);
 			background-position: 10px center;
 		}
 	}
 
+	.nav-mobile {
+		display:none;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index:9000;
+		width: 320px;
+		height: 100%;
+		background:$shiro;
+	}
+
+	.access-bar,
+	.nav-bar-top-left {
+		float: none;
+	}
 
 	.global-nav.global-nav-submenu {
 		border-bottom: 1px solid $darkest-shiro;
@@ -314,24 +310,11 @@
 	.global-nav-submenu .nav-bar-top > li > a {
 		line-height: inherit;
 	}
-	.global-nav .access-bar {
-		display: none;
-	}
 
 	.nav-bar-top-applicant > li > a {
 		color: $dark-silk;
 	}
 
-	.nav-bar-top-left {
-		display:block;
-		position: absolute;
-		left: -320px;
-		z-index:9000;
-		width: 320px;
-		height: 100%;
-		padding-left:0;
-		background:$outer-fields;
-	}
 	.nav-bar-top > li,
 	.nav-bar-submenu > li {
 		float: none;
@@ -410,26 +393,7 @@
 		background: url(#{$path-media}/appgrade/backgrounds/bg-menu-burger-icon.png) 0 0 no-repeat;
 		margin-left: 10px;
 	}
-	.nav-bar-top-right {
-		left: auto;
-		display: none;
-		position: absolute;
-		right: -320px;
-		z-index:9000;
-		width: 320px;
-		height: 100%;
-		padding: 0;
-	}
-	.nav-bar-top-right > li {
-		float: none;
-	}
-	.nav-bar-top-right li:first-child span:first-of-type {
-		display: none;
-	}
-	.nav-bar-top-right li:first-child span
-	.nav-bar-top-right span {
-		display: block;
-	}
+
 	.global-nav .nav-bar-submenu {
 		display: block;
 		position: relative;
@@ -452,18 +416,12 @@
 	.nav-bar-top > li > a:hover,
 	.nav-bar-top > li > a.active,
 	.nav-bar-top > li > a.active:hover,
-	.nav-bar-top-left li a.logo:hover,
-	.nav-bar-top-right > li > a.btn-link-exit:hover {
+	.nav-bar-top-left li a.logo:hover {
 		color: $day-blue;
 		text-decoration: none;
 		background: $darkest-shiro;
 	}
 
-	.nav-bar-top-right > li > a.btn-link-exit {
-		border: none;
-		border-radius: 0;
-		color: $dark-silk;
-	}
 	.btn-link-exit:hover {
 		border:0 none;
 	}
@@ -480,15 +438,12 @@
 	}
 }
 @media only screen and (max-width: $mobile-start) {
+
 	.wrapper {
 		padding: 0;
 	}
 	.nav-bar-top-left {
-		left: -75%;
 		width: 75%;
 	}
-	.nav-bar-top-right {
-		right: -75%;
-		width: 75%;
-	}
+
 }
