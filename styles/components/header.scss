@@ -7,24 +7,13 @@
 	min-height: 78px;
 	margin-top: -10px; // delete margin from container-expanded on navigation menu (only mobile)
 	padding: 0 20px;
-
-	@include mediaquery ($bp-tablet) {
-		margin-top: 0; // margin inherit from container-expanded for tablet/desktop
-	}
-
-	@media print {
-		display: none;
-	}
-
-}
-.global-nav h1 {
-	display: none;
-}
-
-.global-nav-applicant {
-
 	background: $shiro;
 	border-bottom: 1px solid $darkest-shiro;
+
+	a.logo,
+	a.logo:hover {
+		background: none;
+	}
 
 	a,
 	a:hover {
@@ -50,11 +39,24 @@
 	.btn-link-secondary:focus {
 		color: $dark-silk;
 	}
+
+	&.global-nav-submenu {
+		border-bottom: 0;
+	}
+
+	@include mediaquery ($bp-tablet) {
+		margin-top: 0; // margin inherit from container-expanded for tablet/desktop
+	}
+
+	@media print {
+		display: none;
+	}
 }
 
-.global-nav-applicant.global-nav-submenu {
-	border-bottom: 0;
+.global-nav h1 {
+	display: none;
 }
+
 
 
 .global-nav li a.active-submenu,
@@ -79,26 +81,7 @@
 	float: left;
 }
 
-.global-nav-applicant a.logo,
-.global-nav-applicant a.logo:hover {
-	background: none;
-}
 
-.global-nav-company {
-	background: $dark-silk;
-}
-
-.global-nav-company  a.logo,
-.global-nav-company  a.logo:hover {
-	background: none;
-}
-.global-nav-company .btn-link-primary {
-	color: $light-blue;
-}
-.global-nav-company .btn-link-primary:hover,
-.global-nav-company .btn-link-primary:focus {
-	color: $day-blue;
-}
 
 .global-nav-submenu {
 	height:100px;
@@ -182,32 +165,6 @@
 	color: $day-blue;
 }
 
-.nav-bar-top-company > li > a {
-	color: $soft-script;
-}
-.nav-bar-top-company a:hover {
-	color: $shiro;
-}
-
-.nav-bar-top-company > li > a.btn-link-secondary {
-	color: $soft-script;
-	text-align: left;
-
-	@include mediaquery ($bp-desktop) {
-
-		margin-top: 24px;
-		padding: 5px 10px;
-		line-height: 20px;
-
-	}
-}
-.nav-bar-top-company > li > a.btn-link-secondary:hover {
-
-	@include mediaquery ($bp-desktop) {
-
-		color: $shiro;
-	}
-}
 .global-nav-submenu .nav-bar-top-company > li > a.btn-link-secondary {
 	margin-top: 7px;
 	border-radius:0;
@@ -308,7 +265,7 @@
 		background-repeat: no-repeat;
 		background-position: center center;
 	}
-	.global-nav-applicant {
+	.global-nav {
 		//bg logo es
 		background-image: url(#{$path-media}/portales/ij/appgrade/backgrounds/bg-logo-reduced.png);
 		border-bottom: 1px solid #DCDCDC;
@@ -317,21 +274,15 @@
 			//bg logo it
 			background-image: url(#{$path-media}/portales/it/appgrade/backgrounds/bg-logo-reduced.png);
 		}
-	}
-	.global-nav-company {
-		background-image: url(#{$path-media}/appgrade/backgrounds/bg-logo-reduced-white.png);
-
-		.it & {
-			//bg logo it
-			background-image: url(#{$path-media}/portales/it/appgrade/backgrounds/bg-logo-reduced-white.png);
+		
+		&.global-nav-landing {
+			background-image: url(#{$path-media}/appgrade/backgrounds/bg-logo-reduced-white.png);
+			background-position: 10px center;
 		}
 	}
 
-	.global-nav-landing {
-		background-image: url(#{$path-media}/appgrade/backgrounds/bg-logo-reduced-white.png);
-		background-position: 10px center;
-	}
-	.global-nav-applicant.global-nav-submenu {
+
+	.global-nav.global-nav-submenu {
 		border-bottom: 1px solid $darkest-shiro;
 	}
 	.global-nav-submenu {
