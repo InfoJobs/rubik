@@ -2,12 +2,14 @@
 @import "../generics/generics";
 
 .global-nav {
-	position: relative;
+	height:50px;
+	min-height: 50px;
+	//margin-top: -10px; // delete margin from container-expanded on navigation menu (only mobile)
+	padding: 0;
 	overflow:hidden;
-	min-height: 78px;
-	margin-top: -10px; // delete margin from container-expanded on navigation menu (only mobile)
-	padding: 0 20px;
 	background: $shiro;
+	background-repeat: no-repeat;
+	background-position: center center;
 	border-bottom: 1px solid $darkest-shiro;
 
 	h1 {
@@ -51,6 +53,11 @@
 		margin-top: 0; // margin inherit from container-expanded for tablet/desktop
 	}
 
+	@include mediaquery ($bp-header) {
+		padding: 0 20px;
+		min-height: 78px;
+	}
+
 	@media print {
 		display: none;
 	}
@@ -71,15 +78,80 @@
 	position: relative;
 }
 
+.nav-mobile {
+	display:none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index:9000;
+	width: 320px;
+	height: 100%;
+	background:$shiro;
+	-webkit-box-shadow: 1px 0 3px 0px rgba(0,0,0,0.75);
+	   -moz-box-shadow: 1px 0 3px 0px rgba(0,0,0,0.75);
+	        box-shadow: 1px 0 3px 0px rgba(0,0,0,0.75);
+
+	@include mediaquery ($bp-header) {
+		display: block;
+		position: static;
+		width: auto;
+		height: auto;
+		-webkit-box-shadow: none;
+		   -moz-box-shadow: none;
+		        box-shadow: none;
+		}
+
+}
+
 .access-bar {
-	margin-top: 25px;
-	float: right;
-}
-.access-bar > li {
-	float: left;
+	padding: 10px;
+	text-align: center;
+
+	.btn {
+		width: 100%;
+	}
+
+	@include mediaquery ($bp-header) {
+
+		float: right;
+		padding: 0;
+		margin: 25px 0 0 0;
+		float: right;
+
+		> li {
+
+			float: left;
+		}
+
+		.btn {
+			width: auto;
+		}
+
+	}
+
 }
 
+.nav-bar-top-right {
+	padding: 10px;
+	text-align: center;
 
+	@include mediaquery ($bp-header) {
+
+		float: right;
+		padding: 0;
+		float: right;
+
+		> li {
+
+			float: left;
+		}
+
+		.btn {
+			width: auto;
+		}
+
+	}
+}
 
 .global-nav-submenu {
 	height:100px;
@@ -133,10 +205,6 @@
 	display: none;
 }
 
-.access-bar > li:last-child  > a.btn-link-secondary {
-	padding-right: 0;
-	text-align: left;
-}
 
 .nav-bar-top-applicant > li > a {
 	color: $mid-script;
@@ -238,14 +306,7 @@
 	.wrapper {
 		padding: 0 10px;
 	}
-	.global-nav {
-		position: static;
-		height:50px;
-		min-height: 50px;
-		padding: 0;
-		background-repeat: no-repeat;
-		background-position: center center;
-	}
+
 	.global-nav {
 		//bg logo es
 		background-image: url(#{$path-media}/portales/ij/appgrade/backgrounds/bg-logo-reduced.png);
@@ -262,18 +323,8 @@
 		}
 	}
 
-	.nav-mobile {
-		display:none;
-		position: absolute;
-		left: 0;
-		top: 0;
-		z-index:9000;
-		width: 320px;
-		height: 100%;
-		background:$shiro;
-	}
 
-	.access-bar,
+
 	.nav-bar-top-left {
 		float: none;
 	}
@@ -422,28 +473,24 @@
 		background: $darkest-shiro;
 	}
 
-	.btn-link-exit:hover {
-		border:0 none;
-	}
 	.profile-ellipsis {
 		max-width: none;
 	}
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: $bp-tablet) {
 
 
 	.global-nav .nav-bar-top-toggle {
 		margin: 0;
 	}
 }
+
 @media only screen and (max-width: $mobile-start) {
 
 	.wrapper {
 		padding: 0;
 	}
-	.nav-bar-top-left {
-		width: 75%;
-	}
+
 
 }
