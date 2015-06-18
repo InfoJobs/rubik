@@ -25,17 +25,6 @@
 		color: $day-blue;
 	}
 
-	.btn-primary {
-		color: $shiro;
-		background-color: $day-blue;
-	}
-
-	.btn-primary:hover,
-	.btn-primary:focus {
-		color: $shiro;
-		background-color: $late-blue;
-	}
-
 	.btn-link-secondary {
 		color: $mid-script;
 	}
@@ -105,18 +94,11 @@
 
 .access-bar {
 	padding: 10px;
-	text-align: center;
-
-	.btn {
-		width: 100%;
-	}
 
 	@include mediaquery ($bp-header) {
 
-		float: right;
 		padding: 0;
 		margin: 25px 0 0 0;
-		float: right;
 
 		> li {
 
