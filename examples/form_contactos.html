@@ -8,23 +8,24 @@
 </head>
 <body>
 <div class="wrapper">
-	<div class="container">
+	<div class="container container-expanded">
 
-	<header class="global-nav global-nav-landing">
-          <nav>
-              <ul>
-                  <li>
-                      <ul class="nav-bar nav-bar-top nav-bar-top-left clearfix" id="nav-mobile">
-                          <li>
-                             <a href="/" id="hdrLinkToHome" class="active logo">
-                              	<img src="//media.infojobs.net/portales/ij//appgrade/emails/logo-ij.png">
-                              </a>
-                          </li>
-                      </ul>
-                  </li>
-              </ul>
-          </nav>
-      </header>
+		<header class="global-nav global-nav-landing">
+		      <nav>
+		          <ul>
+		              <li>
+		                  <ul class="nav-bar nav-bar-top nav-bar-top-left clearfix" id="nav-mobile">
+		                      <li>
+		                         <a href="/" id="hdrLinkToHome" class="active logo">
+		                          	<img src="//media.infojobs.net/portales/ij//appgrade/emails/logo-ij.png">
+		                          </a>
+		                      </li>
+		                  </ul>
+		              </li>
+		          </ul>
+		      </nav>
+		  </header>
+		
 		<div class="panel-canvas">
 			<div class="row-centered inner inner-expanded">
 	        	<h1 class="text-center">Ayudar a contactar</h1>
@@ -32,13 +33,22 @@
 				<form action="#" id="" method="post" class="default form1">
 					<fieldset>
 						<ul class="form--field-block clearfix">
-							<li name="li_uname" id="li_uname">
-								<label id="nom" for="uname">Nombre</label>
-								<input type="text" maxlength="50" onkeyup="javascript:validateUserName();" onblur="javascript:validateUserName();" value="" id="uname" name="nombre">
+							<li>
+								<label>Destinatario</label>
+
+								<div class="content-media inner">
+									<div class="media">
+										<img alt="" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" class="crop-circle">
+									</div>
+									<div class="body">
+										<h3 class="title">Juan Manuel Rodriguez</h3>
+										<p>Account Manager lorem ipsum <span class="alternative">en Schibsted Classified Media Spain</span></p>
+									</div>
+								</div>
 							</li>
 							<li>
-								<label for="email">Tu mensaje</label>
-								<textarea type="" rows="3" cols="20"></textarea>
+								<label for="message">Tu mensaje</label>
+								<textarea type="" rows="3" cols="20" id="message"></textarea>
 				        	</li>
 				        </ul>
 				    </fieldset>
