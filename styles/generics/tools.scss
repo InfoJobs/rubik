@@ -135,10 +135,14 @@
 	.margin-#{$value}  {
 	   margin-#{$value}: $padding;
 	}
+	
 	.padding-#{$value}  {
 	   padding-#{$value}: $padding;
 	}
+}
 
+.margin-bottom + .margin-top {
+	margin-top: 40px;
 }
 
 .link-annex {
