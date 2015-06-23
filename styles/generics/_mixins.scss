@@ -28,6 +28,8 @@ $query2     = width, device-width
 	box-sizing: $box-model;
 }
 
+/*Flexbox*/
+
 @mixin display-flex {
 	display: -webkit-box;
   	display: -moz-box;
@@ -57,6 +59,12 @@ $query2     = width, device-width
 	-webkit-flex: $value;
 	-ms-flex: $value;
 	flex: $value;
+}
+
+@mixin flex-direction ( $value: row) {
+	-webkit-flex-direction: $value;
+	    -ms-flex-direction: $value;
+	        flex-direction: $value;
 }
 
 @mixin inner {
