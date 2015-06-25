@@ -122,15 +122,33 @@
 	@include flex;
 
 	 > li > a {
+		font-size: $base-font-size;
 		color: $mid-script;
 	}
 
 	 > li > a:hover {
 		color: $day-blue;
 	}
+
+	.logo,
+	.logo:hover {
+		padding: 18px 20px 12px 10px;
+	}
+
+
+	@include mediaquery ($bp-header) {
+		.logo,
+		.logo:hover {
+			display: block;
+			margin-top: 20px;
+			padding: 0 15px 0 0;
+		}
+	}
+
 }
 
-.access-bar {
+.access-bar,
+.nav-bar-top-right {
 	@include display-flex;
 	@include align-items(center);
 	padding: 10px;
@@ -152,15 +170,28 @@
 		padding: 0;
 		border: 0 none;
 
-		> li {
-
-			float: left;
-		}
-
 		.btn {
 			width: auto;
 		}
 
+	}
+
+}
+
+.nav-bar-top-avatar {
+	font-size: $small-font-size;
+	color: $dark-silk;
+
+	&:hover {
+		color: $dark-silk;
+		text-decoration: underline;
+	}
+
+	img {
+		width: 40px;
+		height: 40px;
+		vertical-align: middle;
+		border: 2px solid $shiro;
 	}
 
 }
@@ -177,15 +208,8 @@
 
 
 
-.global-nav li a.active-submenu,
-.global-nav .nav-bar-top > li > a.active-submenu:hover {
-	color: $day-blue;
-}
 
-.global-nav .nav-bar-submenu--executive a.active-submenu--executive,
-.global-nav .nav-bar-submenu--executive > li > a:hover {
-	color: $mediterranean-sea;
-}
+
 
 .nav-bar-notifications {
 	position: relative;
@@ -195,31 +219,8 @@
 
 
 
-.nav-bar-top-right {
-	padding: 10px;
-	text-align: center;
 
-	@include mediaquery ($bp-header) {
 
-		float: right;
-		padding: 0;
-		float: right;
-
-		> li {
-
-			float: left;
-		}
-
-		.btn {
-			width: auto;
-		}
-
-	}
-}
-
-.global-nav-submenu {
-	height:100px;
-}
 .global-nav-submenu .nav-bar-top > li > a {
 	padding: 10px 10px 12px;
 	font-size:14px;
@@ -234,30 +235,14 @@
 	height: 25px;
 	margin-top: 10px;
 }
-.global-nav-submenu-applicant a.logo,
-.global-nav-submenu-applicant a.logo:hover {
-	background-image: none;
-}
-.global-nav-submenu-company a.logo,
-.global-nav-submenu-company a.logo:hover  {
-	background-image: none;
-}
 
 
 
 
-.nav-bar-top-left li a {
-	font-size: 16px;
-}
 
-.nav-bar-top-left li a.logo,
-.nav-bar-top-left li a.logo:hover {
-	display: block;
-	margin-top: 20px;
-	padding: 0 15px 0 0;
-	height: 41px;
-	width: 163px;
-}
+
+
+
 
 
 
@@ -295,28 +280,6 @@
 }
 
 
-.nav-bar-top-avatar,
-.nav-bar-top-noavatar {
-	padding: 32px 15px;
-	font-size: 14px;
-	color: $dark-silk;
-}
-
-.nav-bar-top-avatar:hover {
-	color: $dark-silk;
-	text-decoration: underline;
-}
-
-.nav-bar-top-noavatar:hover {
-	color: $dark-silk;
-	text-decoration: none;
-}
-
-.nav-bar-top-avatar span {
-	padding-left:35px;
-}
-
-
 .global-nav-landing {
 
 
@@ -347,12 +310,6 @@
 	}
 
 
-
-
-	.nav-bar-top-left {
-		float: none;
-	}
-
 	.global-nav.global-nav-submenu {
 		border-bottom: 1px solid $darkest-shiro;
 	}
@@ -367,27 +324,9 @@
 	}
 
 	//inicio
-	.nav-bar-top li a.logo,
-	.nav-bar-top li a.logo:hover {
-	    .iconfont-22px {
-			padding-left: 25px;
-			position: relative;
-		}
 
-		[class^="iconfont-"]:before,
-		[class*=" iconfont-"]:before {
-			position: absolute;
-			top: 5px;
-			left: -3px;
-		}
-
-	}
 	.global-nav-submenu .nav-bar-top > li > a {
 		line-height: inherit;
-	}
-
-	.nav-bar-top-applicant > li > a {
-		color: $dark-silk;
 	}
 
 	.nav-bar-top > li,
@@ -428,22 +367,9 @@
 	.nav-bar-top li:first-child span {
 		display: block;
 	}
-	.nav-bar-top-left li a.logo,
-	.nav-bar-top-left li a.logo:hover {
-		width: auto;
-		height: auto;
-		margin:0;
-		padding: 18px 20px 12px 10px;
-		background-image: none;
-	}
 
 
 
-
-
-	.nav-bar-top-avatar span {
-		padding-left:0;
-	}
 
 
 
