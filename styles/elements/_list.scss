@@ -119,7 +119,8 @@ $iconfont-size: (16, 18, 22, 30, 100);
     }
 
     @each $val in $iconfont-size {
-      .iconfont-#{$val}px {
+      .iconfont-#{$val}px,
+      .iconfont-#{$val}px + dd {
         padding-left: #{$val + 10}px;
       }
     }
