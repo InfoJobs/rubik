@@ -31,15 +31,6 @@
 		display: none;
 	}
 
-	.btn-link-secondary {
-		color: $mid-script;
-	}
-
-	.btn-link-secondary:hover,
-	.btn-link-secondary:focus {
-		color: $dark-silk;
-	}
-
 	&.global-nav-submenu {
 		border-bottom: 0;
 	}
@@ -129,10 +120,19 @@
 
 .nav-bar-top-left {
 	@include flex;
+
+	 > li > a {
+		color: $mid-script;
+	}
+
+	 > li > a:hover {
+		color: $day-blue;
+	}
 }
 
 .access-bar {
 	@include display-flex;
+	@include align-items(center);
 	padding: 10px;
 	border-top: 1px solid $darkest-shiro;
 
@@ -149,9 +149,7 @@
 	}
 
 	@include mediaquery ($bp-header) {
-		display: block;
 		padding: 0;
-		margin: 25px 0 0 0;
 		border: 0 none;
 
 		> li {
@@ -166,6 +164,18 @@
 	}
 
 }
+
+.profile-ellipsis {
+	display: block;
+	max-width: 140px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+
+
 
 .global-nav li a.active-submenu,
 .global-nav .nav-bar-top > li > a.active-submenu:hover {
@@ -252,13 +262,7 @@
 
 
 
-.nav-bar-top-applicant > li > a {
-	color: $mid-script;
-}
 
-.global-nav .nav-bar-top-applicant > li > a:hover {
-	color: $day-blue;
-}
 
 .global-nav-submenu .nav-bar-top-company > li > a.btn-link-secondary {
 	margin-top: 7px;
@@ -311,13 +315,7 @@
 .nav-bar-top-avatar span {
 	padding-left:35px;
 }
-.profile-ellipsis {
-	display: inline-block;
-	max-width: 140px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
+
 
 .global-nav-landing {
 
@@ -477,9 +475,7 @@
 		background: $darkest-shiro;
 	}
 
-	.profile-ellipsis {
-		max-width: none;
-	}
+
 }
 
 

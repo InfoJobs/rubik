@@ -35,11 +35,11 @@
 	<div class="container container-expanded">
         <!-- Header sin submenu no logado -->
         <header class="global-nav">
-        	<a href="#" class="js-open-menu nav-bar-top-toggle nav-bar-top-default"><span>Menu</span></a>
+        	<a href="#" class="js-open-menu nav-bar-top-toggle"><span>Menu</span></a>
 
             <nav id="nav-mobile" class="nav-mobile">
 
-                <ul class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
+                <ul class="nav-bar nav-bar-top nav-bar-top-left clearfix">
                     <li>
                     <!--  el logo se muestra como H1 solo en la cabecera de la home -->
                         <a id="home-nologged-inicio" class="active logo" href="#">
@@ -66,15 +66,14 @@
 	<div class="container container-expanded">
         <!-- Header sin submenu reconocido -->
         <header class="global-nav">
-        	<a id="home-nologged-menu" href="#" class="nav-bar-top-toggle nav-bar-top-default"><span>Menu</span></a>
-            <nav id="nav-mobile" class="nav-mobile clearfix">
-
-                <ul class="nav-bar nav-bar-top nav-bar-top-applicant nav-bar-top-left clearfix">
+        	<a id="home-nologged-menu" href="#" class="js-open-menu nav-bar-top-toggle nav-bar-top-default"><span>Menu</span></a>
+            <nav id="nav-mobile" class="nav-mobile">
+                <ul class="nav-bar nav-bar-top nav-bar-top-left clearfix">
                     <li>
                     <!--  el logo se muestra como H1 solo en la cabecera de la home -->
                         <a id="home-nologged-inicio" class="active logo" href="#">
                         	<img alt="" src="http://media.infojobs.net/appgrade/backgrounds/bg-logo.png">
-                        	<span class="iconfont-Home iconfont-22px">Inicio</span>
+                        	<span>Inicio</span>
                         </a>
                     </li>
                     <li><a id="1" href="#">Empleo</a></li>
@@ -400,13 +399,13 @@
 
 $(function() {
     $('.js-open-menu').click(function(){
-        $('#nav-mobile').toggle().css('display','flex');
+        $(this).next('.nav-mobile').toggle().css('display','flex');
     });
 
     // Close on ESC key
     $(document).on('keyup', function(event) {
         if(event.keyCode === 27) {
-            $('#nav-mobile').toggle();
+            $('.nav-mobile').css('display','none');
         }
     });
 
