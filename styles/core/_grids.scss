@@ -274,7 +274,7 @@ Styleguide #{$sgi-equalHeightColumns}
 		[class*="col-"] {
 			@include display-flex;
 			float: none;
-			overflow: hidden;
+			//overflow: hidden; Si hay tooltip se corta por el overflow
 		}
 
 		.col-12-medium {

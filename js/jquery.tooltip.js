@@ -18,7 +18,6 @@
 	            }
 	        });
 
-
 			return this.each(function() {
 
 				var $this 		= $( this ),
@@ -46,6 +45,17 @@
 
 				  	$this.find('.tooltip-layer').addClass('move-up-tooltip--mobile')
 					.removeClass('tooltip-hidden move-down-tooltip--mobile tooltip-fade-out');
+
+					$(document).mouseup(function (event) {
+					    var container = $('.tooltip-layer');
+
+					    if (!container.is(event.target) // if the target of the click isn't the container...
+					        && container.has(event.target).length === 0) // ... nor a descendant of the container
+					    {
+	                		$.fn.toolTip.closeTooltip();
+					    }
+					});
+
 				});
 
 				$this.find('.tooltip').prepend(closeButton);
@@ -56,7 +66,6 @@
 					.addClass('move-down-tooltip--mobile tooltip-fade-out')
 					.removeClass('move-up-tooltip--mobile');
 				});
-
 
 			});
 
