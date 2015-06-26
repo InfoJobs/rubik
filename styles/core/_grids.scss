@@ -39,7 +39,7 @@ Markup:
 	<div class="col-3"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.1.1
+Styleguide #{$sgi-gridSystem}
 */
 
 @mixin row {
@@ -126,7 +126,7 @@ Markup:
 	<div class="col-4 col-12-medium"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.1.1.2
+Styleguide #{$sgi-mediumDevices}
 */
 
 $gridColumns: 12;
@@ -282,7 +282,7 @@ Markup:
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.1.1.4
+Styleguide #{$sgi-equalHeightColumns}
 */
 
 .row-faux {
@@ -301,7 +301,7 @@ Styleguide 1.1.1.4
 		[class*="col-"] {
 			@include display-flex;
 			float: none;
-			overflow: hidden;
+			//overflow: hidden; Si hay tooltip se corta por el overflow
 		}
 
 		.col-12-medium {

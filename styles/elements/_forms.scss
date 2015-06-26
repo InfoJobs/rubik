@@ -477,6 +477,16 @@ Styleguide 1.4.7
 	line-height: 110%;
 }
 
+//helpers for form
+
+.input-link-annex {
+	margin: 10px 0 0 0;
+}
+
+.label-annex {
+	display: inline;
+}
+
 @media only screen and (max-width: $tablet-start) {
 
 	input {
