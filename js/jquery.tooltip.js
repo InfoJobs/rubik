@@ -60,6 +60,8 @@
 
 				$this.find('.tooltip').prepend(closeButton);
 
+
+
 				$this.find('.close-tooltip').click(function(event) {
 					event.preventDefault();
 					$this.find('.tooltip-layer')

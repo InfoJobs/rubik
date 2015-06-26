@@ -160,6 +160,20 @@ Styleguide  #{$sgi-containers}
 	}
 }
 
+.row-centered {
+	width: 100%;
+
+	@include mediaquery ($bp-desktop) {
+		width: 486px;
+		margin: 0 auto;
+	}
+
+	input,
+	textarea {
+		width: 100%;
+	}
+}
+
 /*
 Inner containers #disabled#
 

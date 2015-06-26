@@ -246,6 +246,20 @@ Styleguide 1.1.2
   }
 }
 
+.row-centered {
+  width: 100%;
+}
+@media only screen and (min-width: 769px) {
+  .row-centered {
+    width: 486px;
+    margin: 0 auto;
+  }
+}
+.row-centered input,
+.row-centered textarea {
+  width: 100%;
+}
+
 /*
 Inner containers #disabled#
 
@@ -257,7 +271,7 @@ Markup:
     ...
 </div>
 
-Styleguide 1.2.4
+Styleguide 1.1.3
 */
 .content-wrapper,
 .inner {
@@ -317,6 +331,12 @@ Styleguide 1.2.4
 .img-responsive {
   max-width: 100%;
   height: auto;
+}
+
+img[alt] {
+  background: none;
+  border: 0;
+  word-wrap: break-word;
 }
 
 .section {
@@ -553,12 +573,36 @@ Styleguide 1.1.1
   margin-left: 0;
 }
 .row + .row {
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 @media print {
   .row + .row {
     margin: 0;
   }
+}
+.row .row-matrioska .col-child.inner {
+  margin-top: 20px;
+  margin-right: 0;
+  padding: 0;
+}
+@media only screen and (min-width: 481px) {
+  .row .row-matrioska .col-child.inner {
+    margin-top: 0;
+  }
+}
+@media only screen and (min-width: 481px) {
+  .row .row-matrioska .col-12-medium .col-child.inner {
+    margin-top: 20px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .row .row-matrioska .col-12-medium .col-child.inner {
+    margin-top: 0;
+  }
+}
+.row .row-matrioska > [class^="col-"]:first-of-type .col-child.inner,
+.row .row-matrioska > [class*="col-"]:first-of-type .col-child.inner {
+  margin-top: 0;
 }
 
 /*
@@ -822,17 +866,62 @@ Styleguide 1.1.1.2
 }
 
 /*------------------------------------*\
+	$ROW MATRIOSKA
+\*------------------------------------*/
+/*
+Nested row
+
+Use class `.row` and `.row-matrioska` to nested rows.
+
+<div class="sg-view">
+    <div class="sg-guide">
+          <!--ROW-FAUX-->
+          <div class="row clearfix">
+              <div class="col-6">
+                  <div class="col-child">
+                         .col-6
+                        <div class="row row-matrioska">
+                        	<div class="col-6"><div class="col-child">.col-6</div></div>
+                        	<div class="col-6"><div class="col-child">.col-6</div></div>
+                        </div>
+                  </div>
+              </div>
+              <div class="col-6">
+                  <div class="col-child">.col-6</div>
+              </div>
+          </div>
+          <!--/ROW-MATRIOSKA-->
+      </div>
+  </div>
+
+
+Markup:
+<div class="row casper">
+	<div class="col-6">
+		<div class="col-child">
+			<div class="row row-matrioska">
+				<div class="col-6"><div class="col-child">...</div></div>
+				<div class="col-6"><div class="col-child">...</div></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-6"><div class="col-child">...</div></div>
+</div>
+
+Styleguide 1.1.1.3
+*/
+/*------------------------------------*\
 	$ROW FAUX
 \*------------------------------------*/
 /*
 Equal height columns
 
-Use class `.row-faux` instead of `.row` to build an equal height columns structure.
+Add class `.row` and `.row-faux` to build an equal height columns structure.
 
 <div class="sg-view">
     <div class="sg-guide">
           <!--ROW-FAUX-->
-          <div class="row-faux clearfix">
+          <div class="row row-faux clearfix">
               <div class="col-1">
                   <div class="col-child">.col-1 (more content)</div>
               </div>
@@ -876,29 +965,14 @@ Use class `.row-faux` instead of `.row` to build an equal height columns structu
 
 
 Markup:
-<div class="row-faux casper">
+<div class="row row-faux casper">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.1.1.3
+Styleguide 1.1.1.4
 */
-.row-faux {
-  margin: 0 0 0 -10px;
-  clear: both;
-  position: relative;
-}
-.row-faux:after {
-  content: " ";
-  display: table;
-  clear: both;
-}
-@media print {
-  .row-faux {
-    margin: 0;
-  }
-}
 .row-faux > [class^="col-"]:last-of-type .col-child,
 .row-faux > [class*="col-"]:last-of-type .col-child {
   margin-bottom: 0;
@@ -924,6 +998,7 @@ Styleguide 1.1.1.3
     display: -webkit-flex;
     display: flex;
     float: none;
+    overflow: hidden;
   }
   .row-faux .col-12-medium {
     display: block;
@@ -1051,59 +1126,26 @@ h3,
 /*
 Text colors
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+* Use class `.script` to force text color as the default text color
+* Use class `.soft-script` to force a text color as a secondary text
+* Use class `.alternative` to mark text that contains details information
+* Use class `.disabled` to mark a text option as disabled
+* Use class `.marked` to focus attention in it
+* Use class `.highlight` to highlight words as a result of a search
 
-Styleguide 1.3
-*/
-/*
-Default text color
+{modifier_class}:
 
-Use class `.script` to force text color as the default text color
-
-Markup:
-<p>Lorem ipsum dolor sit amet, <a href="#" class="script">consectetur adipiscing</a> elit.</p>
-
-Styleguide 1.3.1
-*/
-/*
-Secondary text color
-
-Use class `.soft-script` to force a text color as a secondary text
+.script
+.notification-success
+.alternative
+.disabled
+.marked
+.highlight
 
 Markup:
-<p>Lorem ipsum dolor sit amet, <a href="#" class="soft-script">consectetur adipiscing</a> elit.</p>
+<p>Lorem ipsum dolor sit amet, <span class="{{modifier_class}}">consectetur adipiscing</span> elit.</p>
 
-Styleguide 1.3.2
-*/
-/*
-Details text color
-
-Use class `.alternative` to mark text that contains details information
-
-Markup:
-<p class="alternative">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-Styleguide 1.3.3
-*/
-/*
-Disabled text color
-
-Use class `.disabled` to mark a text option as disabled
-
-Markup:
-<p>Lorem ipsum dolor sit amet, <a href="#" class="disabled">consectetur adipiscing elit</a>.</p>
-
-Styleguide 1.3.4
-*/
-/*
-Focus text color
-
-Use class `.marked` to focus attention in it
-
-Markup:
-<p>Lorem ipsum <span class="marked">6m ago</p>
-
-Styleguide 1.3.5
+Styleguide 1.2.7
 */
 /*
 Contrasted text color
@@ -1116,17 +1158,7 @@ Markup:
 	<a href="#" class="contrast">Curabitur varius</a>
 </div>
 
-Styleguide 1.3.6
-*/
-/*
-Highlighted text color
-
-Use class `.highlight` to highlight words as a result of a search
-
-Markup:
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing <span class="highlight">elit</span>.</p>
-
-Styleguide 1.3.7
+Styleguide 1.2.7.1
 */
 .contrast {
   color: #fff;
@@ -1763,6 +1795,9 @@ $query2     = width, device-width
   border-radius: 0;
 }
 
+/*------------------------------------*\
+	$ICONS
+\*------------------------------------*/
 [class^="icon-"],
 [class*="icon-"] {
   position: relative;
@@ -1775,14 +1810,18 @@ $query2     = width, device-width
   }
 }
 
-/*------------------------------------*\
-	$ICONS
-\*------------------------------------*/
 /*
 Icons
 
 Icons are generated as fonts. Color and size can be modified as texts.
 Use the following classes to apply an icon on a tag.
+
+Styleguide 1.7
+*/
+/*
+Icons type
+
+List of icons.
 
 <div class="sg-guide sg-icons">
     <ul class="list-default">
@@ -1847,7 +1886,8 @@ Use the following classes to apply an icon on a tag.
 </div>
 
 
-Styleguide 1.6
+Styleguide 1.7.1.1
+
 */
 [class^="iconfont-"]::before,
 [class*=" iconfont-"]::before,
@@ -1879,7 +1919,8 @@ Styleguide 1.6
 /*
 Icons size
 
-Use these classes to modify the icon size in px.
+Use the following classes to modify the icon size: `.iconfont-16px`, `.iconfont-18px`, `.iconfont-22px` or `.iconfont-30px`
+
 
 Markup:
 <ul>
@@ -1888,13 +1929,12 @@ Markup:
 
 {modifier_class}:
 
-.iconfont-16px	- 16px
-.iconfont-18px	- 18px
-.iconfont-22px	- 22px
-.iconfont-30px	- 30px
-.iconfont-100px	- 100px
+.iconfont-16px
+.iconfont-18px
+.iconfont-22px
+.iconfont-30px
 
-Styleguide 1.6.1
+Styleguide 1.7.2.1
 */
 .iconfont-16px::before {
   font-size: 16px;
@@ -1937,6 +1977,10 @@ Styleguide 1.6.1
 
 .icon-alerts {
   background: url("http://media.infojobs.net/appgrade/backgrounds//icon-alert.png") no-repeat 0 0;
+}
+
+.icon-email-banned {
+  background: url("http://media.infojobs.net/appgrade/backgrounds//icon-email-banned.png") no-repeat 0 0;
 }
 
 .icon-50px {
@@ -2206,6 +2250,13 @@ Styleguide 1.6.1
   content: "\e63f";
 }
 
+/*
+Buttons
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Styleguide 1.5
+*/
 /*------------------------------------*\
     $BUTTONS
 \*------------------------------------*/
@@ -2248,20 +2299,25 @@ p > .btn {
 }
 
 /*
-Buttons
+Buttons type
 
-Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms), followed by classes listed as `{modifier_class}`.
+Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms).
+<br>
+Also add one of the following classes to give it format:
+
+`.btn-default` for a default action style<br>
+`.btn-primary` for a primary action style<br>
+`.btn-primary-contrast`for a primary action style over dark background
 
 {modifier_class}:
-
-.btn-default		   - Applies default action style
-.btn-primary 		   - Applies primary action style
-.btn-primary-contrast  - Applies primary action style over dark background
+.btn-default
+.btn-primary
+.btn-primary-contrast
 
 Markup:
 <a href="#" class="btn {{modifier_class}}">Link Button</a>
 
-Styleguide 1.5
+Styleguide 1.5.1.1
 */
 .btn-default {
   color: #2d3133;
@@ -2381,19 +2437,19 @@ Styleguide 1.5
 }
 
 /*
-Buttons sizes
+Buttons size
 
-Use classes listed as `{modifier_class}` to change buttons size.
+Use class `.btn-medium` or `.btn-large` to change buttons size.
 
 Markup:
 <a href="#" class="btn btn-default {{modifier_class}}">Link Button</a>
 
 {modifier_class}:
 
-.btn-medium			- Size: Medium
-.btn-large 			- Size: Large
+.btn-medium
+.btn-large
 
-Styleguide 1.5.1
+Styleguide 1.5.1.2
 */
 .btn-medium {
   height: 40px;
@@ -2430,12 +2486,12 @@ Styleguide 1.5.1
 /*
 Buttons with text and icon
 
-Use class `.iconfont-[name]` to display the needed icon.
+Use class `.iconfont-[name]` to display an icon inside the button.
 
 Markup:
 <a href="#" class="btn btn-primary btn-medium iconfont-Facebook">Link Button</a>
 
-Styleguide 1.5.2
+Styleguide 1.5.1.3
 */
 /*
 Buttons status
@@ -2445,7 +2501,7 @@ Use class `.btn-disabled` to show button as disabled.
 Markup:
 <a href="#" class="btn btn-default btn-medium btn-disabled">Link Button</a>
 
-Styleguide 1.5.3
+Styleguide 1.5.1.4
 */
 button[disabled],
 button:hover[disabled],
@@ -2479,7 +2535,7 @@ Markup:
 <a href="#" class="btn btn-primary btn-medium btn-annex">Button</a>
 <a href="#" class="link">Link</a>
 
-Styleguide 1.5.4
+Styleguide 1.5.1.5
 */
 .btn-annex {
   margin-right: 15px;
@@ -2510,7 +2566,7 @@ Use class `.btn-form-inline` to display a full width button.
 Markup:
 <a href="#" class="btn btn-primary btn-form-inline">Button Element</a>
 
-Styleguide 1.5.5
+Styleguide 1.5.1.6
 */
 .btn-form-inline {
   width: 100%;
@@ -2526,9 +2582,17 @@ Styleguide 1.5.5
 /*
 Button group
 
-Use class `.btn-group` to create a button group structure.
-Use class `.btn-default` for buttons inside buttons group.
-Use class `.active` to highlight the selected button.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Styleguide 1.6
+
+*/
+/*
+Button group structure
+
+Use class `.btn-group` to create a button group structure.<br>
+Use class `.btn-default` for buttons inside buttons group.<br>
+Use class `.active` to highlight the selected button.<br>
 
 Markup:
 <div class="btn-group">
@@ -2543,7 +2607,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 1.5.6
+Styleguide 1.6.1.1
 */
 .btn-group {
   display: table;
@@ -2615,12 +2679,12 @@ Markup:
     </div>
 </div>
 
-Styleguide 1.5.7
+Styleguide 1.6.1.2
 */
 /*
 Button group with icon
 
-Use class `.iconfont-[name]` to display the needed icon.
+Use class `.iconfont-[name]` to display an icon inside the button.
 
 Markup:
 <div class="btn-group">
@@ -2632,7 +2696,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 1.5.8
+Styleguide 1.6.1.3
 */
 .btn-group-justified {
   width: 100%;
@@ -2745,28 +2809,6 @@ h3,
 }
 
 /*
-Heading-addons
-
-Use class `.heading-addons` to reset margin defined for generic `<h1>`.
-
-Markup:
-<div class="heading-addons">
-	<h1>Header Level 1</h1>
-	<p>Lorem ipsum</p>
-</div>
-
-Styleguide 1.2.1.1
-*/
-.heading-addons h1 {
-  margin: 0;
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-}
-
-/*
 Heading mega
 
 Use class `.heading-mega` for a big size heading.
@@ -2774,7 +2816,7 @@ Use class `.heading-mega` for a big size heading.
 Markup:
 <h1 class="heading-mega">Heading mega</h1>
 
-Styleguide 1.2.1.2
+Styleguide 1.2.1.1
 */
 .heading-mega {
   font-size: 25px;
@@ -2796,22 +2838,47 @@ Styleguide 1.2.1.2
 }
 
 /*
-Heading-middle
+Heading addons
+
+Use class `.heading-addons` to reset margin defined for generic `<h1>`.
+
+Markup:
+<div class="heading-addons">
+	<h1>Header Level 1</h1>
+	<p>Lorem ipsum</p>
+</div>
+
+Styleguide 1.2.1.2
+*/
+.heading-addons h1 {
+  margin: 0;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+/*
+Heading middle
 
 Use class `.heading-middle` to adjust headings in vertical align content.
 
 Markup:
-<div class="heading-addons content-logo-text">
+<div class="heading-addons">
 	<h1 class="heading-middle">Header Level 1</h1>
-	<p>Lorem ipsum</p>
 </div>
 
-Styleguide 1.3.1.3
+Styleguide 1.2.1.3
 */
 .heading-middle {
   padding-top: 10px;
 }
 
+/*
+Heading divider
+
+*/
 .heading-divider {
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -2868,17 +2935,16 @@ p.small:last-child {
 /*
 Text size
 
-Use class `.base` or `.medium` to change the size of the text.
+Use class `.base` to force body copy size or `.medium` to increase the text size.
 
 Markup:
 <p class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-{modifier_class}:
 
-.base				- Size: To force body copy size
-.medium				- Size: To increase text size
+.base
+.medium
 
-Styleguide 1.2.3
+Styleguide 1.2.5
 */
 /*
 Text variants
@@ -2888,7 +2954,7 @@ Use class `.bold` to bold the content. Use only on the following tags: `<p>`, `<
 Markup:
 <p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.2.4
+Styleguide 1.2.6
 */
 .bold {
   font-family: Proximanovabold, Helvetica, Arial, sans-serif;
@@ -2897,7 +2963,14 @@ Styleguide 1.2.4
 /*
 Blockquotes
 
-Use `<blockquote>` when the text is quoted from another source. Use `<cite>` to cite the reference.
+Use tag `<blockquote>` intead of `<p>` to introduce a block of text that is quoted from another source.
+<br>
+Use tag `<cite>` to cite the reference.
+<br><br>
+Use class `.quote` to give format to a blockquote.
+<br>
+Use class `.vip-quote` to emphasise a blockquote.
+
 
 Markup:
 <blockquote class="{{modifier_class}}">
@@ -2907,15 +2980,16 @@ Markup:
 
 {modifier_class}:
 
-.vip-quote			- Size: big size and Slabo font-family
-.quote				- Type: with quotation mark
+.vip-quote
+.quote
 
-Styleguide 1.2.6
+Styleguide 1.2.3
 */
 .quote {
   display: block;
   padding-top: 40px;
   font-style: italic;
+  text-align: center;
   background: url(http://media.infojobs.net/appgrade/pictures/pic-quote-executive.png) center 0 no-repeat;
 }
 
@@ -2943,18 +3017,22 @@ Styleguide 1.2.6
 Lists
 
 Use the following tags to create semantic lists:
-`<ul>` for unordered lists,<br>
-`<ol>` for ordered lists,<br>
-`<dl>` for definition lists.<br>
 
+* `<ul>` for unordered lists
+* `<ol>` for ordered lists
+* `<dl>` for definition lists
+
+<br>
 Use class `.list-default` for a basic list without decoration.
 
 Markup:
+<!-- Example for unordered and ordered list. -->
 <ul class="list-default">
     <li>Salario no disponible</li>
     <li>Experiencia minima: no requerida</li>
     <li>Tipo de oferta: de duracion determinada, jornada completa</li>
 </ul>
+<!-- Example for definition list. -->
 <dl class="list-default">
     <dt>Salario:</dt>
     <dd>No disponible</dd>
@@ -2962,7 +3040,7 @@ Markup:
     <dd>De duracion determinada, jornada completa</dd>
 </dl>
 
-Styleguide 1.2.7
+Styleguide 1.2.4
 */
 .list-default > li, .list-default > dt {
   display: block;
@@ -2986,7 +3064,7 @@ Styleguide 1.2.7
 /*
 Lists with bullets
 
-Use class `.list-bullet-default` to add default bullets to the list.
+Use class `.list-default` and `.list-bullet-default` to add default bullets to the list.
 
 Markup:
 <ul class="list-default list-bullet-default">
@@ -2995,7 +3073,7 @@ Markup:
     <li>Tipo de oferta: de duracion determinada, jornada completa</li>
 </ul>
 
-Styleguide 1.2.7.1
+Styleguide 1.2.4.1
 */
 .list-bullet-default > li,
 .list-bullet-default > dt,
@@ -3028,8 +3106,8 @@ Styleguide 1.2.7.1
 Lists with icons
 
 Use class `.list-default` and `.list-bullet-icon` to show icons in a list.<br>
-Use class `.iconfont-[name]` for icon type and `.iconfont-[size]` for icon size.
-Visit the <a href="#section-1.6.1">icons guide</a>.
+Use class `.iconfont-[name]` for icon type, `.iconfont-[size]` for icon size and `.iconfont-[color]` for icon color.<br>
+Visit the <a href="#rubik-1.6">icons guide</a>.
 
 Markup:
 <ul class="list-default list-bullet-icon">
@@ -3037,7 +3115,7 @@ Markup:
     <li class="iconfont-Check iconfont-30px iconfont-soft-script">Lorem ipsum dolor</li>
 </ul>
 
-Styleguide 1.2.7.2
+Styleguide 1.2.4.2
 */
 .list-default [class^="iconfont-"],
 .list-default [class*="iconfont-"] {
@@ -3132,7 +3210,7 @@ Markup:
     <li>Lorem ipsum dolor</li>
 </ul>
 
-Styleguide 1.2.7.5
+Styleguide
 */
 .tag-group {
   overflow: hidden;
@@ -3166,7 +3244,7 @@ Markup:
     <li class>Lorem ipsum</li>
 </ul>
 
-Styleguide 1.2.7.5.1
+Styleguide
 */
 .tag-group li.tag-divider {
   margin-right: 10px;
@@ -3195,7 +3273,7 @@ Markup:
 </ul>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.2.7.5.2
+Styleguide
 */
 .tag-group-top {
   margin-bottom: 10px;
@@ -3231,7 +3309,7 @@ Markup:
     <li>Lorem ipsum</li>
 </ul>
 
-Styleguide 1.2.7.5.4
+Styleguide
 */
 .tag-group .ellipsis {
   display: block;
@@ -4468,7 +4546,7 @@ Markup:
 		<div class="content-logo-media">
 			<a href="#">
 				<figure class="fig-thumbnail fig-thumbnail-logo slide-up">
-					<img title="BROS GROUP - Ofertas de trabajo" src="https://www.infojobs.net/logo/logo/do-get.xhtml?id=20790330118" alt="Lorem ipsum dolor sit amet">
+					<img title="BROS GROUP - Ofertas de trabajo" src="./media/pictures/pic-company-logo.png" alt="Lorem ipsum dolor sit amet">
 					<figcaption class="fig-thumbnail-caption slide-item">
 						<p class="fig-thumbnail-details">Lorem ipsum</p>
 					</figcaption>
@@ -4941,7 +5019,7 @@ $query2     = width, device-width
 \*------------------------------------*/
 /*
 
-Styleguide 2.5
+//Styleguide 2.5
 */
 .help-footer p {
   color: #666;
@@ -5922,7 +6000,7 @@ $query2     = width, device-width
 /*
 
 
-Styleguide 2.8
+//Styleguide 2.8
 */
 .result-list {
   margin-bottom: 20px;
@@ -6719,7 +6797,7 @@ $query2     = width, device-width
     $MODAL
 \*------------------------------------*/
 /*
-Modal
+Modal #disabled#
 
 Use the following classes structure to create a modal window:
 
@@ -6800,7 +6878,7 @@ Markup:
 Styleguide 3.1
 */
 /*
-Modal size
+Modal size #disabled#
 
 Apply width and height styles in the container `.modal-inner` for rewrite the default modal size.
 
@@ -6812,7 +6890,7 @@ Markup:
 Styleguide 3.1.1
 */
 /*
-Modal header
+Modal header #disabled#
 
 Use the following structure inside the `.modal-header`, to define the closing action and the heading text.
 
@@ -6825,7 +6903,7 @@ Markup:
 Styleguide 3.1.2
 */
 /*
-Modal content
+Modal content #disabled#
 
 Use the structure it's needed inside the `.modal-content` to create the layout.
 
@@ -7135,35 +7213,25 @@ $query2     = width, device-width
 /*
 Notifications
 
-###Notifications
 Contextual notificitions for confirmation messages.<br>
-The modifier classes are `.notification-error` for errors, `.notification-success` for success and `.notification-info` for information.
+
+The modifier classes are:<br>
+`.notification-error` for errors<br>
+`.notification-success` for success<br>
+`.notification-info` for information<br>
+`.notification-warning` for warning<br>
+
+{modifier_class}:
+
+.notification-error
+.notification-success
+.notification-info
+.notification-warning
 
 Markup:
-<!-- Notification error -->
-<div class="notification notification-error notification-dismissable">
-	<button class="btn-close" type="button">×</button>
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
-</div>
-<!-- /Notification error -->
-<div class="container-expanded">
-<!-- Notification success -->
-<div class="notification notification-success notification-dismissable">
-	<button class="btn-close" type="button">×</button>
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
-</div>
-<!-- /Notification success -->
-</div>
-<div class="container-expanded">
-<!-- Notification info -->
-<div class="notification notification-info notification-dismissable">
-	<button class="btn-close" type="button">×</button>
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
-</div>
-<!-- /Notification info -->
+<div class="notification {{modifier_class}}">
+	<p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
+	<p class="contrast">Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="contrast link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
 </div>
 
 Styleguide 2.2
@@ -7214,25 +7282,6 @@ Styleguide 2.2
   color: #fff;
 }
 
-/*
-Notifications
-
-Loremew eqwfwaerg sefg sdfg sdfgsdfg sdfg sdfg sdf gsdf gsdfgsdfgsdfg
-
-Markup:
-<div class="notification {{modifier_class}}">
-<p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
-<p class="contrast">Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="contrast link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
-</div>
-
-.notification-error -
-.notification-success -
-.notification-info -
-.notification-dismissable -
-
-
-Styleguide 2.2.1
-*/
 .notification-error {
   background: #bf2102;
 }
@@ -7254,6 +7303,20 @@ Styleguide 2.2.1
   color: #2d3133;
 }
 
+/*
+Notification dismissable
+
+Add class `.notification-dismissable` and tag `<button>` for a notification dismissable.
+
+Markup:
+<div class="notification notification-success notification-dismissable">
+	<button class="btn-close" type="button">×</button>
+	<p class="title">Lorem ipsum dolor sit</p>
+	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
+</div>
+
+Styleguide 2.2.1.1
+*/
 .notification-dismissable {
   position: relative;
   padding-right: 70px;
@@ -7529,46 +7592,6 @@ For pagination wrap a `.btn-group` structure with class `.pagination` as a paren
 Use class `.active` for the active button.
 
 Markup:
-<!-- Default pagination -->
-<div class="pagination">
-	<div class="btn-group">
-		<div class="active">
-			<button class="btn btn-default" id="page1" type="button">1</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page2" type="button">2</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page3" type="button">3</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page4" type="button">4</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page5" type="button">5</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page6" type="button">6</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page7" type="button">7</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page8" type="button">8</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page9" type="button">9</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page10" type="button">10</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="pageNext" type="button" title="Siguiente">Siguiente</button>
-		</div>
-	</div>
-</div>
-<!-- /Default pagination -->
-<!-- Pagination states -->
 <div class="pagination">
 	<div class="btn-group">
 		<div>
@@ -7584,38 +7607,13 @@ Markup:
 			<button class="btn btn-default" id="page3" type="button">3</button>
 		</div>
 		<div>
-			<button class="btn btn-default" id="page4" type="button">4</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page5" type="button">5</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page6" type="button">6</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page7" type="button">7</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page8" type="button">8</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page9" type="button">9</button>
-		</div>
-		<div>
-			<button class="btn btn-default" id="page10" type="button">10</button>
-		</div>
-		<div>
 			<button class="btn btn-default" id="pageNext" type="button" title="Siguiente">Siguiente</button>
 		</div>
 	</div>
 </div>
-<!-- /Pagination states -->
 
 Styleguide 2.9
 */
-.pagination {
-  background: #fff;
-}
 .pagination .btn-group {
   margin: 0 auto;
   width: 100%;
@@ -7767,8 +7765,8 @@ $PANELS
 
 .panel-small-device-footer {
   position: absolute;
-  top: 70px;
-  right: 10px;
+  top: 65px;
+  right: 20px;
 }
 
 .panel-small-device-header {
@@ -8350,7 +8348,6 @@ $query2     = width, device-width
 }
 .search-bar-main {
   padding: 10px;
-  background-color: #2088c2;
 }
 .search-bar-main label {
   color: #fff;
@@ -8783,7 +8780,7 @@ Markup:
 	<!-- Thumbnail logo -->
 	<figure class="fig-thumbnail fig-thumbnail-logo slide-up">
 		<a href="#">
-			<img style="width: 100%;" border="0" alt="" src="http://zsc.scmspain.com/RealMedia/ads/Creatives/InfojobsES/LI-CGI/CGI.jpg/1406023376">
+			<img style="width: 100%;" border="0" alt="" src="./media/pictures/pic-company-logo.png">
 			<figcaption class="fig-thumbnail-caption slide-item">
 				<p class="fig-thumbnail-details">Ver ofertas</p>
 			</figcaption>
@@ -9458,6 +9455,15 @@ $query2     = width, device-width
 /*
 User Feedback
 
+Use class `.user-feedback` followed by the nested structure `.link-user-feedback` to create the feedback container.
+
+
+Markup:
+<div class="user-feedback">
+	<a href="#" class="link-user-feedback">User Feedback</a>
+</div>
+
+
 Styleguide 2.22
 */
 .user-feedback {
@@ -9621,12 +9627,13 @@ $query2     = width, device-width
 Custom Background
 
 To create custom backgrounds use a style attribute in html for the background-image.<br>
-Use class `.custom-bg` responsive to make the image responsive.
+Use class `.custom-bg` responsive to make the image responsive.<br>
 Use modifier `.overlay-60` to apply an overlay.
 
 Markup:
-<div class="custom-bg {{modifier_class}}" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg');">
+<div class="custom-bg {{modifier_class}}" style="background-image: url('./media/backgrounds/bg-header-grid-01.jpg');">
     <div class="inner">
+        <h1>Custom background</h1>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
     </div>
@@ -9710,7 +9717,7 @@ $query2     = width, device-width
 $KPI
 \*------------------------------------*/
 /*
-KPI
+KPI #disabled#
 
 Markup:
 <div class="kpi">
@@ -9871,9 +9878,6 @@ $query2     = width, device-width
 }
 .tips-list li:last-child {
   border: none;
-}
-.tips-list li > div {
-  position: relative;
 }
 @media only screen and (min-width: 481px) {
   .tips-list li > div {
@@ -10307,7 +10311,7 @@ h3,
     $FORM RATING NPS
 \*------------------------------------*/
 /*
-Form rating NPS
+Form rating NPS #disabled#
 
 Styleguide 2.28
 */
@@ -10375,21 +10379,30 @@ Usa la clase `.content-media` para construir una estructura con una imagen a un 
 Markup:
 <div class="content-media inner">
 	<div class="media">
-		<img class="crop-circle" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" alt="">
+		<img class="crop-circle" src="./media/pictures/pic-company-logo.png" alt="">
 	</div>
 	<div class="body">
-		<h3 class="title"><a href="#">Juan Manuel RodrÃÂguez</a></h3>
-		<p>Account Manager jasdlf sadf dsakfjasd lfkjasd <span class="alternative">en Schibsted Classified Media Spain</span></p>
+		<h3 class="title"><a href="#">Juan Manuel Rodriguez</a></h3>
+		<p>Account Manager <span class="alternative">en Schibsted Classified Media Spain</span></p>
 	</div>
 </div>
 
 */
-.content-media .media,
 .content-media .body {
-  display: table-cell;
-  vertical-align: top;
+  margin-left: 70px;
+}
+@media only screen and (min-width: 481px) {
+  .content-media .body {
+    margin-left: 80px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .content-media .body {
+    margin-left: 100px;
+  }
 }
 .content-media .media {
+  float: left;
   padding-right: 20px;
   width: 70px;
 }
@@ -10405,6 +10418,7 @@ Markup:
 }
 .content-media .title {
   margin: 0;
+  word-wrap: break-word;
 }
 @media only screen and (min-width: 769px) {
   .content-media img {
@@ -10418,6 +10432,81 @@ li.content-media + .content-media::before {
   content: "";
   border-top: 1px solid #e2e5e6;
   top: -20px;
+}
+li.content-media + .content-media.margin-top::before {
+  border: none;
+}
+.content-media .btn-close {
+  position: relative;
+  top: -10px;
+  float: right;
+}
+
+/* Variables =================================================== */
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+/**
+ * cross multiplication percentages
+ */
+/**
+ * Turn numbers with units into unitless numbers
+ */
+/*------------------------------------*\
+$MIXINS
+\*------------------------------------*/
+/*
+Mediaqueries
+
+$breakpoint = $bp-tablet, $bp-desktop or specific
+$query1     = min or max
+$query2     = width, device-width
+
+*/
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+.tag-group li.tag-divider, .links-bar li {
+  border-right: 1px solid #e2e5e6;
+  border-radius: 0;
+}
+
+/*------------------------------------*\
+    $STEPS
+\*------------------------------------*/
+.steps {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  -o-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+.steps li {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0 10px;
+  overflow: hidden;
+  color: #999;
+  border-bottom: 2px solid;
+}
+.steps li + li {
+  margin-left: 10px;
+}
+.steps .step-focus {
+  color: inherit;
+  border-bottom: 2px solid #2088c2;
 }
 
 /* Variables =================================================== */
@@ -10752,7 +10841,7 @@ $query2     = width, device-width
     $IMG
 \*------------------------------------*/
 .img-responsive {
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -10780,6 +10869,13 @@ body#kss-node {
 }
 .sg-guide .row {
   margin-bottom: 10px;
+}
+.sg-guide .row .row-matrioska {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.sg-guide .row-matrioska .col-child {
+  background-color: #f2f2f2;
 }
 .sg-guide .sg-colors {
   overflow: hidden;
@@ -10827,20 +10923,62 @@ body#kss-node {
   font-size: 30px;
 }
 
-.sg-content {
-    /*.margin-top {
-        margin-top: 70px;
-
-        &:first-child {
-            margin-top: 40px;
-        }
-    }*/
+.sg-content .home-intro {
+  height: 100%;
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 40px;
+  background-color: #2088c2;
+  -webkit-transition: -webkit-transform 500ms ease;
+  transition: transform 500ms ease;
 }
+.sg-content .home-intro img {
+  display: block;
+  margin: 0 auto;
+}
+.sg-content .home-intro p {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  color: #FFF;
+  font-size: 20px;
+  line-height: 24px;
+}
+@media all and (max-width: 768px) {
+  .sg-content .home-intro p {
+    width: 100%;
+  }
+}
+.sg-content .home-intro div {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.sg-content .home-content {
+  padding-top: 40px;
+}
+@media only screen and (min-width: 769px) {
+  .sg-content .home-content .row + .row {
+    margin-top: 20px;
+  }
+  .sg-content .home-content .row {
+    margin-left: -20px;
+  }
+  .sg-content .home-content .col-child {
+    margin: 0 0 20px 20px;
+  }
+}
+@media only screen and (min-width: 769px) and (min-width: 481px) {
+  .sg-content .home-content .col-child {
+    margin-bottom: 0;
+  }
+}
+
 .sg-content h1,
 .sg-content h2 {
   margin: 0;
 }
-.sg-content h1 {
+.sg-content h1.sg-block-title {
   font-size: 25px;
   color: #2088c2;
 }
@@ -10861,6 +10999,7 @@ body#kss-node {
 }
 .sg-content p:last-child {
   margin-bottom: 0;
+  padding-bottom: 0;
 }
 .sg-content .sg-img {
   width: 100%;
@@ -10871,6 +11010,9 @@ body#kss-node {
 }
 .sg-content .sg-link:hover {
   text-decoration: underline;
+}
+.sg-content .heading-middle {
+  border: 1px dashed #e2e5e6;
 }
 .sg-content .sg-selector,
 .sg-content .sg-block-description code {
@@ -10907,12 +11049,32 @@ body#kss-node {
   border-top: 1px solid #e2e5e6;
   background-color: #e2e5e6;
 }
+.sg-content .list-default + .list-default {
+  margin-top: 20px;
+}
 
 .sg-footer {
   background: none;
 }
 .sg-footer:before {
   background: none;
+}
+
+/*------------------------------------*\
+$COMPONENTS OVERWRITE
+\*------------------------------------*/
+.user-feedback {
+  height: 40px;
+}
+.user-feedback .link-user-feedback {
+  position: absolute;
+}
+
+/*------------------------------------*\
+$KSS-NODE
+\*------------------------------------*/
+#kss-node ol.linenums {
+  white-space: pre-wrap;
 }
 
 /*# sourceMappingURL=rubik.doc.css.map */

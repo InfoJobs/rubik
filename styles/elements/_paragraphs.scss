@@ -60,15 +60,13 @@ $font-size: (small, base, medium); //TODO: resolve problem when it s moved to _v
 /*
 Text size
 
-Use class `.base` or `.medium` to change the size of the text.
+Use class `.base` to force body copy size or `.medium` to increase the text size.
 
 Markup:
 <p class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-{modifier_class}:
-
-.base				- Size: To force body copy size
-.medium				- Size: To increase text size
+.base
+.medium
 
 Styleguide #{$sgi-textSize}
 */
@@ -100,7 +98,14 @@ Styleguide #{$sgi-textVariants}
 /*
 Blockquotes
 
-Use `<blockquote>` when the text is quoted from another source. Use `<cite>` to cite the reference.
+Use tag `<blockquote>` intead of `<p>` to introduce a block of text that is quoted from another source.
+<br>
+Use tag `<cite>` to cite the reference.
+<br><br>
+Use class `.quote` to give format to a blockquote.
+<br>
+Use class `.vip-quote` to emphasise a blockquote.
+
 
 Markup:
 <blockquote class="{{modifier_class}}">
@@ -110,8 +115,8 @@ Markup:
 
 {modifier_class}:
 
-.vip-quote			- Size: big size and Slabo font-family
-.quote				- Type: with quotation mark
+.vip-quote
+.quote
 
 Styleguide #{$sgi-blockquotes}
 */
@@ -121,6 +126,7 @@ Styleguide #{$sgi-blockquotes}
 	display: block;
 	padding-top: 40px;
 	font-style: italic;
+	text-align: center;
 	background: url(#{$path-media}/appgrade/pictures/pic-quote-executive.png) center 0 no-repeat;
 }
 
