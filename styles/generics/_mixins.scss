@@ -54,17 +54,16 @@ $query2     = width, device-width
 	align-items: $value;
 }
 
-@mixin flex ( $value: 1 ) {
+@mixin flex ( $value: 1 0 auto) {
 	-webkit-box-flex: $value;
 	-webkit-flex: $value;
 	-ms-flex: $value;
 	flex: $value;
 }
 
-@mixin flex-direction ( $value: row) {
-	-webkit-flex-direction: $value;
-	    -ms-flex-direction: $value;
-	        flex-direction: $value;
+@mixin flex-flow ( $value: row nowrap ) {
+	-webkit-flex-flow: $value;
+       flex-flow: $value;
 }
 
 @mixin inner {
