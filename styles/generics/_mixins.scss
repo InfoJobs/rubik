@@ -59,16 +59,6 @@ $query2     = width, device-width
 	flex: $value;
 }
 
-@mixin inner {
-	padding: 20px 10px;
-	background-color: $shiro;
-
-
-	@include mediaquery ($bp-tablet) {
-		padding: 20px;
-	}
-}
-
 @mixin panel-default {
 	background-color: $dark-shiro;
 }
