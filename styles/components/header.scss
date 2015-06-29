@@ -16,6 +16,7 @@
 		min-height: 50px;
 		background-color: $day-blue;
 		background-image: url(#{$path-media}/appgrade/backgrounds/bg-logo-reduced-white.png);
+		border: 0 none;
 	}
 
 	h1 {
@@ -268,6 +269,16 @@
 
 }
 
+.nav-bar-top-left,
+.nav-bar-submenu {
+	font-family: 'Proximanovabold';
+
+	@include mediaquery ($bp-header) {
+		font-family: 'Proximanova';
+	}
+
+
+}
 .nav-bar-notifications {
 	position: relative;
 
@@ -282,33 +293,13 @@
 
 }
 
-
-
-
-/////////////////////////////////////
-////// OLD
-////////////////////////////////////
-
-
 .global-nav-landing {
 
-
-	.nav-bar-top > li > a:hover {
-		background: none;
-	}
-
-	.nav-bar-top-left {
-		position: static;
-		background: none;
-	}
-
-	.nav-bar-top-left li a.logo,
-	.nav-bar-top-left li a.logo:hover {
-		height: 50px;
-		margin-top: 0;
-		padding-top: 10px;
-		border: none;
-		background: none;
+	.logo,
+	.logo:hover {
+		display: block;
+		padding: 10px 20px;
+		border: 0 none;
 	}
 }
 
@@ -321,12 +312,10 @@
 
 }
 
-
 @media only screen and (max-width: $mobile-start) {
 
 	.wrapper {
 		padding: 0;
 	}
-
 
 }
