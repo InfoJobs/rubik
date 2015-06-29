@@ -31,10 +31,6 @@
 		display: none;
 	}
 
-	&.global-nav-submenu {
-		border-bottom: 0;
-	}
-
 	@include mediaquery ($bp-tablet) {
 		margin-top: 0; // margin inherit from container-expanded for tablet/desktop
 	}
@@ -67,7 +63,6 @@
 	width: 50px;
 	height: 50px;
 	background: url(#{$path-media}/appgrade/backgrounds/bg-menu-burger-icon.png) 0 0 no-repeat;
-
 
 	span {
 		display: none;
@@ -106,17 +101,6 @@
 
 }
 
-.nav-bar-top > li > a {
-	position: relative;
-	margin: 0;
-	padding: 15px 10px;
-
-	@include mediaquery ($bp-header) {
-		padding: 30px 15px;
-	}
-
-}
-
 .nav-bar-top-left {
 	@include flex;
 
@@ -125,23 +109,24 @@
 	}
 
 	> li > a {
-		font-size: $base-font-size;
+		display:block;
+		position: relative;
+		margin: 0;
+		padding: 15px 20px;
+		font-size: $medium-font-size;
 		color: $mid-script;
 	}
 
-	> li > a:hover {
+	> li > a:hover,
+	.active {
 		color: $day-blue;
 	}
 
-	.global-nav-submenu & > li > a {
-		padding: 10px 10px 12px;
-		font-size: $small-font-size;
-		line-height: $small-line-height;
-	}
-
 	.logo,
-	.logo:hover {
-		padding: 18px 20px 12px 10px;
+	.logo:hover,
+	.global-nav-submenu & .logo,
+	.global-nav-submenu & .logo:hover {
+		padding: 18px 20px 12px 20px;
 	}
 
 	@include mediaquery ($bp-header) {
@@ -149,6 +134,17 @@
 
 		> li {
 			float: left;
+		}
+
+		> li > a {
+			padding: 30px 15px;
+			font-size: $base-font-size;
+		}
+
+		.global-nav-submenu & > li > a {
+			padding: 10px 10px 12px;
+			font-size: $small-font-size;
+			line-height: $small-line-height;
 		}
 
 		.logo,
@@ -233,9 +229,14 @@
 	}
 
 	> li > a {
-		padding: 20px;
+		padding: 15px 20px;
 		font-size: $medium-font-size;
 		color: $outer-pawn;
+	}
+	
+	 > li > a:hover,
+	.active {
+		color:$day-blue;
 	}
 
 	@include mediaquery ($bp-header) {
@@ -304,38 +305,6 @@
 	.wrapper {
 		padding: 0 10px;
 	}
-
-
-	.global-nav.global-nav-submenu {
-		border-bottom: 1px solid $darkest-shiro;
-	}
-
-	.global-nav-submenu .nav-bar-top li a.logo,
-	.global-nav-submenu .nav-bar-top li a.logo:hover {
-		width: auto;
-		height: auto;
-	    margin-top: 0;
-	}
-
-	//inicio
-
-	.global-nav-submenu .nav-bar-top > li > a {
-		line-height: inherit;
-	}
-
-	.nav-bar-top > li > a,
-	.global-nav-submenu .nav-bar-top > li > a  {
-		display:block;
-		font-family: Proximanovabold;
-		font-size: 20px;
-
-		~ .nav-bar-submenu {
-			border-bottom: 1px solid $outer-land;
-		}
-
-	}
-
-
 
 }
 
