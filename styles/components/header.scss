@@ -22,11 +22,6 @@
 		display: none;
 	}
 
-	.logo,
-	.logo:hover {
-		background: none;
-	}
-
 	.logo img {
 		display: none;
 	}
@@ -117,8 +112,7 @@
 		color: $mid-script;
 	}
 
-	> li > a:hover,
-	.active {
+	> li > a:hover {
 		color: $day-blue;
 	}
 
@@ -127,6 +121,10 @@
 	.global-nav-submenu & .logo,
 	.global-nav-submenu & .logo:hover {
 		padding: 18px 20px 12px 20px;
+	}
+
+	.global-nav-submenu & {
+		background: $darkest-shiro;
 	}
 
 	@include mediaquery ($bp-header) {
@@ -158,6 +156,10 @@
 		.global-nav-submenu & .logo:hover {
 			margin-top: 10px;
 			padding: 0 15px 0 0;
+		}
+
+		.global-nav-submenu & {
+			background: $shiro;
 		}
 	}
 
@@ -222,6 +224,7 @@
 
 .nav-bar-submenu {
 	@include flex(1 0 100%);
+	order: -1;
 	background: $shiro;
 
 	> li {
@@ -233,7 +236,7 @@
 		font-size: $medium-font-size;
 		color: $outer-pawn;
 	}
-	
+
 	 > li > a:hover,
 	.active {
 		color:$day-blue;
@@ -241,6 +244,7 @@
 
 	@include mediaquery ($bp-header) {
 			padding: 0 5px;
+			order: unset;
 			background: $darkest-shiro;
 
 			> li {
