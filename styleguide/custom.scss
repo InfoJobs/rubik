@@ -13,8 +13,7 @@ body#kss-node {
 
     //Grid
     .col-child {
-    //[class^="col-"],
-    //[class*="col-"]
+
         padding: 10px;
         text-align: center;
         background-color: $darkest-shiro;
@@ -27,6 +26,17 @@ body#kss-node {
 
     .row {
         margin-bottom: 10px;
+
+        .row-matrioska {
+
+            margin-top: 10px;
+            margin-bottom: 0;
+
+        }
+    }
+
+    .row-matrioska .col-child {
+        background-color: $dark-shiro;
     }
 
     //Colors
@@ -81,16 +91,78 @@ body#kss-node {
 			font-size: 30px;
 		}
     }
+
+
 }
 
+
+
 .sg-content {
+    .home-intro {
+        height: 100%;
+        width: 100%;
+        padding-top: 100px;
+        padding-bottom: 40px;
+        background-color: $day-blue;
+        -webkit-transition: -webkit-transform 500ms ease;
+        transition: transform 500ms ease;
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        p {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            color: #FFF;
+            font-size: 20px;
+            line-height: 24px;
+
+            @media all and (max-width: 768px) {
+                width: 100%;
+            }
+        }
+
+        div {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    }
+
+    .home-content {
+        padding-top: 40px;
+
+        @include mediaquery ($bp-desktop) {
+
+            .row + .row {
+                margin-top: 20px;
+            }
+
+            .row {
+                margin-left: -20px;
+            }
+
+            .col-child {
+                margin: 0 0 20px 20px;
+
+                @include mediaquery ($bp-tablet) {
+            		margin-bottom: 0;
+            	}
+            }
+        }
+
+    }
+
     //Styleguide theme
     h1,
     h2 {
         margin: 0;
     }
 
-    h1 {
+    h1.sg-block-title {
         font-size: 25px;
         color: $day-blue;
     }
@@ -116,6 +188,7 @@ body#kss-node {
 
     p:last-child {
         margin-bottom: 0;
+        padding-bottom: 0;
     }
 
     .sg-img {
@@ -132,13 +205,12 @@ body#kss-node {
         }
     }
 
-    /*.margin-top {
-        margin-top: 70px;
+    //borders to visual guide
 
-        &:first-child {
-            margin-top: 40px;
-        }
-    }*/
+    .heading-middle {
+
+        border: 1px dashed $darkest-shiro;
+    }
 
     .sg-selector,
     .sg-block-description code {
@@ -181,6 +253,11 @@ body#kss-node {
         border-top: 1px solid $darkest-shiro;
         background-color: $darkest-shiro;
     }
+
+        .list-default + .list-default {
+
+            margin-top: 20px;
+        }
 }
 
 .sg-footer {
@@ -189,4 +266,24 @@ body#kss-node {
     &:before {
         background: none;
     }
+}
+
+/*------------------------------------*\
+$COMPONENTS OVERWRITE
+\*------------------------------------*/
+
+.user-feedback {
+    height: 40px;
+
+    .link-user-feedback {
+        position: absolute;
+    }
+}
+
+/*------------------------------------*\
+$KSS-NODE
+\*------------------------------------*/
+
+#kss-node ol.linenums {
+    white-space: pre-wrap;
 }

@@ -8,6 +8,15 @@
 /*
 User Feedback
 
+Use class `.user-feedback` followed by the nested structure `.link-user-feedback` to create the feedback container.
+
+
+Markup:
+<div class="user-feedback">
+	<a href="#" class="link-user-feedback">User Feedback</a>
+</div>
+
+
 Styleguide 2.22
 */
 

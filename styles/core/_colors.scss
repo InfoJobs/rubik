@@ -7,61 +7,28 @@
 /*
 Text colors
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+* Use class `.script` to force text color as the default text color
+* Use class `.soft-script` to force a text color as a secondary text
+* Use class `.alternative` to mark text that contains details information
+* Use class `.disabled` to mark a text option as disabled
+* Use class `.marked` to focus attention in it
+* Use class `.highlight` to highlight words as a result of a search
 
-Styleguide 1.3
-*/
+{modifier_class}:
 
-/*
-Default text color
-
-Use class `.script` to force text color as the default text color
-
-Markup:
-<p>Lorem ipsum dolor sit amet, <a href="#" class="script">consectetur adipiscing</a> elit.</p>
-
-Styleguide 1.3.1
-*/
-/*
-Secondary text color
-
-Use class `.soft-script` to force a text color as a secondary text
+.script
+.notification-success
+.alternative
+.disabled
+.marked
+.highlight
 
 Markup:
-<p>Lorem ipsum dolor sit amet, <a href="#" class="soft-script">consectetur adipiscing</a> elit.</p>
+<p>Lorem ipsum dolor sit amet, <span class="{{modifier_class}}">consectetur adipiscing</span> elit.</p>
 
-Styleguide 1.3.2
+Styleguide 1.2.7
 */
-/*
-Details text color
 
-Use class `.alternative` to mark text that contains details information
-
-Markup:
-<p class="alternative">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-Styleguide 1.3.3
-*/
-/*
-Disabled text color
-
-Use class `.disabled` to mark a text option as disabled
-
-Markup:
-<p>Lorem ipsum dolor sit amet, <a href="#" class="disabled">consectetur adipiscing elit</a>.</p>
-
-Styleguide 1.3.4
-*/
-/*
-Focus text color
-
-Use class `.marked` to focus attention in it
-
-Markup:
-<p>Lorem ipsum <span class="marked">6m ago</p>
-
-Styleguide 1.3.5
-*/
 /*
 Contrasted text color
 
@@ -73,18 +40,9 @@ Markup:
 	<a href="#" class="contrast">Curabitur varius</a>
 </div>
 
-Styleguide 1.3.6
+Styleguide 1.2.7.1
 */
-/*
-Highlighted text color
 
-Use class `.highlight` to highlight words as a result of a search
-
-Markup:
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing <span class="highlight">elit</span>.</p>
-
-Styleguide 1.3.7
-*/
 
 
 //white text

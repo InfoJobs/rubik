@@ -136,14 +136,13 @@ Styleguide #{$sgi-headingMega}
 
 
 /*
-Heading-middle
+Heading middle
 
 Use class `.heading-middle` to adjust headings in vertical align content.
 
 Markup:
-<div class="heading-addons content-logo-text">
+<div class="heading-addons">
 	<h1 class="heading-middle">Header Level 1</h1>
-	<p>Lorem ipsum</p>
 </div>
 
 Styleguide #{$sgi-headingMiddle}
@@ -153,6 +152,10 @@ Styleguide #{$sgi-headingMiddle}
 	padding-top: 10px;
 }
 
+/*
+Heading divider
+
+*/
 .heading-divider {
 	margin-bottom: 20px;
 	padding-bottom: 20px;
