@@ -21,7 +21,7 @@
 				  <li>
 				      <ul class="nav-bar nav-bar-top nav-bar-top-left clearfix">
 				          <li>
-				             <a href="/" id="hdrLinkToHome" class="logo">
+				             <a href="/" id="hdrLinkToHome" class="active logo">
 				              	<img src="http://media.infojobs.net/portales/ij//appgrade/emails/logo-ij.png">
 				              </a>
 				          </li>
@@ -39,13 +39,13 @@
 
             <nav id="nav-mobile" class="nav-mobile">
 
-                <ul class="nav-bar nav-bar-top-left clearfix">
+                <ul class="nav-bar nav-bar-top nav-bar-top-left clearfix">
                     <li>
                     <!--  el logo se muestra como H1 solo en la cabecera de la home -->
-                        <a id="home-nologged-inicio" class="logo" href="#">
+                        <h1><a id="home-nologged-inicio" class="active logo" href="#">
                         	<img alt="" src="http://media.infojobs.net/appgrade/backgrounds/bg-logo.png">
                         	<span>Inicio</span>
-                        </a>
+                        </a></h1>
                     </li>
                     <li><a id="1" href="#">Empleo</a></li>
                     <li><a id="2" href="#">Freelance</a></li>
@@ -66,12 +66,12 @@
 	<div class="container container-expanded">
         <!-- Header sin submenu reconocido -->
         <header class="global-nav">
-        	<a id="home-nologged-menu" href="#" class="js-open-menu nav-bar-top-toggle"><span>Menu</span></a>
+        	<a id="home-nologged-menu" href="#" class="js-open-menu nav-bar-top-toggle nav-bar-top-default"><span>Menu</span></a>
             <nav id="nav-mobile" class="nav-mobile">
-                <ul class="nav-bar nav-bar-top-left clearfix">
+                <ul class="nav-bar nav-bar-top nav-bar-top-left clearfix">
                     <li>
                     <!--  el logo se muestra como H1 solo en la cabecera de la home -->
-                        <a id="home-nologged-inicio" class="logo" href="#">
+                        <a id="home-nologged-inicio" class="active logo" href="#">
                         	<img alt="" src="http://media.infojobs.net/appgrade/backgrounds/bg-logo.png">
                         	<span>Inicio</span>
                         </a>
@@ -84,8 +84,8 @@
                 </ul>
 
                 <ul class="access-bar">
-					<li><a id="candidate_login" title="Accede a tu Ã¡rea de candidato" class="btn btn-link-primary profile-ellipsis" href="#">Accede <span id="userReconizedName">Pedro</span></a></li>
-					<li><a id="userNotReconizedName" href="#" class="btn btn-link-secondary" title="Tu CV en InfoJobs">Salir</a></li>
+					<li><a id="candidate_login" title="Accede a tu Ã¡rea de candidato" class="btn btn-link-primary" href="#">Accede <span id="userReconizedName">Pedro</span></a></li>
+					<li><a id="userNotReconizedName" href="#" title="Tu CV en InfoJobs">Salir</a></li>
 				</ul>
 
 
@@ -96,10 +96,10 @@
 
     <div class="container container-expanded">
     <!-- Header logado sin submenu-->
-        <header class="global-nav">
-        	<a href="#" class="js-open-menu nav-bar-top-toggle"><span>Menï¿½</span></a>
+        <header class="global-nav global-nav-logged">
+        	<a href="#" class="js-open-menu nav-bar-top-toggle nav-bar-top-default"><span>Menï¿½</span></a>
             <nav id="nav-mobile" class="nav-mobile">
-                <ul class="nav-bar nav-bar-top-left clearfix">
+                <ul class="nav-bar nav-bar-top nav-bar-top-left clearfix">
                     <li>
                     <!--  el logo se muestra como H1 solo en la cabecera de la home -->
                         <a class="logo" href="#">
@@ -114,13 +114,24 @@
                     <li><a href="#" id="5">Zona Empresas</a></li>
                 </ul>
                 <ul class="nav-bar-top-right">
-                    <li><a href="#" class="nav-bar-top-avatar profile-ellipsis">
-						<img class="crop-circle" src="https://www.infojobs.net/candidato.social.foto?id_candidato=B542E16E-C8A6-4335-375DDF3423C98872" alt="Foto de Norbert Guasch Garcia">
-						<span>Pedro</span></a>
+                    <li><a href="#" class="nav-bar-top-avatar">
+						<img class="picture crop-circle" src="https://www.infojobs.net/candidato.social.foto?id_candidato=B542E16E-C8A6-4335-375DDF3423C98872" alt="Foto de Norbert Guasch Garcia">
+						<span class="name">Pedro</span></a>
 					</li>
-                    <li><a href="#" class="btn btn-link-secondary">Salir</a></li>
+                    <li><a href="#">Salir</a></li>
                 </ul>
-
+				<ul class="nav-bar nav-bar-submenu hide-large-device">
+					<li><a class="active-submenu" href="#">Mi InfoJobs</a></li>
+					<li><a href="#">Buscar ofertas</a></li>
+					<li><a href="#">Mis CVs</a></li>
+					<li><a href="#">Candidaturas</a></li>
+					<li class="nav-bar-notifications">
+						<a href="#">Contactos</a>
+						<span class="sticker sticker-marked">10</span>
+					</li>
+					<li><a href="#">Quién me ve</a></li>
+					<li><a href="#">Ajustes</a></li>
+				</ul>
             </nav>
         </header>
     <!-- / Header logado sin submenu -->
@@ -128,10 +139,10 @@
 
     <div class="container container-expanded">
     <!-- Header con submeny logado -->
-		<header class="global-nav global-nav-submenu ">
-			<a href="#" class="js-open-menu nav-bar-top-toggle"><span>Menï¿½</span></a>
+		<header class="global-nav global-nav-logged global-nav-submenu">
+			<a href="#" class="js-open-menu nav-bar-top-toggle nav-bar-top-default"><span>Menï¿½</span></a>
 		    <nav id="nav-mobile" class="nav-mobile">
-		        <ul class="nav-bar nav-bar-top-left clearfix">
+		        <ul class="nav-bar nav-bar-top nav-bar-top-left clearfix">
 		            <li>
 		            <!--  el logo se muestra como H1 solo en la cabecera de la home -->
 		                <a class="logo" href="#">
@@ -146,24 +157,23 @@
 		            <li><a href="#" id="5">Zona Empresas</a></li>
 		        </ul>
 		        <ul class="nav-bar-top-right">
-		            <li><a href="#" class="nav-bar-top-avatar profile-ellipsis">
-						<img class="crop-circle" src="https://www.infojobs.net/candidato.social.foto?id_candidato=B542E16E-C8A6-4335-375DDF3423C98872" alt="Foto de Norbert Guasch Garcia">
-						<span>Pedro</span></a>
+		            <li><a href="#" class="nav-bar-top-avatar">
+						<img class="picture crop-circle" src="https://www.infojobs.net/candidato.social.foto?id_candidato=B542E16E-C8A6-4335-375DDF3423C98872" alt="Foto de Norbert Guasch Garcia">
+						<span class="name">Pedro</span></a>
 					</li>
-		            <li><a href="#" class="btn btn-link-secondary">Salir</a></li>
+		            <li><a href="#">Salir</a></li>
 		        </ul>
 				<ul class="nav-bar nav-bar-submenu">
-				    <li><a href="#" class="active">Mi InfoJobs</a></li>
-				    <li><a href="#">Mis Cvs</a></li>
-				    <li><a href="#">Candidaturas</a></li>
+				    <li><a class="active-submenu" href="#">Mi InfoJobs</a></li>
+				    <li><a href="#">Buscar ofertas</a></li>
+				    <li><a href="#">Mis CVs</a></li>
+					<li><a href="#">Candidaturas</a></li>
 				    <li class="nav-bar-notifications">
 						<a href="#">Contactos</a>
 						<span class="sticker sticker-marked">10</span>
 					</li>
-				    <li><a href="#">Alertas</a></li>
-				    <li><a href="#">Mis servicios</a></li>
-				    <li><a href="#">Idiomas y tests</a></li>
-				    <li><a href="#">Mi cuenta</a></li>
+					<li><a href="#">Quién me ve</a></li>
+					<li><a href="#">Ajustes</a></li>
 				</ul>
 		    </nav>
 		</header>

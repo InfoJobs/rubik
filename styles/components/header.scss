@@ -123,10 +123,6 @@
 		padding: 18px 20px 12px 20px;
 	}
 
-	.global-nav-submenu & {
-		background: $darkest-shiro;
-	}
-
 	@include mediaquery ($bp-header) {
 		padding-left: 20px;
 
@@ -140,9 +136,8 @@
 		}
 
 		.global-nav-submenu & > li > a {
+			@include font-base-line;
 			padding: 10px 10px 12px;
-			font-size: $small-font-size;
-			line-height: $small-line-height;
 		}
 
 		.logo,
@@ -165,11 +160,40 @@
 
 }
 
+.global-nav-logged {
+
+	.nav-bar-top-left {
+		background: $darkest-shiro;
+
+		@include mediaquery ($bp-header) {
+			background: $shiro;
+		}
+	}
+
+	.nav-bar-submenu {
+		padding-top: 145px;
+
+		@include mediaquery ($bp-header) {
+			padding-top:0;
+		}
+	}
+}
+
+.global-nav-submenu {
+	.nav-bar-top-left {
+		@include mediaquery ($bp-header) {
+			> li > a {
+				color: $soft-script;
+			}
+		}
+	}
+}
+
 .access-bar,
 .nav-bar-top-right {
 	@include display-flex;
 	@include align-items(center);
-	padding: 10px;
+	padding: 20px;
 	border-top: 1px solid $darkest-shiro;
 
 	> li {
@@ -180,38 +204,103 @@
 		}
 	}
 
-	.btn {
-		width: 100%;
+	> li > a {
+		@include mediaquery ($bp-header) {
+			font-size: $small-font-size;
+		}
 	}
 
 	@include mediaquery ($bp-header) {
 		padding: 0 20px 0 0;
 		border: 0 none;
+	}
+}
 
-		.btn {
+.access-bar {
+	.btn {
+		width: 100%;
+
+		@include mediaquery ($bp-header) {
 			width: auto;
 		}
-
 	}
+}
 
+.nav-bar-top-right {
+	.global-nav-logged & {
+		display: block;
+
+		> li > a {
+			color: $soft-script;
+
+			&.nav-bar-top-avatar {
+				color: $shiro;
+
+				@include mediaquery ($bp-header) {
+					color: $soft-script;
+				}
+			}
+		}
+
+		@include mediaquery ($bp-header) {
+			display: flex;
+		}
+	}
 }
 
 .nav-bar-top-avatar {
-	font-size: $small-font-size;
-	color: $dark-silk;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+    top: 0;
+	padding: 30px 20px;
+    width: 100%;
+	height: 145px;
+	font-size: $large-font-size;
+	text-align: center;
+	background: black;
 
-	&:hover {
-		color: $dark-silk;
-		text-decoration: underline;
+	.name {
+		white-space: nowrap;
 	}
 
-	img {
-		width: 40px;
-		height: 40px;
+	.picture {
+		display: block;
+		width: 65px;
+		height: 65px;
 		vertical-align: middle;
 		border: 2px solid $shiro;
+		margin-bottom: 10px;
 	}
 
+	@include mediaquery ($bp-header) {
+		position: relative;
+		padding: 0;
+		width: auto;
+		height: auto;
+		text-align: left;
+		font-size: $small-font-size;
+		color: $dark-silk;
+		background: none;
+		white-space: nowrap;
+
+		&::after {
+			content: "|";
+			padding-left: 5px;
+		}
+
+		&:hover {
+			color: $dark-silk;
+			text-decoration: underline;
+		}
+
+		.picture {
+			display: inline;
+			width: 30px;
+			height: 30px;
+			margin-bottom: 0;
+		}
+	}
 }
 
 .profile-ellipsis {
@@ -227,11 +316,8 @@
 	order: -1;
 	background: $shiro;
 
-	> li {
-		float: none;
-	}
-
 	> li > a {
+		display: block;
 		padding: 15px 20px;
 		font-size: $medium-font-size;
 		color: $outer-pawn;
@@ -243,20 +329,26 @@
 	}
 
 	@include mediaquery ($bp-header) {
-			padding: 0 5px;
-			order: unset;
-			background: $darkest-shiro;
+		order: unset;
+		background: $darkest-shiro;
 
-			> li {
-				float: left;
-			}
+		> li {
+			float: left;
+		}
 
-			> li > a {
-				padding: 20px 15px;
-				font-size: $base-font-size;
-			}
+		> li > a {
+			padding: 20px 15px;
+			font-size: $base-font-size;
+		}
+
+		> li:first-child a {
+			padding-left: 20px;
+		}
+
+		> li:last-child a {
+			padding-right: 20px;
+		}
 	}
-
 }
 
 .nav-bar-notifications {
