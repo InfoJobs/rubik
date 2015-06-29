@@ -75,12 +75,17 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index:9000;
+	height: 100vh;
 	width: 320px;
 	background:$shiro;
+	z-index:9000;
 	-webkit-box-shadow: 1px 0 3px 0px rgba(0,0,0,0.75);
 	   -moz-box-shadow: 1px 0 3px 0px rgba(0,0,0,0.75);
 	        box-shadow: 1px 0 3px 0px rgba(0,0,0,0.75);
+
+	.global-nav-submenu & {
+		height: auto;
+	}
 
 	@include mediaquery ($bp-header) {
 
@@ -89,6 +94,7 @@
 		position: static;
 		width: auto;
 		height: auto;
+		min-height: auto;
 		-webkit-box-shadow: none;
 		   -moz-box-shadow: none;
 		        box-shadow: none;
@@ -98,6 +104,7 @@
 
 .nav-bar-top-left {
 	@include flex;
+	overflow: scroll;
 
 	> li {
 		float: none;
@@ -125,10 +132,12 @@
 
 	.global-nav-submenu & {
 		background: $darkest-shiro;
+		overflow: visible;
 	}
 
 	@include mediaquery ($bp-header) {
 		padding-left: 20px;
+		overflow: visible;
 
 		> li {
 			float: left;
@@ -244,7 +253,7 @@
 
 	@include mediaquery ($bp-header) {
 			padding: 0 5px;
-			order: unset;
+			order: initial;
 			background: $darkest-shiro;
 
 			> li {
