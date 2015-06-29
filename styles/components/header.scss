@@ -303,6 +303,32 @@
 	}
 }
 
+.open-menu {
+	@include display-flex;
+}
+
+.wrap-overlay {
+	position: static;
+
+}
+
+.wrapper::before {
+	background: rgba(255, 255, 255,0);
+    -webkit-transition: background 1s;
+    -moz-transition: background 1s;
+    -o-transition: background 1s;
+    transition: background 2;
+}
+
+.wrap-overlay::before {
+	display: block;
+	content: "";
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.6);
+}
+
 @media only screen and (max-width: 945px) {
 
 	// mantenemos a 10px el padding a partir de esta resolucion por coherencia con el punto de corte del menu (distitos -> 945 vs $tablet-start)

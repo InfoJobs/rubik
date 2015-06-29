@@ -168,13 +168,21 @@
 
 $(function() {
     $('.js-open-menu').click(function(){
-        $(this).next('.nav-mobile').css('display','flex');
+
+        $(this).next('.nav-mobile').addClass('fade-in open-menu');
+		$('.wrapper').addClass('wrap-overlay');
     });
 
     // Close on ESC key
     $(document).on('keyup', function(event) {
+
         if(event.keyCode === 27) {
-            $('.nav-mobile').css('display','none');
+			$('.nav-mobile').addClass('fade-out');
+			$('.wrapper').removeClass('wrap-overlay');
+	        setTimeout(function(){
+                $('.nav-mobile').removeClass('open-menu fade-out');
+	         },1000);
+
         }
     });
 
