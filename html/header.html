@@ -119,7 +119,7 @@
 						<a href="#">Contactos</a>
 						<span class="sticker sticker-marked">10</span>
 					</li>
-					<li><a href="#">Quién me ve</a></li>
+					<li><a href="#">Quiï¿½n me ve</a></li>
 					<li><a href="#">Ajustes</a></li>
 				</ul>
             </nav>
@@ -162,7 +162,7 @@
 						<a href="#">Contactos</a>
 						<span class="sticker sticker-marked">10</span>
 					</li>
-					<li><a href="#">Quién me ve</a></li>
+					<li><a href="#">Quiï¿½n me ve</a></li>
 					<li><a href="#">Ajustes</a></li>
 				</ul>
 		    </nav>
@@ -173,31 +173,6 @@
 
  </div>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-<script type="text/javascript">
-/* <![CDATA[ */
+<script src="../js/jquery.menu.js"></script>
 
-$(function() {
-    $('.js-open-menu').click(function(){
-
-        $(this).next('.nav-mobile').addClass('fade-in open-menu');
-		$('.wrapper').addClass('wrap-overlay');
-    });
-
-    // Close on ESC key
-    $(document).on('keyup', function(event) {
-
-        if(event.keyCode === 27) {
-			$('.nav-mobile').addClass('fade-out');
-			$('.wrapper').removeClass('wrap-overlay');
-	        setTimeout(function(){
-                $('.nav-mobile').removeClass('open-menu fade-out');
-	         },1000);
-
-        }
-    });
-
-});
-
-/* ]]> */
-</script>
 </body>
