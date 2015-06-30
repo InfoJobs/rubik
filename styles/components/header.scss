@@ -211,7 +211,7 @@
 	border-top: 1px solid $darkest-shiro;
 
 	> li {
-		@include flex(1 0 0);
+		@include flex(1 0 auto);
 
 		&:first-child {
 			margin-right: 10px;
@@ -293,7 +293,6 @@
 
 	@include mediaquery ($bp-header) {
 		display: table;
-  		align-items: center;
 		position: relative;
 		padding: 0;
 		width: auto;
@@ -316,6 +315,8 @@
 
 		@include mediaquery ($bp-header) {
 			display: table-cell;
+			vertical-align: middle;
+			padding-left: 10px;
 		}
 	}
 
