@@ -77,16 +77,12 @@
 	top: 0;
 	left: 0;
 	height: 100vh;
-	width: 320px;
+	width: 260px;
 	background:$shiro;
 	z-index:9000;
 	-webkit-box-shadow: 1px 0 3px 0px rgba(0,0,0,0.75);
 	   -moz-box-shadow: 1px 0 3px 0px rgba(0,0,0,0.75);
 	        box-shadow: 1px 0 3px 0px rgba(0,0,0,0.75);
-
-	.global-nav-logged & {
-		height: auto;
-	}
 
 	@include mediaquery ($bp-header) {
 		@include display-flex;
@@ -175,6 +171,10 @@
 
 .global-nav-logged {
 
+	& .nav-mobile {
+		height: auto;
+	}
+
 	.nav-bar-top-left {
 		background: $darkest-shiro;
 
@@ -208,7 +208,6 @@
 .nav-bar-top-right {
 	@include display-flex;
 	@include align-items(center);
-	padding: 20px;
 	border-top: 1px solid $darkest-shiro;
 
 	> li {
@@ -232,6 +231,12 @@
 }
 
 .access-bar {
+	padding: 20px;
+
+	@include mediaquery ($bp-header) {
+		@include display-flex;
+	}
+
 	.btn {
 		width: 100%;
 
@@ -242,28 +247,34 @@
 }
 
 .nav-bar-top-right {
+
+	.logout {
+		display: block;
+		padding: 20px;
+		color: $soft-script;
+
+		@include mediaquery ($bp-header) {
+			display: inline;
+			padding: 0;
+
+			&:hover {
+				color: $dark-silk;
+				text-decoration: underline;
+			}
+		}
+	}
+
 	.global-nav-logged & {
 		display: block;
 
-		> li > a {
-			color: $soft-script;
-
-			&.nav-bar-top-avatar {
-				color: $shiro;
-
-				@include mediaquery ($bp-header) {
-					color: $soft-script;
-				}
-			}
-		}
-
 		@include mediaquery ($bp-header) {
-			display: flex;
+			@include display-flex;
 		}
 	}
+
 }
 
-.nav-bar-top-avatar {
+.avatar {
 	overflow: hidden;
 	position: absolute;
 	left: 0;
@@ -273,10 +284,39 @@
 	height: 145px;
 	font-size: $large-font-size;
 	text-align: center;
+	color: $shiro;
 	background: black;
+
+	&:hover {
+		color: $shiro;
+	}
+
+	@include mediaquery ($bp-header) {
+		display: table;
+  		align-items: center;
+		position: relative;
+		padding: 0;
+		width: auto;
+		height: auto;
+		text-align: left;
+		font-size: $small-font-size;
+		color: $soft-script;
+		background: none;
+		white-space: nowrap;
+
+		&:hover {
+			color: $dark-silk;
+			text-decoration: underline;
+		}
+
+	}
 
 	.name {
 		white-space: nowrap;
+
+		@include mediaquery ($bp-header) {
+			display: table-cell;
+		}
 	}
 
 	.picture {
@@ -286,36 +326,15 @@
 		vertical-align: middle;
 		border: 2px solid $shiro;
 		margin-bottom: 10px;
-	}
 
-	@include mediaquery ($bp-header) {
-		position: relative;
-		padding: 0;
-		width: auto;
-		height: auto;
-		text-align: left;
-		font-size: $small-font-size;
-		color: $dark-silk;
-		background: none;
-		white-space: nowrap;
-
-		&::after {
-			content: "|";
-			padding-left: 5px;
-		}
-
-		&:hover {
-			color: $dark-silk;
-			text-decoration: underline;
-		}
-
-		.picture {
-			display: inline;
+		@include mediaquery ($bp-header) {
+			display: table-cell;
 			width: 30px;
 			height: 30px;
 			margin-bottom: 0;
 		}
 	}
+
 }
 
 .profile-ellipsis {
@@ -331,39 +350,49 @@
 	order: -1;
 	background: $shiro;
 
-	> li > a {
-		display: block;
-		padding: 15px 20px;
-		font-size: $medium-font-size;
-		color: $outer-pawn;
-	}
-
-	 > li > a:hover,
-	.active {
-		color:$day-blue;
-	}
-
 	@include mediaquery ($bp-header) {
 		padding: 0 5px;
 		order: initial;
 		background: $darkest-shiro;
+	}
 
-		> li {
+	> li  {
+		@include mediaquery ($bp-header) {
 			float: left;
 		}
 
-		> li > a {
-			padding: 20px 15px;
-			font-size: $base-font-size;
+		& > a {
+			display: block;
+			padding: 15px 20px;
+			font-size: $medium-font-size;
+			color: $outer-pawn;
+
+			&:hover {
+				color:$day-blue;
+			}
+
+			@include mediaquery ($bp-header) {
+				padding: 20px 15px;
+				font-size: $base-font-size;
+			}
 		}
 
-		> li:first-child a {
-			padding-left: 20px;
+		&:first-child a {
+			@include mediaquery ($bp-header) {
+				padding-left: 20px;
+			}
 		}
 
-		> li:last-child a {
-			padding-right: 20px;
+		&:last-child a {
+			@include mediaquery ($bp-header) {
+				padding-right: 20px;
+			}
 		}
+
+	}
+
+	.active {
+		color: $day-blue;
 	}
 }
 
@@ -374,9 +403,8 @@
 	@include mediaquery ($bp-header) {
 		font-family: 'Proximanova';
 	}
-
-
 }
+
 .nav-bar-notifications {
 	position: relative;
 
@@ -407,7 +435,6 @@
 
 .wrap-overlay {
 	position: static;
-
 }
 
 .wrapper::before {
