@@ -252,10 +252,16 @@
 		display: block;
 		padding: 20px;
 		color: $soft-script;
+		background-color: $darkest-shiro;
+		font-family: 'Proximanovabold';
+		font-size: $medium-font-size;
 
 		@include mediaquery ($bp-header) {
 			display: inline;
 			padding: 0;
+			background-color: $shiro;
+			font-family: 'Proximanova';
+			font-size: $small-font-size;
 
 			&:hover {
 				color: $dark-silk;
@@ -348,7 +354,7 @@
 
 .nav-bar-submenu {
 	@include flex(1 0 100%);
-	order: -1;
+	order: -1;  //SEEMS DOESN'T WORKS PROPERLY IN iOS :(
 	background: $shiro;
 
 	@include mediaquery ($bp-header) {
