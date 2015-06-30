@@ -16,19 +16,9 @@
 <div class="wrapper">
 	<div class="container container-expanded">
 		<header class="global-nav global-nav-landing">
-			<nav>
-				<ul>
-				  <li>
-				      <ul class="nav-bar nav-bar-top nav-bar-top-left clearfix">
-				          <li>
-				             <a href="/" id="hdrLinkToHome" class="active logo">
-				              	<img src="http://media.infojobs.net/portales/ij//appgrade/emails/logo-ij.png">
-				              </a>
-				          </li>
-				      </ul>
-				  </li>
-				</ul>
-			</nav>
+	         <a href="#" class="logo">
+	          	<img alt="" src="http://media.infojobs.net/portales/ij//appgrade/emails/logo-ij.png">
+	         </a>
 		</header>
 	</div>
 
@@ -188,13 +178,21 @@
 
 $(function() {
     $('.js-open-menu').click(function(){
-        $(this).next('.nav-mobile').css('display','flex');
+
+        $(this).next('.nav-mobile').addClass('fade-in open-menu');
+		$('.wrapper').addClass('wrap-overlay');
     });
 
     // Close on ESC key
     $(document).on('keyup', function(event) {
+
         if(event.keyCode === 27) {
-            $('.nav-mobile').css('display','none');
+			$('.nav-mobile').addClass('fade-out');
+			$('.wrapper').removeClass('wrap-overlay');
+	        setTimeout(function(){
+                $('.nav-mobile').removeClass('open-menu fade-out');
+	         },1000);
+
         }
     });
 

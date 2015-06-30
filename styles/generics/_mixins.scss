@@ -54,7 +54,7 @@ $query2     = width, device-width
 	align-items: $value;
 }
 
-@mixin flex ( $value: 1 0 auto) {
+@mixin flex ( $value: 1) {
 	-webkit-box-flex: $value;
 	-webkit-flex: $value;
 	-ms-flex: $value;
