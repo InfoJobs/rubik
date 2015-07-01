@@ -91,6 +91,7 @@
 		width: auto;
 		height: auto;
 		min-height: auto;
+		padding: 0 20px;
 		-webkit-box-shadow: none;
 		   -moz-box-shadow: none;
 		        box-shadow: none;
@@ -132,7 +133,6 @@
 	}
 
 	@include mediaquery ($bp-header) {
-		padding-left: 20px;
 		overflow: visible;
 
 		> li {
@@ -183,13 +183,6 @@
 		}
 	}
 
-	.nav-bar-submenu {
-		padding-top: 145px;
-
-		@include mediaquery ($bp-header) {
-			padding-top:0;
-		}
-	}
 }
 
 .global-nav-submenu {
@@ -212,10 +205,6 @@
 
 	> li {
 		@include flex(1 0 auto);
-
-		&:first-child {
-			margin-right: 10px;
-		}
 	}
 
 	> li > a {
@@ -225,16 +214,24 @@
 	}
 
 	@include mediaquery ($bp-header) {
-		padding: 0 20px 0 0;
 		border: 0 none;
 	}
 }
 
 .access-bar {
-	padding: 20px;
+	padding: 10px;
 
 	@include mediaquery ($bp-header) {
 		@include display-flex;
+		padding: 0;
+	}
+
+	li {
+		margin-left: 10px;
+
+		&:first-child {
+			margin-left: 0;
+		}
 	}
 
 	.btn {
@@ -247,6 +244,26 @@
 }
 
 .nav-bar-top-right {
+
+	li {
+
+		@include mediaquery ($bp-header) {
+			position: relative;
+			margin-left: 10px;
+
+			&:first-child {
+				margin-right: 10px;
+			}
+
+			&:first-child::after {
+				content: "|";
+				position: absolute;
+				right: -10px;
+				top: calc(45% - 0.5em);
+				color: $soft-script;
+			}
+		}
+	}
 
 	.logout {
 		display: block;
@@ -354,11 +371,13 @@
 
 .nav-bar-submenu {
 	@include flex(1 0 100%);
+	padding-top: 145px;
 	order: -1;  //SEEMS DOESN'T WORKS PROPERLY IN iOS :(
 	background: $shiro;
 
 	@include mediaquery ($bp-header) {
-		padding: 0 5px;
+		margin: 0 -20px;
+		padding-top:0;
 		order: initial;
 		background: $darkest-shiro;
 	}
@@ -421,7 +440,8 @@
     	bottom: 12px;
 
 		@include mediaquery ($bp-header) {
-	    	right: -4px;		}
+	    	right: -4px;
+		}
     }
 
 }
