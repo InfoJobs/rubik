@@ -132,7 +132,7 @@
 	}
 
 	.global-nav-submenu & {
-		background: $darkest-shiro;
+		background: $dark-shiro;
 		overflow: visible;
 	}
 
@@ -180,8 +180,8 @@
 	}
 
 	.nav-bar-top-left {
-		background: $darkest-shiro;
-		border-top: 1px solid $soft-script;
+		background: $dark-shiro;
+		border-top: 1px solid $darkest-shiro;
 
 		@include mediaquery ($bp-header) {
 			background: $shiro;
@@ -189,7 +189,7 @@
 		}
 
 		li {
-			border-bottom: 1px solid $soft-script;
+			border-bottom: 1px solid $darkest-shiro;
 
 			@include mediaquery ($bp-header) {
 				border-bottom: 0;
@@ -275,7 +275,7 @@
 		display: block;
 		padding: 15px 20px;
 		color: $soft-script;
-		background-color: $darkest-shiro;
+		background-color: $dark-shiro;
 		font-family: 'Proximanovabold';
 		font-size: $medium-font-size;
 
