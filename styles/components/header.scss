@@ -19,10 +19,7 @@
 		border: 0 none;
 	}
 
-	h1 {
-		display: none;
-	}
-
+	h1,
 	.logo img {
 		display: none;
 	}
@@ -38,6 +35,7 @@
 			display: none;
 		}
 
+		h1,
 		.logo img {
 			display: block;
 		}

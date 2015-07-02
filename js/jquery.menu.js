@@ -1,3 +1,4 @@
+
 $(function() {
 
 	function closeMenu() {
@@ -34,5 +35,17 @@ $(function() {
         }
 
     });
+
+	//delete wrap-overlay on resize
+	$( window ).resize(function() {
+
+		if($('.wrapper').hasClass('wrap-overlay') && window.innerWidth > 945) {
+
+			$('.wrapper').removeClass('wrap-overlay');
+
+		}
+
+	});
+
 
 });
