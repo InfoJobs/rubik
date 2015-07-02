@@ -44,7 +44,6 @@
 	}
 
 	&.global-nav-submenu {
-
 		a {
 			font-size: $medium-font-size;
 
@@ -52,6 +51,7 @@
 				font-size: $small-font-size;
 			}
 		}
+
 		.nav-bar-submenu a {
 			font-size: $large-font-size;
 
@@ -64,7 +64,6 @@
 	.nav-bar-submenu a {
 		font-size: $base-font-size;
 	}
-
 
 	@include mediaquery ($bp-header) {
 		background-image: none;
@@ -82,11 +81,55 @@
 		&.global-nav-landing {
 			background-image: none;
 		}
-
 	}
 
 	@media print {
 		display: none;
+	}
+}
+
+
+.nav-bar-top-left li a {
+	padding: 15px 0;
+}
+
+.nav-bar-top-right li a,
+.nav-bar-submenu li a {
+	padding: 15px 10px;
+}
+
+.nav-bar-top-left li:first-child a,
+.nav-bar-top-right li:first-child a,
+.nav-bar-submenu li:first-child a {
+	padding-top: 20px;
+
+	@include mediaquery ($bp-header) {
+		padding: 0;
+	}
+}
+
+.nav-bar-top-right li:first-child a.avatar {
+	padding-top: 30px;
+
+	@include mediaquery ($bp-header) {
+		padding: 0;
+	}
+}
+
+.nav-bar-top-left li:last-child a,
+.nav-bar-submenu li:last-child a {
+	padding-bottom: 20px;
+
+	@include mediaquery ($bp-header) {
+		padding-bottom: 0;
+	}
+}
+
+.nav-bar-top-right li:last-child a {
+	padding-bottom: 15px;
+
+	@include mediaquery ($bp-header) {
+		padding-bottom: 0;
 	}
 }
 
@@ -104,7 +147,6 @@
 	@include mediaquery ($bp-header) {
 		display: none;
 	}
-
 }
 
 .nav-mobile {
@@ -132,14 +174,14 @@
 		-webkit-box-shadow: none;
 		   -moz-box-shadow: none;
 		        box-shadow: none;
-		}
-
+	}
 }
 
 .nav-bar-top-left {
 	@include flex;
 	overflow: scroll;
-	padding: 0 10px;
+	padding-right: 10px;
+	padding-left: 10px;
 
 	> li {
 		float: none;
@@ -147,30 +189,22 @@
 		@include mediaquery ($bp-header) {
 			float: left;
 		}
-	}
 
-	> li > a {
-		display:block;
-		position: relative;
-		margin: 0;
-		padding: 15px 0;
-		color: $dark-silk;
+		& > a {
+			display:block;
+			position: relative;
+			margin: 0;
+			color: $dark-silk;
 
-		@include mediaquery ($bp-header) {
-			padding: 30px 15px;
-			color: $mid-script;
+			@include mediaquery ($bp-header) {
+				padding: 30px 15px;
+				color: $mid-script;
+			}
 		}
-	}
 
-	> li > a:hover {
-		color: $day-blue;
-	}
-
-	.logo,
-	.logo:hover,
-	.global-nav-submenu & .logo,
-	.global-nav-submenu & .logo:hover {
-		padding: 18px 0 12px 0;
+		& > a:hover {
+			color: $day-blue;
+		}
 	}
 
 	.global-nav-submenu & {
@@ -419,20 +453,17 @@
 
 		& > a {
 			display: block;
-			padding: 15px 10px;
 			color: $dark-silk;
 
 			&:hover {
 				color:$day-blue;
 			}
-
-			@include mediaquery ($bp-header) {
-				padding: 20px 15px;
-			}
 		}
 
 		&:first-child a {
 			@include mediaquery ($bp-header) {
+				padding-top: 15px;
+				padding-right: 10px;
 				padding-left: 20px;
 			}
 		}
