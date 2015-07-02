@@ -59,6 +59,24 @@ $query2     = width, device-width
 	flex: $value;
 }
 
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+@mixin inner {
+	padding: 20px 10px;
+	background-color: $shiro;
+
+
+	@include mediaquery ($bp-tablet) {
+		padding: 20px;
+	}
+}
+
 @mixin panel-default {
 	background-color: $dark-shiro;
 }
