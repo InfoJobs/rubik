@@ -376,15 +376,15 @@
 }
 
 .nav-bar-submenu {
-	@include flex(1 0 100%);
+	@include order(-1);
 	padding-top: 145px;
-	order: -1;  //SEEMS DOESN'T WORKS PROPERLY IN iOS :(
 	background: $shiro;
 
 	@include mediaquery ($bp-header) {
+		@include flex(1 0 100%);
+		@include order(initial);
 		margin: 0 -20px;
 		padding-top:0;
-		order: initial;
 		background: $darkest-shiro;
 	}
 
