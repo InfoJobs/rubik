@@ -102,6 +102,7 @@
 .nav-bar-top-left {
 	@include flex;
 	overflow: scroll;
+	padding: 0 10px;
 
 	> li {
 		float: none;
@@ -138,14 +139,15 @@
 
 	@include mediaquery ($bp-header) {
 		overflow: visible;
+		padding: 0;
 
 		> li {
 			float: left;
 		}
 
 		> li > a {
+			@include font-base-line;
 			padding: 30px 15px;
-			font-size: $base-font-size;
 		}
 
 		.global-nav-submenu & > li > a {
@@ -190,6 +192,10 @@
 
 		li {
 			border-bottom: 1px solid $darkest-shiro;
+
+			&:last-child {
+				border: 0;
+			}
 
 			@include mediaquery ($bp-header) {
 				border-bottom: 0;
