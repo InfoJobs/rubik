@@ -88,14 +88,17 @@
 	}
 }
 
-
 .nav-bar-top-left li a {
-	padding: 15px 0;
+	padding: 17px 0 13px 0;
 }
 
 .nav-bar-top-right li a,
 .nav-bar-submenu li a {
 	padding: 15px 10px;
+
+	@include mediaquery ($bp-header) {
+		padding: 15px;
+	}
 }
 
 .nav-bar-top-left li:first-child a,
@@ -116,20 +119,45 @@
 	}
 }
 
-.nav-bar-top-left li:last-child a,
-.nav-bar-submenu li:last-child a {
-	padding-bottom: 20px;
-
-	@include mediaquery ($bp-header) {
-		padding-bottom: 0;
+.nav-bar-submenu li:first-child {
+	a {
+		@include mediaquery ($bp-header) {
+			padding: 15px 10px 15px 20px;
+		}
 	}
 }
 
-.nav-bar-top-right li:last-child a {
-	padding-bottom: 15px;
+.nav-bar-submenu li:last-child {
+	a {
+		padding-bottom: 20px;
+
+		@include mediaquery ($bp-header) {
+			padding-right: 20px;
+			padding-bottom: 15px;
+		}
+	}
+}
+
+.nav-bar-top-right li:last-child {
+	padding-left: 10px;
+	padding-right: 10px;
+	background: $dark-shiro;
 
 	@include mediaquery ($bp-header) {
-		padding-bottom: 0;
+		padding: 0;
+		background: $shiro;
+	}
+
+	a {
+		padding-right: 0;
+		padding-bottom: 15px;
+		padding-left: 0;
+		border-top: 1px solid $darkest-shiro;
+
+		@include mediaquery ($bp-header) {
+			padding-bottom: 0;
+			border-top: 0;
+		}
 	}
 }
 
@@ -217,7 +245,7 @@
 		padding: 0;
 
 		.global-nav-submenu & > li > a {
-			padding: 10px 10px 12px;
+			padding: 10px 15px 12px;
 		}
 
 		.logo,
@@ -282,7 +310,6 @@
 .nav-bar-top-right {
 	@include display-flex;
 	@include align-items(center);
-	border-top: 1px solid $darkest-shiro;
 
 	> li {
 		@include flex(1 0 auto);
@@ -295,10 +322,12 @@
 
 .access-bar {
 	padding: 10px;
+	border-top: 1px solid $darkest-shiro;
 
 	@include mediaquery ($bp-header) {
 		@include display-flex;
 		padding: 0;
+		border-top: 0;
 	}
 
 	li {
@@ -319,22 +348,20 @@
 }
 
 .nav-bar-top-right {
-
 	li {
 		@include mediaquery ($bp-header) {
 			position: relative;
-			margin-left: 10px;
 
 			&:first-child {
-				margin-right: 10px;
+				margin-right: 15px;
 			}
 
 			&:first-child::after {
 				content: "|";
 				position: absolute;
-				right: -10px;
+				right: -5px;
 				top: calc(45% - 0.5em);
-				color: $soft-script;
+				color: $darkest-shiro;
 			}
 		}
 	}
@@ -364,63 +391,63 @@
 		}
 	}
 
-}
-
-.avatar {
-	overflow: hidden;
-	position: absolute;
-	left: 0;
-    top: 0;
-	padding: 30px 20px;
-    width: 100%;
-	height: 145px;
-	text-align: center;
-	color: $shiro;
-	background: $dark-silk;
-
-	&:hover {
+	.avatar {
+		overflow: hidden;
+		position: absolute;
+		left: 0;
+	    top: 0;
+		padding: 30px 20px;
+	    width: 100%;
+		height: 145px;
+		text-align: center;
 		color: $shiro;
-	}
-
-	@include mediaquery ($bp-header) {
-		display: table;
-		position: relative;
-		padding: 0;
-		width: auto;
-		height: auto;
-		text-align: left;
-		color: $soft-script;
-		background: none;
-		white-space: nowrap;
+		background: $dark-silk;
 
 		&:hover {
-			color:$day-blue;
+			color: $shiro;
 		}
-	}
-
-	.name {
-		white-space: nowrap;
 
 		@include mediaquery ($bp-header) {
-			display: table-cell;
+			display: table;
+			position: relative;
+			padding: 0;
+			width: auto;
+			height: auto;
+			text-align: left;
+			color: $soft-script;
+			background: none;
+			white-space: nowrap;
+
+			&:hover {
+				color:$day-blue;
+			}
+		}
+
+		.name {
+			white-space: nowrap;
+
+			@include mediaquery ($bp-header) {
+				display: table-cell;
+				vertical-align: middle;
+				padding-right: 10px;
+				padding-left: 10px;
+			}
+		}
+
+		.picture {
+			display: block;
+			width: 60px;
+			height: 60px;
 			vertical-align: middle;
-			padding-left: 10px;
-		}
-	}
+			border: 3px solid $shiro;
+			margin-bottom: 10px;
 
-	.picture {
-		display: block;
-		width: 60px;
-		height: 60px;
-		vertical-align: middle;
-		border: 3px solid $shiro;
-		margin-bottom: 10px;
-
-		@include mediaquery ($bp-header) {
-			display: table-cell;
-			width: 30px;
-			height: 30px;
-			margin-bottom: 0;
+			@include mediaquery ($bp-header) {
+				display: table-cell;
+				width: 33px;
+				height: 33px;
+				margin-bottom: 0;
+			}
 		}
 	}
 }
@@ -459,41 +486,11 @@
 				color:$day-blue;
 			}
 		}
-
-		&:first-child a {
-			@include mediaquery ($bp-header) {
-				padding-top: 15px;
-				padding-right: 10px;
-				padding-left: 20px;
-			}
-		}
-
-		&:last-child a {
-			@include mediaquery ($bp-header) {
-				padding-right: 20px;
-			}
-		}
-
 	}
 
 	.active {
 		color: $day-blue;
 	}
-}
-
-.nav-bar-notifications {
-	position: relative;
-
-    .sticker {
-    	position: absolute;
-		right: 190px;
-    	bottom: 12px;
-
-		@include mediaquery ($bp-header) {
-	    	right: -4px;
-		}
-    }
-
 }
 
 .global-nav-landing {
