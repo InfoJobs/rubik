@@ -73,6 +73,7 @@
 			display: none;
 		}
 
+		h1,
 		.logo img {
 			display: block;
 		}
@@ -169,7 +170,7 @@ a.nav-bar-top-toggle {
 
 	&::before {
 		position: relative;
-		top: 21px;
+		top: 25px;
 		left: 10px;
 		color: $darkest-shiro;
 		font-size: $xlarge-font-size;
