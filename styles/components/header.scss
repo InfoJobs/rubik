@@ -491,6 +491,15 @@
 	.active {
 		color: $day-blue;
 	}
+
+	.sticker {
+		position: relative;
+    	top: -3px;
+
+		@include mediaquery ($bp-header) {
+			top: -2px;
+		}
+	}
 }
 
 .global-nav-landing {
