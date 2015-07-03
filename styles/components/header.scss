@@ -11,14 +11,6 @@
 	background-image: url(#{$path-media}/portales/ij/appgrade/backgrounds/bg-logo-reduced.png);
 	border-bottom: 1px solid $darkest-shiro;
 
-	&.global-nav-landing {
-		height: 50px;
-		min-height: 50px;
-		background-color: $day-blue;
-		background-image: url(#{$path-media}/appgrade/backgrounds/bg-logo-reduced-white.png);
-		border: 0 none;
-	}
-
 	h1 {
 		margin: 0;
 	}
@@ -77,10 +69,6 @@
 		.logo img {
 			display: block;
 		}
-
-		&.global-nav-landing {
-			background-image: none;
-		}
 	}
 
 	@media print {
@@ -88,11 +76,32 @@
 	}
 }
 
-.nav-bar-top-left li a {
+.global-nav-brand {
+	@at-root .global-nav#{&} {
+		height: 50px;
+		min-height: 50px;
+		background-color: $day-blue;
+		background-image: url(#{$path-media}/appgrade/backgrounds/bg-logo-reduced-white.png);
+		border: 0 none;
+
+		@include mediaquery ($bp-header) {
+			background-image: none;
+		}
+	}
+
+	.logo,
+	.logo:hover {
+		display: block;
+		padding: 10px 20px;
+		border: 0 none;
+	}
+}
+
+.nav-bar-menu li a {
 	padding: 17px 0 13px 0;
 }
 
-.nav-bar-top-right li a,
+.nav-bar-user li a,
 .nav-bar-submenu li a {
 	padding: 15px 10px;
 
@@ -101,8 +110,8 @@
 	}
 }
 
-.nav-bar-top-left li:first-child a,
-.nav-bar-top-right li:first-child a,
+.nav-bar-menu li:first-child a,
+.nav-bar-user li:first-child a,
 .nav-bar-submenu li:first-child a {
 	padding-top: 20px;
 
@@ -111,7 +120,7 @@
 	}
 }
 
-.nav-bar-top-right li:first-child a.avatar {
+.nav-bar-user li:first-child a.avatar {
 	padding-top: 30px;
 
 	@include mediaquery ($bp-header) {
@@ -138,7 +147,7 @@
 	}
 }
 
-.nav-bar-top-right li:last-child {
+.nav-bar-user li:last-child {
 	padding-left: 10px;
 	padding-right: 10px;
 	background: $dark-shiro;
@@ -161,7 +170,7 @@
 	}
 }
 
-a.nav-bar-top-toggle {
+a.nav-bar-toggle {
 	@include iconfont-BurguerMenu;
 	display: block;
 	margin: 0;
@@ -217,7 +226,7 @@ a.nav-bar-top-toggle {
 	}
 }
 
-.nav-bar-top-left {
+.nav-bar-menu {
 	@include flex;
 	overflow: scroll;
 	padding-right: 10px;
@@ -285,7 +294,7 @@ a.nav-bar-top-toggle {
 		height: auto;
 	}
 
-	.nav-bar-top-left {
+	.nav-bar-menu {
 		background: $dark-shiro;
 		border-top: 1px solid $darkest-shiro;
 
@@ -318,8 +327,8 @@ a.nav-bar-top-toggle {
 
 }
 
-.access-bar,
-.nav-bar-top-right {
+.nav-bar-access,
+.nav-bar-user {
 	@include display-flex;
 	@include align-items(center);
 
@@ -332,7 +341,7 @@ a.nav-bar-top-toggle {
 	}
 }
 
-.access-bar {
+.nav-bar-access {
 	padding: 10px;
 	border-top: 1px solid $darkest-shiro;
 
@@ -359,7 +368,7 @@ a.nav-bar-top-toggle {
 	}
 }
 
-.nav-bar-top-right {
+.nav-bar-user {
 	li {
 		@include mediaquery ($bp-header) {
 			position: relative;
@@ -513,16 +522,6 @@ a.nav-bar-top-toggle {
 		@include mediaquery ($bp-header) {
 			top: -2px;
 		}
-	}
-}
-
-.global-nav-landing {
-
-	.logo,
-	.logo:hover {
-		display: block;
-		padding: 10px 20px;
-		border: 0 none;
 	}
 }
 
