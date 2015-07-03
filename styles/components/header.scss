@@ -120,6 +120,11 @@
 	}
 }
 
+.nav-bar-menu li:first-child a {
+	@include mediaquery ($bp-header) {
+		padding: 20px 20px 20px 0;
+	}
+}
 .nav-bar-user li:first-child a.avatar {
 	padding-top: 30px;
 
@@ -272,14 +277,12 @@ a.nav-bar-toggle {
 		.logo,
 		.logo:hover {
 			display: block;
-			margin-top: 20px;
-			padding: 0 15px 0 0;
+			padding: 20px 20px 20px 0;
 		}
 
 		.global-nav-submenu & .logo,
 		.global-nav-submenu & .logo:hover {
-			margin-top: 10px;
-			padding: 0 15px 0 0;
+			padding: 10px 15px 15px 0;
 		}
 
 		.global-nav-submenu & {
@@ -473,14 +476,6 @@ a.nav-bar-toggle {
 			}
 		}
 	}
-}
-
-.profile-ellipsis {
-	display: block;
-	max-width: 140px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
 }
 
 .nav-bar-submenu {
