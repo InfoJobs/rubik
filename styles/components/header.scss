@@ -161,12 +161,24 @@
 	}
 }
 
-.nav-bar-top-toggle {
+a.nav-bar-top-toggle {
+	@include iconfont-BurguerMenu;
 	display: block;
 	margin: 0;
 	width: 50px;
 	height: 50px;
-	background: url(#{$path-media}/appgrade/backgrounds/bg-menu-burger-icon.png) 0 0 no-repeat;
+
+	&::before {
+		position: relative;
+		top: 21px;
+		left: 10px;
+		color: $darkest-shiro;
+		font-size: $xlarge-font-size;
+	}
+
+	&:hover {
+		color: $dark-shiro;
+	}
 
 	span {
 		display: none;

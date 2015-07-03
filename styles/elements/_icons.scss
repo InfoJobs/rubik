@@ -168,8 +168,15 @@ $icon-size: (50); //TODO: resolve problem when it s moved to _vars
 .iconfont-Arrow::before {
 	content: "\e603";
 }
-.iconfont-BurguerMenu::before {
-	content: "\e604";
+@mixin iconfont-BurguerMenu {
+	@include iconfont;
+	
+	&::before {
+		content: "\e604";
+	}
+}
+.iconfont-BurguerMenu {
+	@include iconfont-BurguerMenu;
 }
 .iconfont-Calendar::before {
 	content: "\e605";
