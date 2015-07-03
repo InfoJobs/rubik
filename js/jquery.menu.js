@@ -44,6 +44,13 @@ $(function() {
 			$('.wrapper').removeClass('wrap-overlay');
 
 		}
+		else if(
+				$('.wrapper').not('wrap-overlay') &&
+				$('.nav-mobile').hasClass('open-menu') &&
+				window.innerWidth <= 945
+			) {
+			$('.wrapper').addClass('wrap-overlay');
+		}
 
 	});
 
