@@ -3,8 +3,10 @@ $(function() {
 
 	function closeMenu() {
 		$('.nav-mobile').addClass('fade-out');
-		$('.wrapper').removeClass('wrap-overlay');
+		$('.wrap-overlay').removeClass('wrap-transition');
+
 	    setTimeout(function(){
+			$('.wrapper').removeClass('wrap-overlay');
 	        $('.nav-mobile').removeClass('open-menu fade-out fade-in');
 	     },1000);
 	}
@@ -13,6 +15,10 @@ $(function() {
 
         $(this).next('.nav-mobile').addClass('fade-in open-menu');
 		$('.wrapper').addClass('wrap-overlay');
+
+	    setTimeout(function(){
+			$('.wrap-overlay').addClass('wrap-transition');
+		},100);
 
 		if ($('.nav-mobile').hasClass('open-menu')) {
 
