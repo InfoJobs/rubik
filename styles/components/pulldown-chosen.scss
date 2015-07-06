@@ -208,12 +208,6 @@ Styleguide 2.16
   height: 1%;
   //border: 1px solid #aaa;
   background-color: $shiro;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, $shiro));
-  background-image: -webkit-linear-gradient(#eeeeee 1%, $shiro 15%);
-  background-image: -moz-linear-gradient(#eeeeee 1%, $shiro 15%);
-  background-image: -o-linear-gradient(#eeeeee 1%, $shiro 15%);
-  background-image: linear-gradient(#eeeeee 1%, $shiro 15%);
-  cursor: text;
 }
 .chosen-container-multi .chosen-choices li {
   float: left;
@@ -243,34 +237,39 @@ Styleguide 2.16
 }
 .chosen-container-multi .chosen-choices li.search-choice {
   position: relative;
-  margin: 3px 0 3px 5px;
-  padding: 3px 20px 3px 5px;
+  margin: 5px 0 3px 5px;
+  padding: 3px 5px;
   border: 1px solid #aaa;
   border-radius: 3px;
-  background-color: #e4e4e4;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
-  background-image: -webkit-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -moz-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -o-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-clip: padding-box;
-  box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  // background-color: #e4e4e4;
+  // background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
+  // background-image: -webkit-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  // background-image: -moz-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  // background-image: -o-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  // background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  // background-clip: padding-box;
+  // box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
   color: $dark-silk;
   line-height: 13px;
   cursor: default;
+
+  a {
+      color: #2d3133;
+      cursor: pointer;
+  }
 }
 .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
   position: absolute;
-  top: 4px;
-  right: 3px;
-  display: block;
-  width: 12px;
-  height: 12px;
-  background: url('chosen-sprite.png') -42px 1px no-repeat;
-  font-size: 1px;
+  // top: 4px;
+  // right: 3px;
+  // display: block;
+  // width: 12px;
+  // height: 12px;
+  // background: url('chosen-sprite.png') -42px 1px no-repeat;
+  // font-size: 1px;
 }
 .chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
-  background-position: -42px -10px;
+  //background-position: -42px -10px;
 }
 .chosen-container-multi .chosen-choices li.search-choice-disabled {
   padding-right: 5px;

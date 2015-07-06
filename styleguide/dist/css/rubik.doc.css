@@ -225,7 +225,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 1.1.2
+Styleguide  1.1.2
 */
 .wrapper {
   min-height: 100%;
@@ -271,7 +271,7 @@ Markup:
     ...
 </div>
 
-Styleguide 1.1.3
+Styleguide 1.2.4
 */
 .content-wrapper,
 .inner {
@@ -563,9 +563,11 @@ Styleguide 1.1.1
     margin: 0;
   }
 }
-.row > [class^="col-"]:last-of-type .col-child,
-.row > [class*="col-"]:last-of-type .col-child {
-  margin-bottom: 0;
+@media only screen and (min-width: 481px) {
+  .row > [class^="col-"]:last-of-type .col-child,
+  .row > [class*="col-"]:last-of-type .col-child {
+    margin-bottom: 0;
+  }
 }
 .aside-wrapper .row {
   display: table;
@@ -579,6 +581,14 @@ Styleguide 1.1.1
   .row + .row {
     margin: 0;
   }
+}
+@media only screen and (min-width: 481px) {
+  [class*="panel-"] .row .col-child {
+    margin-right: 10px;
+  }
+}
+[class*="panel-"] .row [class*="col-"]:last-of-type > .col-child {
+  margin-right: 0;
 }
 .row .row-matrioska .col-child.inner {
   margin-top: 20px;
@@ -603,6 +613,11 @@ Styleguide 1.1.1
 .row .row-matrioska > [class^="col-"]:first-of-type .col-child.inner,
 .row .row-matrioska > [class*="col-"]:first-of-type .col-child.inner {
   margin-top: 0;
+}
+
+[class*="panel-"] > .col-child {
+  margin-left: 0;
+  margin-bottom: 0;
 }
 
 /*
@@ -776,16 +791,6 @@ Styleguide 1.1.1.2
   .col-12.col-6-medium,
   .col-12.col-12-medium {
     width: 100%;
-  }
-}
-.inner [class^="col-"], .inner
-[class*="col-"] {
-  margin-right: -10px;
-}
-@media only screen and (min-width: 481px) {
-  .inner [class^="col-"], .inner
-  [class*="col-"] {
-    margin-right: 0;
   }
 }
 @media print {
@@ -971,7 +976,7 @@ Markup:
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.1.1.4
+Styleguide 1.1.1.3
 */
 .row-faux > [class^="col-"]:last-of-type .col-child,
 .row-faux > [class*="col-"]:last-of-type .col-child {
@@ -990,15 +995,14 @@ Styleguide 1.1.1.4
     -o-flex-flow: row wrap;
     flex-flow: row wrap;
   }
-  .row-faux [class^="col-"],
-  .row-faux [class*="col-"] {
+  .row-faux > [class^="col-"],
+  .row-faux > [class*="col-"] {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
     float: none;
-    overflow: hidden;
   }
   .row-faux .col-12-medium {
     display: block;
@@ -1025,12 +1029,12 @@ Styleguide 1.1.1.4
 /*------------------------------------*\
     $FONTS
 \*------------------------------------*/
-.small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+.small, .tag-group, .filters p, .result-list > li, .result-list-subtitle, .application-list > li .item .action, .application-list h3 {
   font-size: 14px;
   line-height: 18px;
 }
 @media print {
-  .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+  .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle, .application-list > li .item .action, .application-list h3 {
     font-size: 10.5pt;
     line-height: 11.5pt;
   }
@@ -1048,13 +1052,13 @@ p, .base, .quote {
 }
 
 h3,
-.h3, .medium, .result-list-title {
+.h3, .medium, .result-list-title, .application-list h2 {
   font-size: 18px;
   line-height: 22px;
 }
 @media print {
   h3,
-  .h3, .medium, .result-list-title {
+  .h3, .medium, .result-list-title, .application-list h2 {
     font-size: 13.50034px;
     line-height: 16.50041px;
   }
@@ -1074,12 +1078,12 @@ h3,
 /*------------------------------------*\
     $FONTS
 \*------------------------------------*/
-.small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+.small, .tag-group, .filters p, .result-list > li, .result-list-subtitle, .application-list > li .item .action, .application-list h3 {
   font-size: 14px;
   line-height: 18px;
 }
 @media print {
-  .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+  .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle, .application-list > li .item .action, .application-list h3 {
     font-size: 10.5pt;
     line-height: 11.5pt;
   }
@@ -1097,13 +1101,13 @@ p, .base, .quote {
 }
 
 h3,
-.h3, .medium, .result-list-title {
+.h3, .medium, .result-list-title, .application-list h2 {
   font-size: 18px;
   line-height: 22px;
 }
 @media print {
   h3,
-  .h3, .medium, .result-list-title {
+  .h3, .medium, .result-list-title, .application-list h2 {
     font-size: 13.50034px;
     line-height: 16.50041px;
   }
@@ -1936,6 +1940,10 @@ Markup:
 
 Styleguide 1.7.2.1
 */
+.iconfont-14px::before {
+  font-size: 14px;
+}
+
 .iconfont-16px::before {
   font-size: 16px;
 }
@@ -1981,6 +1989,10 @@ Styleguide 1.7.2.1
 
 .icon-email-banned {
   background: url("http://media.infojobs.net/appgrade/backgrounds//icon-email-banned.png") no-repeat 0 0;
+}
+
+.icon-android {
+  background: url("http://media.infojobs.net/appgrade/backgrounds//icon-android-app.png") no-repeat 0 0;
 }
 
 .icon-50px {
@@ -2297,6 +2309,9 @@ p > .btn {
     margin: 10px 0 0;
   }
 }
+.btn + .btn {
+  margin-left: 5px;
+}
 
 /*
 Buttons type
@@ -2454,7 +2469,7 @@ Styleguide 1.5.1.2
 .btn-medium {
   height: 40px;
   padding: 0 10px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 38px;
   /*@at-root button.btn-medium {
       height: 40px;
@@ -2748,7 +2763,7 @@ Markup:
 <h2>Heading level 2</h2>
 <h3>Heading level 3</h3>
 
-Styleguide 1.2.1
+Styleguide ${$sgi-headings}
 */
 h1,
 h2,
@@ -2809,6 +2824,28 @@ h3,
 }
 
 /*
+Heading-addons
+
+Use class `.heading-addons` to reset margin defined for generic `<h1>`.
+
+Markup:
+<div class="heading-addons">
+	<h1>Header Level 1</h1>
+	<p>Lorem ipsum</p>
+</div>
+
+Styleguide 1.2.1.1
+*/
+.heading-addons h1 {
+  margin: 0;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+/*
 Heading mega
 
 Use class `.heading-mega` for a big size heading.
@@ -2816,7 +2853,7 @@ Use class `.heading-mega` for a big size heading.
 Markup:
 <h1 class="heading-mega">Heading mega</h1>
 
-Styleguide 1.2.1.1
+Styleguide 1.2.1.2
 */
 .heading-mega {
   font-size: 25px;
@@ -2838,28 +2875,6 @@ Styleguide 1.2.1.1
 }
 
 /*
-Heading addons
-
-Use class `.heading-addons` to reset margin defined for generic `<h1>`.
-
-Markup:
-<div class="heading-addons">
-	<h1>Header Level 1</h1>
-	<p>Lorem ipsum</p>
-</div>
-
-Styleguide 1.2.1.2
-*/
-.heading-addons h1 {
-  margin: 0;
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-}
-
-/*
 Heading middle
 
 Use class `.heading-middle` to adjust headings in vertical align content.
@@ -2869,7 +2884,7 @@ Markup:
 	<h1 class="heading-middle">Header Level 1</h1>
 </div>
 
-Styleguide 1.2.1.3
+Styleguide 1.3.1.3
 */
 .heading-middle {
   padding-top: 10px;
@@ -2940,11 +2955,10 @@ Use class `.base` to force body copy size or `.medium` to increase the text size
 Markup:
 <p class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-
 .base
 .medium
 
-Styleguide 1.2.5
+Styleguide 1.2.3
 */
 /*
 Text variants
@@ -2954,7 +2968,7 @@ Use class `.bold` to bold the content. Use only on the following tags: `<p>`, `<
 Markup:
 <p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.2.6
+Styleguide 1.2.5
 */
 .bold {
   font-family: Proximanovabold, Helvetica, Arial, sans-serif;
@@ -2983,7 +2997,7 @@ Markup:
 .vip-quote
 .quote
 
-Styleguide 1.2.3
+Styleguide 1.2.6
 */
 .quote {
   display: block;
@@ -3040,7 +3054,7 @@ Markup:
     <dd>De duracion determinada, jornada completa</dd>
 </dl>
 
-Styleguide 1.2.4
+Styleguide 1.2.7
 */
 .list-default > li, .list-default > dt {
   display: block;
@@ -3055,7 +3069,7 @@ Styleguide 1.2.4
 }
 .list-default > dt {
   margin-bottom: 0;
-  font-weight: bold;
+  font-family: Proximanovabold, Helvetica, Arial, sans-serif;
 }
 .list-default > dd {
   margin-bottom: 20px;
@@ -3073,7 +3087,7 @@ Markup:
     <li>Tipo de oferta: de duracion determinada, jornada completa</li>
 </ul>
 
-Styleguide 1.2.4.1
+Styleguide 1.2.7.1
 */
 .list-bullet-default > li,
 .list-bullet-default > dt,
@@ -3115,25 +3129,30 @@ Markup:
     <li class="iconfont-Check iconfont-30px iconfont-soft-script">Lorem ipsum dolor</li>
 </ul>
 
-Styleguide 1.2.4.2
+Styleguide 1.2.7.2
 */
 .list-default [class^="iconfont-"],
 .list-default [class*="iconfont-"] {
   position: relative;
 }
-.list-default .iconfont-16px {
+.list-default .iconfont-16px,
+.list-default .iconfont-16px + dd {
   padding-left: 26px;
 }
-.list-default .iconfont-18px {
+.list-default .iconfont-18px,
+.list-default .iconfont-18px + dd {
   padding-left: 28px;
 }
-.list-default .iconfont-22px {
+.list-default .iconfont-22px,
+.list-default .iconfont-22px + dd {
   padding-left: 32px;
 }
-.list-default .iconfont-30px {
+.list-default .iconfont-30px,
+.list-default .iconfont-30px + dd {
   padding-left: 40px;
 }
-.list-default .iconfont-100px {
+.list-default .iconfont-100px,
+.list-default .iconfont-100px + dd {
   padding-left: 110px;
 }
 
@@ -3210,7 +3229,7 @@ Markup:
     <li>Lorem ipsum dolor</li>
 </ul>
 
-Styleguide
+Styleguide 1.2.7.5
 */
 .tag-group {
   overflow: hidden;
@@ -3244,7 +3263,7 @@ Markup:
     <li class>Lorem ipsum</li>
 </ul>
 
-Styleguide
+Styleguide 1.2.7.5.1
 */
 .tag-group li.tag-divider {
   margin-right: 10px;
@@ -3273,7 +3292,7 @@ Markup:
 </ul>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide
+Styleguide 1.2.7.5.2
 */
 .tag-group-top {
   margin-bottom: 10px;
@@ -3309,7 +3328,7 @@ Markup:
     <li>Lorem ipsum</li>
 </ul>
 
-Styleguide
+Styleguide 1.2.7.5.4
 */
 .tag-group .ellipsis {
   display: block;
@@ -3369,6 +3388,9 @@ label {
 .error label:first-of-type {
   color: #bf2102;
 }
+.success label:first-of-type {
+  color: #00a550;
+}
 .panel-executive label {
   color: #bebebe;
 }
@@ -3400,6 +3422,16 @@ textarea {
 .error input, .error
 textarea {
   border-color: #bf2102;
+}
+.success input, .success
+textarea {
+  border-color: #00a550;
+  background: #effaf6;
+}
+input:focus,
+textarea:focus {
+  border: 1px solid #2088c2;
+  outline: none;
 }
 
 input {
@@ -3496,6 +3528,10 @@ Styleguide 1.4
 }
 .form--field-block > li .info {
   margin-top: 3px;
+}
+
+.form--field-block > li:last-child {
+  margin-bottom: 0;
 }
 
 form ul .indent {
@@ -3639,10 +3675,8 @@ Styleguide 1.4.3
 .form-select {
   position: relative;
   height: 30px;
-  border: 1px solid #c7c7c7;
   line-height: 14px;
   -webkit-appearance: none;
-  background: url(http://media.infojobs.net/appgrade/backgrounds//bg-select-arrow.png) right 50% no-repeat #fff;
 }
 .form-select select {
   width: 100%;
@@ -3704,6 +3738,7 @@ Styleguide 1.4.4
 */
 .input-group {
   display: table;
+  width: 100%;
 }
 .input-group > div {
   display: table-cell;
@@ -3778,6 +3813,14 @@ Styleguide 1.4.7
   line-height: 110%;
 }
 
+.input-link-annex {
+  margin: 10px 0 0 0;
+}
+
+.label-annex {
+  display: inline;
+}
+
 @media only screen and (max-width: 768px) {
   input {
     width: 100%;
@@ -3815,6 +3858,57 @@ Styleguide 1.4.7
     padding: 10px;
   }
 }
+.password {
+  position: relative;
+}
+.password a {
+  position: absolute;
+  top: 26px;
+  right: 1px;
+  font-size: 14px;
+  line-height: 13px;
+  padding: 15px 10px;
+}
+@media only screen and (min-width: 769px) {
+  .password a {
+    top: 25px;
+    right: 5px 10px;
+    padding: 8px;
+  }
+}
+.password input {
+  margin-bottom: 10px;
+}
+.password .meter,
+.password meter {
+  height: 7px;
+}
+.password meter {
+  width: 100%;
+  vertical-align: top;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f2f2f2;
+  /* WebKit */
+  /* Firefox */
+}
+.password meter::-webkit-meter-bar {
+  background: #f2f2f2;
+}
+.password meter::-webkit-meter-optimum-value, .password meter::-webkit-meter-suboptimum-value {
+  background: #00a550;
+}
+.password meter::-webkit-meter-even-less-good-value {
+  background: #bf2102;
+}
+.password meter:-moz-meter-optimum::-moz-meter-bar, .password meter:-moz-meter-sub-optimum::-moz-meter-bar {
+  background: #00a550;
+}
+.password meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+  background: #bf2102;
+}
+
 /*
 Common CSS #casper#
 
@@ -4120,12 +4214,12 @@ $query2     = width, device-width
 /*------------------------------------*\
     $FONTS
 \*------------------------------------*/
-.small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+.small, .tag-group, .filters p, .result-list > li, .result-list-subtitle, .application-list > li .item .action, .application-list h3 {
   font-size: 14px;
   line-height: 18px;
 }
 @media print {
-  .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+  .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle, .application-list > li .item .action, .application-list h3 {
     font-size: 10.5pt;
     line-height: 11.5pt;
   }
@@ -4143,13 +4237,13 @@ p, .base, .quote {
 }
 
 h3,
-.h3, .medium, .result-list-title {
+.h3, .medium, .result-list-title, .application-list h2 {
   font-size: 18px;
   line-height: 22px;
 }
 @media print {
   h3,
-  .h3, .medium, .result-list-title {
+  .h3, .medium, .result-list-title, .application-list h2 {
     font-size: 13.50034px;
     line-height: 16.50041px;
   }
@@ -4660,12 +4754,12 @@ $query2     = width, device-width
 /*------------------------------------*\
     $FONTS
 \*------------------------------------*/
-.small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+.small, .tag-group, .filters p, .result-list > li, .result-list-subtitle, .application-list > li .item .action, .application-list h3 {
   font-size: 14px;
   line-height: 18px;
 }
 @media print {
-  .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+  .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle, .application-list > li .item .action, .application-list h3 {
     font-size: 10.5pt;
     line-height: 11.5pt;
   }
@@ -4683,13 +4777,13 @@ p, .base, .quote {
 }
 
 h3,
-.h3, .medium, .result-list-title {
+.h3, .medium, .result-list-title, .application-list h2 {
   font-size: 18px;
   line-height: 22px;
 }
 @media print {
   h3,
-  .h3, .medium, .result-list-title {
+  .h3, .medium, .result-list-title, .application-list h2 {
     font-size: 13.50034px;
     line-height: 16.50041px;
   }
@@ -5300,6 +5394,98 @@ $query2     = width, device-width
   border-radius: 0;
 }
 
+/*------------------------------------*\
+    $NAVIGATION
+\*------------------------------------*/
+.nav-bar > li {
+  float: left;
+}
+
+.nav-bar > li > a {
+  display: block;
+}
+
+.nav-bar-submenu {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #e2e5e6;
+}
+
+.nav-bar-submenu > li > a {
+  padding: 20px 15px;
+  color: #2d3133;
+}
+
+.nav-bar-submenu > li > a:hover {
+  color: #2088c2;
+}
+
+.links-bar {
+  float: right;
+}
+.links-bar li {
+  float: left;
+  padding: 0 10px;
+}
+.links-bar li:first-child {
+  padding-left: 0;
+}
+.links-bar li:last-child {
+  padding-right: 0;
+  border: 0;
+}
+.links-bar a:hover {
+  text-decoration: underline;
+}
+.links-bar a.disabled:hover {
+  text-decoration: none;
+}
+@media print {
+  .links-bar {
+    display: none;
+  }
+}
+
+.text-center ul.links-bar {
+  margin-top: 5px;
+}
+
+@media only screen and (min-width: 481px) {
+  .text-center ul.links-bar {
+    margin-top: 0;
+  }
+}
+/* Variables =================================================== */
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+/**
+ * cross multiplication percentages
+ */
+/**
+ * Turn numbers with units into unitless numbers
+ */
+/*------------------------------------*\
+$MIXINS
+\*------------------------------------*/
+/*
+Mediaqueries
+
+$breakpoint = $bp-tablet, $bp-desktop or specific
+$query1     = min or max
+$query2     = width, device-width
+
+*/
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+.tag-group li.tag-divider, .links-bar li {
+  border-right: 1px solid #e2e5e6;
+  border-radius: 0;
+}
+
 .global-nav {
   position: relative;
   overflow: hidden;
@@ -5522,6 +5708,10 @@ $query2     = width, device-width
   text-align: left;
 }
 
+.nav-bar-top-right > li:last-child > a.btn-link-secondary {
+  line-height: 18px;
+}
+
 .nav-bar-top-right > li > a.btn-link-secondary {
   color: #666;
 }
@@ -5554,6 +5744,7 @@ $query2     = width, device-width
   .nav-bar-top-company > li > a.btn-link-secondary {
     margin-top: 24px;
     padding: 5px 10px;
+    line-height: 20px;
   }
 }
 
@@ -7116,98 +7307,6 @@ $query2     = width, device-width
 }
 
 /*------------------------------------*\
-    $NAVIGATION
-\*------------------------------------*/
-.nav-bar > li {
-  float: left;
-}
-
-.nav-bar > li > a {
-  display: block;
-}
-
-.nav-bar-submenu {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background: #e2e5e6;
-}
-
-.nav-bar-submenu > li > a {
-  padding: 20px 15px;
-  color: #2d3133;
-}
-
-.nav-bar-submenu > li > a:hover {
-  color: #2088c2;
-}
-
-.links-bar {
-  float: right;
-}
-.links-bar li {
-  float: left;
-  padding: 0 10px;
-}
-.links-bar li:first-child {
-  padding-left: 0;
-}
-.links-bar li:last-child {
-  padding-right: 0;
-  border: 0;
-}
-.links-bar a:hover {
-  text-decoration: underline;
-}
-.links-bar a.disabled:hover {
-  text-decoration: none;
-}
-@media print {
-  .links-bar {
-    display: none;
-  }
-}
-
-.text-center ul.links-bar {
-  margin-top: 5px;
-}
-
-@media only screen and (min-width: 481px) {
-  .text-center ul.links-bar {
-    margin-top: 0;
-  }
-}
-/* Variables =================================================== */
-/*------------------------------------*\
-    $FUNCTIONS
-\*------------------------------------*/
-/**
- * cross multiplication percentages
- */
-/**
- * Turn numbers with units into unitless numbers
- */
-/*------------------------------------*\
-$MIXINS
-\*------------------------------------*/
-/*
-Mediaqueries
-
-$breakpoint = $bp-tablet, $bp-desktop or specific
-$query1     = min or max
-$query2     = width, device-width
-
-*/
-/*------------------------------------*\
-    $PLACEHOLDERS
-\*------------------------------------*/
-.tag-group li.tag-divider, .links-bar li {
-  border-right: 1px solid #e2e5e6;
-  border-radius: 0;
-}
-
-/*------------------------------------*\
 	$NOTIFICATIONS
 \*------------------------------------*/
 /*
@@ -7241,6 +7340,11 @@ Styleguide 2.2
   padding: 20px;
   font-size: 16px;
   line-height: 20px;
+}
+.notification a,
+.notification a:hover,
+.notification a:focus {
+  color: #fff;
 }
 .notification-toast .notification {
   opacity: .9;
@@ -7299,7 +7403,12 @@ Styleguide 2.2
   color: #2d3133;
   background: #e1a900;
 }
-.notification-warning a {
+.notification-warning a,
+.notification-warning a:hover,
+.notification-warning a:focus {
+  color: #2d3133;
+}
+.notification-warning .title {
   color: #2d3133;
 }
 
@@ -7866,16 +7975,19 @@ Styleguide 2.16
   font-size: 16px;
   zoom: 1;
   *display: inline;
+  border: 1px solid #c7c7c7;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+  background: url(http://media.infojobs.net/appgrade/backgrounds//bg-select-arrow.png) right 50% no-repeat #fff;
+  cursor: pointer;
 }
 
 .chosen-container .chosen-drop {
   position: absolute;
   top: 100%;
   left: -9999px;
-  z-index: 1010;
+  z-index: 9999;
   margin-left: -1px;
   width: calc(100% - -2px);
   border-top: 0;
@@ -7892,10 +8004,6 @@ Styleguide 2.16
 
 .chosen-container.chosen-with-drop .chosen-drop {
   left: 0;
-}
-
-.chosen-container a {
-  cursor: pointer;
 }
 
 /* @end */
@@ -8076,14 +8184,7 @@ Styleguide 2.16
   width: 100%;
   height: auto !important;
   height: 1%;
-  border: 1px solid #aaa;
   background-color: #fff;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, #fff));
-  background-image: -webkit-linear-gradient(#eeeeee 1%, #fff 15%);
-  background-image: -moz-linear-gradient(#eeeeee 1%, #fff 15%);
-  background-image: -o-linear-gradient(#eeeeee 1%, #fff 15%);
-  background-image: linear-gradient(#eeeeee 1%, #fff 15%);
-  cursor: text;
 }
 
 .chosen-container-multi .chosen-choices li {
@@ -8100,7 +8201,6 @@ Styleguide 2.16
 .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
   margin: 1px 0;
   padding: 5px;
-  height: 15px;
   outline: 0;
   border: 0 !important;
   background: transparent !important;
@@ -8118,36 +8218,21 @@ Styleguide 2.16
 
 .chosen-container-multi .chosen-choices li.search-choice {
   position: relative;
-  margin: 3px 0 3px 5px;
-  padding: 3px 20px 3px 5px;
+  margin: 5px 0 3px 5px;
+  padding: 3px 5px;
   border: 1px solid #aaa;
   border-radius: 3px;
-  background-color: #e4e4e4;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
-  background-image: -webkit-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -moz-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -o-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-clip: padding-box;
-  box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
   color: #2d3133;
   line-height: 13px;
   cursor: default;
 }
+.chosen-container-multi .chosen-choices li.search-choice a {
+  color: #2d3133;
+  cursor: pointer;
+}
 
 .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
   position: absolute;
-  top: 4px;
-  right: 3px;
-  display: block;
-  width: 12px;
-  height: 12px;
-  background: url("chosen-sprite.png") -42px 1px no-repeat;
-  font-size: 1px;
-}
-
-.chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
-  background-position: -42px -10px;
 }
 
 .chosen-container-multi .chosen-choices li.search-choice-disabled {
@@ -8200,7 +8285,6 @@ Styleguide 2.16
 }
 
 .chosen-container-active .chosen-choices {
-  border: 1px solid #5897fb;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -8305,6 +8389,10 @@ Styleguide 2.16
 
 .chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b {
   background-position: -12px 2px;
+}
+
+.chosen-select {
+  border: 1px solid red;
 }
 
 /* @end */
@@ -10081,12 +10169,12 @@ $query2     = width, device-width
 /*------------------------------------*\
     $FONTS
 \*------------------------------------*/
-.small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+.small, .tag-group, .filters p, .result-list > li, .result-list-subtitle, .application-list > li .item .action, .application-list h3 {
   font-size: 14px;
   line-height: 18px;
 }
 @media print {
-  .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+  .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle, .application-list > li .item .action, .application-list h3 {
     font-size: 10.5pt;
     line-height: 11.5pt;
   }
@@ -10104,13 +10192,13 @@ p, .base, .quote {
 }
 
 h3,
-.h3, .medium, .result-list-title {
+.h3, .medium, .result-list-title, .application-list h2 {
   font-size: 18px;
   line-height: 22px;
 }
 @media print {
   h3,
-  .h3, .medium, .result-list-title {
+  .h3, .medium, .result-list-title, .application-list h2 {
     font-size: 13.50034px;
     line-height: 16.50041px;
   }
@@ -10261,12 +10349,12 @@ $query2     = width, device-width
 /*------------------------------------*\
     $FONTS
 \*------------------------------------*/
-.small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+.small, .tag-group, .filters p, .result-list > li, .result-list-subtitle, .application-list > li .item .action, .application-list h3 {
   font-size: 14px;
   line-height: 18px;
 }
 @media print {
-  .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+  .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle, .application-list > li .item .action, .application-list h3 {
     font-size: 10.5pt;
     line-height: 11.5pt;
   }
@@ -10284,13 +10372,13 @@ p, .base, .quote {
 }
 
 h3,
-.h3, .medium, .result-list-title {
+.h3, .medium, .result-list-title, .application-list h2 {
   font-size: 18px;
   line-height: 22px;
 }
 @media print {
   h3,
-  .h3, .medium, .result-list-title {
+  .h3, .medium, .result-list-title, .application-list h2 {
     font-size: 13.50034px;
     line-height: 16.50041px;
   }
@@ -10377,13 +10465,15 @@ Content media
 Usa la clase `.content-media` para construir una estructura con una imagen a un lado de un bloque de contenido de texto.
 
 Markup:
-<div class="content-media inner">
+<div class="content-media content-media-dismissable inner">
+	<button type="button" class="btn-close soft-script iconfont-18px iconfont-Close"><span class="hide">Ignorar</span></button>
 	<div class="media">
 		<img class="crop-circle" src="./media/pictures/pic-company-logo.png" alt="">
 	</div>
 	<div class="body">
 		<h3 class="title"><a href="#">Juan Manuel Rodriguez</a></h3>
-		<p>Account Manager <span class="alternative">en Schibsted Classified Media Spain</span></p>
+		<p>Account Manager lorem ipsum <span class="alternative">en Schibsted Classified Media Spain</span></p>
+		<a href="#" class="link-underline">Contactar</a>
 	</div>
 </div>
 
@@ -10396,11 +10486,6 @@ Markup:
     margin-left: 80px;
   }
 }
-@media only screen and (min-width: 769px) {
-  .content-media .body {
-    margin-left: 100px;
-  }
-}
 .content-media .media {
   float: left;
   padding-right: 20px;
@@ -10411,20 +10496,16 @@ Markup:
     width: 80px;
   }
 }
-@media only screen and (min-width: 769px) {
-  .content-media .media {
-    width: 100px;
-  }
-}
 .content-media .title {
   margin: 0;
   word-wrap: break-word;
 }
-@media only screen and (min-width: 769px) {
-  .content-media img {
-    width: 80px;
-    height: 80px;
-  }
+.content-media .title a {
+  display: block;
+}
+.content-media img {
+  object-fit: cover;
+  object-position: 0 0;
 }
 li.content-media + .content-media::before {
   position: relative;
@@ -10433,13 +10514,14 @@ li.content-media + .content-media::before {
   border-top: 1px solid #e2e5e6;
   top: -20px;
 }
-li.content-media + .content-media.margin-top::before {
-  border: none;
-}
 .content-media .btn-close {
   position: relative;
-  top: -10px;
+  top: -16px;
   float: right;
+}
+
+.content-media-dismissable .body {
+  margin-right: 20px;
 }
 
 /* Variables =================================================== */
@@ -10507,6 +10589,85 @@ $query2     = width, device-width
 .steps .step-focus {
   color: inherit;
   border-bottom: 2px solid #2088c2;
+}
+
+/* Variables =================================================== */
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+/**
+ * cross multiplication percentages
+ */
+/**
+ * Turn numbers with units into unitless numbers
+ */
+/*------------------------------------*\
+$MIXINS
+\*------------------------------------*/
+/*
+Mediaqueries
+
+$breakpoint = $bp-tablet, $bp-desktop or specific
+$query1     = min or max
+$query2     = width, device-width
+
+*/
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+.tag-group li.tag-divider, .links-bar li {
+  border-right: 1px solid #e2e5e6;
+  border-radius: 0;
+}
+
+/*------------------------------------*\
+    $APPLICATION LIST
+\*------------------------------------*/
+.application-list {
+  margin-bottom: 20px;
+  border-top: 1px solid #e2e5e6;
+}
+.application-list:only-child {
+  border: none;
+}
+.application-list > li {
+  overflow: hidden;
+  border-bottom: 1px solid #e2e5e6;
+  -webkit-touch-callout: none;
+}
+.application-list > li .item {
+  position: relative;
+}
+@media only screen and (min-width: 769px) {
+  .application-list > li .item:hover {
+    background: #e3f5fd;
+    cursor: pointer;
+  }
+  .application-list > li .item:hover .action {
+    visibility: visible;
+    text-decoration: underline;
+  }
+}
+.application-list > li .item .action {
+  position: absolute;
+  right: 20px;
+  visibility: hidden;
+  transition: none;
+}
+.application-list h2,
+.application-list h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.application-list h2 {
+  clear: left;
+}
+.application-list h3 {
+  font-family: Proximanova, Helvetica, Arial, sans-serif;
+}
+.application-list h3 a {
+  color: #2d3133;
+  text-decoration: underline;
 }
 
 /* Variables =================================================== */
@@ -10759,7 +10920,7 @@ $query2     = width, device-width
 }
 
 /*------------------------------------*\
-    $MARGINS
+    $MARGINS and PADDINGS
 
     var $orientations in _vars.scss
 \*------------------------------------*/
@@ -10767,16 +10928,32 @@ $query2     = width, device-width
   margin-top: 20px;
 }
 
+.padding-top {
+  padding-top: 20px;
+}
+
 .margin-right {
   margin-right: 20px;
+}
+
+.padding-right {
+  padding-right: 20px;
 }
 
 .margin-bottom {
   margin-bottom: 20px;
 }
 
+.padding-bottom {
+  padding-bottom: 20px;
+}
+
 .margin-left {
   margin-left: 20px;
+}
+
+.padding-left {
+  padding-left: 20px;
 }
 
 .link-annex {
