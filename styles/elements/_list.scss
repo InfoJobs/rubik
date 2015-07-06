@@ -52,10 +52,14 @@ Styleguide #{$sgi-lists}
     & > dt {
         margin-bottom: 0;
         font-family: $base-font-family-bold;
+
+        &.hide {
+            display: none;
+        }
     }
 
-    & > dd {
-        margin-bottom: 20px;
+    & dd + dt {
+        margin-top: 20px;
     }
 }
 

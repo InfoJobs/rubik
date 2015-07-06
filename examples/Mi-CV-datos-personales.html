@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-15">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Datos personales</title>
+
+		<!-- CSS FE styleguide -->
+		<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
+		<!-- /CSS FE styleguide -->
+
+		<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/components/pulldown-chosen.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
+
+		<script type="text/javascript" src="http://es-static0.infojobs.com/jquery-2.1.0.js" th:remove="all"></script>
+		<script type="text/javascript" src="http://es-static0.infojobs.com/js/chosen.jquery.js" th:remove="all"></script>
+		<script type="text/javascript" src="http://es-static0.infojobs.com/components/responsive/cProvincesPullDown.js" th:remove="all"></script>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="container">
+				<div class="panel-canvas">
+					<div class="row-centered inner inner-expanded">
+						<h1 class="text-center">Mis datos personales</h1>
+
+						<form method="post" action="#">
+    						<fieldset class="margin-bottom">
+                                <legend>Sobre mí</legend>
+								<h2 class="h3 heading-divider">Sobre mí</h2>
+    							<ul class="form--field-block clearfix">
+    								<li>
+										<label for="name">Nombre</label>
+										<input id="name" type="text">
+    		                		</li>
+									<li>
+										<label for="surname1">Primer Apellido</label>
+										<input id="surname1" type="text">
+    		                		</li>
+									<li>
+										<label for="surname2">Segundo Apellido <span class="alternative">(opcional)</span></label>
+										<input id="surname2" type="text">
+    		                		</li>
+                                </ul>
+                            </fieldset>
+							<fieldset class="margin-bottom">
+                                <legend>Lugar de residencia</legend>
+								<h2 class="h3 heading-divider">Lugar de residencia</h2>
+    							<ul class="form--field-block clearfix">
+    								<li>
+										<label for="country">País de residencia</label>
+										<div class="form-select">
+											<select id="country" class="chosen-select" data-placeholder="(Seleccionar)">
+										   	 	 	<option value="0">(Seleccionar)</option>
+											</select>
+										</div>
+    		                		</li>
+									<li>
+										<label for="poblacion">Población</label>
+										<input id="poblacion" type="text">
+    		                		</li>
+									<li>
+										<label for="province">Provincia</label>
+										<div class="form-select">
+											<select id="province" class="chosen-select" data-placeholder="(Seleccionar)">
+										   	 	 	<option value="0">(Seleccionar)</option>
+											</select>
+										</div>
+    		                		</li>
+									<li>
+										<label for="cp">Código postal</label>
+										<input id="cp" type="text">
+									</li>
+									<li>
+										<label for="address">Dirección <span class="alternative">(opcional)</span></label>
+										<input id="address" type="text">
+    		                		</li>
+                                </ul>
+                            </fieldset>
+							<fieldset class="margin-bottom">
+                                <legend>Datos de acceso</legend>
+								<h2 class="h3 heading-divider">Datos de acceso</h2>
+    							<p>Email: hola@pedrogarcia.com</p>
+								<p class="alternative">Para modificar tu email o contraseña accede a <a href="#" class="link">Ajustes</a></p>
+                            </fieldset>
+							<fieldset class="margin-bottom">
+                                <legend>Teléfono de contacto</legend>
+								<h2 class="h3 heading-divider">Teléfono de contacto</h2>
+								<ul class="form--field-block clearfix">
+									<li>
+										<label for="phone1">Teléfono móvil</label>
+										<input id="phone1" type="text">
+									</li>
+									<li>
+										<label for="phone2">Télefono fijo <span class="alternative">(opcional)</span></label>
+										<input id="phone2" type="text">
+									</li>
+									<li>
+										<label for="phone3">Teléfono extranjero <span class="alternative">(opcional)</span></label>
+										<input id="phone3" type="text">
+									</li>
+								</ul>
+                            </fieldset>
+							<fieldset class="margin-bottom">
+                                <legend>Tu presencia profesional en internet</legend>
+								<h2 class="h3 heading-divider">Tu presencia profesional en internet</h2>
+    							<p class="alternative">Introduce...</p>
+								<ul class="form--field-block clearfix">
+									<li>
+										<label for="website1">Dirección de tu página <span class="alternative">(opcional)</span></label>
+										<input id="website1" type="text">
+									</li>
+									<li>
+										<label for="website2">Dirección de tu página <span class="alternative">(opcional)</span></label>
+										<input id="website2" type="text">
+									</li>
+									<li>
+										<button class="btn btn-default btn-medium margin-top" type="submit">Eliminar</button>
+									</li>
+									<li>
+										<a href="#" class="link">Añadir otra página más</a>
+									</li>
+								</ul>
+                            </fieldset>
+
+    						<button class="btn btn-primary btn-medium margin-top" type="submit">Guardar</button>
+							<button class="btn btn-default btn-medium margin-top" type="submit">Cancelar</button>
+    					</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
