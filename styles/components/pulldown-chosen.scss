@@ -18,9 +18,12 @@ Styleguide 2.16
   font-size: 16px;
   zoom: 1;
   *display: inline;
+  border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  background: url(#{$path-backgrounds}/bg-select-arrow.png) right 50% no-repeat $shiro;
+  cursor: pointer;
 }
 .chosen-container .chosen-drop {
   position: absolute;
@@ -42,9 +45,6 @@ Styleguide 2.16
 }
 .chosen-container.chosen-with-drop .chosen-drop {
   left: 0;
-}
-.chosen-container a {
-  cursor: pointer;
 }
 
 /* @end */
@@ -206,7 +206,7 @@ Styleguide 2.16
   width: 100%;
   height: auto !important;
   height: 1%;
-  border: 1px solid #aaa;
+  //border: 1px solid #aaa;
   background-color: $shiro;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, $shiro));
   background-image: -webkit-linear-gradient(#eeeeee 1%, $shiro 15%);
@@ -227,7 +227,7 @@ Styleguide 2.16
 .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
   margin: 1px 0;
   padding: 5px;
-  height: 15px;
+  //height: 15px;
   outline: 0;
   border: 0 !important;
   background: transparent !important;
@@ -317,7 +317,7 @@ Styleguide 2.16
   background-position: right 50%;
 }
 .chosen-container-active .chosen-choices {
-  border: 1px solid #5897fb;
+  //border: 1px solid #5897fb;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 .chosen-container-active .chosen-choices li.search-field input[type="text"] {
@@ -403,6 +403,10 @@ Styleguide 2.16
 }
 .chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b {
   background-position: -12px 2px;
+}
+
+.chosen-select {
+    border: 1px solid red;
 }
 
 /* @end */

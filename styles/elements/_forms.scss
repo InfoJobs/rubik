@@ -32,6 +32,9 @@ label {
 	.error &:first-of-type {
 		color: $trueblood;
 	}
+	.success &:first-of-type {
+		color: $bamboo;
+	}
 	.panel-executive & {
 		color: #bebebe;
 	}
@@ -63,6 +66,16 @@ textarea {
 
 	.error & {
 		border-color: $trueblood;
+	}
+
+	.success & {
+		border-color: $bamboo;
+		background: $light-bamboo;
+	}
+
+	&:focus {
+		border: 1px solid $day-blue;
+		outline: none;
 	}
 }
 
@@ -114,7 +127,6 @@ input[type="radio"] + label,
 .label-checkbox { //class ".label-checkbox" deprecated. actualy used in filters only
 	cursor: pointer;
 	width: 85%;
-
 }
 
 /*
@@ -163,6 +175,10 @@ Styleguide 1.4
 	.info {
 		margin-top: 3px;
 	}
+}
+
+.form--field-block > li:last-child {
+		margin-bottom: 0;
 }
 
 form ul .indent {
@@ -317,10 +333,8 @@ Styleguide 1.4.3
 .form-select {
 	position: relative;
 	height: 30px;
-	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
 	line-height: 14px;
 	-webkit-appearance: none;
-	background: url(#{$path-backgrounds}/bg-select-arrow.png) right 50% no-repeat $shiro;
 
 	select {
 		width: 100%;
@@ -329,8 +343,8 @@ Styleguide 1.4.3
 		text-indent: 0.01px;
 		text-overflow: "";
 		-webkit-appearance: none;
-			 -moz-appearance: none;
-						appearance: none;
+		   -moz-appearance: none;
+				appearance: none;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -527,4 +541,72 @@ Styleguide 1.4.7
 		margin-top: 2px;
 		padding: 10px;
 	}
+}
+
+.password {
+	position: relative;
+
+	a {
+		position: absolute;
+		top: 26px;
+		right: 1px;
+		font-size: $small-font-size;
+		line-height: $xsmall-line-height;
+		padding: 15px 10px;
+
+		@include mediaquery ($bp-desktop) {
+			top: 25px;
+			right: 5px 10px;
+			padding: 8px;
+		}
+	}
+
+	input {
+		margin-bottom: 10px;
+	}
+
+	.meter,
+	meter {
+		height: 7px;
+	}
+
+	meter {
+		width: 100%;
+		vertical-align: top;
+
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+
+		background: $dark-shiro;
+
+
+		/* WebKit */
+		&::-webkit-meter-bar {
+			background: $dark-shiro;
+		}
+
+		&::-webkit-meter-optimum-value,
+		&::-webkit-meter-suboptimum-value {
+			background: $bamboo;
+		}
+
+		&::-webkit-meter-even-less-good-value  {
+			background: $trueblood;
+		}
+
+
+		/* Firefox */
+		&:-moz-meter-optimum::-moz-meter-bar,
+		&:-moz-meter-sub-optimum::-moz-meter-bar {
+		  background: $bamboo;
+		}
+
+		&:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+		  background: $trueblood;
+
+		}
+
+	}
+
 }
