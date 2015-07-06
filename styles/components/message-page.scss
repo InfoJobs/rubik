@@ -30,7 +30,10 @@ Message Page #disabled#
 
 		}
 
-		h1,
+		h1 {
+			margin: 0;
+		}
+
 		p {
 			margin: 0 0 5px 0;
 		}
