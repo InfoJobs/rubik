@@ -1,3 +1,5 @@
+@import "mixins-icons";
+
 /*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
@@ -28,6 +30,8 @@ $query2     = width, device-width
 	box-sizing: $box-model;
 }
 
+/*Flexbox*/
+
 @mixin display-flex {
 	display: -webkit-box;
   	display: -moz-box;
@@ -52,11 +56,16 @@ $query2     = width, device-width
 	align-items: $value;
 }
 
-@mixin flex ( $value: 1 ) {
+@mixin flex ( $value: 1) {
 	-webkit-box-flex: $value;
 	-webkit-flex: $value;
 	-ms-flex: $value;
 	flex: $value;
+}
+
+@mixin flex-flow ( $value: row nowrap ) {
+	-webkit-flex-flow: $value;
+       flex-flow: $value;
 }
 
 @mixin order($val) {
