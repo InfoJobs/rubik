@@ -337,10 +337,6 @@ a.nav-bar-toggle {
 	@include display-flex;
 	@include align-items(center);
 
-	> li {
-		@include flex(1 0 auto);
-	}
-
 	@include mediaquery ($bp-header) {
 		border: 0 none;
 	}
@@ -351,13 +347,17 @@ a.nav-bar-toggle {
 	border-top: 1px solid $darkest-shiro;
 
 	@include mediaquery ($bp-header) {
-		@include display-flex;
 		padding: 0;
 		border-top: 0;
 	}
 
 	li {
+		@include flex(1 1 50%);
 		margin-left: 10px;
+
+		@include mediaquery ($bp-header) {
+			@include flex(1 0 auto);
+		}
 
 		&:first-child {
 			margin-left: 0;
@@ -375,6 +375,8 @@ a.nav-bar-toggle {
 
 .nav-bar-user {
 	li {
+		@include flex(1 0 auto);
+
 		@include mediaquery ($bp-header) {
 			position: relative;
 
