@@ -11,6 +11,24 @@
 	background-image: url(#{$path-media}/portales/ij/appgrade/backgrounds/bg-logo-reduced.png);
 	border-bottom: 1px solid $darkest-shiro;
 
+	@include mediaquery ($bp-header) {
+		background-image: none;
+		margin-top: 10px;
+
+		.logo span {
+			display: none;
+		}
+
+		h1,
+		.logo img {
+			display: block;
+		}
+	}
+
+	@media print {
+		display: none;
+	}
+
 	h1 {
 		margin: 0;
 	}
@@ -57,23 +75,6 @@
 		font-size: $base-font-size;
 	}
 
-	@include mediaquery ($bp-header) {
-		background-image: none;
-		margin-top: 10px;
-
-		.logo span {
-			display: none;
-		}
-
-		h1,
-		.logo img {
-			display: block;
-		}
-	}
-
-	@media print {
-		display: none;
-	}
 }
 
 .global-nav-brand {
@@ -494,6 +495,7 @@ a.nav-bar-toggle {
 	> li  {
 		@include mediaquery ($bp-header) {
 			float: left;
+			position: relative; // for position of sticker
 		}
 
 		& > a {
@@ -512,10 +514,12 @@ a.nav-bar-toggle {
 
 	.sticker {
 		position: relative;
-    	top: -3px;
+    	top: -2px;
 
 		@include mediaquery ($bp-header) {
-			top: -2px;
+			position: absolute;
+		    top: 26px;
+		    right: -5px;
 		}
 	}
 }
