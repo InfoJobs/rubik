@@ -1,9 +1,12 @@
 
 $(function() {
 
+	var eMenuHeight = $('.nav-mobile').height();
+	var eBpHeader   = 945;
+
 	function closeMenu() {
 		$('.nav-mobile').addClass('fade-out');
-		$('.wrap-overlay').removeClass('wrap-transition');
+		$('.wrap-overlay').removeClass('wrap-transition').removeAttr( 'style' );
 
 	    setTimeout(function(){
 			$('.wrapper').removeClass('wrap-overlay');
@@ -14,7 +17,12 @@ $(function() {
     $('.js-open-menu').click(function(){
 
         $(this).next('.nav-mobile').addClass('fade-in open-menu');
-		$('.wrapper').addClass('wrap-overlay');
+		$('.wrapper').addClass('wrap-overlay').css('height' , eMenuHeight + 'px');
+
+        $(window).resize(function () {
+			eMenuHeight = $('.nav-mobile').height();
+            $('.wrap-overlay').css('height' , eMenuHeight + 'px');
+        });
 
 	    setTimeout(function(){
 			$('.wrap-overlay').addClass('wrap-transition');
@@ -45,9 +53,9 @@ $(function() {
 	//delete wrap-overlay on resize
 	$( window ).resize(function() {
 
-		if($('.wrapper').hasClass('wrap-overlay') && window.innerWidth > 945) {
+		if($('.wrapper').hasClass('wrap-overlay') && window.innerWidth > eBpHeader) {
 
-			$('.wrapper').removeClass('wrap-overlay');
+			$('.wrapper').removeClass('wrap-overlay').removeAttr( 'style' );
 
 		}
 		else if(
@@ -55,7 +63,7 @@ $(function() {
 				$('.nav-mobile').hasClass('open-menu') &&
 				window.innerWidth <= 945
 			) {
-			$('.wrapper').addClass('wrap-overlay');
+			$('.wrapper').addClass('wrap-overlay').css('height' , eMenuHeight + 'px');
 		}
 
 	});

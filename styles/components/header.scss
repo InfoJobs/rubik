@@ -235,7 +235,7 @@ a.nav-bar-toggle {
 
 .nav-bar-menu {
 	@include flex;
-	overflow: scroll;
+	overflow: auto;
 	padding-right: 10px;
 	padding-left: 10px;
 
@@ -530,6 +530,7 @@ a.nav-bar-toggle {
 }
 
 .wrap-overlay {
+	overflow: hidden;
 	position: static;
 }
 
