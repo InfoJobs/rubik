@@ -215,17 +215,15 @@ a.nav-bar-toggle {
 	width: 260px;
 	background:$shiro;
 	z-index: $zindex-menu;
-	-webkit-box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
-	   -moz-box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
-	        box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
+	transform: translate3d(-100%, 0px, 0px);
+    transition: all 0.3s ease 0s;
 
 	@include mediaquery ($bp-header) {
 		@include display-flex;
 		@include flex-flow(row wrap);
+		transform: none;
 		position: static;
 		width: auto;
-		height: auto;
-		min-height: auto;
 		padding: 0 20px;
 		-webkit-box-shadow: none;
 		   -moz-box-shadow: none;
@@ -295,9 +293,6 @@ a.nav-bar-toggle {
 }
 
 .global-nav-logged.global-nav-submenu {
-	& .nav-mobile {
-		height: auto;
-	}
 
 	.nav-bar-menu {
 		background: $dark-shiro;
@@ -529,11 +524,11 @@ a.nav-bar-toggle {
 
 .open-menu {
 	@include display-flex;
-}
-
-.wrap-overlay {
-	overflow: hidden;
-	position: static;
+	transform: translate3d(0px, 0px, 0px);
+	overflow: auto;
+	-webkit-box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
+	   -moz-box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
+	        box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
 }
 
 .wrap-overlay::before {
