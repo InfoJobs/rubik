@@ -25,3 +25,11 @@ $MIXINS ICONS
 		content: "\e604";
 	}
 }
+
+@mixin iconfont-Close {
+	@include iconfont;
+
+	&::before {
+		content: "\e60a";
+	}
+}
