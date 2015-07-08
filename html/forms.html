@@ -14,7 +14,7 @@
 		<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
 
 		<script type="text/javascript" src="http://es-static0.infojobs.com/jquery-2.1.0.js" th:remove="all"></script>
-		<script type="text/javascript" src="http://es-static0.infojobs.com/js/chosen.jquery.js" th:remove="all"></script>
+		<script type="text/javascript" src="../js/chosen.jquery.js" th:remove="all"></script>
 		<script type="text/javascript" src="http://es-static0.infojobs.com/components/responsive/cProvincesPullDown.js" th:remove="all"></script>
 	</head>
 
@@ -50,6 +50,30 @@
 											<input id="year" type="text" />
 										</div>
 									</li>
+
+									<li>
+										<label for="pulldown">Pulldown</label>
+										<select id="pulldown" class="chosen-select" data-placeholder="(Seleccionar)">
+									   	 	 	<option value="01">Option01</option>
+									   	 	 	<option value="02">Option02</option>
+												<option value="03">Option03</option>
+												<option value="04">Option04</option>
+												<option value="05">Option05</option>
+										</select>
+										<p class="info alternative small clearfix">Puedes seleccionar varios permisos de conducir</p>
+    		                		</li>
+
+									<li>
+										<label for="multiple-pulldown">Multiple pulldown</label>
+										<select id="multiple-pulldown" multiple="true" class="chosen-select" data-placeholder="(Seleccionar)">
+											<option value="01">Option01</option>
+								   	 	 	<option value="02">Option02</option>
+											<option value="03">Option03</option>
+											<option value="04">Option04</option>
+											<option value="05">Option05</option>
+										</select>
+										<p class="info alternative small clearfix">Lorem ipsum dolor sit amet.</p>
+    		                		</li>
                                 </ul>
                             </fieldset>
 
