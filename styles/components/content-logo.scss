@@ -36,18 +36,13 @@ Styleguide 2.3
 */
 
 .content-logo {
+	@include display-flex;
 	position: relative;
 	min-height: 60px;
 
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
+	&-center {
+		align-items: center;
+	}
 
 	@media print {
 		min-height: auto;
@@ -56,28 +51,12 @@ Styleguide 2.3
 }
 
 .content-logo-text {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
+	@include display-flex;
+	@include flex(1);
+	@include flex-direction(column);
 
 	overflow: hidden;
-
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
-
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
 	align-items: center;
-
-	-webkit-box-flex: 1;
-	-webkit-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
 
 	ul {
 		width: 100%;
@@ -90,12 +69,8 @@ Styleguide 2.3
 }
 
 .content-logo-media {
-	-webkit-box-flex: none;
-	-webkit-flex: none;
-	-ms-flex: none;
-	flex: none;
+	@include flex(none);
 	margin-left: 20px;
-	background-color: $shiro;
 
 	a {
 	    width: 100px;
@@ -112,6 +87,15 @@ Styleguide 2.3
 	.fig-thumbnail-logo img {
 		border: none;
 		padding: 0;
-		width: 100px;
+		width: 62px;
+
+		@include mediaquery ($bp-tablet) {
+			width: 82px;
+		}
+
+		@include mediaquery ($bp-desktop) {
+			width: 92px;
+		}
+
 	}
 }
