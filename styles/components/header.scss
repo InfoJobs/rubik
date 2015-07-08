@@ -223,6 +223,7 @@ a.nav-bar-toggle {
 		@include flex-flow(row wrap);
 		transform: none;
 		position: static;
+		height: auto;
 		width: auto;
 		padding: 0 20px;
 		-webkit-box-shadow: none;
