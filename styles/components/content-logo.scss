@@ -39,10 +39,7 @@ Styleguide 2.3
 	@include display-flex;
 	position: relative;
 	min-height: 60px;
-
-	&-center {
-		align-items: center;
-	}
+	align-items: center;
 
 	@media print {
 		min-height: auto;
