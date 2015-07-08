@@ -40,9 +40,6 @@ Styleguide 2.16
   border-style: solid;
   border-color: #c7c9ca;
   background: $shiro;
-  -webkit-box-shadow: 0px 6px 5px rgba(102, 102, 102, 0.4);
-     -moz-box-shadow: 0px 6px 5px rgba(102, 102, 102, 0.4);
-          box-shadow: 0px 6px 5px rgba(102, 102, 102, 0.4);
 }
 .chosen-container.chosen-with-drop .chosen-drop {
   left: 0;
@@ -210,7 +207,6 @@ Styleguide 2.16
         width: 100%;
         height: auto !important;
         height: 1%;
-        //border: 1px solid #aaa;
         background-color: $shiro;
 
         li {
@@ -226,14 +222,12 @@ Styleguide 2.16
             input[type="text"]  {
                 margin: 1px 0;
                 padding: 5px;
-                //height: 15px;
                 outline: 0;
                 border: 0 !important;
                 background: transparent !important;
                 box-shadow: none;
                 color: $mid-script;
                 font-size: 100%;
-                font-family: sans-serif;
                 line-height: normal;
                 border-radius: 0;
             }
@@ -247,11 +241,9 @@ Styleguide 2.16
         }
 
         &.search-choice {
-            @include sticker;
-            @include sticker-skill;
+            @include sticker-multi;
             position: relative;
             margin: 5px 0 5px 5px;
-            padding-right: 5px;
 
             .search-choice-close {
                 @include iconfont-Close;
@@ -262,12 +254,8 @@ Styleguide 2.16
                 font-size: $base-font-size;
 
                 &:hover {
-                    color: $day-blue;
+                    color: $dark-silk;
                 }
-
-                // &.close span {
-                //     display: none;
-                // }
             }
         }
 
@@ -323,10 +311,7 @@ Styleguide 2.16
 .chosen-container-active.chosen-with-drop .chosen-single div b {
   background-position: right 50%;
 }
-.chosen-container-active .chosen-choices {
-  //border: 1px solid #5897fb;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
+
 .chosen-container-active .chosen-choices li.search-field input[type="text"] {
   color: #111 !important;
 }

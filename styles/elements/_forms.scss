@@ -126,7 +126,7 @@ input[type="checkbox"] + label,
 input[type="radio"] + label,
 .label-checkbox { //class ".label-checkbox" deprecated. actualy used in filters only
 	cursor: pointer;
-	width: 85%;
+	max-width: 85%;
 }
 
 /*
