@@ -39,12 +39,28 @@ Styleguide 1.7.1.1
 
 */
 
+@mixin iconfont {
+	position: relative;
+	top: 4px;
+	font-family: 'Icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 0;
+	left: 0;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 [class^="iconfont-"]::before,
 [class*=" iconfont-"]::before,
 [class^="iconfont-"]::after,
 [class*=" iconfont-"]::after {
 	@include iconfont;
-	top: 4px;
 }
 
 //needs sass version 3.4.7 or later
@@ -152,8 +168,8 @@ $icon-size: (50); //TODO: resolve problem when it s moved to _vars
 .iconfont-Arrow::before {
 	content: "\e603";
 }
-.iconfont-BurguerMenu {
-	@include iconfont-BurguerMenu;
+.iconfont-BurguerMenu::before {
+	content: "\e604";
 }
 .iconfont-Calendar::before {
 	content: "\e605";

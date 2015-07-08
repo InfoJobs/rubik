@@ -1,5 +1,6 @@
 @import "mixins-icons";
 @import "mixins-stickers";
+@import "mixins-columns";
 
 /*------------------------------------*\
 $MIXINS
@@ -75,6 +76,14 @@ $query2     = width, device-width
   -ms-flex-order: $val;
   -webkit-order: $val;
   order: $val;
+}
+
+@mixin flex-direction($val) {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: $val;
+	-ms-flex-direction: $val;
+	flex-direction: $val;
 }
 
 @mixin inner {

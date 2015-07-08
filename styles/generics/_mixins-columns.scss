@@ -1,0 +1,64 @@
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+
+@mixin columns {
+	@include display-flex;
+	position: relative;
+	//min-height: 60px; //related with logo on content-logo (mobile)
+
+	@media print {
+		min-height: auto;
+	}
+
+	.text {
+		@include display-flex;
+		@include flex(1);
+		@include flex-direction(column);
+
+		overflow: hidden;
+
+		h1,h2,h3 {
+			margin: 0;
+			-moz-hyphens: auto;
+			word-wrap: break-word;
+		}
+	}
+
+	.media {
+		@include flex(none);
+		margin-left: 20px;
+
+		a {
+		    width: 100px;
+		    height: 100px;
+		}
+
+		img {
+			display: block;
+			width: 110px;
+			padding: 4px;
+			border: 1px solid $darkest-shiro;
+		}
+
+		.fig-thumbnail-logo img {
+			border: none;
+			padding: 0;
+			width: 62px;
+
+			@include mediaquery ($bp-tablet) {
+				width: 82px;
+			}
+
+			@include mediaquery ($bp-desktop) {
+				width: 92px;
+			}
+
+		}
+	}
+
+	.action {
+		@include flex(none);
+		margin-left: 20px;
+	}
+}
