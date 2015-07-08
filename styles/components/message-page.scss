@@ -26,7 +26,7 @@ Message Page #disabled#
 
 		@include mediaquery ($bp-tablet) {
 			text-align: left;
-			align-items: center;
+			@include align-items(center);
 
 		}
 
