@@ -35,64 +35,27 @@ Markup:
 Styleguide 2.3
 */
 
-.content-logo {
-	@include display-flex;
-	position: relative;
-	min-height: 60px;
+.content-middle {
+	@include columns;
 	align-items: center;
-
-	@media print {
-		min-height: auto;
-	}
-
-}
-
-.content-logo-text {
-	@include display-flex;
-	@include flex(1);
-	@include flex-direction(column);
-
-	overflow: hidden;
-	align-items: center;
-
-	ul {
-		width: 100%;
-	}
 
 	h1 {
-		width: 100%;
 		padding-top: 10px; //corrige centrado vertical exacto
+	}
+
+	h2 {
+		padding-top: 5px; //corrige centrado vertical exacto
+	}
+
+	.text {
+		align-items: center;
+
+		h1,h2,h3,ul {
+			width: 100%;
+		}
 	}
 }
 
-.content-logo-media {
-	@include flex(none);
-	margin-left: 20px;
-
-	a {
-	    width: 100px;
-	    height: 100px;
-	}
-
-	img {
-		display: block;
-		width: 110px;
-		padding: 4px;
-		border: 1px solid $darkest-shiro;
-	}
-
-	.fig-thumbnail-logo img {
-		border: none;
-		padding: 0;
-		width: 62px;
-
-		@include mediaquery ($bp-tablet) {
-			width: 82px;
-		}
-
-		@include mediaquery ($bp-desktop) {
-			width: 92px;
-		}
-
-	}
+.content-top {
+	@include columns;
 }
