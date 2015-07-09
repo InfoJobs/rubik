@@ -429,10 +429,6 @@ a.nav-bar-toggle {
 		color: $shiro;
 		background: $dark-silk;
 
-		&:hover {
-			color: $shiro;
-		}
-
 		@include mediaquery ($bp-header) {
 			display: table;
 			position: relative;
@@ -447,6 +443,10 @@ a.nav-bar-toggle {
 			&:hover {
 				color:$day-blue;
 			}
+		}
+
+		&:hover {
+			color: $shiro;
 		}
 
 		.name {
@@ -476,6 +476,19 @@ a.nav-bar-toggle {
 				height: 33px;
 				margin-bottom: 0;
 			}
+		}
+
+		.bg-blur {
+		    height: 100%;
+		    left: 0;
+		    position: absolute;
+		    top: 0;
+		    width: 100%;
+
+			@include mediaquery ($bp-header) {
+				display: none;
+			}
+
 		}
 	}
 }
