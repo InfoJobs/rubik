@@ -2,7 +2,7 @@
 $MIXINS STICKERS
 \*------------------------------------*/
 @mixin sticker {
-    @include font-small-line;
+    //@include font-small-line;
     display: inline-block;
     padding: 6px 10px;
     border-radius: 15px;

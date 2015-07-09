@@ -39,7 +39,7 @@
     }
 
     .sticker-marked {
-        @extend %marked-contrast;
+        //@extend %marked-contrast;
         margin-left: 10px;
 
         .skin-executive & {
@@ -61,7 +61,7 @@
 }
 
 .result-list > li {
-    @extend %font-small-line;
+    //@extend %font-small-line;
     overflow: hidden;
     padding: 20px 10px 15px 10px;
     border-bottom: 1px solid $darkest-shiro;
@@ -90,14 +90,14 @@
 }
 
 .result-list-title {
-    @extend %font-medium-line;
+    //@extend %font-medium-line;
     clear: left;
     margin-top: 0;
     margin-bottom: 0;
 }
 
 .result-list-subtitle {
-    @extend %font-small-line;
+    //@extend %font-small-line;
     margin-top: 0;
     margin-bottom: 5px;
     font-family: $base-font-family;
