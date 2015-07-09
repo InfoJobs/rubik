@@ -24,8 +24,12 @@ Styleguide 2.16
      -moz-user-select: none;
           user-select: none;
   background: url(#{$path-backgrounds}/bg-select-arrow.png) right 50% no-repeat $shiro;
-  cursor: pointer;
+
+  .error & {
+      border: 1px solid $trueblood;
+  }
 }
+
 .chosen-container .chosen-drop {
   position: absolute;
   top: 100%;
