@@ -59,13 +59,6 @@ select:-moz-focusring {
     text-shadow: 0 0 0 $outer-wall;
 }
 
-@mixin input {
-	display: block;
-	padding: 4px 10px;
-	font-size: $base-font-size;
-	line-height: $base-line-height;
-}
-
 input,
 textarea {
 	@include input;
@@ -341,7 +334,6 @@ Styleguide 1.4.3
 
 .form-select {
 	position: relative;
-	// height: 30px;
 	line-height: 14px;
 	-webkit-appearance: none;
 
