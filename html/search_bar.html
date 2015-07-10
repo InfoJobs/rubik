@@ -9,23 +9,26 @@
 <script type="text/javascript" src="/polyfills/html5.js" ></script>
 <script type="text/javascript" src="/polyfills/placeholders.min.js" ></script>
 <![endif]-->
-<script type="text/javascript" src="/jquery-1.7.1.min.js" ></script>
-<script type="text/javascript" src="/jquery.tools.min.js" ></script>
-<script type="text/javascript" src="/general_01.js" ></script>
-<script type="text/javascript" src="/js/chosen.jquery.js" ></script>
-<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/style.css" />
+
+<!-- CSS FE styleguide -->
+<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
+<!-- /CSS FE styleguide -->
 
 <link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
 
+<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
 <link rel="stylesheet" type="text/css" href="../styles/components/search.css" />
 <link rel="stylesheet" type="text/css" href="../styles/components/pulldown-chosen.css" />
 
-<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css" />
+<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
 
+<script type="text/javascript" src="http://es-static0.infojobs.com/jquery-2.1.0.js" th:remove="all"></script>
+<script type="text/javascript" src="http://es-static0.infojobs.com/js/chosen.jquery.js" th:remove="all"></script>
+<script type="text/javascript" src="http://es-static0.infojobs.com/components/responsive/cProvincesPullDown.js" th:remove="all"></script>
 </head>
 <body>
 	<!-- Search -->
-	<div class="search-bar">
+	<div class="search-bar-main search-bar panel-focus">
 		<form method="post" name="offersSearch" id="offersSearch" role="form" class="form" action="/jobsearch/search-results/list.xhtml">
 		  <input type="hidden" value="0" id="canal" name="canal">
 		  <fieldset>
@@ -39,7 +42,7 @@
 			      <ul class="radio-group clearfix">
 			        <li>
 			          <input type="radio" onClick="actualizaZonaBusqueda();" checked="checked" name="region" id="local">
-			          <label for="local">en España</label>
+			          <label for="local">en Spain</label>
 			        </li>
 			        <li>
 			          <input type="radio" onClick="actualizaZonaBusqueda();" name="region" id="foreign">
