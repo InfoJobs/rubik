@@ -29,7 +29,6 @@
 		margin: 0;
 	}
 
-	h1,
 	.logo img {
 		display: none;
 
@@ -69,6 +68,16 @@
 			@include mediaquery ($bp-header) {
 				font-size: $base-font-size;
 			}
+		}
+
+		//ocultamos Inicio en movil cuando hay submenu
+		.logo {
+			display: none;
+
+			@include mediaquery ($bp-header) {
+				display: block;
+			}
+
 		}
 	}
 
@@ -267,6 +276,12 @@ a.nav-bar-toggle {
 	.global-nav-submenu & {
 		background: $dark-shiro;
 		overflow: visible;
+		@include flex(0 0 auto);
+
+		@include mediaquery ($bp-header) {
+			@include flex;
+		}
+
 	}
 
 	@include mediaquery ($bp-header) {
@@ -535,6 +550,15 @@ a.nav-bar-toggle {
 		    top: 26px;
 		    right: -5px;
 		}
+	}
+
+	.global-nav-submenu & {
+		@include flex(0 0 auto);
+
+			@include mediaquery ($bp-header) {
+				@include flex(1 0 100%);
+
+			}
 	}
 }
 
