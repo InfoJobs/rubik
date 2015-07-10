@@ -2815,6 +2815,7 @@ h2,
 h3,
 .h3 {
   font-family: Proximanovabold, Helvetica, Arial, sans-serif;
+  color: #2d3133;
 }
 .skin-executive h1, .skin-executive
 h2, .skin-executive
@@ -3114,9 +3115,13 @@ Styleguide 1.2.7
 .list-default > dt {
   margin-bottom: 0;
   font-family: Proximanovabold, Helvetica, Arial, sans-serif;
+  color: #2d3133;
 }
-.list-default > dd {
-  margin-bottom: 20px;
+.list-default > dt.hide {
+  display: none;
+}
+.list-default dd + dt {
+  margin-top: 20px;
 }
 
 /*
@@ -3571,6 +3576,9 @@ Styleguide 1.4
   margin-bottom: 0;
 }
 .form--field-block > li .info {
+  margin-bottom: 0;
+}
+.form--field-block > li .info:first-of-type {
   margin-top: 3px;
 }
 
@@ -6423,6 +6431,243 @@ $query2     = width, device-width
 }
 
 /*------------------------------------*\
+    $FONTS
+\*------------------------------------*/
+.small, .tag-group, .filters p, .result-list > li, .result-list-subtitle, .application-list > li .item .action, .application-list h3 {
+  font-size: 14px;
+  line-height: 18px;
+}
+@media print {
+  .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle, .application-list > li .item .action, .application-list h3 {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+
+p, .base, .quote {
+  font-size: 16px;
+  line-height: 20px;
+}
+@media print {
+  p, .base, .quote {
+    font-size: 9.00023px;
+    line-height: 9.75024px;
+  }
+}
+
+h3,
+.h3, .medium, .result-list-title, .application-list h2 {
+  font-size: 18px;
+  line-height: 22px;
+}
+@media print {
+  h3,
+  .h3, .medium, .result-list-title, .application-list h2 {
+    font-size: 13.50034px;
+    line-height: 16.50041px;
+  }
+}
+
+.carousel-claim {
+  font-size: 36px;
+  line-height: 37px;
+}
+@media print {
+  .carousel-claim {
+    font-size: 27pt;
+    line-height: 28pt;
+  }
+}
+
+/*------------------------------------*\
+    $FONTS
+\*------------------------------------*/
+.small, .tag-group, .filters p, .result-list > li, .result-list-subtitle, .application-list > li .item .action, .application-list h3 {
+  font-size: 14px;
+  line-height: 18px;
+}
+@media print {
+  .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle, .application-list > li .item .action, .application-list h3 {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+
+p, .base, .quote {
+  font-size: 16px;
+  line-height: 20px;
+}
+@media print {
+  p, .base, .quote {
+    font-size: 9.00023px;
+    line-height: 9.75024px;
+  }
+}
+
+h3,
+.h3, .medium, .result-list-title, .application-list h2 {
+  font-size: 18px;
+  line-height: 22px;
+}
+@media print {
+  h3,
+  .h3, .medium, .result-list-title, .application-list h2 {
+    font-size: 13.50034px;
+    line-height: 16.50041px;
+  }
+}
+
+.carousel-claim {
+  font-size: 36px;
+  line-height: 37px;
+}
+@media print {
+  .carousel-claim {
+    font-size: 27pt;
+    line-height: 28pt;
+  }
+}
+
+/*------------------------------------*\
+    $COLORS
+\*------------------------------------*/
+/*
+Text colors
+
+* Use class `.script` to force text color as the default text color
+* Use class `.soft-script` to force a text color as a secondary text
+* Use class `.alternative` to mark text that contains details information
+* Use class `.disabled` to mark a text option as disabled
+* Use class `.marked` to focus attention in it
+* Use class `.highlight` to highlight words as a result of a search
+
+{modifier_class}:
+
+.script
+.notification-success
+.alternative
+.disabled
+.marked
+.highlight
+
+Markup:
+<p>Lorem ipsum dolor sit amet, <span class="{{modifier_class}}">consectetur adipiscing</span> elit.</p>
+
+Styleguide 1.2.7
+*/
+/*
+Contrasted text color
+
+Use class `.contrast` to define a text over dark background color
+
+Markup:
+<div class="inner panel-info">
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	<a href="#" class="contrast">Curabitur varius</a>
+</div>
+
+Styleguide 1.2.7.1
+*/
+.contrast {
+  color: #fff;
+}
+.contrast:hover {
+  color: #fff;
+}
+.contrast:focus {
+  color: #fff;
+}
+
+.contrast-link,
+.contrast-link:visited {
+  color: #41a4db;
+}
+.contrast-link:hover, .contrast-link:focus,
+.contrast-link:visited:hover,
+.contrast-link:visited:focus {
+  color: #2088c2;
+}
+
+.disabled,
+.disabled:hover,
+.disabled:visited,
+.disabled:active {
+  color: #999;
+  cursor: default;
+}
+
+.disabled:hover {
+  text-decoration: none;
+}
+
+.marked {
+  color: #00a550;
+}
+.skin-executive .marked {
+  color: #2088c2;
+}
+
+.marked-contrast, .result-list .sticker-marked {
+  color: #fff;
+  background-color: #00a550;
+}
+
+.alternative {
+  color: #999;
+}
+
+.alternative-action {
+  color: #666;
+}
+.skin-executive .alternative-action {
+  color: #666;
+}
+.panel-info .alternative-action {
+  color: #fff;
+}
+.panel-executive .alternative-action {
+  color: #fff;
+}
+
+a.alternative-action:hover {
+  color: #2088c2;
+}
+.skin-executive a.alternative-action:hover {
+  color: #27a8a8;
+}
+
+.highlight {
+  padding: 2px 5px;
+  background-color: #ffff66;
+}
+h1 .highlight {
+  padding: 10px 5px 0 5px;
+}
+.sticker-skill .highlight {
+  padding: 0 3px;
+}
+
+.script,
+a.script,
+a.script:hover,
+a.script:visited,
+a.script:active {
+  color: #2d3133;
+}
+
+.soft-script,
+a.soft-script,
+a.soft-script:hover,
+a.soft-script:visited,
+a.soft-script:active {
+  color: #586066;
+}
+
+.darkest-shiro {
+  color: #e2e5e6;
+}
+
+/*------------------------------------*\
     $JOB LIST
 \*------------------------------------*/
 /*
@@ -6947,6 +7192,7 @@ $query2     = width, device-width
   -moz-font-smoothing: antialiased;
   font-size: 25px;
   line-height: 27px;
+  color: #fff;
 }
 .media-board .item .title strong {
   font-family: Proximanovabold;
@@ -8330,19 +8576,11 @@ $query2     = width, device-width
     $STICKERS
 \*------------------------------------*/
 .sticker-marked {
-  font-size: 14px;
-  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
   color: #fff;
   background-color: #00a550;
-}
-@media print {
-  .sticker-marked {
-    font-size: 10.5pt;
-    line-height: 11.5pt;
-  }
 }
 .nav-bar-notifications .sticker-marked {
   position: absolute;
@@ -8356,19 +8594,11 @@ $query2     = width, device-width
 }
 
 .sticker-secondary {
-  font-size: 14px;
-  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
   color: #fff;
   background-color: #2088c2;
-}
-@media print {
-  .sticker-secondary {
-    font-size: 10.5pt;
-    line-height: 11.5pt;
-  }
 }
 .nav-bar-notifications .sticker-secondary {
   position: absolute;
@@ -8382,20 +8612,12 @@ $query2     = width, device-width
 }
 
 .sticker-skill {
-  font-size: 14px;
-  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
   margin: 0 5px 0 0;
   color: #2d3133;
   background-color: #d5e1e5;
-}
-@media print {
-  .sticker-skill {
-    font-size: 10.5pt;
-    line-height: 11.5pt;
-  }
 }
 .nav-bar-notifications .sticker-skill {
   position: absolute;
@@ -8423,19 +8645,11 @@ a.sticker-skill:active,
 }
 
 .sticker-executive {
-  font-size: 14px;
-  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
   color: #fff;
   background-color: #2d3133;
-}
-@media print {
-  .sticker-executive {
-    font-size: 10.5pt;
-    line-height: 11.5pt;
-  }
 }
 .nav-bar-notifications .sticker-executive {
   position: absolute;
@@ -8497,7 +8711,9 @@ Styleguide 2.16
   -moz-user-select: none;
   user-select: none;
   background: url(http://media.infojobs.net/appgrade/backgrounds//bg-select-arrow.png) right 50% no-repeat #fff;
-  cursor: pointer;
+}
+.error .chosen-container {
+  border: 1px solid #bf2102;
 }
 
 .chosen-container .chosen-drop {
@@ -8725,13 +8941,9 @@ Styleguide 2.16
   color: #999;
 }
 .chosen-container-multi .chosen-choices li.search-choice {
-  font-size: 14px;
-  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
-  font-size: 14px;
-  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
@@ -8742,12 +8954,6 @@ Styleguide 2.16
   position: relative;
   margin: 5px 0 5px 5px;
 }
-@media print {
-  .chosen-container-multi .chosen-choices li.search-choice {
-    font-size: 10.5pt;
-    line-height: 11.5pt;
-  }
-}
 .nav-bar-notifications .chosen-container-multi .chosen-choices li.search-choice {
   position: absolute;
   bottom: 12px;
@@ -8756,12 +8962,6 @@ Styleguide 2.16
 @media print {
   .chosen-container-multi .chosen-choices li.search-choice {
     padding: 0;
-  }
-}
-@media print {
-  .chosen-container-multi .chosen-choices li.search-choice {
-    font-size: 10.5pt;
-    line-height: 11.5pt;
   }
 }
 .nav-bar-notifications .chosen-container-multi .chosen-choices li.search-choice {
@@ -8931,7 +9131,7 @@ Styleguide 2.16
 }
 
 .chosen-select {
-  border: 1px solid red;
+  border: 1px solid #c7c7c7;
 }
 
 /* @end */
@@ -9318,19 +9518,11 @@ $query2     = width, device-width
     $STICKERS
 \*------------------------------------*/
 .sticker-marked {
-  font-size: 14px;
-  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
   color: #fff;
   background-color: #00a550;
-}
-@media print {
-  .sticker-marked {
-    font-size: 10.5pt;
-    line-height: 11.5pt;
-  }
 }
 .nav-bar-notifications .sticker-marked {
   position: absolute;
@@ -9344,19 +9536,11 @@ $query2     = width, device-width
 }
 
 .sticker-secondary {
-  font-size: 14px;
-  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
   color: #fff;
   background-color: #2088c2;
-}
-@media print {
-  .sticker-secondary {
-    font-size: 10.5pt;
-    line-height: 11.5pt;
-  }
 }
 .nav-bar-notifications .sticker-secondary {
   position: absolute;
@@ -9370,20 +9554,12 @@ $query2     = width, device-width
 }
 
 .sticker-skill {
-  font-size: 14px;
-  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
   margin: 0 5px 0 0;
   color: #2d3133;
   background-color: #d5e1e5;
-}
-@media print {
-  .sticker-skill {
-    font-size: 10.5pt;
-    line-height: 11.5pt;
-  }
 }
 .nav-bar-notifications .sticker-skill {
   position: absolute;
@@ -9411,19 +9587,11 @@ a.sticker-skill:active,
 }
 
 .sticker-executive {
-  font-size: 14px;
-  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
   color: #fff;
   background-color: #2d3133;
-}
-@media print {
-  .sticker-executive {
-    font-size: 10.5pt;
-    line-height: 11.5pt;
-  }
 }
 .nav-bar-notifications .sticker-executive {
   position: absolute;

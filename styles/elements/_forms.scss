@@ -173,7 +173,11 @@ Styleguide 1.4
 	}
 
 	.info {
-		margin-top: 3px;
+		margin-bottom: 0;
+
+		&:first-of-type {
+			margin-top: 3px;
+		}
 	}
 }
 

@@ -1,10 +1,10 @@
 /*------------------------------------*\
 $MIXINS STICKERS
 \*------------------------------------*/
-@import "../core/fonts"; //necesita el import para @include font-small-line (en integracion en P4)?!
+//@import "../core/fonts"; //necesita el import para @include font-small-line (en integracion en P4)?!
 
 @mixin sticker {
-    @include font-small-line;
+    //@include font-small-line;
     display: inline-block;
     padding: 6px 10px;
     border-radius: 15px;
