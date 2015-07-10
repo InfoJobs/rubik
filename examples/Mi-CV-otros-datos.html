@@ -33,7 +33,7 @@
     								<li>
 										<label for="driving-licence">Permiso de conducir</label>
 										<div class="form-select">
-											<select id="driving-licence" class="chosen-select" data-placeholder="(Seleccionar)">
+											<select id="driving-licence" multiple class="chosen-select" data-placeholder="(Seleccionar)">
 										   	 	 	<option value="0">(Seleccionar)</option>
 													<option value="1">No tengo permiso</option>
 										   	 	 	<option value="2">A1</option>
@@ -48,7 +48,7 @@
     		                		</li>
 
 									<li>
-										<p>Vehiculo propio</p>
+										<p class="label">Vehiculo propio</p>
 										<ul>
 											<li>
 												<input name="car" id="car-yes" type="radio" checked="checked">
@@ -77,8 +77,6 @@
 												</outgroup>
 											</select>
 										</div>
-										<p class="info alternative small clearfix">Puedes seleccionar varias nacionalidades</p>
-
     		                		</li>
 
 									<li>
@@ -93,12 +91,10 @@
 												</optgroup>
 											</select>
 										</div>
-										<p class="info alternative small clearfix">Puedes seleccionar varios permiosos de trabajo</p>
-
     		                		</li>
 
 									<li>
-										<p>¿Estás dado de alta como autónomo?</p>
+										<p class="label">¿Estás dado de alta como autónomo?</p>
 										<ul>
 											<li>
 												<input name="freelance" id="freelance-yes" type="radio" checked="checked">
