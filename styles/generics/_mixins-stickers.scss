@@ -1,6 +1,8 @@
 /*------------------------------------*\
 $MIXINS STICKERS
 \*------------------------------------*/
+@import "../core/fonts";
+
 @mixin sticker {
     @include font-small-line;
     display: inline-block;
