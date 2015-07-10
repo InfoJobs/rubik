@@ -16,7 +16,7 @@ Styleguide 2.16
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  font-size: 16px;
+  font-size: $base-font-size;
   zoom: 1;
   *display: inline;
   border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
@@ -52,14 +52,12 @@ Styleguide 2.16
 /* @end */
 /* @group Single Chosen */
 .chosen-container-single .chosen-single {
+  @include input;
   position: relative;
-  display: block;
   overflow: hidden;
-  padding: 5px 10px;
   border:0 none;
   text-decoration: none;
   white-space: nowrap;
-  line-height: 125%;
 
     @media only screen and (max-width: $tablet-start) {
   	padding: 10px;
@@ -129,7 +127,7 @@ Styleguide 2.16
   background-position: 98% 50%;
   background-repeat: no-repeat;
   background-size: 15px 15px;
-  font-size: 16px;
+  font-size: $base-font-size;
   font-weight: normal;
   line-height: normal;
   border-radius: 0;
@@ -305,9 +303,6 @@ Styleguide 2.16
 }
 .chosen-container-active.chosen-with-drop .chosen-single {
     transition: none;
-    -webkit-box-shadow: 0px 0 5px rgba(102, 102, 102, 0.4);
-       -moz-box-shadow: 0px 0 5px rgba(102, 102, 102, 0.4);
-            box-shadow: 0px 0 5px rgba(102, 102, 102, 0.4);
 }
 .chosen-container-active.chosen-with-drop .chosen-single div {
   border-left: none;

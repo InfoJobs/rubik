@@ -59,14 +59,19 @@ select:-moz-focusring {
     text-shadow: 0 0 0 $outer-wall;
 }
 
+@mixin input {
+	display: block;
+	padding: 4px 10px;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+}
+
 input,
 textarea {
-	display: block;
+	@include input;
 	width: 330px;
 	margin: 0;
-	padding: 5px 10px;
 	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
-	font-size: 16px;
 
 	.error & {
 		border-color: $trueblood;
@@ -81,10 +86,6 @@ textarea {
 		border: 1px solid $day-blue;
 		outline: none;
 	}
-}
-
-input {
-	height: 30px;
 }
 
 textarea {
@@ -340,7 +341,7 @@ Styleguide 1.4.3
 
 .form-select {
 	position: relative;
-	height: 30px;
+	// height: 30px;
 	line-height: 14px;
 	-webkit-appearance: none;
 
