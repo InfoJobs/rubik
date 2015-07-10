@@ -21,13 +21,17 @@ legend {
 	display: none;
 }
 
-label {
-	display: inline-block;
+label,
+.label {
 	margin-bottom: 5px;
-	vertical-align: top;
+	font-size: $base-font-size;
 	line-height: 125%;
 	color: $mid-script;
-	font-size: $base-font-size;
+}
+
+label {
+	display: inline-block;
+	vertical-align: top;
 
 	.error &:first-of-type {
 		color: $trueblood;
@@ -176,7 +180,7 @@ Styleguide 1.4
 		margin-bottom: 0;
 
 		&:first-of-type {
-			margin-top: 3px;
+			margin-top: 5px;
 		}
 	}
 }

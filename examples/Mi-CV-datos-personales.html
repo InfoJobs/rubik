@@ -43,6 +43,26 @@
 										<label for="surname2">Segundo Apellido <span class="alternative">(opcional)</span></label>
 										<input id="surname2" type="text">
     		                		</li>
+									<li>
+										<div class="row">
+											<div class="col-5">
+												<div class="col-child">
+													<label for="doc">Tipo de documento</label>
+													<div class="form-select">
+														<select id="doc" class="chosen-select" data-placeholder="(Seleccionar)">
+													   	 	 	<option value="0">(Seleccionar)</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="col-7">
+												<div class="col-child">
+													<label for="numdoc">Nº Documento</label>
+													<input id="numdoc" type="text">
+												</div>
+											</div>
+										</div>
+    		                		</li>
                                 </ul>
                             </fieldset>
 							<fieldset class="margin-bottom">
@@ -70,12 +90,20 @@
 										</div>
     		                		</li>
 									<li>
-										<label for="cp">Código postal</label>
-										<input id="cp" type="text">
-									</li>
-									<li>
-										<label for="address">Dirección <span class="alternative">(opcional)</span></label>
-										<input id="address" type="text">
+										<div class="row">
+											<div class="col-5">
+												<div class="col-child">
+													<label for="cp">Código postal</label>
+													<input id="cp" type="text">
+												</div>
+											</div>
+											<div class="col-7">
+												<div class="col-child">
+													<label for="address">Dirección <span class="alternative">(opcional)</span></label>
+													<input id="address" type="text">
+												</div>
+											</div>
+										</div>
     		                		</li>
                                 </ul>
                             </fieldset>
@@ -90,11 +118,58 @@
 								<h2 class="h3 heading-divider">Teléfono de contacto</h2>
 								<ul class="form--field-block clearfix">
 									<li>
-										<label for="phone1">Teléfono móvil</label>
-										<input id="phone1" type="text">
+										<div class="row">
+											<div class="col-6">
+												<div class="col-child">
+													<label for="phone1">Teléfono móvil</label>
+													<input id="phone1" type="text">
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="col-child">
+													<input name="phone" id="phone1-pref" type="radio" checked>
+													<label for="phone1-pref" class="label-checkbox">Preferente</label>
+												</div>
+											</div>
+										</div>
+    		                		</li>
+									<li>
+										<div class="row">
+											<div class="col-6">
+												<div class="col-child">
+													<label for="phone2">Teléfono fijo <span class="alternative">(opcional)</span></label>
+													<input id="phone2" type="text">
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="col-child">
+													<input name="phone" id="phone2-pref" type="radio">
+													<label for="phone2-pref" class="label-checkbox">Preferente</label>
+												</div>
+											</div>
+										</div>
+    		                		</li>
+									<li>
+										<div class="row">
+											<div class="col-6">
+												<div class="col-child">
+													<label for="phone3">Teléfono extranjero <span class="alternative">(opcional)</span></label>
+													<input id="phone3" type="text">
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="col-child">
+													<input name="phone" id="phone3-pref" type="radio">
+													<label for="phone3-pref" class="label-checkbox">Preferente</label>
+												</div>
+											</div>
+										</div>
+    		                		</li>
+									<li>
+
 									</li>
 									<li>
-										<label for="phone2">Télefono fijo <span class="alternative">(opcional)</span></label>
+										<label for="phone2">Télefono fijo </label>
 										<input id="phone2" type="text">
 									</li>
 									<li>
@@ -113,12 +188,20 @@
 										<input id="website1" type="text">
 									</li>
 									<li>
-										<label for="website2">Dirección de tu página <span class="alternative">(opcional)</span></label>
-										<input id="website2" type="text">
-									</li>
-									<li>
-										<button class="btn btn-default btn-medium margin-top" type="submit">Eliminar</button>
-									</li>
+										<div class="row">
+											<div class="col-9">
+												<div class="col-child">
+													<label for="website2">Dirección de tu página <span class="alternative">(opcional)</span></label>
+													<input id="website2" type="text">
+												</div>
+											</div>
+											<div class="col-3">
+												<div class="col-child">
+													<button class="btn btn-default margin-top" type="submit">Eliminar</button>
+												</div>
+											</div>
+										</div>
+    		                		</li>
 									<li>
 										<a href="#" class="link">Añadir otra página más</a>
 									</li>

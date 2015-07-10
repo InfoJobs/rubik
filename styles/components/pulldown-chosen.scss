@@ -230,7 +230,7 @@ Styleguide 2.16
                 border: 0 !important;
                 background: transparent !important;
                 box-shadow: none;
-                color: $mid-script;
+                color: $dark-silk;
                 font-size: 100%;
                 line-height: normal;
                 border-radius: 0;
@@ -254,6 +254,7 @@ Styleguide 2.16
                 position: relative;
                 top: 3px;
                 padding: 10px 6px;
+                cursor: pointer;
                 color: $soft-script;
                 font-size: $base-font-size;
 
