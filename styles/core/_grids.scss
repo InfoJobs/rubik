@@ -164,6 +164,44 @@ $gridColumns: 12;
 
 	.col-12-medium {
 		width: 100%;
+
+		&.panel-default,
+		&.panel-canvas {
+			background: none;
+
+			> .col-child {
+				margin-left: 10px;
+
+				@include mediaquery ($bp-desktop) {
+					margin-left: 0;
+					background-color: transparent;
+				}
+			}
+
+		}
+
+		&.panel-default {
+			@include mediaquery ($bp-desktop) {
+				background-color: $dark-shiro;
+			}
+
+			> .col-child {
+				background-color: $dark-shiro;
+			}
+
+		}
+
+		&.panel-canvas {
+			@include mediaquery ($bp-desktop) {
+				background-color: $shiro;
+			}
+
+			> .col-child {
+				background-color: $shiro;
+			}
+
+		}
+
 	}
 
 }
