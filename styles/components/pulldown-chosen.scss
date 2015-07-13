@@ -205,11 +205,11 @@ Styleguide 2.16
         position: relative;
         overflow: hidden;
         margin: 0;
-        padding: 0;
+        padding: 0 30px 0 0;
         width: 100%;
         height: auto !important;
         height: 1%;
-        background-color: $shiro;
+        background: url(#{$path-backgrounds}/bg-select-arrow.png) right 15px no-repeat $shiro;
 
         li {
           float: left;
@@ -401,6 +401,9 @@ Styleguide 2.16
     border: 1px solid #c7c7c7;
 }
 
+.chosen-container-multi.chosen-container-active .chosen-choices {
+    border-bottom: 1px solid $dark-shiro;
+}
 /* @end */
 /* @group Retina compatibility */
 // @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {
