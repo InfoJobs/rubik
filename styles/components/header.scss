@@ -1,35 +1,77 @@
-	//generics
-	@import "../generics/generics";
+//generics
+@import "../generics/generics";
 
-	.global-nav {
-		margin-top: -10px; // delete margin from container-expanded on navigation menu (only mobile)
-		overflow:hidden;
-		background-color: $shiro;
-		background-repeat: no-repeat;
-		background-position: center center;
-		//bg logo es
-		background-image: url(#{$path-media}/portales/ij/appgrade/backgrounds/bg-logo-reduced.png);
-		border-bottom: 1px solid $darkest-shiro;
+.global-nav {
+	margin-top: -10px; // delete margin from container-expanded on navigation menu (only mobile)
+	overflow:hidden;
+	background-color: $shiro;
+	background-repeat: no-repeat;
+	background-position: center center;
+	//bg logo es
+	background-image: url(#{$path-media}/portales/ij/appgrade/backgrounds/bg-logo-reduced.png);
+	border-bottom: 1px solid $darkest-shiro;
 
-		@include mediaquery ($bp-header) {
-			background-image: none;
-			margin-top: 10px;
+	@include mediaquery ($bp-header) {
+		background-image: none;
+		margin-top: 10px;
 
-			.logo span {
-				display: none;
-			}
-
-		}
-
-		@media print {
+		.logo span {
 			display: none;
 		}
 
-		h1 {
-			margin: 0;
+	}
+
+	@media print {
+		display: none;
+	}
+
+	h1 {
+		margin: 0;
+	}
+
+	.logo img {
+		display: none;
+
+		@include mediaquery ($bp-header) {
+			display: block;
 		}
 
-		.logo img {
+	}
+
+	a {
+		font-size: $large-font-size;
+		font-family: 'Proximanovabold';
+
+		&.btn {
+			font-size: $small-font-size;
+			font-family: 'Proximanova';
+		}
+
+		@include mediaquery ($bp-header) {
+			font-size: $base-font-size;
+			font-family: 'Proximanova';
+		}
+	}
+
+	&.global-nav-submenu {
+		a {
+			font-size: $medium-font-size;
+
+			@include mediaquery ($bp-header) {
+				font-size: $small-font-size;
+			}
+		}
+
+		.nav-bar-submenu a {
+			font-size: $large-font-size;
+
+			@include mediaquery ($bp-header) {
+				font-size: $base-font-size;
+			}
+		}
+
+		//ocultamos Inicio en movil cuando hay submenu
+		.logo {
 			display: none;
 
 			@include mediaquery ($bp-header) {
@@ -37,588 +79,545 @@
 			}
 
 		}
+	}
 
-		a {
-			font-size: $large-font-size;
-			font-family: 'Proximanovabold';
+	.nav-bar-submenu a {
+		font-size: $base-font-size;
+	}
 
-			&.btn {
-				font-size: $small-font-size;
-				font-family: 'Proximanova';
-			}
+}
+
+.global-nav-brand {
+	@at-root .global-nav#{&} {
+		height: 50px;
+		min-height: 50px;
+		background-color: $day-blue;
+		background-image: url(#{$path-media}/appgrade/backgrounds/bg-logo-reduced-white.png);
+		border: 0 none;
+
+		@include mediaquery ($bp-header) {
+			background-image: none;
+		}
+	}
+
+	.logo,
+	.logo:hover {
+		display: block;
+		padding: 10px 20px;
+		border: 0 none;
+	}
+}
+
+
+
+.nav-bar-user li a,
+.nav-bar-submenu li a {
+	padding: 15px 10px;
+
+	@include mediaquery ($bp-header) {
+		padding: 15px;
+	}
+}
+
+.nav-bar-menu li:first-child a,
+.nav-bar-user li:first-child a,
+.nav-bar-submenu li:first-child a {
+	padding-top: 20px;
+
+	@include mediaquery ($bp-header) {
+		padding: 0;
+	}
+}
+
+.nav-bar-menu li:first-child a {
+	@include mediaquery ($bp-header) {
+		padding: 20px 20px 20px 0;
+	}
+}
+.nav-bar-user li:first-child a.avatar {
+	padding-top: 30px;
+
+	@include mediaquery ($bp-header) {
+		padding: 0;
+	}
+}
+
+.nav-bar-submenu li:first-child {
+	a {
+		@include mediaquery ($bp-header) {
+			padding: 15px 10px 15px 20px;
+		}
+	}
+}
+
+.nav-bar-submenu li:last-child {
+	a {
+		padding-bottom: 20px;
+
+		@include mediaquery ($bp-header) {
+			padding-right: 20px;
+			padding-bottom: 15px;
+		}
+	}
+}
+
+.nav-bar-user li:last-child {
+	padding-left: 10px;
+	padding-right: 10px;
+	background: $dark-shiro;
+
+	@include mediaquery ($bp-header) {
+		padding: 0;
+		background: $shiro;
+	}
+
+	a {
+		padding-right: 0;
+		padding-bottom: 15px;
+		padding-left: 0;
+		border-top: 1px solid $darkest-shiro;
+
+		@include mediaquery ($bp-header) {
+			padding-bottom: 0;
+			border-top: 0;
+		}
+	}
+}
+
+a.nav-bar-toggle {
+	@include iconfont-BurguerMenu;
+	display: block;
+	margin: 0;
+	width: 50px;
+	height: 50px;
+
+	&::before {
+		position: relative;
+		top: 25px;
+		left: 10px;
+		color: $darkest-shiro;
+		font-size: $xlarge-font-size;
+	}
+
+	&:hover {
+		color: $dark-shiro;
+	}
+
+	span {
+		display: none;
+	}
+
+	@include mediaquery ($bp-header) {
+		display: none;
+	}
+}
+
+.nav-mobile {
+	@include display-flex;
+	@include flex-flow(column nowrap);
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 260px;
+	background:$shiro;
+	z-index: $zindex-menu;
+	-webkit-transition: transform 0.3s ease;
+			transition: transform 0.3s ease;
+    -webkit-transform: translate3d(-100%, 0, 0);
+	        transform: translate3d(-100%, 0, 0);
+
+	@include mediaquery ($bp-header) {
+		@include flex-flow(row wrap);
+        -webkit-transition: none 0s ease 0s;
+		        transition: none 0s ease 0s;
+	    -webkit-transform: none;
+		        transform: none;
+		position: static;
+		height: auto;
+		width: auto;
+		padding: 0 20px;
+	}
+
+}
+
+.nav-bar-menu {
+	@include flex;
+	overflow: auto;
+	padding-right: 10px;
+	padding-left: 10px;
+
+	> li {
+		float: none;
+
+		@include mediaquery ($bp-header) {
+			float: left;
+		}
+
+		&  a {
+			display:block;
+			position: relative;
+			padding: 17px 0 13px 0;
+			margin: 0;
+			color: $dark-silk;
 
 			@include mediaquery ($bp-header) {
-				font-size: $base-font-size;
-				font-family: 'Proximanova';
+				padding: 30px 15px;
+				color: $mid-script;
 			}
 		}
 
-		&.global-nav-submenu {
-			a {
-				font-size: $medium-font-size;
-
-				@include mediaquery ($bp-header) {
-					font-size: $small-font-size;
-				}
-			}
-
-			.nav-bar-submenu a {
-				font-size: $large-font-size;
-
-				@include mediaquery ($bp-header) {
-					font-size: $base-font-size;
-				}
-			}
-
-			//ocultamos Inicio en movil cuando hay submenu
-			.logo {
-				display: none;
-
-				@include mediaquery ($bp-header) {
-					display: block;
-				}
-
-			}
+		& > a:hover {
+			color: $day-blue;
 		}
+	}
 
-		.nav-bar-submenu a {
-			font-size: $base-font-size;
+	.global-nav-submenu & {
+		background: $dark-shiro;
+		overflow: visible;
+		@include flex(0 0 auto);
+
+		@include mediaquery ($bp-header) {
+			@include flex;
 		}
 
 	}
 
-	.global-nav-brand {
-		@at-root .global-nav#{&} {
-			height: 50px;
-			min-height: 50px;
-			background-color: $day-blue;
-			background-image: url(#{$path-media}/appgrade/backgrounds/bg-logo-reduced-white.png);
-			border: 0 none;
+	@include mediaquery ($bp-header) {
+		overflow: visible;
+		padding: 0;
 
-			@include mediaquery ($bp-header) {
-				background-image: none;
-			}
+		.global-nav-submenu & > li > a {
+			padding: 10px 15px 12px;
 		}
 
 		.logo,
 		.logo:hover {
 			display: block;
-			padding: 10px 20px;
-			border: 0 none;
-		}
-	}
-
-	.nav-bar-menu li a {
-		padding: 17px 0 13px 0;
-	}
-
-	.nav-bar-user li a,
-	.nav-bar-submenu li a {
-		padding: 15px 10px;
-
-		@include mediaquery ($bp-header) {
-			padding: 15px;
-		}
-	}
-
-	.nav-bar-menu li:first-child a,
-	.nav-bar-user li:first-child a,
-	.nav-bar-submenu li:first-child a {
-		padding-top: 20px;
-
-		@include mediaquery ($bp-header) {
-			padding: 0;
-		}
-	}
-
-	.nav-bar-menu li:first-child a {
-		@include mediaquery ($bp-header) {
 			padding: 20px 20px 20px 0;
 		}
-	}
-	.nav-bar-user li:first-child a.avatar {
-		padding-top: 30px;
 
-		@include mediaquery ($bp-header) {
-			padding: 0;
-		}
-	}
-
-	.nav-bar-submenu li:first-child {
-		a {
-			@include mediaquery ($bp-header) {
-				padding: 15px 10px 15px 20px;
-			}
-		}
-	}
-
-	.nav-bar-submenu li:last-child {
-		a {
-			padding-bottom: 20px;
-
-			@include mediaquery ($bp-header) {
-				padding-right: 20px;
-				padding-bottom: 15px;
-			}
-		}
-	}
-
-	.nav-bar-user li:last-child {
-		padding-left: 10px;
-		padding-right: 10px;
-		background: $dark-shiro;
-
-		@include mediaquery ($bp-header) {
-			padding: 0;
-			background: $shiro;
-		}
-
-		a {
-			padding-right: 0;
-			padding-bottom: 15px;
-			padding-left: 0;
-			border-top: 1px solid $darkest-shiro;
-
-			@include mediaquery ($bp-header) {
-				padding-bottom: 0;
-				border-top: 0;
-			}
-		}
-	}
-
-	a.nav-bar-toggle {
-		@include iconfont-BurguerMenu;
-		display: block;
-		margin: 0;
-		width: 50px;
-		height: 50px;
-
-		&::before {
-			position: relative;
-			top: 25px;
-			left: 10px;
-			color: $darkest-shiro;
-			font-size: $xlarge-font-size;
-		}
-
-		&:hover {
-			color: $dark-shiro;
-		}
-
-		span {
-			display: none;
-		}
-
-		@include mediaquery ($bp-header) {
-			display: none;
-		}
-	}
-
-	.nav-mobile {
-		@include display-flex;
-		@include flex-flow(column nowrap);
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100vh;
-		width: 260px;
-		background:$shiro;
-		z-index: $zindex-menu;
-		-webkit-transition: transform 0.3s ease;
-				transition: transform 0.3s ease;
-	    -webkit-transform: translate3d(-100%, 0, 0);
-		        transform: translate3d(-100%, 0, 0);
-
-		@include mediaquery ($bp-header) {
-			@include flex-flow(row wrap);
-	        -webkit-transition: none 0s ease 0s;
-			        transition: none 0s ease 0s;
-		    -webkit-transform: none;
-			        transform: none;
-			position: static;
-			height: auto;
-			width: auto;
-			padding: 0 20px;
-		}
-
-	}
-
-	.nav-bar-menu {
-		@include flex;
-		overflow: auto;
-		padding-right: 10px;
-		padding-left: 10px;
-
-		> li {
-			float: none;
-
-			@include mediaquery ($bp-header) {
-				float: left;
-			}
-
-			& > a {
-				display:block;
-				position: relative;
-				margin: 0;
-				color: $dark-silk;
-
-				@include mediaquery ($bp-header) {
-					padding: 30px 15px;
-					color: $mid-script;
-				}
-			}
-
-			& > a:hover {
-				color: $day-blue;
-			}
+		.global-nav-submenu & .logo,
+		.global-nav-submenu & .logo:hover {
+			padding: 10px 15px 15px 0;
 		}
 
 		.global-nav-submenu & {
-			background: $dark-shiro;
-			overflow: visible;
-			@include flex(0 0 auto);
-
-			@include mediaquery ($bp-header) {
-				@include flex;
-			}
-
-		}
-
-		@include mediaquery ($bp-header) {
-			overflow: visible;
-			padding: 0;
-
-			.global-nav-submenu & > li > a {
-				padding: 10px 15px 12px;
-			}
-
-			.logo,
-			.logo:hover {
-				display: block;
-				padding: 20px 20px 20px 0;
-			}
-
-			.global-nav-submenu & .logo,
-			.global-nav-submenu & .logo:hover {
-				padding: 10px 15px 15px 0;
-			}
-
-			.global-nav-submenu & {
-				background: $shiro;
-			}
-		}
-
-	}
-
-	.global-nav-logged.global-nav-submenu {
-
-		.nav-bar-menu {
-			background: $dark-shiro;
-			border-top: 1px solid $darkest-shiro;
-
-			@include mediaquery ($bp-header) {
-				background: $shiro;
-				border-top: 0;
-			}
-
-			li {
-				border-bottom: 1px solid $darkest-shiro;
-
-				&:last-child {
-					border: 0;
-				}
-
-				@include mediaquery ($bp-header) {
-					border-bottom: 0;
-
-					& > a {
-						color: $soft-script;
-
-						&:hover {
-							color: $day-blue;
-						}
-					}
-				}
-			}
-
-		}
-
-	}
-
-	.nav-bar-access,
-	.nav-bar-user {
-		@include display-flex;
-		@include align-items(center);
-
-		@include mediaquery ($bp-header) {
-			border: 0 none;
+			background: $shiro;
 		}
 	}
 
-	.nav-bar-access {
-		padding: 10px;
+}
+
+.global-nav-logged.global-nav-submenu {
+
+	.nav-bar-menu {
+		background: $dark-shiro;
 		border-top: 1px solid $darkest-shiro;
 
 		@include mediaquery ($bp-header) {
-			padding: 0;
+			background: $shiro;
 			border-top: 0;
 		}
 
 		li {
-			@include flex(1 1 50%);
-			margin-left: 10px;
+			border-bottom: 1px solid $darkest-shiro;
 
-			@include mediaquery ($bp-header) {
-				@include flex(1 0 auto);
+			&:last-child {
+				border: 0;
 			}
 
-			&:first-child {
-				margin-left: 0;
+			@include mediaquery ($bp-header) {
+				border-bottom: 0;
+
+				& > a {
+					color: $soft-script;
+
+					&:hover {
+						color: $day-blue;
+					}
+				}
 			}
 		}
 
-		.btn {
-			width: 100%;
+	}
 
-			@include mediaquery ($bp-header) {
-				width: auto;
+}
+
+.nav-bar-access,
+.nav-bar-user {
+	@include display-flex;
+	@include align-items(center);
+
+	@include mediaquery ($bp-header) {
+		border: 0 none;
+	}
+}
+
+.nav-bar-access {
+	padding: 10px;
+	border-top: 1px solid $darkest-shiro;
+
+	@include mediaquery ($bp-header) {
+		padding: 0;
+		border-top: 0;
+	}
+
+	li {
+		@include flex(1 1 50%);
+		margin-left: 10px;
+
+		@include mediaquery ($bp-header) {
+			@include flex(1 0 auto);
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+
+	.btn {
+		width: 100%;
+
+		@include mediaquery ($bp-header) {
+			width: auto;
+		}
+	}
+}
+
+.nav-bar-user {
+	li {
+		@include flex(1 0 auto);
+
+		@include mediaquery ($bp-header) {
+			position: relative;
+
+			&:first-child {
+				margin-right: 15px;
+			}
+
+			&:first-child::after {
+				content: "|";
+				position: absolute;
+				right: -5px;
+				top: calc(45% - 0.5em);
+				color: $darkest-shiro;
 			}
 		}
 	}
 
-	.nav-bar-user {
-		li {
-			@include flex(1 0 auto);
+	.logout {
+		display: block;
+		padding: 15px 10px;
+		color: $soft-script;
+		background-color: $dark-shiro;
 
-			@include mediaquery ($bp-header) {
-				position: relative;
-
-				&:first-child {
-					margin-right: 15px;
-				}
-
-				&:first-child::after {
-					content: "|";
-					position: absolute;
-					right: -5px;
-					top: calc(45% - 0.5em);
-					color: $darkest-shiro;
-				}
-			}
+		&:hover {
+			color:$day-blue;
 		}
 
-		.logout {
-			display: block;
-			padding: 15px 10px;
+		@include mediaquery ($bp-header) {
+			display: inline;
+			padding: 0;
+			background-color: $shiro;
+		}
+	}
+
+	.global-nav-logged & {
+		display: block;
+
+		@include mediaquery ($bp-header) {
+			@include display-flex;
+		}
+	}
+
+	.avatar {
+		overflow: hidden;
+		position: absolute;
+		left: 0;
+	    top: 0;
+		padding: 30px 20px;
+	    width: 100%;
+		height: 145px;
+		text-align: center;
+		color: $shiro;
+		background: $dark-silk;
+
+		@include mediaquery ($bp-header) {
+			position: relative;
+			padding: 0;
+			width: auto;
+			height: auto;
+			text-align: left;
 			color: $soft-script;
-			background-color: $dark-shiro;
+			background: none;
+			white-space: nowrap;
 
 			&:hover {
 				color:$day-blue;
 			}
+		}
+
+		&:hover {
+			color: $shiro;
+		}
+
+		.name {
+			white-space: nowrap;
+			max-width: 100%;
 
 			@include mediaquery ($bp-header) {
-				display: inline;
-				padding: 0;
-				background-color: $shiro;
+				display: table-cell;
+				vertical-align: middle;
+				max-width: 180px;
+				padding-right: 10px;
+				padding-left: 10px;
 			}
 		}
 
-		.global-nav-logged & {
+		.picture {
 			display: block;
+			width: 60px;
+			height: 60px;
+			vertical-align: middle;
+			border: 3px solid $shiro;
+			margin-bottom: 10px;
 
 			@include mediaquery ($bp-header) {
-				@include display-flex;
+				display: table-cell;
+				width: 33px;
+				height: 33px;
+				margin-bottom: 0;
 			}
 		}
 
-		.avatar {
-			overflow: hidden;
+		.child-avatar {
 			position: absolute;
 			left: 0;
-		    top: 0;
-			padding: 30px 20px;
-		    width: 100%;
-			height: 145px;
-			text-align: center;
-			color: $shiro;
-			background: $dark-silk;
+			right: 0;
 
 			@include mediaquery ($bp-header) {
-				position: relative;
-				padding: 0;
-				width: auto;
-				height: auto;
-				text-align: left;
-				color: $soft-script;
-				background: none;
-				white-space: nowrap;
-
-				&:hover {
-					color:$day-blue;
-				}
+				display: table;
+				position: static;
 			}
+
+		}
+
+		.bg-blur {
+		    height: 145px;
+		    left: 0;
+		    position: absolute;
+		    top: 0;
+		    width: 100%;
+
+			@include mediaquery ($bp-header) {
+				display: none;
+			}
+
+		}
+	}
+}
+
+.nav-bar-submenu {
+	@include order(-1);
+	padding-top: 145px;
+	background: $shiro;
+
+	@include mediaquery ($bp-header) {
+		@include flex(1 0 100%);
+		@include order(initial);
+		margin: 0 -20px;
+		padding-top:0;
+		background: $darkest-shiro;
+	}
+
+	> li  {
+		@include mediaquery ($bp-header) {
+			float: left;
+			position: relative; // for position of sticker
+		}
+
+		& > a {
+			display: block;
+			color: $dark-silk;
 
 			&:hover {
-				color: $shiro;
-			}
-
-			.name {
-				white-space: nowrap;
-				max-width: 100%;
-
-				@include mediaquery ($bp-header) {
-					display: table-cell;
-					vertical-align: middle;
-					max-width: 180px;
-					padding-right: 10px;
-					padding-left: 10px;
-				}
-			}
-
-			.picture {
-				display: block;
-				width: 60px;
-				height: 60px;
-				vertical-align: middle;
-				border: 3px solid $shiro;
-				margin-bottom: 10px;
-
-				@include mediaquery ($bp-header) {
-					display: table-cell;
-					width: 33px;
-					height: 33px;
-					margin-bottom: 0;
-				}
-			}
-
-			.child-avatar {
-				position: absolute;
-				left: 0;
-				right: 0;
-
-				@include mediaquery ($bp-header) {
-					display: table;
-					position: static;
-				}
-
-			}
-
-			.bg-blur {
-			    height: 145px;
-			    left: 0;
-			    position: absolute;
-			    top: 0;
-			    width: 100%;
-
-				@include mediaquery ($bp-header) {
-					display: none;
-				}
-
+				color:$day-blue;
 			}
 		}
 	}
 
-	.nav-bar-submenu {
-		@include order(-1);
-		padding-top: 145px;
-		background: $shiro;
+	.active {
+		color: $day-blue;
+	}
+
+	.sticker {
+		position: relative;
+    	top: -2px;
 
 		@include mediaquery ($bp-header) {
-			@include flex(1 0 100%);
-			@include order(initial);
-			margin: 0 -20px;
-			padding-top:0;
-			background: $darkest-shiro;
+			position: absolute;
+		    top: 26px;
+		    right: -5px;
 		}
+	}
 
-		> li  {
-			@include mediaquery ($bp-header) {
-				float: left;
-				position: relative; // for position of sticker
-			}
-
-			& > a {
-				display: block;
-				color: $dark-silk;
-
-				&:hover {
-					color:$day-blue;
-				}
-			}
-		}
-
-		.active {
-			color: $day-blue;
-		}
-
-		.sticker {
-			position: relative;
-	    	top: -2px;
+	.global-nav-submenu & {
+		@include flex(0 0 auto);
 
 			@include mediaquery ($bp-header) {
-				position: absolute;
-			    top: 26px;
-			    right: -5px;
+				@include flex(1 0 100%);
+
 			}
-		}
+	}
+}
 
-		.global-nav-submenu & {
-			@include flex(0 0 auto);
+.wrap-overlay::before {
+	display: block;
+	content: "";
+	position: fixed;
+	width: 100%;
+	height: 100%;
+    -webkit-transition: background 1s;
+    -moz-transition: background 1s;
+    -o-transition: background 1s;
+    transition: background 2;
+	z-index: $zindex-wrap-overlay;
+}
 
-				@include mediaquery ($bp-header) {
-					@include flex(1 0 100%);
+.wrap-transition .open-menu:nth-of-type(1) {
+	overflow: auto;
+	-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+	-webkit-box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
+ 	   -moz-box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
+			box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
 
-				}
-		}
+	@include mediaquery ($bp-header) {
+		overflow: visible;
+		-webkit-transform: none;
+				transform: none;
 	}
 
-	.wrap-overlay::before {
-		display: block;
-		content: "";
-		position: fixed;
-		width: 100%;
-		height: 100%;
-	    -webkit-transition: background 1s;
-	    -moz-transition: background 1s;
-	    -o-transition: background 1s;
-	    transition: background 2;
-		z-index: $zindex-wrap-overlay;
+}
+
+.wrap-transition::before {
+	background: rgba(0,0,0,0.6);
+}
+
+@media only screen and (max-width: 945px) {
+
+	// mantenemos a 10px el padding a partir de esta resolucion por coherencia con el punto de corte del menu (distitos -> 945 vs $tablet-start)
+	.wrapper {
+		padding: 0 10px;
 	}
 
-	.wrap-transition .open-menu:nth-of-type(1) {
-		overflow: auto;
-		-webkit-transform: translate3d(0, 0, 0);
-				transform: translate3d(0, 0, 0);
-		-webkit-box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
-	 	   -moz-box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
-				box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
+}
 
-		@include mediaquery ($bp-header) {
-			overflow: visible;
-			-webkit-transform: none;
-					transform: none;
-		}
+@media only screen and (max-width: $mobile-start) {
 
+	.wrapper {
+		padding: 0;
 	}
 
-	.wrap-transition::before {
-		background: rgba(0,0,0,0.6);
-	}
-
-	@media only screen and (max-width: 945px) {
-
-		// mantenemos a 10px el padding a partir de esta resolucion por coherencia con el punto de corte del menu (distitos -> 945 vs $tablet-start)
-		.wrapper {
-			padding: 0 10px;
-		}
-
-	}
-
-	@media only screen and (max-width: $mobile-start) {
-
-		.wrapper {
-			padding: 0;
-		}
-
-	}
+}
