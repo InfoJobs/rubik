@@ -447,14 +447,15 @@ a.nav-bar-toggle {
 			color: $soft-script;
 			background: none;
 			white-space: nowrap;
-
-			&:hover {
-				color:$day-blue;
-			}
 		}
 
 		&:hover {
 			color: $shiro;
+
+			@include mediaquery ($bp-header) {
+				color:$day-blue;
+			}
+			
 		}
 
 		.name {
