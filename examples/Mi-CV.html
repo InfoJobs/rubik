@@ -83,7 +83,7 @@
 									</div>
 								</section>
 							</a>
-							<a href="#" class="js-modal-page-toggle">
+							<a href="mi-cv-otros-datos.html" class="js-modal-page-toggle">
 								<section class="inner container-editable">
 									<div class="content-middle">
 										<div class="text">
@@ -116,6 +116,23 @@
 			</div>
 		</div>
 	</div>
-	
+	<script>
+		var elModalPageToogle = document.querySelector('.js-modal-page-toggle');
+		var elWrapper = document.querySelector('.wrapper');
+
+		elModalPageToogle.onclick = function(event) {
+
+			event.preventDefault();
+
+			if (window.innerWidth < 760) {
+				location.href = event.currentTarget.href;
+				elWrapper.style.padding = '0';
+
+			}
+
+		}
+
+
+	</script>
 </body>
 </html>

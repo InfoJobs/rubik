@@ -24,8 +24,9 @@
 			<div class="container">
 				<div class="panel-canvas">
 					<div class="row-centered inner inner-expanded">
-						<h1 class="text-center">Otros datos</h1>
-
+						<div class="js-modalPage-header">
+							<h1 class="text-center">Otros datos</h1>
+						</div>
 						<form method="post" action="#">
     						<fieldset class="margin-bottom">
                                 <legend>Intereses</legend>
@@ -109,12 +110,68 @@
                                 </ul>
                             </fieldset>
 
-    						<button class="btn btn-primary btn-medium margin-top" type="submit">Guardar</button>
-							<button class="btn btn-default btn-medium margin-top" type="submit">Cancelar</button>
+    						<button class="btn btn-primary btn-medium margin-top js-btn-save" type="submit">Guardar</button>
+							<a href="#" class="close-modal iconfont-Close iconfont-22px hit-area js-btn-cancel"><span class="hide-small-device">Cancelar</span></a>
     					</form>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<script>
+			// var elModalPageToogle = document.querySelector('.js-modal-page-toggle');
+			var elWrapper = document.querySelector('.wrapper');
+			var elBtnSave = document.querySelector('.js-btn-save');
+			var elBtnCancel = document.querySelector('.js-btn-cancel');
+			var elH1 = document.querySelector('h1');
+			var elmodalPageHeader = document.querySelector('.js-modalPage-header');
+
+			function modalPage() {
+
+				if (window.innerWidth < 480) {
+					elWrapper.style.padding = '0';
+
+					elBtnSave.classList.remove('btn-medium');
+					elBtnSave.style = 'position: absolute; top: 0; right: 10px; margin-top: 15px;';
+
+					elBtnCancel.style = 'position: absolute; top: 0; left: 10px; color: white; margin-top: 18px;';
+
+					elH1.style = 'font-size: 20px; line-height: 22px; color: white; margin-bottom: 0; text-overflow: ellipsis;';
+
+					elmodalPageHeader.classList.add('modal-header');
+					elmodalPageHeader.style = 'margin: -20px -10px 20px -10px; padding-right:0;';
+
+				} else {
+					elWrapper.style.padding = '0 10px';
+
+					elBtnSave.classList.add('btn-medium');
+					elBtnSave.style = 'position: relative; top: 0; right: 0;';
+
+					elBtnCancel.classList.remove('close-modal');
+					elBtnCancel.classList.remove('iconfont-Close');
+					elBtnCancel.classList.remove('iconfont-22px');
+					elBtnCancel.classList.remove('hit-area');
+					elBtnCancel.classList.add('btn');
+					elBtnCancel.classList.add('btn-default');
+					elBtnCancel.classList.add('btn-medium');
+
+					elBtnCancel.style = 'position: relative; top: 0; left: 0;';
+
+					elH1.style = 'font-size: 30px; color: inherit; margin-bottom: 35px;';
+
+					elmodalPageHeader.classList.remove('modal-header');
+					elmodalPageHeader.style = 'margin: 10px;';
+
+				}
+
+
+
+			}
+
+			window.addEventListener('load', modalPage);
+			window.addEventListener('resize', modalPage);
+
+		</script>
+
 	</body>
 </html>
