@@ -180,7 +180,6 @@
 }
 
 a.nav-bar-toggle {
-	@include iconfont-BurguerMenu;
 	display: block;
 	margin: 0;
 	width: 50px;
@@ -455,7 +454,7 @@ a.nav-bar-toggle {
 			@include mediaquery ($bp-header) {
 				color:$day-blue;
 			}
-			
+
 		}
 
 		.name {
