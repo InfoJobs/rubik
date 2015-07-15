@@ -9,17 +9,12 @@
 \*------------------------------------*/
 
 .sticker {
-    font-size: 12px; //ToDo: review this rule
+    font-family: 'Proximanova';
+    font-size: $xsmall-font-size;
+    line-height: 16px;
     display: inline-block;
     padding: 0 10px;
     border-radius: 10px;
-    line-height: 17px;
-
-    .nav-bar-notifications & {
-    	position: absolute;
-    	bottom: 12px;
-    	right: -4px;
-    }
 
     @media print {
     	padding: 0;
