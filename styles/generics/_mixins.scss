@@ -78,11 +78,13 @@ $query2     = width, device-width
 
 @mixin inner {
 	padding: 20px 10px;
-	background-color: $shiro;
 
+    @include mediaquery ($bp-tablet) {
+        padding: 20px;
+    }
 
-	@include mediaquery ($bp-tablet) {
-		padding: 20px;
+	@media print {
+		padding: 0;
 	}
 }
 

@@ -20,7 +20,8 @@
 
 	<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
 
-	<script type="text/javascript" src="../../jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="http://es-static0.infojobs.com/js/chosen.jquery.js" th:remove="all"></script>
 </head>
 
 <body>
@@ -33,9 +34,21 @@
 
 			<div class="container-expanded">
 				<section class="panel-canvas">
-						<div class="inner">
-							<p>Filtro ordenación</p>
-						</div>
+					<form method="post" action="#" class="inner">
+						<fieldset>
+							<legend>Opciones ordenación listado de tus candidaturas</legend>
+							<div class="clearfix">
+								<label for="application-order">Ordenar por:</label>
+								<div class="form-select">
+									<select id="application-order" class="chosen-select" data-placeholder="(Seleccionar)">
+											<option value="0">(Seleccionar)</option>
+											<option value="1">Valor</option>
+											<option value="2">Valor</option>
+									</select>
+								</div>
+							</div>
+						</fieldset>
+					</form>
 
 						<!-- Componente Candidatura -->
 						<ul class="application-list">
