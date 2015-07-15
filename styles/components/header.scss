@@ -211,22 +211,19 @@ a.nav-bar-toggle {
 	@include flex-flow(column nowrap);
 	position: absolute;
 	top: 0;
-	left: 0;
+	left: -100%;
 	height: 100vh;
 	width: 260px;
 	background:$shiro;
 	z-index: $zindex-menu;
-	-webkit-transition: transform 0.3s ease;
-			transition: transform 0.3s ease;
-    -webkit-transform: translate3d(-100%, 0, 0);
-	        transform: translate3d(-100%, 0, 0);
+	-webkit-transition: all 0.3s ease;
+			transition: all 0.3s ease;
+
 
 	@include mediaquery ($bp-header) {
 		@include flex-flow(row wrap);
         -webkit-transition: none 0s ease 0s;
 		        transition: none 0s ease 0s;
-	    -webkit-transform: none;
-		        transform: none;
 		position: static;
 		height: auto;
 		width: auto;
@@ -582,8 +579,7 @@ a.nav-bar-toggle {
 
 .wrap-transition .open-menu:nth-of-type(1) {
 	overflow: auto;
-	-webkit-transform: translate3d(0, 0, 0);
-			transform: translate3d(0, 0, 0);
+	left: 0;
 	-webkit-box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
  	   -moz-box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
 			box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
