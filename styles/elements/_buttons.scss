@@ -139,7 +139,8 @@ Styleguide 1.5.1.1
   }
 }
 
-.btn-primary:active {
+.btn-primary:active,
+.btn-primary.active {
   background-color: $night-blue;
 }
 
