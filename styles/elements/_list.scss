@@ -35,8 +35,8 @@ Styleguide #{$sgi-lists}
 
 .list-default {
 
-    & > li,
-    & > dt {
+    > li,
+    > dt {
         display: block;
         position: relative;
         margin-bottom: 10px;
@@ -49,12 +49,12 @@ Styleguide #{$sgi-lists}
 	    }
     }
 
-    & > dt {
+    > dt {
         margin-bottom: 0;
         font-weight: bold;
     }
 
-    & > dd {
+    > dd {
         margin-bottom: 20px;
     }
 }
