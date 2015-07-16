@@ -581,6 +581,9 @@ a.nav-bar-toggle {
 			}
 	}
 }
+.wrap-overlay {
+	position: fixed;
+}
 
 .wrap-overlay::before {
 	display: block;
