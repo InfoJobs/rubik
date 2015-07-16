@@ -18,7 +18,6 @@ Styleguide 2.8
 /* job-list */
 
 .job-list {
-    border-top: 1px solid $darkest-shiro;
 
     .result-list-header + & {
         margin-top: 0;
@@ -28,10 +27,6 @@ Styleguide 2.8
     & + .border-top { //parche a doc listado-ofertas
         margin-bottom: 0;
         border-top: none;
-    }
-
-    &:only-child {
-        border: none;
     }
 
     .inner & {
@@ -68,20 +63,29 @@ Styleguide 2.8
     }
 
     .item {
+        @include inner;
         @extend %font-small-line;
+        position: relative;
         overflow: hidden;
-        padding: 20px 10px 15px 10px;
+        padding-bottom: 15px;
         border-bottom: 1px solid $darkest-shiro;
         -webkit-touch-callout:none;
-
-        @include mediaquery ($bp-tablet) {
-            padding: 20px 20px 15px 20px;
-        }
 
         &:hover {
             @include mediaquery($bp-desktop) {
                 background: #e3f5fd;
                 cursor: pointer;
+
+                .action-global {
+                    visibility: visible;
+                }
+            }
+        }
+
+        &.item-nohover:hover {
+            @include mediaquery($bp-desktop) {
+                background: transparent;
+                cursor: inherit;
             }
         }
 
@@ -91,7 +95,6 @@ Styleguide 2.8
 
         &:only-of-type {
             margin-bottom: 0;
-            border-bottom: none;
         }
 
         p:last-child {
@@ -107,59 +110,76 @@ Styleguide 2.8
             color: $soft-script;
         }
 
+        .action-global {
+            float: right;
+            margin-left: 10px;
+            transition: none;
+
+            @include mediaquery ($bp-desktop) {
+                visibility: hidden;
+                transition: none;
+            }
+        }
+    }
+
+    .title {
+        @include font-medium-line;
+        clear: left;
+        margin-top: 0;
+        margin-bottom: 0;
+
         a {
             color: $dark-silk;
         }
 
-    }
-}
+        a.discarded {
+            text-decoration: line-through;
+            color: $soft-script;
+        }
 
-.result-list-title {
-    @extend %font-medium-line;
-    clear: left;
-    margin-top: 0;
-    margin-bottom: 0;
-
-    a:visited {
-        color: $soft-script;
-    }
-}
-
-.result-list-subtitle {
-    @extend %font-small-line;
-    margin-top: 0;
-    margin-bottom: 5px;
-    font-family: $base-font-family;
-
-    .skin-executive & {
-        font-size: 16px;
-    }
-}
-
-.result-list-subtitle a,
-.result-list-subtitle a:hover {
-    text-decoration: underline;
-}
-
-.result-list-description {
-    margin-top: 12px;
-    margin-bottom: 10px;
-    color: $mid-script;
-
-    @include mediaquery ($bp-tablet) {
-        width: 80%;
-
-        &.without-logo {
-            width: 100%;
+        a:visited {
+            color: $soft-script;
         }
     }
 
-}
+    .subtitle {
+        @include font-small-line;
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-family: $base-font-family;
 
+        .skin-executive & {
+            font-size: 16px;
+        }
+
+        a {
+            color: $mid-script;
+            text-decoration: underline;
+        }
+    }
+
+    .description {
+        margin-top: 12px;
+        margin-bottom: 10px;
+        color: $mid-script;
+
+        @include mediaquery ($bp-tablet) {
+            width: 80%;
+
+            &.without-logo {
+                width: 100%;
+            }
+        }
+    }
+
+    .suggest {
+        @include inner;
+    }
+}
 // Quan hi ha logo, el nom de l'empresa ha de quedar truncat
 // per no collapsar amb el logo
 
-.result-list-logo .result-list-subtitle {
+.result-list-logo .subtitle {
     width: 70%;
     overflow: hidden;
     text-overflow: ellipsis;
