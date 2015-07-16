@@ -72,11 +72,11 @@ $(function() {
 
 	$( window ).resize(function() {
 
-		//vpHeight = $( window ).height();
+		vpHeight = $( window ).height();
 
-		//if( eMenu.hasClass('open-menu') && window.innerWidth <= eBpHeader) {
-		//	eWrapper.css('height', vpHeight);
-		//}
+		if( eMenu.hasClass('open-menu') && window.innerWidth <= eBpHeader) {
+			eWrapper.css('height', vpHeight);
+		}
 
 		if (window.innerWidth <= eBpHeader) {
 			$('.nav-bar-access .btn').addClass('btn-medium');;
