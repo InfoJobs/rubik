@@ -98,6 +98,7 @@
 	.logo,
 	.logo:hover {
 		display: block;
+		height: 50px;
 		padding: 10px 20px;
 		border: 0 none;
 	}
@@ -219,20 +220,18 @@ a.nav-bar-toggle {
 	z-index: $zindex-menu;
 	-webkit-transition: all 0.3s ease;
 			transition: all 0.3s ease;
-	//android 4.3
-	-webkit-box-orient: vertical;
-       -moz-box-orient: vertical;
-            box-orient: vertical;
-	//
 
 	@include mediaquery ($bp-header) {
 		@include flex-flow(row wrap);
+	    -webkit-justify-content: space-between;
+                justify-content: space-between;
         -webkit-transition: none 0s ease 0s;
 		        transition: none 0s ease 0s;
 		position: static;
 		height: auto;
 		width: auto;
 		padding: 0 20px;
+
 	}
 
 }
@@ -272,18 +271,13 @@ a.nav-bar-toggle {
 	.global-nav-submenu & {
 		background: $dark-shiro;
 		overflow: visible;
-		@include flex(0);
-
-		@include mediaquery ($bp-header) {
-			@include flex;
-		}
-
+		@include flex(0 0 auto);
 	}
 
 	@include mediaquery ($bp-header) {
 		overflow: visible;
 		padding: 0;
-		@include flex;
+		@include flex(0 1 auto);
 		@include order(1);
 
 		.global-nav-submenu & > li > a {
@@ -387,9 +381,10 @@ a.nav-bar-toggle {
 
 .nav-bar-user {
 	@include order(3);
+	@include flex(0 0 auto);
 
 	@include mediaquery ($bp-header) {
-
+		@include flex(0 1 auto);
 		@include order(2);
 
 	}
@@ -441,7 +436,6 @@ a.nav-bar-toggle {
 	}
 
 	.avatar {
-		overflow: hidden;
 		position: absolute;
 		left: 0;
 	    top: 0;
@@ -514,11 +508,17 @@ a.nav-bar-toggle {
 		}
 
 		.bg-blur {
-		    height: 145px;
-		    left: 0;
+			display: block;
 		    position: absolute;
+		    left: 0;
 		    top: 0;
+		    height: 100%;
 		    width: 100%;
+		   background-size: 100%;
+		   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(46%, rgba(0, 0, 0, 0.08)), color-stop(59%, rgba(0, 0, 0, 0.08)), color-stop(100%, rgba(0, 0, 0, 0.9)));
+		   background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.08) 59%, rgba(0, 0, 0, 0.9) 100%);
+		   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.08) 59%, rgba(0, 0, 0, 0.9) 100%);
+		   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.08) 59%, rgba(0, 0, 0, 0.9) 100%);
 
 			@include mediaquery ($bp-header) {
 				display: none;
@@ -573,7 +573,7 @@ a.nav-bar-toggle {
 	}
 
 	.global-nav-submenu & {
-		@include flex(0);
+		@include flex(0 0 auto);
 
 			@include mediaquery ($bp-header) {
 				@include flex(1 0 100%);
@@ -583,6 +583,7 @@ a.nav-bar-toggle {
 }
 .wrap-overlay {
 	position: fixed;
+	width: 100%;
 }
 
 .wrap-overlay::before {
@@ -605,10 +606,9 @@ a.nav-bar-toggle {
  	   -moz-box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
 			box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
 
-	@include mediaquery ($bp-header) {
-		overflow: visible;
-		-webkit-transform: none;
-				transform: none;
+		@include mediaquery ($bp-header) {
+			overflow: visible;
+
 	}
 
 }
@@ -630,6 +630,14 @@ a.nav-bar-toggle {
 
 	.wrapper {
 		padding: 0;
+	}
+
+	.nav-mobile {
+		//android 4.3
+		-webkit-box-orient: block-axis;
+		   -moz-box-orient: block-axis;
+		        box-orient: block-axis;
+		//
 	}
 
 }
