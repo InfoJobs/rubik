@@ -1,9 +1,7 @@
 //generics
 @import "../generics/generics";
-
-//refactor
-//@import "../core/fonts";
-//@import "../core/colors";
+@import "../core/fonts";
+@import "../core/colors";
 
 /*------------------------------------*\
     $JOB LIST
@@ -17,6 +15,7 @@ Styleguide 2.8
 
 /* job-list */
 
+.result-list,
 .job-list {
 
     .result-list-header + & {
@@ -62,7 +61,8 @@ Styleguide 2.8
         }
     }
 
-    .item {
+    > .item,
+    > li {
         @include inner;
         @extend %font-small-line;
         position: relative;
@@ -88,6 +88,14 @@ Styleguide 2.8
                 cursor: inherit;
             }
         }
+
+        &.vhpt {
+			height: 1px;
+			padding: 0;
+			border: 0;
+			opacity: 0.001;
+			margin-top: -1px;
+		}
 
         &:last-child {
             margin-bottom: 20px;
@@ -221,8 +229,9 @@ Styleguide 2.8
 
 /* list-logos */
 
-.list-logos {
-    padding: 20px 0 20px 10px;
+li.list-logos {
+    padding-right: 0;
+    padding-left: 10px;
     max-height: 198px;
     overflow: hidden;
     background-color: $shiro;
@@ -237,14 +246,22 @@ Styleguide 2.8
         overflow: hidden;
         padding-right: 10px;
 
+        @include mediaquery ($bp-tablet) {
+	        padding-right: 20px;
+	    }
+
         img {
             width: 100%;
             height: auto;
         }
 
         &:hover {
-            background-color: $shiro;
-        }
+	        background-color: transparent;
+	    }
+    }
+
+    &:hover {
+        background-color: transparent;
     }
 }
 
