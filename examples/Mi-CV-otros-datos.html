@@ -128,11 +128,20 @@
 
 			function modalPage() {
 				if (window.innerWidth < 480) {
-					elBtnCancel.classList.add('close-modal','iconfont-Close','iconfont-22px','hit-area','btn-cancel');
-					elBtnCancel.classList.remove('btn','btn-default','btn-medium');
-					elBtnSave.classList.add('btn-primary-contrast','btn-save');
-					elBtnSave.classList.remove('btn-medium','margin-top');
-					elmodalPageHeader.classList.add('modal-header','mobile-header');
+					elBtnCancel.classList.add('close-modal');
+					elBtnCancel.classList.add('iconfont-Close');
+					elBtnCancel.classList.add('iconfont-22px');
+					elBtnCancel.classList.add('hit-area');
+					elBtnCancel.classList.add('btn-cancel');
+					elBtnCancel.classList.remove('btn');
+					elBtnCancel.classList.remove('btn-default');
+					elBtnCancel.classList.remove('btn-medium');
+					elBtnSave.classList.add('btn-primary-contrast');
+					elBtnSave.classList.add('btn-save');
+					elBtnSave.classList.remove('btn-medium');
+					elBtnSave.classList.remove('margin-top');
+					elmodalPageHeader.classList.add('modal-header');
+					elmodalPageHeader.classList.add('mobile-header');
 					elH1.classList.add('truncate');
 					elH1.classList.remove('text-center');
 
@@ -140,11 +149,20 @@
 
 					elH1.style.width = elH1Width + 'px';
 				} else {
-					elBtnCancel.classList.remove('close-modal','iconfont-Close','iconfont-22px','hit-area','btn-cancel');
-					elBtnCancel.classList.add('btn','btn-default','btn-medium');
-					elBtnSave.classList.remove('active','btn-save');
-					elBtnSave.classList.add('btn-medium','margin-top');
-					elmodalPageHeader.classList.remove('modal-header','mobile-header');
+					elBtnCancel.classList.remove('close-modal');
+					elBtnCancel.classList.remove('iconfont-Close');
+					elBtnCancel.classList.remove('iconfont-22px');
+					elBtnCancel.classList.remove('hit-area');
+					elBtnCancel.classList.remove('btn-cancel');
+					elBtnCancel.classList.add('btn');
+					elBtnCancel.classList.add('btn-default');
+					elBtnCancel.classList.add('btn-medium');
+					elBtnSave.classList.remove('active');
+					elBtnSave.classList.remove('btn-save');
+					elBtnSave.classList.add('btn-medium');
+					elBtnSave.classList.add('margin-top');
+					elmodalPageHeader.classList.remove('modal-header');
+					elmodalPageHeader.classList.remove('mobile-header');
 					elH1.classList.remove('truncate');
 					elH1.classList.add('text-center');
 
