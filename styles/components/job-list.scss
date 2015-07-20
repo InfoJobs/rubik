@@ -18,11 +18,6 @@ Styleguide 2.8
 .result-list,
 .job-list {
 
-    .result-list-header + & {
-        margin-top: 0;
-        border-top: none;
-    }
-
     .inner & {
         margin: 0 -10px;
 
@@ -282,13 +277,11 @@ li.list-logos {
 
 .result-list-header {
 	flex-direction: column; //TODO: make a mixin with vendors
-	padding-bottom: 0;
 
     @include mediaquery ($bp-desktop) {
     	@include display-flex;
     	flex-direction: row; //TODO: make a mixin with vendors
     	padding-bottom: 20px;
-        border-bottom: 1px solid $darkest-shiro;
     }
 
     .box {
