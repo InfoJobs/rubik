@@ -63,11 +63,9 @@ Styleguide 2.8
 
     > .item,
     > li {
-        @include inner;
         @extend %font-small-line;
         position: relative;
         overflow: hidden;
-        padding-bottom: 15px;
         border-bottom: 1px solid $darkest-shiro;
         -webkit-touch-callout:none;
 
@@ -184,6 +182,22 @@ Styleguide 2.8
         @include inner;
     }
 }
+
+//Used in result-list component
+.result-list {
+    > li {
+        @include inner;
+        padding-bottom: 15px;
+    }
+}
+
+.job-list {
+    .item {
+        @include inner;
+        padding-bottom: 15px;
+    }
+}
+
 // Quan hi ha logo, el nom de l'empresa ha de quedar truncat
 // per no collapsar amb el logo
 

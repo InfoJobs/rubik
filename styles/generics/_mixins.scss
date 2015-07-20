@@ -90,6 +90,7 @@ $query2     = width, device-width
 	padding: 20px 10px;
 	//background-color: $shiro;
 
+
 	@include mediaquery ($bp-tablet) {
 		padding: 20px;
 	}
@@ -131,3 +132,15 @@ $query2     = width, device-width
 //		@include linear-gradient(rgba(0,0,0,0), 50%, rgba(0,0,0,0.8));
 //	}
 //
+
+@mixin border-top-expanded {
+	&::before {
+		content: "";
+		border-top: 1px solid $darkest-shiro;
+		display: block;
+
+		.panel-executive & {
+			border-top: 1px solid $mid-script;
+		}
+	}
+}
