@@ -50,8 +50,16 @@ Styleguide 1.5
         }
     }
 
-    + .btn {
+    + .btn:not(.btn-group-justified) {
         margin-left: 5px;
+    }
+
+    + .btn-group-justified {
+        margin-top: 10px;
+
+        &:first-of-type {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -452,6 +460,22 @@ Styleguide 1.6.1.1
   			background-color: $mediterranean-sea;
   		}
   	}
+
+    &.btn-group-expanded {
+		div {
+			padding-left: 10px;
+
+			.btn {
+				border-right-width: 1px;
+
+				&.disabled:hover {
+					background-color: white;
+					cursor: default;
+					border-right-width: 1px;
+				}
+			}
+		}
+	}
 }
 
 /*
@@ -502,6 +526,11 @@ Styleguide 1.6.1.3
     }
 }
 
+.btn-group-centered {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 ///*DEPRECATED: .btn-divider and .btn-divider-company only used on header*/
 .btn-divider {
   border-right: 1px solid $darkest-shiro;
@@ -522,4 +551,33 @@ Styleguide 1.6.1.3
     border: 0 none;
     background: none repeat scroll 0 0 transparent;
     cursor: pointer;
+}
+
+/*
+Button file
+
+Use class `.btn-file` to display an input type file.
+
+Markup:
+<div class="btn btn-default btn-file">
+	<span>Subir foto</span>
+	<input type="file" value="Subir foto" />
+</div>
+
+Styleguide 1.6.1.4
+*/
+
+.btn-file {
+	position: relative;
+
+	span {
+		position: absolute;
+		left: 0;
+		width: 100%;
+	}
+
+	input {
+		opacity: 0;
+		cursor: pointer;
+	}
 }

@@ -35,15 +35,18 @@
 									<li>
 										<p class="label">Foto <span class="alternative">(opcional)</span></p>
 										<div class="content-top">
-											<div class="media">
+											<div class="media text-center">
 													<figure class="fig-thumbnail fig-thumbnail-logo">
 														<img src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png" alt="Foto [Nombre usuario]">
 													</figure>
-													<a href="#" class="small text-center link-underline">Borrar foto</a>
+													<a href="#" class="small link-underline">Borrar foto</a>
 											</div>
 											<div class="text">
 												<button class="btn btn-primary btn-medium btn-group-justified" type="submit">Importar de Facebook</button>
-												<button class="btn btn-default btn-medium btn-group-justified" type="submit">Subir foto</button>
+													<div class="btn btn-default btn-medium btn-group-justified btn-file">
+														<span>Subir foto</span>
+														<input id="sNomFitxerFotoClicked" name="sNomFitxerFotoClicked" type="file" accept="image/*" onclick="javascript:return xt_click(this,'C','1','CA_Importar_Foto_HD','N');" onchange="javascript:mostrarVistaPrevia(); return false;" value="Subir foto" />
+													</div>
 											</div>
 										</div>
 									</li>
