@@ -270,7 +270,6 @@ a.nav-bar-toggle {
 
 	.global-nav-submenu & {
 		background: $dark-shiro;
-		overflow: visible;
 		@include flex(0 0 auto);
 	}
 
@@ -624,20 +623,20 @@ a.nav-bar-toggle {
 		padding: 0 10px;
 	}
 
-}
-
-@media only screen and (max-width: $mobile-start) {
-
-	.wrapper {
-		padding: 0;
-	}
-
 	.nav-mobile {
 		//android 4.3
 		-webkit-box-orient: block-axis;
 		   -moz-box-orient: block-axis;
 		        box-orient: block-axis;
 		//
+	}
+
+}
+
+@media only screen and (max-width: $mobile-start) {
+
+	.wrapper {
+		padding: 0;
 	}
 
 }
