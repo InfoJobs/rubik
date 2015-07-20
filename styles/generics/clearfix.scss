@@ -1,6 +1,3 @@
-
-
-
 /*------------------------------------*\
     $CLEARFIX
 \*------------------------------------*/
@@ -11,10 +8,7 @@
  *    Otherwise it causes space to appear at the top and bottom of elements
  *    that are clearfixed.
  */
+
 .clearfix {
-  &:after {
-    content: " "; 	// 1
-    display: table;
-    clear: both;
-  }
+    @include clearfix;
 }

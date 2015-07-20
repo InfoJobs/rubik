@@ -132,3 +132,24 @@ $query2     = width, device-width
 //		@include linear-gradient(rgba(0,0,0,0), 50%, rgba(0,0,0,0.8));
 //	}
 //
+
+@mixin border-top-expanded {
+	&::before {
+		content: "";
+		border-top: 1px solid $darkest-shiro;
+		display: block;
+
+		.panel-executive & {
+			border-top: 1px solid $mid-script;
+		}
+	}
+}
+
+
+@mixin clearfix {
+   &::after {
+     content: " "; 	// 1
+     display: table;
+     clear: both;
+   }
+ }
