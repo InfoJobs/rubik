@@ -74,6 +74,10 @@ Markup:
 		top: -20px;
 	}
 
+	@at-root li#{&}.content-media-expanded + &::before {
+		border: none;
+	}
+	
 	.btn-close {
 	    position: relative;
     	top: -16px;
