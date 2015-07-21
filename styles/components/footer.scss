@@ -6,8 +6,9 @@
 \*------------------------------------*/
 
 /*
+Footer
 
-//Styleguide 2.5
+Styleguide 2.5
 */
 
 .help-footer {
@@ -41,18 +42,34 @@
 	}
 
 	@include mediaquery ($bp-desktop) {
+		height: 100vh;
 		margin-bottom: 0;
-		padding: 0;
-
-		&:before {
-			content: "";
-			position: absolute;
-			left: 0;
-			right: 0;
-			height: 100%;
-			background-color: $outer-land;
-		}
+		position: absolute;
+		left: 0;
+		right: 0;
+		padding: 0 10px;
+		background-color: $outer-land;
 	}
+
+	@include mediaquery (945px) {
+		padding: 0 10px;
+	}
+
+	@include mediaquery (946px) {
+		padding: 0;
+	}
+}
+
+.footer-slotbanner {
+
+	@include mediaquery (1256px) {
+		left: -287px;
+	}
+
+	@include mediaquery (1278px) {
+		left: -310px;
+	}
+
 }
 
 .footer-nav {
@@ -111,13 +128,8 @@
 
 					a {
 						display: block;
-						opacity: 0.8;
 						-moz-backface-visibility: hidden;
 							backface-visibility: hidden;
-
-						&:hover {
-							opacity: 1;
-						}
 					}
 				}
 			}
