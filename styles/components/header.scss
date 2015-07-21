@@ -101,6 +101,12 @@
 		height: 50px;
 		padding: 10px 20px;
 		border: 0 none;
+
+		@include mediaquery ($bp-header) {
+			display: inline-block;
+
+		}
+
 	}
 }
 
