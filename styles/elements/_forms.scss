@@ -431,12 +431,37 @@ Styleguide 1.4.4
 	}
 
 	&-date {
-		input {
-			width: 50px;
-		}
+		border: 1px solid #c7c7c7;
 
-		div:last-child input  {
-			width: 66px;
+		> div {
+			position: relative;
+
+			&::before {
+			    content: "|";
+			    position: absolute;
+			    top: 4px;
+			    left: -5px;
+				color: #c7c7c7;
+			}
+
+			&:first-of-type::before {
+			    content: "";
+			}
+
+			input {
+				text-align: center;
+				border: none;
+				-moz-appearance:textfield;
+
+				&::-webkit-inner-spin-button {
+					-webkit-appearance: none;
+				    margin: 0;
+				}
+			}
+
+			&:last-child input  {
+				width: 66px;
+			}
 		}
 	}
 }
