@@ -74,28 +74,33 @@ Markup:
 Styleguide #{$sgi-listsWithBullets}
 */
 
-.list-bullet-default > li,
-.list-bullet-default > dt,
-.list-bullet-default > dd {
-    padding-left: 15px;
+.list-bullet-default {
+    > li,
+    > dt,
+    > dd {
+       padding-left: 15px;
+
+    > li::before,
+    > dt::before {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 0;
+        display: block;
+        width: 5px;
+        height: 5px;
+        list-style-position: inside;
+        border-radius: 50%;
+        background-color: $soft-script;
+    }
 
     @media print {
         margin: 0;
     }
+
+   }
 }
-.list-bullet-default > li:before,
-.list-bullet-default > dt:before {
-    content: "";
-    position: absolute;
-    top: 6px;
-    left: 0;
-    display: block;
-    width: 5px;
-    height: 5px;
-    list-style-position: inside;
-    border-radius: 50%;
-    background-color: $soft-script;
-}
+
 
 /*
 Lists with icons
@@ -113,13 +118,18 @@ Markup:
 Styleguide #{$sgi-listsWithIcons}
 */
 
-$iconfont-size: (16, 18, 22, 30, 100);
+$iconfont-size: (16, 18, 22, 30, 100); //Duplicated in _icons.scss
 
-.list-default {
+.list-bullet-icon {
 
     [class^="iconfont-"],
     [class*="iconfont-"] {
         position: relative;
+
+        &::before {
+            position: absolute;
+            top: 10px;
+        }
     }
 
     @each $val in $iconfont-size {
@@ -141,11 +151,6 @@ $iconfont-size: (16, 18, 22, 30, 100);
 //	}
 //}
 
-.list-bullet-icon [class^="iconfont-"]:before,
-.list-bullet-icon [class*=" iconfont-"]:before {
-    position: absolute;
-    top: 10px;
-}
 
 /*
 Lists with nested structure
