@@ -222,15 +222,13 @@ a.nav-bar-toggle {
 			transition: all 0.3s ease;
 
 	@include mediaquery ($bp-header) {
-		@include flex-flow(row wrap);
-	    -webkit-justify-content: space-between;
-                justify-content: space-between;
+		display: block;// en desktop quitamos el flexbox por compatibilidad con android 4.3
         -webkit-transition: none 0s ease 0s;
 		        transition: none 0s ease 0s;
 		position: static;
 		height: auto;
 		width: auto;
-		padding: 0 20px;
+		overflow: hidden;
 
 	}
 
@@ -274,10 +272,9 @@ a.nav-bar-toggle {
 	}
 
 	@include mediaquery ($bp-header) {
+		float: left;
 		overflow: visible;
-		padding: 0;
-		@include flex(0 1 auto);
-		@include order(1);
+		padding: 0 20px;
 
 		.global-nav-submenu & > li > a {
 			padding: 10px 15px 12px;
@@ -342,6 +339,7 @@ a.nav-bar-toggle {
 	@include align-items(center);
 
 	@include mediaquery ($bp-header) {
+		float: right;
 		border: 0 none;
 	}
 }
@@ -352,17 +350,13 @@ a.nav-bar-toggle {
 	border-top: 1px solid $darkest-shiro;
 
 	@include mediaquery ($bp-header) {
-		padding: 0;
+		padding: 25.5px 20px;
 		border-top: 0;
 	}
 
 	li {
 		@include flex(1 1 50%);
 		margin-left: 10px;
-
-		@include mediaquery ($bp-header) {
-			@include flex(1 0 auto);
-		}
 
 		&:first-child {
 			margin-left: 0;
@@ -383,11 +377,8 @@ a.nav-bar-toggle {
 	@include flex(0 0 auto);
 
 	@include mediaquery ($bp-header) {
-		@include flex(0 1 auto);
-		@include order(2);
-
+		padding: 5.5px 20px;
 	}
-
 
 	li {
 		@include flex(1 0 auto);
@@ -533,9 +524,9 @@ a.nav-bar-toggle {
 	@include order(1);
 
 	@include mediaquery ($bp-header) {
-		@include flex(1 0 100%);
-		@include order(3);
-		margin: 0 -20px;
+		clear: both;
+		float: left;
+		width: 100%;
 		padding-top:0;
 		background: $darkest-shiro;
 	}
