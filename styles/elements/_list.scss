@@ -78,7 +78,8 @@ Styleguide #{$sgi-listsWithBullets}
     > li,
     > dt,
     > dd {
-       padding-left: 15px;
+        padding-left: 15px;
+    }
 
     > li::before,
     > dt::before {
@@ -98,7 +99,6 @@ Styleguide #{$sgi-listsWithBullets}
         margin: 0;
     }
 
-   }
 }
 
 
