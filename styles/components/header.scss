@@ -29,7 +29,6 @@
 		margin: 0;
 	}
 
-	h1,
 	.logo img {
 		display: none;
 
@@ -39,14 +38,9 @@
 
 	}
 
-	a {
+	a:not(.btn) {
 		font-size: $large-font-size;
 		font-family: 'Proximanovabold';
-
-		&.btn {
-			font-size: $small-font-size;
-			font-family: 'Proximanova';
-		}
 
 		@include mediaquery ($bp-header) {
 			font-size: $base-font-size;
@@ -69,6 +63,16 @@
 			@include mediaquery ($bp-header) {
 				font-size: $base-font-size;
 			}
+		}
+
+		//ocultamos Inicio en movil cuando hay submenu
+		.logo {
+			display: none;
+
+			@include mediaquery ($bp-header) {
+				display: block;
+			}
+
 		}
 	}
 
@@ -94,14 +98,13 @@
 	.logo,
 	.logo:hover {
 		display: block;
+		height: 50px;
 		padding: 10px 20px;
 		border: 0 none;
 	}
 }
 
-.nav-bar-menu li a {
-	padding: 17px 0 13px 0;
-}
+
 
 .nav-bar-user li a,
 .nav-bar-submenu li a {
@@ -178,7 +181,6 @@
 }
 
 a.nav-bar-toggle {
-	@include iconfont-BurguerMenu;
 	display: block;
 	margin: 0;
 	width: 50px;
@@ -206,36 +208,38 @@ a.nav-bar-toggle {
 }
 
 .nav-mobile {
+	@include display-flex;
 	@include flex-flow(column nowrap);
-	display:none;
 	position: absolute;
 	top: 0;
-	left: 0;
-	height: 100vh;
+	left: -100%;
+	height: 100%;
+	max-height: 100vh;
 	width: 260px;
 	background:$shiro;
 	z-index: $zindex-menu;
-	-webkit-box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
-	   -moz-box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
-	        box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
+	-webkit-transition: all 0.3s ease;
+			transition: all 0.3s ease;
 
 	@include mediaquery ($bp-header) {
-		@include display-flex;
 		@include flex-flow(row wrap);
+	    -webkit-justify-content: space-between;
+                justify-content: space-between;
+        -webkit-transition: none 0s ease 0s;
+		        transition: none 0s ease 0s;
 		position: static;
-		width: auto;
 		height: auto;
-		min-height: auto;
+		width: auto;
 		padding: 0 20px;
-		-webkit-box-shadow: none;
-		   -moz-box-shadow: none;
-		        box-shadow: none;
+
 	}
+
 }
 
 .nav-bar-menu {
 	@include flex;
-	overflow: scroll;
+	@include order(2);
+	overflow: auto;
 	padding-right: 10px;
 	padding-left: 10px;
 
@@ -246,9 +250,10 @@ a.nav-bar-toggle {
 			float: left;
 		}
 
-		& > a {
+		&  a {
 			display:block;
 			position: relative;
+			padding: 17px 0 13px 0;
 			margin: 0;
 			color: $dark-silk;
 
@@ -258,19 +263,21 @@ a.nav-bar-toggle {
 			}
 		}
 
-		& > a:hover {
+		&  a:hover {
 			color: $day-blue;
 		}
 	}
 
 	.global-nav-submenu & {
 		background: $dark-shiro;
-		overflow: visible;
+		@include flex(0 0 auto);
 	}
 
 	@include mediaquery ($bp-header) {
 		overflow: visible;
 		padding: 0;
+		@include flex(0 1 auto);
+		@include order(1);
 
 		.global-nav-submenu & > li > a {
 			padding: 10px 15px 12px;
@@ -295,9 +302,6 @@ a.nav-bar-toggle {
 }
 
 .global-nav-logged.global-nav-submenu {
-	& .nav-mobile {
-		height: auto;
-	}
 
 	.nav-bar-menu {
 		background: $dark-shiro;
@@ -337,10 +341,6 @@ a.nav-bar-toggle {
 	@include display-flex;
 	@include align-items(center);
 
-	> li {
-		@include flex(1 0 auto);
-	}
-
 	@include mediaquery ($bp-header) {
 		border: 0 none;
 	}
@@ -348,16 +348,21 @@ a.nav-bar-toggle {
 
 .nav-bar-access {
 	padding: 10px;
+	@include order(2);
 	border-top: 1px solid $darkest-shiro;
 
 	@include mediaquery ($bp-header) {
-		@include display-flex;
 		padding: 0;
 		border-top: 0;
 	}
 
 	li {
+		@include flex(1 1 50%);
 		margin-left: 10px;
+
+		@include mediaquery ($bp-header) {
+			@include flex(1 0 auto);
+		}
 
 		&:first-child {
 			margin-left: 0;
@@ -374,7 +379,19 @@ a.nav-bar-toggle {
 }
 
 .nav-bar-user {
+	@include order(3);
+	@include flex(0 0 auto);
+
+	@include mediaquery ($bp-header) {
+		@include flex(0 1 auto);
+		@include order(2);
+
+	}
+
+
 	li {
+		@include flex(1 0 auto);
+
 		@include mediaquery ($bp-header) {
 			position: relative;
 
@@ -418,7 +435,6 @@ a.nav-bar-toggle {
 	}
 
 	.avatar {
-		overflow: hidden;
 		position: absolute;
 		left: 0;
 	    top: 0;
@@ -429,12 +445,7 @@ a.nav-bar-toggle {
 		color: $shiro;
 		background: $dark-silk;
 
-		&:hover {
-			color: $shiro;
-		}
-
 		@include mediaquery ($bp-header) {
-			display: table;
 			position: relative;
 			padding: 0;
 			width: auto;
@@ -443,10 +454,15 @@ a.nav-bar-toggle {
 			color: $soft-script;
 			background: none;
 			white-space: nowrap;
+		}
 
-			&:hover {
+		&:hover {
+			color: $shiro;
+
+			@include mediaquery ($bp-header) {
 				color:$day-blue;
 			}
+
 		}
 
 		.name {
@@ -477,17 +493,48 @@ a.nav-bar-toggle {
 				margin-bottom: 0;
 			}
 		}
+
+		.child-avatar {
+			position: absolute;
+			left: 0;
+			right: 0;
+
+			@include mediaquery ($bp-header) {
+				display: table;
+				position: static;
+			}
+
+		}
+
+		.bg-blur {
+			display: block;
+		    position: absolute;
+		    left: 0;
+		    top: 0;
+		    height: 100%;
+		    width: 100%;
+		   background-size: 100%;
+		   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(46%, rgba(0, 0, 0, 0.08)), color-stop(59%, rgba(0, 0, 0, 0.08)), color-stop(100%, rgba(0, 0, 0, 0.9)));
+		   background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.08) 59%, rgba(0, 0, 0, 0.9) 100%);
+		   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.08) 59%, rgba(0, 0, 0, 0.9) 100%);
+		   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.08) 59%, rgba(0, 0, 0, 0.9) 100%);
+
+			@include mediaquery ($bp-header) {
+				display: none;
+			}
+
+		}
 	}
 }
 
 .nav-bar-submenu {
-	@include order(-1);
 	padding-top: 145px;
 	background: $shiro;
+	@include order(1);
 
 	@include mediaquery ($bp-header) {
 		@include flex(1 0 100%);
-		@include order(initial);
+		@include order(3);
 		margin: 0 -20px;
 		padding-top:0;
 		background: $darkest-shiro;
@@ -523,14 +570,19 @@ a.nav-bar-toggle {
 		    right: -5px;
 		}
 	}
-}
 
-.open-menu {
-	@include display-flex;
-}
+	.global-nav-submenu & {
+		@include flex(0 0 auto);
 
+			@include mediaquery ($bp-header) {
+				@include flex(1 0 100%);
+
+			}
+	}
+}
 .wrap-overlay {
-	position: static;
+	position: fixed;
+	width: 100%;
 }
 
 .wrap-overlay::before {
@@ -546,6 +598,20 @@ a.nav-bar-toggle {
 	z-index: $zindex-wrap-overlay;
 }
 
+.wrap-transition .open-menu:nth-of-type(1) {
+	overflow: auto;
+	left: 0;
+	-webkit-box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
+ 	   -moz-box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
+			box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
+
+		@include mediaquery ($bp-header) {
+			overflow: visible;
+
+	}
+
+}
+
 .wrap-transition::before {
 	background: rgba(0,0,0,0.6);
 }
@@ -555,6 +621,14 @@ a.nav-bar-toggle {
 	// mantenemos a 10px el padding a partir de esta resolucion por coherencia con el punto de corte del menu (distitos -> 945 vs $tablet-start)
 	.wrapper {
 		padding: 0 10px;
+	}
+
+	.nav-mobile {
+		//android 4.3
+		-webkit-box-orient: block-axis;
+		   -moz-box-orient: block-axis;
+		        box-orient: block-axis;
+		//
 	}
 
 }

@@ -83,19 +83,11 @@ a {
 	@include transition;
  	text-decoration: none;
  	color: $day-blue;
-
- 	.skin-executive & {
-		color: $mediterranean-sea;
-	}
 }
 
 a:hover {
 	 text-decoration: none;
 	 color: $day-blue;
-
-	 .skin-executive & {
-		color: $mediterranean-sea;
-	}
 }
 
 a:focus {
