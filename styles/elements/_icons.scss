@@ -44,18 +44,21 @@ Styleguide 1.7.1.1
 [class^="iconfont-"]::after,
 [class*=" iconfont-"]::after {
 	@include iconfont;
-	top: 4px;
+	top: 3px; // font-size base medium
 }
 
 //needs sass version 3.4.7 or later
-[class*=" iconfont-"]::before {
+[class*="iconfont-"]::before {
+	margin-right: 10px;
+	font-size: $medium-font-size;
 
 	@at-root .btn#{&} {
+		top: 4px;
 		margin-right: 8px; //needed to separate icon from the text
+		color: $shiro;
 	}
 
 	@at-root .btn-group .btn#{&} {
-		top: 4px;
 		margin-right: 0;
 	}
 }
