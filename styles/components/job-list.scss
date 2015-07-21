@@ -147,12 +147,11 @@ Styleguide 2.8
             }
         }
     }
-
-
 }
 
 .result-list > li,
 .job-list .item  {
+
     &:hover {
         @include mediaquery($bp-desktop) {
             background: #e3f5fd;
@@ -163,6 +162,7 @@ Styleguide 2.8
             }
         }
     }
+
 }
 
 //Used in result-list component
@@ -178,16 +178,16 @@ Styleguide 2.8
         @include inner;
         padding-bottom: 15px;
 
+        @include mediaquery($bp-tablet) {
+            padding-bottom: 15px;
+        }
+
         &.item-nohover:hover {
             @include mediaquery($bp-desktop) {
                 background: transparent;
                 cursor: inherit;
             }
         }
-
-        // & + .suggest {
-        //     border-bottom: none;
-        // }
     }
 }
 
