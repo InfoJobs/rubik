@@ -49,8 +49,12 @@ Styleguide 1.7.1.1
 
 //needs sass version 3.4.7 or later
 [class*="iconfont-"]::before {
-	margin-right: 10px;
+	margin-right: 6px;
 	font-size: $medium-font-size;
+
+	@at-root .small#{&} {
+		margin-right: 3px;
+	}
 
 	@at-root .btn#{&} {
 		top: 4px;
