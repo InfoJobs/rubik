@@ -165,7 +165,7 @@ Styleguide  #{$sgi-containers}
 
 	@include mediaquery ($bp-desktop) {
 		width: 486px;
-		margin: 0 auto;
+		margin: 0 auto 10px auto;
 	}
 
 	input,
