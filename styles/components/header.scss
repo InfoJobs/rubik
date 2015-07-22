@@ -223,6 +223,8 @@ a.nav-bar-toggle {
 	max-height: 100vh;
 	width: 260px;
 	background:$shiro;
+	overflow: auto;
+
 	z-index: $zindex-menu;
 	-webkit-transition: all 0.3s ease;
 			transition: all 0.3s ease;
@@ -241,8 +243,8 @@ a.nav-bar-toggle {
 }
 
 .nav-bar-menu {
-	@include flex;
-	@include order(2);
+	@include flex(1 1 auto);
+	@include order(1);
 	overflow: auto;
 	padding-right: 10px;
 	padding-left: 10px;
@@ -268,13 +270,24 @@ a.nav-bar-toggle {
 		}
 
 		&  a:hover {
-			color: $day-blue;
+			color: $dark-silk;
+
+			@include mediaquery ($bp-header) {
+				color: $day-blue;
+			}
+
+		}
+
+		&  a:active {
+			color: $day-blue
 		}
 	}
 
 	.global-nav-submenu & {
 		background: $dark-shiro;
+		@include order(2);
 		@include flex(0 0 auto);
+		overflow: visible;
 	}
 
 	@include mediaquery ($bp-header) {
@@ -548,6 +561,14 @@ a.nav-bar-toggle {
 			color: $dark-silk;
 
 			&:hover {
+				color: $dark-silk;
+
+				@include mediaquery ($bp-header) {
+					color:$day-blue;
+				}
+			}
+
+			&:active {
 				color:$day-blue;
 			}
 		}
@@ -571,10 +592,6 @@ a.nav-bar-toggle {
 	.global-nav-submenu & {
 		@include flex(0 0 auto);
 
-			@include mediaquery ($bp-header) {
-				@include flex(1 0 100%);
-
-			}
 	}
 }
 .wrap-overlay {
@@ -596,16 +613,10 @@ a.nav-bar-toggle {
 }
 
 .wrap-transition .open-menu:nth-of-type(1) {
-	overflow: auto;
 	left: 0;
 	-webkit-box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
  	   -moz-box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
 			box-shadow: 0px 0 10px 0px rgba(0,0,0,0.8);
-
-		@include mediaquery ($bp-header) {
-			overflow: visible;
-
-	}
 
 }
 
