@@ -480,10 +480,10 @@ input[type="number"] {
 }
 
 input[type="tel"] {
-	width: 230px;
 	margin-right: 20px;
 
 	@include mediaquery ($bp-desktop) {
+		width: 230px;
 		float: left;
 	}
 
