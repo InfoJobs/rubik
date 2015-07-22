@@ -239,19 +239,19 @@ Styleguide #{$sgi-tagGroup}
     &:last-child {
         margin-top: 10px;
     }
-}
 
-.tag-group li {
-    float: left;
-    margin-bottom: 5px;
-    padding-right: 20px;
+    li {
+        float: left;
+        margin-bottom: 5px;
+        padding-right: 20px;
 
-    .skin-executive &:only-child { //TODO: fix extra margin used in result-list component
-        margin-bottom: 0;
-    }
+        .skin-executive &:only-child { //TODO: fix extra margin used in result-list component
+            margin-bottom: 0;
+        }
 
-    @media print {
-        margin: 0;
+        @media print {
+            margin: 0;
+        }
     }
 }
 
