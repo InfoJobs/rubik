@@ -58,19 +58,6 @@ $font-size: (small, base, medium); //TODO: resolve problem when it s moved to _v
 
 }
 
-.small[class*="iconfont-"]::before {
-	font-size: ($small-font-size + 2);
-}
-
-.base[class*="iconfont-"]::before {
-	font-size: ($base-font-size + 2);
-}
-
-.medium[class*="iconfont-"]::before {
-	font-size: ($medium-font-size + 2);
-}
-
-
 /*
 Text size
 
