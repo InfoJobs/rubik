@@ -107,13 +107,14 @@ Styleguide 3.1.3
 	.close-modal {
 		@include iconfont-Close;
 		position: absolute;
-		top: 23px;
+		top: 12px;
 		right: 5px;
 		left: auto;
 		display: block;
 		overflow: hidden;
 		padding: 5px;
 		font-size: ($large-font-size + 2);
+		line-height: $large-line-height;
 		color: $shiro;
 
 		@include mediaquery ($bp-tablet) {
