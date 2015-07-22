@@ -35,8 +35,8 @@ p {
 	margin-bottom: 15px; //TODO: update this rule
 }
 
-$font-size: (small, base, medium); //TODO: resolve problem when it s moved to _vars
 
+$font-size: (small, base, medium); //TODO: resolve problem when it s moved to _vars
 
 @each $value in $font-size {
 
@@ -57,6 +57,20 @@ $font-size: (small, base, medium); //TODO: resolve problem when it s moved to _v
 	}
 
 }
+
+.small[class*="iconfont-"]::before {
+	font-size: ($small-font-size + 2);
+}
+
+.base[class*="iconfont-"]::before {
+	font-size: ($base-font-size + 2);
+}
+
+.medium[class*="iconfont-"]::before {
+	font-size: ($medium-font-size + 2);
+}
+
+
 /*
 Text size
 
