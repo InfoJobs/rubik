@@ -183,6 +183,10 @@ Styleguide 1.4
 		margin-bottom: 0;
 }
 
+.form--field-block label {
+	width: 100%;
+}
+
 form ul .indent {
 	margin-left: 20px;
 	margin-top: 5px;
@@ -431,6 +435,7 @@ Styleguide 1.4.4
 	}
 
 	&-date {
+		width: 178px;
 		border: 1px solid #c7c7c7;
 
 		> div {
@@ -439,9 +444,13 @@ Styleguide 1.4.4
 			&::before {
 			    content: "|";
 			    position: absolute;
-			    top: 4px;
+			    top: 12px;
 			    left: -5px;
 				color: #c7c7c7;
+
+				@include mediaquery ($bp-desktop) {
+					top: 4px;
+				}
 			}
 
 			&:first-of-type::before {
@@ -449,14 +458,9 @@ Styleguide 1.4.4
 			}
 
 			input {
+				width: 50px;
 				text-align: center;
 				border: none;
-				-moz-appearance:textfield;
-
-				&::-webkit-inner-spin-button {
-					-webkit-appearance: none;
-				    margin: 0;
-				}
 			}
 
 			&:last-child input  {
@@ -466,6 +470,40 @@ Styleguide 1.4.4
 	}
 }
 
+input[type="number"] {
+	-moz-appearance:textfield;
+
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+	    margin: 0;
+	}
+}
+
+input[type="tel"] {
+	width: 230px;
+	margin-right: 20px;
+
+	@include mediaquery ($bp-desktop) {
+		float: left;
+	}
+
+	~ label {
+		width: auto;
+		margin: 10px 0 0 0;
+
+		@include mediaquery ($bp-desktop) {
+			margin-top: 4px;
+		}
+	}
+
+	~ input {
+		margin: 12px 0 0 0;
+
+		@include mediaquery ($bp-desktop) {
+			margin-top: 7px;
+		}
+	}
+}
 
 /*
 Fieldset title #disabled#
