@@ -8,18 +8,18 @@
 /*
 Content logo
 
-Use class `.content-logo` nested with `.heading-addons` to center vertically text with logo.
+Use class `.content-middle` nested with `.heading-addons` to center vertically text with logo.
 
-Apply `.content-logo-text` and `.content-logo-media` to build the text and logo structure.
+Apply `.text` and `.media` to build the text and logo structure.
 
 
 Markup:
 <div class="heading-addons">
-	<div class="content-logo">
-		<div class="content-logo-text">
+	<div class="content-middle">
+		<div class="text">
 			<h1>Lorem ipsum dolor sit amet</h1>
 		</div>
-		<div class="content-logo-media">
+		<div class="media">
 			<a href="#">
 				<figure class="fig-thumbnail fig-thumbnail-logo slide-up">
 					<img title="BROS GROUP - Ofertas de trabajo" src="./media/pictures/pic-company-logo.png" alt="Lorem ipsum dolor sit amet">
