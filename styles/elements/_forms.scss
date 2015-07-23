@@ -467,6 +467,10 @@ Styleguide 1.4.4
 				width: 66px;
 			}
 		}
+
+		.error & {
+			border: 1px solid $trueblood;
+		}
 	}
 }
 
