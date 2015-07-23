@@ -27,11 +27,6 @@ label,
 	font-size: $base-font-size;
 	line-height: 125%;
 	color: $mid-script;
-}
-
-label {
-	display: inline-block;
-	vertical-align: top;
 
 	.error &:first-of-type {
 		color: $trueblood;
@@ -39,6 +34,12 @@ label {
 	.success &:first-of-type {
 		color: $bamboo;
 	}
+}
+
+label {
+	display: inline-block;
+	vertical-align: top;
+
 	.panel-executive & {
 		color: #bebebe;
 	}
