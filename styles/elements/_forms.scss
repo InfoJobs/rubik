@@ -205,24 +205,22 @@ form ul .indent { // Used in cartas presentacion
 }
 
 //TODO: Nest .form-field-inline in .search-bar.scss component, because is not possible to apply this layout independently
-.form-field-inline { /* Used in search box + filters job search */
-	float: left;
-	padding-right: 10px;
+.form-field-inline { // Used in search box + filters job search
+	display: table;
 
-	@media only screen and (min-width: $bp-tablet) {
+	> label {
+		margin-right: 10px;
+		margin-bottom: 0;
+   		vertical-align: middle;
+	}
 
-		line-height: 1.4;
+	> input,
+	> .chosen-container  {
+		display: inline-block;
+		width: 220px!important;
 	}
 }
 
-.form-field-inline:last-child {
-	margin-right: 0;
-	padding-right: 0;
-}
-
-/*.form-field-inline label {
-    margin-bottom: 5px;
-}*/
 
 /*
 Radio buttons / Checkbox #disabled#
