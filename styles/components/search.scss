@@ -23,13 +23,25 @@
 	}
 
 	.form-field-inline {
+		float: left;
 		padding-right: 0;
 		margin-bottom: 10px;
 
 		&:last-child {
 			margin-bottom: 0;
+			margin-right: 0;
+			padding-right: 0;
 		}
 
+		ul {
+			margin-top: 0;
+			margin-left: 0;
+		}
+
+		@media only screen and (min-width: $bp-tablet) {
+
+			line-height: 1.4;
+		}
 	}
 
 	.search-keyword-field,
