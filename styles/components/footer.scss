@@ -60,53 +60,39 @@ Styleguide 2.5
 	}
 }
 
-.footer-slotbanner {
-
-	@include mediaquery (1256px) {
-		left: -287px;
-	}
-
-	@include mediaquery (1278px) {
-		left: -310px;
-	}
-
-}
-
 .footer-nav {
 
-	@include mediaquery ($bp-desktop) {
+	h3,
+	.row li li:not(.nav-item-visible) {
+		display: none;
+
+		@include mediaquery ($bp-desktop) {
+				display: block;
+		}
+	}
+
+	a {
 		display: block;
-		padding: 40px 20px 20px 20px;
+		color: $outer-pawn;
+	}
 
-			.col-child-content {
-				margin-bottom: 0;
-				padding: 0 10px 0 0;
+	a:hover {
+		text-decoration: underline;
+		color: $outer-king;
+	}
 
-				& + .col-child-content {/*adjacents lists in footer*/
-					margin-top: 40px;
-				}
-			}
+	@include mediaquery ($bp-desktop) {
 
 			.section-footer {
 				margin: 0;
 			}
 
-			a:hover {
-				text-decoration: underline;
-				color: $outer-king;
-			}
-
 			h3 {
-				font-family: $base-font-family-bold;
 				color: $outer-king;
 			}
 
 			li {
 
-				a {
-					display: block;
-					color: $outer-pawn;
-				}
 
 				& li {
 					font-size: $base-font-size;
@@ -133,35 +119,6 @@ Styleguide 2.5
 				}
 			}
 
-			.footer-nav-bar {
-				margin: 15px 0;
-
-				&:first-child {
-					margin-top: 21px;
-				}
-
-				div & {
-					text-align: center;
-				}
-
-				& > li > a,
-				& > li:first-child {
-					font-size: $small-font-size;
-					line-height: $small-line-height;
-				}
-
-				& > li,
-				& > li > a {
-					display: inline;
-					float: none;
-					margin-right: 0;
-				}
-
-				li a {
-					margin-left: 15px;
-				}
-
-			}
 
 			.footer-logos {
 	 			margin-top: 20px;
@@ -183,6 +140,35 @@ Styleguide 2.5
 	}
 }
 
+.footer-nav-bar {
+	margin: 15px 0;
+
+	&:first-child {
+		margin-top: 21px;
+	}
+
+	div & {
+		text-align: center;
+	}
+
+	& > li > a,
+	& > li:first-child {
+		font-size: $small-font-size;
+		line-height: $small-line-height;
+	}
+
+	& > li,
+	& > li > a {
+		display: inline;
+		float: none;
+		margin-right: 0;
+	}
+
+	li a {
+		margin-left: 15px;
+	}
+
+}
 
 .footer-container {
 
@@ -193,4 +179,18 @@ Styleguide 2.5
 			display: none;
 		}
 	}
+}
+
+//banners
+
+.footer-slotbanner {
+
+	@include mediaquery (1256px) {
+		left: -287px;
+	}
+
+	@include mediaquery (1278px) {
+		left: -310px;
+	}
+
 }
