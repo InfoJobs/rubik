@@ -65,6 +65,13 @@ select:-moz-focusring {
     text-shadow: 0 0 0 $outer-wall;
 }
 
+@mixin input {
+	display: block;
+	padding: 4px 10px;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+}
+
 input,
 textarea {
 	@include input;
@@ -509,6 +516,12 @@ input[type="tel"] {
 			margin-top: 7px;
 		}
 	}
+
+	~ .error-info {
+	    clear: both;
+	    display: block;
+	    padding-top: 5px;
+	}
 }
 
 /*
@@ -676,4 +689,17 @@ Styleguide 1.4.7
 
 	}
 
+}
+
+.field-group-grow { //used on edit-cv when an input + button sizes needs to be 100%
+	display: flex;
+
+	:first-child {
+		flex: 1 1 0;
+		margin-right: 20px;
+	}
+
+	:last-child {
+		align-self: flex-end;
+	}
 }
