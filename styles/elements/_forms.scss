@@ -171,47 +171,41 @@ Markup:
 
 Styleguide 1.4
 */
-.form {
-	width: 100%;
-}
 
-.form--field-block > li { //TODO: Could be possible to apply only a class in <form> to avoid do it in every <ul>?
-	margin-bottom: 20px;
-	vertical-align: middle;
+.form--field-block {
+	> li { //TODO: Could be possible to apply only a class in <form> to avoid do it in every <ul>?
+		margin-bottom: 20px;
+		vertical-align: middle;
 
-	&:last-child {
-		margin-bottom: 0;
-	}
+		&:last-child {
+			margin-bottom: 0;
+		}
 
-	.info {
-		margin-bottom: 0;
+		.info {
+			margin-bottom: 0;
 
-		&:first-of-type {
-			margin-top: 5px;
+			&:first-of-type {
+				margin-top: 5px;
+			}
 		}
 	}
+
+	> li:last-child {
+			margin-bottom: 0;
+	}
+
+	label {
+		width: 100%;
+	}
 }
 
-.form--field-block > li:last-child {
-		margin-bottom: 0;
-}
-
-.form--field-block label {
-	width: 100%;
-}
-
-form ul .indent {
+form ul .indent { // Used in cartas presentacion
 	margin-left: 20px;
 	margin-top: 5px;
 }
 
-form ul .form-field-inline ul {
-	margin-top: 0;
-	margin-left: 0;
-}
-
 //TODO: Nest .form-field-inline in .search-bar.scss component, because is not possible to apply this layout independently
-.form-field-inline {
+.form-field-inline { /* Used in search box + filters job search */
 	float: left;
 	padding-right: 10px;
 
@@ -332,7 +326,7 @@ Styleguide 1.4.2
 }
 
 /*
-Selects #disabled#
+Select
 
 ```
 .form-select -  Field select
@@ -402,7 +396,23 @@ Styleguide 1.4.3
 	}
 }
 
-.form-select-medium {
+/*
+Multiple select
+
+Markup:
+<label for="multiple-pulldown">Multiple pulldown</label>
+<select id="multiple-pulldown" multiple="true" class="chosen-select" data-placeholder="(Seleccionar)">
+	<option value="01">Option01</option>
+	<option value="02">Option02</option>
+	<option value="03">Option03</option>
+	<option value="04">Option04</option>
+	<option value="05">Option05</option>
+</select>
+
+Styleguide 1.4.4
+*/
+
+.form-select-medium { /* Used in SectionCvComponent*/
 	width: 350px;
 }
 
@@ -414,7 +424,7 @@ Input group #disabled#
 .input-group
 ```
 
-Styleguide 1.4.4
+Styleguide 1.4.5
 */
 
 .input-group {
@@ -524,13 +534,7 @@ input[type="tel"] {
 	}
 }
 
-/*
-Fieldset title #disabled#
-
-Styleguide 1.4.5
-*/
-
-.fieldset-title {
+.fieldset-title { /* DEPRECATED: used in registration-index + KQ + filters job search */
 	display: block;
 	padding-bottom:10px;
 
@@ -565,7 +569,7 @@ Markup:
   </fieldset>
 </form>
 
-Styleguide 1.4.7
+Styleguide 1.4.6
 */
 
 .error-info {
