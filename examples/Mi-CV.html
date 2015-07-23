@@ -16,6 +16,8 @@
 
 	<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
 
+	<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+
 </head>
 
 <body>
@@ -28,8 +30,8 @@
 
 			<div class="container-expanded">
 				<div class="row row-faux">
-					<div class="col-8">
-						<div class="col-child panel-canvas">
+					<div class="col-8 col-12-medium">
+						<div class="col-child panel-canvas inner-expanded">
 							<a href="#">
 								<section class="inner container-editable">
 									<div class="content-middle">
@@ -40,14 +42,14 @@
 												<span class="btn btn-primary action">Editar</span>
 										</div>
 									</div>
-									<div class="heading-divider heading-divider-bleed"></div>
+									<div class="h3 heading-divider heading-divider-bleed"></div>
 
 									<div class="content-top">
 										<div class="text">
-											<h3 class="h2">Pedro GarcÌa MartÌnez</h3>
+											<h3 class="h2">Pedro Garcï¿½a Martï¿½nez</h3>
 											<dl class="list-default soft-script">
 												<dt class="hide">Fecha de nacimiento</dt>
-												<dd>16/03/1989 <span class="alternative">(26 aÒos)</span></dd>
+												<dd>16/03/1989 <span class="alternative">(26 aï¿½os)</span></dd>
 												<dt class="hide">DNI</dt>
 												<dd>45831417F</dd>
 												<dt class="hide">Lugar de residencia</dt>
@@ -58,7 +60,7 @@
 												<dd>hola@pedrogarcia.com</dd>
 											</dl>
 											<dl class="list-default soft-script margin-top">
-												<dt class="hide">TelÈfono de contacto</dt>
+												<dt class="hide">Telï¿½fono de contacto</dt>
 												<dd>608865526 <span class="alternative">(Preferente)</span></dd>
 												<dd>93456482</li>
 												<dd>1555234238</dd>
@@ -75,13 +77,13 @@
 										<dl class="list-default soft-script">
 											<dt>Twitter</dt>
 											<dd>@Pedro.garcia</dd>
-											<dt>Mi P·gina</dt>
+											<dt>Mi Pï¿½gina</dt>
 											<dd>www.pedrogarcia.com</dd>
 										</dl>
 									</div>
 								</section>
 							</a>
-							<a href="#">
+							<a href="mi-cv-otros-datos.html" class="js-modal-page-toggle">
 								<section class="inner container-editable">
 									<div class="content-middle">
 										<div class="text">
@@ -91,7 +93,7 @@
 											<span class="btn btn-primary action">Editar</span>
 										</div>
 									</div>
-									<div class="heading-divider heading-divider-bleed"></div>
+									<div class="h3 heading-divider heading-divider-bleed"></div>
 									<dl class="list-default">
 										<dt>Carnet de conducir</dt>
 										<dd class="alternative">B</dd>
@@ -106,15 +108,31 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-4 panel-default">
+					<div class="col-4 col-12-medium panel-default">
 						<div class="col-child inner">
-							<p>lorem</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<script>
+		var elModalPageToogle = document.querySelector('.js-modal-page-toggle');
+		var elWrapper = document.querySelector('.wrapper');
 
+		elModalPageToogle.onclick = function(event) {
+
+			event.preventDefault();
+
+			if (window.innerWidth < 760) {
+				location.href = event.currentTarget.href;
+				elWrapper.style.padding = '0';
+
+			}
+
+		}
+
+
+	</script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="ISO-8859-15">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Otros datos - edición</title>
+		<title>Otros datos - ediciï¿œn</title>
 
 		<!-- CSS FE styleguide -->
 		<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
@@ -12,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
 		<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
 		<link rel="stylesheet" type="text/css" href="../styles/components/pulldown-chosen.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/components/modal.css" />
 		<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
 
 		<script type="text/javascript" src="http://es-static0.infojobs.com/jquery-2.1.0.js" th:remove="all"></script>
@@ -24,8 +25,9 @@
 			<div class="container">
 				<div class="panel-canvas">
 					<div class="row-centered inner inner-expanded">
-						<h1 class="text-center">Otros datos</h1>
-
+						<div class="js-modalPage-header">
+							<h1 class="text-center">Otros datos</h1>
+						</div>
 						<form method="post" action="#">
     						<fieldset class="margin-bottom">
                                 <legend>Intereses</legend>
@@ -52,7 +54,7 @@
 										<ul>
 											<li>
 												<input name="car" id="car-yes" type="radio" checked="checked">
-												<label for="car-yes" class="label-checkbox">Sí</label>
+												<label for="car-yes" class="label-checkbox">Sï¿œ</label>
 											</li>
 											<li>
 												<input name="car" id="car-no" type="radio">
@@ -94,11 +96,11 @@
     		                		</li>
 
 									<li>
-										<p class="label">¿Estás dado de alta como autónomo?</p>
+										<p class="label">ï¿œEstï¿œs dado de alta como autï¿œnomo?</p>
 										<ul>
 											<li>
 												<input name="freelance" id="freelance-yes" type="radio" checked="checked">
-												<label for="freelance-yes" class="label-checkbox">Sí</label>
+												<label for="freelance-yes" class="label-checkbox">Sï¿œ</label>
 											</li>
 											<li>
 												<input name="freelance" id="freelance-no" type="radio">
@@ -109,12 +111,65 @@
                                 </ul>
                             </fieldset>
 
-    						<button class="btn btn-primary btn-medium margin-top" type="submit">Guardar</button>
-							<button class="btn btn-default btn-medium margin-top" type="submit">Cancelar</button>
+    						<button class="btn btn-primary btn-medium margin-top js-btn-save" type="submit">Guardar</button>
+							<a href="#" class="js-btn-cancel"><span class="hide-small-device">Cancelar</span></a>
     					</form>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<script>
+			var elBtnSave = document.querySelector('.js-btn-save');
+			var elBtnCancel = document.querySelector('.js-btn-cancel');
+			var elH1 = document.querySelector('h1');
+			var elmodalPageHeader = document.querySelector('.js-modalPage-header');
+			var elH1Width;
+
+			function modalPage() {
+				if (window.innerWidth < 480) {
+					elBtnCancel.classList.add('close-modal');
+					elBtnCancel.classList.add('iconfont-Close');
+					elBtnCancel.classList.add('iconfont-22px');
+					elBtnCancel.classList.add('hit-area');
+					elBtnCancel.classList.add('btn-cancel');
+					elBtnCancel.classList.remove('btn');
+					elBtnCancel.classList.remove('btn-default');
+					elBtnCancel.classList.remove('btn-medium');
+					elBtnSave.classList.add('btn-save');
+					elBtnSave.classList.remove('btn-medium');
+					elBtnSave.classList.remove('margin-top');
+					elmodalPageHeader.classList.add('modal-header');
+					elmodalPageHeader.classList.add('mobile-header');
+					elH1.classList.add('truncate');
+					elH1.classList.remove('text-center');
+
+					elH1Width = elmodalPageHeader.offsetWidth - elBtnSave.offsetWidth - elBtnCancel.offsetWidth - 15;
+
+					elH1.style.width = elH1Width + 'px';
+				} else {
+					elBtnCancel.classList.remove('close-modal');
+					elBtnCancel.classList.remove('iconfont-Close');
+					elBtnCancel.classList.remove('iconfont-22px');
+					elBtnCancel.classList.remove('hit-area');
+					elBtnCancel.classList.remove('btn-cancel');
+					elBtnCancel.classList.add('btn');
+					elBtnCancel.classList.add('btn-default');
+					elBtnCancel.classList.add('btn-medium');
+					elBtnSave.classList.remove('btn-save');
+					elBtnSave.classList.add('btn-medium');
+					elBtnSave.classList.add('margin-top');
+					elmodalPageHeader.classList.remove('modal-header');
+					elmodalPageHeader.classList.remove('mobile-header');
+					elH1.classList.remove('truncate');
+					elH1.classList.add('text-center');
+
+					elH1.style.width = 'auto';
+				}
+			}
+			window.addEventListener('load', modalPage);
+			window.addEventListener('resize', modalPage);
+		</script>
+
 	</body>
 </html>

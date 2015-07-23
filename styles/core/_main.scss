@@ -271,22 +271,31 @@ img[alt] {
     .content-middle {
         min-height: 30px;
     }
+    @include mediaquery ($bp-desktop) {
+        &:hover {
+            background: #f5fcff;
+            border-top: 1px solid #dae8ee;
+            border-bottom: 1px solid #dae8ee;
+            margin-top: -1px;
+            margin-bottom: -1px;
+            cursor: pointer;
 
-    &:hover {
-        background: #f5fcff;
-        border-top: 1px solid #dae8ee;
-        border-bottom: 1px solid #dae8ee;
-        margin-top: -1px;
-        margin-bottom: -1px;
-        cursor: pointer;
-
-        .action {
-            display: block;
+            .action {
+                display: block;
+            }
         }
     }
 
     .action {
         display: none;
+    }
+}
+
+.inner-expanded > a:first-child > .inner.container-editable {
+    margin-top: -20px;
+
+    &:hover {
+        margin-top: -21px;
     }
 }
 

@@ -174,3 +174,10 @@ Heading divider
 		}
 	}
 }
+
+h3,
+.h3 {
+  &.heading-divider {
+    padding-bottom: 12px;
+  }
+}
