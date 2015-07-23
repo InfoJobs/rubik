@@ -26,19 +26,21 @@ Styleguide 2.5
 
 .footer {
 	font-family: $base-font-family;
-	clear: both;
+	text-align: center;
 	background-color: $outer-land;
-
-	.app + .app {
-		margin-left: 20px;
-	}
 
 	@include mediaquery ($bp-desktop) {
 		height: 100vh;
 		position: absolute;
 		left: 0;
 		right: 0;
+		text-align: left;
 		background-color: $outer-land;
+
+		.app + .app {
+			margin-left: 20px;
+		}
+
 	}
 
 	@media print {
@@ -69,38 +71,9 @@ Styleguide 2.5
 
 	@include mediaquery ($bp-desktop) {
 
-
-			h3 {
-				color: $outer-king;
-			}
-
-			li {
-
-
-				& li {
-					font-size: $base-font-size;
-					line-height: $base-line-height;
-					margin-bottom: 15px;
-				}
-
-				& li:last-child {
-					margin-bottom: 0;
-				}
-
-				&.app {
-					display: inline-table;
-
-					&:last-child {
-						margin-bottom: 0;
-					}
-
-					a {
-						display: block;
-						-moz-backface-visibility: hidden;
-							backface-visibility: hidden;
-					}
-				}
-			}
+		h3 {
+			color: $outer-king;
+		}
 
 	}
 }
