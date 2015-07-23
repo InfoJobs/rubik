@@ -29,34 +29,20 @@ Styleguide 2.5
 	clear: both;
 	background-color: $outer-land;
 
-	> li > a {
-		color: $outer-pawn;
-	}
-
-	@media print {
-		display: none;
-	}
-
-	@include mediaquery ($bp-tablet) {
-		margin-bottom: 10px;
+	.app + .app {
+		margin-left: 20px;
 	}
 
 	@include mediaquery ($bp-desktop) {
 		height: 100vh;
-		margin-bottom: 0;
 		position: absolute;
 		left: 0;
 		right: 0;
-		padding: 0 10px;
 		background-color: $outer-land;
 	}
 
-	@include mediaquery (945px) {
-		padding: 0 10px;
-	}
-
-	@include mediaquery (946px) {
-		padding: 0;
+	@media print {
+		display: none;
 	}
 }
 
@@ -83,9 +69,6 @@ Styleguide 2.5
 
 	@include mediaquery ($bp-desktop) {
 
-			.section-footer {
-				margin: 0;
-			}
 
 			h3 {
 				color: $outer-king;
@@ -119,36 +102,18 @@ Styleguide 2.5
 				}
 			}
 
-
-			.footer-logos {
-	 			margin-top: 20px;
-	 			margin-bottom: 0;
-
-	 			.logo-scm-medium {
-					width: 140px;
-					margin: 10px auto 0 auto;
-				}
-
-				.logo-scm-medium a {
-					display: block;
-				}
-
-				.logo-intercom {
-					margin-top: 10px;
-				}
-	 		}
 	}
 }
 
 .footer-nav-bar {
-	margin: 15px 0;
 
-	&:first-child {
-		margin-top: 21px;
+	a {
+		color: $outer-pawn;
 	}
 
-	div & {
-		text-align: center;
+	a:hover {
+		text-decoration: underline;
+		color: $outer-king;
 	}
 
 	& > li > a,
