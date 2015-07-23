@@ -41,19 +41,18 @@
 										<p class="error-info">Lorem ipsum dolor sit amet.</p>
     		                		</li>
 
-									<li class="input-group">
-										<!-- <p>Input group</p> -->
-										<div>
-											<label for="day" class="hide">Day</label>
-											<input id="day" type="text" />
-										</div>
-										<div>
-											<label for="month" class="hide">Month</label>
-											<input id="month" type="text" />
-										</div>
-										<div>
-											<label for="year" class="hide">Year</label>
-											<input id="year" type="text" />
+									<li>
+						            	<label for="day">Input group date</label>
+						                <div class="input-group input-group-date">
+										    <div>
+										        <input placeholder="DD" type="number" id="day" name="day" maxlength="2" />
+										    </div>
+										    <div>
+										        <input placeholder="MM" type="number" id="month" name="month" maxlength="2" />
+										    </div>
+										    <div>
+										        <input placeholder="AAAA" type="number" id="year" name="year" maxlength="4" />
+										    </div>
 										</div>
 									</li>
 
@@ -129,6 +128,25 @@
 										<p class="info alternative small clearfix">Lorem ipsum dolor sit amet.</p>
 										<p class="error-info">Lorem ipsum dolor sit amet.</p>
     		                		</li>
+
+									<li class="clearfix">
+    									<label for="phone">Campo teléfono <span class="alternative">(opcional)</span></label>
+    									<input id="phone" type="tel">
+
+    									<input name="phone-check" id="phone-check" type="radio">
+    									<label for="phone-check" class="label-checkbox">Preferente</label>
+    		                		</li>
+
+									<li class="row-inline">
+                                        <div>
+                                            <label for="website">Input + button 100% <span class="alternative">(opcional)</span></label>
+                                            <input id="website" type="text">
+                                        </div>
+
+                                        <div>
+                                            <button class="btn btn-default btn-form-inline" type="submit">Eliminar</button>
+                                        </div>
+                                    </li>
 
 									<li>
 										<label for="comment">Textarea</label>
