@@ -362,13 +362,13 @@ Markup:
 Styleguide 1.5.1.6
 */
 
-.btn-form-inline { //only used on search-bar and filters
+.btn-form-inline { //used on search-bar, filters and edit-cv(datos-personales)
   width: 100%;
 
     @media only screen and (max-width: $tablet-start) {
         @at-root button#{&} {
             height: auto;
-            padding: 10px;
+            padding: 7px 10px 8px 10px;
             font-size: 16px;
         }
     }
