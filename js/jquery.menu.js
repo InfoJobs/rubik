@@ -15,7 +15,7 @@ $(function() {
 	    setTimeout(function(){
 	    	eWrapper.removeClass('wrap-overlay');
 
-	     },1000);
+		},600);
 
 	}
 
@@ -87,7 +87,7 @@ $(function() {
 
 		if(eWrapper.hasClass('wrap-overlay') && window.innerWidth > eBpHeader) {
 
-			eWrapper.removeClass('wrap-overlay').removeAttr( 'style' );
+			eWrapper.removeClass('wrap-overlay').removeClass('wrap-transition').removeAttr( 'style' );
 
 		}
 		else if(
@@ -95,7 +95,7 @@ $(function() {
 				eMenu.hasClass('open-menu') &&
 				window.innerWidth <= eBpHeader
 			) {
-			eWrapper.addClass('wrap-overlay');
+			eWrapper.addClass('wrap-overlay').addClass('wrap-transition');
 		}
 
 	});
