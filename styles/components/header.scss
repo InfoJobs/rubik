@@ -497,7 +497,6 @@ a.nav-bar-toggle {
 		.picture {
 			width: 60px;
 			height: 60px;
-			vertical-align: middle;
 			border: 3px solid $shiro;
 			margin-bottom: 10px;
 			overflow: hidden;
@@ -505,6 +504,7 @@ a.nav-bar-toggle {
 			img {
 				width: 100%;
 				height: auto;
+			    vertical-align: middle;
 			}
 
 
