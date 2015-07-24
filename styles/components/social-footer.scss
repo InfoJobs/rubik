@@ -6,120 +6,27 @@
 \*------------------------------------*/
 
 .social-footer {
-	overflow: hidden;
-	height: 59px;
-	background-color: $dark-shiro;
-	border-top: 1px solid $darkest-shiro;
-}
 
-.social-icons {
-	width: 100%;
-	float: left;
+	display: table;
 
 	dt {
-		display: block;
-		float: left;
-		text-indent: -999999px;
-		height: 0;
+		display: none;
+		color: $outer-king;
+		@extend %font-medium-line;
+
+		@include mediaquery ($bp-desktop) {
+			display: table-cell;
+			vertical-align: middle;
+
+		}
+
+
+
 	}
 
 	dd {
-		float:left;
-		width: 33.3333%;
-		color: $mid-script;
-		text-align: center;
-		border-right: 1px solid $darkest-shiro;
+		display: table-cell;
+		vertical-align: middle;
 	}
 
-	.fb-medium,
-	.tw-medium,
-	.gplus-medium {
-		position: relative;
-		top: 0;
-		display: block;
-		padding: 0 20px 20px 20px;
-		color: $mid-script;
-	}
-
-	.fb-medium:hover,
-	.tw-medium:hover,
-	.gplus-medium:hover {
-		color: $dark-silk;
-		transition: all 0.3s ease-in-out 0s;
-	}
-
-	.fb-medium::before,
-	.tw-medium::before,
-	.gplus-medium::before {
-		position: relative;
-		top: 12px;
-		display: inline-block;
-		content: '';
-		width: 33px;
-		height: 33px;
-		background-image: url(//media.infojobs.net/appgrade/sprites/sprite-social-footer.png);
-		background-repeat: no-repeat;
-		transition: all 0.3s ease-in-out 0s;
-	}
-
-	.fb-medium::before,
-	.fb-medium:hover::before {
-		background-position: 0 -100px;
-	}
-
-	.tw-medium::before,
-	.tw-medium:hover::before {
-		background-position: 0 0;
-	}
-
-	.gplus-medium::before,
-	.gplus-medium:hover::before {
-		background-position: 0 -200px;
-	}
-
-	@include mediaquery ($bp-desktop) {
-
-		.fb-medium::before,
-		.tw-medium::before,
-		.gplus-medium::before {
-			width: 43px;
-		}
-
-		dd:hover {
-			background:$shiro;
-		}
-
-    	.fb-medium,
-		.tw-medium,
-		.gplus-medium {
-			text-indent: 0;
-			line-height: 20px;
-
-		}
-
-		.fb-medium::before {
-			background-position: 0 -100px;
-		}
-
-		.fb-medium:hover::before {
-			background-position: 0 -150px;
-		}
-
-		.tw-medium::before {
-			background-position: 0 0;
-		}
-
-		.tw-medium:hover::before {
-			background-position: 0 -50px;
-		}
-
-		.gplus-medium::before {
-			background-position: 0 -200px;
-		}
-
-		.gplus-medium:hover::before {
-			background-position: 0 -250px;
-		}
-
-	}
 }

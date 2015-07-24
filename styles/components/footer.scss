@@ -25,12 +25,29 @@ Styleguide 2.5
 }
 
 .footer {
+	height: 100vh;
 	font-family: $base-font-family;
 	text-align: center;
 	background-color: $outer-land;
 
+	.social-footer {
+		height: 100%;
+		margin: 0 auto;
+		padding-bottom: 20px;
+
+		@include mediaquery ($bp-desktop) {
+			margin: 0;
+			padding: 0;
+		}
+
+	}
+
+	.social-icons {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
 	@include mediaquery ($bp-desktop) {
-		height: 100vh;
 		position: absolute;
 		left: 0;
 		right: 0;
@@ -69,6 +86,42 @@ Styleguide 2.5
 		color: $outer-king;
 	}
 
+	.nav-item-visible {
+
+		display: inline-block;
+		padding-left: 20px;
+		margin: 0;
+
+		&::after {
+		    color: $darkest-shiro;
+		    content: "|";
+		    position: absolute;
+		    left: 5px;
+		    top: 1px;
+
+			@include mediaquery ($bp-desktop) {
+				content: none;
+			}
+		}
+
+		&:first-of-type {
+			padding: 0;
+
+			&::after {
+			    content: none;
+			}
+
+		}
+
+
+		@include mediaquery ($bp-desktop) {
+
+			display: block;
+			padding: 0;
+			margin-bottom: 10px;
+		}
+	}
+
 	@include mediaquery ($bp-desktop) {
 
 		h3 {
@@ -95,29 +148,19 @@ Styleguide 2.5
 		line-height: $small-line-height;
 	}
 
-	& > li,
-	& > li > a {
+	& > li {
 		display: inline;
-		float: none;
-		margin-right: 0;
-	}
-
-	li a {
 		margin-left: 15px;
-	}
 
-}
-
-.footer-container {
-
-	@include mediaquery ($bp-desktop) {
-		position: relative;
-
-		& + .footer-container {
-			display: none;
+		&:first-child,
+		&:only-child {
+			margin: 0;
 		}
+
 	}
+
 }
+
 
 //banners
 
