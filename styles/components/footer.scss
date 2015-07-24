@@ -61,18 +61,29 @@ Styleguide 2.5
 			}
 
 		}
-
-		li + li {
-			margin: 20px 0 0 0;
+		li {
+			display: block;
+			padding: 20px 0 0 0;
 
 			@include mediaquery ($bp-desktop) {
 
-				margin: 0 0 0 20px;
+				display: table-cell;
+				padding: 0 0 0 20px;
+				vertical-align: middle;
 
 			}
 
+			img {
+				display: block;
+				margin: 0 auto;
+			}
 
 		}
+
+		@include mediaquery ($bp-desktop) {
+				display: table;
+		}
+
 
 	}
 
@@ -80,8 +91,11 @@ Styleguide 2.5
 		position: absolute;
 		left: 0;
 		right: 0;
+		margin-top: -80px;
+		padding-top: 100px;
 		text-align: left;
 		background-color: $outer-land;
+		z-index: -1;
 
 	}
 
@@ -213,4 +227,11 @@ Styleguide 2.5
 		left: -310px;
 	}
 
+}
+
+@media only screen and (max-width: $tablet-start) {
+
+	.footer-nav .col-child {
+		margin-bottom: 0;
+	}
 }

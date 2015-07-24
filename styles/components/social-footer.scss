@@ -12,20 +12,23 @@
 	dt {
 		display: none;
 		color: $outer-king;
-		@extend %font-medium-line;
+		font-family: $base-font-family-bold;
+		font-size: $medium-font-size;
+		line-height: $medium-line-height;
 
 		@include mediaquery ($bp-desktop) {
 			display: table-cell;
+			padding-right: 10px;
+			padding-top: 5px;
 			vertical-align: middle;
 
 		}
-
-
 
 	}
 
 	dd {
 		display: table-cell;
+		padding-left: 10px;
 		vertical-align: middle;
 	}
 
