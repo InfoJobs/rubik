@@ -1,0 +1,83 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+    $TIMELINE
+\*------------------------------------*/
+
+.timeline {
+	position: relative;
+
+	+ .timeline {
+		margin-top: 60px;
+	}
+
+	.event {
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			height: 100%;
+			width: 5px;
+			background: $soft-script;
+			left: 0;
+			top: 1px;
+			margin-left: 30px;
+		}
+
+		.bubble {
+			@include inner;
+			display: inline-block;
+			background: $shiro;
+		    margin-left: 88px;
+			margin-bottom: 40px;
+		    position: relative;
+
+			&::before {
+				content: '';
+				width: 0;
+				height: 0;
+				border-bottom: 1em solid transparent;
+				border-right: 1em solid $shiro;
+				border-top: 1em solid transparent;
+				position: absolute;
+				left: -16px;
+				top: 20px;
+				right: 0;
+				bottom: 0;
+		    }
+
+			p {
+				margin-bottom: 0;
+			}
+
+		}
+
+		&:last-child .bubble {
+			margin-bottom: 0;
+		}
+
+		.icon {
+			position: absolute;
+			top: 1px;
+			left: 0;
+			background: $shiro;
+			border-radius: 50%;
+			padding: 32px;
+			margin-right: 10px;
+
+			&[class*="iconfont-"]::before {
+				position: absolute;
+				top: 32px;
+				left: 17px;
+				font-size: 30px;
+			}
+		}
+	}
+
+	time {
+		@include font-small-line;
+		color: $soft-script;
+	}
+}
