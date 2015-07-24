@@ -1,5 +1,6 @@
 //generics
 @import "../generics/generics";
+@import "../core/fonts";
 
 /*------------------------------------*\
     $TIMELINE
@@ -24,6 +25,10 @@
 			left: 0;
 			top: 1px;
 			margin-left: 30px;
+		}
+
+		&:last-child::before {
+			background: transparent;
 		}
 
 		.bubble {
