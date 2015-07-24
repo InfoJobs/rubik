@@ -47,16 +47,41 @@ Styleguide 2.5
 		vertical-align: middle;
 	}
 
+	.apps {
+
+		&:before {
+		    display: block;
+		    content: "";
+		    position: relative;
+		    top: 0;
+		    border-bottom: 1px solid #8c9397;
+
+			@include mediaquery ($bp-desktop) {
+				display: none;
+			}
+
+		}
+
+		li + li {
+			margin: 20px 0 0 0;
+
+			@include mediaquery ($bp-desktop) {
+
+				margin: 0 0 0 20px;
+
+			}
+
+
+		}
+
+	}
+
 	@include mediaquery ($bp-desktop) {
 		position: absolute;
 		left: 0;
 		right: 0;
 		text-align: left;
 		background-color: $outer-land;
-
-		.app + .app {
-			margin-left: 20px;
-		}
 
 	}
 
@@ -86,6 +111,20 @@ Styleguide 2.5
 		color: $outer-king;
 	}
 
+	&:after {
+	    display: block;
+	    content: "";
+	    position: relative;
+	    top: 20px;
+	    border-bottom: 1px solid #8c9397;
+
+		@include mediaquery ($bp-desktop) {
+			margin: 0 -20px;
+		}
+
+	}
+
+
 	.nav-item-visible {
 
 		display: inline-block;
@@ -93,7 +132,7 @@ Styleguide 2.5
 		margin: 0;
 
 		&::after {
-		    color: $darkest-shiro;
+		    color: #8c9397;
 		    content: "|";
 		    position: absolute;
 		    left: 5px;
@@ -112,7 +151,6 @@ Styleguide 2.5
 			}
 
 		}
-
 
 		@include mediaquery ($bp-desktop) {
 
@@ -158,6 +196,7 @@ Styleguide 2.5
 		}
 
 	}
+
 
 }
 
