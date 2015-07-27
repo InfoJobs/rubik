@@ -13,7 +13,7 @@
 		margin-top: 60px;
 	}
 
-	.event {
+	.timeline-event {
 		position: relative;
 
 		&::before {
@@ -27,7 +27,8 @@
 			margin-left: 30px;
 		}
 
-		&:last-child::before {
+		&:last-child::before,
+		&.timeline-reopened::before {
 			background: transparent;
 		}
 
@@ -78,6 +79,26 @@
 				left: 17px;
 				font-size: 30px;
 			}
+		}
+
+		.iconfont-Close::before {
+			// color: $trueblood;
+			@include alert;
+		}
+
+		.iconfont-Viewdetails::before {
+			// color: $day-blue;
+			@include focus;
+		}
+
+		.iconfont-Check::before {
+			// color: $dark-silk;
+			@include script;
+		}
+
+		.iconfont-Mail::before,
+		.iconfont-Edit::before {
+			color: $soft-script;
 		}
 	}
 
