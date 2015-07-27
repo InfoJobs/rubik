@@ -19,6 +19,7 @@
 		<script type="text/javascript" src="http://es-static0.infojobs.com/jquery-2.1.0.js" th:remove="all"></script>
 		<script type="text/javascript" src="http://es-static0.infojobs.com/js/chosen.jquery.js" th:remove="all"></script>
 		<script type="text/javascript" src="http://es-static0.infojobs.com/components/responsive/cProvincesPullDown.js" th:remove="all"></script>
+		<script type="text/javascript" src="../js/changeButtonText.js" th:remove="all"></script>
 
 		<script>
 			$('document').ready(function(){
@@ -42,32 +43,6 @@
 			});
 
 		</script>
-
-		<script>
-			function changeButtonText(){
-				var elButton = document.querySelector('.js-btn-change');
-				var elText = document.querySelector('.js-btn-change span');
-				var mq = window.matchMedia( "(min-width: 769px)" );
-				if (mq.matches) {
-					elButton.classList.remove('iconfont-Close');
-					elText.classList.remove('hide');
-
-					elButton.style.marginRight = "0";
-					elButton.style.paddingLeft = "10px";
-				}
-				else{
-					elButton.classList.add('iconfont-Close');
-					elText.classList.add('hide');
-
-					elButton.style.marginRight = "-10px";
-					elButton.style.paddingLeft = "12px";
-				}
-			}
-
-			window.addEventListener('load',changeButtonText);
-			window.addEventListener('resize',changeButtonText);
-
-	</script>
 	</head>
 
 	<body>
