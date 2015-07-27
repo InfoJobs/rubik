@@ -19,6 +19,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -262,7 +265,7 @@ Styleguide  1.1.2
 @media only screen and (min-width: 769px) {
   .row-centered {
     width: 486px;
-    margin: 0 auto;
+    margin: 0 auto 10px auto;
   }
 }
 .row-centered input,
@@ -362,19 +365,27 @@ img[alt] {
 .container-editable .content-middle {
   min-height: 30px;
 }
-.container-editable:hover {
-  background: #f5fcff;
-  border-top: 1px solid #dae8ee;
-  border-bottom: 1px solid #dae8ee;
-  margin-top: -1px;
-  margin-bottom: -1px;
-  cursor: pointer;
-}
-.container-editable:hover .action {
-  display: block;
+@media only screen and (min-width: 769px) {
+  .container-editable:hover {
+    background: #f5fcff;
+    border-top: 1px solid #dae8ee;
+    border-bottom: 1px solid #dae8ee;
+    margin-top: -1px;
+    cursor: pointer;
+  }
+  .container-editable:hover .action {
+    display: block;
+  }
 }
 .container-editable .action {
   display: none;
+}
+
+.inner-expanded > a:first-child > .inner.container-editable {
+  margin-top: -20px;
+}
+.inner-expanded > a:first-child > .inner.container-editable:hover {
+  margin-top: -21px;
 }
 
 .section-footer {
@@ -758,6 +769,38 @@ Styleguide 1.1.1.2
 
   .col-12-medium {
     width: 100%;
+  }
+  .col-12-medium.panel-default, .col-12-medium.panel-canvas {
+    background: none;
+  }
+  .col-12-medium.panel-default > .col-child, .col-12-medium.panel-canvas > .col-child {
+    margin-left: 10px;
+  }
+}
+@media only screen and (min-width: 481px) and (min-width: 769px) {
+  .col-12-medium.panel-default > .col-child, .col-12-medium.panel-canvas > .col-child {
+    margin-left: 0;
+    background-color: transparent;
+  }
+}
+@media only screen and (min-width: 481px) and (min-width: 769px) {
+  .col-12-medium.panel-default {
+    background-color: #f2f2f2;
+  }
+}
+@media only screen and (min-width: 481px) {
+  .col-12-medium.panel-default > .col-child {
+    background-color: #f2f2f2;
+  }
+}
+@media only screen and (min-width: 481px) and (min-width: 769px) {
+  .col-12-medium.panel-canvas {
+    background-color: #fff;
+  }
+}
+@media only screen and (min-width: 481px) {
+  .col-12-medium.panel-canvas > .col-child {
+    background-color: #fff;
   }
 }
 @media only screen and (min-width: 769px) {
@@ -1717,6 +1760,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -1826,6 +1872,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -2008,7 +2057,8 @@ Styleguide 1.7.2.1
   font-size: 100px;
 }
 
-.iconfont-soft-script::before {
+.iconfont-soft-script::before,
+.iconfont-soft-script::after {
   color: #999;
 }
 
@@ -2210,7 +2260,7 @@ Styleguide 1.7.2.1
   content: "\e627";
 }
 
-.iconfont-Hide::before {
+.iconfont-Hide::after {
   content: "\e628";
 }
 
@@ -2353,8 +2403,14 @@ p > .btn {
     margin: 10px 0 0;
   }
 }
-.btn + .btn {
+.btn + .btn:not(.btn-group-justified) {
   margin-left: 5px;
+}
+.btn + .btn-group-justified {
+  margin-top: 10px;
+}
+.btn + .btn-group-justified:first-of-type {
+  margin-bottom: 0;
 }
 
 /*
@@ -2379,7 +2435,7 @@ Markup:
 Styleguide 1.5.1.1
 */
 .btn-default {
-  color: #2d3133;
+  color: #666;
   background-color: #d5e1e5;
 }
 .skin-executive .btn-default {
@@ -2461,6 +2517,14 @@ Styleguide 1.5.1.1
 }
 .skin-executive .btn-primary-contrast:active {
   background-color: #008080;
+}
+
+.btn-delete {
+  color: #fff;
+  background-color: #bf2102;
+}
+.btn-delete:hover, .btn-delete:focus {
+  background-color: #8d1801;
 }
 
 .btn-link-primary {
@@ -2633,7 +2697,7 @@ Styleguide 1.5.1.6
 @media only screen and (max-width: 768px) {
   button.btn-form-inline {
     height: auto;
-    padding: 10px;
+    padding: 7px 10px 8px 10px;
     font-size: 16px;
   }
 }
@@ -2718,6 +2782,17 @@ Styleguide 1.6.1.1
   color: #fff;
   background-color: #27a8a8;
 }
+.btn-group.btn-group-expanded div {
+  padding-left: 10px;
+}
+.btn-group.btn-group-expanded div .btn {
+  border-right-width: 1px;
+}
+.btn-group.btn-group-expanded div .btn.disabled:hover {
+  background-color: white;
+  cursor: default;
+  border-right-width: 1px;
+}
 
 /*
 Button group justified
@@ -2764,6 +2839,11 @@ Styleguide 1.6.1.3
   width: 100%;
 }
 
+.btn-group-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .btn-divider {
   border-right: 1px solid #e2e5e6;
 }
@@ -2780,6 +2860,32 @@ Styleguide 1.6.1.3
   opacity: 0.5;
   border: 0 none;
   background: none repeat scroll 0 0 transparent;
+  cursor: pointer;
+}
+
+/*
+Button file
+
+Use class `.btn-file` to display an input type file.
+
+Markup:
+<div class="btn btn-default btn-file">
+	<span>Subir foto</span>
+	<input type="file" value="Subir foto" />
+</div>
+
+Styleguide 1.6.1.4
+*/
+.btn-file {
+  position: relative;
+}
+.btn-file span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+.btn-file input {
+  opacity: 0;
   cursor: pointer;
 }
 
@@ -2955,6 +3061,11 @@ Heading divider
     margin-right: -20px;
     padding-left: 20px;
   }
+}
+
+h3.heading-divider,
+.h3.heading-divider {
+  padding-bottom: 12px;
 }
 
 /*------------------------------------*\
@@ -3426,19 +3537,25 @@ legend {
   display: none;
 }
 
-label {
-  display: inline-block;
+label,
+.label {
   margin-bottom: 5px;
-  vertical-align: top;
+  font-size: 16px;
   line-height: 125%;
   color: #666;
-  font-size: 16px;
 }
-.error label:first-of-type {
+.error label:first-of-type, .error
+.label:first-of-type {
   color: #bf2102;
 }
-.success label:first-of-type {
+.success label:first-of-type, .success
+.label:first-of-type {
   color: #00a550;
+}
+
+label {
+  display: inline-block;
+  vertical-align: top;
 }
 .panel-executive label {
   color: #bebebe;
@@ -3451,7 +3568,11 @@ select {
   font-size: 16px;
   color: #2d3133;
   border: 0 none;
+  background: url(http://media.infojobs.net/appgrade/backgrounds//bg-select-arrow.png) right 15px no-repeat #fff;
   cursor: pointer;
+}
+.error select {
+  border: 1px solid #bf2102;
 }
 
 select:-moz-focusring {
@@ -3462,11 +3583,12 @@ select:-moz-focusring {
 input,
 textarea {
   display: block;
+  padding: 4px 10px;
+  font-size: 16px;
+  line-height: 20px;
   width: 330px;
   margin: 0;
-  padding: 5px 10px;
   border: 1px solid #c7c7c7;
-  font-size: 16px;
 }
 .error input, .error
 textarea {
@@ -3481,10 +3603,6 @@ input:focus,
 textarea:focus {
   border: 1px solid #2088c2;
   outline: none;
-}
-
-input {
-  height: 30px;
 }
 
 textarea {
@@ -3564,10 +3682,6 @@ Markup:
 
 Styleguide 1.4
 */
-.form {
-  width: 100%;
-}
-
 .form--field-block > li {
   margin-bottom: 20px;
   vertical-align: middle;
@@ -3579,11 +3693,13 @@ Styleguide 1.4
   margin-bottom: 0;
 }
 .form--field-block > li .info:first-of-type {
-  margin-top: 3px;
+  margin-top: 5px;
 }
-
 .form--field-block > li:last-child {
   margin-bottom: 0;
+}
+.form--field-block label {
+  width: 100%;
 }
 
 form ul .indent {
@@ -3591,29 +3707,20 @@ form ul .indent {
   margin-top: 5px;
 }
 
-form ul .form-field-inline ul {
-  margin-top: 0;
-  margin-left: 0;
-}
-
 .form-field-inline {
-  float: left;
-  padding-right: 10px;
+  display: table;
 }
-@media only screen and (min-width: 481px) {
-  .form-field-inline {
-    line-height: 1.4;
-  }
+.form-field-inline > label {
+  margin-right: 10px;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+.form-field-inline > input,
+.form-field-inline > .form-select {
+  display: inline-block;
+  width: 220px !important;
 }
 
-.form-field-inline:last-child {
-  margin-right: 0;
-  padding-right: 0;
-}
-
-/*.form-field-inline label {
-    margin-bottom: 5px;
-}*/
 /*
 Radio buttons / Checkbox #disabled#
 
@@ -3708,7 +3815,7 @@ Styleguide 1.4.2
 }
 
 /*
-Selects #disabled#
+Select
 
 ```
 .form-select -  Field select
@@ -3726,25 +3833,20 @@ Styleguide 1.4.3
 */
 .form-select {
   position: relative;
-  height: 30px;
   line-height: 14px;
   -webkit-appearance: none;
 }
 .form-select select {
   width: 100%;
-  height: 30px;
   padding: 6px;
   text-indent: 0.01px;
   text-overflow: "";
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  position: absolute;
   top: 0;
   left: 0;
-  float: right;
   margin: 0;
-  background: none;
 }
 .form-select-disabled {
   overflow: hidden;
@@ -3775,7 +3877,23 @@ Styleguide 1.4.3
   padding: 2px;
 }
 
+/*
+Multiple select
+
+Markup:
+<label for="multiple-pulldown">Multiple pulldown</label>
+<select id="multiple-pulldown" multiple="true" class="chosen-select" data-placeholder="(Seleccionar)">
+	<option value="01">Option01</option>
+	<option value="02">Option02</option>
+	<option value="03">Option03</option>
+	<option value="04">Option04</option>
+	<option value="05">Option05</option>
+</select>
+
+Styleguide 1.4.4
+*/
 .form-select-medium {
+  /* Used in SectionCvComponent*/
   width: 350px;
 }
 
@@ -3786,7 +3904,7 @@ Input group #disabled#
 .input-group
 ```
 
-Styleguide 1.4.4
+Styleguide 1.4.5
 */
 .input-group {
   display: table;
@@ -3810,19 +3928,86 @@ Styleguide 1.4.4
   background-color: #fff;
   cursor: default;
 }
-.input-group-date input {
-  width: 50px;
+.input-group-date {
+  width: auto;
+  border: 1px solid #c7c7c7;
 }
-.input-group-date div:last-child input {
+.input-group-date > div {
+  position: relative;
+}
+.input-group-date > div::before {
+  content: "|";
+  position: absolute;
+  top: 12px;
+  left: -5px;
+  color: #c7c7c7;
+}
+@media only screen and (min-width: 769px) {
+  .input-group-date > div::before {
+    top: 4px;
+  }
+}
+.input-group-date > div:first-of-type::before {
+  content: "";
+}
+.input-group-date > div input {
+  width: 50px;
+  margin-left: -4px;
+  text-align: center;
+  border: none;
+}
+.input-group-date > div:last-child input {
   width: 66px;
 }
+.input-group-date > div:first-of-type input {
+  margin-left: 0;
+}
+.error .input-group-date {
+  border: 1px solid #bf2102;
+}
 
-/*
-Fieldset title #disabled#
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-Styleguide 1.4.5
-*/
+input[type="tel"] {
+  margin-right: 20px;
+}
+@media only screen and (min-width: 769px) {
+  input[type="tel"] {
+    width: 230px;
+    float: left;
+  }
+}
+input[type="tel"] ~ label {
+  width: auto;
+  margin: 10px 0 0 0;
+}
+@media only screen and (min-width: 769px) {
+  input[type="tel"] ~ label {
+    margin-top: 4px;
+  }
+}
+input[type="tel"] ~ input {
+  margin: 12px 0 0 0;
+}
+@media only screen and (min-width: 769px) {
+  input[type="tel"] ~ input {
+    margin-top: 7px;
+  }
+}
+input[type="tel"] ~ .error-info {
+  clear: both;
+  display: block;
+  padding-top: 5px;
+}
+
 .fieldset-title {
+  /* DEPRECATED: used in registration-index + KQ + filters job search */
   display: block;
   padding-bottom: 10px;
 }
@@ -3856,7 +4041,7 @@ Markup:
   </fieldset>
 </form>
 
-Styleguide 1.4.7
+Styleguide 1.4.6
 */
 .error-info {
   margin-top: 5px;
@@ -3892,10 +4077,6 @@ Styleguide 1.4.7
   }
   .radio-group label {
     margin-bottom: 0;
-  }
-
-  .form-select {
-    height: 44px;
   }
 
   .form-select select {
@@ -3961,6 +4142,17 @@ Styleguide 1.4.7
   background: #bf2102;
 }
 
+.field-group-grow {
+  display: flex;
+}
+.field-group-grow > div:first-of-type {
+  flex: 1 1 0;
+  margin-right: 20px;
+}
+.field-group-grow > div:last-of-type {
+  align-self: flex-end;
+}
+
 /*
 Common CSS #casper#
 
@@ -3989,6 +4181,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -4141,6 +4336,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -4272,6 +4470,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -4693,6 +4894,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -4718,18 +4922,18 @@ $query2     = width, device-width
 /*
 Content logo
 
-Use class `.content-logo` nested with `.heading-addons` to center vertically text with logo.
+Use class `.content-middle` nested with `.heading-addons` to center vertically text with logo.
 
-Apply `.content-logo-text` and `.content-logo-media` to build the text and logo structure.
+Apply `.text` and `.media` to build the text and logo structure.
 
 
 Markup:
 <div class="heading-addons">
-	<div class="content-logo">
-		<div class="content-logo-text">
+	<div class="content-middle">
+		<div class="text">
 			<h1>Lorem ipsum dolor sit amet</h1>
 		</div>
-		<div class="content-logo-media">
+		<div class="media">
 			<a href="#">
 				<figure class="fig-thumbnail fig-thumbnail-logo slide-up">
 					<img title="BROS GROUP - Ofertas de trabajo" src="./media/pictures/pic-company-logo.png" alt="Lorem ipsum dolor sit amet">
@@ -4785,7 +4989,6 @@ Styleguide 2.3
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
-  margin-left: 20px;
 }
 .content-middle .media a {
   width: 100px;
@@ -4812,12 +5015,28 @@ Styleguide 2.3
     width: 92px;
   }
 }
+.content-middle .media-medium .fig-thumbnail-logo img {
+  width: 40px;
+}
+@media only screen and (min-width: 769px) {
+  .content-middle .media-medium .fig-thumbnail-logo img {
+    width: 60px;
+  }
+}
 .content-middle .action {
   -webkit-box-flex: none;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
   margin-left: 20px;
+}
+.content-middle .text + .media,
+.content-middle .media + .text {
+  margin-left: 20px;
+}
+.content-middle .text + .media-medium,
+.content-middle .media-medium + .text {
+  margin-left: 10px;
 }
 .content-middle h1 {
   padding-top: 10px;
@@ -4872,7 +5091,6 @@ Styleguide 2.3
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
-  margin-left: 20px;
 }
 .content-top .media a {
   width: 100px;
@@ -4899,12 +5117,28 @@ Styleguide 2.3
     width: 92px;
   }
 }
+.content-top .media-medium .fig-thumbnail-logo img {
+  width: 40px;
+}
+@media only screen and (min-width: 769px) {
+  .content-top .media-medium .fig-thumbnail-logo img {
+    width: 60px;
+  }
+}
 .content-top .action {
   -webkit-box-flex: none;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
   margin-left: 20px;
+}
+.content-top .text + .media,
+.content-top .media + .text {
+  margin-left: 20px;
+}
+.content-top .text + .media-medium,
+.content-top .media-medium + .text {
+  margin-left: 10px;
 }
 
 /* Variables =================================================== */
@@ -4925,6 +5159,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -4999,7 +5236,7 @@ h3,
     $FILTERS
 \*------------------------------------*/
 /*
-Filters #disabled#
+Filters
 
 Styleguide 2.4
 */
@@ -5075,18 +5312,18 @@ Styleguide 2.4
 }
 
 /*
-Filter keyword #disabled#
+Filter keyword
 
 Markup:
 <div class="form filters">
 	<fieldset>
 		<legend class="fieldset-title">Palabra clave</legend>
 		<ul class="filter-keyword clearfix">
-			<li class="form-field-inline keyword">
+			<li class="filter-field keyword">
 				<label for="keyword" class="hide-small-device hide-medium-device hide-large-device">Palabra clave</label>
 				<input type="text" value="" name="keyword" id="keyword" maxlength="200" class="input-little">
 			</li>
-			<li class="form-field-inline keyword-submit">
+			<li class="filter-field keyword-submit">
 				<button data-small-device="OK" data-large-device="Filtrar" onclick="searchByKeyword()" type="submit" id="buttonKeyword" class="btn btn-default btn-form-inline">Filtrar</button>
 			</li>
 		</ul>
@@ -5099,13 +5336,33 @@ Styleguide 2.4.1
   display: table;
   width: 100%;
 }
-.filter-keyword .form-field-inline {
+.filter-keyword .filter-field {
   display: table-cell;
   float: none;
   vertical-align: top;
+  padding-right: 10px;
+}
+.filter-keyword .filter-field:last-child {
+  margin-right: 0;
+  padding-right: 0;
+}
+@media only screen and (min-width: 481px) {
+  .filter-keyword .filter-field {
+    line-height: 1.4;
+  }
 }
 .filter-keyword input {
   width: 100%;
+}
+.filter-keyword button {
+  height: 44px;
+  line-height: 0;
+}
+@media only screen and (min-width: 769px) {
+  .filter-keyword button {
+    height: 30px;
+    line-height: 28px;
+  }
 }
 
 .filters .filters-selected {
@@ -5166,7 +5423,7 @@ a.closed-list:after {
 }
 
 /*
-Slider one range #disabled#
+Slider one range
 
 ```
 .js-ui-slider-pips
@@ -5183,7 +5440,7 @@ Markup:
 Styleguide 2.4.2
 */
 /*
-Slider range group #disabled#
+Slider range group
 
 ```
 .slider-value
@@ -5292,6 +5549,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -5481,6 +5741,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -5600,6 +5863,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -5700,6 +5966,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -6411,6 +6680,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -6980,6 +7252,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -7031,6 +7306,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -7130,6 +7408,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -7488,6 +7769,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -7800,6 +8084,51 @@ Styleguide 3.1.3
     modal-fade-in: 1;
   }
 }
+.mobile-header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  margin: -20px -10px 20px -10px;
+  padding-right: 0;
+}
+.container-expanded .mobile-header {
+  margin-top: -30px;
+}
+.mobile-header h1 {
+  margin: 0 0 0 25px;
+  padding: 0 10px;
+  font-size: 20px;
+  line-height: 22px;
+  color: white;
+}
+.mobile-header + form {
+  margin-top: 57px;
+}
+
+.btn-save {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  right: 10px;
+  margin-top: 15px;
+  background-color: #1a6d9b;
+}
+
+.btn-cancel {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 10px;
+  color: white;
+  margin-top: 18px;
+}
+.btn-cancel:hover {
+  color: white;
+}
+.btn-cancel.hit-area {
+  position: fixed;
+}
+
 /* Variables =================================================== */
 /*------------------------------------*\
     $FUNCTIONS
@@ -7818,6 +8147,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -7982,6 +8314,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -8225,6 +8560,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -8326,6 +8664,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -8514,6 +8855,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -8553,6 +8897,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -8576,11 +8923,19 @@ $query2     = width, device-width
     $STICKERS
 \*------------------------------------*/
 .sticker-marked {
+  font-size: 14px;
+  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
   color: #fff;
   background-color: #00a550;
+}
+@media print {
+  .sticker-marked {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
 }
 .nav-bar-notifications .sticker-marked {
   position: absolute;
@@ -8594,11 +8949,19 @@ $query2     = width, device-width
 }
 
 .sticker-secondary {
+  font-size: 14px;
+  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
   color: #fff;
   background-color: #2088c2;
+}
+@media print {
+  .sticker-secondary {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
 }
 .nav-bar-notifications .sticker-secondary {
   position: absolute;
@@ -8612,12 +8975,20 @@ $query2     = width, device-width
 }
 
 .sticker-skill {
+  font-size: 14px;
+  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
   margin: 0 5px 0 0;
   color: #2d3133;
   background-color: #d5e1e5;
+}
+@media print {
+  .sticker-skill {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
 }
 .nav-bar-notifications .sticker-skill {
   position: absolute;
@@ -8645,11 +9016,19 @@ a.sticker-skill:active,
 }
 
 .sticker-executive {
+  font-size: 14px;
+  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
   color: #fff;
   background-color: #2d3133;
+}
+@media print {
+  .sticker-executive {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
 }
 .nav-bar-notifications .sticker-executive {
   position: absolute;
@@ -8665,6 +9044,7 @@ a.sticker-skill:active,
 .sticker-small {
   padding: 0 10px;
   font-size: 12px;
+  font-family: Proximanova, Helvetica, Arial, sans-serif;
   line-height: 17px;
 }
 
@@ -8691,6 +9071,9 @@ Markup:
     float: left;
   }
 }
+/*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
 /*------------------------------------*\
     $CHOSEN
 \*------------------------------------*/
@@ -8739,14 +9122,15 @@ Styleguide 2.16
 /* @end */
 /* @group Single Chosen */
 .chosen-container-single .chosen-single {
-  position: relative;
   display: block;
+  padding: 4px 10px;
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
   overflow: hidden;
-  padding: 5px 10px;
   border: 0 none;
   text-decoration: none;
   white-space: nowrap;
-  line-height: 125%;
 }
 @media only screen and (max-width: 768px) {
   .chosen-container-single .chosen-single {
@@ -8850,7 +9234,7 @@ Styleguide 2.16
   overflow-y: auto;
   margin: 0 4px 4px 0;
   padding: 0 0 0 4px;
-  max-height: 300px;
+  max-height: 160px;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -8910,11 +9294,11 @@ Styleguide 2.16
   position: relative;
   overflow: hidden;
   margin: 0;
-  padding: 0;
+  padding: 0 30px 0 0;
   width: 100%;
   height: auto !important;
   height: 1%;
-  background-color: #fff;
+  background: url(http://media.infojobs.net/appgrade/backgrounds//bg-select-arrow.png) right 15px no-repeat #fff;
 }
 .chosen-container-multi .chosen-choices li {
   float: left;
@@ -8932,7 +9316,7 @@ Styleguide 2.16
   border: 0 !important;
   background: transparent !important;
   box-shadow: none;
-  color: #666;
+  color: #2d3133;
   font-size: 100%;
   line-height: normal;
   border-radius: 0;
@@ -8941,9 +9325,13 @@ Styleguide 2.16
   color: #999;
 }
 .chosen-container-multi .chosen-choices li.search-choice {
+  font-size: 14px;
+  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
+  font-size: 14px;
+  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
@@ -8954,6 +9342,12 @@ Styleguide 2.16
   position: relative;
   margin: 5px 0 5px 5px;
 }
+@media print {
+  .chosen-container-multi .chosen-choices li.search-choice {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
 .nav-bar-notifications .chosen-container-multi .chosen-choices li.search-choice {
   position: absolute;
   bottom: 12px;
@@ -8962,6 +9356,12 @@ Styleguide 2.16
 @media print {
   .chosen-container-multi .chosen-choices li.search-choice {
     padding: 0;
+  }
+}
+@media print {
+  .chosen-container-multi .chosen-choices li.search-choice {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
   }
 }
 .nav-bar-notifications .chosen-container-multi .chosen-choices li.search-choice {
@@ -8990,6 +9390,7 @@ Styleguide 2.16
   position: relative;
   top: 3px;
   padding: 10px 6px;
+  cursor: pointer;
   color: #999;
   font-size: 16px;
 }
@@ -9013,9 +9414,6 @@ Styleguide 2.16
 /* @group Active  */
 .chosen-container-active.chosen-with-drop .chosen-single {
   transition: none;
-  -webkit-box-shadow: 0px 0 5px rgba(102, 102, 102, 0.4);
-  -moz-box-shadow: 0px 0 5px rgba(102, 102, 102, 0.4);
-  box-shadow: 0px 0 5px rgba(102, 102, 102, 0.4);
 }
 
 .chosen-container-active.chosen-with-drop .chosen-single div {
@@ -9134,6 +9532,10 @@ Styleguide 2.16
   border: 1px solid #c7c7c7;
 }
 
+.chosen-container-multi.chosen-container-active .chosen-choices {
+  border-bottom: 1px solid #f2f2f2;
+}
+
 /* @end */
 /* @group Retina compatibility */
 /* @end */
@@ -9155,6 +9557,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -9192,12 +9597,28 @@ $query2     = width, device-width
 .skin-executive .search-bar {
   background-color: #27a8a8;
 }
-.search-bar .form-field-inline {
-  padding-right: 0;
+.search-bar .search-field {
+  float: left;
+  padding-right: 10px;
   margin-bottom: 10px;
 }
-.search-bar .form-field-inline:last-child {
+.search-bar .search-field:last-child {
   margin-bottom: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+.search-bar .search-field ul {
+  margin-top: 0;
+  margin-left: 0;
+}
+.search-bar .search-field:last-child {
+  margin-right: 0;
+  padding-right: 0;
+}
+@media only screen and (min-width: 481px) {
+  .search-bar .search-field {
+    line-height: 1.4;
+  }
 }
 .search-bar .search-keyword-field,
 .search-bar .search-country-field,
@@ -9264,7 +9685,7 @@ $query2     = width, device-width
     -moz-align-items: flex-end;
     align-items: flex-end;
   }
-  .search-bar .form-field-inline {
+  .search-bar .search-field {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -9272,10 +9693,10 @@ $query2     = width, device-width
     padding-right: 10px;
     margin-bottom: 0;
   }
-  .search-bar .form-field-inline:last-child {
+  .search-bar .search-field:last-child {
     padding-right: 0;
   }
-  .col-child .search-bar .form-field-inline {
+  .col-child .search-bar .search-field {
     -webkit-box-flex: 1 100%;
     -webkit-flex: 1 100%;
     -ms-flex: 1 100%;
@@ -9352,6 +9773,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -9495,6 +9919,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -9518,11 +9945,19 @@ $query2     = width, device-width
     $STICKERS
 \*------------------------------------*/
 .sticker-marked {
+  font-size: 14px;
+  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
   color: #fff;
   background-color: #00a550;
+}
+@media print {
+  .sticker-marked {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
 }
 .nav-bar-notifications .sticker-marked {
   position: absolute;
@@ -9536,11 +9971,19 @@ $query2     = width, device-width
 }
 
 .sticker-secondary {
+  font-size: 14px;
+  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
   color: #fff;
   background-color: #2088c2;
+}
+@media print {
+  .sticker-secondary {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
 }
 .nav-bar-notifications .sticker-secondary {
   position: absolute;
@@ -9554,12 +9997,20 @@ $query2     = width, device-width
 }
 
 .sticker-skill {
+  font-size: 14px;
+  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
   margin: 0 5px 0 0;
   color: #2d3133;
   background-color: #d5e1e5;
+}
+@media print {
+  .sticker-skill {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
 }
 .nav-bar-notifications .sticker-skill {
   position: absolute;
@@ -9587,11 +10038,19 @@ a.sticker-skill:active,
 }
 
 .sticker-executive {
+  font-size: 14px;
+  line-height: 18px;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 15px;
   color: #fff;
   background-color: #2d3133;
+}
+@media print {
+  .sticker-executive {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
 }
 .nav-bar-notifications .sticker-executive {
   position: absolute;
@@ -9607,6 +10066,7 @@ a.sticker-skill:active,
 .sticker-small {
   padding: 0 10px;
   font-size: 12px;
+  font-family: Proximanova, Helvetica, Arial, sans-serif;
   line-height: 17px;
 }
 
@@ -9651,6 +10111,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -9928,6 +10391,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -10359,6 +10825,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -10444,6 +10913,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -10553,6 +11025,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -10653,6 +11128,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -10745,6 +11223,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -10826,6 +11307,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -10953,6 +11437,7 @@ $query2     = width, device-width
   margin-bottom: 10px;
   font-size: 18px;
   line-height: 22px;
+  color: #fff;
 }
 @media only screen and (min-width: 769px) {
   .tips-list .title {
@@ -11046,6 +11531,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -11183,6 +11671,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -11246,6 +11737,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -11368,6 +11862,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -11475,6 +11972,9 @@ $MIXINS STICKERS
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -11550,6 +12050,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS
@@ -11639,6 +12142,9 @@ $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS FORMS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS

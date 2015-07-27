@@ -56,6 +56,16 @@ $MIXIN COLUMNS
 		}
 	}
 
+	.media-medium {
+		.fig-thumbnail-logo img {
+			width: 40px;
+
+			@include mediaquery ($bp-desktop) {
+				width: 60px;
+			}
+		}
+	}
+
 	.action {
 		@include flex(none);
 		margin-left: 20px;
@@ -64,5 +74,10 @@ $MIXIN COLUMNS
 	.text + .media,
 	.media + .text {
 		margin-left: 20px;
+	}
+
+	.text + .media-medium,
+	.media-medium + .text {
+		margin-left: 10px;
 	}
 }

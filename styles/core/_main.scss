@@ -267,7 +267,7 @@ img[alt] {
     }
 }
 
-.container-editable {
+.container-editable {    
     .content-middle {
         min-height: 30px;
     }
@@ -277,7 +277,7 @@ img[alt] {
             border-top: 1px solid #dae8ee;
             border-bottom: 1px solid #dae8ee;
             margin-top: -1px;
-            margin-bottom: -1px;
+            //margin-bottom: -1px;
             cursor: pointer;
 
             .action {

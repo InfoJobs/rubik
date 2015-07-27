@@ -178,6 +178,16 @@ Styleguide 1.5.1.1
   }
 }
 
+.btn-delete {
+    color: $shiro;
+    background-color: $trueblood;
+
+    &:hover,
+    &:focus {
+        background-color: darken( $trueblood, 10% );
+    }
+}
+
 ///*DEPRECATED: .btn-link-primary only used in header and 'ver_oferta.html'*/
 .btn-link-primary {
   color: $day-blue;

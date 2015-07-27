@@ -109,7 +109,8 @@ $iconfont-size: (16, 18, 22, 30, 100); //TODO: resolve problem when it s moved t
 	}
 }
 
-.iconfont-soft-script::before {
+.iconfont-soft-script::before,
+.iconfont-soft-script::after {
 	color: $soft-script;
 }
 
@@ -276,7 +277,7 @@ $icon-size: (50); //TODO: resolve problem when it s moved to _vars
 .iconfont-AlertProfile::before {
 	content: "\e627";
 }
-.iconfont-Hide::before {
+.iconfont-Hide::after {
 	content: "\e628";
 }
 .iconfont-News::before {
