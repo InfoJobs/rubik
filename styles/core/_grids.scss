@@ -381,9 +381,21 @@ Styleguide #{$sgi-equalHeightColumns}
 }
 
 .row-panel {
-	> [class*="col-"]:last-of-type {
+	> [class*="col-"]:not(.col-12-medium):last-of-type {
   		.col-child {
 	      @include mediaquery ($bp-tablet) {
+	        margin-left: 0;
+	      }
+
+		  @include mediaquery ($bp-desktop) {
+	        margin-left: 0;
+	      }
+	    }
+  	}
+
+	> [class*="col-"]:last-of-type {
+  		.col-child {
+	      @include mediaquery ($bp-desktop) {
 	        margin-left: 0;
 	      }
 	    }
