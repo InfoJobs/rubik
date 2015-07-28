@@ -20,29 +20,7 @@
 		<script type="text/javascript" src="http://es-static0.infojobs.com/js/chosen.jquery.js" th:remove="all"></script>
 		<script type="text/javascript" src="http://es-static0.infojobs.com/components/responsive/cProvincesPullDown.js" th:remove="all"></script>
 		<script type="text/javascript" src="../js/changeButtonText.js" th:remove="all"></script>
-
-		<script>
-			$('document').ready(function(){
-				var elGroupDate = document.querySelectorAll('.input-group-date input');
-				patroNum = /[\d]{2}$/;
-
-				function displayDay(){
-					if (elGroupDate[0].value.length === 2 && patroNum.test(elGroupDate[0].value)){
-						elGroupDate[1].focus();
-					}
-				}
-
-				function displayMonth(){
-					if (elGroupDate[1].value.length === 2 && patroNum.test(elGroupDate[0].value)){
-						elGroupDate[2].focus();
-					}
-				}
-
-				document.getElementById("day").addEventListener('keyup',displayDay);
-				document.getElementById("month").addEventListener('keyup',displayMonth);
-			});
-
-		</script>
+		<script type="text/javascript" src="../js/filling-date.js" th:remove="all"></script>
 	</head>
 
 	<body>
