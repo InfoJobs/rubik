@@ -97,61 +97,10 @@ Styleguide 2.8
             }
         }
     }
-
-    .title {
-        @include font-medium-line;
-        clear: left;
-        margin-top: 0;
-        margin-bottom: 0;
-
-        a {
-            color: $dark-silk;
-        }
-
-        a.discarded {
-            text-decoration: line-through;
-            color: $soft-script;
-        }
-
-        a:visited {
-            color: $soft-script;
-        }
-    }
-
-    .subtitle {
-        @include font-small-line;
-        margin-top: 0;
-        margin-bottom: 5px;
-        font-family: $base-font-family;
-
-        .skin-executive & {
-            font-size: 16px;
-        }
-
-        a {
-            color: $mid-script;
-            text-decoration: underline;
-        }
-    }
-
-    .description {
-        margin-top: 12px;
-        margin-bottom: 10px;
-        color: $mid-script;
-
-        @include mediaquery ($bp-tablet) {
-            width: 80%;
-
-            &.without-logo {
-                width: 100%;
-            }
-        }
-    }
 }
 
 .result-list > li,
 .job-list .item  {
-
     &:hover {
         @include mediaquery($bp-desktop) {
             background: #e3f5fd;
@@ -162,9 +111,60 @@ Styleguide 2.8
             }
         }
     }
-
 }
 
+.job-list-title,
+.result-list-title {
+    @include font-medium-line;
+    clear: left;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    a {
+        color: $dark-silk;
+    }
+
+    a.discarded {
+        text-decoration: line-through;
+        color: $soft-script;
+    }
+
+    a:visited {
+        color: $soft-script;
+    }
+}
+
+.job-list-subtitle,
+.result-list-subtitle {
+    @include font-small-line;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-family: $base-font-family;
+
+    .skin-executive & {
+        font-size: 16px;
+    }
+
+    a {
+        color: $mid-script;
+        text-decoration: underline;
+    }
+}
+
+.job-list-description,
+.result-list-description {
+    margin-top: 12px;
+    margin-bottom: 10px;
+    color: $mid-script;
+
+    @include mediaquery ($bp-tablet) {
+        width: 80%;
+
+        &.without-logo {
+            width: 100%;
+        }
+    }
+}
 //Used in result-list component
 .result-list {
     > li {
@@ -178,16 +178,16 @@ Styleguide 2.8
         @include inner;
         padding-bottom: 15px;
 
-        @include mediaquery($bp-tablet) {
-            padding-bottom: 15px;
-        }
-
         &.item-nohover:hover {
             @include mediaquery($bp-desktop) {
                 background: transparent;
                 cursor: inherit;
             }
         }
+
+        // & + .suggest {
+        //     border-bottom: none;
+        // }
     }
 }
 

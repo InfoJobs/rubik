@@ -10,8 +10,10 @@
 
 <link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
 
-<link rel="stylesheet" type="text/css" href="../styles/components/pagination.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/job-list.css" />
 <link rel="stylesheet" type="text/css" href="../styles/components/stickers.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/thumbnail.css" />
 
 <link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
 </head>
@@ -22,10 +24,10 @@
 			<!-- executive -->
 			<li itemtype="http://schema.org/JobPosting" itemscope="">
 				<div class="item">
-	      			<h2 class="title">
+	      			<h2 class="job-list-title">
 	  	 	     		<a onclick="" title="Executive" itemprop="url" class="lines-2 clamp" href="#"><span itemprop="title">JEFE ADMINISTRATIVO</span></a>
 	      			</h2>
-	      			<h3 class="subtitle">
+	      			<h3 class="job-list-subtitle">
 	      				<span itemtype="http://schema.org/Organization" itemscope="" itemprop="hiringOrganization" class="ellipsis">
 			      			<a href="#"><span itemprop="name">JUAN JOSE VERGES, S.A.</span></a>
 			      		</span>
@@ -49,15 +51,12 @@
 	      			<li class="alternative iconfont-Suitecase iconfont-16px">
                         Executive
                     </li>
-					<li class="alternative iconfont-Alert-circle iconfont-16px">
-	      				Urgente
-	      			</li>
 	      		</ul>
-	      		<span class="sticker  sticker-small sticker-secondary">Destacada</span>
-      			<h2 class="title">
+	      		<span class="sticker sticker-small sticker-secondary">Destacada</span>
+      			<h2 class="job-list-title">
   	 	     			<a onclick="javascript:relaunchView('item_form_codigo','5c6ecebff64ebcb7397ee5d0a16b72', '//www.infojobs.net/esplugues-de-llobregat/jefe-administrativo/of-i5c6ecebff64ebcb7397ee5d0a16b72&amp;vieneUrlExecutive=true');return false;" title="Executive" id="table_results_destacadas_offer0" itemprop="url" class="lines-2 clamp" href="//www.infojobs.net/esplugues-de-llobregat/jefe-administrativo/of-i5c6ecebff64ebcb7397ee5d0a16b72&amp;vieneUrlExecutive=true"><span itemprop="title">JEFE ADMINISTRATIVO</span></a>
       			</h2>
-      			<h3 class="subtitle">
+      			<h3 class="job-list-subtitle">
       				<span itemtype="http://schema.org/Organization" itemscope="" itemprop="hiringOrganization" class="ellipsis">
 		      			<a id="table_results_destacadas_company0" href="//www.infojobs.net/juan-jose-verges-s.a./em-i735349424538105971366015150559/ue-true"><span itemprop="name">JUAN JOSE VERGES, S.A.</span></a>
 		      		</span>
@@ -70,7 +69,7 @@
 	      				<span>Hace 5d</span>
 	      			</li>
 	       		</ul>
-	      		<p itemprop="description" class="result-list-description hide-small-device  lines-2 clamp"><span>Se requiere un jefe administrativo con funciones de director financiero que se </span><span style="display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%;">responsabilice de la ejecución y supervisión de la contabilidad, elaboración y presentación de los estados financieros, presentación de impuestos, gestión y control de costes, supervisión de las tareas administrativas, control de tesorería, supervisión de los sistemas de gestión informáticos, cumplimiento de los requisi [...]  </span></p>
+	      		<p itemprop="description" class="job-list-description hide-small-device  lines-2 clamp"><span>Se requiere un jefe administrativo con funciones de director financiero que se </span><span style="display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%;">responsabilice de la ejecución y supervisión de la contabilidad, elaboración y presentación de los estados financieros, presentación de impuestos, gestión y control de costes, supervisión de las tareas administrativas, control de tesorería, supervisión de los sistemas de gestión informáticos, cumplimiento de los requisi [...]  </span></p>
 	      		<ul class="tag-group hide-small-device">
 	      			<li itemprop="employmentType" class="tag-divider">Contrato de relevo</li>
 	      			<li itemprop="employmentType" class="tag-divider">Jornada intensiva - mañana</li>
@@ -80,87 +79,34 @@
 			<!-- /executive -->
 
 			<!-- sin logo -->
-			<li itemtype="http://schema.org/JobPosting" itemscope="">
-				<div class="item">
-		      	 	<ul class="tag-group tag-group-top clearfix">
-		      			<li class="alternative iconfont-Suitecase iconfont-16px">
-	                        Executive
-	                    </li>
-		      		</ul>
-	      			<h2 class="title">
-	  	 	     		<a title="Executive" itemprop="url" class="lines-2 clamp" href="#"><span itemprop="title">JEFE ADMINISTRATIVO</span></a>
-	      			</h2>
-	      			<h3 class="subtitle">
-	      				<span itemtype="http://schema.org/Organization" itemscope="" itemprop="hiringOrganization" class="ellipsis">
-			      			<a href="#"><span itemprop="name">JUAN JOSE VERGES, S.A.</span></a>
-			      		</span>
-	      			</h3>
+			<li itemtype="http://schema.org/JobPosting" itemscope="" class="item">
+	      	 	<ul class="tag-group tag-group-top clearfix">
+	      			<li class="alternative iconfont-Suitecase iconfont-16px">
+                        Executive
+                    </li>
+	      		</ul>
+      			<h2 class="job-list-title">
+  	 	     		<a title="Executive" itemprop="url" class="lines-2 clamp" href="#"><span itemprop="title">JEFE ADMINISTRATIVO</span></a>
+      			</h2>
+      			<h3 class="job-list-subtitle">
+      				<span itemtype="http://schema.org/Organization" itemscope="" itemprop="hiringOrganization" class="ellipsis">
+		      			<a href="#"><span itemprop="name">JUAN JOSE VERGES, S.A.</span></a>
+		      		</span>
+      			</h3>
 
-		      		<ul class="tag-group">
-		      			<li class="tag-divider tag-ellipsis-cols2">
-		      				<span itemprop="jobLocation" class="ellipsis">Esplugues Ll.</span></li>
-		      			<li>
-		      				<span class="marked">Hace 4m</span><span class="sticker sticker-small sticker-marked">Nueva</span>
-		      			</li>
-		       		</ul>
-		      		<p itemprop="description" class="result-list-description without-logo hide-small-device  lines-2 clamp"><span>Se requiere un jefe administrativo con funciones de director financiero que se </span><span style="display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%;">responsabilice de la ejecución y supervisión de la contabilidad, elaboración y presentación de los estados financieros, presentación de impuestos, gestión y control de costes, supervisión de las tareas administrativas, control de tesorería, supervisión de los sistemas de gestión informáticos, cumplimiento de los requisi [...]  </span></p>
-		      		<ul class="tag-group hide-small-device">
-		      			<li itemprop="employmentType" class="tag-divider">Contrato de relevo</li>
-		      			<li itemprop="employmentType" class="tag-divider">Jornada intensiva - mañana</li>
-		      			<li itemprop="baseSalary">46.000¤  - 46.000¤ Bruto/año</li>
-		      		</ul>
-				</div>
-				<!-- ofertas similares -->
-				<div class="job-list-suggest panel-default">
-					<p>Ofertas similares que te pueden interesar:</p>
-
-					<ul class="job-list">
-						<li>
-							<div class="item panel-canvas">
-								<h2 class="title">
-									<a onclick="" title="Executive" itemprop="url" class="lines-2 clamp" href="#"><span itemprop="title">JEFE ADMINISTRATIVO</span></a>
-								</h2>
-								<h3 class="subtitle">
-									<span itemtype="http://schema.org/Organization" itemscope="" itemprop="hiringOrganization" class="ellipsis">
-										<a href="#"><span itemprop="name">JUAN JOSE VERGES, S.A.</span></a>
-									</span>
-								</h3>
-								<ul class="tag-group">
-									<li class="tag-divider tag-ellipsis-cols2">
-										<span class="ellipsis">Manresa</span>
-									</li>
-									<li>
-										<span class="marked">Hace 4m</span>
-										<span class="sticker sticker-small sticker-marked">Nueva</span>
-									</li>
-								</ul>
-							</div>
-						</li>
-
-						<li>
-							<div class="item panel-canvas">
-								<h2 class="title">
-									<a onclick="" title="Executive" itemprop="url" class="lines-2 clamp" href="#"><span itemprop="title">JEFE ADMINISTRATIVO</span></a>
-								</h2>
-								<h3 class="subtitle">
-									<span itemtype="http://schema.org/Organization" itemscope="" itemprop="hiringOrganization" class="ellipsis">
-										<a href="#"><span itemprop="name">JUAN JOSE VERGES, S.A.</span></a>
-									</span>
-								</h3>
-								<ul class="tag-group">
-									<li class="tag-divider tag-ellipsis-cols2">
-										<span class="ellipsis">Manresa</span>
-									</li>
-									<li>
-										<span class="marked">Hace 4m</span>
-										<span class="sticker sticker-small sticker-marked">Nueva</span>
-									</li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<!-- /ofertas similares -->
+	      		<ul class="tag-group">
+	      			<li class="tag-divider tag-ellipsis-cols2">
+	      				<span itemprop="jobLocation" class="ellipsis">Esplugues Ll.</span></li>
+	      			<li>
+	      				<span class="marked">Hace 4m</span><span class="sticker sticker-small sticker-marked">Nueva</span>
+	      			</li>
+	       		</ul>
+	      		<p itemprop="description" class="job-list-description without-logo hide-small-device  lines-2 clamp"><span>Se requiere un jefe administrativo con funciones de director financiero que se </span><span style="display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%;">responsabilice de la ejecución y supervisión de la contabilidad, elaboración y presentación de los estados financieros, presentación de impuestos, gestión y control de costes, supervisión de las tareas administrativas, control de tesorería, supervisión de los sistemas de gestión informáticos, cumplimiento de los requisi [...]  </span></p>
+	      		<ul class="tag-group hide-small-device">
+	      			<li itemprop="employmentType" class="tag-divider">Contrato de relevo</li>
+	      			<li itemprop="employmentType" class="tag-divider">Jornada intensiva - mañana</li>
+	      			<li itemprop="baseSalary">46.000¤  - 46.000¤ Bruto/año</li>
+	      		</ul>
 	      	</li>
 			<!-- / sin logo -->
 
@@ -173,10 +119,10 @@
                         </span>
 	      			</li>
 	      		</ul>
-				<h2 class="title">
+				<h2 class="job-list-title">
 					<a title="Executive" itemprop="url" class="lines-2 clamp" href="#"><span itemprop="title">JEFE ADMINISTRATIVO</span></a>
 				</h2>
-				<h3 class="subtitle">
+				<h3 class="job-list-subtitle">
 					<span itemtype="http://schema.org/Organization" itemscope="" itemprop="hiringOrganization" class="ellipsis">
 						<a href="#"><span itemprop="name">JUAN JOSE VERGES, S.A.</span></a>
 					</span>
@@ -190,7 +136,7 @@
 					</li>
 					<li>(Publicada de nuevo)</li>
 				</ul>
-				<p itemprop="description" class="result-list-description without-logo hide-small-device  lines-2 clamp"><span>Se requiere un jefe administrativo con funciones de director financiero que se </span><span style="display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%;">responsabilice de la ejecución y supervisión de la contabilidad, elaboración y presentación de los estados financieros, presentación de impuestos, gestión y control de costes, supervisión de las tareas administrativas, control de tesorería, supervisión de los sistemas de gestión informáticos, cumplimiento de los requisi [...]  </span></p>
+				<p itemprop="description" class="job-list-description without-logo hide-small-device  lines-2 clamp"><span>Se requiere un jefe administrativo con funciones de director financiero que se </span><span style="display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%;">responsabilice de la ejecución y supervisión de la contabilidad, elaboración y presentación de los estados financieros, presentación de impuestos, gestión y control de costes, supervisión de las tareas administrativas, control de tesorería, supervisión de los sistemas de gestión informáticos, cumplimiento de los requisi [...]  </span></p>
 				<ul class="tag-group hide-small-device">
 					<li itemprop="employmentType" class="tag-divider">Contrato de relevo</li>
 					<li itemprop="employmentType" class="tag-divider">Jornada intensiva - mañana</li>
