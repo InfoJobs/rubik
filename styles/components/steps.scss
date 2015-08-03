@@ -5,16 +5,28 @@
     $STEPS
 \*------------------------------------*/
 
+/*
+Steps
+
+Markup:
+<ol class="steps">
+	<li class="step-focus">Paso </span>1. Step One</li>
+	<li>2. Step Two</li>
+</ol>
+
+*/
+
 .steps {
 
 	@include display-flex;
 	@include vendor-prefix('flex-flow', 'row wrap');
+	margin-bottom: 40px;
 
     li {
 
 		@include display-flex;
         @include flex;
-        padding: 0 10px;
+        padding: 0 5px;
 		overflow: hidden;
         color: $soft-script;
         border-bottom: 2px solid;
@@ -30,5 +42,12 @@
         border-bottom: 2px solid $day-blue;
 
     }
+
+	.text-center {
+	           -webkit-box-pack: center;
+	    -webkit-justify-content: center;
+	              -ms-flex-pack: center;
+	            justify-content: center;
+	}
 
 }
