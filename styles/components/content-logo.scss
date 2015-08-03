@@ -8,18 +8,18 @@
 /*
 Content logo
 
-Use class `.content-logo` nested with `.heading-addons` to center vertically text with logo.
+Use class `.content-middle` nested with `.heading-addons` to center vertically text with logo.
 
-Apply `.content-logo-text` and `.content-logo-media` to build the text and logo structure.
+Apply `.text` and `.media` to build the text and logo structure.
 
 
 Markup:
 <div class="heading-addons">
-	<div class="content-logo">
-		<div class="content-logo-text">
+	<div class="content-middle">
+		<div class="text">
 			<h1>Lorem ipsum dolor sit amet</h1>
 		</div>
-		<div class="content-logo-media">
+		<div class="media">
 			<a href="#">
 				<figure class="fig-thumbnail fig-thumbnail-logo slide-up">
 					<img title="BROS GROUP - Ofertas de trabajo" src="./media/pictures/pic-company-logo.png" alt="Lorem ipsum dolor sit amet">
@@ -35,83 +35,27 @@ Markup:
 Styleguide 2.3
 */
 
-.content-logo {
-	position: relative;
-	min-height: 60px;
-
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
+.content-middle {
+	@include columns;
 	align-items: center;
-
-	@media print {
-		min-height: auto;
-	}
-
-}
-
-.content-logo-text {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-
-	overflow: hidden;
-
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
-
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-
-	-webkit-box-flex: 1;
-	-webkit-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
-
-	ul {
-		width: 100%;
-	}
 
 	h1 {
-		width: 100%;
 		padding-top: 10px; //corrige centrado vertical exacto
+	}
+
+	h2 {
+		padding-top: 5px; //corrige centrado vertical exacto
+	}
+
+	.text {
+		align-items: center;
+
+		h1,h2,h3,ul {
+			width: 100%;
+		}
 	}
 }
 
-.content-logo-media {
-	-webkit-box-flex: none;
-	-webkit-flex: none;
-	-ms-flex: none;
-	flex: none;
-	margin-left: 20px;
-	background-color: $shiro;
-
-	a {
-	    width: 100px;
-	    height: 100px;
-	}
-
-	img {
-		display: block;
-		width: 110px;
-		padding: 4px;
-		border: 1px solid $darkest-shiro;
-	}
-
-	.fig-thumbnail-logo img {
-		border: none;
-		padding: 0;
-		width: 100px;
-	}
+.content-top {
+	@include columns;
 }
