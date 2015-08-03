@@ -43,19 +43,35 @@ Styleguide #{$sgi-lists}
 
         @at-root .small#{&} {
             margin-bottom: 5px;
+
+            @media print {
+        		font-size: ($small-font-size/$point-to-px);
+        		line-height: ($small-line-height/$point-to-px);
+        	}
         }
+
         &:last-child {
 	    	margin-bottom: 0;
 	    }
+
+        @media print {
+    		font-size: ($base-font-size/$point-to-px);
+    		line-height: ($base-line-height/$point-to-px);
+    	}
     }
 
     > dt {
         margin-bottom: 0;
-        font-weight: bold;
+        font-family: $base-font-family-bold;
     }
 
     > dd {
         margin-bottom: 20px;
+
+        @media print {
+    		font-size: ($base-font-size/$point-to-px);
+    		line-height: ($base-line-height/$point-to-px);
+    	}
     }
 }
 

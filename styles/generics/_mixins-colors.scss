@@ -1,0 +1,27 @@
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+
+@mixin script {
+	color: $dark-silk;
+
+	[class*="iconfont-"]::before {
+		color: $dark-silk;
+	}
+}
+
+@mixin focus {
+	color: $day-blue;
+
+	[class*="iconfont-"]::before {
+		color: $day-blue;
+	}
+}
+
+@mixin alert {
+	color: $trueblood;
+
+	[class*="iconfont-"]::before {
+		color: $trueblood;
+	}
+}
