@@ -28,11 +28,15 @@ Styleguide $sgi-tabs
         	}
 
 		a {
-			@include font-medium-line;
+			@include font-base-line;
 			@include vendor-prefix('flex-flow', 'row wrap');
 			padding-top: 20px;
 			padding-bottom: 20px;
 			color: $dark-silk;
+
+			@include mediaquery ($bp-desktop) {
+				@include font-medium-line;
+			}
 		}
 
     }
