@@ -1,9 +1,7 @@
 //generics
 @import "../generics/generics";
-
-//refactor
-//@import "../core/fonts";
-//@import "../core/colors";
+@import "../core/fonts";
+@import "../core/colors";
 
 /*------------------------------------*\
     $JOB LIST
@@ -12,23 +10,12 @@
 /*
 
 
-//Styleguide 2.8
+Styleguide 2.8
 */
 
-.result-list {
-    margin-bottom: 20px;
-    background: $shiro;
-    border-top: 1px solid $darkest-shiro;
+/* job-list */
 
-    .result-list-header + & {
-        margin-top: 0;
-        border-top: none;
-    }
-
-    & + .border-top { //parche a doc listado-ofertas
-        margin-bottom: 0;
-        border-top: none;
-    }
+.job-list {
 
     .inner & {
         margin: 0 -10px;
@@ -54,50 +41,107 @@
     .tag-group-top {
         height: 20px;
 
+        @include mediaquery ($bp-desktop) {
+            height: auto;
+        }
+
         li  {
             padding-right: 20px;
         }
     }
-}
 
-.result-list > li {
-    @extend %font-small-line;
-    overflow: hidden;
-    padding: 20px 10px 15px 10px;
-    border-bottom: 1px solid $darkest-shiro;
-    -webkit-touch-callout:none;
+    > li {
+        @extend %font-small-line;
+        position: relative;
+        overflow: hidden;
+        border-top: 1px solid $darkest-shiro;
+        -webkit-touch-callout:none;
 
-    p:last-child {
-        margin-bottom: 5px;
+        &:last-of-type {
+            border-bottom: 1px solid $darkest-shiro;
+        }
+    }
+
+    > .item,
+    > li {
+
+		@include inner;
+        padding-bottom: 15px;
+
+        &.item-nohover:hover {
+            @include mediaquery($bp-desktop) {
+                background: transparent;
+                cursor: inherit;
+            }
+        }
+
+	    &:hover {
+	        @include mediaquery($bp-desktop) {
+	            background: #e3f5fd;
+	            cursor: pointer;
+
+	            .action-global {
+	                visibility: visible;
+	            }
+	        }
+	    }
+
+        &.vhpt {
+			height: 1px;
+			padding: 0;
+			border: 0;
+			opacity: 0.001;
+			margin-top: -1px;
+		}
+
+        p:last-child {
+            margin-bottom: 5px;
+        }
+
+        .active {
+            background: $dark-shiro;
+            cursor: pointer;
+        }
+
+        .disabled a {
+            color: $soft-script;
+        }
+
+        .action-global {
+            float: right;
+            margin-left: 10px;
+            transition: none;
+
+            @include mediaquery ($bp-desktop) {
+                visibility: hidden;
+                transition: none;
+            }
+        }
     }
 }
 
-.result-list > li:last-child {
-    border-bottom: none;
-}
-
-
-.result-list li.active {
-    background: #F2F2F2;
-    cursor: pointer;
-}
-
-// Es redefineix el color a gris perque per disseny no pot ser blau
-// (default valor)
-
-.result-list a {
-    color: $dark-silk;
-}
-
-.result-list-title {
-    @extend %font-medium-line;
+.job-list-title {
+    @include font-medium-line;
     clear: left;
     margin-top: 0;
     margin-bottom: 0;
+
+    a {
+        color: $dark-silk;
+    }
+
+    a.discarded {
+        text-decoration: line-through;
+        color: $soft-script;
+    }
+
+    a:visited {
+        color: $soft-script;
+    }
 }
 
-.result-list-subtitle {
-    @extend %font-small-line;
+.job-list-subtitle {
+    @include font-small-line;
     margin-top: 0;
     margin-bottom: 5px;
     font-family: $base-font-family;
@@ -105,22 +149,31 @@
     .skin-executive & {
         font-size: 16px;
     }
+
+    a {
+        color: $mid-script;
+        text-decoration: underline;
+    }
 }
 
-.result-list-subtitle a:hover {
-    text-decoration: underline;
-}
-
-.result-list-description {
+.job-list-description {
     margin-top: 12px;
     margin-bottom: 10px;
     color: $mid-script;
+
+    @include mediaquery ($bp-tablet) {
+        width: 80%;
+
+        &.without-logo {
+            width: 100%;
+        }
+    }
 }
 
 // Quan hi ha logo, el nom de l'empresa ha de quedar truncat
 // per no collapsar amb el logo
 
-.result-list-logo .result-list-subtitle {
+.job-list-logo .subtitle {
     width: 70%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -128,70 +181,86 @@
     padding-left: 1px;
 }
 
-.result-list-pic-logo {
+
+/* job-list-pic-logo */
+.job-list-pic-logo {
     width: 62px;
     height: 62px;
     float: right;
     margin-left: 20px;
 
+    @include mediaquery ($bp-tablet) {
+        width: 82px;
+        height: 82px;
+    }
+
+    @include mediaquery ($bp-desktop) {
+        width: 108px;
+        height: 108px;
+    }
+
     img {
         width: 52px;
+
+        @include mediaquery ($bp-tablet) {
+            width: 72px;
+        }
+
+        @include mediaquery ($bp-desktop) {
+            width: 98px;
+        }
     }
 }
 
-// Es redefineix el color a gris perque, tot i tenir default, els anchors
-// es continuen pintant en blau i el tag-primary en verd
 
-.result-list .disabled a,
-.result-list-title a:visited {
-    color: $soft-script;
-}
+/* list-logos */
 
-.list-logos {
-    padding: 10px 0 10px 10px;
+li.list-logos {
+    padding-right: 0;
+    padding-left: 10px;
     max-height: 198px;
     overflow: hidden;
     background-color: $shiro;
+
+    @include mediaquery ($bp-tablet) {
+        padding-left: 20px;
+    }
 
     .item {
         float: left;
         width: 25%;
         overflow: hidden;
         padding-right: 10px;
+
+        @include mediaquery ($bp-tablet) {
+	        padding-right: 20px;
+	    }
+
         img {
             width: 100%;
             height: auto;
         }
+
         &:hover {
-            background-color: $shiro;
-        }
+	        background-color: transparent;
+	    }
+    }
+
+    &:hover {
+        background-color: transparent;
     }
 }
 
-.result-list > li.list-logos {
-    padding: 20px 0 20px 10px;
-}
 
-.result-list > li.list-logos:hover {
-    background-color: $shiro;
-    cursor: inherit;
-}
+/* job-list-header */
 
-.list-logos .item {
-    padding-right: 10px;
-}
-
-// cabecera en un listado de resultados
-
-.result-list-header {
+.job-list-header {
 	flex-direction: column; //TODO: make a mixin with vendors
-	padding-bottom: 0;
 
     @include mediaquery ($bp-desktop) {
     	@include display-flex;
     	flex-direction: row; //TODO: make a mixin with vendors
     	padding-bottom: 20px;
-        border-bottom: 1px solid $darkest-shiro;
     }
 
     .box {
@@ -245,7 +314,10 @@
     }
 }
 
-.result-list-footer {
+
+/* job-list-footer */
+
+.job-list-footer {
     border-top: 1px solid $darkest-shiro;
     padding: 20px 10px;
     text-align: center;
@@ -263,59 +335,48 @@
 }
 
 //ToDo: esta clase debe subsituirse por una extend de list-default
-.result-list-zero li {
+.job-list-zero li {
     color: $mid-script;
 }
 
-@include mediaquery ($bp-tablet) {
-    .result-list > li {
-        padding: 20px 20px 15px 20px;
-    }
+.job-list-suggest {
+    @include inner;
 
-    .result-list > li.list-logos {
-        padding-left: 20px;
-    }
+    > .job-list {
+        @include mediaquery ($bp-tablet) {
+            @include clearfix;
+        }
 
-    .result-list-pic-logo {
-        width: 82px;
-        height: 82px;
-        img {
-            width: 72px;
+        > li {
+            border: none;
+
+            @include mediaquery ($bp-tablet) {
+                width: 50%;
+            }
+
+            &:first-child {
+                margin-bottom: 20px;
+
+                @include mediaquery ($bp-tablet) {
+                    float: left;
+                    margin-bottom: 0;
+
+                    > .item {
+                        margin-right: 10px;
+                    }
+                }
+
+            }
+
+            &:last-child {
+                @include mediaquery ($bp-tablet) {
+                    float: right;
+
+                    > .item {
+                        margin-left: 10px;
+                    }
+                }
+            }
         }
     }
-
-    .list-logos .item {
-        padding-right: 20px;
-    }
-
-    .result-list-description {
-        width: 80%;
-        &.without-logo {
-            width: 100%;
-        }
-    }
-}
-
-@include mediaquery ($bp-desktop) {
-
-    .result-list {
-
-        .tag-group-top {
-            height: auto;
-        }
-    }
-
-    .result-list li:hover {
-        background: #e3f5fd;
-        cursor: pointer;
-    }
-
-    .result-list-pic-logo {
-        width: 108px;
-        height: 108px;
-        img {
-            width: 98px;
-        }
-    }
-
 }
