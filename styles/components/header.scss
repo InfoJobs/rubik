@@ -22,7 +22,9 @@
 	}
 
 	@media print {
-		display: none;
+		overflow: visible;
+		padding: 0;
+		margin-bottom: 20px;
 	}
 
 	h1 {
@@ -37,7 +39,7 @@
 		}
 
 		@media print {
-			display: block;
+			border-bottom: 0;
 		}
 
 	}
@@ -269,8 +271,6 @@ a.nav-bar-toggle {
 	@include flex(1 1 auto);
 	@include order(1);
 	overflow: auto;
-	padding-right: 10px;
-	padding-left: 10px;
 
 	> li {
 		float: none;
@@ -351,6 +351,10 @@ a.nav-bar-toggle {
 		@include mediaquery ($bp-header) {
 			background: $shiro;
 			border-top: 0;
+		}
+
+		@media print {
+			display: none;
 		}
 
 		li {
