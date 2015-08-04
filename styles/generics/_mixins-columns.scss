@@ -24,6 +24,10 @@ $MIXIN COLUMNS
 			-moz-hyphens: auto;
 			word-wrap: break-word;
 		}
+
+		.btn {
+			display: table;
+		}
 	}
 
 	.content-logo-media,
@@ -56,8 +60,10 @@ $MIXIN COLUMNS
 			}
 
 		}
+	}
 
-		.fig-thumbnail-logo-small {
+	.media-medium {
+		.fig-thumbnail-logo {
 			padding: 2px;
 
 			@include mediaquery ($bp-tablet) {
@@ -74,6 +80,10 @@ $MIXIN COLUMNS
 			}
 		}
 
+		.sticker-skill {
+			width: 60px;
+			text-align: center;
+		}
 	}
 
 	.action {
@@ -86,5 +96,10 @@ $MIXIN COLUMNS
 	.content-logo-media + .content-logo-text,
 	.media + .text {
 		margin-left: 20px;
+	}
+
+	.text + .media-medium,
+	.media-medium + .text {
+		margin-left: 10px;
 	}
 }
