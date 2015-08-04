@@ -34,7 +34,7 @@ Markup:
 
 Styleguide 2.3
 */
-
+.content-logo,
 .content-middle {
 	@include columns;
 	align-items: center;
@@ -47,6 +47,7 @@ Styleguide 2.3
 		padding-top: 5px; //corrige centrado vertical exacto
 	}
 
+	.content-logo-text,
 	.text {
 		align-items: center;
 
