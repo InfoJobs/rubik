@@ -72,6 +72,17 @@ select:-moz-focusring {
 	line-height: $base-line-height;
 }
 
+textarea,
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="button"],
+input[type="submit"],
+select {
+     -webkit-appearance: none;
+     border-radius: 0;
+}
+
 input,
 textarea {
 	@include input;
@@ -699,14 +710,18 @@ Styleguide 1.4.6
 }
 
 .field-group-grow { //used on edit-cv when an input + button sizes needs to be 100%
-	display: flex;
+	@include display-flex;
 
 	> div:first-of-type {
-		flex: 1 1 0;
+		@include flex;
 		margin-right: 20px;
 	}
 
 	> div:last-of-type {
-		align-self: flex-end;
+		// -webkit-align-items: flex-end;
+		// align-self: flex-end;
+		//properties above don't work on safari :(
+
+		margin-top: 25px;
 	}
 }

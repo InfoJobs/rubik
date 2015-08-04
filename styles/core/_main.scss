@@ -188,18 +188,6 @@ Markup:
 Styleguide #{$sgi-innerContainers}
 */
 
-@mixin inner {
-	padding: 20px 10px;
-
-    @include mediaquery ($bp-tablet) {
-        padding: 20px;
-    }
-
-	@media print {
-		padding: 0;
-	}
-}
-
 .content-wrapper,
 .inner {
     @include inner;
@@ -239,12 +227,6 @@ Styleguide #{$sgi-innerContainers}
 
 }
 
-.section-divider:before {
-	content: "";
-	border-top: 1px solid $darkest-shiro;
-	display: block;
-	padding-top: 20px;
-}
 .img-responsive {
 	max-width: 100%;
 	height: auto;
@@ -267,17 +249,18 @@ img[alt] {
     }
 }
 
-.container-editable {    
+.container-editable {
     .content-middle {
         min-height: 30px;
     }
+
     @include mediaquery ($bp-desktop) {
         &:hover {
             background: #f5fcff;
             border-top: 1px solid #dae8ee;
             border-bottom: 1px solid #dae8ee;
             margin-top: -1px;
-            //margin-bottom: -1px;
+            margin-bottom: -1px;
             cursor: pointer;
 
             .action {
@@ -289,6 +272,29 @@ img[alt] {
     .action {
         display: none;
     }
+
+    &.opacity {
+        opacity: 1;
+
+        .text,
+        .panel-default {
+            opacity: .5;
+        }
+    }
+}
+
+.opacity {
+    opacity: .5;
+}
+
+.list-default > li.container-editable {
+	margin-bottom: 0;
+
+	@include mediaquery ($bp-desktop) {
+		&:hover {
+			margin-bottom: -1px;
+		}
+	}
 }
 
 .inner-expanded > a:first-child > .inner.container-editable {
@@ -379,4 +385,9 @@ body {
 	content: "|";
 	padding-left: 5px;
 	color: $darkest-shiro;
+}
+
+abbr {
+    text-decoration: none;
+    cursor: help;
 }

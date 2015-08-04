@@ -8,6 +8,8 @@ $MIXINS STICKERS
     display: inline-block;
     padding: 6px 10px;
     border-radius: 15px;
+    color: $dark-silk;
+    background-color: $resting-katana;
 
     .nav-bar-notifications & {
     	position: absolute;

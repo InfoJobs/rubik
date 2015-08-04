@@ -81,19 +81,6 @@ Styleguide #{$sgi-gridSystem}
 		}
 	}
 
-	[class*="panel-"] & {
-
-		@include mediaquery ($bp-tablet) {
-			.col-child {
-				margin-right: 10px;
-			}
-		}
-
-		[class*="col-"]:last-of-type > .col-child {
-			margin-right: 0;
-		}
-	}
-
 	//row-matrioska
 	.row-matrioska {
 		.col-child.inner {
@@ -123,11 +110,6 @@ Styleguide #{$sgi-gridSystem}
 	}
 }
 
-[class*="panel-"] > .col-child {
-	margin-left: 0;
-	margin-bottom: 0;
-}
-
 /*
 Medium devices
 
@@ -150,72 +132,20 @@ Styleguide #{$sgi-mediumDevices}
 
 $gridColumns: 12;
 
-@include mediaquery ($bp-tablet) {
-	@for $i from 1 through $gridColumns {
-		.col-#{$i} {
+@for $i from 1 through $gridColumns {
+	.col-#{$i} {
+		@include mediaquery ($bp-tablet) {
 			width: ((100 / $gridColumns) * $i) * 1%;
 			float: left;
 		}
 	}
 
-	.col-6-medium {
-		width: 50%;
-	}
-
-	.col-12-medium {
-		width: 100%;
-
-		&.panel-default,
-		&.panel-canvas {
-			background: none;
-
-			> .col-child {
-				margin-left: 10px;
-
-				@include mediaquery ($bp-desktop) {
-					margin-left: 0;
-					background-color: transparent;
-				}
-			}
-
-		}
-
-		&.panel-default {
-			@include mediaquery ($bp-desktop) {
-				background-color: $dark-shiro;
-			}
-
-			> .col-child {
-				background-color: $dark-shiro;
-			}
-
-		}
-
-		&.panel-canvas {
-			@include mediaquery ($bp-desktop) {
-				background-color: $shiro;
-			}
-
-			> .col-child {
-				background-color: $shiro;
-			}
-
-		}
-
-	}
-
-}
-
-@include mediaquery ($bp-desktop) {
-
-	@for $i from 1 through $gridColumns {
-
-		.col-#{$i}.col-6-medium,
-		.col-#{$i}.col-12-medium {
+	.col-#{$i}.col-6-medium,
+	.col-#{$i}.col-12-medium {
+		@include mediaquery ($bp-desktop) {
 			width: ((100 / $gridColumns) * $i) * 1%;
 		}
 	}
-
 }
 
 [class^="col-"],
@@ -230,13 +160,60 @@ $gridColumns: 12;
 		float: none;
 		display: table-cell;
 	}
+
+	+ [class*="col-"] {
+		margin-top: 10px;
+
+		@include mediaquery ($bp-tablet) {
+			margin-top: 0;
+		}
+	}
+}
+
+
+.col-6-medium {
+	@include mediaquery ($bp-tablet) {
+		width: 50%;
+	}
+}
+
+.col-12-medium {
+	@include mediaquery ($bp-tablet) {
+		width: 100%;
+
+		+ .col-12-medium {
+			margin-top: 20px;
+		}
+	}
+
+	@include mediaquery ($bp-tablet) {
+		+ .col-12-medium {
+			margin-top: 0;
+		}
+	}
 }
 
 .col-child {
-	margin: 0 0 10px 10px;
+	max-width: calc(100% - 10px);
+	margin: 0 0 0 10px;
 
-	@include mediaquery ($bp-tablet) {
+	&.inner {
+		max-width: 100%;
+	}
+	.col-12-medium:last-of-type > & {
+
+		@include mediaquery ($bp-tablet) {
+			margin-left: 10px;
+		}
+	}
+
+	[class*="panel-"] > & { //aplica al padre del col-child: col-x
+		margin-left: 0;
 		margin-bottom: 0;
+	}
+
+	.col-child [class*="col-"]:first-of-type &[class*="panel-"] {
+		margin-left: 10px;
 	}
 
 	.aside-wrapper & {
@@ -284,6 +261,23 @@ $gridColumns: 12;
 		}
 	}
 }
+
+/*------------------------------------*\
+	$ROW PANEL
+\*------------------------------------*/
+
+.row-faux-card .col-child {
+	margin-left: 10px;
+
+	@include mediaquery ($bp-tablet) {
+		margin-left: 20px;
+	}
+}
+
+.row-faux-card [class*="col-"]:first-of-type .col-child {
+	margin-left: 10px;
+}
+
 /*------------------------------------*\
 	$ROW MATRIOSKA
 \*------------------------------------*/
@@ -335,8 +329,7 @@ Styleguide #{$sgi-equalHeightColumns}
 
 .row-faux {
 
-	> [class^="col-"]:last-of-type .col-child,
-	> [class*="col-"]:last-of-type .col-child {
+	> [class*="col-"]:last-child .col-child {
 			margin-bottom: 0;
 	}
 
@@ -354,6 +347,14 @@ Styleguide #{$sgi-equalHeightColumns}
 
 		.col-12-medium {
 			display: block;
+
+			.col-child {
+				margin-bottom: 10px;
+
+				@include mediaquery ($bp-desktop) {
+					margin-bottom: 0;
+				}
+			}
 		}
 
 		.col-child {
@@ -371,4 +372,26 @@ Styleguide #{$sgi-equalHeightColumns}
 
 	}
 
+}
+
+.row-panel {
+	> [class*="col-"]:not(.col-12-medium):last-of-type {
+  		.col-child {
+	      @include mediaquery ($bp-tablet) {
+	        margin-left: 0;
+	      }
+
+		  @include mediaquery ($bp-desktop) {
+	        margin-left: 0;
+	      }
+	    }
+  	}
+
+	> [class*="col-"]:last-of-type {
+  		.col-child {
+	      @include mediaquery ($bp-desktop) {
+	        margin-left: 0;
+	      }
+	    }
+  	}
 }
