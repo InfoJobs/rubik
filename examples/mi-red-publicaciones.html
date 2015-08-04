@@ -28,18 +28,39 @@
 
 					<div class="inner">
 						<div class="textarea inner panel-focus">
-							<textarea id="comment" name="comment" class="val_textarea1000" value="" placeholder="Mobile"></textarea>
-							<button type="submit" class="btn btn-primary btn-medium margin-top">Guardar</button>
+							<textarea class="js-placeholder-device" id="comment" name="comment" value="" placeholder="Texto para movil" data-mobile="Texto para movil" data-desktop="Texto para desktop"></textarea>
+							<button type="submit" class="btn btn-primary btn-medium margin-top">Compartir con mi red</button>
 						</div>
+
 
 						<script>
 
+						(function(){
 
+							function changePlaceholder() {
 
-								if (window.innerWidth > 481) {
+								var ePlaceholders = document.querySelectorAll(".js-placeholder-device");
 
-								    document.getElementById("comment").placeholder = "desktop";
-								};
+								[].forEach.call( ePlaceholders, function( target ){
+
+									if (window.innerWidth > 767) {
+									    // target.placeholder = target.getAttribute("data-desktop");
+									    target.placeholder = target.dataset.desktop;
+									} else {
+									    // target.placeholder = target.getAttribute("data-mobile");
+									    target.placeholder = target.dataset.mobile;
+									}
+									// equivale a un if else :
+									// window.innerWidth > 481 ? target.placeholder = target.dataset.desktop : target.placeholder = target.dataset.mobile ;
+
+								});
+
+							}
+
+							window.addEventListener('load', changePlaceholder);
+							window.addEventListener('resize', changePlaceholder);
+
+						}());
 
 
 						</script>

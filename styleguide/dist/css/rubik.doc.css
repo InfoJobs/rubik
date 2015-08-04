@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* Variables =================================================== */
 /*------------------------------------*\
     $FUNCTIONS
@@ -10,6 +9,18 @@
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -20,6 +31,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -96,6 +108,30 @@ html {
 }
 
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS
+\*------------------------------------*/
+/*
+Mediaqueries
+
+$breakpoint = $bp-tablet, $bp-desktop or specific
+$query1     = min or max
+$query2     = width, device-width
+
+*/
+/*Flexbox*/
+/*------------------------------------*\
     $CLEARFIX
 \*------------------------------------*/
 /**
@@ -105,7 +141,7 @@ html {
  *    Otherwise it causes space to appear at the top and bottom of elements
  *    that are clearfixed.
  */
-.clearfix:after {
+.clearfix::after {
   content: " ";
   display: table;
   clear: both;
@@ -271,7 +307,7 @@ Markup:
     ...
 </div>
 
-Styleguide 1.1.3
+Styleguide 1.2.4
 */
 .content-wrapper,
 .inner {
@@ -281,12 +317,6 @@ Styleguide 1.1.3
   .content-wrapper,
   .inner {
     padding: 20px;
-  }
-}
-@media print {
-  .content-wrapper,
-  .inner {
-    padding: 0;
   }
 }
 
@@ -319,13 +349,6 @@ Styleguide 1.1.3
   .inner-expanded + .inner-expanded {
     padding-top: 40px;
   }
-}
-
-.section-divider:before {
-  content: "";
-  border-top: 1px solid #e2e5e6;
-  display: block;
-  padding-top: 20px;
 }
 
 .img-responsive {
@@ -563,9 +586,11 @@ Styleguide 1.1.1
     margin: 0;
   }
 }
-.row > [class^="col-"]:last-of-type .col-child,
-.row > [class*="col-"]:last-of-type .col-child {
-  margin-bottom: 0;
+@media only screen and (min-width: 481px) {
+  .row > [class^="col-"]:last-of-type .col-child,
+  .row > [class*="col-"]:last-of-type .col-child {
+    margin-bottom: 0;
+  }
 }
 .aside-wrapper .row {
   display: table;
@@ -653,141 +678,169 @@ Styleguide 1.1.1.2
     width: 8.33333%;
     float: left;
   }
-
-  .col-2 {
-    width: 16.66667%;
-    float: left;
-  }
-
-  .col-3 {
-    width: 25%;
-    float: left;
-  }
-
-  .col-4 {
-    width: 33.33333%;
-    float: left;
-  }
-
-  .col-5 {
-    width: 41.66667%;
-    float: left;
-  }
-
-  .col-6 {
-    width: 50%;
-    float: left;
-  }
-
-  .col-7 {
-    width: 58.33333%;
-    float: left;
-  }
-
-  .col-8 {
-    width: 66.66667%;
-    float: left;
-  }
-
-  .col-9 {
-    width: 75%;
-    float: left;
-  }
-
-  .col-10 {
-    width: 83.33333%;
-    float: left;
-  }
-
-  .col-11 {
-    width: 91.66667%;
-    float: left;
-  }
-
-  .col-12 {
-    width: 100%;
-    float: left;
-  }
-
-  .col-6-medium {
-    width: 50%;
-  }
-
-  .col-12-medium {
-    width: 100%;
-  }
 }
+
 @media only screen and (min-width: 769px) {
   .col-1.col-6-medium,
   .col-1.col-12-medium {
     width: 8.33333%;
   }
+}
 
+@media only screen and (min-width: 481px) {
+  .col-2 {
+    width: 16.66667%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 769px) {
   .col-2.col-6-medium,
   .col-2.col-12-medium {
     width: 16.66667%;
   }
+}
 
+@media only screen and (min-width: 481px) {
+  .col-3 {
+    width: 25%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 769px) {
   .col-3.col-6-medium,
   .col-3.col-12-medium {
     width: 25%;
   }
+}
 
+@media only screen and (min-width: 481px) {
+  .col-4 {
+    width: 33.33333%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 769px) {
   .col-4.col-6-medium,
   .col-4.col-12-medium {
     width: 33.33333%;
   }
+}
 
+@media only screen and (min-width: 481px) {
+  .col-5 {
+    width: 41.66667%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 769px) {
   .col-5.col-6-medium,
   .col-5.col-12-medium {
     width: 41.66667%;
   }
+}
 
+@media only screen and (min-width: 481px) {
+  .col-6 {
+    width: 50%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 769px) {
   .col-6.col-6-medium,
   .col-6.col-12-medium {
     width: 50%;
   }
+}
 
+@media only screen and (min-width: 481px) {
+  .col-7 {
+    width: 58.33333%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 769px) {
   .col-7.col-6-medium,
   .col-7.col-12-medium {
     width: 58.33333%;
   }
+}
 
+@media only screen and (min-width: 481px) {
+  .col-8 {
+    width: 66.66667%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 769px) {
   .col-8.col-6-medium,
   .col-8.col-12-medium {
     width: 66.66667%;
   }
+}
 
+@media only screen and (min-width: 481px) {
+  .col-9 {
+    width: 75%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 769px) {
   .col-9.col-6-medium,
   .col-9.col-12-medium {
     width: 75%;
   }
+}
 
+@media only screen and (min-width: 481px) {
+  .col-10 {
+    width: 83.33333%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 769px) {
   .col-10.col-6-medium,
   .col-10.col-12-medium {
     width: 83.33333%;
   }
+}
 
+@media only screen and (min-width: 481px) {
+  .col-11 {
+    width: 91.66667%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 769px) {
   .col-11.col-6-medium,
   .col-11.col-12-medium {
     width: 91.66667%;
   }
+}
 
+@media only screen and (min-width: 481px) {
+  .col-12 {
+    width: 100%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 769px) {
   .col-12.col-6-medium,
   .col-12.col-12-medium {
     width: 100%;
   }
 }
-.inner [class^="col-"], .inner
-[class*="col-"] {
-  margin-right: -10px;
-}
-@media only screen and (min-width: 481px) {
-  .inner [class^="col-"], .inner
-  [class*="col-"] {
-    margin-right: 0;
-  }
-}
+
 @media print {
   [class^="col-"],
   [class*="col-"] {
@@ -800,14 +853,51 @@ Styleguide 1.1.1.2
   float: none;
   display: table-cell;
 }
-
-.col-child {
-  margin: 0 0 10px 10px;
+[class^="col-"] + [class*="col-"],
+[class*="col-"] + [class*="col-"] {
+  margin-top: 10px;
 }
 @media only screen and (min-width: 481px) {
-  .col-child {
-    margin-bottom: 0;
+  [class^="col-"] + [class*="col-"],
+  [class*="col-"] + [class*="col-"] {
+    margin-top: 0;
   }
+}
+
+@media only screen and (min-width: 481px) {
+  .col-6-medium {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 481px) {
+  .col-12-medium {
+    width: 100%;
+  }
+  .col-12-medium + .col-12-medium {
+    margin-top: 20px;
+  }
+}
+@media only screen and (min-width: 481px) {
+  .col-12-medium + .col-12-medium {
+    margin-top: 0;
+  }
+}
+
+.col-child {
+  margin: 0 0 0 10px;
+}
+@media only screen and (min-width: 481px) {
+  .col-12-medium:last-of-type > .col-child {
+    margin-left: 10px;
+  }
+}
+[class*="panel-"] > .col-child {
+  margin-left: 0;
+  margin-bottom: 0;
+}
+.col-child [class*="col-"]:first-of-type .col-child[class*="panel-"] {
+  margin-left: 10px;
 }
 .aside-wrapper .col-child {
   margin-left: 0;
@@ -863,6 +953,22 @@ Styleguide 1.1.1.2
   .row-bleed:last-of-type .col-child {
     margin-right: 10px;
   }
+}
+
+/*------------------------------------*\
+	$ROW PANEL
+\*------------------------------------*/
+.row-faux-card .col-child {
+  margin-left: 10px;
+}
+@media only screen and (min-width: 481px) {
+  .row-faux-card .col-child {
+    margin-left: 20px;
+  }
+}
+
+.row-faux-card [class*="col-"]:first-of-type .col-child {
+  margin-left: 10px;
 }
 
 /*------------------------------------*\
@@ -971,10 +1077,9 @@ Markup:
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.1.1.4
+Styleguide 1.1.1.3
 */
-.row-faux > [class^="col-"]:last-of-type .col-child,
-.row-faux > [class*="col-"]:last-of-type .col-child {
+.row-faux > [class*="col-"]:last-child .col-child {
   margin-bottom: 0;
 }
 @media only screen and (min-width: 481px) {
@@ -990,19 +1095,28 @@ Styleguide 1.1.1.4
     -o-flex-flow: row wrap;
     flex-flow: row wrap;
   }
-  .row-faux [class^="col-"],
-  .row-faux [class*="col-"] {
+  .row-faux > [class^="col-"],
+  .row-faux > [class*="col-"] {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
     float: none;
-    overflow: hidden;
   }
   .row-faux .col-12-medium {
     display: block;
   }
+  .row-faux .col-12-medium .col-child {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-width: 481px) and (min-width: 769px) {
+  .row-faux .col-12-medium .col-child {
+    margin-bottom: 0;
+  }
+}
+@media only screen and (min-width: 481px) {
   .row-faux .col-child {
     display: block;
     -webkit-box-flex: 1;
@@ -1019,6 +1133,22 @@ Styleguide 1.1.1.4
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+  }
+}
+
+@media only screen and (min-width: 481px) {
+  .row-panel > [class*="col-"]:not(.col-12-medium):last-of-type .col-child {
+    margin-left: 0;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .row-panel > [class*="col-"]:not(.col-12-medium):last-of-type .col-child {
+    margin-left: 0;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .row-panel > [class*="col-"]:last-of-type .col-child {
+    margin-left: 0;
   }
 }
 
@@ -1042,8 +1172,8 @@ p, .base, .quote {
 }
 @media print {
   p, .base, .quote {
-    font-size: 9.00023px;
-    line-height: 9.75024px;
+    font-size: 12.0003px;
+    line-height: 15.00038px;
   }
 }
 
@@ -1091,8 +1221,8 @@ p, .base, .quote {
 }
 @media print {
   p, .base, .quote {
-    font-size: 9.00023px;
-    line-height: 9.75024px;
+    font-size: 12.0003px;
+    line-height: 15.00038px;
   }
 }
 
@@ -1160,13 +1290,16 @@ Markup:
 
 Styleguide 1.2.7.1
 */
-.contrast {
+.contrast,
+.contrast[class*="iconfont-"]::before {
   color: #fff;
 }
-.contrast:hover {
+.contrast:hover,
+.contrast[class*="iconfont-"]::before:hover {
   color: #fff;
 }
-.contrast:focus {
+.contrast:focus,
+.contrast[class*="iconfont-"]::before:focus {
   color: #fff;
 }
 
@@ -1183,7 +1316,8 @@ Styleguide 1.2.7.1
 .disabled,
 .disabled:hover,
 .disabled:visited,
-.disabled:active {
+.disabled:active,
+.disabled[class*="iconfont-"]::before {
   color: #999;
   cursor: default;
 }
@@ -1192,32 +1326,40 @@ Styleguide 1.2.7.1
   text-decoration: none;
 }
 
-.marked {
+.marked,
+.marked[class*="iconfont-"]::before {
   color: #00a550;
 }
-.skin-executive .marked {
+.skin-executive .marked, .skin-executive
+.marked[class*="iconfont-"]::before {
   color: #2088c2;
 }
 
-.marked-contrast, .result-list .sticker-marked {
+.marked-contrast,
+.marked-contrast[class*="iconfont-"]::before, .result-list .sticker-marked {
   color: #fff;
   background-color: #00a550;
 }
 
-.alternative {
+.alternative,
+.alternative[class*="iconfont-"]::before {
   color: #999;
 }
 
-.alternative-action {
+.alternative-action,
+.alternative-action[class*="iconfont-"]::before {
   color: #666;
 }
-.skin-executive .alternative-action {
+.skin-executive .alternative-action, .skin-executive
+.alternative-action[class*="iconfont-"]::before {
   color: #666;
 }
-.panel-info .alternative-action {
+.panel-info .alternative-action, .panel-info
+.alternative-action[class*="iconfont-"]::before {
   color: #fff;
 }
-.panel-executive .alternative-action {
+.panel-executive .alternative-action, .panel-executive
+.alternative-action[class*="iconfont-"]::before {
   color: #fff;
 }
 
@@ -1243,7 +1385,8 @@ h1 .highlight {
 a.script,
 a.script:hover,
 a.script:visited,
-a.script:active {
+a.script:active,
+.script[class*="iconfont-"]::before {
   color: #2d3133;
 }
 
@@ -1251,12 +1394,24 @@ a.script:active {
 a.soft-script,
 a.soft-script:hover,
 a.soft-script:visited,
-a.soft-script:active {
+a.soft-script:active,
+.soft-script[class*="iconfont-"]::before {
   color: #586066;
 }
 
-.darkest-shiro {
+.darkest-shiro,
+.darkest-shiro[class*="iconfont-"]::before {
   color: #e2e5e6;
+}
+
+.focus,
+.focus[class*="iconfont-"]::before {
+  color: #2088c2;
+}
+
+.alert,
+.alert[class*="iconfont-"]::before {
+  color: #bf2102;
 }
 
 /*------------------------------------*\
@@ -1676,6 +1831,18 @@ a.soft-script:active {
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -1686,6 +1853,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -1777,6 +1945,18 @@ $query2     = width, device-width
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -1787,6 +1967,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -1816,11 +1997,7 @@ Icons
 Icons are generated as fonts. Color and size can be modified as texts.
 Use the following classes to apply an icon on a tag.
 
-<<<<<<< HEAD
-Styleguide 1.6
-=======
 Styleguide 1.7
->>>>>>> develop
 */
 /*
 Icons type
@@ -1890,19 +2067,14 @@ List of icons.
 </div>
 
 
-<<<<<<< HEAD
-Styleguide 1.6.1
-=======
 Styleguide 1.7.1.1
 
->>>>>>> develop
 */
 [class^="iconfont-"]::before,
 [class*=" iconfont-"]::before,
 [class^="iconfont-"]::after,
 [class*=" iconfont-"]::after {
   position: relative;
-  top: 4px;
   font-family: 'Icons';
   speak: none;
   font-style: normal;
@@ -1911,17 +2083,47 @@ Styleguide 1.7.1.1
   text-transform: none;
   line-height: 0;
   left: 0;
+  color: #999;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  top: 3px;
 }
 
-.btn[class*=" iconfont-"]::before {
-  margin-right: 8px;
+[class*="iconfont-"]::before {
+  margin-right: 6px;
+  font-size: 18px;
 }
-.btn-group .btn[class*=" iconfont-"]::before {
+.small[class*="iconfont-"]::before {
+  font-size: 16px;
+  margin-right: 3px;
+}
+.tag-group [class*="iconfont-"]::before {
+  font-size: 16px;
+  margin-right: 3px;
+}
+.base[class*="iconfont-"]::before {
+  font-size: 18px;
+  margin-right: 6px;
+}
+.tag-group .base[class*="iconfont-"]::before {
+  margin-right: 6px;
+}
+.medium[class*="iconfont-"]::before {
+  font-size: 20px;
+  margin-right: 6px;
+}
+.tag-group .medium[class*="iconfont-"]::before {
+  margin-right: 6px;
+}
+.btn[class*="iconfont-"]::before {
   top: 4px;
+  margin-right: 8px;
+  color: #fff;
+}
+.btn-group .btn[class*="iconfont-"]::before {
   margin-right: 0;
+  color: #2d3133;
 }
 
 /*
@@ -1942,11 +2144,7 @@ Markup:
 .iconfont-22px
 .iconfont-30px
 
-<<<<<<< HEAD
-Styleguide 1.6.2
-=======
 Styleguide 1.7.2.1
->>>>>>> develop
 */
 .iconfont-16px::before {
   font-size: 16px;
@@ -1995,6 +2193,10 @@ Styleguide 1.7.2.1
   background: url("http://media.infojobs.net/appgrade/backgrounds//icon-email-banned.png") no-repeat 0 0;
 }
 
+.icon-android {
+  background: url("http://media.infojobs.net/appgrade/backgrounds//icon-android-app.png") no-repeat 0 0;
+}
+
 .icon-50px {
   display: block;
   width: 50px;
@@ -2022,6 +2224,21 @@ Styleguide 1.7.2.1
   content: "\e603";
 }
 
+.iconfont-BurguerMenu {
+  position: relative;
+  font-family: 'Icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 0;
+  left: 0;
+  color: #999;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .iconfont-BurguerMenu::before {
   content: "\e604";
 }
@@ -2375,6 +2592,9 @@ Styleguide 1.5.1.1
   color: #fff;
   background-color: #27a8a8;
 }
+.panel-focus .btn-primary {
+  background-color: #00699b;
+}
 
 .btn-primary:hover,
 .btn-primary:focus {
@@ -2594,8 +2814,6 @@ Styleguide 1.5.1.6
 /*
 Button group
 
-<<<<<<< HEAD
-=======
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
 
 Styleguide 1.6
@@ -2604,7 +2822,6 @@ Styleguide 1.6
 /*
 Button group structure
 
->>>>>>> develop
 Use class `.btn-group` to create a button group structure.<br>
 Use class `.btn-default` for buttons inside buttons group.<br>
 Use class `.active` to highlight the selected button.<br>
@@ -2824,6 +3041,29 @@ h3,
 }
 
 /*
+Heading-addons
+
+Use class `.heading-addons` to reset margin defined for generic `<h1>`.
+
+Markup:
+<div class="heading-addons">
+	<h1>Header Level 1</h1>
+	<p>Lorem ipsum</p>
+</div>
+
+Styleguide 1.2.1.1
+*/
+.heading-addons h1,
+.heading-addons h2 {
+  margin: 0;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+/*
 Heading mega
 
 Use class `.heading-mega` for a big size heading.
@@ -2831,7 +3071,7 @@ Use class `.heading-mega` for a big size heading.
 Markup:
 <h1 class="heading-mega">Heading mega</h1>
 
-Styleguide 1.2.1.1
+Styleguide 1.2.1.2
 */
 .heading-mega {
   font-size: 25px;
@@ -2853,28 +3093,6 @@ Styleguide 1.2.1.1
 }
 
 /*
-Heading addons
-
-Use class `.heading-addons` to reset margin defined for generic `<h1>`.
-
-Markup:
-<div class="heading-addons">
-	<h1>Header Level 1</h1>
-	<p>Lorem ipsum</p>
-</div>
-
-Styleguide 1.2.1.2
-*/
-.heading-addons h1 {
-  margin: 0;
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-}
-
-/*
 Heading middle
 
 Use class `.heading-middle` to adjust headings in vertical align content.
@@ -2884,7 +3102,7 @@ Markup:
 	<h1 class="heading-middle">Header Level 1</h1>
 </div>
 
-Styleguide 1.2.1.3
+Styleguide 1.3.1.3
 */
 .heading-middle {
   padding-top: 10px;
@@ -2955,11 +3173,10 @@ Use class `.base` to force body copy size or `.medium` to increase the text size
 Markup:
 <p class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-
 .base
 .medium
 
-Styleguide 1.2.5
+Styleguide 1.2.3
 */
 /*
 Text variants
@@ -2969,11 +3186,7 @@ Use class `.bold` to bold the content. Use only on the following tags: `<p>`, `<
 Markup:
 <p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-<<<<<<< HEAD
 Styleguide 1.2.5
-=======
-Styleguide 1.2.6
->>>>>>> develop
 */
 .bold {
   font-family: Proximanovabold, Helvetica, Arial, sans-serif;
@@ -3002,7 +3215,7 @@ Markup:
 .vip-quote
 .quote
 
-Styleguide 1.2.3
+Styleguide 1.2.6
 */
 .quote {
   display: block;
@@ -3059,9 +3272,10 @@ Markup:
     <dd>De duracion determinada, jornada completa</dd>
 </dl>
 
-Styleguide 1.2.4
+Styleguide 1.2.7
 */
-.list-default > li, .list-default > dt {
+.list-default > li,
+.list-default > dt {
   display: block;
   position: relative;
   margin-bottom: 10px;
@@ -3069,15 +3283,35 @@ Styleguide 1.2.4
 .small.list-default > li, .list-default > dt {
   margin-bottom: 5px;
 }
-.list-default > li:last-child, .list-default > dt:last-child {
+@media print {
+  .small.list-default > li, .list-default > dt {
+    font-size: 10.50026px;
+    line-height: 13.50034px;
+  }
+}
+.list-default > li:last-child,
+.list-default > dt:last-child {
   margin-bottom: 0;
+}
+@media print {
+  .list-default > li,
+  .list-default > dt {
+    font-size: 12.0003px;
+    line-height: 15.00038px;
+  }
 }
 .list-default > dt {
   margin-bottom: 0;
-  font-weight: bold;
+  font-family: Proximanovabold, Helvetica, Arial, sans-serif;
 }
 .list-default > dd {
   margin-bottom: 20px;
+}
+@media print {
+  .list-default > dd {
+    font-size: 12.0003px;
+    line-height: 15.00038px;
+  }
 }
 
 /*
@@ -3092,23 +3326,15 @@ Markup:
     <li>Tipo de oferta: de duracion determinada, jornada completa</li>
 </ul>
 
-Styleguide 1.2.4.1
+Styleguide 1.2.7.1
 */
 .list-bullet-default > li,
 .list-bullet-default > dt,
 .list-bullet-default > dd {
   padding-left: 15px;
 }
-@media print {
-  .list-bullet-default > li,
-  .list-bullet-default > dt,
-  .list-bullet-default > dd {
-    margin: 0;
-  }
-}
-
-.list-bullet-default > li:before,
-.list-bullet-default > dt:before {
+.list-bullet-default > li::before,
+.list-bullet-default > dt::before {
   content: "";
   position: absolute;
   top: 6px;
@@ -3119,6 +3345,11 @@ Styleguide 1.2.4.1
   list-style-position: inside;
   border-radius: 50%;
   background-color: #999;
+}
+@media print {
+  .list-bullet-default {
+    margin: 0;
+  }
 }
 
 /*
@@ -3134,32 +3365,36 @@ Markup:
     <li class="iconfont-Check iconfont-30px iconfont-soft-script">Lorem ipsum dolor</li>
 </ul>
 
-Styleguide 1.2.4.2
+Styleguide 1.2.7.2
 */
-.list-default [class^="iconfont-"],
-.list-default [class*="iconfont-"] {
+.list-bullet-icon [class^="iconfont-"],
+.list-bullet-icon [class*="iconfont-"] {
   position: relative;
 }
-.list-default .iconfont-16px {
-  padding-left: 26px;
-}
-.list-default .iconfont-18px {
-  padding-left: 28px;
-}
-.list-default .iconfont-22px {
-  padding-left: 32px;
-}
-.list-default .iconfont-30px {
-  padding-left: 40px;
-}
-.list-default .iconfont-100px {
-  padding-left: 110px;
-}
-
-.list-bullet-icon [class^="iconfont-"]:before,
-.list-bullet-icon [class*=" iconfont-"]:before {
+.list-bullet-icon [class^="iconfont-"]::before,
+.list-bullet-icon [class*="iconfont-"]::before {
   position: absolute;
   top: 10px;
+}
+.list-bullet-icon .iconfont-16px,
+.list-bullet-icon .iconfont-16px + dd {
+  padding-left: 26px;
+}
+.list-bullet-icon .iconfont-18px,
+.list-bullet-icon .iconfont-18px + dd {
+  padding-left: 28px;
+}
+.list-bullet-icon .iconfont-22px,
+.list-bullet-icon .iconfont-22px + dd {
+  padding-left: 32px;
+}
+.list-bullet-icon .iconfont-30px,
+.list-bullet-icon .iconfont-30px + dd {
+  padding-left: 40px;
+}
+.list-bullet-icon .iconfont-100px,
+.list-bullet-icon .iconfont-100px + dd {
+  padding-left: 110px;
 }
 
 /*
@@ -3229,7 +3464,7 @@ Markup:
     <li>Lorem ipsum dolor</li>
 </ul>
 
-Styleguide
+Styleguide 1.2.7.5
 */
 .tag-group {
   overflow: hidden;
@@ -3237,7 +3472,6 @@ Styleguide
 .tag-group:last-child {
   margin-top: 10px;
 }
-
 .tag-group li {
   float: left;
   margin-bottom: 5px;
@@ -3263,7 +3497,7 @@ Markup:
     <li class>Lorem ipsum</li>
 </ul>
 
-Styleguide
+Styleguide 1.2.7.5.1
 */
 .tag-group li.tag-divider {
   margin-right: 10px;
@@ -3292,7 +3526,7 @@ Markup:
 </ul>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide
+Styleguide 1.2.7.5.2
 */
 .tag-group-top {
   margin-bottom: 10px;
@@ -3328,7 +3562,7 @@ Markup:
     <li>Lorem ipsum</li>
 </ul>
 
-Styleguide
+Styleguide 1.2.7.5.4
 */
 .tag-group .ellipsis {
   display: block;
@@ -3377,16 +3611,25 @@ legend {
   display: none;
 }
 
-label {
-  display: inline-block;
+label,
+.label {
   margin-bottom: 5px;
-  vertical-align: top;
+  font-size: 16px;
   line-height: 125%;
   color: #666;
-  font-size: 16px;
 }
-.error label:first-of-type {
+.error label:first-of-type, .error
+.label:first-of-type {
   color: #bf2102;
+}
+.success label:first-of-type, .success
+.label:first-of-type {
+  color: #00a550;
+}
+
+label {
+  display: inline-block;
+  vertical-align: top;
 }
 .panel-executive label {
   color: #bebebe;
@@ -3399,7 +3642,11 @@ select {
   font-size: 16px;
   color: #2d3133;
   border: 0 none;
+  background: url(http://media.infojobs.net/appgrade/backgrounds//bg-select-arrow.png) right 15px no-repeat #fff;
   cursor: pointer;
+}
+.error select {
+  border: 1px solid #bf2102;
 }
 
 select:-moz-focusring {
@@ -3410,19 +3657,26 @@ select:-moz-focusring {
 input,
 textarea {
   display: block;
+  padding: 4px 10px;
+  font-size: 16px;
+  line-height: 20px;
   width: 330px;
   margin: 0;
-  padding: 5px 10px;
   border: 1px solid #c7c7c7;
-  font-size: 16px;
 }
 .error input, .error
 textarea {
   border-color: #bf2102;
 }
-
-input {
-  height: 30px;
+.success input, .success
+textarea {
+  border-color: #00a550;
+  background: #effaf6;
+}
+input:focus,
+textarea:focus {
+  border: 1px solid #2088c2;
+  outline: none;
 }
 
 textarea {
@@ -3468,7 +3722,7 @@ input[type="checkbox"] + label,
 input[type="radio"] + label,
 .label-checkbox {
   cursor: pointer;
-  width: 85%;
+  max-width: 85%;
 }
 
 /*
@@ -3502,10 +3756,6 @@ Markup:
 
 Styleguide 1.4
 */
-.form {
-  width: 100%;
-}
-
 .form--field-block > li {
   margin-bottom: 20px;
   vertical-align: middle;
@@ -3514,7 +3764,16 @@ Styleguide 1.4
   margin-bottom: 0;
 }
 .form--field-block > li .info {
-  margin-top: 3px;
+  margin-bottom: 0;
+}
+.form--field-block > li .info:first-of-type {
+  margin-top: 5px;
+}
+.form--field-block > li:last-child {
+  margin-bottom: 0;
+}
+.form--field-block label {
+  width: 100%;
 }
 
 form ul .indent {
@@ -3522,29 +3781,19 @@ form ul .indent {
   margin-top: 5px;
 }
 
-form ul .form-field-inline ul {
-  margin-top: 0;
-  margin-left: 0;
-}
-
 .form-field-inline {
-  float: left;
-  padding-right: 10px;
+  display: table;
 }
-@media only screen and (min-width: 481px) {
-  .form-field-inline {
-    line-height: 1.4;
-  }
+.form-field-inline > label {
+  margin-right: 10px;
+  margin-bottom: 0;
+  vertical-align: middle;
 }
-
-.form-field-inline:last-child {
-  margin-right: 0;
-  padding-right: 0;
+.form-field-inline > input,
+.form-field-inline > .form-select {
+  display: inline-block;
 }
 
-/*.form-field-inline label {
-    margin-bottom: 5px;
-}*/
 /*
 Radio buttons / Checkbox #disabled#
 
@@ -3639,7 +3888,7 @@ Styleguide 1.4.2
 }
 
 /*
-Selects #disabled#
+Select
 
 ```
 .form-select -  Field select
@@ -3657,27 +3906,20 @@ Styleguide 1.4.3
 */
 .form-select {
   position: relative;
-  height: 30px;
-  border: 1px solid #c7c7c7;
   line-height: 14px;
   -webkit-appearance: none;
-  background: url(http://media.infojobs.net/appgrade/backgrounds//bg-select-arrow.png) right 50% no-repeat #fff;
 }
 .form-select select {
   width: 100%;
-  height: 30px;
   padding: 6px;
   text-indent: 0.01px;
   text-overflow: "";
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  position: absolute;
   top: 0;
   left: 0;
-  float: right;
   margin: 0;
-  background: none;
 }
 .form-select-disabled {
   overflow: hidden;
@@ -3708,7 +3950,23 @@ Styleguide 1.4.3
   padding: 2px;
 }
 
+/*
+Multiple select
+
+Markup:
+<label for="multiple-pulldown">Multiple pulldown</label>
+<select id="multiple-pulldown" multiple="true" class="chosen-select" data-placeholder="(Seleccionar)">
+	<option value="01">Option01</option>
+	<option value="02">Option02</option>
+	<option value="03">Option03</option>
+	<option value="04">Option04</option>
+	<option value="05">Option05</option>
+</select>
+
+Styleguide 1.4.4
+*/
 .form-select-medium {
+  /* Used in SectionCvComponent*/
   width: 350px;
 }
 
@@ -3719,10 +3977,11 @@ Input group #disabled#
 .input-group
 ```
 
-Styleguide 1.4.4
+Styleguide 1.4.5
 */
 .input-group {
   display: table;
+  width: 100%;
 }
 .input-group > div {
   display: table-cell;
@@ -3742,19 +4001,82 @@ Styleguide 1.4.4
   background-color: #fff;
   cursor: default;
 }
-.input-group-date input {
-  width: 50px;
+.input-group-date {
+  width: 178px;
+  border: 1px solid #c7c7c7;
 }
-.input-group-date div:last-child input {
+.input-group-date > div {
+  position: relative;
+}
+.input-group-date > div::before {
+  content: "|";
+  position: absolute;
+  top: 12px;
+  left: -5px;
+  color: #c7c7c7;
+}
+@media only screen and (min-width: 769px) {
+  .input-group-date > div::before {
+    top: 4px;
+  }
+}
+.input-group-date > div:first-of-type::before {
+  content: "";
+}
+.input-group-date > div input {
+  width: 50px;
+  text-align: center;
+  border: none;
+}
+.input-group-date > div:last-child input {
   width: 66px;
 }
+.error .input-group-date {
+  border: 1px solid #bf2102;
+}
 
-/*
-Fieldset title #disabled#
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-Styleguide 1.4.5
-*/
+input[type="tel"] {
+  margin-right: 20px;
+}
+@media only screen and (min-width: 769px) {
+  input[type="tel"] {
+    width: 230px;
+    float: left;
+  }
+}
+input[type="tel"] ~ label {
+  width: auto;
+  margin: 10px 0 0 0;
+}
+@media only screen and (min-width: 769px) {
+  input[type="tel"] ~ label {
+    margin-top: 4px;
+  }
+}
+input[type="tel"] ~ input {
+  margin: 12px 0 0 0;
+}
+@media only screen and (min-width: 769px) {
+  input[type="tel"] ~ input {
+    margin-top: 7px;
+  }
+}
+input[type="tel"] ~ .error-info {
+  clear: both;
+  display: block;
+  padding-top: 5px;
+}
+
 .fieldset-title {
+  /* DEPRECATED: used in registration-index + KQ + filters job search */
   display: block;
   padding-bottom: 10px;
 }
@@ -3788,13 +4110,21 @@ Markup:
   </fieldset>
 </form>
 
-Styleguide 1.4.7
+Styleguide 1.4.6
 */
 .error-info {
   margin-top: 5px;
   color: #bf2102;
   font-size: 12px;
   line-height: 110%;
+}
+
+.input-link-annex {
+  margin: 10px 0 0 0;
+}
+
+.label-annex {
+  display: inline;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3818,14 +4148,12 @@ Styleguide 1.4.7
     margin-bottom: 0;
   }
 
-  .form-select {
-    height: 44px;
-  }
-
   .form-select select {
     height: auto;
     margin-top: 2px;
     padding: 10px;
+    border-radius: 0;
+    padding-right: 30px;
   }
 
   /*already defined (and modified) at pulldown-chosen.scss */
@@ -3834,6 +4162,68 @@ Styleguide 1.4.7
     padding: 10px;
   }
 }
+.password {
+  position: relative;
+}
+.password a {
+  position: absolute;
+  top: 26px;
+  right: 1px;
+  font-size: 14px;
+  line-height: 13px;
+  padding: 15px 10px;
+}
+@media only screen and (min-width: 769px) {
+  .password a {
+    top: 25px;
+    right: 5px 10px;
+    padding: 8px;
+  }
+}
+.password input {
+  margin-bottom: 10px;
+}
+.password .meter,
+.password meter {
+  height: 7px;
+}
+.password meter {
+  width: 100%;
+  vertical-align: top;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f2f2f2;
+  /* WebKit */
+  /* Firefox */
+}
+.password meter::-webkit-meter-bar {
+  background: #f2f2f2;
+}
+.password meter::-webkit-meter-optimum-value, .password meter::-webkit-meter-suboptimum-value {
+  background: #00a550;
+}
+.password meter::-webkit-meter-even-less-good-value {
+  background: #bf2102;
+}
+.password meter:-moz-meter-optimum::-moz-meter-bar, .password meter:-moz-meter-sub-optimum::-moz-meter-bar {
+  background: #00a550;
+}
+.password meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+  background: #bf2102;
+}
+
+.field-group-grow {
+  display: flex;
+}
+.field-group-grow :first-child {
+  flex: 1 1 0;
+  margin-right: 20px;
+}
+.field-group-grow :last-child {
+  align-self: flex-end;
+}
+
 /*
 Common CSS #casper#
 
@@ -3855,6 +4245,18 @@ Styleguide 2
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -3865,6 +4267,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -3995,6 +4398,18 @@ Styleguide 1.1.3
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -4005,6 +4420,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -4118,6 +4534,18 @@ Styleguide 2.1
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -4128,6 +4556,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -4156,8 +4585,8 @@ p, .base, .quote {
 }
 @media print {
   p, .base, .quote {
-    font-size: 9.00023px;
-    line-height: 9.75024px;
+    font-size: 12.0003px;
+    line-height: 15.00038px;
   }
 }
 
@@ -4527,6 +4956,18 @@ Styleguide
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -4537,6 +4978,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -4658,6 +5100,18 @@ Styleguide 2.3
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -4668,6 +5122,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -4696,8 +5151,8 @@ p, .base, .quote {
 }
 @media print {
   p, .base, .quote {
-    font-size: 9.00023px;
-    line-height: 9.75024px;
+    font-size: 12.0003px;
+    line-height: 15.00038px;
   }
 }
 
@@ -4729,7 +5184,7 @@ h3,
     $FILTERS
 \*------------------------------------*/
 /*
-Filters #disabled#
+Filters
 
 Styleguide 2.4
 */
@@ -4805,18 +5260,18 @@ Styleguide 2.4
 }
 
 /*
-Filter keyword #disabled#
+Filter keyword
 
 Markup:
 <div class="form filters">
 	<fieldset>
 		<legend class="fieldset-title">Palabra clave</legend>
 		<ul class="filter-keyword clearfix">
-			<li class="form-field-inline keyword">
+			<li class="filter-field keyword">
 				<label for="keyword" class="hide-small-device hide-medium-device hide-large-device">Palabra clave</label>
 				<input type="text" value="" name="keyword" id="keyword" maxlength="200" class="input-little">
 			</li>
-			<li class="form-field-inline keyword-submit">
+			<li class="filter-field keyword-submit">
 				<button data-small-device="OK" data-large-device="Filtrar" onclick="searchByKeyword()" type="submit" id="buttonKeyword" class="btn btn-default btn-form-inline">Filtrar</button>
 			</li>
 		</ul>
@@ -4829,13 +5284,33 @@ Styleguide 2.4.1
   display: table;
   width: 100%;
 }
-.filter-keyword .form-field-inline {
+.filter-keyword .filter-field {
   display: table-cell;
   float: none;
   vertical-align: top;
+  padding-right: 10px;
+}
+.filter-keyword .filter-field:last-child {
+  margin-right: 0;
+  padding-right: 0;
+}
+@media only screen and (min-width: 481px) {
+  .filter-keyword .filter-field {
+    line-height: 1.4;
+  }
 }
 .filter-keyword input {
   width: 100%;
+}
+.filter-keyword button {
+  height: 44px;
+  line-height: 0;
+}
+@media only screen and (min-width: 769px) {
+  .filter-keyword button {
+    height: 30px;
+    line-height: 28px;
+  }
 }
 
 .filters .filters-selected {
@@ -4896,7 +5371,7 @@ a.closed-list:after {
 }
 
 /*
-Slider one range #disabled#
+Slider one range
 
 ```
 .js-ui-slider-pips
@@ -4913,7 +5388,7 @@ Markup:
 Styleguide 2.4.2
 */
 /*
-Slider range group #disabled#
+Slider range group
 
 ```
 .slider-value
@@ -5015,6 +5490,18 @@ Styleguide 2.4.3
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -5025,6 +5512,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -5192,6 +5680,18 @@ $query2     = width, device-width
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -5202,6 +5702,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -5211,7 +5712,7 @@ $query2     = width, device-width
 }
 
 /*------------------------------------*\
-	$HEADER MICROSITES
+    $HEADER MICROSITES
 \*------------------------------------*/
 .header-microsite {
   margin-top: -1px;
@@ -5244,7 +5745,7 @@ $query2     = width, device-width
   font-size: 20px;
   text-decoration: none;
   color: #2d3133;
-  background-image: url(//media.infojobs.net/appgrade/backgrounds/bheader-microsite-arrow-icon.png);
+  background-image: url(//media.infojobs.net/appgrade/backgrounds/bg-header-microsite-arrow-icon.png);
   background-position: right center;
   background-repeat: no-repeat;
 }
@@ -5301,6 +5802,18 @@ $query2     = width, device-width
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -5311,6 +5824,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -5322,31 +5836,6 @@ $query2     = width, device-width
 /*------------------------------------*\
     $NAVIGATION
 \*------------------------------------*/
-.nav-bar > li {
-  float: left;
-}
-
-.nav-bar > li > a {
-  display: block;
-}
-
-.nav-bar-submenu {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background: #e2e5e6;
-}
-
-.nav-bar-submenu > li > a {
-  padding: 20px 15px;
-  color: #2d3133;
-}
-
-.nav-bar-submenu > li > a:hover {
-  color: #2088c2;
-}
-
 .links-bar {
   float: right;
 }
@@ -5393,6 +5882,18 @@ $query2     = width, device-width
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -5403,6 +5904,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -5425,7 +5927,9 @@ $query2     = width, device-width
 }
 @media print {
   .global-nav {
-    display: none;
+    overflow: visible;
+    padding: 0;
+    margin-bottom: 20px;
   }
 }
 
@@ -5436,6 +5940,11 @@ $query2     = width, device-width
 .global-nav-applicant {
   background: #fff;
   border-bottom: 1px solid #e2e5e6;
+}
+@media print {
+  .global-nav-applicant {
+    border-bottom: 0;
+  }
 }
 .global-nav-applicant a,
 .global-nav-applicant a:hover {
@@ -5462,6 +5971,11 @@ $query2     = width, device-width
   border-bottom: 0;
 }
 
+.global-nav li a.active-top,
+.nav-bar-top > li > a.active-top:hover {
+  color: #2088c2;
+}
+
 .global-nav li a.active-submenu,
 .global-nav .nav-bar-top > li > a.active-submenu:hover {
   color: #2088c2;
@@ -5470,6 +5984,11 @@ $query2     = width, device-width
 .global-nav .nav-bar-submenu--executive a.active-submenu--executive,
 .global-nav .nav-bar-submenu--executive > li > a:hover {
   color: #27a8a8;
+}
+
+.global-nav .nav-bar-top-company li a.active-top,
+.global-nav .nav-bar-top-company li a.active-top:hover {
+  color: #fff;
 }
 
 .nav-bar-notifications {
@@ -5548,6 +6067,50 @@ $query2     = width, device-width
   padding: 30px 15px;
 }
 
+.nav-bar-top > li > a:hover::after,
+.nav-bar-top > li > a.active-top:after {
+  position: absolute;
+  content: '';
+  right: 10px;
+  bottom: 20px;
+  left: 10px;
+  height: 3px;
+  background-color: #2088c2;
+}
+
+.global-nav-submenu .nav-bar-top > li > a:hover::after,
+.global-nav-submenu .nav-bar-top > li > a.active-top:after {
+  bottom: 0;
+}
+
+.nav-bar-top > li > a.nav-bar-top-avatar:hover::after,
+.nav-bar-top > li > a.nav-bar-top-avatar.active-top::after,
+.nav-bar-top > li > a.nav-bar-top-noavatar:hover::after,
+.nav-bar-top > li > a.nav-bar-top-noavatar.active-top::after {
+  background: none;
+}
+
+.nav-bar-top > li > a.logo:hover::after,
+.nav-bar-top-right > li > a:hover::after {
+  background: none;
+}
+
+@media only screen and (min-width: 769px) {
+  .nav-bar-top-company.nav-bar-top-right > li > a.nav-bar-top-noavatar:hover::after {
+    position: absolute;
+    content: '';
+    right: 15px;
+    bottom: 20px;
+    left: 15px;
+    height: 3px;
+    background-color: #2088c2;
+  }
+}
+
+.global-nav-submenu-company .nav-bar-top-company.nav-bar-top-right > li > a.nav-bar-top-noavatar:hover::after {
+  background: none;
+}
+
 .nav-bar-top-left {
   float: left;
 }
@@ -5593,6 +6156,11 @@ $query2     = width, device-width
 
 .nav-bar-top-applicant > li > a {
   color: #666;
+}
+@media print {
+  .nav-bar-top-applicant > li > a {
+    display: none;
+  }
 }
 
 .global-nav .nav-bar-top-applicant > li > a:hover {
@@ -5666,6 +6234,11 @@ $query2     = width, device-width
 .nav-bar-top-toggle img {
   display: block;
 }
+@media print {
+  .nav-bar-top-toggle img {
+    display: none;
+  }
+}
 
 .nav-bar-top-login {
   float: right;
@@ -5716,25 +6289,38 @@ $query2     = width, device-width
   white-space: nowrap;
 }
 
-.global-nav-landing {
+.global-nav.global-nav-landing {
   height: 50px;
   min-height: 50px;
-  background: #2088c2;
+  background-color: #2088c2;
+  background-image: url(http://media.infojobs.net/appgrade/backgrounds/bg-logo-reduced-white.png);
+  background-position: 10px center;
+  background-repeat: no-repeat;
 }
-.global-nav-landing .nav-bar-top > li > a:hover {
+.global-nav.global-nav-landing .nav-bar-top > li > a:hover {
   background: none;
 }
-.global-nav-landing .nav-bar-top-left {
+.global-nav.global-nav-landing .nav-bar-top-left {
   position: static;
   background: none;
 }
-.global-nav-landing .nav-bar-top-left li a.logo,
-.global-nav-landing .nav-bar-top-left li a.logo:hover {
+.global-nav.global-nav-landing .nav-bar-top-left li a.logo,
+.global-nav.global-nav-landing .nav-bar-top-left li a.logo:hover {
   height: 50px;
   margin-top: 0;
   padding-top: 10px;
   border: none;
   background: none;
+}
+.global-nav.global-nav-landing .nav-bar-top-left li a.logo img,
+.global-nav.global-nav-landing .nav-bar-top-left li a.logo:hover img {
+  display: none;
+}
+@media print {
+  .global-nav.global-nav-landing .nav-bar-top-left li a.logo img,
+  .global-nav.global-nav-landing .nav-bar-top-left li a.logo:hover img {
+    display: block;
+  }
 }
 
 @media only screen and (max-width: 945px) {
@@ -5758,17 +6344,11 @@ $query2     = width, device-width
   .it .global-nav-applicant {
     background-image: url(http://media.infojobs.net/portales/it/appgrade/backgrounds/bg-logo-reduced.png);
   }
-
   .global-nav-company {
     background-image: url(http://media.infojobs.net/appgrade/backgrounds/bg-logo-reduced-white.png);
   }
   .it .global-nav-company {
     background-image: url(http://media.infojobs.net/portales/it/appgrade/backgrounds/bg-logo-reduced-white.png);
-  }
-
-  .global-nav-landing {
-    background-image: url(http://media.infojobs.net/appgrade/backgrounds/bg-logo-reduced-white.png);
-    background-position: 10px center;
   }
 
   .global-nav-applicant.global-nav-submenu {
@@ -5865,7 +6445,6 @@ $query2     = width, device-width
   .nav-bar-top-left > li > a.logo img {
     display: none;
   }
-
   .global-nav .nav-bar-top > li > a.active-top {
     color: #2d3133;
     background: none;
@@ -6038,6 +6617,18 @@ $query2     = width, device-width
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -6048,6 +6639,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -6360,6 +6952,18 @@ $query2     = width, device-width
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -6370,6 +6974,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -6403,6 +7008,18 @@ $query2     = width, device-width
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -6413,6 +7030,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -6492,6 +7110,18 @@ $query2     = width, device-width
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -6502,6 +7132,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -6837,6 +7468,18 @@ Styleguide 3
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -6847,6 +7490,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -6958,7 +7602,7 @@ Use the following structure inside the `.modal-header`, to define the closing ac
 
 Markup:
 <div class="modal-header">
-	<a title="" class="close-modal iconfont-Close iconfont-22px hit-area" href="#"></a>
+	<a title="" class="close-modal hit-area" href="#"></a>
 	<h1 class="title">Title</h1>
 </div>
 
@@ -6985,6 +7629,7 @@ Styleguide 3.1.3
   position: relative;
   padding: 20px 10px 15px 10px;
   overflow: hidden;
+  color: #fff;
   background-color: #2088c2;
 }
 @media only screen and (min-width: 481px) {
@@ -6993,35 +7638,44 @@ Styleguide 3.1.3
   }
 }
 .modal-header .title {
+  font-size: 20px;
+  line-height: 24px;
   margin: 0;
   float: left;
   padding-right: 40px;
-  color: #fff;
-  font-size: 20px;
-  line-height: 22px;
 }
 .modal-header .close-modal {
+  position: relative;
+  font-family: 'Icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 0;
+  left: 0;
+  color: #999;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   position: absolute;
-  top: 15px;
-  right: 10px;
+  top: 12px;
+  right: 5px;
+  left: auto;
   display: block;
   overflow: hidden;
   padding: 5px;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 22px;
+  line-height: 24px;
+  color: #fff;
+}
+.modal-header .close-modal::before {
+  content: "\e60a";
 }
 @media only screen and (min-width: 481px) {
   .modal-header .close-modal {
-    right: 20px;
+    right: 10px;
   }
-}
-.modal-header .close-modal.iconfont-22px:empty {
-  width: 23px;
-  height: 28px;
-}
-.modal-header .close-modal:hover,
-.modal-header .close-modal:visited,
-.modal-header .close-modal:active {
-  color: rgba(255, 255, 255, 0.5);
 }
 
 .modal-content {
@@ -7034,7 +7688,7 @@ Styleguide 3.1.3
 .modal-layer::before {
   content: "";
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -7159,6 +7813,18 @@ Styleguide 3.1.3
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -7169,6 +7835,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -7183,26 +7850,14 @@ $query2     = width, device-width
 /*
 Notifications
 
+###Notifications
 Contextual notificitions for confirmation messages.<br>
-
-The modifier classes are:<br>
-`.notification-error` for errors<br>
-`.notification-success` for success<br>
-`.notification-info` for information<br>
-`.notification-warning` for warning<br>
-
-{modifier_class}:
-
-.notification-error
-.notification-success
-.notification-info
-.notification-warning
+The modifier classes are `.notification-error` for errors, `.notification-success` for success and `.notification-info` for information.
 
 Markup:
-<<<<<<< HEAD
 <!-- Notification error -->
 <div class="notification notification-error notification-dismissable">
-	<button class="btn-close" type="button">×</button>
+	<button class="btn-close" type="button">x</button>
 	<p class="title">Lorem ipsum dolor sit</p>
 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
 </div>
@@ -7210,7 +7865,7 @@ Markup:
 <div class="container-expanded">
 <!-- Notification success -->
 <div class="notification notification-success notification-dismissable">
-	<button class="btn-close" type="button">×</button>
+	<button class="btn-close" type="button">x</button>
 	<p class="title">Lorem ipsum dolor sit</p>
 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
 </div>
@@ -7219,7 +7874,7 @@ Markup:
 <div class="container-expanded">
 <!-- Notification info -->
 <div class="notification notification-info notification-dismissable">
-	<button class="btn-close" type="button">×</button>
+	<button class="btn-close" type="button">x</button>
 	<p class="title">Lorem ipsum dolor sit</p>
 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
 </div>
@@ -7233,11 +7888,6 @@ Markup:
 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
 </div>
 <!-- /Notification info -->
-=======
-<div class="notification {{modifier_class}}">
-	<p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
-	<p class="contrast">Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="contrast link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
->>>>>>> develop
 </div>
 
 Styleguide 2.2
@@ -7293,7 +7943,6 @@ Styleguide 2.2
   color: #fff;
 }
 
-<<<<<<< HEAD
 /*
 Notifications
 
@@ -7314,8 +7963,6 @@ Markup:
 
 Styleguide 2.2.1
 */
-=======
->>>>>>> develop
 .notification-error {
   background: #bf2102;
 }
@@ -7342,20 +7989,6 @@ Styleguide 2.2.1
   color: #2d3133;
 }
 
-/*
-Notification dismissable
-
-Add class `.notification-dismissable` and tag `<button>` for a notification dismissable.
-
-Markup:
-<div class="notification notification-success notification-dismissable">
-	<button class="btn-close" type="button">×</button>
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p class="contrast">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="contrast link-underline">Link underline</a></p>
-</div>
-
-Styleguide 2.2.1.1
-*/
 .notification-dismissable {
   position: relative;
   padding-right: 70px;
@@ -7372,6 +8005,18 @@ Styleguide 2.2.1.1
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -7382,6 +8027,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -7603,6 +8249,18 @@ $query2     = width, device-width
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -7613,6 +8271,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -7696,6 +8355,18 @@ Styleguide 2.9
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -7706,6 +8377,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -7719,6 +8391,9 @@ $PANELS
 \*------------------------------------*/
 .panel-default {
   background-color: #f2f2f2;
+}
+.panel-base {
+  background-color: #e2e5e6;
 }
 .panel-canvas {
   background-color: #fff;
@@ -7872,6 +8547,18 @@ $PANELS
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -7882,6 +8569,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -7890,6 +8578,294 @@ $query2     = width, device-width
   border-radius: 0;
 }
 
+/* Variables =================================================== */
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+/**
+ * cross multiplication percentages
+ */
+/**
+ * Turn numbers with units into unitless numbers
+ */
+/*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS
+\*------------------------------------*/
+/*
+Mediaqueries
+
+$breakpoint = $bp-tablet, $bp-desktop or specific
+$query1     = min or max
+$query2     = width, device-width
+
+*/
+/*Flexbox*/
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+.tag-group li.tag-divider, .links-bar li {
+  border-right: 1px solid #e2e5e6;
+  border-radius: 0;
+}
+
+/*------------------------------------*\
+    $FONTS
+\*------------------------------------*/
+.small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+  font-size: 14px;
+  line-height: 18px;
+}
+@media print {
+  .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+
+p, .base, .quote {
+  font-size: 16px;
+  line-height: 20px;
+}
+@media print {
+  p, .base, .quote {
+    font-size: 12.0003px;
+    line-height: 15.00038px;
+  }
+}
+
+h3,
+.h3, .medium, .result-list-title {
+  font-size: 18px;
+  line-height: 22px;
+}
+@media print {
+  h3,
+  .h3, .medium, .result-list-title {
+    font-size: 13.50034px;
+    line-height: 16.50041px;
+  }
+}
+
+.carousel-claim {
+  font-size: 36px;
+  line-height: 37px;
+}
+@media print {
+  .carousel-claim {
+    font-size: 27pt;
+    line-height: 28pt;
+  }
+}
+
+/*------------------------------------*\
+    $STICKERS
+\*------------------------------------*/
+.sticker {
+  font-size: 14px;
+  line-height: 18px;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 15px;
+  color: #2d3133;
+  background-color: #d5e1e5;
+}
+@media print {
+  .sticker {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+.nav-bar-notifications .sticker {
+  position: absolute;
+  bottom: 12px;
+  right: -4px;
+}
+@media print {
+  .sticker {
+    padding: 0;
+  }
+}
+
+.sticker-marked {
+  font-size: 14px;
+  line-height: 18px;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 15px;
+  color: #2d3133;
+  background-color: #d5e1e5;
+  color: #fff;
+  background-color: #00a550;
+}
+@media print {
+  .sticker-marked {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+.nav-bar-notifications .sticker-marked {
+  position: absolute;
+  bottom: 12px;
+  right: -4px;
+}
+@media print {
+  .sticker-marked {
+    padding: 0;
+  }
+}
+.sticker-marked[class*="iconfont-"]::before {
+  color: #fff;
+}
+
+.sticker-secondary {
+  font-size: 14px;
+  line-height: 18px;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 15px;
+  color: #2d3133;
+  background-color: #d5e1e5;
+  color: #fff;
+  background-color: #2088c2;
+}
+@media print {
+  .sticker-secondary {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+.nav-bar-notifications .sticker-secondary {
+  position: absolute;
+  bottom: 12px;
+  right: -4px;
+}
+@media print {
+  .sticker-secondary {
+    padding: 0;
+  }
+}
+
+.sticker-skill {
+  font-size: 14px;
+  line-height: 18px;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 15px;
+  color: #2d3133;
+  background-color: #d5e1e5;
+  margin: 0 5px 0 0;
+  color: #2d3133;
+  background-color: #d5e1e5;
+}
+@media print {
+  .sticker-skill {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+.nav-bar-notifications .sticker-skill {
+  position: absolute;
+  bottom: 12px;
+  right: -4px;
+}
+@media print {
+  .sticker-skill {
+    padding: 0;
+  }
+}
+
+a.sticker-skill,
+.skin-executive a.sticker-skill {
+  cursor: pointer;
+}
+a.sticker-skill:hover,
+.skin-executive a.sticker-skill:hover {
+  color: #2d3133;
+  background-color: #bac7cc;
+}
+a.sticker-skill:active,
+.skin-executive a.sticker-skill:active {
+  background-color: #97a1a6;
+}
+
+.sticker-executive {
+  font-size: 14px;
+  line-height: 18px;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 15px;
+  color: #2d3133;
+  background-color: #d5e1e5;
+  color: #fff;
+  background-color: #2d3133;
+}
+@media print {
+  .sticker-executive {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+.nav-bar-notifications .sticker-executive {
+  position: absolute;
+  bottom: 12px;
+  right: -4px;
+}
+@media print {
+  .sticker-executive {
+    padding: 0;
+  }
+}
+.sticker-executive[class*="iconfont-"]::before {
+  color: #fff;
+}
+
+.sticker-small {
+  padding: 0 10px;
+  font-size: 12px;
+  line-height: 17px;
+}
+.sticker-small[class*="iconfont-"]::before {
+  font-size: 14px;
+}
+
+/*
+Sticker Tag group
+
+Use class `.tag-group` and `.tag-group-sticker` for list items inline of stickers.
+
+Markup:
+<ul class="tag-group tag-group-sticker">
+    <li><a href="#" class="sticker sticker-skill">Javascript</a></li>
+    <li><a href="#" class="sticker sticker-skill">Office</a></li>
+    <li><a href="#" class="sticker sticker-skill">HTML</a></li>
+    <li><a href="#" class="sticker sticker-skill">Java</a></li>
+</ul>
+
+*/
+.tag-group-sticker li {
+  padding-right: 0;
+}
+
+@media only screen and (min-width: 769px) {
+  .tag-group li.tag-sticker {
+    float: left;
+  }
+}
+/*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
 /*------------------------------------*\
     $CHOSEN
 \*------------------------------------*/
@@ -7905,9 +8881,14 @@ Styleguide 2.16
   font-size: 16px;
   zoom: 1;
   *display: inline;
+  border: 1px solid #c7c7c7;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+  background: url(http://media.infojobs.net/appgrade/backgrounds//bg-select-arrow.png) right 50% no-repeat #fff;
+}
+.error .chosen-container {
+  border: 1px solid #bf2102;
 }
 
 .chosen-container .chosen-drop {
@@ -7924,30 +8905,24 @@ Styleguide 2.16
   border-style: solid;
   border-color: #c7c9ca;
   background: #fff;
-  -webkit-box-shadow: 0px 6px 5px rgba(102, 102, 102, 0.4);
-  -moz-box-shadow: 0px 6px 5px rgba(102, 102, 102, 0.4);
-  box-shadow: 0px 6px 5px rgba(102, 102, 102, 0.4);
 }
 
 .chosen-container.chosen-with-drop .chosen-drop {
   left: 0;
 }
 
-.chosen-container a {
-  cursor: pointer;
-}
-
 /* @end */
 /* @group Single Chosen */
 .chosen-container-single .chosen-single {
-  position: relative;
   display: block;
+  padding: 4px 10px;
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
   overflow: hidden;
-  padding: 5px 10px;
   border: 0 none;
   text-decoration: none;
   white-space: nowrap;
-  line-height: 125%;
 }
 @media only screen and (max-width: 768px) {
   .chosen-container-single .chosen-single {
@@ -8034,7 +9009,7 @@ Styleguide 2.16
 
 .chosen-container-single .chosen-drop {
   margin-top: -3px;
-  border-radius: 0 0 4px 4px;
+  border-radius: 0;
   background-clip: padding-box;
 }
 
@@ -8049,9 +9024,9 @@ Styleguide 2.16
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
-  margin: 0 4px 4px 0;
-  padding: 0 0 0 4px;
-  max-height: 300px;
+  margin: 0;
+  padding: 0;
+  max-height: 160px;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -8059,7 +9034,7 @@ Styleguide 2.16
   display: none;
   float: none;
   margin: 0;
-  padding: 10px 2%;
+  padding: 10px;
   list-style: none;
   line-height: 15px;
   -webkit-touch-callout: none;
@@ -8111,109 +9086,121 @@ Styleguide 2.16
   position: relative;
   overflow: hidden;
   margin: 0;
-  padding: 0;
+  padding: 0 30px 0 0;
   width: 100%;
   height: auto !important;
   height: 1%;
-  border: 1px solid #aaa;
-  background-color: #fff;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, #fff));
-  background-image: -webkit-linear-gradient(#eeeeee 1%, #fff 15%);
-  background-image: -moz-linear-gradient(#eeeeee 1%, #fff 15%);
-  background-image: -o-linear-gradient(#eeeeee 1%, #fff 15%);
-  background-image: linear-gradient(#eeeeee 1%, #fff 15%);
-  cursor: text;
+  background: url(http://media.infojobs.net/appgrade/backgrounds//bg-select-arrow.png) right 15px no-repeat #fff;
 }
-
 .chosen-container-multi .chosen-choices li {
   float: left;
   list-style: none;
 }
-
 .chosen-container-multi .chosen-choices li.search-field {
   margin: 0;
   padding: 0;
   white-space: nowrap;
 }
-
 .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
   margin: 1px 0;
   padding: 5px;
-  height: 15px;
   outline: 0;
   border: 0 !important;
   background: transparent !important;
   box-shadow: none;
-  color: #666;
+  color: #2d3133;
   font-size: 100%;
-  font-family: sans-serif;
   line-height: normal;
   border-radius: 0;
 }
-
 .chosen-container-multi .chosen-choices li.search-field .default {
   color: #999;
 }
-
 .chosen-container-multi .chosen-choices li.search-choice {
-  position: relative;
-  margin: 3px 0 3px 5px;
-  padding: 3px 20px 3px 5px;
-  border: 1px solid #aaa;
-  border-radius: 3px;
-  background-color: #e4e4e4;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
-  background-image: -webkit-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -moz-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -o-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-clip: padding-box;
-  box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+  line-height: 18px;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 15px;
   color: #2d3133;
-  line-height: 13px;
-  cursor: default;
-}
-
-.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
-  position: absolute;
-  top: 4px;
-  right: 3px;
-  display: block;
-  width: 12px;
-  height: 12px;
-  background: url("chosen-sprite.png") -42px 1px no-repeat;
-  font-size: 1px;
-}
-
-.chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
-  background-position: -42px -10px;
-}
-
-.chosen-container-multi .chosen-choices li.search-choice-disabled {
+  background-color: #d5e1e5;
+  font-size: 14px;
+  line-height: 18px;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 15px;
+  color: #2d3133;
+  background-color: #d5e1e5;
+  margin: 0 5px 0 0;
+  color: #2d3133;
+  background-color: #d5e1e5;
   padding-right: 5px;
-  border: 1px solid #ccc;
-  background-color: #e4e4e4;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
-  background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -o-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  color: #666;
+  position: relative;
+  margin: 5px 0 5px 5px;
 }
-
-.chosen-container-multi .chosen-choices li.search-choice-focus {
-  background: #d4d4d4;
+@media print {
+  .chosen-container-multi .chosen-choices li.search-choice {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
 }
-
-.chosen-container-multi .chosen-choices li.search-choice-focus .search-choice-close {
-  background-position: -42px -10px;
+.nav-bar-notifications .chosen-container-multi .chosen-choices li.search-choice {
+  position: absolute;
+  bottom: 12px;
+  right: -4px;
 }
-
+@media print {
+  .chosen-container-multi .chosen-choices li.search-choice {
+    padding: 0;
+  }
+}
+@media print {
+  .chosen-container-multi .chosen-choices li.search-choice {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+.nav-bar-notifications .chosen-container-multi .chosen-choices li.search-choice {
+  position: absolute;
+  bottom: 12px;
+  right: -4px;
+}
+@media print {
+  .chosen-container-multi .chosen-choices li.search-choice {
+    padding: 0;
+  }
+}
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+  position: relative;
+  font-family: 'Icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 0;
+  left: 0;
+  color: #999;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  top: 3px;
+  padding: 10px 6px;
+  cursor: pointer;
+  color: #999;
+  font-size: 16px;
+}
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close::before {
+  content: "\e60a";
+}
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
+  color: #2d3133;
+}
 .chosen-container-multi .chosen-results {
   margin: 0;
   padding: 0;
 }
-
 .chosen-container-multi .chosen-drop .result-selected {
   display: list-item;
   color: #ccc;
@@ -8224,9 +9211,6 @@ Styleguide 2.16
 /* @group Active  */
 .chosen-container-active.chosen-with-drop .chosen-single {
   transition: none;
-  -webkit-box-shadow: 0px 0 5px rgba(102, 102, 102, 0.4);
-  -moz-box-shadow: 0px 0 5px rgba(102, 102, 102, 0.4);
-  box-shadow: 0px 0 5px rgba(102, 102, 102, 0.4);
 }
 
 .chosen-container-active.chosen-with-drop .chosen-single div {
@@ -8236,11 +9220,6 @@ Styleguide 2.16
 
 .chosen-container-active.chosen-with-drop .chosen-single div b {
   background-position: right 50%;
-}
-
-.chosen-container-active .chosen-choices {
-  border: 1px solid #5897fb;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .chosen-container-active .chosen-choices li.search-field input[type="text"] {
@@ -8346,6 +9325,14 @@ Styleguide 2.16
   background-position: -12px 2px;
 }
 
+.chosen-select {
+  border: 1px solid #c7c7c7;
+}
+
+.chosen-container-multi.chosen-container-active .chosen-choices {
+  border-bottom: 1px solid #f2f2f2;
+}
+
 /* @end */
 /* @group Retina compatibility */
 /* @end */
@@ -8360,6 +9347,18 @@ Styleguide 2.16
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -8370,6 +9369,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -8394,12 +9394,28 @@ $query2     = width, device-width
 .skin-executive .search-bar {
   background-color: #27a8a8;
 }
-.search-bar .form-field-inline {
-  padding-right: 0;
+.search-bar .search-field {
+  float: left;
+  padding-right: 10px;
   margin-bottom: 10px;
 }
-.search-bar .form-field-inline:last-child {
+.search-bar .search-field:last-child {
   margin-bottom: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+.search-bar .search-field ul {
+  margin-top: 0;
+  margin-left: 0;
+}
+.search-bar .search-field:last-child {
+  margin-right: 0;
+  padding-right: 0;
+}
+@media only screen and (min-width: 481px) {
+  .search-bar .search-field {
+    line-height: 1.4;
+  }
 }
 .search-bar .search-keyword-field,
 .search-bar .search-country-field,
@@ -8466,7 +9482,7 @@ $query2     = width, device-width
     -moz-align-items: flex-end;
     align-items: flex-end;
   }
-  .search-bar .form-field-inline {
+  .search-bar .search-field {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -8474,10 +9490,10 @@ $query2     = width, device-width
     padding-right: 10px;
     margin-bottom: 0;
   }
-  .search-bar .form-field-inline:last-child {
+  .search-bar .search-field:last-child {
     padding-right: 0;
   }
-  .col-child .search-bar .form-field-inline {
+  .col-child .search-bar .search-field {
     -webkit-box-flex: 1 100%;
     -webkit-flex: 1 100%;
     -ms-flex: 1 100%;
@@ -8547,6 +9563,18 @@ $query2     = width, device-width
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -8557,6 +9585,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -8678,6 +9707,18 @@ $query2     = width, device-width
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -8688,6 +9729,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -8697,14 +9739,71 @@ $query2     = width, device-width
 }
 
 /*------------------------------------*\
+    $FONTS
+\*------------------------------------*/
+.small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+  font-size: 14px;
+  line-height: 18px;
+}
+@media print {
+  .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+
+p, .base, .quote {
+  font-size: 16px;
+  line-height: 20px;
+}
+@media print {
+  p, .base, .quote {
+    font-size: 12.0003px;
+    line-height: 15.00038px;
+  }
+}
+
+h3,
+.h3, .medium, .result-list-title {
+  font-size: 18px;
+  line-height: 22px;
+}
+@media print {
+  h3,
+  .h3, .medium, .result-list-title {
+    font-size: 13.50034px;
+    line-height: 16.50041px;
+  }
+}
+
+.carousel-claim {
+  font-size: 36px;
+  line-height: 37px;
+}
+@media print {
+  .carousel-claim {
+    font-size: 27pt;
+    line-height: 28pt;
+  }
+}
+
+/*------------------------------------*\
     $STICKERS
 \*------------------------------------*/
 .sticker {
-  font-size: 12px;
+  font-size: 14px;
+  line-height: 18px;
   display: inline-block;
-  padding: 0 10px;
-  border-radius: 10px;
-  line-height: 17px;
+  padding: 6px 10px;
+  border-radius: 15px;
+  color: #2d3133;
+  background-color: #d5e1e5;
+}
+@media print {
+  .sticker {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
 }
 .nav-bar-notifications .sticker {
   position: absolute;
@@ -8718,36 +9817,145 @@ $query2     = width, device-width
 }
 
 .sticker-marked {
+  font-size: 14px;
+  line-height: 18px;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 15px;
+  color: #2d3133;
+  background-color: #d5e1e5;
   color: #fff;
   background-color: #00a550;
 }
+@media print {
+  .sticker-marked {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+.nav-bar-notifications .sticker-marked {
+  position: absolute;
+  bottom: 12px;
+  right: -4px;
+}
+@media print {
+  .sticker-marked {
+    padding: 0;
+  }
+}
+.sticker-marked[class*="iconfont-"]::before {
+  color: #fff;
+}
 
 .sticker-secondary {
+  font-size: 14px;
+  line-height: 18px;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 15px;
+  color: #2d3133;
+  background-color: #d5e1e5;
   color: #fff;
   background-color: #2088c2;
 }
+@media print {
+  .sticker-secondary {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+.nav-bar-notifications .sticker-secondary {
+  position: absolute;
+  bottom: 12px;
+  right: -4px;
+}
+@media print {
+  .sticker-secondary {
+    padding: 0;
+  }
+}
 
-.sticker-skill,
-.skin-executive a.sticker-skill {
-  margin: 0 5px 0 0;
-  border: 1px solid #bac7cc;
+.sticker-skill {
+  font-size: 14px;
+  line-height: 18px;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 15px;
   color: #2d3133;
   background-color: #d5e1e5;
+  margin: 0 5px 0 0;
+  color: #2d3133;
+  background-color: #d5e1e5;
+}
+@media print {
+  .sticker-skill {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+.nav-bar-notifications .sticker-skill {
+  position: absolute;
+  bottom: 12px;
+  right: -4px;
+}
+@media print {
+  .sticker-skill {
+    padding: 0;
+  }
+}
+
+a.sticker-skill,
+.skin-executive a.sticker-skill {
   cursor: pointer;
 }
-.sticker-skill:hover,
+a.sticker-skill:hover,
 .skin-executive a.sticker-skill:hover {
   color: #2d3133;
   background-color: #bac7cc;
 }
-.sticker-skill:active,
+a.sticker-skill:active,
 .skin-executive a.sticker-skill:active {
   background-color: #97a1a6;
 }
 
 .sticker-executive {
+  font-size: 14px;
+  line-height: 18px;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 15px;
+  color: #2d3133;
+  background-color: #d5e1e5;
   color: #fff;
   background-color: #2d3133;
+}
+@media print {
+  .sticker-executive {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+.nav-bar-notifications .sticker-executive {
+  position: absolute;
+  bottom: 12px;
+  right: -4px;
+}
+@media print {
+  .sticker-executive {
+    padding: 0;
+  }
+}
+.sticker-executive[class*="iconfont-"]::before {
+  color: #fff;
+}
+
+.sticker-small {
+  padding: 0 10px;
+  font-size: 12px;
+  line-height: 17px;
+}
+.sticker-small[class*="iconfont-"]::before {
+  font-size: 14px;
 }
 
 /*
@@ -8784,6 +9992,18 @@ Markup:
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -8794,6 +10014,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -9051,6 +10272,18 @@ Styleguide 2.20
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -9061,6 +10294,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -9470,6 +10704,18 @@ $query2     = width, device-width
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -9480,6 +10726,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -9547,6 +10794,18 @@ Styleguide 2.22
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -9557,6 +10816,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -9644,6 +10904,18 @@ $query2     = width, device-width
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -9654,6 +10926,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -9734,6 +11007,18 @@ Styleguide 2.24
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -9744,6 +11029,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -9816,6 +11102,18 @@ Styleguide 2.25
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -9826,6 +11124,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -9873,6 +11172,11 @@ Markup:
     height: 60px;
   }
 }
+.crop-image-small,
+.crop-circle-small {
+  width: 40px;
+  height: 40px;
+}
 
 .crop-circle {
   border-radius: 50%;
@@ -9889,6 +11193,18 @@ Markup:
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -9899,6 +11215,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -10099,6 +11416,18 @@ $query2     = width, device-width
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -10109,6 +11438,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -10137,8 +11467,8 @@ p, .base, .quote {
 }
 @media print {
   p, .base, .quote {
-    font-size: 9.00023px;
-    line-height: 9.75024px;
+    font-size: 12.0003px;
+    line-height: 15.00038px;
   }
 }
 
@@ -10224,6 +11554,18 @@ h3,
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -10234,6 +11576,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -10279,6 +11622,18 @@ $query2     = width, device-width
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -10289,6 +11644,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -10317,8 +11673,8 @@ p, .base, .quote {
 }
 @media print {
   p, .base, .quote {
-    font-size: 9.00023px;
-    line-height: 9.75024px;
+    font-size: 12.0003px;
+    line-height: 15.00038px;
   }
 }
 
@@ -10389,6 +11745,18 @@ Styleguide 2.28
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -10399,6 +11767,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -10419,56 +11788,46 @@ Markup:
 <div class="content-media content-media-dismissable inner">
 	<button type="button" class="btn-close soft-script iconfont-18px iconfont-Close"><span class="hide">Ignorar</span></button>
 	<div class="media">
-<<<<<<< HEAD
 		<img alt="" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" class="crop-circle">
 	</div>
 	<div class="body">
 		<h3 class="title"><a href="#">Juan Manuel Rodriguez</a></h3>
 		<p>Account Manager lorem ipsum <span class="alternative">en Schibsted Classified Media Spain</span></p>
 		<a href="#" class="link-underline">Contactar</a>
-=======
-		<img class="crop-circle" src="./media/pictures/pic-company-logo.png" alt="">
-	</div>
-	<div class="body">
-		<h3 class="title"><a href="#">Juan Manuel Rodriguez</a></h3>
-		<p>Account Manager <span class="alternative">en Schibsted Classified Media Spain</span></p>
->>>>>>> develop
 	</div>
 </div>
 
 */
+.content-media {
+  overflow: hidden;
+}
 .content-media .body {
-  margin-left: 70px;
+  margin-left: 80px;
 }
-@media only screen and (min-width: 481px) {
-  .content-media .body {
-    margin-left: 80px;
-  }
-<<<<<<< HEAD
-=======
-}
-@media only screen and (min-width: 769px) {
-  .content-media .body {
-    margin-left: 100px;
-  }
->>>>>>> develop
+.content-media .body p {
+  margin-bottom: 0;
 }
 .content-media .media {
   float: left;
-  padding-right: 20px;
+  padding-right: 10px;
   width: 70px;
 }
+.content-media .media.connection {
+  position: relative;
+}
+.content-media .media.connection .sticker {
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+}
 @media only screen and (min-width: 481px) {
-  .content-media .media {
-    width: 80px;
+  .content-media .media.connection .sticker {
+    left: 10px;
   }
 }
 .content-media .title {
   margin: 0;
   word-wrap: break-word;
-}
-.content-media .title a {
-  display: block;
 }
 .content-media img {
   object-fit: cover;
@@ -10481,28 +11840,55 @@ li.content-media + .content-media::before {
   border-top: 1px solid #e2e5e6;
   top: -20px;
 }
-<<<<<<< HEAD
+li.content-media.content-media-expanded + .content-media::before {
+  border: none;
+}
 .content-media .btn-close {
   position: relative;
   top: -16px;
   float: right;
+}
+.content-media-expanded {
+  margin-bottom: 10px;
+}
+.content-media-expanded:last-child {
+  margin-bottom: 0;
+}
+.content-media-form {
+  position: relative;
+  padding-top: 10px;
+  border-top: 1px solid #e2e5e6;
+}
+.content-media-form:first-child {
+  border: none;
+  padding-top: 0;
+}
+.content-media-form:first-child input {
+  top: 15px;
+}
+.content-media-form.disabled {
+  opacity: 0.5;
+}
+.content-media-form input {
+  position: absolute;
+  left: 1px;
+  top: 22px;
+}
+.content-media-form .media {
+  width: 55px;
+  margin-left: 25px;
+  padding-right: 0;
+}
+.content-media .common-contact {
+  border-top: 1px solid #e2e5e6;
+  margin: 20px -20px -10px -20px;
+  padding: 10px 20px 0 20px;
 }
 
 .content-media-dismissable .body {
   margin-right: 20px;
 }
 
-=======
-li.content-media + .content-media.margin-top::before {
-  border: none;
-}
-.content-media .btn-close {
-  position: relative;
-  top: -10px;
-  float: right;
-}
-
->>>>>>> develop
 /* Variables =================================================== */
 /*------------------------------------*\
     $FUNCTIONS
@@ -10514,6 +11900,18 @@ li.content-media + .content-media.margin-top::before {
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -10524,6 +11922,7 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -10535,6 +11934,16 @@ $query2     = width, device-width
 /*------------------------------------*\
     $STEPS
 \*------------------------------------*/
+/*
+Steps
+
+Markup:
+<ol class="steps">
+	<li class="step-focus">Paso </span>1. Step One</li>
+	<li>2. Step Two</li>
+</ol>
+
+*/
 .steps {
   display: -webkit-box;
   display: -moz-box;
@@ -10546,6 +11955,7 @@ $query2     = width, device-width
   -ms-flex-flow: row wrap;
   -o-flex-flow: row wrap;
   flex-flow: row wrap;
+  margin-bottom: 40px;
 }
 .steps li {
   display: -webkit-box;
@@ -10557,7 +11967,7 @@ $query2     = width, device-width
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  padding: 0 10px;
+  padding: 0 5px;
   overflow: hidden;
   color: #999;
   border-bottom: 2px solid;
@@ -10568,6 +11978,12 @@ $query2     = width, device-width
 .steps .step-focus {
   color: inherit;
   border-bottom: 2px solid #2088c2;
+}
+.steps .text-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 /* Variables =================================================== */
@@ -10581,6 +11997,18 @@ $query2     = width, device-width
  * Turn numbers with units into unitless numbers
  */
 /*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
 /*
@@ -10591,6 +12019,280 @@ $query1     = min or max
 $query2     = width, device-width
 
 */
+/*Flexbox*/
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+.tag-group li.tag-divider, .links-bar li {
+  border-right: 1px solid #e2e5e6;
+  border-radius: 0;
+}
+
+/*------------------------------------*\
+$KPI
+\*------------------------------------*/
+/*
+Message Page #disabled#
+
+*/
+.message-page .message-page-image {
+  text-align: center;
+}
+.message-page .message-page-image img {
+  max-width: 200px;
+  width: 100%;
+}
+.message-page .message-page-content {
+  text-align: center;
+}
+@media only screen and (min-width: 481px) {
+  .message-page .message-page-content {
+    text-align: left;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+  }
+}
+.message-page .message-page-content h1 {
+  margin: 0;
+}
+.message-page .message-page-content p {
+  margin: 0 0 5px 0;
+}
+
+/* Variables =================================================== */
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+/**
+ * cross multiplication percentages
+ */
+/**
+ * Turn numbers with units into unitless numbers
+ */
+/*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS
+\*------------------------------------*/
+/*
+Mediaqueries
+
+$breakpoint = $bp-tablet, $bp-desktop or specific
+$query1     = min or max
+$query2     = width, device-width
+
+*/
+/*Flexbox*/
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+.tag-group li.tag-divider, .links-bar li {
+  border-right: 1px solid #e2e5e6;
+  border-radius: 0;
+}
+
+/*------------------------------------*\
+    $FONTS
+\*------------------------------------*/
+.small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+  font-size: 14px;
+  line-height: 18px;
+}
+@media print {
+  .small, .tag-group, .filters p, .result-list > li, .result-list-subtitle {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+
+p, .base, .quote {
+  font-size: 16px;
+  line-height: 20px;
+}
+@media print {
+  p, .base, .quote {
+    font-size: 12.0003px;
+    line-height: 15.00038px;
+  }
+}
+
+h3,
+.h3, .medium, .result-list-title {
+  font-size: 18px;
+  line-height: 22px;
+}
+@media print {
+  h3,
+  .h3, .medium, .result-list-title {
+    font-size: 13.50034px;
+    line-height: 16.50041px;
+  }
+}
+
+.carousel-claim {
+  font-size: 36px;
+  line-height: 37px;
+}
+@media print {
+  .carousel-claim {
+    font-size: 27pt;
+    line-height: 28pt;
+  }
+}
+
+/*------------------------------------*\
+    $TIMELINE
+\*------------------------------------*/
+.timeline {
+  position: relative;
+}
+.timeline + .timeline {
+  margin-top: 60px;
+}
+.timeline .timeline-event {
+  position: relative;
+}
+.timeline .timeline-event::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 5px;
+  background: #999;
+  left: 0;
+  top: 1px;
+  margin-left: 30px;
+}
+.timeline .timeline-event:last-child::before, .timeline .timeline-event.timeline-reopened::before {
+  background: transparent;
+}
+.timeline .timeline-event .bubble {
+  padding: 20px 10px;
+  display: inline-block;
+  background: #fff;
+  margin-left: 88px;
+  margin-bottom: 40px;
+  position: relative;
+}
+@media only screen and (min-width: 481px) {
+  .timeline .timeline-event .bubble {
+    padding: 20px;
+  }
+}
+.timeline .timeline-event .bubble::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-bottom: 1em solid transparent;
+  border-right: 1em solid #fff;
+  border-top: 1em solid transparent;
+  position: absolute;
+  left: -16px;
+  top: 20px;
+  right: 0;
+  bottom: 0;
+}
+.timeline .timeline-event .bubble p {
+  margin-bottom: 0;
+}
+.timeline .timeline-event:last-child .bubble {
+  margin-bottom: 0;
+}
+.timeline .timeline-event .icon {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  background: #fff;
+  border-radius: 50%;
+  padding: 32px;
+  margin-right: 10px;
+}
+.timeline .timeline-event .icon[class*="iconfont-"]::before {
+  position: absolute;
+  top: 32px;
+  left: 17px;
+  font-size: 30px;
+}
+.timeline .timeline-event .iconfont-Close::before {
+  color: #bf2102;
+}
+.timeline .timeline-event .iconfont-Close::before [class*="iconfont-"]::before {
+  color: #bf2102;
+}
+.timeline .timeline-event .iconfont-Viewdetails::before {
+  color: #2088c2;
+}
+.timeline .timeline-event .iconfont-Viewdetails::before [class*="iconfont-"]::before {
+  color: #2088c2;
+}
+.timeline .timeline-event .iconfont-Check::before {
+  color: #2d3133;
+}
+.timeline .timeline-event .iconfont-Check::before [class*="iconfont-"]::before {
+  color: #2d3133;
+}
+.timeline .timeline-event .iconfont-Mail::before,
+.timeline .timeline-event .iconfont-Edit::before {
+  color: #999;
+}
+.timeline time {
+  font-size: 14px;
+  line-height: 18px;
+  color: #999;
+}
+@media print {
+  .timeline time {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+
+/* Variables =================================================== */
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+/**
+ * cross multiplication percentages
+ */
+/**
+ * Turn numbers with units into unitless numbers
+ */
+/*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN COLUMNS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXINS
+\*------------------------------------*/
+/*
+Mediaqueries
+
+$breakpoint = $bp-tablet, $bp-desktop or specific
+$query1     = min or max
+$query2     = width, device-width
+
+*/
+/*Flexbox*/
 /*------------------------------------*\
     $PLACEHOLDERS
 \*------------------------------------*/
@@ -10615,14 +12317,6 @@ $query2     = width, device-width
     font-size: 12pt;
     line-height: 13pt;
     height: auto;
-  }
-
-  body::before {
-    content: url("//media.infojobs.net/appgrade/backgrounds/bg-logo-claim-empleo.svg");
-    display: block;
-    width: 235px;
-    height: 80px;
-    margin-bottom: 20px;
   }
 
   footer::after {
@@ -10780,20 +12474,36 @@ $query2     = width, device-width
   border-top: 1px solid #e2e5e6;
   margin: 0;
 }
+.inner .border-top {
+  margin-right: -20px;
+  margin-left: -20px;
+}
 
 .border-right {
   border-right: 1px solid #e2e5e6;
   margin: 0;
+}
+.inner .border-right {
+  margin-right: -20px;
+  margin-left: -20px;
 }
 
 .border-bottom {
   border-bottom: 1px solid #e2e5e6;
   margin: 0;
 }
+.inner .border-bottom {
+  margin-right: -20px;
+  margin-left: -20px;
+}
 
 .border-left {
   border-left: 1px solid #e2e5e6;
   margin: 0;
+}
+.inner .border-left {
+  margin-right: -20px;
+  margin-left: -20px;
 }
 
 .border-divider {
@@ -10819,8 +12529,17 @@ $query2     = width, device-width
   padding-bottom: 0;
 }
 
+.border-top-expanded::before {
+  content: "";
+  border-top: 1px solid #e2e5e6;
+  display: block;
+}
+.panel-executive .border-top-expanded::before {
+  border-top: 1px solid #666;
+}
+
 /*------------------------------------*\
-    $MARGINS
+    $MARGINS and PADDINGS
 
     var $orientations in _vars.scss
 \*------------------------------------*/
@@ -10828,38 +12547,36 @@ $query2     = width, device-width
   margin-top: 20px;
 }
 
+.padding-top {
+  padding-top: 20px;
+}
+
 .margin-right {
   margin-right: 20px;
+}
+
+.padding-right {
+  padding-right: 20px;
 }
 
 .margin-bottom {
   margin-bottom: 20px;
 }
 
+.padding-bottom {
+  padding-bottom: 20px;
+}
+
 .margin-left {
   margin-left: 20px;
 }
 
+.padding-left {
+  padding-left: 20px;
+}
+
 .link-annex {
   margin-right: 20px;
-}
-
-.border-top-expanded {
-  position: relative;
-}
-
-.border-top-expanded::before {
-  display: block;
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 20px;
-  right: 20px;
-  height: 1px;
-  background-color: #e2e5e6;
-}
-.panel-executive .border-top-expanded::before {
-  background-color: #666;
 }
 
 /*------------------------------------*\
