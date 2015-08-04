@@ -100,35 +100,27 @@
 			background-position: 20px center;
 		}
 
-		@media print {
-			display: block;
-			overflow: visible;
-		}
+	.logo,
+	.logo:hover {
+		display: block;
+		height: 50px;
+		width: 130px;
+		margin: 0 auto;
+		padding: 10px 20px;
+		border: 0 none;
 
-		.logo {
-			@include mediaquery ($bp-header) {
-				position: relative;
-			    top: 15px;
-				padding: 15px 65px;
+		@include mediaquery ($bp-header) {
 
-				img {
-					display: none;
-				}
+			margin: 0;
+			
+			img {
+				display: none;
 			}
 
-			@media print {
-				position: relative;
-			    top: 10px;
-				padding: 0;
-				margin-bottom: 20px;
 
-				img {
-					display: block;
-					width: 138px;
-					height: 41px;
-				}
-			}
 		}
+
+	}
 
 	}
 }
@@ -265,6 +257,10 @@ a.nav-bar-toggle {
 
 	}
 
+	@media print {
+		display: none;
+	}
+
 }
 
 .nav-bar-menu {
@@ -351,10 +347,6 @@ a.nav-bar-toggle {
 		@include mediaquery ($bp-header) {
 			background: $shiro;
 			border-top: 0;
-		}
-
-		@media print {
-			display: none;
 		}
 
 		li {
