@@ -56,6 +56,24 @@ $MIXIN COLUMNS
 			}
 
 		}
+
+		.fig-thumbnail-logo-small {
+			padding: 2px;
+
+			@include mediaquery ($bp-tablet) {
+				padding: 4px;
+			}
+
+			img {
+				width: 34px;
+
+				@include mediaquery ($bp-tablet) {
+					width: 50px;
+				}
+
+			}
+		}
+
 	}
 
 	.action {

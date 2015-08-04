@@ -5,9 +5,12 @@ $MIXINS STICKERS
 
 @mixin sticker {
     @include font-small-line;
+    position: relative;
+    top: -2px;
     display: inline-block;
     padding: 6px 10px;
     border-radius: 15px;
+    font-family: $base-font-family;
     color: $dark-silk;
     background-color: $resting-katana;
 

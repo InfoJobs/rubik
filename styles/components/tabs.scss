@@ -1,0 +1,59 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+    $TABS
+\*------------------------------------*/
+
+/*
+Tabs
+
+Markup:
+<ul class="tabs">
+	<li class="tab-active">Empresa</li>
+	<li>Personas</li>
+</ul>
+
+Styleguide $sgi-tabs
+*/
+
+.tabs {
+
+    li {
+		display: inline-block;
+		font-family: $base-font-family-bold;
+
+        & + li {
+            margin-left: 20px;
+        	}
+
+		a {
+			@include font-medium-line;
+			@include vendor-prefix('flex-flow', 'row wrap');
+			padding-top: 20px;
+			padding-bottom: 20px;
+			color: $dark-silk;
+		}
+
+    }
+
+    .tab-active {
+
+		a {
+			position: relative;
+			color: $day-blue;
+
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 4px;
+				background: $day-blue;
+			}
+		}
+    }
+
+
+}
