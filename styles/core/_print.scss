@@ -5,36 +5,28 @@
     $PRINT
 \*------------------------------------*/
 
-@media print { 
+@media print {
 
     * {
         background: transparent !important;
         box-shadow: none !important;
         text-shadow: none !important;
-        
+
     }
-    
+
     html,
     body {
     	font-size: 12pt;
     	line-height: 13pt;
     	height: auto;
     }
-    
-    body::before {
-   		content: url("//media.infojobs.net/appgrade/backgrounds/bg-logo-claim-empleo.svg");
-   		display: block;
-   		width: 235px;
-   		height: 80px;
-		margin-bottom: 20px;
-	}
-	
+
     footer::after {
 		content: "@InfoJobs 2014";
 		font-size: 10.5pt;
 		display: block;
 		padding-top: 40px;
-	
+
 	}
 
     a,
@@ -92,19 +84,19 @@
     h3 {
         page-break-after: avoid;
     }
-    
+
     p,
     ul,
     ol {
     	margin-bottom: 15px;
     }
-    
+
    	.no-print, //no-print es una helper class, usar cuando no podemos ocultar el elemento por defecto o en la definicion de un componente
     .btn,
     .top-searches,
     #footer-help-companies,
     #ij-policy-disclaimer {
     	display: none!important;
-    }    
-	
+    }
+
 }
