@@ -1,0 +1,34 @@
+/*------------------------------------*\
+$MIXINS STICKERS
+\*------------------------------------*/
+//@import "../core/fonts";
+
+@mixin sticker {
+    @include font-small-line;
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 15px;
+    color: $dark-silk;
+    background-color: $resting-katana;
+
+    .nav-bar-notifications & {
+    	position: absolute;
+    	bottom: 12px;
+    	right: -4px;
+    }
+
+    @media print {
+    	padding: 0;
+    }
+}
+
+@mixin sticker-skill {
+	@include sticker;
+    margin: 0 5px 0 0;
+}
+
+@mixin sticker-multi {
+    @include sticker;
+    @include sticker-skill;
+    padding-right: 5px;
+}

@@ -11,6 +11,10 @@ $PANELS
 		background-color: $dark-shiro;
 	}
 
+	&-base {
+		background-color: $darkest-shiro;
+	}
+
 	&-canvas {
 		background-color: $shiro;
 	}
@@ -39,7 +43,6 @@ $PANELS
 		color: $shiro;
 		background-color: rgba(0, 0, 0, 0.5);
 	}
-
 }
 
 [class^="col-"].panel .col-child,

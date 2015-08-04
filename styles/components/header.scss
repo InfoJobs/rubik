@@ -13,7 +13,9 @@
 	}
 
 	@media print {
-		display: none;
+		overflow: visible;
+		padding: 0;
+		margin-bottom: 20px;
 	}
 
 }
@@ -25,6 +27,10 @@
 
 	background: $shiro;
 	border-bottom: 1px solid $darkest-shiro;
+
+	@media print {
+		border-bottom: 0;
+	}
 
 	a,
 	a:hover {
@@ -232,6 +238,10 @@
 
 .nav-bar-top-applicant > li > a {
 	color: $mid-script;
+
+	@media print {
+		display: none;
+	}
 }
 
 .global-nav .nav-bar-top-applicant > li > a:hover {
@@ -299,6 +309,11 @@
 }
 .nav-bar-top-toggle img {
 	display:block;
+
+	@media print {
+		display: none;
+	}
+
 }
 .nav-bar-top-login {
 	float:right;
@@ -345,10 +360,13 @@
 	white-space: nowrap;
 }
 
-.global-nav-landing {
+.global-nav.global-nav-landing {
 	height: 50px;
 	min-height: 50px;
-	background: $day-blue;
+	background-color: $day-blue;
+	background-image: url(#{$path-media}/appgrade/backgrounds/bg-logo-reduced-white.png);
+	background-position: 10px center;
+	background-repeat: no-repeat;
 
 	.nav-bar-top > li > a:hover {
 		background: none;
@@ -366,6 +384,14 @@
 		padding-top: 10px;
 		border: none;
 		background: none;
+
+		img {
+			display: none;
+
+			@media print {
+				display: block;
+			}
+		}
 	}
 }
 
@@ -392,6 +418,10 @@
 			//bg logo it
 			background-image: url(#{$path-media}/portales/it/appgrade/backgrounds/bg-logo-reduced.png);
 		}
+
+		@media print {
+			border-bottom: none;
+		}
 	}
 	.global-nav-company {
 		background-image: url(#{$path-media}/appgrade/backgrounds/bg-logo-reduced-white.png);
@@ -406,10 +436,6 @@
 	//	background: $dark-silk;
 	//}
 
-	.global-nav-landing {
-		background-image: url(#{$path-media}/appgrade/backgrounds/bg-logo-reduced-white.png);
-		background-position: 10px center;
-	}
 	.global-nav-applicant.global-nav-submenu {
 		border-bottom: 1px solid $darkest-shiro;
 	}
@@ -502,6 +528,10 @@
 
 	.nav-bar-top-left > li > a.logo img {
 		display: none;
+
+		@media print {
+			display: block;
+		}
 	}
 
 	.global-nav .nav-bar-top > li > a.active-top {

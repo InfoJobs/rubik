@@ -9,7 +9,7 @@
 \*------------------------------------*/
 
 /*
-Filters #disabled#
+Filters
 
 Styleguide 2.4
 */
@@ -99,18 +99,18 @@ Styleguide 2.4
 }
 
 /*
-Filter keyword #disabled#
+Filter keyword
 
 Markup:
 <div class="form filters">
 	<fieldset>
 		<legend class="fieldset-title">Palabra clave</legend>
 		<ul class="filter-keyword clearfix">
-			<li class="form-field-inline keyword">
+			<li class="filter-field keyword">
 				<label for="keyword" class="hide-small-device hide-medium-device hide-large-device">Palabra clave</label>
 				<input type="text" value="" name="keyword" id="keyword" maxlength="200" class="input-little">
 			</li>
-			<li class="form-field-inline keyword-submit">
+			<li class="filter-field keyword-submit">
 				<button data-small-device="OK" data-large-device="Filtrar" onclick="searchByKeyword()" type="submit" id="buttonKeyword" class="btn btn-default btn-form-inline">Filtrar</button>
 			</li>
 		</ul>
@@ -124,14 +124,35 @@ Styleguide 2.4.1
 	display: table;
 	width: 100%;
 
-	.form-field-inline {
+	.filter-field {
 		display: table-cell;
 		float: none;
 		vertical-align: top;
+		padding-right: 10px;
+
+		&:last-child {
+			margin-right: 0;
+			padding-right: 0;
+		}
+
+		@media only screen and (min-width: $bp-tablet) {
+			line-height: 1.4;
+		}
 	}
 
 	input {
 		width: 100%;
+	}
+
+	button {
+		height: 44px;
+		line-height: 0;
+
+		@include mediaquery ($bp-desktop) {
+            height: 30px;
+			line-height: 28px;
+        }
+
 	}
 }
 
@@ -201,7 +222,7 @@ a.closed-list:after {
 }
 
 /*
-Slider one range #disabled#
+Slider one range
 
 ```
 .js-ui-slider-pips
@@ -219,7 +240,7 @@ Styleguide 2.4.2
 */
 
 /*
-Slider range group #disabled#
+Slider range group
 
 ```
 .slider-value
