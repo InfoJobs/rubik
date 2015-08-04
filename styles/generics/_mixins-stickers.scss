@@ -8,6 +8,8 @@ $MIXINS STICKERS
     display: inline-block;
     padding: 6px 10px;
     border-radius: 15px;
+    color: $dark-silk;
+    background-color: $resting-katana;
 
     .nav-bar-notifications & {
     	position: absolute;
@@ -23,8 +25,6 @@ $MIXINS STICKERS
 @mixin sticker-skill {
 	@include sticker;
     margin: 0 5px 0 0;
-    color: $dark-silk;
-    background-color: $resting-katana;
 }
 
 @mixin sticker-multi {

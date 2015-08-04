@@ -27,8 +27,8 @@
 	line-height: $base-line-height;
 
 	@media print {
-		font-size: ($xsmall-font-size/$point-to-px);
-		line-height: ($xsmall-line-height/$point-to-px);
+		font-size: ($base-font-size/$point-to-px);
+		line-height: ($base-line-height/$point-to-px);
 	}
 }
 
@@ -37,8 +37,8 @@
 	line-height: $base-line-height;
 
 	@media print {
-		font-size: ($xsmall-font-size/$point-to-px);
-		line-height: ($xsmall-line-height/$point-to-px);
+		font-size: ($base-font-size/$point-to-px);
+		line-height: ($base-line-height/$point-to-px);
 	}
 }
 

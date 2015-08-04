@@ -219,12 +219,6 @@ Styleguide #{$sgi-innerContainers}
 
 }
 
-.section-divider:before {
-	content: "";
-	border-top: 1px solid $darkest-shiro;
-	display: block;
-	padding-top: 20px;
-}
 .img-responsive {
 	max-width: 100%;
 	height: auto;
