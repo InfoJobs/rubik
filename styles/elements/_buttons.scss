@@ -122,6 +122,11 @@ Styleguide 1.5.1.1
     color: $shiro;
     background-color: $mediterranean-sea;
   }
+
+  .panel-focus & {
+      background-color: $late-blue;
+    }
+
 }
 
 .btn-primary:hover,
