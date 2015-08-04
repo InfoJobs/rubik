@@ -14,6 +14,7 @@
 
 <link rel="stylesheet" type="text/css" href="../styles/elements/tools.css" />
 
+<script type="text/javascript" src="../js/change-placeholder.js"></script>
 
 </head>
 <body>
@@ -32,38 +33,17 @@
 							<button type="submit" class="btn btn-primary btn-medium margin-top">Compartir con mi red</button>
 						</div>
 
+					</div>
 
-						<script>
-
-						(function(){
-
-							function changePlaceholder() {
-
-								var ePlaceholders = document.querySelectorAll(".js-placeholder-device");
-
-								[].forEach.call( ePlaceholders, function( target ){
-
-									if (window.innerWidth > 767) {
-									    // target.placeholder = target.getAttribute("data-desktop");
-									    target.placeholder = target.dataset.desktop;
-									} else {
-									    // target.placeholder = target.getAttribute("data-mobile");
-									    target.placeholder = target.dataset.mobile;
-									}
-									// equivale a un if else :
-									// window.innerWidth > 481 ? target.placeholder = target.dataset.desktop : target.placeholder = target.dataset.mobile ;
-
-								});
-
-							}
-
-							window.addEventListener('load', changePlaceholder);
-							window.addEventListener('resize', changePlaceholder);
-
-						}());
-
-
-						</script>
+					<div class="inner content-media">
+						<div class="media">
+							<img alt="" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" class="crop-circle">
+						</div>
+						<div class="body">
+							<h3 class="title"><a href="#">Juan Manuel</a> a&ntilde;adi&oacute; 5 conocimientos a su CV</h3>
+							<p>Account Manager lorem ipsum <span class="alternative">en Schibsted Classified Media Spain</span></p>
+							<a href="#" class="link-underline">Contactar</a>
+						</div>
 					</div>
 
         	    </div>
@@ -78,5 +58,6 @@
 	</div>
 
 </div>
+
 </body>
 </html>
