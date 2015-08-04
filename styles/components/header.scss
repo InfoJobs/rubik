@@ -112,7 +112,7 @@
 		@include mediaquery ($bp-header) {
 
 			margin: 0;
-			
+
 			img {
 				display: none;
 			}
@@ -259,6 +259,14 @@ a.nav-bar-toggle {
 
 	@media print {
 		display: none;
+	}
+
+	.global-nav-company & {
+		padding-top: 80px;
+
+		@include mediaquery ($bp-header) {
+			padding-top: 0;
+		}
 	}
 
 }
@@ -464,11 +472,27 @@ a.nav-bar-toggle {
 		}
 	}
 
-	.global-nav-logged & {
+	.global-nav-logged &,
+	.global-nav-company & {
 		display: block;
 
 		@include mediaquery ($bp-header) {
 			@include display-flex;
+		}
+	}
+
+	.global-nav-company & {
+
+		@include mediaquery ($bp-header) {
+			padding: 30px 20px 30px 0;
+		}
+
+		.avatar {
+			height: 80px;
+
+			@include mediaquery ($bp-header) {
+				height: auto;
+			}
 		}
 	}
 
@@ -631,7 +655,9 @@ a.nav-bar-toggle {
 		@include flex(0 0 auto);
 
 	}
+
 }
+
 .wrap-overlay {
 	position: fixed;
 	width: 100%;
