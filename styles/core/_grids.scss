@@ -170,6 +170,13 @@ $gridColumns: 12;
 	}
 }
 
+.col-4:nth-child(1n+4) {
+	margin-top: 10px;
+
+	@include mediaquery ($bp-tablet) {
+		margin-top: 20px;
+	}
+}
 
 .col-6-medium {
 	@include mediaquery ($bp-tablet) {
@@ -200,20 +207,21 @@ $gridColumns: 12;
 	&.inner {
 		max-width: 100%;
 	}
+
 	.col-12-medium:last-of-type > & {
 
 		@include mediaquery ($bp-tablet) {
 			margin-left: 10px;
 		}
+
+		// @include mediaquery ($bp-desktop) {
+		// 	margin-left: 0;
+		// }
 	}
 
 	[class*="panel-"] > & { //aplica al padre del col-child: col-x
 		margin-left: 0;
 		margin-bottom: 0;
-	}
-
-	.col-child [class*="col-"]:first-of-type &[class*="panel-"] {
-		margin-left: 10px;
 	}
 
 	.aside-wrapper & {
@@ -268,20 +276,38 @@ $gridColumns: 12;
 }
 
 /*------------------------------------*\
-	$ROW PANEL
+	$ROW FAUX CARD
 \*------------------------------------*/
 
-.row-faux-card .col-child {
-	margin-left: 10px;
+.row-faux-card {
 
 	@include mediaquery ($bp-tablet) {
-		margin-left: 20px;
+		margin-left: -20px;
+	}
+
+	.col-child {
+		margin-left: 10px;
+
+		@include mediaquery ($bp-tablet) {
+			margin-left: 20px;
+		}
+	}
+
+	> .col-6-medium {
+		@include mediaquery ($bp-tablet) {
+			&:nth-child(1n+3) {
+				margin-top: 20px;
+			}
+		}
+
+		@include mediaquery ($bp-desktop) {
+			&:nth-child(3) {
+				margin-top: 0;
+			}
+		}
 	}
 }
 
-.row-faux-card [class*="col-"]:first-of-type .col-child {
-	margin-left: 10px;
-}
 
 /*------------------------------------*\
 	$ROW MATRIOSKA

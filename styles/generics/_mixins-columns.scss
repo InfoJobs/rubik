@@ -11,6 +11,7 @@ $MIXIN COLUMNS
 		min-height: auto;
 	}
 
+	.content-logo-text,
 	.text {
 		@include display-flex;
 		@include flex(1);
@@ -23,8 +24,18 @@ $MIXIN COLUMNS
 			-moz-hyphens: auto;
 			word-wrap: break-word;
 		}
+
+		p:only-of-type {
+			margin-bottom: 5px;
+		}
+
+		.btn {
+			display: table;
+			margin-top: 10px;
+		}
 	}
 
+	.content-logo-media,
 	.media {
 		@include flex(none);
 
@@ -34,15 +45,6 @@ $MIXIN COLUMNS
 		}
 
 		img {
-			display: block;
-			width: 110px;
-			padding: 4px;
-			border: 1px solid $darkest-shiro;
-		}
-
-		.fig-thumbnail-logo img {
-			border: none;
-			padding: 0;
 			width: 62px;
 
 			@include mediaquery ($bp-tablet) {
@@ -52,16 +54,23 @@ $MIXIN COLUMNS
 			@include mediaquery ($bp-desktop) {
 				width: 92px;
 			}
-
 		}
 	}
 
 	.media-medium {
-		.fig-thumbnail-logo img {
-			width: 40px;
+		.fig-thumbnail-logo {
+			padding: 2px;
 
 			@include mediaquery ($bp-desktop) {
-				width: 60px;
+				padding: 4px;
+			}
+		}
+
+		img {
+			width: 34px;
+
+			@include mediaquery ($bp-desktop) {
+				width: 50px;
 			}
 		}
 
@@ -76,7 +85,9 @@ $MIXIN COLUMNS
 		margin-left: 20px;
 	}
 
+	.content-logo-text + .content-logo-media,
 	.text + .media,
+	.content-logo-media + .content-logo-text,
 	.media + .text {
 		margin-left: 20px;
 	}
