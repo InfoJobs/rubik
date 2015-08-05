@@ -151,7 +151,7 @@ a.script:hover,
 a.script:visited,
 a.script:active,
 .script[class*="iconfont-"]::before {
-    color: $dark-silk;
+	color: $dark-silk;
 }
 
 //force color used for texts (p.e: top-searches). Not use this when it is a component
