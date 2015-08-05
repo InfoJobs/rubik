@@ -289,7 +289,7 @@ $gridColumns: 12;
 		}
 	}
 
-	> .col-6-medium {
+	> .col-4.col-6-medium {
 		@include mediaquery ($bp-tablet) {
 			&:nth-child(1n+3) {
 				margin-top: 20px;
@@ -299,6 +299,42 @@ $gridColumns: 12;
 		@include mediaquery ($bp-desktop) {
 			&:nth-child(3) {
 				margin-top: 0;
+			}
+		}
+	}
+
+	> .col-4.col-12-medium {
+		@include mediaquery ($bp-tablet) {
+			&:nth-child(1n+3) {
+				margin-top: 20px;
+				margin-bottom: 0;
+			}
+		}
+
+		@include mediaquery ($bp-desktop) {
+			&:nth-child(3) {
+				margin-top: 0;
+			}
+		}
+
+		.col-child {
+			@include mediaquery ($bp-tablet) {
+				margin-left: 20px;
+				margin-bottom: 0;
+			}
+		}
+
+		+ .col-4.col-12-medium {
+			@include mediaquery ($bp-tablet) {
+				margin-top: 20px;
+			}
+
+			@include mediaquery ($bp-desktop) {
+				margin-top: 0;
+
+				&:nth-child(1n+4) {
+					margin-top: 20px;
+				}
 			}
 		}
 	}

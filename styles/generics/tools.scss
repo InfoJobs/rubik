@@ -66,10 +66,22 @@
 	}
 }
 
+.text-center-small-device {
+	text-align: center;
+
+	@include mediaquery ($bp-tablet) {
+		text-align: left;
+	}
+}
+
 .text-right {
 	text-align: right;
 }
 
+[class^="lines-"],
+[class*="lines-"] {
+	display: block;
+}
 
 //Use to add clickable area
 .hit-area {
