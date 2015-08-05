@@ -12,7 +12,7 @@ $MIXIN COLUMNS
 	}
 
 	.content-logo-text,
-	.content-col-text { // col with text inside content-top or content-middle
+	.content-type-text { // col with text inside content-top or content-middle
 		@include display-flex;
 		@include flex(1);
 		@include flex-direction(column);
@@ -36,7 +36,7 @@ $MIXIN COLUMNS
 	}
 
 	.content-logo-media,
-	.content-col-media { // col with img, sticker inside content-top or content-middle
+	.content-type-media { // col with img, sticker inside content-top or content-middle
 		@include flex(none);
 
 		a {
@@ -57,7 +57,7 @@ $MIXIN COLUMNS
 		}
 	}
 
-	.content-col-media-small {
+	.content-type-media-small {
 		.fig-thumbnail-logo {
 			padding: 2px;
 
@@ -86,14 +86,14 @@ $MIXIN COLUMNS
 	}
 
 	.content-logo-text + .content-logo-media,
-	.content-col-text + .content-col-media,
+	.content-type-text + .content-type-media,
 	.content-logo-media + .content-logo-text,
-	.content-col-media + .content-col-text {
+	.content-type-media + .content-type-text {
 		margin-left: 20px;
 	}
 
-	.content-col-text + .content-col-media-small,
-	.content-col-media-small + .content-col-text {
+	.content-type-text + .content-type-media-small,
+	.content-type-media-small + .content-type-text {
 		margin-left: 10px;
 	}
 }
