@@ -25,8 +25,13 @@ $MIXIN COLUMNS
 			word-wrap: break-word;
 		}
 
+		p:only-of-type {
+			margin-bottom: 5px;
+		}
+
 		.btn {
 			display: table;
+			margin-top: 10px;
 		}
 	}
 
@@ -40,15 +45,6 @@ $MIXIN COLUMNS
 		}
 
 		img {
-			display: block;
-			width: 110px;
-			padding: 4px;
-			border: 1px solid $darkest-shiro;
-		}
-
-		.fig-thumbnail-logo img {
-			border: none;
-			padding: 0;
 			width: 62px;
 
 			@include mediaquery ($bp-tablet) {
@@ -58,7 +54,6 @@ $MIXIN COLUMNS
 			@include mediaquery ($bp-desktop) {
 				width: 92px;
 			}
-
 		}
 	}
 
@@ -66,17 +61,16 @@ $MIXIN COLUMNS
 		.fig-thumbnail-logo {
 			padding: 2px;
 
-			@include mediaquery ($bp-tablet) {
+			@include mediaquery ($bp-desktop) {
 				padding: 4px;
 			}
+		}
 
-			img {
-				width: 34px;
+		img {
+			width: 34px;
 
-				@include mediaquery ($bp-desktop) {
-					width: 50px;
-				}
-
+			@include mediaquery ($bp-desktop) {
+				width: 50px;
 			}
 		}
 

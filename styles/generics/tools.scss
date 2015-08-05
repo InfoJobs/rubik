@@ -142,7 +142,11 @@
 @each $value in $orientations {
 
 	.margin-#{$value}  {
-	   margin-#{$value}: $padding;
+	   margin-#{$value}: 10px;
+
+	   @include mediaquery ($bp-tablet) {
+	   		margin-#{$value}: $padding;
+	   	}
 	}
 	.padding-#{$value}  {
 	   padding-#{$value}: $padding;
