@@ -12,7 +12,7 @@ $MIXIN COLUMNS
 	}
 
 	.content-logo-text,
-	.text {
+	.content-col-text { // col with text inside content-top or content-middle
 		@include display-flex;
 		@include flex(1);
 		@include flex-direction(column);
@@ -36,7 +36,7 @@ $MIXIN COLUMNS
 	}
 
 	.content-logo-media,
-	.media {
+	.content-col-media { // col with img, sticker inside content-top or content-middle
 		@include flex(none);
 
 		a {
@@ -57,7 +57,7 @@ $MIXIN COLUMNS
 		}
 	}
 
-	.media-medium {
+	.content-col-media-small {
 		.fig-thumbnail-logo {
 			padding: 2px;
 
@@ -86,14 +86,14 @@ $MIXIN COLUMNS
 	}
 
 	.content-logo-text + .content-logo-media,
-	.text + .media,
+	.content-col-text + .content-col-media,
 	.content-logo-media + .content-logo-text,
-	.media + .text {
+	.content-col-media + .content-col-text {
 		margin-left: 20px;
 	}
 
-	.text + .media-medium,
-	.media-medium + .text {
+	.content-col-text + .content-col-media-small,
+	.content-col-media-small + .content-col-text {
 		margin-left: 10px;
 	}
 }
