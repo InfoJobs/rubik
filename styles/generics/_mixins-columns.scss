@@ -73,7 +73,7 @@ $MIXIN COLUMNS
 			img {
 				width: 34px;
 
-				@include mediaquery ($bp-tablet) {
+				@include mediaquery ($bp-desktop) {
 					width: 50px;
 				}
 
