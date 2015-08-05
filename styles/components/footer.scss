@@ -25,7 +25,7 @@ Styleguide 2.5
 }
 
 .footer {
-	height: 100vh;
+	padding-bottom: 40px;
 	font-family: $base-font-family;
 	text-align: center;
 	background-color: $outer-land;
@@ -54,7 +54,7 @@ Styleguide 2.5
 		    content: "";
 		    position: relative;
 		    top: 0;
-		    border-bottom: 1px solid #8c9397;
+		    border-bottom: 1px solid $outer-wall;
 
 			@include mediaquery ($bp-desktop) {
 				display: none;
@@ -93,7 +93,7 @@ Styleguide 2.5
 
 		    content: "";
 		    display: block;
-		    height: 80px;
+			height: 100%;
 		    width: 100%;
 		    position: absolute;
 		    top: -80px;
@@ -148,7 +148,7 @@ Styleguide 2.5
 	    content: "";
 	    position: relative;
 	    top: 20px;
-	    border-bottom: 1px solid #8c9397;
+	    border-bottom: 1px solid $outer-wall;
 
 		@include mediaquery ($bp-desktop) {
 			margin: 0 -20px;
@@ -164,7 +164,7 @@ Styleguide 2.5
 		margin: 0;
 
 		&::after {
-		    color: #8c9397;
+		    color: $outer-wall;
 		    content: "|";
 		    position: absolute;
 		    left: 5px;
@@ -195,7 +195,7 @@ Styleguide 2.5
 	@include mediaquery ($bp-desktop) {
 
 		h3 {
-			color: $outer-king;
+			color: $dark-softened;
 		}
 
 	}
@@ -203,6 +203,7 @@ Styleguide 2.5
 
 .footer-nav-bar {
 
+	li,
 	a {
 		color: $outer-pawn;
 	}
@@ -219,12 +220,21 @@ Styleguide 2.5
 	}
 
 	& > li {
-		display: inline;
-		margin-left: 15px;
+		position: relative;
+		display: inline-block;
+		margin-left: 20px;
 
 		&:first-child,
 		&:only-child {
 			margin: 0;
+		}
+
+		+ li::after {
+		    color: $outer-wall;
+		    content: "|";
+		    position: absolute;
+		    left: -14px;
+		    top: 1px;
 		}
 
 	}
