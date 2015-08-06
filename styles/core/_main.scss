@@ -83,19 +83,11 @@ a {
 	@include transition;
  	text-decoration: none;
  	color: $day-blue;
-
- 	.skin-executive & {
-		color: $mediterranean-sea;
-	}
 }
 
 a:hover {
 	 text-decoration: none;
 	 color: $day-blue;
-
-	 .skin-executive & {
-		color: $mediterranean-sea;
-	}
 }
 
 a:focus {
@@ -188,18 +180,6 @@ Markup:
 Styleguide #{$sgi-innerContainers}
 */
 
-@mixin inner {
-	padding: 20px 10px;
-
-    @include mediaquery ($bp-tablet) {
-        padding: 20px;
-    }
-
-	@media print {
-		padding: 0;
-	}
-}
-
 .content-wrapper,
 .inner {
     @include inner;
@@ -239,12 +219,6 @@ Styleguide #{$sgi-innerContainers}
 
 }
 
-.section-divider:before {
-	content: "";
-	border-top: 1px solid $darkest-shiro;
-	display: block;
-	padding-top: 20px;
-}
 .img-responsive {
 	max-width: 100%;
 	height: auto;

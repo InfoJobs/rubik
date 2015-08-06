@@ -1,0 +1,42 @@
+//generics
+@import "../generics/generics";
+
+/*------------------------------------*\
+$KPI
+\*------------------------------------*/
+
+/*
+Message Page #disabled#
+
+*/
+
+.message-page {
+
+	.message-page-image {
+		text-align: center;
+	}
+
+	.message-page-image img {
+		max-width: 200px;
+		width: 100%;
+	}
+
+	.message-page-content {
+		text-align: center;
+
+		@include mediaquery ($bp-tablet) {
+			text-align: left;
+			@include align-items(center);
+
+		}
+
+		h1 {
+			margin: 0;
+		}
+
+		p {
+			margin: 0 0 5px 0;
+		}
+
+	}
+}

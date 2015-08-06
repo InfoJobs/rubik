@@ -97,7 +97,8 @@ Styleguide #{$sgi-headingAddons}
 .heading-addons,  //TODO: modificar nomenclatura de esta clase
 .heading-single { //Panel solo incluye <h1>
 
-	h1 {
+	h1,
+	h2 {
 		margin: 0;
 		word-wrap : break-word;
 		-webkit-hyphens: auto;

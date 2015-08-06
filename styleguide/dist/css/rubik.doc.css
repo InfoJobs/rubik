@@ -225,7 +225,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 1.1.2
+Styleguide  1.1.2
 */
 .wrapper {
   min-height: 100%;
@@ -1816,7 +1816,11 @@ Icons
 Icons are generated as fonts. Color and size can be modified as texts.
 Use the following classes to apply an icon on a tag.
 
+<<<<<<< HEAD
+Styleguide 1.6
+=======
 Styleguide 1.7
+>>>>>>> develop
 */
 /*
 Icons type
@@ -1886,8 +1890,12 @@ List of icons.
 </div>
 
 
+<<<<<<< HEAD
+Styleguide 1.6.1
+=======
 Styleguide 1.7.1.1
 
+>>>>>>> develop
 */
 [class^="iconfont-"]::before,
 [class*=" iconfont-"]::before,
@@ -1934,7 +1942,11 @@ Markup:
 .iconfont-22px
 .iconfont-30px
 
+<<<<<<< HEAD
+Styleguide 1.6.2
+=======
 Styleguide 1.7.2.1
+>>>>>>> develop
 */
 .iconfont-16px::before {
   font-size: 16px;
@@ -2454,7 +2466,7 @@ Styleguide 1.5.1.2
 .btn-medium {
   height: 40px;
   padding: 0 10px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 38px;
   /*@at-root button.btn-medium {
       height: 40px;
@@ -2582,6 +2594,8 @@ Styleguide 1.5.1.6
 /*
 Button group
 
+<<<<<<< HEAD
+=======
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
 
 Styleguide 1.6
@@ -2590,6 +2604,7 @@ Styleguide 1.6
 /*
 Button group structure
 
+>>>>>>> develop
 Use class `.btn-group` to create a button group structure.<br>
 Use class `.btn-default` for buttons inside buttons group.<br>
 Use class `.active` to highlight the selected button.<br>
@@ -2748,7 +2763,7 @@ Markup:
 <h2>Heading level 2</h2>
 <h3>Heading level 3</h3>
 
-Styleguide 1.2.1
+Styleguide ${$sgi-headings}
 */
 h1,
 h2,
@@ -2954,7 +2969,11 @@ Use class `.bold` to bold the content. Use only on the following tags: `<p>`, `<
 Markup:
 <p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
+<<<<<<< HEAD
+Styleguide 1.2.5
+=======
 Styleguide 1.2.6
+>>>>>>> develop
 */
 .bold {
   font-family: Proximanovabold, Helvetica, Arial, sans-serif;
@@ -5300,6 +5319,98 @@ $query2     = width, device-width
   border-radius: 0;
 }
 
+/*------------------------------------*\
+    $NAVIGATION
+\*------------------------------------*/
+.nav-bar > li {
+  float: left;
+}
+
+.nav-bar > li > a {
+  display: block;
+}
+
+.nav-bar-submenu {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #e2e5e6;
+}
+
+.nav-bar-submenu > li > a {
+  padding: 20px 15px;
+  color: #2d3133;
+}
+
+.nav-bar-submenu > li > a:hover {
+  color: #2088c2;
+}
+
+.links-bar {
+  float: right;
+}
+.links-bar li {
+  float: left;
+  padding: 0 10px;
+}
+.links-bar li:first-child {
+  padding-left: 0;
+}
+.links-bar li:last-child {
+  padding-right: 0;
+  border: 0;
+}
+.links-bar a:hover {
+  text-decoration: underline;
+}
+.links-bar a.disabled:hover {
+  text-decoration: none;
+}
+@media print {
+  .links-bar {
+    display: none;
+  }
+}
+
+.text-center ul.links-bar {
+  margin-top: 5px;
+}
+
+@media only screen and (min-width: 481px) {
+  .text-center ul.links-bar {
+    margin-top: 0;
+  }
+}
+/* Variables =================================================== */
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+/**
+ * cross multiplication percentages
+ */
+/**
+ * Turn numbers with units into unitless numbers
+ */
+/*------------------------------------*\
+$MIXINS
+\*------------------------------------*/
+/*
+Mediaqueries
+
+$breakpoint = $bp-tablet, $bp-desktop or specific
+$query1     = min or max
+$query2     = width, device-width
+
+*/
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+.tag-group li.tag-divider, .links-bar li {
+  border-right: 1px solid #e2e5e6;
+  border-radius: 0;
+}
+
 .global-nav {
   position: relative;
   overflow: hidden;
@@ -5351,11 +5462,6 @@ $query2     = width, device-width
   border-bottom: 0;
 }
 
-.global-nav li a.active-top,
-.nav-bar-top > li > a.active-top:hover {
-  color: #2088c2;
-}
-
 .global-nav li a.active-submenu,
 .global-nav .nav-bar-top > li > a.active-submenu:hover {
   color: #2088c2;
@@ -5364,11 +5470,6 @@ $query2     = width, device-width
 .global-nav .nav-bar-submenu--executive a.active-submenu--executive,
 .global-nav .nav-bar-submenu--executive > li > a:hover {
   color: #27a8a8;
-}
-
-.global-nav .nav-bar-top-company li a.active-top,
-.global-nav .nav-bar-top-company li a.active-top:hover {
-  color: #fff;
 }
 
 .nav-bar-notifications {
@@ -5447,50 +5548,6 @@ $query2     = width, device-width
   padding: 30px 15px;
 }
 
-.nav-bar-top > li > a:hover::after,
-.nav-bar-top > li > a.active-top:after {
-  position: absolute;
-  content: '';
-  right: 10px;
-  bottom: 20px;
-  left: 10px;
-  height: 3px;
-  background-color: #2088c2;
-}
-
-.global-nav-submenu .nav-bar-top > li > a:hover::after,
-.global-nav-submenu .nav-bar-top > li > a.active-top:after {
-  bottom: 0;
-}
-
-.nav-bar-top > li > a.nav-bar-top-avatar:hover::after,
-.nav-bar-top > li > a.nav-bar-top-avatar.active-top::after,
-.nav-bar-top > li > a.nav-bar-top-noavatar:hover::after,
-.nav-bar-top > li > a.nav-bar-top-noavatar.active-top::after {
-  background: none;
-}
-
-.nav-bar-top > li > a.logo:hover::after,
-.nav-bar-top-right > li > a:hover::after {
-  background: none;
-}
-
-@media only screen and (min-width: 769px) {
-  .nav-bar-top-company.nav-bar-top-right > li > a.nav-bar-top-noavatar:hover::after {
-    position: absolute;
-    content: '';
-    right: 15px;
-    bottom: 20px;
-    left: 15px;
-    height: 3px;
-    background-color: #2088c2;
-  }
-}
-
-.global-nav-submenu-company .nav-bar-top-company.nav-bar-top-right > li > a.nav-bar-top-noavatar:hover::after {
-  background: none;
-}
-
 .nav-bar-top-left {
   float: left;
 }
@@ -5520,6 +5577,10 @@ $query2     = width, device-width
 .access-bar > li:last-child > a.btn-link-secondary {
   padding-right: 0;
   text-align: left;
+}
+
+.nav-bar-top-right > li:last-child > a.btn-link-secondary {
+  line-height: 18px;
 }
 
 .nav-bar-top-right > li > a.btn-link-secondary {
@@ -5554,6 +5615,7 @@ $query2     = width, device-width
   .nav-bar-top-company > li > a.btn-link-secondary {
     margin-top: 24px;
     padding: 5px 10px;
+    line-height: 20px;
   }
 }
 
@@ -7116,98 +7178,6 @@ $query2     = width, device-width
 }
 
 /*------------------------------------*\
-    $NAVIGATION
-\*------------------------------------*/
-.nav-bar > li {
-  float: left;
-}
-
-.nav-bar > li > a {
-  display: block;
-}
-
-.nav-bar-submenu {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background: #e2e5e6;
-}
-
-.nav-bar-submenu > li > a {
-  padding: 20px 15px;
-  color: #2d3133;
-}
-
-.nav-bar-submenu > li > a:hover {
-  color: #2088c2;
-}
-
-.links-bar {
-  float: right;
-}
-.links-bar li {
-  float: left;
-  padding: 0 10px;
-}
-.links-bar li:first-child {
-  padding-left: 0;
-}
-.links-bar li:last-child {
-  padding-right: 0;
-  border: 0;
-}
-.links-bar a:hover {
-  text-decoration: underline;
-}
-.links-bar a.disabled:hover {
-  text-decoration: none;
-}
-@media print {
-  .links-bar {
-    display: none;
-  }
-}
-
-.text-center ul.links-bar {
-  margin-top: 5px;
-}
-
-@media only screen and (min-width: 481px) {
-  .text-center ul.links-bar {
-    margin-top: 0;
-  }
-}
-/* Variables =================================================== */
-/*------------------------------------*\
-    $FUNCTIONS
-\*------------------------------------*/
-/**
- * cross multiplication percentages
- */
-/**
- * Turn numbers with units into unitless numbers
- */
-/*------------------------------------*\
-$MIXINS
-\*------------------------------------*/
-/*
-Mediaqueries
-
-$breakpoint = $bp-tablet, $bp-desktop or specific
-$query1     = min or max
-$query2     = width, device-width
-
-*/
-/*------------------------------------*\
-    $PLACEHOLDERS
-\*------------------------------------*/
-.tag-group li.tag-divider, .links-bar li {
-  border-right: 1px solid #e2e5e6;
-  border-radius: 0;
-}
-
-/*------------------------------------*\
 	$NOTIFICATIONS
 \*------------------------------------*/
 /*
@@ -7229,9 +7199,45 @@ The modifier classes are:<br>
 .notification-warning
 
 Markup:
+<<<<<<< HEAD
+<!-- Notification error -->
+<div class="notification notification-error notification-dismissable">
+	<button class="btn-close" type="button">×</button>
+	<p class="title">Lorem ipsum dolor sit</p>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
+</div>
+<!-- /Notification error -->
+<div class="container-expanded">
+<!-- Notification success -->
+<div class="notification notification-success notification-dismissable">
+	<button class="btn-close" type="button">×</button>
+	<p class="title">Lorem ipsum dolor sit</p>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
+</div>
+<!-- /Notification success -->
+</div>
+<div class="container-expanded">
+<!-- Notification info -->
+<div class="notification notification-info notification-dismissable">
+	<button class="btn-close" type="button">×</button>
+	<p class="title">Lorem ipsum dolor sit</p>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
+</div>
+<!-- /Notification info -->
+</div>
+<div class="container-expanded">
+<!-- Notification warning -->
+<div class="notification notification-warning notification-dismissable">
+	<button class="btn-close" type="button">x</button>
+	<p class="title">Lorem ipsum dolor sit</p>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
+</div>
+<!-- /Notification info -->
+=======
 <div class="notification {{modifier_class}}">
 	<p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
 	<p class="contrast">Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="contrast link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
+>>>>>>> develop
 </div>
 
 Styleguide 2.2
@@ -7241,6 +7247,11 @@ Styleguide 2.2
   padding: 20px;
   font-size: 16px;
   line-height: 20px;
+}
+.notification a,
+.notification a:hover,
+.notification a:focus {
+  color: #fff;
 }
 .notification-toast .notification {
   opacity: .9;
@@ -7282,6 +7293,29 @@ Styleguide 2.2
   color: #fff;
 }
 
+<<<<<<< HEAD
+/*
+Notifications
+
+Loremew eqwfwaerg sefg sdfg sdfgsdfg sdfg sdfg sdf gsdf gsdfgsdfgsdfg
+
+Markup:
+<div class="notification {{modifier_class}}">
+<p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
+<p>Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
+</div>
+
+.notification-error -
+.notification-success -
+.notification-info -
+.notification-warning -
+.notification-dismissable -
+
+
+Styleguide 2.2.1
+*/
+=======
+>>>>>>> develop
 .notification-error {
   background: #bf2102;
 }
@@ -7299,7 +7333,12 @@ Styleguide 2.2
   color: #2d3133;
   background: #e1a900;
 }
-.notification-warning a {
+.notification-warning a,
+.notification-warning a:hover,
+.notification-warning a:focus {
+  color: #2d3133;
+}
+.notification-warning .title {
   color: #2d3133;
 }
 
@@ -7875,7 +7914,7 @@ Styleguide 2.16
   position: absolute;
   top: 100%;
   left: -9999px;
-  z-index: 1010;
+  z-index: 9999;
   margin-left: -1px;
   width: calc(100% - -2px);
   border-top: 0;
@@ -10377,13 +10416,23 @@ Content media
 Usa la clase `.content-media` para construir una estructura con una imagen a un lado de un bloque de contenido de texto.
 
 Markup:
-<div class="content-media inner">
+<div class="content-media content-media-dismissable inner">
+	<button type="button" class="btn-close soft-script iconfont-18px iconfont-Close"><span class="hide">Ignorar</span></button>
 	<div class="media">
+<<<<<<< HEAD
+		<img alt="" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" class="crop-circle">
+	</div>
+	<div class="body">
+		<h3 class="title"><a href="#">Juan Manuel Rodriguez</a></h3>
+		<p>Account Manager lorem ipsum <span class="alternative">en Schibsted Classified Media Spain</span></p>
+		<a href="#" class="link-underline">Contactar</a>
+=======
 		<img class="crop-circle" src="./media/pictures/pic-company-logo.png" alt="">
 	</div>
 	<div class="body">
 		<h3 class="title"><a href="#">Juan Manuel Rodriguez</a></h3>
 		<p>Account Manager <span class="alternative">en Schibsted Classified Media Spain</span></p>
+>>>>>>> develop
 	</div>
 </div>
 
@@ -10395,11 +10444,14 @@ Markup:
   .content-media .body {
     margin-left: 80px;
   }
+<<<<<<< HEAD
+=======
 }
 @media only screen and (min-width: 769px) {
   .content-media .body {
     margin-left: 100px;
   }
+>>>>>>> develop
 }
 .content-media .media {
   float: left;
@@ -10411,20 +10463,16 @@ Markup:
     width: 80px;
   }
 }
-@media only screen and (min-width: 769px) {
-  .content-media .media {
-    width: 100px;
-  }
-}
 .content-media .title {
   margin: 0;
   word-wrap: break-word;
 }
-@media only screen and (min-width: 769px) {
-  .content-media img {
-    width: 80px;
-    height: 80px;
-  }
+.content-media .title a {
+  display: block;
+}
+.content-media img {
+  object-fit: cover;
+  object-position: 0 0;
 }
 li.content-media + .content-media::before {
   position: relative;
@@ -10433,6 +10481,18 @@ li.content-media + .content-media::before {
   border-top: 1px solid #e2e5e6;
   top: -20px;
 }
+<<<<<<< HEAD
+.content-media .btn-close {
+  position: relative;
+  top: -16px;
+  float: right;
+}
+
+.content-media-dismissable .body {
+  margin-right: 20px;
+}
+
+=======
 li.content-media + .content-media.margin-top::before {
   border: none;
 }
@@ -10442,6 +10502,7 @@ li.content-media + .content-media.margin-top::before {
   float: right;
 }
 
+>>>>>>> develop
 /* Variables =================================================== */
 /*------------------------------------*\
     $FUNCTIONS
