@@ -25,8 +25,6 @@ $MIXINS STICKERS
 @mixin sticker-skill {
 	@include sticker;
     margin: 0 5px 0 0;
-    color: $dark-silk;
-    background-color: $resting-katana;
 }
 
 @mixin sticker-multi {

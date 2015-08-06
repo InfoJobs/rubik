@@ -8,10 +8,18 @@
     $STICKERS
 \*------------------------------------*/
 
+.sticker {
+    @include sticker;
+}
+
 .sticker-marked {
     @include sticker;
     color: $shiro;
 	background-color: $bamboo;
+
+    &[class*="iconfont-"]::before {
+		color: $shiro;
+	}
 }
 
 .sticker-secondary {
@@ -49,6 +57,10 @@ a.sticker-skill,
     @include sticker;
     color: $shiro;
 	background-color: $dark-silk;
+
+    &[class*="iconfont-"]::before {
+		color: $shiro;
+	}
 }
 
 @mixin sticker-multi {
