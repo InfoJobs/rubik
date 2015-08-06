@@ -41,7 +41,7 @@
 						</div>
 						<div class="body">
 							<h3 class="title"><a href="#">Juan Manuel</a> a&ntilde;adi&oacute; 5 conocimientos a su CV</h3>
-							<ul class="list-inline margin-top">
+							<ul class="list-default list-inline margin-top">
 								<li><span class="sticker-skill">Javascript</span></li>
 								<li><span class="sticker-skill">Javascript</span></li>
 								<li><span class="sticker-skill">Javascript</span></li>
@@ -52,14 +52,25 @@
 								<li><span class="sticker-skill">Javascript</span></li>
 								<li><span class="sticker-skill">Javascript</span></li>
 							</ul>
-							<div class="margin-top">
-
-
-								<ul class="tag-group">
-									<li><a href="#" class="link-underline">Me gusta (0)</a></li>
-									<li><a href="#" class="link-underline">Comentar (0)</a></li>
-									<li class="alternative">Hace menos de una hora</li>
-							</div>
+							<ul class="tag-group margin-top">
+								<li><a href="#" class="link-underline">Me gusta (0)</a></li>
+								<li><a href="#" class="link-underline">Comentar (0)</a></li>
+								<li class="alternative">Hace menos de una hora</li>
+							</ul>
+							<textarea class="js-textarea-adjust textarea-adjust" onkeyup="textAreaResize(this)"></textarea>
+							<script>
+							function textAreaResize(el){
+    el.style.height = (el.scrollHeight > el.clientHeight) ? (el.scrollHeight)+"px" : "60px";
+}
+							</script>
+							<style>
+							.textarea-adjust {
+								height: 30px;
+								min-height: 30px;
+								overflow-y: auto;
+								word-wrap:break-word
+								}
+							</style>
 
 						</div>
 					</div>
