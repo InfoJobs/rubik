@@ -548,17 +548,24 @@ a.nav-bar-toggle {
 			overflow: hidden;
 
 			img {
-				width: 100%;
-				height: auto;
+				width: 57px;
+				height: 57px;
+			    object-fit: cover;
+			    object-position: 0 center;
 			    vertical-align: middle;
-			}
 
+				@include mediaquery ($bp-header) {
+					width: 27px;
+					height: 27px;
+				}
+			}
 
 			@include mediaquery ($bp-header) {
 				display: table-cell;
 				width: 33px;
 				height: 33px;
 				margin-bottom: 0;
+
 			}
 		}
 
