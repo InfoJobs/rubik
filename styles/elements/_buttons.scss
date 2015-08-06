@@ -89,62 +89,23 @@ Styleguide 1.5.1.1
 .btn-default {
   color: $mid-script;
   background-color: $resting-katana;
-
-  .skin-executive & {
-  	color: $mediterranean-sea;
-  	background-color: transparent;
-  }
-
-  .skin-executive .panel-executive .btn-group &,
-  .panel-executive .btn-group & {
-  	border-color: $mediterranean-sea;
-  	color: $mediterranean-sea;
-  	background-color: transparent;
-  }
-
-  .skin-executive .btn-group & {
-  	border-color: $wood-katana-slash;
-  	color: $mid-script;
-  	background-color: $shiro;
-  }
 }
 
 .btn-default:hover,
 .btn-default:active {
     background: $katana-slash;
 	color: $dark-silk;
-
-	.skin-executive &,
-	.skin-executive .panel-executive .btn-group & {
-	    background-color: $mediterranean-sea;
-		color: $shiro;
-	}
-
-	.skin-executive .btn-group & {
-		color: $mid-script;
-		background-color: $wood-katana-slash;
-	}
 }
 
 .btn-primary {
   color: $shiro;
   background-color: $day-blue;
-
-  .skin-executive & {
-    color: $shiro;
-    background-color: $mediterranean-sea;
-  }
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
     color: $shiro;
     background-color: $late-blue;
-
-  .skin-executive & {
-    color: $shiro;
-    background-color: $dark-mediterranean-sea;
-  }
 }
 
 .btn-primary:active {
@@ -154,28 +115,16 @@ Styleguide 1.5.1.1
 .btn-primary-contrast {
   color: $shiro;
   background-color: $late-blue;
-
-  .skin-executive &  {
-      background-color: $dark-mediterranean-sea;
-  }
 }
 
 .btn-primary-contrast:hover,
 .btn-primary-contrast:focus {
     color: $shiro;
     background-color: $night-blue;
-
-  .skin-executive &  {
-      background-color: $dark-mediterranean-sea;
-  }
 }
 
 .btn-primary-contrast:active {
   background-color: $midnight-blue;
-
-  .skin-executive &  {
-      background-color: $dark-mediterranean-sea;
-  }
 }
 
 .btn-alert {
@@ -316,12 +265,6 @@ button:active[disabled],
    color: $wood-katana-smash;
    text-decoration: none;
    cursor: default;
-
-   // review this rule (not work without background, border,...)
-   .skin-executive & {
-     background: $wood-resting-katana;
-     color: $wood-katana-smash;
-   }
 }
 
 
@@ -446,11 +389,7 @@ Styleguide 1.6.1.1
 
   		&:hover:not([disabled]) {
   			background-color: $resting-katana;
-
-  			.panel-executive & {
-  				background-color: $mediterranean-sea;
   			}
-  		}
 
   		&.btn-disabled:hover {
   			background: $shiro;
@@ -465,15 +404,6 @@ Styleguide 1.6.1.1
   	.active .btn.btn-disabled {
   	    background-color: $resting-katana;
   	    cursor: default;
-
-  	    .skin-executive & {
-  	 		background: $resting-katana;
-  	 	}
-
-  	 	.skin-executive .panel-executive & {
-  			color: $shiro;
-  			background-color: $mediterranean-sea;
-  		}
   	}
 
     &.btn-group-expanded {
