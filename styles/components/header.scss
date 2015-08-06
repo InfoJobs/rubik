@@ -2,11 +2,30 @@
 @import "../generics/generics";
 
 .global-nav {
+<<<<<<< HEAD
 	position: relative;
 	overflow:hidden;
 	min-height: 78px;
 	margin-top: -10px; // delete margin from container-expanded on navigation menu (only mobile)
 	padding: 0 20px;
+=======
+	margin-top: -10px; // delete margin from container-expanded on navigation menu (only mobile)
+	overflow: hidden;
+	background-color: $shiro;
+	background-repeat: no-repeat;
+	background-position: center center;
+	//bg logo es
+	background-image: url(#{$path-media}/portales/ij/appgrade/backgrounds/bg-logo-reduced.png);
+	border-bottom: 1px solid $darkest-shiro;
+
+	@include mediaquery ($bp-header) {
+		background-image: none;
+		margin-top: 10px;
+
+		.logo span {
+			display: none;
+		}
+>>>>>>> feature/I--Header-Navegacion
 
 	@include mediaquery ($bp-tablet) {
 		margin-top: 0; // margin inherit from container-expanded for tablet/desktop
@@ -23,11 +42,17 @@
 	display: none;
 }
 
+<<<<<<< HEAD
 .global-nav-applicant {
+=======
+	.logo img {
+		display: none;
+>>>>>>> feature/I--Header-Navegacion
 
 	background: $shiro;
 	border-bottom: 1px solid $darkest-shiro;
 
+<<<<<<< HEAD
 	@media print {
 		border-bottom: 0;
 	}
@@ -35,6 +60,22 @@
 	a,
 	a:hover {
 		color: $day-blue;
+=======
+		@media print {
+			border-bottom: 0;
+		}
+
+	}
+
+	a:not(.btn) {
+		font-size: $large-font-size;
+		font-family: 'Proximanovabold';
+
+		@include mediaquery ($bp-header) {
+			font-size: $base-font-size;
+			font-family: 'Proximanova';
+		}
+>>>>>>> feature/I--Header-Navegacion
 	}
 
 	.btn-primary {
@@ -42,10 +83,27 @@
 		background-color: $day-blue;
 	}
 
+<<<<<<< HEAD
 	.btn-primary:hover,
 	.btn-primary:focus {
 		color: $shiro;
 		background-color: $late-blue;
+=======
+			@include mediaquery ($bp-header) {
+				font-size: $base-font-size;
+			}
+		}
+
+		//ocultamos Inicio en movil cuando hay submenu
+		.logo {
+			display: none;
+
+			@include mediaquery ($bp-header) {
+				display: block;
+			}
+
+		}
+>>>>>>> feature/I--Header-Navegacion
 	}
 
 	.btn-link-secondary {
@@ -62,6 +120,7 @@
 	border-bottom: 0;
 }
 
+<<<<<<< HEAD
 .global-nav li a.active-top,
 .nav-bar-top > li > a.active-top:hover {
 	color: $day-blue;
@@ -75,6 +134,35 @@
 .global-nav .nav-bar-submenu--executive a.active-submenu--executive,
 .global-nav .nav-bar-submenu--executive > li > a:hover {
 	color: $mediterranean-sea;
+=======
+		@include mediaquery ($bp-header) {
+			background-position: 20px center;
+		}
+
+	.logo,
+	.logo:hover {
+		display: block;
+		height: 50px;
+		width: 130px;
+		margin: 0 auto;
+		padding: 10px 20px;
+		border: 0 none;
+
+		@include mediaquery ($bp-header) {
+
+			margin: 0;
+
+			img {
+				display: none;
+			}
+
+
+		}
+
+	}
+
+	}
+>>>>>>> feature/I--Header-Navegacion
 }
 
 .global-nav .nav-bar-top-company li a.active-top,
@@ -189,9 +277,19 @@
 	}
 }
 
+<<<<<<< HEAD
 .global-nav-submenu-company .nav-bar-top-company.nav-bar-top-right > li > a.nav-bar-top-noavatar:hover::after {
 	background: none;
 }
+=======
+a.nav-bar-toggle {
+	display: block;
+	margin: 0;
+	width: 50px;
+	height: 50px;
+	-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
+	-webkit-tap-highlight-color: transparent; /* For some Androids */
+>>>>>>> feature/I--Header-Navegacion
 
 .nav-bar-top-left {
 	float:left;
@@ -214,6 +312,7 @@
 	display: none;
 }
 
+<<<<<<< HEAD
 .nav-bar-top-right > li > a.btn-link-secondary:hover {
 	background:none;
 }
@@ -223,6 +322,55 @@
 	padding-right: 0;
 	text-align: left;
 }
+=======
+.nav-mobile {
+	@include display-flex;
+	@include flex-flow(column nowrap);
+	position: absolute;
+	top: 0;
+	left: -100%;
+	height: 100%;
+	max-height: 100vh;
+	width: 260px;
+	background:$shiro;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+	z-index: $zindex-menu;
+	-webkit-transition: all 0.3s ease;
+			transition: all 0.3s ease;
+
+	@include mediaquery ($bp-header) {
+		display: block;// en desktop quitamos el flexbox por compatibilidad con android 4.3
+        -webkit-transition: none 0s ease 0s;
+		        transition: none 0s ease 0s;
+		position: static;
+		height: auto;
+		width: auto;
+		overflow: hidden;
+
+	}
+
+	@media print {
+		display: none;
+	}
+
+	.global-nav-company & {
+		padding-top: 80px;
+
+		@include mediaquery ($bp-header) {
+			padding-top: 0;
+		}
+	}
+
+}
+
+.nav-bar-menu {
+	@include flex(1 1 auto);
+	@include order(1);
+	overflow: auto;
+>>>>>>> feature/I--Header-Navegacion
 
 .nav-bar-top-right > li:last-child  > a.btn-link-secondary {
 	line-height: 18px;
@@ -232,18 +380,45 @@
 	color: $mid-script;
 }
 
+<<<<<<< HEAD
 .nav-bar-top-right span + span {
 	display: none;
 }
+=======
+		&  a {
+			display:block;
+			position: relative;
+			padding: 17px 10px 13px 10px;
+			margin: 0;
+			color: $dark-silk;
+			-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
+			-webkit-tap-highlight-color: transparent; /* For some Androids */
+>>>>>>> feature/I--Header-Navegacion
 
 .nav-bar-top-applicant > li > a {
 	color: $mid-script;
 
+<<<<<<< HEAD
 	@media print {
 		display: none;
+=======
+		&  a:hover {
+			color: $dark-silk;
+
+			@include mediaquery ($bp-header) {
+				color: $day-blue;
+			}
+
+		}
+
+		&  a:active {
+			color: $day-blue
+		}
+>>>>>>> feature/I--Header-Navegacion
 	}
 }
 
+<<<<<<< HEAD
 .global-nav .nav-bar-top-applicant > li > a:hover {
 	color: $day-blue;
 }
@@ -258,17 +433,42 @@
 .nav-bar-top-company > li > a.btn-link-secondary {
 	color: $soft-script;
 	text-align: left;
+=======
+	.global-nav-submenu & {
+		background: $dark-shiro;
+		@include order(2);
+		@include flex(0 0 auto);
+		overflow: visible;
+	}
+
+	@include mediaquery ($bp-header) {
+		float: left;
+		overflow: visible;
+		padding: 0 20px;
+
+		.global-nav-submenu & > li > a {
+			padding: 10px 15px;
+		}
+>>>>>>> feature/I--Header-Navegacion
 
 	@include mediaquery ($bp-desktop) {
 
+<<<<<<< HEAD
 		margin-top: 24px;
 		padding: 5px 10px;
 		line-height: 20px;
+=======
+		.global-nav-submenu & .logo,
+		.global-nav-submenu & .logo:hover {
+			padding: 10px 15px 10px 0;
+		}
+>>>>>>> feature/I--Header-Navegacion
 
 	}
 }
 .nav-bar-top-company > li > a.btn-link-secondary:hover {
 
+<<<<<<< HEAD
 	@include mediaquery ($bp-desktop) {
 
 		color: $shiro;
@@ -291,6 +491,9 @@
 .global-nav .nav-bar-submenu li:last-child a{
 	padding-right: 20px;
 }
+=======
+.global-nav-logged.global-nav-submenu {
+>>>>>>> feature/I--Header-Navegacion
 
 .global-nav .nav-bar-submenu {
 	background: $darkest-shiro;
@@ -304,16 +507,24 @@
 	color: $dark-shiro;
 }
 
+<<<<<<< HEAD
 .nav-bar-top-toggle {
 	display: none;
 }
 .nav-bar-top-toggle img {
 	display:block;
+=======
+			&:first-child,
+			&:last-child {
+				border: 0;
+			}
+>>>>>>> feature/I--Header-Navegacion
 
 	@media print {
 		display: none;
 	}
 
+<<<<<<< HEAD
 }
 .nav-bar-top-login {
 	float:right;
@@ -335,6 +546,12 @@
 	font-size: 14px;
 	color: $dark-silk;
 }
+=======
+				& > a {
+					color: $soft-script;
+					-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
+					-webkit-tap-highlight-color: transparent; /* For some Androids */
+>>>>>>> feature/I--Header-Navegacion
 
 .nav-bar-top-avatar:hover {
 	color: $dark-silk;
@@ -372,6 +589,7 @@
 		background: none;
 	}
 
+<<<<<<< HEAD
 	.nav-bar-top-left {
 		position: static;
 		background: none;
@@ -408,19 +626,45 @@
 		padding: 0;
 		background-repeat: no-repeat;
 		background-position: center center;
+=======
+	@include mediaquery ($bp-header) {
+		float: right;
+		border: 0 none;
+	}
+}
+
+.nav-bar-access {
+	padding: 10px;
+	@include order(2);
+	border-top: 1px solid $darkest-shiro;
+
+	@include mediaquery ($bp-header) {
+		padding: 25.5px 20px;
+		border-top: 0;
+>>>>>>> feature/I--Header-Navegacion
 	}
 	.global-nav-applicant {
 		//bg logo es
 		background-image: url(#{$path-media}/portales/ij/appgrade/backgrounds/bg-logo-reduced.png);
 		border-bottom: 1px solid #DCDCDC;
 
+<<<<<<< HEAD
 		.it & {
 			//bg logo it
 			background-image: url(#{$path-media}/portales/it/appgrade/backgrounds/bg-logo-reduced.png);
 		}
+=======
+	li {
+		@include flex(1 1 50%);
+		margin-left: 10px;
+>>>>>>> feature/I--Header-Navegacion
 
 		@media print {
 			border-bottom: none;
+		}
+
+		@include mediaquery ($bp-header) {
+			@include flex(0 0 auto);
 		}
 	}
 	.global-nav-company {
@@ -432,9 +676,25 @@
 		}
 	}
 
+<<<<<<< HEAD
 	//.global-nav .active-top-submenu--executive {
 	//	background: $dark-silk;
 	//}
+=======
+.nav-bar-user {
+	@include order(3);
+	@include flex(0 0 auto);
+
+	@include mediaquery ($bp-header) {
+		padding: 3.5px 20px;
+	}
+
+	li {
+		@include flex(1 0 auto);
+
+		@include mediaquery ($bp-header) {
+			position: relative;
+>>>>>>> feature/I--Header-Navegacion
 
 	.global-nav-applicant.global-nav-submenu {
 		border-bottom: 1px solid $darkest-shiro;
@@ -464,6 +724,7 @@
 			left: -3px;
 		}
 
+<<<<<<< HEAD
 	}
 	.global-nav-submenu .nav-bar-top > li > a {
 		line-height: inherit;
@@ -471,13 +732,37 @@
 	.global-nav .access-bar {
 		display: none;
 	}
+=======
+	.global-nav-logged &,
+	.global-nav-company & {
+		display: block;
+>>>>>>> feature/I--Header-Navegacion
 
 	.nav-bar-top-applicant > li > a {
 		color: $dark-silk;
 	}
 
+<<<<<<< HEAD
 	.nav-bar-top-left {
 		display:block;
+=======
+	.global-nav-company & {
+
+		@include mediaquery ($bp-header) {
+			padding: 30px 20px 30px 0;
+		}
+
+		.avatar {
+			height: 80px;
+
+			@include mediaquery ($bp-header) {
+				height: auto;
+			}
+		}
+	}
+
+	.avatar {
+>>>>>>> feature/I--Header-Navegacion
 		position: absolute;
 		left: -320px;
 		z-index:9000;
@@ -491,6 +776,7 @@
 		float: none;
 	}
 
+<<<<<<< HEAD
 	.nav-bar-top li {
 		display: block;
 		float: none;
@@ -500,6 +786,27 @@
 	.nav-bar-top > li > a.active-top::after {
 		background: none;
 	}
+=======
+		@include mediaquery ($bp-header) {
+			position: relative;
+			padding: 0;
+			width: auto;
+			height: auto;
+			text-align: left;
+			color: $soft-script;
+			background: none;
+			white-space: nowrap;
+		}
+
+		&:hover {
+			color: $shiro;
+
+			@include mediaquery ($bp-header) {
+				color:$day-blue;
+			}
+
+		}
+>>>>>>> feature/I--Header-Navegacion
 
 	.nav-bar-top > li > a,
 	.global-nav-submenu .nav-bar-top > li > a  {
@@ -507,18 +814,105 @@
 		font-family: Proximanovabold;
 		font-size: 20px;
 
+<<<<<<< HEAD
 		~ .nav-bar-submenu {
 			border-bottom: 1px solid $outer-land;
 		}
 
+=======
+			@include mediaquery ($bp-header) {
+				display: table-cell;
+				vertical-align: middle;
+				max-width: 180px;
+				padding-right: 10px;
+				padding-left: 7px;
+			}
+		}
+
+		.picture {
+			width: 60px;
+			height: 60px;
+			border: 3px solid $shiro;
+			margin-bottom: 10px;
+			overflow: hidden;
+
+			img {
+				width: 57px;
+				height: 57px;
+			    object-fit: cover;
+			    object-position: 0 center;
+			    vertical-align: middle;
+
+				@include mediaquery ($bp-header) {
+					width: 27px;
+					height: 27px;
+				}
+			}
+
+			@include mediaquery ($bp-header) {
+				display: table-cell;
+				width: 33px;
+				height: 33px;
+				margin-bottom: 0;
+
+			}
+		}
+
+		.child-avatar {
+			position: absolute;
+			left: 0;
+			right: 0;
+			padding: 0 10px;
+
+			@include mediaquery ($bp-header) {
+				display: table;
+				position: static;
+				padding: 0;
+			}
+
+		}
+
+		.bg-blur {
+			display: block;
+		    position: absolute;
+		    left: 0;
+		    top: 0;
+		    height: 100%;
+		    width: 100%;
+		   background-size: 100%;
+		   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(46%, rgba(0, 0, 0, 0.08)), color-stop(59%, rgba(0, 0, 0, 0.08)), color-stop(100%, rgba(0, 0, 0, 0.9)));
+		   background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.08) 59%, rgba(0, 0, 0, 0.9) 100%);
+		   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.08) 59%, rgba(0, 0, 0, 0.9) 100%);
+		   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.08) 59%, rgba(0, 0, 0, 0.9) 100%);
+
+			@include mediaquery ($bp-header) {
+				display: none;
+			}
+
+		}
+>>>>>>> feature/I--Header-Navegacion
 	}
 
+<<<<<<< HEAD
 	.nav-bar-top > li > a {
 		padding: 16px 10px 12px;
 	}
 
 	.nav-bar-top > li > a:hover {
 		background: none;
+=======
+.nav-bar-submenu {
+	padding-top: 145px;
+	background: $shiro;
+	@include order(1);
+
+	@include mediaquery ($bp-header) {
+		clear: both;
+		float: left;
+		width: 100%;
+		padding-top:0;
+		background: $darkest-shiro;
+>>>>>>> feature/I--Header-Navegacion
 	}
 
 	.nav-bar-top > li > a:only-child,
@@ -526,11 +920,31 @@
 		border-bottom: 1px solid $outer-land;
 	}
 
+<<<<<<< HEAD
 	.nav-bar-top-left > li > a.logo img {
 		display: none;
 
 		@media print {
 			display: block;
+=======
+		& > a {
+			display: block;
+			color: $dark-silk;
+			-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
+			-webkit-tap-highlight-color: transparent; /* For some Androids */
+
+			&:hover {
+				color: $dark-silk;
+
+				@include mediaquery ($bp-header) {
+					color:$day-blue;
+				}
+			}
+
+			&:active {
+				color:$day-blue;
+			}
+>>>>>>> feature/I--Header-Navegacion
 		}
 	}
 
@@ -665,19 +1079,57 @@
 	.profile-ellipsis {
 		max-width: none;
 	}
-}
 
+<<<<<<< HEAD
 @media only screen and (max-width: 768px) {
 
+=======
+	.global-nav-submenu & {
+		@include flex(0 0 auto);
+
+	}
 
 }
 
+.wrap-overlay {
+	position: fixed;
+	width: 100%;
+}
+>>>>>>> feature/I--Header-Navegacion
+
+}
+
+<<<<<<< HEAD
 @media only screen and (max-width: 480px) {
+=======
+.wrap-transition .open-menu:nth-of-type(1) {
+	left: 0;
+    -webkit-box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.4);
+      -moz-box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.4);
+	       box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.4);
+}
+
+.wrap-transition::before {
+	background: rgba(0,0,0,0.6);
+}
+>>>>>>> feature/I--Header-Navegacion
 
 
 	.global-nav .nav-bar-top-toggle {
 		margin: 0;
 	}
+<<<<<<< HEAD
+=======
+
+	.nav-mobile {
+		//android 4.3
+		-webkit-box-orient: block-axis;
+		   -moz-box-orient: block-axis;
+		        box-orient: block-axis;
+		//
+	}
+
+>>>>>>> feature/I--Header-Navegacion
 }
 @media only screen and (max-width: $mobile-start) {
 	.wrapper {
