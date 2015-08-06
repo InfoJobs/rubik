@@ -201,8 +201,8 @@ $gridColumns: 12;
 }
 
 .col-child {
-	max-width: calc(100% - 10px);
 	margin: 0 0 0 10px;
+	max-width: calc(100% - 10px);
 
 	&.inner {
 		max-width: 100%;
@@ -290,6 +290,7 @@ $gridColumns: 12;
 
 		@include mediaquery ($bp-tablet) {
 			margin-left: 20px;
+			max-width: calc(100% - 20px);
 		}
 	}
 

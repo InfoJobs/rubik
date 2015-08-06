@@ -62,6 +62,10 @@ a.sticker-skill,
     font-size: $xsmall-font-size;
     font-family: $base-font-family;
     line-height: 17px;
+
+    &[class*="iconfont-"]::before {
+		font-size: $small-font-size;
+	}
 }
 
 /*
