@@ -182,7 +182,7 @@ $icon-size: (50); //TODO: resolve problem when it s moved to _vars
 	content: "\e602";
 }
 .iconfont-Arrow::before {
-	content: "\e603";
+	@include iconfont-Arrow;
 }
 .iconfont-BurguerMenu {
 	@include iconfont-BurguerMenu;

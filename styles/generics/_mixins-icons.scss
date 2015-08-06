@@ -34,3 +34,11 @@ $MIXINS ICONS
 		content: "\e60a";
 	}
 }
+
+@mixin iconfont-Arrow {
+	@include iconfont;
+
+	&::before {
+		content: "\e603";
+	}
+}

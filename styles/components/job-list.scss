@@ -62,8 +62,7 @@ Styleguide 2.8
         }
     }
 
-    > .item,
-    > li {
+    .item {
 
 		@include inner;
         padding-bottom: 15px;
