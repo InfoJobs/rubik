@@ -59,10 +59,6 @@ Markup:
 	.title {
 		margin: 0;
         word-wrap: break-word;
-
-		span {
-			font-family: $base-font-family-light;
-		}
 	}
 
 	img {
@@ -141,25 +137,3 @@ Markup:
 	}
 
 }
-
-.content-media-nested {//need content-media class
-
-		padding: 20px 0 0 0;
-
-		.media {
-			width: auto;
-		}
-
-		img {
-			height: 40px;
-			width: 40px;
-		}
-
-		 @at-root li#{&} + &::before {
-			position: static;
-			content: none;
-			border-top: 0 none;
-			top: 0;
-		}
-
-	}
