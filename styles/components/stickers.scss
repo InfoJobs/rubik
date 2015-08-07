@@ -37,6 +37,12 @@
 
 .sticker-skill {
     @include sticker-skill;
+
+    img {
+        float: left;
+        margin: 0 10px 0 0;
+        width: $base-font-size;// equivalencia del width y font-size
+    }
 }
 
 a.sticker-skill,
