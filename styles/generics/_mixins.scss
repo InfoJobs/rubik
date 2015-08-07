@@ -78,6 +78,11 @@ $query2     = width, device-width
   -ms-flex-order: $val;
   -webkit-order: $val;
   order: $val;
+  	//android 4.3
+	-webkit-box-ordinal-group: $val;
+	   -moz-box-ordinal-group: $val;
+	        box-ordinal-group: $val;
+	//
 }
 
 @mixin flex-direction($val) {
