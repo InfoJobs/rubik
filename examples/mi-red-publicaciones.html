@@ -8,13 +8,13 @@
 <!-- styles -->
 <link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
 
-<link rel="stylesheet" type="text/css" href="../styles/components/navigation.css" />
-<link rel="stylesheet" type="text/css" href="../styles/components/notifications.css" />
 <link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/content-media.css" />
+<link rel="stylesheet" type="text/css" href="../styles/components/stickers.css" />
 
 <link rel="stylesheet" type="text/css" href="../styles/elements/tools.css" />
 
-<script type="text/javascript" src="../js/change-placeholder.js"></script>
+<script type="text/javascript" src="../js/text-area-resized.js"></script>
 
 </head>
 <body>
@@ -40,11 +40,11 @@
 							<img alt="" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" class="crop-circle">
 						</div>
 						<div class="body">
-							<h3 class="title"><a href="#">Juan Manuel</a> a&ntilde;adi&oacute; 5 conocimientos a su CV</h3>
+							<h3 class="title"><a href="#">Juan Manuel</a> <span>a&ntilde;adi&oacute; 5 conocimientos a su CV</span></h3>
 							<ul class="list-default list-inline margin-top">
-								<li><span class="sticker-skill">Javascript</span></li>
-								<li><span class="sticker-skill">Javascript</span></li>
-								<li><span class="sticker-skill">Javascript</span></li>
+								<li><span class="sticker-skill"><img src="//media.infojobs.net/appgrade/pictures/pic-skills.svg">Javascript</span></li>
+								<li><span class="sticker-skill"><img src="//media.infojobs.net/appgrade/pictures/pic-skills.svg#medium">Javascript</span></li>
+								<li><span class="sticker-skill"><img src="//media.infojobs.net/appgrade/pictures/pic-skills.svg#high">Javascript</span></li>
 								<li><span class="sticker-skill">Javascript</span></li>
 								<li><span class="sticker-skill">Javascript</span></li>
 								<li><span class="sticker-skill">Javascript</span></li>
@@ -57,20 +57,42 @@
 								<li><a href="#" class="link-underline">Comentar (0)</a></li>
 								<li class="alternative">Hace menos de una hora</li>
 							</ul>
-							<textarea class="js-textarea-adjust textarea-adjust" onkeyup="textAreaResize(this)"></textarea>
-							<script>
-							function textAreaResize(el){
-    el.style.height = (el.scrollHeight > el.clientHeight) ? (el.scrollHeight)+"px" : "60px";
-}
-							</script>
-							<style>
-							.textarea-adjust {
-								height: 30px;
-								min-height: 30px;
-								overflow-y: auto;
-								word-wrap:break-word
-								}
-							</style>
+							<textarea class="js-textarea-resized textarea-resized" onkeyup="textAreaResized(this)"></textarea>
+
+						</div>
+					</div>
+					<div class="inner content-media">
+						<div class="media">
+							<img alt="" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" class="crop-circle">
+						</div>
+						<div class="body">
+							<h3 class="title"><a href="#">Juan Manuel</a> <span>a&ntilde;adi&oacute; 5 conocimientos a su CV</span></h3>
+							<ul class="margin-bottom">
+								<li class="content-media content-media-nested">
+									<div class="media">
+										<img alt="" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" class="crop-circle">
+									</div>
+									<div class="body">
+										<h3 class="title"><a href="#">Juan Manuel</a></h3>
+										<p>Peon de lavanderia <span class="alternative">en BUGADERIA INDUSTRIAL NEUS, SC</span></p>
+									</div>
+								</li>
+								<li class="content-media content-media-nested">
+									<div class="media">
+										<img alt="" src="https://www.infojobs.net/candidato.foto?dgv=2062307603661642043&amp;id_candidato=683813ea-73b4-4853-8062-1c4ab9387397" class="crop-circle">
+									</div>
+									<div class="body">
+										<h3 class="title"><a href="#">Juan Manuel</a></h3>
+										<p>Peon de lavanderia <span class="alternative">en BUGADERIA INDUSTRIAL NEUS, SC</span></p>
+									</div>
+								</li>
+
+							</ul>
+							<ul class="tag-group margin-top">
+								<li><a href="#" class="link-underline">Me gusta (0)</a></li>
+								<li><a href="#" class="link-underline">Comentar (0)</a></li>
+								<li class="alternative">Hace menos de una hora</li>
+							</ul>
 
 						</div>
 					</div>
