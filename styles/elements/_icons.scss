@@ -76,6 +76,11 @@ Styleguide 1.7.1.1
 		margin-right: 6px;
 	}
 
+	@at-root .tabs #{&} {
+		font-size: ($medium-font-size + 2);
+		margin-right: 9px;
+	}
+
 	@at-root .tag-group .medium#{&} {
 		margin-right: 6px;
 	}
