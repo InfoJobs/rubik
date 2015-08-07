@@ -126,6 +126,7 @@
 		margin-bottom: 10px;
 		font-size: $medium-font-size;
 		line-height: $medium-line-height;
+		color: $shiro;
 
 		@include mediaquery ($bp-desktop) {
 			font-size: $large-font-size;

@@ -72,6 +72,17 @@ select:-moz-focusring {
 	line-height: $base-line-height;
 }
 
+textarea,
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="button"],
+input[type="submit"],
+select {
+     -webkit-appearance: none;
+     border-radius: 0;
+}
+
 input,
 textarea {
 	@include input;
@@ -91,6 +102,7 @@ textarea {
 	&:focus {
 		border: 1px solid $day-blue;
 		outline: none;
+		color: #000;
 	}
 }
 
@@ -174,14 +186,14 @@ Styleguide 1.4
 
 .form--field-block {
 	> li { //TODO: Could be possible to apply only a class in <form> to avoid do it in every <ul>?
-		margin-bottom: 20px;
-		vertical-align: middle;
+	margin-bottom: 20px;
+	vertical-align: middle;
 
-		&:last-child {
-			margin-bottom: 0;
-		}
+	&:last-child {
+		margin-bottom: 0;
+	}
 
-		.info {
+	.info {
 			margin-bottom: 0;
 
 			&:first-of-type {
@@ -217,6 +229,7 @@ form ul .indent { // Used in cartas presentacion
 	> input,
 	> .form-select  {
 		display: inline-block;
+		width: 220px!important;
 	}
 }
 
@@ -351,8 +364,8 @@ Styleguide 1.4.3
 		text-indent: 0.01px;
 		text-overflow: "";
 		-webkit-appearance: none;
-		   -moz-appearance: none;
-				appearance: none;
+			 -moz-appearance: none;
+						appearance: none;
 		top: 0;
 		left: 0;
 		margin: 0;
@@ -451,7 +464,7 @@ Styleguide 1.4.5
 	}
 
 	&-date {
-		width: 178px;
+		width: auto;
 		border: 1px solid #c7c7c7;
 
 		> div {
@@ -473,15 +486,20 @@ Styleguide 1.4.5
 			    content: "";
 			}
 
-			input {
-				width: 50px;
+		input {
+			width: 50px;
+				margin-left: -4px;
 				text-align: center;
 				border: none;
-			}
+		}
 
 			&:last-child input  {
-				width: 66px;
-			}
+			width: 66px;
+		}
+	}
+
+		> div:first-of-type input {
+			margin-left: 0;
 		}
 
 		.error & {
@@ -615,8 +633,6 @@ Styleguide 1.4.6
 		height: auto;
 		margin-top: 2px;
 		padding: 10px;
-		border-radius: 0;
-		padding-right: 30px;
 	}
 
 	/*already defined (and modified) at pulldown-chosen.scss */
@@ -695,14 +711,90 @@ Styleguide 1.4.6
 }
 
 .field-group-grow { //used on edit-cv when an input + button sizes needs to be 100%
-	display: flex;
+	@include display-flex;
 
-	:first-child {
-		flex: 1 1 0;
+	> div:first-of-type {
+		@include flex;
 		margin-right: 20px;
 	}
 
-	:last-child {
+	> div:last-of-type {
+		-webkit-align-items: flex-end;
 		align-self: flex-end;
+		//properties above don't work on safari :(
+
+		margin-top: 25px;
+	}
+}
+
+.field-date-group {
+
+	.input-group-date {
+		> div {
+			width: 50%;
+
+			input {
+				width: 100%;
+			}
+		}
+	}
+
+	.start-date-group {
+		width: calc(50% - 5px);
+		float: left;
+		margin-right: 5px;
+
+		input {
+			width: 100%;
+		}
+
+		@include mediaquery ($bp-tablet) {
+			width: calc(33% - 10px);
+			margin-right: 10px;
+		}
+	}
+
+	.end-date-group {
+		width: calc(50% - 5px);
+		float: left;
+		margin-left: 5px;
+
+		input {
+			width: 100%;
+		}
+
+		@include mediaquery ($bp-tablet) {
+			width: calc(66% - 10px);
+			margin-left: 10px;
+		}
+
+		.end-date {
+
+			@include mediaquery ($bp-tablet) {
+				width: 50%;
+				float: left;
+			}
+		}
+
+		.field-date-group-currently {
+			//margin-top: 40px;
+
+			input {
+				width: auto;
+			}
+
+			@include mediaquery ($bp-tablet) {
+				width: calc(50% - 20px);
+				float: left;
+				overflow: hidden;
+				margin-top: 40px;
+				margin-left: 20px;
+				padding-left: 1px;
+			}
+
+			@include mediaquery ($bp-desktop) {
+				margin-top: 30px;
+			}
+		}
 	}
 }

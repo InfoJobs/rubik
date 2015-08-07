@@ -228,6 +228,11 @@ $gridColumns: 12;
 		margin-left: 0;
 	}
 
+	&-bottom {
+		margin-top: 30px; //because align-self is not supported by ie and safari
+		align-self: flex-end;
+	}
+
 	@media print {
 		margin: 0;
 	}

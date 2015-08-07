@@ -49,6 +49,18 @@ Styleguide 1.5
             margin: 10px 0 0;
         }
     }
+
+    + .btn:not(.btn-group-justified) {
+        margin-left: 5px;
+    }
+
+    + .btn-group-justified {
+        margin-top: 10px;
+
+        &:first-of-type {
+            margin-bottom: 0;
+        }
+    }
 }
 
 
@@ -75,7 +87,7 @@ Styleguide 1.5.1.1
 */
 
 .btn-default {
-  color: $dark-silk;
+  color: $mid-script;
   background-color: $resting-katana;
 }
 
@@ -92,7 +104,6 @@ Styleguide 1.5.1.1
   .panel-focus & {
       background-color: $late-blue;
     }
-
 }
 
 .btn-primary:hover,
@@ -118,6 +129,21 @@ Styleguide 1.5.1.1
 
 .btn-primary-contrast:active {
   background-color: $midnight-blue;
+}
+
+.btn-alert {
+    width: 100%;
+    color: $shiro;
+    background-color: $trueblood;
+
+    @include mediaquery ($bp-tablet) {
+        width: auto;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: darken( $trueblood, 10% );
+    }
 }
 
 ///*DEPRECATED: .btn-link-primary only used in header and 'ver_oferta.html'*/
@@ -298,13 +324,13 @@ Markup:
 Styleguide 1.5.1.6
 */
 
-.btn-form-inline { //only used on search-bar and filters
+.btn-form-inline { //used on search-bar, filters and edit-cv(datos-personales)
   width: 100%;
 
     @media only screen and (max-width: $tablet-start) {
         @at-root button#{&} {
             height: auto;
-            padding: 10px;
+            padding: 7px 10px 8px 10px;
             font-size: 16px;
         }
     }
@@ -383,6 +409,22 @@ Styleguide 1.6.1.1
   	    background-color: $resting-katana;
   	    cursor: default;
   	}
+
+    &.btn-group-expanded {
+		div {
+			padding-left: 10px;
+
+			.btn {
+				border-right-width: 1px;
+
+				&.disabled:hover {
+					background-color: white;
+					cursor: default;
+					border-right-width: 1px;
+				}
+			}
+		}
+	}
 }
 
 /*
@@ -433,6 +475,11 @@ Styleguide 1.6.1.3
     }
 }
 
+.btn-group-centered {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 ///*DEPRECATED: .btn-divider and .btn-divider-company only used on header*/
 .btn-divider {
   border-right: 1px solid $darkest-shiro;
@@ -453,4 +500,33 @@ Styleguide 1.6.1.3
     border: 0 none;
     background: none repeat scroll 0 0 transparent;
     cursor: pointer;
+}
+
+/*
+Button file
+
+Use class `.btn-file` to display an input type file.
+
+Markup:
+<div class="btn btn-default btn-file">
+	<span>Subir foto</span>
+	<input type="file" value="Subir foto" />
+</div>
+
+Styleguide 1.6.1.4
+*/
+
+.btn-file {
+	position: relative;
+
+	span {
+		position: absolute;
+		left: 0;
+		width: 100%;
+	}
+
+	input {
+		opacity: 0;
+		cursor: pointer;
+	}
 }

@@ -157,7 +157,7 @@ Styleguide  #{$sgi-containers}
 
 	@include mediaquery ($bp-desktop) {
 		width: 486px;
-		margin: 0 auto;
+		margin: 0 auto 10px auto;
 	}
 
 	input,
@@ -241,6 +241,62 @@ img[alt] {
     }
 }
 
+.container-editable {
+    .content-middle {
+        min-height: 30px;
+    }
+
+    @include mediaquery ($bp-desktop) {
+        &:hover {
+            background: #f5fcff;
+            border-top: 1px solid #dae8ee;
+            border-bottom: 1px solid #dae8ee;
+            margin-top: -1px;
+            margin-bottom: -1px;
+            cursor: pointer;
+
+            .action {
+                display: block;
+            }
+        }
+    }
+
+    .action {
+        display: none;
+    }
+
+    &.opacity {
+        opacity: 1;
+
+        .content-type-text,
+        .panel-default {
+            opacity: .5;
+        }
+    }
+}
+
+.opacity {
+    opacity: .5;
+}
+
+.list-default > li.container-editable {
+	margin-bottom: 0;
+
+	@include mediaquery ($bp-desktop) {
+		&:hover {
+			margin-bottom: -1px;
+		}
+	}
+}
+
+.inner-expanded > a:first-child > .inner.container-editable {
+    margin-top: -20px;
+
+    &:hover {
+        margin-top: -21px;
+    }
+}
+
 .section-footer {
 		margin: 30px 0 20px 0;
 		text-align: center;
@@ -321,4 +377,9 @@ body {
 	content: "|";
 	padding-left: 5px;
 	color: $darkest-shiro;
+}
+
+abbr {
+    text-decoration: none;
+    cursor: help;
 }

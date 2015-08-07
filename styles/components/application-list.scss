@@ -1,0 +1,75 @@
+//generics
+@import "../generics/generics";
+
+
+/*------------------------------------*\
+    $APPLICATION LIST
+\*------------------------------------*/
+
+.application-list {
+    margin-bottom: 20px;
+    border-top: 1px solid $darkest-shiro;
+
+    &:only-child {
+        border: none;
+    }
+
+    & > li {
+        overflow: hidden;
+        border-bottom: 1px solid $darkest-shiro;
+        -webkit-touch-callout:none;
+
+        .item {
+            //@extend %inner;
+            position: relative;
+
+            @include mediaquery ($bp-desktop) {
+                &:hover{
+                    background: #e3f5fd;
+                    cursor: pointer;
+
+                    .action {
+                        visibility: visible;
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .action {
+                @extend %font-small-line;
+                position: absolute;
+                right: 20px;
+                visibility: hidden;
+                transition: none;
+            }
+
+        }
+    }
+
+
+
+    h2,
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    h2 {
+        @extend %font-medium-line;
+        clear: left;
+    }
+
+    h3 {
+        @extend %font-small-line;
+        font-family: $base-font-family;
+
+        & a {
+            color: $dark-silk;
+            text-decoration: underline;
+        }
+    }
+
+    .suggest {
+        //@extend %inner;
+    }
+}
