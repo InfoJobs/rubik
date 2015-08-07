@@ -247,7 +247,11 @@ Styleguide 2.16
             @include sticker-multi;
             position: relative;
             top: 0;
-            margin: 5px 0 5px 5px;
+            margin: 8px 0 5px 5px;
+
+            @include mediaquery ($bp-desktop) {
+                margin-top: 5px;
+            }
 
             .search-choice-close {
                 @include iconfont-Close;
