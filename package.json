@@ -1,0 +1,30 @@
+{
+  "name": "rubik",
+  "version": "1.0.0",
+  "description": "Frontend Framework for InfoJobs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/InfoJobs/rubik.git"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "js",
+    "javascript",
+    "infojobs"
+  ],
+  "authors": [
+      "Joan Leon <joan.leon@infojobs.net>",
+      "Laura Arnedo <laura.arnedo@infojobs.net>",
+      "Norbert Guasch <norbert.guasch@infojobs.net>",
+      "Pablo González <pablo.gonzalez@infojobs.net>"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/InfoJobs/rubik/issues"
+  },
+  "homepage": "https://github.com/InfoJobs/rubik"
+}

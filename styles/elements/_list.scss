@@ -35,21 +35,32 @@ Styleguide #{$sgi-lists}
 
 .list-default {
 
-    & > li,
-    & > dt {
+    > li,
+    > dt {
         display: block;
         position: relative;
         margin-bottom: 10px;
 
         @at-root .small#{&} {
             margin-bottom: 5px;
+
+            @media print {
+        		font-size: ($small-font-size/$point-to-px);
+        		line-height: ($small-line-height/$point-to-px);
+        	}
         }
+
         &:last-child {
 	    	margin-bottom: 0;
 	    }
+
+        @media print {
+    		font-size: ($base-font-size/$point-to-px);
+    		line-height: ($base-line-height/$point-to-px);
+    	}
     }
 
-    & > dt {
+    > dt {
         margin-bottom: 0;
         font-family: $base-font-family-bold;
         color: $dark-silk;
@@ -57,6 +68,15 @@ Styleguide #{$sgi-lists}
         &.hide {
             display: none;
         }
+    }
+
+    > dd {
+        //margin-bottom: 20px;
+
+        @media print {
+    		font-size: ($base-font-size/$point-to-px);
+    		line-height: ($base-line-height/$point-to-px);
+    	}
     }
 
     & dd + dt {
@@ -79,28 +99,33 @@ Markup:
 Styleguide #{$sgi-listsWithBullets}
 */
 
-.list-bullet-default > li,
-.list-bullet-default > dt,
-.list-bullet-default > dd {
-    padding-left: 15px;
+.list-bullet-default {
+    > li,
+    > dt,
+    > dd {
+        padding-left: 15px;
+    }
+
+    > li::before,
+    > dt::before {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 0;
+        display: block;
+        width: 5px;
+        height: 5px;
+        list-style-position: inside;
+        border-radius: 50%;
+        background-color: $soft-script;
+    }
 
     @media print {
         margin: 0;
     }
+
 }
-.list-bullet-default > li:before,
-.list-bullet-default > dt:before {
-    content: "";
-    position: absolute;
-    top: 6px;
-    left: 0;
-    display: block;
-    width: 5px;
-    height: 5px;
-    list-style-position: inside;
-    border-radius: 50%;
-    background-color: $soft-script;
-}
+
 
 /*
 Lists with icons
@@ -118,13 +143,18 @@ Markup:
 Styleguide #{$sgi-listsWithIcons}
 */
 
-$iconfont-size: (16, 18, 22, 30, 100);
+$iconfont-size: (16, 18, 22, 30, 100); //Duplicated in _icons.scss
 
-.list-default {
+.list-bullet-icon {
 
     [class^="iconfont-"],
     [class*="iconfont-"] {
         position: relative;
+
+        &::before {
+            position: absolute;
+            top: 10px;
+        }
     }
 
     @each $val in $iconfont-size {
@@ -146,11 +176,6 @@ $iconfont-size: (16, 18, 22, 30, 100);
 //	}
 //}
 
-.list-bullet-icon [class^="iconfont-"]:before,
-.list-bullet-icon [class*=" iconfont-"]:before {
-    position: absolute;
-    top: 10px;
-}
 
 /*
 Lists with nested structure
@@ -239,19 +264,19 @@ Styleguide #{$sgi-tagGroup}
     &:last-child {
         margin-top: 10px;
     }
-}
 
-.tag-group li {
-    float: left;
-    margin-bottom: 5px;
-    padding-right: 20px;
+    li {
+        float: left;
+        margin-bottom: 5px;
+        padding-right: 20px;
 
-    .skin-executive &:only-child { //TODO: fix extra margin used in result-list component
-        margin-bottom: 0;
-    }
+        .skin-executive &:only-child { //TODO: fix extra margin used in result-list component
+            margin-bottom: 0;
+        }
 
-    @media print {
-        margin: 0;
+        @media print {
+            margin: 0;
+        }
     }
 }
 

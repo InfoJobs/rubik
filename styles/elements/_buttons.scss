@@ -100,6 +100,10 @@ Styleguide 1.5.1.1
 .btn-primary {
   color: $shiro;
   background-color: $day-blue;
+
+  .panel-focus & {
+      background-color: $late-blue;
+    }
 }
 
 .btn-primary:hover,
@@ -389,7 +393,7 @@ Styleguide 1.6.1.1
 
   		&:hover:not([disabled]) {
   			background-color: $resting-katana;
-  			}
+  		}
 
   		&.btn-disabled:hover {
   			background: $shiro;

@@ -127,7 +127,10 @@ $path-icons:			    '//media.infojobs.net/app/icons' !default;
 $path-sprites:			    '//media.infojobs.net/appgrade/sprites' !default;
 $path-backgrounds: 		    '//media.infojobs.net/appgrade/backgrounds' !default;
 
+// Z-INDEX
 
+$zindex-menu   : 9000;
+$zindex-wrap-overlay: 8999;
 
 // BREAKPONINTS START
 
@@ -137,3 +140,7 @@ $mobile-start: 		        480px;
 
 $bp-desktop:		        769px;
 $bp-tablet:			        481px;
+
+// CUSTOM BREAKPONINTS
+
+$bp-header:					946px;

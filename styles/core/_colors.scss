@@ -43,14 +43,15 @@ Markup:
 Styleguide 1.2.7.1
 */
 
-
-
 //white text
-.contrast {
+.contrast,
+.contrast[class*="iconfont-"]::before {
 	color: $shiro;
+
 	&:hover {
 		color: $shiro;
 	}
+
 	&:focus {
 		color: $shiro;
 	}
@@ -71,7 +72,8 @@ Styleguide 1.2.7.1
 .disabled,
 .disabled:hover,
 .disabled:visited,
-.disabled:active {
+.disabled:active,
+.disabled[class*="iconfont-"]::before {
 	color: $soft-script;
 	cursor: default;
 }
@@ -80,7 +82,8 @@ Styleguide 1.2.7.1
 	text-decoration: none;
 }
 
-.marked {
+.marked,
+.marked[class*="iconfont-"]::before {
 	color: $bamboo;
 
 	.skin-executive & {
@@ -93,15 +96,18 @@ Styleguide 1.2.7.1
 	background-color: $bamboo;
 }
 
-.marked-contrast {
+.marked-contrast,
+.marked-contrast[class*="iconfont-"]::before {
 	@extend %marked-contrast;
 }
 
-.alternative {
+.alternative,
+.alternative[class*="iconfont-"]::before {
     color: $soft-script;
 }
 
-.alternative-action {
+.alternative-action,
+.alternative-action[class*="iconfont-"]::before {
 	color: $mid-script;
 
 	.skin-executive & {
@@ -143,8 +149,9 @@ a.alternative-action:hover {
 a.script,
 a.script:hover,
 a.script:visited,
-a.script:active {
-    color: $dark-silk;
+a.script:active,
+.script[class*="iconfont-"]::before {
+	color: $dark-silk;
 }
 
 //force color used for texts (p.e: top-searches). Not use this when it is a component
@@ -152,10 +159,22 @@ a.script:active {
 a.soft-script,
 a.soft-script:hover,
 a.soft-script:visited,
-a.soft-script:active {
+a.soft-script:active,
+.soft-script[class*="iconfont-"]::before {
 	color: $outer-pawn;
 }
 
-.darkest-shiro {
+.darkest-shiro,
+.darkest-shiro[class*="iconfont-"]::before {
 	color: $darkest-shiro;
+}
+
+.focus,
+.focus[class*="iconfont-"]::before {
+	color: $day-blue;
+}
+
+.alert,
+.alert[class*="iconfont-"]::before {
+	color: $trueblood;
 }

@@ -1,7 +1,8 @@
 @import "mixins-icons";
 @import "mixins-stickers";
 @import "mixins-columns";
-@import "mixins-forms"; 
+@import "mixins-forms";
+@import "mixins-colors";
 
 /*------------------------------------*\
 $MIXINS
@@ -77,6 +78,19 @@ $query2     = width, device-width
   -ms-flex-order: $val;
   -webkit-order: $val;
   order: $val;
+  	//android 4.3
+	-webkit-box-ordinal-group: $val;
+	   -moz-box-ordinal-group: $val;
+	        box-ordinal-group: $val;
+	//
+}
+
+@mixin flex-direction($val) {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: $val;
+	-ms-flex-direction: $val;
+	flex-direction: $val;
 }
 
 @mixin flex-direction($val) {
@@ -89,8 +103,6 @@ $query2     = width, device-width
 
 @mixin inner {
 	padding: 20px 10px;
-	background-color: $shiro;
-
 
 	@include mediaquery ($bp-tablet) {
 		padding: 20px;
@@ -133,3 +145,24 @@ $query2     = width, device-width
 //		@include linear-gradient(rgba(0,0,0,0), 50%, rgba(0,0,0,0.8));
 //	}
 //
+
+@mixin border-top-expanded {
+	&::before {
+		content: "";
+		border-top: 1px solid $darkest-shiro;
+		display: block;
+
+		.panel-executive & {
+			border-top: 1px solid $mid-script;
+		}
+	}
+}
+
+
+@mixin clearfix {
+   &::after {
+     content: " "; 	// 1
+     display: table;
+     clear: both;
+   }
+ }

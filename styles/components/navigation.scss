@@ -6,31 +6,6 @@
     $NAVIGATION
 \*------------------------------------*/
 
-.nav-bar > li {
-    float: left;
-}
-
-.nav-bar > li > a {
-	display: block;
-}
-
-.nav-bar-submenu {
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width:100%;
-	background: $darkest-shiro;
-}
-
-.nav-bar-submenu > li > a {
-	padding:20px 15px;
-	color: $dark-silk;
-}
-
-.nav-bar-submenu > li > a:hover {
-	color:$day-blue;
-}
-
 .links-bar {
 	float: right; //replace for grid structure
 

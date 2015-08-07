@@ -10,16 +10,17 @@
 		<!-- /CSS FE styleguide -->
 
 		<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
 		<link rel="stylesheet" type="text/css" href="../styles/components/pulldown-chosen.css" />
 		<link rel="stylesheet" type="text/css" href="../styles/components/modal.css" />
 		<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
 
 		<script type="text/javascript" src="http://es-static0.infojobs.com/jquery-2.1.0.js" th:remove="all"></script>
-		<script type="text/javascript" src="../js/chosen.jquery.js" th:remove="all"></script>
-		<script type="text/javascript" src="http://es-static0.infojobs.com/components/responsive/cProvincesPullDown.js" th:remove="all"></script>
+        <script type="text/javascript" src="../js/chosen.jquery.js" th:remove="all"></script>
+        <script type="text/javascript" src="http://es-static0.infojobs.com/components/responsive/cProvincesPullDown.js" th:remove="all"></script>
 
-		<script type="text/javascript" src="../js/filling-date.js" th:remove="all"></script>
-		<script type="text/javascript" src="../js/mobile-header.js" th:remove="all"></script>
+        <script type="text/javascript" src="../js/filling-date.js" th:remove="all"></script>
+        <script type="text/javascript" src="../js/mobile-header.js" th:remove="all"></script>
 	</head>
 
 	<body>
@@ -262,7 +263,7 @@
 									</li>
 
 									<li class="clearfix">
-    									<label for="phone">Campo tel�fono <span class="alternative">(opcional)</span></label>
+    									<label for="phone">Campo teléfono <span class="alternative">(opcional)</span></label>
     									<input id="phone" type="tel">
 
     									<input name="phone-check" id="phone-check" type="radio">
@@ -270,7 +271,7 @@
     		                		</li>
 
 									<li class="error clearfix">
-    									<label for="phone">Campo tel�fono <span class="alternative">(opcional)</span></label>
+    									<label for="phone">Campo teléfono <span class="alternative">(opcional)</span></label>
     									<input id="phone" type="tel">
 
     									<input name="phone-check" id="phone-check" type="radio">
@@ -291,7 +292,7 @@
                                     </li>
 
 									<li>
-										<p class="label">G�nero</p>
+										<p class="label">Género</p>
 			  							<ul>
 			  								<li>
 												<input id="gender1" name="gender" type="radio">
@@ -305,7 +306,7 @@
 									</li>
 
 									<li class="error">
-										<p class="label">G�nero</p>
+										<p class="label">Género</p>
 			  							<ul>
 			  								<li>
 												<input id="gender1-error" name="gender-error" type="radio">
@@ -322,8 +323,8 @@
 									<li>
 										<label for="comment">Textarea</label>
 										<div class="textarea">
-											<textarea value="Hola,&lt;br&gt;&lt;/textarea&gt;Me gustar�a compartir contigo esta oferta de trabajo de tu inter�s que he encontrado en InfoJobs.&lt;br/&gt;Saludos,?noEscape" class="val_textarea1000" onchange="updateCount(event,this,'contador_comment',maxChars)" onkeyup="updateCount(event,this,'contador_comment',maxChars)" onkeypress="updateCount(event,this,'contador_comment',maxChars)" name="comment" id="comment">Hola,
-	Me gustar�a compartir contigo esta oferta de trabajo de tu inter�s que he encontrado en InfoJobs.
+											<textarea value="Hola,&lt;br&gt;&lt;/textarea&gt;Me gustaréa compartir contigo esta oferta de trabajo de tu interés que he encontrado en InfoJobs.&lt;br/&gt;Saludos,?noEscape" class="val_textarea1000" onchange="updateCount(event,this,'contador_comment',maxChars)" onkeyup="updateCount(event,this,'contador_comment',maxChars)" onkeypress="updateCount(event,this,'contador_comment',maxChars)" name="comment" id="comment">Hola,
+	Me gustaréa compartir contigo esta oferta de trabajo de tu interés que he encontrado en InfoJobs.
 	Saludos,</textarea>
 											<p class="info alternative small"><span id="contador_comment">114</span>/<span>250</span></p>
 										</div>
@@ -338,7 +339,7 @@
 											<li class="imgcaptcha">
 												<img id="imgCaptcha" src="//www.infojobs.net/scaptcha.ij?dgv=1436524438379">
 												<p>
-													<span class="info alternative small">�No puedes leerlo?</span>
+													<span class="info alternative small">éNo puedes leerlo?</span>
 													<a onclick="javascript:refrescarCaptcha('/scaptcha.ij','imgCaptcha');" class="link-underline" href="javascript:void(0);" tabindex="500" id="refreshCaptchaLink">Mostrar otro</a>
 												</p>
 											</li>

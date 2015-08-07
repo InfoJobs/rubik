@@ -135,7 +135,7 @@ Styleguide 2.16
 }
 .chosen-container-single .chosen-drop {
   margin-top: -3px;
-  border-radius: 0 0 4px 4px;
+  border-radius: 0;
   background-clip: padding-box;
 }
 .chosen-container-single.chosen-container-single-nosearch .chosen-search {
@@ -158,7 +158,7 @@ Styleguide 2.16
   display: none;
   float: none;
   margin: 0;
-  padding: 10px 2%;
+  padding: 10px;
   list-style: none;
   line-height: 15px;
   -webkit-touch-callout: none;
