@@ -69,8 +69,16 @@ $MIXIN COLUMNS
 		img {
 			width: 34px;
 
+			&.crop-circle {
+				height: 34px;
+			}
+
 			@include mediaquery ($bp-desktop) {
 				width: 50px;
+
+				&.crop-circle {
+					height: 50px;
+				}
 			}
 		}
 
