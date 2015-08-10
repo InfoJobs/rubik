@@ -23,6 +23,10 @@ $MIXIN COLUMNS
 			margin: 0;
 			-moz-hyphens: auto;
 			word-wrap: break-word;
+
+			span {
+				font-family: $base-font-family-light;
+			}
 		}
 
 		p:only-of-type {
@@ -58,6 +62,7 @@ $MIXIN COLUMNS
 	}
 
 	.content-type-media-small {
+
 		.fig-thumbnail-logo {
 			padding: 2px;
 
@@ -89,6 +94,27 @@ $MIXIN COLUMNS
 		}
 	}
 
+	.content-type-media-xsmall {
+
+		img {
+			width: 30px;
+
+			&.crop-circle {
+				height: 30px;
+			}
+
+			@include mediaquery ($bp-desktop) {
+				width: 40px;
+
+				&.crop-circle {
+					height: 40px;
+				}
+			}
+		}
+
+	}
+
+
 	.action {
 		@include flex(none);
 		margin-left: 20px;
@@ -100,7 +126,8 @@ $MIXIN COLUMNS
 	.content-type-media + .content-type-text {
 		margin-left: 20px;
 	}
-
+	.content-type-text + .content-type-media-xsmall,
+	.content-type-media-xsmall + .content-type-text,
 	.content-type-text + .content-type-media-small,
 	.content-type-media-small + .content-type-text {
 		margin-left: 10px;
