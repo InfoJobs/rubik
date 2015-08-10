@@ -16,16 +16,19 @@
 		<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
 
 		<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="../js/mobile-header.js" th:remove="all"></script>
 		<script type="text/javascript" src="../js/chosen.jquery.js" th:remove="all"></script>
 		<script type="text/javascript" src="http://es-static0.infojobs.com/components/responsive/cProvincesPullDown.js" th:remove="all"></script>
 	</head>
 
 	<body>
 		<div class="wrapper">
-			<div class="container">
+			<div class="container container-expanded">
 				<div class="panel-canvas">
-					<div class="row-centered inner inner-expanded">
-						<h1 class="text-center">Alertas de empleo por email</h1>
+					<div class="row-centered inner inner-expanded clearfix">
+						<div class="js-modalPage-header">
+							<h1 class="text-center">Alertas de empleo por email</h1>
+						</div>
 
 						<form method="post" action="#">
     						<fieldset>
@@ -56,6 +59,8 @@
 							<fieldset>
                                 <legend>Opciones configuración alertas</legend>
 								<h2 class="h3 heading-divider">Crear una nueva alerta que se ajuste a tus intereses</h2>
+								<p><a class="link-underline">Más info</a></p>
+
 								<ul class="form--field-block clearfix">
 									<li>
 										<label for="name">Buscar ofertas de...</label>
@@ -84,6 +89,8 @@
 								</ul>
 								<button class="btn btn-primary margin-top" type="submit">Buscar</button>
                             </fieldset>
+							<button class="btn btn-primary btn-medium margin-top js-btn-save hide-medium-device hide-large-device" type="submit">Guardar</button>
+							<a href="#" class="js-btn-cancel hide-medium-device hide-large-device"><span class="hide-small-device">Cancelar</span></a>
 						</form>
 
 					</div>

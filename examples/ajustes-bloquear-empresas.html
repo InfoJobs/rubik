@@ -16,22 +16,26 @@
 		<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
 
 		<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="../js/mobile-header.js" th:remove="all"></script>
 		<script type="text/javascript" src="../js/chosen.jquery.js" th:remove="all"></script>
 		<script type="text/javascript" src="http://es-static0.infojobs.com/components/responsive/cProvincesPullDown.js" th:remove="all"></script>
 	</head>
 
 	<body>
 		<div class="wrapper">
-			<div class="container">
+			<div class="container container-expanded">
 				<div class="panel-canvas">
-					<div class="row-centered inner inner-expanded">
-						<h1 class="text-center">Bloquear empresas</h1>
-						<p>Evita que las empresas que indiques puedan ver tu CV</p>
-						<p class="alternative">Te queda 1 bloqueo</a></p>
+					<div class="row-centered inner inner-expanded clearfix">
+						<div class="js-modalPage-header">
+							<h1 class="text-center">Bloquear empresas</h1>
+						</div>
 
-						<form method="post" action="#" class="inner-expanded">
+						<form method="post" action="#">
     						<fieldset>
                                 <legend>Tus empresas bloqueadas</legend>
+								<p>Evita que las empresas que indiques puedan ver tu CV</p>
+								<p class="alternative">Te queda 1 bloqueo</a></p>
+
 								<h2 class="h3 heading-divider">Tus empresas bloqueadas</h2>
     							<ul class="form--field-block clearfix">
 									<li>
@@ -93,6 +97,8 @@
 								<button class="btn btn-primary margin-top" type="submit">Buscar</button>
                             </fieldset>
 						</form>
+						<button class="btn btn-primary btn-medium margin-top js-btn-save hide-medium-device hide-large-device" type="submit">Guardar</button>
+						<a href="#" class="js-btn-cancel hide-medium-device hide-large-device"><span class="hide-small-device">Cancelar</span></a>
 
 
 						<ul class="form--field-block clearfix">
