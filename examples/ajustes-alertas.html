@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-15">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Alertas de empleo</title>
+
+		<!-- CSS FE styleguide -->
+		<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
+		<!-- /CSS FE styleguide -->
+
+		<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/components/pulldown-chosen.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/components/content-logo.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
+
+		<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="../js/chosen.jquery.js" th:remove="all"></script>
+		<script type="text/javascript" src="http://es-static0.infojobs.com/components/responsive/cProvincesPullDown.js" th:remove="all"></script>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="container">
+				<div class="panel-canvas">
+					<div class="row-centered inner inner-expanded">
+						<h1 class="text-center">Alertas de empleo por email</h1>
+
+						<form method="post" action="#">
+    						<fieldset>
+                                <legend>Mis alertas</legend>
+								<h2 class="h3 heading-divider">Mis alertas</h2>
+    							<ul class="form--field-block clearfix">
+									<li>
+										<div class="content-middle">
+											<div class="content-type-text text-center">
+												<h3>Carretillero</h3>
+								                <dl class="list-default list-inline">
+								                  <dt class="alternative">Fecha de creación:</dt>
+								                  <dd class="alternative">24 marzo, 2014</dd>
+								                </dl>
+											</div>
+											<div class="content-type-media">
+												<button class="btn btn-default" type="submit">Editar nombre</button>
+												<button class="btn btn-default" type="submit">Eliminar</button>
+											</div>
+										</div>
+									</li>
+
+                                </ul>
+                            </fieldset>
+						</form>
+
+						<form method="post" action="#" class="inner-expanded">
+							<fieldset>
+                                <legend>Opciones configuración alertas</legend>
+								<h2 class="h3 heading-divider">Crear una nueva alerta que se ajuste a tus intereses</h2>
+								<ul class="form--field-block clearfix">
+									<li>
+										<label for="name">Buscar ofertas de...</label>
+										<input id="name" type="text" />
+    		                		</li>
+									<li>
+										<ul class="radio-group clearfix">
+						  			        <li>
+						  			          <input type="radio" checked="checked" name="region" id="local">
+						  			          <label for="local">En España</label>
+						  			        </li>
+						  			        <li>
+						  			          <input type="radio" name="region" id="foreign">
+						  			          <label for="foreign">En el extranjero</label>
+						  			        </li>
+					  			      	</ul>
+										<label for="provinces" class="hide">Provincias</label>
+										<select id="provinces" class="chosen-select" data-placeholder="(Seleccionar)">
+												<option value="01">Option01</option>
+												<option value="02">Option02</option>
+												<option value="03">Option03</option>
+												<option value="04">Option04</option>
+												<option value="05">Option05</option>
+										</select>
+									</li>
+								</ul>
+								<button class="btn btn-primary margin-top" type="submit">Buscar</button>
+                            </fieldset>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
