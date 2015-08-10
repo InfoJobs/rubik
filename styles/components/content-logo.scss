@@ -61,3 +61,11 @@ Styleguide 2.3
 .content-top {
 	@include columns;
 }
+
+.content-top,
+.content-middle {
+
+	.list-default & {
+		@include display-flex;
+	}
+}
