@@ -34,6 +34,7 @@ Markup:
 
 Styleguide 2.3
 */
+
 .content-logo,
 .content-middle {
 	@include columns;
@@ -49,7 +50,7 @@ Styleguide 2.3
 
 	.content-logo-text,
 	.content-type-text {
-		align-items: center;
+		text-align: left;
 
 		h1,h2,h3,ul {
 			width: 100%;
