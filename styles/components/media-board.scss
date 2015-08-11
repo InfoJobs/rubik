@@ -348,47 +348,10 @@
 			-webkit-transition: all .35s;
 			transition: all .35s;
 
-
-			.description {
-				-webkit-transform: translateY(18px);
-				transform: translateY(18px);
-			}
-
-
-
-
-			.title {
-				-webkit-transform : translateY(18px);
-				transform : translateY(18px);
-				-webkit-transition: -webkit-transform 0.35s;
-				transition: transform 0.35s;
-			}
-
-			.description {
-				opacity: 0;
-				-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-				transition: opacity 0.3s, transform 0.5s;
-			}
-
 			&:hover {
 				-webkit-transition: all .35s;
 				transition: all .35s;
 
-				.title {
-					//-webkit-transform: translateY(-6px);
-					//transform: translateY(-6px);
-					//-webkit-transition: -webkit-transform 0.35s;
-					//transition: transform 0.35s;
-				}
-
-				.description {
-					opacity: 1;
-					-webkit-transform: translateY(0);
-					transform: translateY(0);
-
-					-webkit-transition: opacity 0.35s 0.05s, -webkit-transform 0.35 0.05s;
-					transition: opacity 0.35s 0.05s, transform 0.35s 0.05s;
-				}
 			}
 
 			&:hover::before {
