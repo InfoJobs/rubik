@@ -63,7 +63,6 @@ Styleguide #{$sgi-lists}
     > dt {
         margin-bottom: 0;
         font-family: $base-font-family-bold;
-        color: $dark-silk;
 
         &.hide {
             display: none;
@@ -406,5 +405,10 @@ Styleguide #{$sgi-tagGroupWithEllipsis}
 	li {
 		display: inline-block;
 		font-size: $small-font-size;
+        font-family: $base-font-family;
+	}
+
+    dt {
+		margin-right: 10px;
 	}
 }

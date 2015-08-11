@@ -15,7 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="../styles/components/modal.css" />
 		<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
 
-		<script type="text/javascript" src="http://es-static0.infojobs.com/jquery-2.1.0.js" th:remove="all"></script>
+		<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
         <script type="text/javascript" src="../js/chosen.jquery.js" th:remove="all"></script>
         <script type="text/javascript" src="http://es-static0.infojobs.com/components/responsive/cProvincesPullDown.js" th:remove="all"></script>
 
@@ -357,5 +357,12 @@
 				</div>
 			</div>
 		</div>
+
+		<script>
+		$(document).ready(function() {
+			$('.chosen-select').chosen({width:"100%",disable_search:true});
+		});
+
+		</script>
 	</body>
 </html>
