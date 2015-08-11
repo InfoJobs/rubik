@@ -20,6 +20,8 @@ Styleguide $sgi-tabs
 
 .tabs {
 
+    border-bottom: 1px solid $darkest-shiro;
+
     li {
 		display: inline-block;
 		font-family: $base-font-family-bold;

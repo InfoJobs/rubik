@@ -48,6 +48,19 @@ Styleguide 2.3
 		padding-top: 5px; //corrige centrado vertical exacto
 	}
 
+	@at-root .content-center-small-device#{&} { //only mobile
+
+		@media only screen and (max-width: $mobile-start) {
+			display: block;
+
+			.action {
+				margin: 0;
+				text-align: center;
+			}
+		}
+
+	}
+
 	.content-logo-text,
 	.content-type-text {
 		text-align: left;
@@ -55,6 +68,18 @@ Styleguide 2.3
 		h1,h2,h3,ul {
 			width: 100%;
 		}
+
+		@at-root .content-center-small-device#{&} { //only mobile
+
+			@media only screen and (max-width: $mobile-start) {
+				margin: 0;
+				text-align: center;
+			}
+
+
+		}
+
+
 	}
 }
 
