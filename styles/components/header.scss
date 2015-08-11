@@ -747,9 +747,13 @@ a.nav-bar-toggle {
 		}
 
 		.nav-bar-menu .logo,
-		&.global-nav-submenu .logo {
+		&.global-nav-submenu .logo,
+		&.global-nav-brand .logo {
 			height: auto;
 			width: auto;
+			padding: 0;
+			margin: 0;
+			display: block;
 		}
 
 		.logo img {
