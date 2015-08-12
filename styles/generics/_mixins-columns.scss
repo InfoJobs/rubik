@@ -51,12 +51,24 @@ $MIXIN COLUMNS
 		img {
 			width: 62px;
 
+			&.crop-circle {
+				height: 62px;
+			}
+
 			@include mediaquery ($bp-tablet) {
 				width: 82px;
+
+				&.crop-circle {
+					height: 82px;
+				}
 			}
 
 			@include mediaquery ($bp-desktop) {
 				width: 92px;
+
+				&.crop-circle {
+					height: 92px;
+				}
 			}
 		}
 	}
