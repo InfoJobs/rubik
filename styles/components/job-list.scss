@@ -29,10 +29,6 @@ Styleguide 2.8
     .sticker-marked {
         @extend %marked-contrast;
         margin-left: 10px;
-
-        .skin-executive & {
-            background-color: $day-blue;
-        }
     }
 
     .sticker-secondary {
@@ -145,10 +141,6 @@ Styleguide 2.8
     margin-top: 0;
     margin-bottom: 5px;
     font-family: $base-font-family;
-
-    .skin-executive & {
-        font-size: 16px;
-    }
 
     a {
         color: $mid-script;

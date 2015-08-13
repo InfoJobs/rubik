@@ -85,10 +85,6 @@ Styleguide 1.2.7.1
 .marked,
 .marked[class*="iconfont-"]::before {
 	color: $bamboo;
-
-	.skin-executive & {
-		color: $day-blue;
-	}
 }
 
 %marked-contrast {
@@ -110,25 +106,14 @@ Styleguide 1.2.7.1
 .alternative-action[class*="iconfont-"]::before {
 	color: $mid-script;
 
-	.skin-executive & {
-		color: $mid-script;
-	}
-
 	.panel-info & {
 		color: $shiro;
 	}
 
-	.panel-executive & {
-		color: $shiro;
-	}
 }
 
 a.alternative-action:hover {
 	color: $day-blue;
-
-	.skin-executive & {
-		color: $mediterranean-sea;
-	}
 }
 
 .highlight {
