@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-15">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Qué ven las empresas</title>
+
+		<!-- CSS FE styleguide -->
+		<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
+		<!-- /CSS FE styleguide -->
+
+		<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/components/modal.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
+
+		<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="../js/mobile-header.js" th:remove="all"></script>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="container container-expanded">
+				<div class="panel-canvas">
+					<div class="row-centered inner inner-expanded clearfix">
+						<div class="js-modalPage-header">
+							<h1 class="text-center">Qué ven las empresas</h1>
+						</div>
+
+						<form method="post" action="#">
+    						<fieldset>
+								<legend>Opciones configuración visibilidad de datos personales</legend>
+
+								<ul class="form--field-block clearfix">
+									<li>
+										<input id="visibledb" type="checkbox" checked/>
+										<label for="visibledb">Quiero que mi perfil sea visible para otros usuarios de InfoJobs</label>
+
+									</li>
+								</ul>
+
+								<p class="margin-top alternative small">InfoJobs nunca mostrará tu salario a otros usuarios.</p>
+							</fieldset>
+							<fieldset>
+								<legend>Configuración información adicional para tus contactos</legend>
+								<h2 class="h3 heading-divider">Información adicional para tus contactos</h2>
+								<p class="alternative small">Solo tus contactos confirmados podrán ver esta información.</p>
+
+								<ul>
+									<li>
+										<input id="email" type="checkbox" />
+										<label for="email">Email</label>
+    		                		</li>
+									<li>
+										<input id="phone" type="checkbox" />
+										<label for="phone">Teléfono/s</label>
+    		                		</li>
+								</ul>
+                            </fieldset>
+							<button class="btn btn-primary btn-medium margin-top js-btn-save" type="submit">Guardar</button>
+							<a href="#" class="js-btn-cancel"><span class="hide-small-device">Cancelar</span></a>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

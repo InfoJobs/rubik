@@ -23,6 +23,10 @@ $MIXIN COLUMNS
 			margin: 0;
 			-moz-hyphens: auto;
 			word-wrap: break-word;
+
+			span {
+				font-family: $base-font-family-light;
+			}
 		}
 
 		p:only-of-type {
@@ -47,17 +51,30 @@ $MIXIN COLUMNS
 		img {
 			width: 62px;
 
+			&.crop-circle {
+				height: 62px;
+			}
+
 			@include mediaquery ($bp-tablet) {
 				width: 82px;
+
+				&.crop-circle {
+					height: 82px;
+				}
 			}
 
 			@include mediaquery ($bp-desktop) {
 				width: 92px;
+
+				&.crop-circle {
+					height: 92px;
+				}
 			}
 		}
 	}
 
 	.content-type-media-small {
+
 		.fig-thumbnail-logo {
 			padding: 2px;
 
@@ -69,16 +86,46 @@ $MIXIN COLUMNS
 		img {
 			width: 34px;
 
+			&.crop-circle {
+				height: 34px;
+			}
+
 			@include mediaquery ($bp-desktop) {
 				width: 50px;
+
+				&.crop-circle {
+					height: 50px;
+				}
 			}
 		}
 
 		.sticker-skill {
+			top: 0;
 			width: 60px;
 			text-align: center;
 		}
 	}
+
+	.content-type-media-xsmall {
+
+		img {
+			width: 30px;
+
+			&.crop-circle {
+				height: 30px;
+			}
+
+			@include mediaquery ($bp-desktop) {
+				width: 40px;
+
+				&.crop-circle {
+					height: 40px;
+				}
+			}
+		}
+
+	}
+
 
 	.action {
 		@include flex(none);
@@ -91,7 +138,8 @@ $MIXIN COLUMNS
 	.content-type-media + .content-type-text {
 		margin-left: 20px;
 	}
-
+	.content-type-text + .content-type-media-xsmall,
+	.content-type-media-xsmall + .content-type-text,
 	.content-type-text + .content-type-media-small,
 	.content-type-media-small + .content-type-text {
 		margin-left: 10px;

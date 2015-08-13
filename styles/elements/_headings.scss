@@ -33,6 +33,7 @@ h2,
 h3,
 .h3 {
 	font-family: $base-font-family-bold;
+	color: $dark-silk;
 
 	.skin-executive & {
 		font-family: $base-font-family-light;
@@ -174,4 +175,11 @@ Heading divider
 			padding-left: 20px;
 		}
 	}
+}
+
+h3,
+.h3 {
+  &.heading-divider {
+    padding-bottom: 12px;
+  }
 }

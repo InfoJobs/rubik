@@ -149,8 +149,8 @@ Styleguide 2.16
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
-  margin: 0;
-  padding: 0;
+  margin: 0 4px 4px 0;
+  padding: 0 0 0 4px;
   max-height: 160px;
   -webkit-overflow-scrolling: touch;
 }
@@ -246,7 +246,12 @@ Styleguide 2.16
         &.search-choice {
             @include sticker-multi;
             position: relative;
-            margin: 5px 0 5px 5px;
+            top: 0;
+            margin: 8px 0 5px 5px;
+
+            @include mediaquery ($bp-desktop) {
+                margin-top: 5px;
+            }
 
             .search-choice-close {
                 @include iconfont-Close;
@@ -405,6 +410,13 @@ Styleguide 2.16
 .chosen-container-multi.chosen-container-active .chosen-choices {
     border-bottom: 1px solid $dark-shiro;
 }
+
+.chosen-container.chosen-options-selected,
+.chosen-container-multi .chosen-choices {
+    width: 100%;
+    background: none;
+}
+
 /* @end */
 /* @group Retina compatibility */
 // @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {

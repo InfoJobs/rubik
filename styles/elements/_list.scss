@@ -63,15 +63,23 @@ Styleguide #{$sgi-lists}
     > dt {
         margin-bottom: 0;
         font-family: $base-font-family-bold;
+
+        &.hide {
+            display: none;
+        }
     }
 
     > dd {
-        margin-bottom: 20px;
+        //margin-bottom: 20px;
 
         @media print {
     		font-size: ($base-font-size/$point-to-px);
     		line-height: ($base-line-height/$point-to-px);
     	}
+    }
+
+    & dd + dt {
+        margin-top: 15px;
     }
 }
 
@@ -397,5 +405,10 @@ Styleguide #{$sgi-tagGroupWithEllipsis}
 	li {
 		display: inline-block;
 		font-size: $small-font-size;
+        font-family: $base-font-family;
+	}
+
+    dt {
+		margin-right: 10px;
 	}
 }

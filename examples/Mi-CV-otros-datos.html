@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-15">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Otros datos - edici�n</title>
+
+		<!-- CSS FE styleguide -->
+		<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
+		<!-- /CSS FE styleguide -->
+
+		<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/components/pulldown-chosen.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/components/modal.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
+
+		<script type="text/javascript" src="http://es-static0.infojobs.com/jquery-2.1.0.js" th:remove="all"></script>
+		<script type="text/javascript" src="http://es-static0.infojobs.com/js/chosen.jquery.js" th:remove="all"></script>
+		<script type="text/javascript" src="http://es-static0.infojobs.com/components/responsive/cProvincesPullDown.js" th:remove="all"></script>
+
+		<script type="text/javascript" src="../js/mobile-header.js" th:remove="all"></script>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="container container-expanded">
+				<div class="panel-canvas">
+					<div class="row-centered inner inner-expanded">
+						<div class="js-modalPage-header">
+							<h1 class="text-center">Otros datos</h1>
+						</div>
+						<form method="post" action="#">
+    						<fieldset class="margin-bottom">
+                                <legend>Intereses</legend>
+    							<ul class="form--field-block clearfix">
+    								<li>
+										<label for="driving-licence">Permiso de conducir</label>
+										<div class="form-select">
+											<select id="driving-licence" multiple class="chosen-select" data-placeholder="(Seleccionar)">
+										   	 	 	<option value="0">(Seleccionar)</option>
+													<option value="1">No tengo permiso</option>
+										   	 	 	<option value="2">A1</option>
+													<option value="3">A2</option>
+													<option value="4">AM</option>
+													<option value="5">B</option>
+													<option value="6">B1</option>
+											</select>
+										</div>
+										<p class="info alternative small clearfix">Puedes seleccionar varios permisos de conducir</p>
+
+    		                		</li>
+
+									<li>
+										<p class="label">Vehiculo propio</p>
+										<ul>
+											<li>
+												<input name="car" id="car-yes" type="radio" checked="checked">
+												<label for="car-yes" class="label-checkbox">S�</label>
+											</li>
+											<li>
+												<input name="car" id="car-no" type="radio">
+												<label for="car-no" class="label-checkbox">No</label>
+											</li>
+										</ul>
+									</li>
+
+									<li>
+										<label for="nacionality">Nacionalidad</label>
+										<div class="form-select">
+											<select id="nacionality" multiple class="chosen-select" data-placeholder="(Seleccionar)">
+												<optgroup label="Europa">
+													<option value="1">Albania</option>
+										   	 	 	<option value="2">Alemania</option>
+													<option value="3">Andorra</option>
+													<option value="4">Austria</option>
+													</optgroup>
+													<optgroup label="Fuera del sistema solar">
+														<option value="5">Catalunya</option>
+													</outgroup>
+												</outgroup>
+											</select>
+										</div>
+    		                		</li>
+
+									<li>
+										<label for="job-licence">Permisos de trabajo</label>
+										<div class="form-select">
+											<select id="job-licence" multiple class="chosen-select" data-placeholder="(Seleccionar)">
+												<optgroup label="Europa">
+													<option value="1">Uni�n Europea</option>
+										   	 	 	<option value="2">Albania</option>
+													<option value="3">Andorra</option>
+													<option value="4">Bielorusia</option>
+												</optgroup>
+											</select>
+										</div>
+    		                		</li>
+
+									<li>
+										<p class="label">�Est�s dado de alta como aut�nomo?</p>
+										<ul>
+											<li>
+												<input name="freelance" id="freelance-yes" type="radio" checked="checked">
+												<label for="freelance-yes" class="label-checkbox">S�</label>
+											</li>
+											<li>
+												<input name="freelance" id="freelance-no" type="radio">
+												<label for="freelance-no" class="label-checkbox">No</label>
+											</li>
+										</ul>
+									</li>
+                                </ul>
+                            </fieldset>
+
+    						<button class="btn btn-primary btn-medium margin-top js-btn-save" type="submit">Guardar</button>
+							<a href="#" class="js-btn-cancel"><span class="hide-small-device">Cancelar</span></a>
+    					</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
