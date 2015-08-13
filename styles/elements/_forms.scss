@@ -112,6 +112,7 @@ textarea:-ms-input-placeholder  {
 input[placeholder],
 textarea[placeholder] {
 	text-overflow: ellipsis;
+	color: $soft-script;
 }
 
 input[type="radio"],
