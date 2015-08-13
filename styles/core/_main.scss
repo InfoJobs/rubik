@@ -67,11 +67,6 @@ body {
     background: $outer-fields;
 }
 
-body.skin-executive {
-	font-family: $base-font-family-light;
-	color: $mid-script;
-}
-
 input,
 select,
 textarea,
@@ -102,10 +97,6 @@ a:focus {
 
 strong {
 	font-family: $base-font-family-bold;
-
-	.skin-executive &  {
-		font-family: $base-font-family-light;
-	}
 }
 
 /*
@@ -315,10 +306,6 @@ hr {
 
 .aside-wrapper {//TODO: only used in 'search-results-list' replace for grid system
     background-color: $dark-shiro;
-
-	.skin-executive & {
-		background-color: $dark-silk;
-	}
 
     @include mediaquery ($bp-desktop) {
 

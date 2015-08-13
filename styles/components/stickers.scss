@@ -45,8 +45,7 @@
     }
 }
 
-a.sticker-skill,
-.skin-executive a.sticker-skill {
+a.sticker-skill {
     cursor: pointer;
 
     &:hover {
@@ -57,16 +56,6 @@ a.sticker-skill,
     &:active {
         background-color: $katana-smash;
     }
-}
-
-.sticker-executive {
-    @include sticker;
-    color: $shiro;
-	background-color: $dark-silk;
-
-    &[class*="iconfont-"]::before {
-		color: $shiro;
-	}
 }
 
 @mixin sticker-multi {

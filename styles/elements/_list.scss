@@ -184,10 +184,6 @@ Lists with nested structure
     display: inline-block;
     margin: 0;
     font-size: 16px;
-
-    .skin-executive & {
-        font-size: 16px
-    }
 }
 
 .list-default-text { //TODO: check usability; replace structure for <p> element
@@ -268,10 +264,6 @@ Styleguide #{$sgi-tagGroup}
         float: left;
         margin-bottom: 5px;
         padding-right: 20px;
-
-        .skin-executive &:only-child { //TODO: fix extra margin used in result-list component
-            margin-bottom: 0;
-        }
 
         @media print {
             margin: 0;
