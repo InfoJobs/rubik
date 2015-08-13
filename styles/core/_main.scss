@@ -67,11 +67,6 @@ body {
     background: $outer-fields;
 }
 
-body.skin-executive {
-	font-family: $base-font-family-light;
-	color: $mid-script;
-}
-
 input,
 select,
 textarea,
@@ -83,19 +78,11 @@ a {
 	@include transition;
  	text-decoration: none;
  	color: $day-blue;
-
- 	.skin-executive & {
-		color: $mediterranean-sea;
-	}
 }
 
 a:hover {
 	 text-decoration: none;
 	 color: $day-blue;
-
-	 .skin-executive & {
-		color: $mediterranean-sea;
-	}
 }
 
 a:focus {
@@ -110,10 +97,6 @@ a:focus {
 
 strong {
 	font-family: $base-font-family-bold;
-
-	.skin-executive &  {
-		font-family: $base-font-family-light;
-	}
 }
 
 /*
@@ -160,6 +143,20 @@ Styleguide  #{$sgi-containers}
 	}
 }
 
+.row-centered {
+	width: 100%;
+
+	@include mediaquery ($bp-desktop) {
+		width: 486px;
+		margin: 0 auto 10px auto;
+	}
+
+	input,
+	textarea {
+		width: 100%;
+	}
+}
+
 /*
 Inner containers #disabled#
 
@@ -174,23 +171,9 @@ Markup:
 Styleguide #{$sgi-innerContainers}
 */
 
-%inner {
-	padding: 20px 10px;
-
-    @include mediaquery ($bp-tablet) {
-
-        padding: 20px;
-
-    }
-
-	@media print {
-		padding: 0;
-	}
-}
-
 .content-wrapper,
 .inner {
-    @extend %inner;
+    @include inner;
 }
 
 .inner-expanded {
@@ -227,12 +210,6 @@ Styleguide #{$sgi-innerContainers}
 
 }
 
-.section-divider:before {
-	content: "";
-	border-top: 1px solid $darkest-shiro;
-	display: block;
-	padding-top: 20px;
-}
 .img-responsive {
 	max-width: 100%;
 	height: auto;
@@ -255,6 +232,62 @@ img[alt] {
     }
 }
 
+.container-editable {
+    .content-middle {
+        min-height: 30px;
+    }
+
+    @include mediaquery ($bp-desktop) {
+        &:hover {
+            background: #f5fcff;
+            border-top: 1px solid #dae8ee;
+            border-bottom: 1px solid #dae8ee;
+            margin-top: -1px;
+            margin-bottom: -1px;
+            cursor: pointer;
+
+            .action {
+                display: block;
+            }
+        }
+    }
+
+    .action {
+        display: none;
+    }
+
+    &.opacity {
+        opacity: 1;
+
+        .content-type-text,
+        .panel-default {
+            opacity: .5;
+        }
+    }
+}
+
+.opacity {
+    opacity: .5;
+}
+
+.list-default > li.container-editable {
+	margin-bottom: 0;
+
+	@include mediaquery ($bp-desktop) {
+		&:hover {
+			margin-bottom: -1px;
+		}
+	}
+}
+
+.inner-expanded > a:first-child > .inner.container-editable {
+    margin-top: -20px;
+
+    &:hover {
+        margin-top: -21px;
+    }
+}
+
 .section-footer {
 		margin: 30px 0 20px 0;
 		text-align: center;
@@ -273,10 +306,6 @@ hr {
 
 .aside-wrapper {//TODO: only used in 'search-results-list' replace for grid system
     background-color: $dark-shiro;
-
-	.skin-executive & {
-		background-color: $dark-silk;
-	}
 
     @include mediaquery ($bp-desktop) {
 
@@ -315,13 +344,6 @@ hr {
 //}
 
 
-// preload images
-
-body {
-	//for logo print
-	background: url(#{$path-media}/appgrade/backgrounds/bg-logo-claim-empleo.svg) no-repeat -9999px -9999px;
-}
-
 // to apply on container needs min-height
 .inner-freak {
 	min-height: 250px;
@@ -335,4 +357,9 @@ body {
 	content: "|";
 	padding-left: 5px;
 	color: $darkest-shiro;
+}
+
+abbr {
+    text-decoration: none;
+    cursor: help;
 }

@@ -18,18 +18,31 @@
 
 	}
 
-	.skin-executive & {
-		background-color: $mediterranean-sea;
-	}
-
-	.form-field-inline {
-		padding-right: 0;
+	.search-field {
+		float: left;
+		padding-right: 10px;
 		margin-bottom: 10px;
 
 		&:last-child {
 			margin-bottom: 0;
+			margin-right: 0;
+			padding-right: 0;
 		}
 
+		ul {
+			margin-top: 0;
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+			padding-right: 0;
+		}
+
+		@media only screen and (min-width: $bp-tablet) {
+
+			line-height: 1.4;
+		}
 	}
 
 	.search-keyword-field,
@@ -112,7 +125,7 @@
   			@include align-items (flex-end);
 		}
 
-		.form-field-inline {
+		.search-field {
 			@include flex (1);
 			padding-right: 10px;
 			margin-bottom: 0;

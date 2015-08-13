@@ -1,13 +1,11 @@
 //generics
-
-
 @import "generics/generics";
 
 	//vars.scss
-	//functions.scss
+	//functions.scss	
 	//mixins.scss
 	//placeholders.scss
-
+	
 @import "generics/reset";
 @import "generics/clearfix";
 
@@ -20,11 +18,10 @@
 @import "core/transitions";
 
 //elements
-
 @import "elements/scroll";
 @import "elements/icons";
 @import "elements/buttons";
 @import "elements/headings";
 @import "elements/paragraphs";
-/* @import "elements/list"; */
+@import "elements/list";
 @import "elements/forms";

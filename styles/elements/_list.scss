@@ -7,18 +7,22 @@
 Lists
 
 Use the following tags to create semantic lists:
-`<ul>` for unordered lists,<br>
-`<ol>` for ordered lists,<br>
-`<dl>` for definition lists.<br>
 
+* `<ul>` for unordered lists
+* `<ol>` for ordered lists
+* `<dl>` for definition lists
+
+<br>
 Use class `.list-default` for a basic list without decoration.
 
 Markup:
+<!-- Example for unordered and ordered list. -->
 <ul class="list-default">
     <li>Salario no disponible</li>
     <li>Experiencia minima: no requerida</li>
     <li>Tipo de oferta: de duracion determinada, jornada completa</li>
 </ul>
+<!-- Example for definition list. -->
 <dl class="list-default">
     <dt>Salario:</dt>
     <dd>No disponible</dd>
@@ -26,39 +30,63 @@ Markup:
     <dd>De duracion determinada, jornada completa</dd>
 </dl>
 
-Styleguide 1.2.7
+Styleguide #{$sgi-lists}
 */
 
 .list-default {
 
-    & > li,
-    & > dt {
+    > li,
+    > dt {
         display: block;
         position: relative;
         margin-bottom: 10px;
 
         @at-root .small#{&} {
             margin-bottom: 5px;
+
+            @media print {
+        		font-size: ($small-font-size/$point-to-px);
+        		line-height: ($small-line-height/$point-to-px);
+        	}
         }
+
         &:last-child {
 	    	margin-bottom: 0;
 	    }
+
+        @media print {
+    		font-size: ($base-font-size/$point-to-px);
+    		line-height: ($base-line-height/$point-to-px);
+    	}
     }
 
-    & > dt {
+    > dt {
         margin-bottom: 0;
-        font-weight: bold;
+        font-family: $base-font-family-bold;
+
+        &.hide {
+            display: none;
+        }
     }
 
-    & > dd {
-        margin-bottom: 20px;
+    > dd {
+        //margin-bottom: 20px;
+
+        @media print {
+    		font-size: ($base-font-size/$point-to-px);
+    		line-height: ($base-line-height/$point-to-px);
+    	}
+    }
+
+    & dd + dt {
+        margin-top: 15px;
     }
 }
 
 /*
 Lists with bullets
 
-Use class `.list-bullet-default` to add default bullets to the list.
+Use class `.list-default` and `.list-bullet-default` to add default bullets to the list.
 
 Markup:
 <ul class="list-default list-bullet-default">
@@ -67,38 +95,43 @@ Markup:
     <li>Tipo de oferta: de duracion determinada, jornada completa</li>
 </ul>
 
-Styleguide 1.2.7.1
+Styleguide #{$sgi-listsWithBullets}
 */
 
-.list-bullet-default > li,
-.list-bullet-default > dt,
-.list-bullet-default > dd {
-    padding-left: 15px;
+.list-bullet-default {
+    > li,
+    > dt,
+    > dd {
+        padding-left: 15px;
+    }
+
+    > li::before,
+    > dt::before {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 0;
+        display: block;
+        width: 5px;
+        height: 5px;
+        list-style-position: inside;
+        border-radius: 50%;
+        background-color: $soft-script;
+    }
 
     @media print {
         margin: 0;
     }
+
 }
-.list-bullet-default > li:before,
-.list-bullet-default > dt:before {
-    content: "";
-    position: absolute;
-    top: 6px;
-    left: 0;
-    display: block;
-    width: 5px;
-    height: 5px;
-    list-style-position: inside;
-    border-radius: 50%;
-    background-color: $soft-script;
-}
+
 
 /*
 Lists with icons
 
 Use class `.list-default` and `.list-bullet-icon` to show icons in a list.<br>
-Use class `.iconfont-[name]` for icon type and `.iconfont-[size]` for icon size.
-Visit the <a href="#section-1.6.1">icons guide</a>.
+Use class `.iconfont-[name]` for icon type, `.iconfont-[size]` for icon size and `.iconfont-[color]` for icon color.<br>
+Visit the <a href="#rubik-1.6">icons guide</a>.
 
 Markup:
 <ul class="list-default list-bullet-icon">
@@ -106,20 +139,26 @@ Markup:
     <li class="iconfont-Check iconfont-30px iconfont-soft-script">Lorem ipsum dolor</li>
 </ul>
 
-Styleguide 1.2.7.2
+Styleguide #{$sgi-listsWithIcons}
 */
 
-$iconfont-size: (16, 18, 22, 30, 100);
+$iconfont-size: (16, 18, 22, 30, 100); //Duplicated in _icons.scss
 
-.list-default {
+.list-bullet-icon {
 
     [class^="iconfont-"],
     [class*="iconfont-"] {
         position: relative;
+
+        &::before {
+            position: absolute;
+            top: 10px;
+        }
     }
 
     @each $val in $iconfont-size {
-      .iconfont-#{$val}px {
+      .iconfont-#{$val}px,
+      .iconfont-#{$val}px + dd {
         padding-left: #{$val + 10}px;
       }
     }
@@ -136,11 +175,6 @@ $iconfont-size: (16, 18, 22, 30, 100);
 //	}
 //}
 
-.list-bullet-icon [class^="iconfont-"]:before,
-.list-bullet-icon [class*=" iconfont-"]:before {
-    position: absolute;
-    top: 10px;
-}
 
 /*
 Lists with nested structure
@@ -150,10 +184,6 @@ Lists with nested structure
     display: inline-block;
     margin: 0;
     font-size: 16px;
-
-    .skin-executive & {
-        font-size: 16px
-    }
 }
 
 .list-default-text { //TODO: check usability; replace structure for <p> element
@@ -219,7 +249,7 @@ Markup:
     <li>Lorem ipsum dolor</li>
 </ul>
 
-Styleguide 1.2.7.5
+Styleguide #{$sgi-tagGroup}
 */
 
 .tag-group {
@@ -229,19 +259,15 @@ Styleguide 1.2.7.5
     &:last-child {
         margin-top: 10px;
     }
-}
 
-.tag-group li {
-    float: left;
-    margin-bottom: 5px;
-    padding-right: 20px;
+    li {
+        float: left;
+        margin-bottom: 5px;
+        padding-right: 20px;
 
-    .skin-executive &:only-child { //TODO: fix extra margin used in result-list component
-        margin-bottom: 0;
-    }
-
-    @media print {
-        margin: 0;
+        @media print {
+            margin: 0;
+        }
     }
 }
 
@@ -256,7 +282,7 @@ Markup:
     <li class>Lorem ipsum</li>
 </ul>
 
-Styleguide 1.2.7.5.1
+Styleguide #{$sgi-tagDivider}
 */
 
 .tag-group li.tag-divider {
@@ -287,7 +313,7 @@ Markup:
 </ul>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.2.7.5.2
+Styleguide #{$sgi-tagGroupTop}
 */
 
 .tag-group-top {
@@ -323,7 +349,7 @@ Markup:
     <li>Lorem ipsum</li>
 </ul>
 
-Styleguide 1.2.7.5.4
+Styleguide #{$sgi-tagGroupWithEllipsis}
 */
 .tag-group .ellipsis { //TODO: nest with '& tag-group'. Use truncate class?
     display: block;
@@ -371,5 +397,10 @@ Styleguide 1.2.7.5.4
 	li {
 		display: inline-block;
 		font-size: $small-font-size;
+        font-family: $base-font-family;
+	}
+
+    dt {
+		margin-right: 10px;
 	}
 }

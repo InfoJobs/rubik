@@ -24,7 +24,7 @@ Icons
 Icons are generated as fonts. Color and size can be modified as texts.
 Use the following classes to apply an icon on a tag.
 
-Styleguide 1.6
+Styleguide 1.7
 */
 
 
@@ -35,43 +35,65 @@ List of icons.
 
 @@include('../templates/partials/icons.html')
 
-Styleguide 1.6.1
+Styleguide 1.7.1.1
+
 */
-
-@mixin iconfont {
-	position: relative;
-	top: 4px;
-	font-family: 'Icons';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 0;
-	left: 0;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
 
 [class^="iconfont-"]::before,
 [class*=" iconfont-"]::before,
 [class^="iconfont-"]::after,
 [class*=" iconfont-"]::after {
 	@include iconfont;
+	top: 3px; // font-size base medium
 }
 
 //needs sass version 3.4.7 or later
-[class*=" iconfont-"]::before {
+[class*="iconfont-"]::before {
+	margin-right: 6px;
+	font-size: $medium-font-size;
+
+	@at-root .small#{&} {
+		font-size: ($small-font-size + 2);
+		margin-right: 3px;
+	}
+
+	@at-root .tag-group #{&} {
+		font-size: ($small-font-size + 2);
+		margin-right: 3px;
+	}
+
+	@at-root .base#{&} {
+		font-size: ($base-font-size + 2);
+		margin-right: 6px;
+	}
+
+	@at-root .tag-group .base#{&} {
+		margin-right: 6px;
+	}
+
+	@at-root .medium#{&} {
+		font-size: ($medium-font-size + 2);
+		margin-right: 6px;
+	}
+
+	@at-root .tabs #{&} {
+		font-size: ($medium-font-size + 2);
+		margin-right: 9px;
+	}
+
+	@at-root .tag-group .medium#{&} {
+		margin-right: 6px;
+	}
 
 	@at-root .btn#{&} {
+		top: 4px;
 		margin-right: 8px; //needed to separate icon from the text
+		color: $shiro;
 	}
 
 	@at-root .btn-group .btn#{&} {
-		top: 4px;
 		margin-right: 0;
+		color: $dark-silk;
 	}
 }
 
@@ -93,7 +115,7 @@ Markup:
 .iconfont-22px
 .iconfont-30px
 
-Styleguide 1.6.2
+Styleguide 1.7.2.1
 */
 
 $iconfont-size: (16, 18, 22, 30, 100); //TODO: resolve problem when it s moved to _vars
@@ -108,7 +130,8 @@ $iconfont-size: (16, 18, 22, 30, 100); //TODO: resolve problem when it s moved t
 	}
 }
 
-.iconfont-soft-script::before {
+.iconfont-soft-script::before,
+.iconfont-soft-script::after {
 	color: $soft-script;
 }
 
@@ -130,8 +153,23 @@ $iconfont-size: (16, 18, 22, 30, 100); //TODO: resolve problem when it s moved t
 .icon-email-banned {
 		background: url("#{$path-backgrounds}/icon-email-banned.png") no-repeat 0 0;
 }
+.icon-android {
+		background: url("#{$path-backgrounds}/icon-android-app.png") no-repeat 0 0;
+}
+.icon-gplus {
+		background: url("#{$path-icons}/ico-social-gplus-footer.png") no-repeat 0 0;
+}
+.icon-facebook {
+		background: url("#{$path-icons}/ico-social-face-footer.png") no-repeat 0 0;
+}
+.icon-twitter {
+		background: url("#{$path-icons}/ico-social-twitter-footer.png") no-repeat 0 0;
+}
+.icon-youtube {
+		background: url("#{$path-icons}/ico-social-youtube-footer.png") no-repeat 0 0;
+}
 
-$icon-size: (50); //TODO: resolve problem when it s moved to _vars
+$icon-size: (30,50); //TODO: resolve problem when it s moved to _vars
 
 @each $value in $icon-size {
 
@@ -161,10 +199,10 @@ $icon-size: (50); //TODO: resolve problem when it s moved to _vars
 	content: "\e602";
 }
 .iconfont-Arrow::before {
-	content: "\e603";
+	@include iconfont-Arrow;
 }
-.iconfont-BurguerMenu::before {
-	content: "\e604";
+.iconfont-BurguerMenu {
+	@include iconfont-BurguerMenu;
 }
 .iconfont-Calendar::before {
 	content: "\e605";
@@ -271,7 +309,7 @@ $icon-size: (50); //TODO: resolve problem when it s moved to _vars
 .iconfont-AlertProfile::before {
 	content: "\e627";
 }
-.iconfont-Hide::before {
+.iconfont-Hide::before { //after because only used on edit offer when it's hidden
 	content: "\e628";
 }
 .iconfont-News::before {

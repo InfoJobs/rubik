@@ -2,7 +2,15 @@
     $FONTS
 \*------------------------------------*/
 
-// Placeholders
+@mixin font-small-line { //p.small
+	font-size: $small-font-size;
+	line-height: $small-line-height;
+
+	@media print {
+		font-size: 10.5pt;
+		line-height: 11.5pt;
+	}
+}
 
 %font-small-line { //p.small
 	font-size: $small-font-size;
@@ -14,13 +22,33 @@
 	}
 }
 
+@mixin font-base-line { //p
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+
+	@media print {
+		font-size: ($base-font-size/$point-to-px);
+		line-height: ($base-line-height/$point-to-px);
+	}
+}
+
 %font-base-line { //p
 	font-size: $base-font-size;
 	line-height: $base-line-height;
 
 	@media print {
-		font-size: ($xsmall-font-size/$point-to-px);
-		line-height: ($xsmall-line-height/$point-to-px);
+		font-size: ($base-font-size/$point-to-px);
+		line-height: ($base-line-height/$point-to-px);
+	}
+}
+
+@mixin font-medium-line { //h3
+	font-size: $medium-font-size;
+	line-height: $medium-line-height;
+
+	@media print {
+		font-size: ($medium-font-size/$point-to-px);
+		line-height: ($medium-line-height/$point-to-px);
 	}
 }
 
@@ -32,6 +60,22 @@
 		font-size: ($medium-font-size/$point-to-px);
 		line-height: ($medium-line-height/$point-to-px);
 	}
+}
+
+@mixin font-large-line { //h2
+	font-size: $large-font-size;
+	line-height: $large-line-height;
+
+	@media print {
+		font-size: ($large-font-size/$point-to-px);
+		line-height: ($large-line-height/$point-to-px);
+	}
+
+	@include mediaquery ($bp-desktop) {
+		font-size: $xlarge-font-size;
+		line-height: $xlarge-line-height;
+	}
+
 }
 
 %font-large-line { //h2
@@ -50,6 +94,17 @@
 
 }
 
+@mixin font-xxlarge-line { //h1
+	font-size: $xxlarge-font-size;
+	line-height: $xxlarge-line-height;
+
+	@media print {
+		font-size: 22.5pt;
+		line-height: 23.5pt;
+	}
+
+}
+
 %font-xxlarge-line { //h1
 	font-size: $xxlarge-font-size;
 	line-height: $xxlarge-line-height;
@@ -57,6 +112,17 @@
 	@media print {
 		font-size: 22.5pt;
 		line-height: 23.5pt;
+	}
+
+}
+
+@mixin font-xxxlarge-line { //extra h1
+	font-size: $xxxlarge-font-size;
+	line-height: $xxxlarge-line-height;
+
+	@media print {
+		font-size: 27pt;
+		line-height: 28pt;
 	}
 
 }

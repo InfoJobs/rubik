@@ -1,3 +1,9 @@
+@import "mixins-icons";
+@import "mixins-colors";
+@import "mixins-stickers";
+@import "mixins-columns";
+@import "mixins-forms";
+
 /*------------------------------------*\
 $MIXINS
 \*------------------------------------*/
@@ -28,6 +34,8 @@ $query2     = width, device-width
 	box-sizing: $box-model;
 }
 
+/*Flexbox*/
+
 @mixin display-flex {
 	display: -webkit-box;
   	display: -moz-box;
@@ -52,11 +60,16 @@ $query2     = width, device-width
 	align-items: $value;
 }
 
-@mixin flex ( $value: 1 ) {
+@mixin flex ( $value: 1) {
 	-webkit-box-flex: $value;
 	-webkit-flex: $value;
 	-ms-flex: $value;
 	flex: $value;
+}
+
+@mixin flex-flow ( $value: row nowrap ) {
+	-webkit-flex-flow: $value;
+       flex-flow: $value;
 }
 
 @mixin order($val) {
@@ -65,12 +78,24 @@ $query2     = width, device-width
   -ms-flex-order: $val;
   -webkit-order: $val;
   order: $val;
+  	//android 4.3
+	-webkit-box-ordinal-group: $val;
+	   -moz-box-ordinal-group: $val;
+	        box-ordinal-group: $val;
+	//
 }
+
+@mixin flex-direction($val) {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: $val;
+	-ms-flex-direction: $val;
+	flex-direction: $val;
+}
+
 
 @mixin inner {
 	padding: 20px 10px;
-	background-color: $shiro;
-
 
 	@include mediaquery ($bp-tablet) {
 		padding: 20px;
@@ -79,11 +104,6 @@ $query2     = width, device-width
 
 @mixin panel-default {
 	background-color: $dark-shiro;
-}
-
-@mixin panel-executive {
-	color: $shiro;
-	background-color: $dark-silk;
 }
 
 //mixin for all prefix browsers
@@ -113,3 +133,24 @@ $query2     = width, device-width
 //		@include linear-gradient(rgba(0,0,0,0), 50%, rgba(0,0,0,0.8));
 //	}
 //
+
+@mixin border-top-expanded {
+	&::before {
+		content: "";
+		border-top: 1px solid $darkest-shiro;
+		display: block;
+
+		.panel-contrast & {
+			border-top: 1px solid $mid-script;
+		}
+	}
+}
+
+
+@mixin clearfix {
+   &::after {
+     content: " "; 	// 1
+     display: table;
+     clear: both;
+   }
+ }

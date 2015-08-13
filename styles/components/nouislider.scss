@@ -96,19 +96,11 @@
 .noUi-origin {
 	border-radius: 2px;
 	background: $day-blue;
-	
-	.skin-executive & {
-		background: $mediterranean-sea;
-	}
 }
 
 .noUi-background {
 	background: $soft-script;
 	//box-shadow: inset 0 1px 1px #f0f0f0;
-	
-	.skin-executive & {
-		background: $soft-script;
-	}
 }
 
 .noUi-target {

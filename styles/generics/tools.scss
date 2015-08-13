@@ -66,10 +66,22 @@
 	}
 }
 
+.text-center-small-device {
+	text-align: center;
+
+	@include mediaquery ($bp-tablet) {
+		text-align: left;
+	}
+}
+
 .text-right {
 	text-align: right;
 }
 
+[class^="lines-"],
+[class*="lines-"] {
+	display: block;
+}
 
 //Use to add clickable area
 .hit-area {
@@ -92,14 +104,19 @@
 
 @each $value in $orientations {
 
-  .border-#{$value}  {
+  .border-#{$value}  { // Used to generate a border line on top, right, bottom or left position
     border-#{$value}: 1px solid $darkest-shiro;
 	margin: 0;//only border, reset margins
+
+	@at-root .inner #{&} {
+		margin-right: -20px;
+		margin-left: -20px;
+	}
   }
 
 }
 
-.border-divider {
+.border-divider { // Used to generate a gap with a top border
 	padding-top: 20px;
 	padding-bottom: 20px;
 	border-top: 1px solid $darkest-shiro;
@@ -123,9 +140,13 @@
 	}
 }
 
+.border-top-expanded {
+	@include border-top-expanded;
+}
+
 
 /*------------------------------------*\
-    $MARGINS
+    $MARGINS and PADDINGS
 
     var $orientations in _vars.scss
 \*------------------------------------*/
@@ -133,7 +154,14 @@
 @each $value in $orientations {
 
 	.margin-#{$value}  {
-	   margin-#{$value}: $padding;
+	   margin-#{$value}: 10px;
+
+	   @include mediaquery ($bp-tablet) {
+	   		margin-#{$value}: $padding;
+	   	}
+	}
+	.padding-#{$value}  {
+	   padding-#{$value}: $padding;
 	}
 
 }
@@ -141,27 +169,6 @@
 .link-annex {
 	margin-right: 20px;
 }
-
-.border-top-expanded  {
-	position: relative;
-}
-
-.border-top-expanded::before  {
-    display: block;
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 20px;
-    right: 20px;
-    height: 1px;
-    background-color: $darkest-shiro;
-
-    .panel-executive & {
-    	background-color: $mid-script;
-    }
-
-}
-
 
 /*------------------------------------*\
     $HIDE
@@ -226,6 +233,6 @@
 \*------------------------------------*/
 
 .img-responsive {
-	width: 100%;
+	max-width: 100%;
 	height: auto;
 }

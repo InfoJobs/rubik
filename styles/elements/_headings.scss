@@ -3,7 +3,7 @@ Text elements
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
 
-Styleguide 1.2
+Styleguide #{$sgi-textElements}
 */
 
 
@@ -24,7 +24,7 @@ Markup:
 <h2>Heading level 2</h2>
 <h3>Heading level 3</h3>
 
-Styleguide 1.2.1
+Styleguide ${$sgi-headings}
 */
 
 h1,
@@ -33,21 +33,7 @@ h2,
 h3,
 .h3 {
 	font-family: $base-font-family-bold;
-
-	.skin-executive & {
-		font-family: $base-font-family-light;
-	}
-}
-
-.section h1 {
-	margin: 20px 0;
-	font-size: 32px;
-
-	@media only screen and (min-width: $bp-desktop) {
-		margin-bottom: 40px;
-		font-size: 36px;
-		line-height: 100%;
-	}
+	color: $dark-silk;
 }
 
 h1 {
@@ -58,6 +44,17 @@ h1 {
 	@include mediaquery ($bp-desktop) {
 		font-size: $xxlarge-font-size;
 		line-height: $xxlarge-line-height;
+	}
+
+	.section & {
+		margin: 20px 0;
+		font-size: $xxlarge-font-size;
+
+		@media only screen and (min-width: $bp-desktop) {
+			margin-bottom: 40px;
+			font-size: $xxxlarge-font-size;
+			line-height: 100%;
+		}
 	}
 }
 
@@ -90,12 +87,14 @@ Markup:
 	<p>Lorem ipsum</p>
 </div>
 
-Styleguide 1.2.1.1
+Styleguide #{$sgi-headingAddons}
 */
 
-.heading-addons { //TODO: modificar nomenclatura de esta clase
+.heading-addons,  //TODO: modificar nomenclatura de esta clase
+.heading-single { //Panel solo incluye h1
 
-	h1 {
+	h1,
+	h2 {
 		margin: 0;
 		word-wrap : break-word;
 		-webkit-hyphens: auto;
@@ -113,7 +112,7 @@ Use class `.heading-mega` for a big size heading.
 Markup:
 <h1 class="heading-mega">Heading mega</h1>
 
-Styleguide 1.2.1.2
+Styleguide #{$sgi-headingMega}
 */
 
 .heading-mega {
@@ -134,25 +133,27 @@ Styleguide 1.2.1.2
 
 }
 
-
 /*
-Heading-middle
+Heading middle
 
 Use class `.heading-middle` to adjust headings in vertical align content.
 
 Markup:
-<div class="heading-addons content-logo-text">
+<div class="heading-addons">
 	<h1 class="heading-middle">Header Level 1</h1>
-	<p>Lorem ipsum</p>
 </div>
 
-Styleguide 1.3.1.3
+Styleguide #{$sgi-headingMiddle}
 */
 
 .heading-middle {
 	padding-top: 10px;
 }
 
+/*
+Heading divider
+
+*/
 .heading-divider {
 	margin-bottom: 20px;
 	padding-bottom: 20px;
@@ -169,4 +170,11 @@ Styleguide 1.3.1.3
 			padding-left: 20px;
 		}
 	}
+}
+
+h3,
+.h3 {
+  &.heading-divider {
+    padding-bottom: 12px;
+  }
 }

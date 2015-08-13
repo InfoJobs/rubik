@@ -11,24 +11,23 @@
         <link rel="stylesheet" href="public/styleguide.css">
         <link rel="stylesheet" href="public/rubik.css">
 
-        <script src="public/jquery-2.1.0.min.js"></script>
-        <script src="public/jquery.modal.js"></script>
+
     </head>
     <body id="kss-node">
 
     	<nav class="sg-menu">
             <div class="sg-logo">
-                <a href="./index.html" id="logo"><img src="public/media/logo.png"></a>
+                <a href="./index.html" id="logo"><img src="./media/pictures/pic-logo-infojobs.png"></a>
             </div>
         	<ul>
         		<li>
-        			<div class="sg-section">Introduction</div>
+        			<div class="sg-section">Rubik</div>
         			<ul>
-        				<li><a href="./index.html" id="home">Design principles</a></li>
+        				<li><a href="./index.html" id="home">Introduction</a></li>
         			</ul>
         		</li>
         		<li>
-        			<div class="sg-section">Styleguide</div>
+        			<div class="sg-section">Web Components</div>
         			<ul id="sg-menu">
         				{{#eachRoot}}
                         <li>
@@ -61,6 +60,8 @@
 
         				</li>
         				{{/eachRoot}}
+                        <li><a href="#">Pages</a></li>
+                        <li><a href="#">Templates</a></li>
         			</ul>
         		</li>
         	</ul>
@@ -77,110 +78,94 @@
                 {{/if}}
             </h1>
         </header>
-        <div class="sg-wrapper">
+
         <section class="sg-content">
 
             {{#if homepage}}
             {{! - HOME ------------------------------------------------------ }}
-            <img src="./public/media/index.jpg" class="sg-img">
 
-            <div class="margin-top">
-                <h1>Rubik frontend framework</h1>
-
-                <p>Rubik es el framework interno del portal InfoJobs. Rubik permite utilizar componentes CSS y elementos Javascript para construir las páginas del portal. </p>
-
-                <p>Objetivos de Rubik:</p>
-
-                <ol>
-                    <li>- Estandarizar y reutilizar elementos y componentes.</li>
-                    <li>- Hacer más autónomo al equipo de desarrollo.<li>
-                </ol>
+            <div class="home-intro">
+               <div class="intro-content">
+                   <img src="./media/pictures/pic-logo-rubik.png" alt="Logo Rubik framework">
+                   <p class="inner">Rubik es el framework interno del portal InfoJobs. Rubik permite utilizar componentes CSS y elementos Javascript para construir las p&aacute;ginas del portal. </p>
+               </div>
             </div>
-            <div class="sg-block">
-                <h2>¿En qué se basa Rubik?</h2>
-
-                <p>Rubik se basa en cuatro pilares básicos.</p>
-
-                <div class="row-faux margin-bottom">
-                    <div class="col-4">
-                      <div class="col-child panel-canvas">
-                          <img src="./public/media/MOBILE-FIRST.jpg" class="sg-img">
-                          <div class="inner">
-                              <h3>Mobile first</h3>
-                              <p>Mobile first se centra en jerarquizar y estructurar el contenido partiendo de la resolución de una pantalla móvil.</p>
+            <div class="sg-wrapper home-content">
+                <div class="sg-block">
+                      <div class="row row-faux">
+                          <div class="col-4">
+                            <div class="col-child panel-canvas">
+                                <img src="./media/pictures/pic-mobilefirst.png" class="sg-img" alt="Logo Mobile First">
+                                <div class="inner">
+                                    <h3>Mobile first</h3>
+                                    <p>Mobile first se centra en jerarquizar y estructurar el contenido partiendo de la resoluciÃ³n de una pantalla mÃ³vil.</p>
+                                </div>
+                            </div>
                           </div>
-                      </div>
-                    </div>
 
-                    <div class="col-4">
-                      <div class="col-child panel-canvas">
-                          <img src="./public/media/RESPONSIVE.jpg" class="sg-img">
-                          <div class="inner">
-                              <h3>Responsive design</h3>
-                              <p>Responsive design ofrece una correcta visualización y experiencia en las distintas resoluciones y dispositivos.</p>
+                          <div class="col-4">
+                            <div class="col-child panel-canvas">
+                                <img src="./media/pictures/pic-responsive.png" class="sg-img" alt="Logo Responsive Design">
+                                <div class="inner">
+                                    <h3>Responsive design</h3>
+                                    <p>Responsive design ofrece una correcta visualizaciÃ³n y experiencia en las distintas resoluciones y dispositivos.</p>
+                                </div>
+                            </div>
                           </div>
-                      </div>
-                    </div>
 
-                      <div class="col-4">
-                        <div class="col-child panel-canvas">
-                            <img src="./public/media/OOCSS.jpg" class="sg-img">
-                            <div class="inner">
-                                <h3>OOCSS</h3>
-                                <p>Oriented Object CSS promueve la creación de componentes reutilizables, escalables y fáciles de mantener, separando los estilos que definen la estructura de los que definen la presentación.</p>
-                            </div>
-                        </div>
-                      </div>
-                </div>
-
-                <div class="row-faux">
-                      <div class="col-4">
-                        <div class="col-child panel-canvas">
-                            <img src="./public/media/SASS.jpg" class="sg-img">
-                            <div class="inner">
-                                <h3>Sass</h3>
-                                <p>Syntactically Awesome Stylesheets es un preprocesador CSS que simplifica la escritura y estructura de las hojas de estilo dando como resultado una CSS más limpia y ordenada.</p>
-                            </div>
-                        </div>
-                      </div>
-
-                      <div class="col-4">
-                        <div class="col-child panel-canvas">
-                            <img src="./public/media/JS.jpg" class="sg-img">
-                            <div class="inner">
-                                <h3>Javascript</h3>
-
-                                <p>Javascript nos ayuda a enriquecer la interfaz e implementar comportamientos a nivel de interacción.</p>
-                            </div>
-                        </div>
-                      </div>
-
-                        <div class="col-4">
-                          <div class="col-child panel-canvas">
-                              <img src="./public/media/HTMLSEMANTICO.jpg" class="sg-img">
-                              <div class="inner">
-                                  <h3>HTML semántico</h3>
-
-                                  <p>El HTML semántico se utiliza para reforzar la coherencia entre las etiquetas HTML y el contenido, haciendo un uso correcto de los estándares web.</p>
+                            <div class="col-4">
+                              <div class="col-child panel-canvas">
+                                  <img src="./media/pictures/pic-oocss.png" class="sg-img" alt="Logo OOCSS">
+                                  <div class="inner">
+                                      <h3>OOCSS</h3>
+                                      <p>Oriented Object CSS promueve la creaciÃ³n de componentes reutilizables, escalables y fÃ¡ciles de mantener, separando los estilos que definen la estructura de los que definen la presentaciÃ³n.</p>
+                                  </div>
                               </div>
-                          </div>
-                        </div>
+                            </div>
+                      </div>
 
-                </div>
+                      <div class="row row-faux">
+                            <div class="col-4">
+                              <div class="col-child panel-canvas">
+                                  <img src="./media/pictures/pic-sass.png" class="sg-img" alt="Logo Sass">
+                                  <div class="inner">
+                                      <h3>Sass</h3>
+                                      <p>Syntactically Awesome Stylesheets es un preprocesador CSS que simplifica la escritura y estructura de las hojas de estilo dando como resultado una CSS mÃ¡s limpia y ordenada.</p>
+                                  </div>
+                              </div>
+                            </div>
 
-            </div>
-            <!-- <div class="sg-block">
-                <div class="row">
-                    <div class="col-8">
-                        <div class="sg-box-row">
-                           <h2>Heading</h2>
-                           <p>Quid sed cernantur et noster <a href="#">in et nostrud relinqueret</a>.</p>
-                        </div>
-                    </div>
-                    <div class="col-4"></div>
-                </div>
-            </div> -->
+                            <div class="col-4">
+                              <div class="col-child panel-canvas">
+                                  <img src="./media/pictures/pic-javascript.png" class="sg-img" alt="Logo Javascript">
+                                  <div class="inner">
+                                      <h3>Javascript</h3>
+
+                                      <p>Javascript nos ayuda a enriquecer la interfaz e implementar comportamientos a nivel de interacciÃ³n.</p>
+                                  </div>
+                              </div>
+                            </div>
+
+                              <div class="col-4">
+                                <div class="col-child panel-canvas">
+                                    <img src="./media/pictures/pic-html.png" class="sg-img" alt="Logo Semantic HTML">
+                                    <div class="inner">
+                                        <h3>HTML sem&aacute;ntico</h3>
+
+                                        <p>El HTML semÃ¡ntico se utiliza para reforzar la coherencia entre las etiquetas HTML y el contenido, haciendo un uso correcto de los estÃ¡ndares web.</p>
+                                    </div>
+                                </div>
+                              </div>
+
+                      </div>
+
+                  </div>
+              </div>
+
+
             {{else}}
+
+            <div class="sg-wrapper">
             {{! - SECTIONS -------------------------------------------------- }}
 
             {{#eachSection rootName}}
@@ -197,7 +182,7 @@
                             <div id="rubik-{{reference}}" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
-                                        <h2>{{{header}}}</h2>
+                                        <h2 class="sg-block-title">{{{header}}}</h2>
                                     </header>
                                     {{#if description}}
                                         <div class="sg-block-description">
@@ -210,9 +195,11 @@
 
                                             {{#if modifiers}}
                                                 {{#eachModifier}}
-                                                    <div class="">
-                                                        {{name}} | <span>{{{description}}}</span>
+                                                    {{!
+                                                    <div>
+                                                        {{name}} <span style="display:none;">{{{description}}}</span>
                                                     </div>
+                                                    }}
                                                 {{/eachModifier}}
 
                                                 {{#isntCasper markup}}
@@ -231,8 +218,12 @@
                                                 </div>
                                                 {{/isntCasper}}
                                             {{/if}}
-
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">
+{{#isModifiers markup}}
+{{markup}}
+{{/isModifiers}}
+</code></pre>
+<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
                                     {{/if}}
 
                                 </div>
@@ -242,7 +233,11 @@
                         <div id="rubik-{{reference}}" class="row sg-block">
                             <div class="col-12">
                                 <header class="sg-block-header">
-                                    <h1>{{{header}}}</h1>
+                                    {{#ifDepth 2}}
+                                    <h1 class="sg-block-title">{{{header}}}</h1>
+                                    {{else}}
+                                    <h2 class="sg-block-title">{{{header}}}</h2>
+                                    {{/ifDepth}}
                                 </header>
                                 {{#if description}}
                                     <div class="sg-block-description">
@@ -255,21 +250,21 @@
                     {{/isntCasper}}
                 {{/isDisabled}}
             {{/eachSection}}
-
+            </div>
             {{/if}}
+
         </section>
         <section class="sg-content sg-footer">
-        © Infojobs 2015
+        Â© Infojobs 2015
         </section>
-    </div>
 
-
+        <script src="public/jquery-2.1.0.min.js"></script>
+        <script src="public/jquery.modal.js"></script>
         <script src="public/kss.js"></script>
         <script src="public/prettify.js"></script>
         <script src="public/plugins.js"></script>
         <script src="public/main.js"></script>
-        <script>
-
-        </script>
+        <script src="js/scrollHeader.js"></script>
+        <!-- <script src="js/scrollspyMenu.js"></script> -->
     </body>
 </html>

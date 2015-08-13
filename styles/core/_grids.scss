@@ -39,7 +39,7 @@ Markup:
 	<div class="col-3"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.1.1
+Styleguide #{$sgi-gridSystem}
 */
 
 @mixin row {
@@ -61,11 +61,12 @@ Styleguide 1.1.1
 .row {
 	@include row;
 
-	> [class^="col-"]:last-of-type .col-child,
-	> [class*="col-"]:last-of-type .col-child {
-			margin-bottom: 0;
+	@include mediaquery ($bp-tablet) {
+		> [class^="col-"]:last-of-type .col-child,
+		> [class*="col-"]:last-of-type .col-child {
+				margin-bottom: 0;
+		}
 	}
-
 	.aside-wrapper & {
 		display: table;
 		width: 100%;
@@ -73,7 +74,7 @@ Styleguide 1.1.1
 	}
 
 	+ .row {
-		margin-bottom: 10px;
+		margin-top: 10px;
 
 		@media print {
 			margin: 0;
@@ -126,51 +127,29 @@ Markup:
 	<div class="col-4 col-12-medium"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.1.1.2
+Styleguide #{$sgi-mediumDevices}
 */
 
 $gridColumns: 12;
 
-@include mediaquery ($bp-tablet) {
-	@for $i from 1 through $gridColumns {
-		.col-#{$i} {
+@for $i from 1 through $gridColumns {
+	.col-#{$i} {
+		@include mediaquery ($bp-tablet) {
 			width: ((100 / $gridColumns) * $i) * 1%;
 			float: left;
 		}
 	}
 
-	.col-6-medium {
-		width: 50%;
-	}
-
-	.col-12-medium {
-		width: 100%;
-	}
-
-}
-
-@include mediaquery ($bp-desktop) {
-
-	@for $i from 1 through $gridColumns {
-
-		.col-#{$i}.col-6-medium,
-		.col-#{$i}.col-12-medium {
+	.col-#{$i}.col-6-medium,
+	.col-#{$i}.col-12-medium {
+		@include mediaquery ($bp-desktop) {
 			width: ((100 / $gridColumns) * $i) * 1%;
 		}
 	}
-
 }
 
 [class^="col-"],
 [class*="col-"] {
-
-	.inner & {
-		margin-right: -10px;
-
-		@include mediaquery ($bp-tablet) {
-			margin-right: 0;
-		}
-	}
 
 	@media print {
 		width: 100%;
@@ -181,18 +160,77 @@ $gridColumns: 12;
 		float: none;
 		display: table-cell;
 	}
+
+	+ [class*="col-"] {
+		margin-top: 10px;
+
+		@include mediaquery ($bp-tablet) {
+			margin-top: 0;
+		}
+	}
 }
 
-
-.col-child {
-	margin: 0 0 10px 10px;
+.col-4:nth-child(1n+4) {
+	margin-top: 10px;
 
 	@include mediaquery ($bp-tablet) {
+		margin-top: 20px;
+	}
+}
+
+.col-6-medium {
+	@include mediaquery ($bp-tablet) {
+		width: 50%;
+	}
+}
+
+.col-12-medium {
+	@include mediaquery ($bp-tablet) {
+		width: 100%;
+
+		+ .col-12-medium {
+			margin-top: 20px;
+		}
+	}
+
+	@include mediaquery ($bp-tablet) {
+		+ .col-12-medium {
+			margin-top: 0;
+		}
+	}
+}
+
+.col-child {
+	margin: 0 0 0 10px;
+	max-width: calc(100% - 10px);
+
+	&.inner {
+		max-width: 100%;
+	}
+
+	.col-12-medium:last-of-type > & {
+
+		@include mediaquery ($bp-tablet) {
+			margin-left: 10px;
+		}
+
+		// @include mediaquery ($bp-desktop) {
+		// 	margin-left: 0;
+		// }
+	}
+
+	[class*="panel-"] > & { //aplica al padre del col-child: col-x
+		margin-left: 0;
 		margin-bottom: 0;
 	}
 
 	.aside-wrapper & {
 		margin-left: 0;
+	}
+
+	&-bottom {
+		margin-top: 30px; //because align-self is not supported by ie and safari
+		align-self: flex-end;
 	}
 
 	@media print {
@@ -216,7 +254,7 @@ $gridColumns: 12;
 	}
 }
 
-.row-bleed { //DEPRECATED: only used in 'view-offer' and 'home-executive'
+.row-bleed { //DEPRECATED: only used in 'view-offer'
 	@include row;
 	margin: 0;
 	padding-top: 10px;
@@ -238,30 +276,128 @@ $gridColumns: 12;
 }
 
 /*------------------------------------*\
+	$ROW FAUX CARD
+\*------------------------------------*/
+
+.row-faux-card {
+
+	@include mediaquery ($bp-tablet) {
+		margin-left: -20px;
+	}
+
+	.col-child {
+		margin-left: 10px;
+
+		@include mediaquery ($bp-tablet) {
+			margin-left: 20px;
+			max-width: calc(100% - 20px);
+		}
+	}
+
+	> .col-4.col-6-medium {
+		@include mediaquery ($bp-tablet) {
+			&:nth-child(1n+3) {
+				margin-top: 20px;
+			}
+		}
+
+		@include mediaquery ($bp-desktop) {
+			&:nth-child(3) {
+				margin-top: 0;
+			}
+		}
+	}
+
+	> .col-4.col-12-medium {
+		@include mediaquery ($bp-tablet) {
+			&:nth-child(1n+3) {
+				margin-top: 20px;
+				margin-bottom: 0;
+			}
+		}
+
+		@include mediaquery ($bp-desktop) {
+			&:nth-child(3) {
+				margin-top: 0;
+			}
+		}
+
+		.col-child {
+			@include mediaquery ($bp-tablet) {
+				margin-left: 20px;
+				margin-bottom: 0;
+			}
+		}
+
+		+ .col-4.col-12-medium {
+			@include mediaquery ($bp-tablet) {
+				margin-top: 20px;
+			}
+
+			@include mediaquery ($bp-desktop) {
+				margin-top: 0;
+
+				&:nth-child(1n+4) {
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+}
+
+
+/*------------------------------------*\
+	$ROW MATRIOSKA
+\*------------------------------------*/
+
+/*
+Nested row
+
+Use class `.row` and `.row-matrioska` to nested rows.
+
+@@include('../templates/partials/grid-nested.html')
+
+Markup:
+<div class="row casper">
+	<div class="col-6">
+		<div class="col-child">
+			<div class="row row-matrioska">
+				<div class="col-6"><div class="col-child">...</div></div>
+				<div class="col-6"><div class="col-child">...</div></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-6"><div class="col-child">...</div></div>
+</div>
+
+Styleguide 1.1.1.3
+*/
+
+
+/*------------------------------------*\
 	$ROW FAUX
 \*------------------------------------*/
 
 /*
 Equal height columns
 
-Use class `.row-faux` instead of `.row` to build an equal height columns structure.
+Add class `.row` and `.row-faux` to build an equal height columns structure.
 
 @@include('../templates/partials/grid-equal.html')
 
 Markup:
-<div class="row-faux casper">
+<div class="row row-faux casper">
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.1.1.3
+Styleguide #{$sgi-equalHeightColumns}
 */
 
 .row-faux {
 
-	> [class^="col-"]:last-of-type .col-child,
-	> [class*="col-"]:last-of-type .col-child {
+	> [class*="col-"]:last-child .col-child {
 			margin-bottom: 0;
 	}
 
@@ -270,22 +406,29 @@ Styleguide 1.1.1.3
 		@include display-flex;
 		@include vendor-prefix('flex-flow', 'row wrap');
 
-		[class^="col-"],
-		[class*="col-"] {
+		> [class^="col-"],
+		> [class*="col-"] {
 			@include display-flex;
 			float: none;
-			overflow: hidden;
+			//overflow: hidden; Si hay tooltip se corta por el overflow
 		}
 
 		.col-12-medium {
 			display: block;
+
+			.col-child {
+				margin-bottom: 10px;
+
+				@include mediaquery ($bp-desktop) {
+					margin-bottom: 0;
+				}
+			}
 		}
 
 		.col-child {
 			display: block;
 			@include flex;
 		}
-
 	}
 
 	@include mediaquery ($bp-desktop) {
@@ -297,4 +440,26 @@ Styleguide 1.1.1.3
 
 	}
 
+}
+
+.row-panel {
+	> [class*="col-"]:not(.col-12-medium):last-of-type {
+  		.col-child {
+	      @include mediaquery ($bp-tablet) {
+	        margin-left: 0;
+	      }
+
+		  @include mediaquery ($bp-desktop) {
+	        margin-left: 0;
+	      }
+	    }
+  	}
+
+	> [class*="col-"]:last-of-type {
+  		.col-child {
+	      @include mediaquery ($bp-desktop) {
+	        margin-left: 0;
+	      }
+	    }
+  	}
 }

@@ -1,3 +1,11 @@
+/*
+Buttons
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Styleguide 1.5
+*/
+
 /*------------------------------------*\
     $BUTTONS
 \*------------------------------------*/
@@ -41,11 +49,23 @@
             margin: 10px 0 0;
         }
     }
+
+    + .btn:not(.btn-group-justified) {
+        margin-left: 5px;
+    }
+
+    + .btn-group-justified {
+        margin-top: 10px;
+
+        &:first-of-type {
+            margin-bottom: 0;
+        }
+    }
 }
 
 
 /*
-Buttons
+Buttons type
 
 Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms).
 <br>
@@ -63,68 +83,35 @@ Also add one of the following classes to give it format:
 Markup:
 <a href="#" class="btn {{modifier_class}}">Link Button</a>
 
-Styleguide 1.5
+Styleguide 1.5.1.1
 */
 
 .btn-default {
-  color: $dark-silk;
+  color: $mid-script;
   background-color: $resting-katana;
-
-  .skin-executive & {
-  	color: $mediterranean-sea;
-  	background-color: transparent;
-  }
-
-  .skin-executive .panel-executive .btn-group &,
-  .panel-executive .btn-group & {
-  	border-color: $mediterranean-sea;
-  	color: $mediterranean-sea;
-  	background-color: transparent;
-  }
-
-  .skin-executive .btn-group & {
-  	border-color: $wood-katana-slash;
-  	color: $mid-script;
-  	background-color: $shiro;
-  }
 }
 
 .btn-default:hover,
 .btn-default:active {
     background: $katana-slash;
 	color: $dark-silk;
-
-	.skin-executive &,
-	.skin-executive .panel-executive .btn-group & {
-	    background-color: $mediterranean-sea;
-		color: $shiro;
-	}
-
-	.skin-executive .btn-group & {
-		color: $mid-script;
-		background-color: $wood-katana-slash;
-	}
 }
 
 .btn-primary {
   color: $shiro;
   background-color: $day-blue;
 
-  .skin-executive & {
-    color: $shiro;
-    background-color: $mediterranean-sea;
-  }
+  .panel-focus & {
+      background-color: $late-blue;
+
+    }
+
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
     color: $shiro;
     background-color: $late-blue;
-
-  .skin-executive & {
-    color: $shiro;
-    background-color: $dark-mediterranean-sea;
-  }
 }
 
 .btn-primary:active {
@@ -134,28 +121,31 @@ Styleguide 1.5
 .btn-primary-contrast {
   color: $shiro;
   background-color: $late-blue;
-
-  .skin-executive &  {
-      background-color: $dark-mediterranean-sea;
-  }
 }
 
 .btn-primary-contrast:hover,
 .btn-primary-contrast:focus {
     color: $shiro;
     background-color: $night-blue;
-
-  .skin-executive &  {
-      background-color: $dark-mediterranean-sea;
-  }
 }
 
 .btn-primary-contrast:active {
   background-color: $midnight-blue;
+}
 
-  .skin-executive &  {
-      background-color: $dark-mediterranean-sea;
-  }
+.btn-alert {
+    width: 100%;
+    color: $shiro;
+    background-color: $trueblood;
+
+    @include mediaquery ($bp-tablet) {
+        width: auto;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: darken( $trueblood, 10% );
+    }
 }
 
 ///*DEPRECATED: .btn-link-primary only used in header and 'ver_oferta.html'*/
@@ -196,7 +186,7 @@ Styleguide 1.5
 
 
 /*
-Buttons sizes
+Buttons size
 
 Use class `.btn-medium` or `.btn-large` to change buttons size.
 
@@ -208,7 +198,7 @@ Markup:
 .btn-medium
 .btn-large
 
-Styleguide 1.5.1
+Styleguide 1.5.1.2
 */
 
 .btn-medium {
@@ -256,7 +246,7 @@ Use class `.iconfont-[name]` to display an icon inside the button.
 Markup:
 <a href="#" class="btn btn-primary btn-medium iconfont-Facebook">Link Button</a>
 
-Styleguide 1.5.2
+Styleguide 1.5.1.3
 */
 
 /*
@@ -267,7 +257,7 @@ Use class `.btn-disabled` to show button as disabled.
 Markup:
 <a href="#" class="btn btn-default btn-medium btn-disabled">Link Button</a>
 
-Styleguide 1.5.3
+Styleguide 1.5.1.4
 */
 
 button[disabled],
@@ -281,12 +271,6 @@ button:active[disabled],
    color: $wood-katana-smash;
    text-decoration: none;
    cursor: default;
-
-   // review this rule (not work without background, border,...)
-   .skin-executive & {
-     background: $wood-resting-katana;
-     color: $wood-katana-smash;
-   }
 }
 
 
@@ -299,7 +283,7 @@ Markup:
 <a href="#" class="btn btn-primary btn-medium btn-annex">Button</a>
 <a href="#" class="link">Link</a>
 
-Styleguide 1.5.4
+Styleguide 1.5.1.5
 */
 
 .btn-annex {
@@ -339,24 +323,32 @@ Use class `.btn-form-inline` to display a full width button.
 Markup:
 <a href="#" class="btn btn-primary btn-form-inline">Button Element</a>
 
-Styleguide 1.5.5
+Styleguide 1.5.1.6
 */
 
-.btn-form-inline { //only used on search-bar and filters
+.btn-form-inline { //used on search-bar, filters and edit-cv(datos-personales)
   width: 100%;
 
     @media only screen and (max-width: $tablet-start) {
         @at-root button#{&} {
             height: auto;
-            padding: 10px;
+            padding: 7px 10px 8px 10px;
             font-size: 16px;
         }
     }
 }
 
-
 /*
 Button group
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Styleguide 1.6
+
+*/
+
+/*
+Button group structure
 
 Use class `.btn-group` to create a button group structure.<br>
 Use class `.btn-default` for buttons inside buttons group.<br>
@@ -375,7 +367,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 1.5.6
+Styleguide 1.6.1.1
 */
 
 .btn-group { //TODO: Add hide text for empty buttons
@@ -403,10 +395,6 @@ Styleguide 1.5.6
 
   		&:hover:not([disabled]) {
   			background-color: $resting-katana;
-
-  			.panel-executive & {
-  				background-color: $mediterranean-sea;
-  			}
   		}
 
   		&.btn-disabled:hover {
@@ -422,16 +410,23 @@ Styleguide 1.5.6
   	.active .btn.btn-disabled {
   	    background-color: $resting-katana;
   	    cursor: default;
-
-  	    .skin-executive & {
-  	 		background: $resting-katana;
-  	 	}
-
-  	 	.skin-executive .panel-executive & {
-  			color: $shiro;
-  			background-color: $mediterranean-sea;
-  		}
   	}
+
+    &.btn-group-expanded {
+		div {
+			padding-left: 10px;
+
+			.btn {
+				border-right-width: 1px;
+
+				&.disabled:hover {
+					background-color: white;
+					cursor: default;
+					border-right-width: 1px;
+				}
+			}
+		}
+	}
 }
 
 /*
@@ -453,7 +448,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 1.5.7
+Styleguide 1.6.1.2
 */
 
 /*
@@ -471,7 +466,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 1.5.8
+Styleguide 1.6.1.3
 */
 
 .btn-group-justified { //TODO: same properties than .btn-form-inline class
@@ -480,6 +475,11 @@ Styleguide 1.5.8
     .btn {
         width: 100%;
     }
+}
+
+.btn-group-centered {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 ///*DEPRECATED: .btn-divider and .btn-divider-company only used on header*/
@@ -502,4 +502,33 @@ Styleguide 1.5.8
     border: 0 none;
     background: none repeat scroll 0 0 transparent;
     cursor: pointer;
+}
+
+/*
+Button file
+
+Use class `.btn-file` to display an input type file.
+
+Markup:
+<div class="btn btn-default btn-file">
+	<span>Subir foto</span>
+	<input type="file" value="Subir foto" />
+</div>
+
+Styleguide 1.6.1.4
+*/
+
+.btn-file {
+	position: relative;
+
+	span {
+		position: absolute;
+		left: 0;
+		width: 100%;
+	}
+
+	input {
+		opacity: 0;
+		cursor: pointer;
+	}
 }

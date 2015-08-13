@@ -2,7 +2,7 @@
 @import "../generics/generics";
 
 /*------------------------------------*\
-	$HEADER MICROSITES
+    $HEADER MICROSITES
 \*------------------------------------*/
 
 .header-microsite {
@@ -17,8 +17,8 @@
 	}
 
 	a {
-		display: table;
-		overflow: hidden;
+	    display: table;
+    	overflow: hidden;
 		padding-right: 10px;
 		cursor: pointer;
 	}
@@ -39,7 +39,7 @@
 		font-size: 20px;
 		text-decoration: none;
 		color: $dark-silk;
-		background-image: url(//media.infojobs.net/appgrade/backgrounds/bheader-microsite-arrow-icon.png);
+		background-image: url(//media.infojobs.net/appgrade/backgrounds/bg-header-microsite-arrow-icon.png);
 		background-position: right center;
 		background-repeat: no-repeat;
 
@@ -67,7 +67,7 @@
 
 	.header-microsite {
 		img {
-			margin: 10px 20px;
+		    margin: 10px 20px;
 
 		}
 

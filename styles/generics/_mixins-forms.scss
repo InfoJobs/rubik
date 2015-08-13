@@ -1,0 +1,9 @@
+/*------------------------------------*\
+$MIXINS FORMS
+\*------------------------------------*/
+@mixin input {
+	display: block;
+	padding: 4px 10px;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+}

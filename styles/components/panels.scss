@@ -11,11 +11,14 @@ $PANELS
 		background-color: $dark-shiro;
 	}
 
+	&-base {
+		background-color: $darkest-shiro;
+	}
+
 	&-canvas {
 		background-color: $shiro;
 	}
 
-	&-executive,
 	&-contrast {
 		color: $shiro;
 		background-color: $dark-silk;
@@ -39,7 +42,6 @@ $PANELS
 		color: $shiro;
 		background-color: rgba(0, 0, 0, 0.5);
 	}
-
 }
 
 [class^="col-"].panel .col-child,
@@ -75,16 +77,8 @@ $PANELS
 	color: $shiro;
 	overflow: hidden;
 
-	.panel-executive {
-		background-color: $dark-silk;
-	}
-
 	.panel-info {
 		background-color: $dark-softened;
-	}
-
-	.skin-executive & {
-		color: $shiro;
 	}
 
 	@include mediaquery ($bp-desktop) {
@@ -149,10 +143,5 @@ $PANELS
 		padding: 5px 0;
 		text-align: center; // anadir class solo para el centrado??
 		border-top: 1px solid $darkest-shiro;
-
-		.skin-executive & {
-			border-top: 1px solid $mid-script;
-			background: $dark-silk;
-		}
 	}
 }
