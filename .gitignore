@@ -4,6 +4,7 @@
 npm-debug.log
 styleguide/styleguide/**
 styleguide/css/**
+styleguide/dist/**
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

@@ -21,17 +21,24 @@ legend {
 	display: none;
 }
 
-label {
-	display: inline-block;
+label,
+.label {
 	margin-bottom: 5px;
-	vertical-align: top;
-	line-height: 125%;
-	color: $mid-script;
 	font-size: $base-font-size;
+	line-height: 125%;
 
 	.error &:first-of-type {
 		color: $trueblood;
 	}
+	.success &:first-of-type {
+		color: $bamboo;
+	}
+}
+
+label {
+	display: inline-block;
+	vertical-align: top;
+
 	.panel-executive & {
 		color: #bebebe;
 	}
@@ -44,7 +51,12 @@ select {
 	font-size: 16px;
 	color: $dark-silk;
 	border: 0 none;
+	background: url(#{$path-backgrounds}/bg-select-arrow.png) right 15px no-repeat $shiro;
 	cursor: pointer;
+
+	.error & {
+		border: 1px solid $trueblood;
+	}
 }
 
 select:-moz-focusring {
@@ -52,22 +64,45 @@ select:-moz-focusring {
     text-shadow: 0 0 0 $outer-wall;
 }
 
+@mixin input {
+	display: block;
+	padding: 4px 10px;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+}
+
+textarea,
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="button"],
+input[type="submit"],
+select {
+     -webkit-appearance: none;
+     border-radius: 0;
+}
+
 input,
 textarea {
-	display: block;
+	@include input;
 	width: 330px;
 	margin: 0;
-	padding: 5px 10px;
 	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
-	font-size: 16px;
 
 	.error & {
 		border-color: $trueblood;
 	}
-}
 
-input {
-	height: 30px;
+	.success & {
+		border-color: $bamboo;
+		background: $light-bamboo;
+	}
+
+	&:focus {
+		border: 1px solid $day-blue;
+		outline: none;
+		color: #000;
+	}
 }
 
 textarea {
@@ -88,6 +123,7 @@ textarea:-ms-input-placeholder  {
 input[placeholder],
 textarea[placeholder] {
 	text-overflow: ellipsis;
+	color: $soft-script;
 }
 
 input[type="radio"],
@@ -113,8 +149,7 @@ input[type="checkbox"] + label,
 input[type="radio"] + label,
 .label-checkbox { //class ".label-checkbox" deprecated. actualy used in filters only
 	cursor: pointer;
-	width: 85%;
-
+	max-width: 85%;
 }
 
 /*
@@ -148,11 +183,9 @@ Markup:
 
 Styleguide 1.4
 */
-.form {
-	width: 100%;
-}
 
-.form--field-block > li { //TODO: Could be possible to apply only a class in <form> to avoid do it in every <ul>?
+.form--field-block {
+	> li { //TODO: Could be possible to apply only a class in <form> to avoid do it in every <ul>?
 	margin-bottom: 20px;
 	vertical-align: middle;
 
@@ -161,39 +194,45 @@ Styleguide 1.4
 	}
 
 	.info {
-		margin-top: 3px;
+			margin-bottom: 0;
+
+			&:first-of-type {
+				margin-top: 5px;
+			}
+		}
+	}
+
+	> li:last-child {
+			margin-bottom: 0;
+	}
+
+	label {
+		width: 100%;
 	}
 }
 
-form ul .indent {
+form ul .indent { // Used in cartas presentacion
 	margin-left: 20px;
 	margin-top: 5px;
 }
 
-form ul .form-field-inline ul {
-	margin-top: 0;
-	margin-left: 0;
-}
-
 //TODO: Nest .form-field-inline in .search-bar.scss component, because is not possible to apply this layout independently
-.form-field-inline {
-	float: left;
-	padding-right: 10px;
+.form-field-inline { // Used in search box + filters job search
+	display: table;
 
-	@media only screen and (min-width: $bp-tablet) {
+	> label {
+		margin-right: 10px;
+		margin-bottom: 0;
+   		vertical-align: middle;
+	}
 
-		line-height: 1.4;
+	> input,
+	> .form-select  {
+		display: inline-block;
+		width: 220px!important;
 	}
 }
 
-.form-field-inline:last-child {
-	margin-right: 0;
-	padding-right: 0;
-}
-
-/*.form-field-inline label {
-    margin-bottom: 5px;
-}*/
 
 /*
 Radio buttons / Checkbox #disabled#
@@ -297,7 +336,7 @@ Styleguide 1.4.2
 }
 
 /*
-Selects #disabled#
+Select
 
 ```
 .form-select -  Field select
@@ -316,27 +355,20 @@ Styleguide 1.4.3
 
 .form-select {
 	position: relative;
-	height: 30px;
-	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
 	line-height: 14px;
 	-webkit-appearance: none;
-	background: url(#{$path-backgrounds}/bg-select-arrow.png) right 50% no-repeat $shiro;
 
 	select {
 		width: 100%;
-		height: 30px;
 		padding:6px;
 		text-indent: 0.01px;
 		text-overflow: "";
 		-webkit-appearance: none;
 			 -moz-appearance: none;
 						appearance: none;
-		position: absolute;
 		top: 0;
 		left: 0;
-		float: right;
 		margin: 0;
-		background: none;
 	}
 
 	&-disabled {
@@ -374,7 +406,23 @@ Styleguide 1.4.3
 	}
 }
 
-.form-select-medium {
+/*
+Multiple select
+
+Markup:
+<label for="multiple-pulldown">Multiple pulldown</label>
+<select id="multiple-pulldown" multiple="true" class="chosen-select" data-placeholder="(Seleccionar)">
+	<option value="01">Option01</option>
+	<option value="02">Option02</option>
+	<option value="03">Option03</option>
+	<option value="04">Option04</option>
+	<option value="05">Option05</option>
+</select>
+
+Styleguide 1.4.4
+*/
+
+.form-select-medium { /* Used in SectionCvComponent*/
 	width: 350px;
 }
 
@@ -386,11 +434,12 @@ Input group #disabled#
 .input-group
 ```
 
-Styleguide 1.4.4
+Styleguide 1.4.5
 */
 
 .input-group {
     display: table;
+	width: 100%;
 
 	& > div {
 		display: table-cell;
@@ -415,24 +464,92 @@ Styleguide 1.4.4
 	}
 
 	&-date {
+		width: auto;
+		border: 1px solid #c7c7c7;
+
+		> div {
+			position: relative;
+
+			&::before {
+			    content: "|";
+			    position: absolute;
+			    top: 12px;
+			    left: -5px;
+				color: #c7c7c7;
+
+				@include mediaquery ($bp-desktop) {
+					top: 4px;
+				}
+			}
+
+			&:first-of-type::before {
+			    content: "";
+			}
+
 		input {
 			width: 50px;
+				margin-left: -4px;
+				text-align: center;
+				border: none;
 		}
 
-		div:last-child input  {
+			&:last-child input  {
 			width: 66px;
+		}
+	}
+
+		> div:first-of-type input {
+			margin-left: 0;
+		}
+
+		.error & {
+			border: 1px solid $trueblood;
 		}
 	}
 }
 
+input[type="number"] {
+	-moz-appearance:textfield;
 
-/*
-Fieldset title #disabled#
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+	    margin: 0;
+	}
+}
 
-Styleguide 1.4.5
-*/
+input[type="tel"] {
+	margin-right: 20px;
 
-.fieldset-title {
+	@include mediaquery ($bp-desktop) {
+		width: 230px;
+		float: left;
+	}
+
+	~ label {
+		width: auto;
+		margin: 10px 0 0 0;
+
+		@include mediaquery ($bp-desktop) {
+			margin-top: 4px;
+		}
+	}
+
+	~ input {
+		margin: 12px 0 0 0;
+
+		@include mediaquery ($bp-desktop) {
+			margin-top: 7px;
+		}
+	}
+
+	~ .error-info {
+	    clear: both;
+	    display: block;
+	    padding-top: 5px;
+	}
+}
+
+.fieldset-title { /* DEPRECATED: used in registration-index + KQ + filters job search */
 	display: block;
 	padding-bottom:10px;
 
@@ -467,7 +584,7 @@ Markup:
   </fieldset>
 </form>
 
-Styleguide 1.4.7
+Styleguide 1.4.6
 */
 
 .error-info {
@@ -475,6 +592,16 @@ Styleguide 1.4.7
 	color: $trueblood;
 	font-size: 12px;
 	line-height: 110%;
+}
+
+//helpers for form
+
+.input-link-annex {
+	margin: 10px 0 0 0;
+}
+
+.label-annex {
+	display: inline;
 }
 
 @media only screen and (max-width: $tablet-start) {
@@ -502,10 +629,6 @@ Styleguide 1.4.7
 		}
 	}
 
-	.form-select {
-		height: 44px;
-	}
-
 	.form-select select {
 		height: auto;
 		margin-top: 2px;
@@ -516,5 +639,162 @@ Styleguide 1.4.7
 	.chosen-container-single .chosen-single {
 		margin-top: 2px;
 		padding: 10px;
+	}
+}
+
+.password {
+	position: relative;
+
+	a {
+		position: absolute;
+		top: 26px;
+		right: 1px;
+		font-size: $small-font-size;
+		line-height: $xsmall-line-height;
+		padding: 15px 10px;
+
+		@include mediaquery ($bp-desktop) {
+			top: 25px;
+			right: 5px 10px;
+			padding: 8px;
+		}
+	}
+
+	input {
+		margin-bottom: 10px;
+	}
+
+	.meter,
+	meter {
+		height: 7px;
+	}
+
+	meter {
+		width: 100%;
+		vertical-align: top;
+
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+
+		background: $dark-shiro;
+
+
+		/* WebKit */
+		&::-webkit-meter-bar {
+			background: $dark-shiro;
+		}
+
+		&::-webkit-meter-optimum-value,
+		&::-webkit-meter-suboptimum-value {
+			background: $bamboo;
+		}
+
+		&::-webkit-meter-even-less-good-value  {
+			background: $trueblood;
+		}
+
+
+		/* Firefox */
+		&:-moz-meter-optimum::-moz-meter-bar,
+		&:-moz-meter-sub-optimum::-moz-meter-bar {
+		  background: $bamboo;
+		}
+
+		&:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+		  background: $trueblood;
+
+		}
+
+	}
+
+}
+
+.field-group-grow { //used on edit-cv when an input + button sizes needs to be 100%
+	@include display-flex;
+
+	> div:first-of-type {
+		@include flex;
+		margin-right: 20px;
+	}
+
+	> div:last-of-type {
+		-webkit-align-items: flex-end;
+		align-self: flex-end;
+		//properties above don't work on safari :(
+
+		margin-top: 25px;
+	}
+}
+
+.field-date-group {
+
+	.input-group-date {
+		> div {
+			width: 50%;
+
+			input {
+				width: 100%;
+			}
+		}
+	}
+
+	.start-date-group {
+		width: calc(50% - 5px);
+		float: left;
+		margin-right: 5px;
+
+		input {
+			width: 100%;
+		}
+
+		@include mediaquery ($bp-tablet) {
+			width: calc(33% - 10px);
+			margin-right: 10px;
+		}
+	}
+
+	.end-date-group {
+		width: calc(50% - 5px);
+		float: left;
+		margin-left: 5px;
+
+		input {
+			width: 100%;
+		}
+
+		@include mediaquery ($bp-tablet) {
+			width: calc(66% - 10px);
+			margin-left: 10px;
+		}
+
+		.end-date {
+
+			@include mediaquery ($bp-tablet) {
+				width: 50%;
+				float: left;
+			}
+		}
+
+		.field-date-group-currently {
+			//margin-top: 40px;
+
+			input {
+				width: auto;
+			}
+
+			@include mediaquery ($bp-tablet) {
+				width: calc(50% - 20px);
+				float: left;
+				overflow: hidden;
+				margin-top: 40px;
+				margin-left: 20px;
+				padding-left: 1px;
+			}
+
+			@include mediaquery ($bp-desktop) {
+				margin-top: 30px;
+			}
+		}
 	}
 }

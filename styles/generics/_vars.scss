@@ -1,7 +1,5 @@
 /* Variables =================================================== */
 
-// ToDo: Remove  in vars, we don't need define  attribute
-
 
 // TIPOGRAPHY
 
@@ -49,11 +47,6 @@ $point-to-px:				1.3333;
 $padding:                   20px; //se usa en carousel y footer
 
 
-// COLORS
-
-//http://shiro.ij/category/components/colors
-
-
 // Brand colors ----------------------------------------
 
 $day-blue:				#2088c2;
@@ -75,6 +68,7 @@ $dark-shiro:			#f2f2f2;
 $darkest-shiro:			#e2e5e6;
 $dark-silk:				#2d3133;
 $dark-softened:			#393939;
+$light-bamboo:			#effaf6;
 
 
 // Button colors --------------------------------------
@@ -129,11 +123,14 @@ $orientations: (top, right, bottom, left);
 // URLS
 
 $path-media:			    '//media.infojobs.net' !default;
-$path-icons:			    '//media.infojobs.net/app/icons' !default;
+$path-icons:			    '//media.infojobs.net/appgrade/icons' !default;
 $path-sprites:			    '//media.infojobs.net/appgrade/sprites' !default;
 $path-backgrounds: 		    '//media.infojobs.net/appgrade/backgrounds' !default;
 
+// Z-INDEX
 
+$zindex-menu   : 9000;
+$zindex-wrap-overlay: 8999;
 
 // BREAKPONINTS START
 
@@ -143,3 +140,7 @@ $mobile-start: 		        480px;
 
 $bp-desktop:		        769px;
 $bp-tablet:			        481px;
+
+// CUSTOM BREAKPONINTS
+
+$bp-header:					946px;

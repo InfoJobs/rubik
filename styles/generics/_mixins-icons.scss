@@ -1,0 +1,44 @@
+/*------------------------------------*\
+$MIXINS ICONS
+\*------------------------------------*/
+
+@mixin iconfont {
+	position: relative;
+	font-family: 'Icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 0;
+	left: 0;
+	color: $soft-script;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin iconfont-BurguerMenu {
+	@include iconfont;
+
+	&::before {
+		content: "\e604";
+	}
+}
+
+@mixin iconfont-Close {
+	@include iconfont;
+
+	&::before {
+		content: "\e60a";
+	}
+}
+
+@mixin iconfont-Arrow {
+	@include iconfont;
+
+	&::before {
+		content: "\e603";
+	}
+}

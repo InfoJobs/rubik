@@ -5,7 +5,9 @@
 <title>Modal Compartir por e-mail</title>
 <link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/style.css" />
 
-<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+<!-- CSS FE styleguide -->
+<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
+<!-- /CSS FE styleguide -->
 
 <link rel="stylesheet" type="text/css" href="../styles/components/modal.css" />
 <link rel="stylesheet" type="text/css" href="../styles/components/navigation.css" />
@@ -20,8 +22,12 @@
 <body>
 <div class="wrapper">
     <div class="container panel-canvas">
-    		<div class="modal" data-close="" data-headermodal="Comparte tu b�squeda">
-				<div class="modal-inner">
+    		<div class="modal-layer modal-fade-in">
+                <div class="modal-inner" style="width: 370px; top: 20px;">
+                    <div class="modal-header">
+                        <a title="" class="close-modal" href="#"></a>
+                        <h1 class="title">Compartir oferta por e-mail </h1>
+                    </div>
 					<div class="notification notification-error">
 						<p class="contrast">Hemos visto que hay algunos errores....</p>
 					</div>
@@ -30,7 +36,6 @@
 			   			<form action="#">
 			   				<fieldset>
 			   					<legend>Compartir por email</legend>
-
 								<fieldset>
 									<legend>Datos de contacto</legend>
 							    	<ul class="form--field-block clearfix">
@@ -53,33 +58,28 @@
 											<p class="info alternative small">1/100</p>
 							        	</li>
 							       	</ul>
-							   </fieldset>
+							  </fieldset>
 
-							       <fieldset>
-							       	<legend>C�digo de seguridad</legend>
-
-							       	<h2>C�digo de seguridad</h2>
-
-							       	<ul>
-							       		<li>
-											<label for="name">Introduce el texto de la imagen</label>
-											<input maxlength="200" id="email" name="name">
-							            </li>
-							            <li>
-							            	<p class="info alternative small">�No puedes leerlo? <a href="#" class="link">Mostrar otro</a></p>
-							            </li>
-							       	</ul>
-								</fieldset>
-
-								<button title="whatever" class="btn btn-primary" type="submit">Enviar b�squeda por email</button>
-
+                              <fieldset>
+                                <legend>C�digo de seguridad</legend>
+                                <h2>C�digo de seguridad</h2>
+                                <ul>
+                                    <li>
+                                        <label for="name">Introduce el texto de la imagen</label>
+                                        <input maxlength="200" id="email" name="name">
+                                    </li>
+                                    <li>
+                                        <p class="info alternative small">�No puedes leerlo? <a href="#" class="link">Mostrar otro</a></p>
+                                    </li>
+                                </ul>
 							</fieldset>
-						</form>
-					</div>
 
+							<button title="whatever" class="btn btn-primary" type="submit">Enviar b�squeda por email</button>
+
+						</fieldset>
+					</form>
 				</div>
-			</div>
-
+            </div>
 		</div>
 	</div>
 

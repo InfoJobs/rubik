@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-15">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Qué aparece en internet</title>
+
+		<!-- CSS FE styleguide -->
+		<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
+		<!-- /CSS FE styleguide -->
+
+		<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/components/modal.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
+
+		<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="../js/mobile-header.js" th:remove="all"></script>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="container container-expanded">
+				<div class="panel-canvas">
+					<div class="row-centered inner inner-expanded clearfix">
+						<div class="js-modalPage-header">
+							<h1 class="text-center">Qué aparece en internet</h1>
+						</div>
+
+						<form method="post" action="#">
+    						<fieldset>
+								<legend>Configuración visibilidad en internet</legend>
+								<ul class="form--field-block clearfix">
+									<li>
+										<input id="visible" type="checkbox" checked/>
+										<label for="visible">Perfil profesional visible en internet</label>
+    		                		</li>
+								</ul>
+								<p class="alternative small">InfoJobs nunca mostrará públicamente tu salario ni tus datos de contacto.</p>
+								<p>Tu perfil profesional de InfoJobs aparecera...</p>
+								<p class="margin-top">Este es el enalce a tu perfil: <a href="#" class="link-underline">http://www.infojobs.net/nombre-usuario.prf</a></p>
+
+							</fieldset>
+
+							<button class="btn btn-primary btn-medium margin-top js-btn-save" type="submit">Guardar</button>
+							<a href="#" class="js-btn-cancel"><span class="hide-small-device">Cancelar</span></a>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

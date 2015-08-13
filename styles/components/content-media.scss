@@ -26,32 +26,39 @@ Markup:
 */
 
 .content-media {
+	overflow: hidden;
 
 	.body {
-        margin-left: 70px;
+        margin-left: 80px;
 
-		@include mediaquery ($bp-tablet) {
-			margin-left: 80px;
+		p {
+			margin-bottom: 0;
 		}
 	}
 
 	.media {
         float: left;
-		padding-right: 20px;
+		padding-right: 10px;
 		width: 70px;
 
-		@include mediaquery ($bp-tablet) {
-			width: 80px;
+		&.connection {
+			position: relative;
+
+			.sticker {
+				position: absolute;
+				bottom: 0;
+				left: 5px;
+
+				@include mediaquery ($bp-tablet) {
+					left: 10px;
+				}
+			}
 		}
 	}
 
 	.title {
 		margin: 0;
         word-wrap: break-word;
-
-		a {
-			display: block;
-		}
 	}
 
 	img {
@@ -67,15 +74,63 @@ Markup:
 		top: -20px;
 	}
 
+	@at-root li#{&}.content-media-expanded + &::before {
+		border: none;
+	}
+
 	.btn-close {
 	    position: relative;
     	top: -16px;
 		float: right;
 	}
 
+	&-expanded {
+		margin-bottom: 10px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&-form {
+		position: relative;
+		padding-top: 10px;
+		border-top: 1px solid $darkest-shiro;
+
+		&:first-child {
+			border: none;
+			padding-top: 0;
+
+			input {
+				top: 15px;
+			}
+		}
+
+		&.disabled {
+			opacity: 0.5;
+		}
+
+		input {
+			position: absolute;
+			left: 1px;
+			top: 22px;
+		}
+
+		.media {
+			width: 55px;
+			margin-left: 25px;
+			padding-right: 0;
+		}
+	}
+
+	.common-contact {
+		border-top: 1px solid $darkest-shiro;
+		margin: 20px -20px -10px -20px;
+		padding: 10px 20px 0 20px;
+	}
 }
 
-.content-media-dismissable {
+.content-media-dismissable {//need content-media class
 
 	.body {
 		margin-right: 20px;

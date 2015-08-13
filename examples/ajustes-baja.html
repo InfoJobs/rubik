@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-15">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Darme de baja</title>
+
+		<!-- CSS FE styleguide -->
+		<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
+		<!-- /CSS FE styleguide -->
+
+		<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/components/modal.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
+
+		<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="../js/mobile-header.js" th:remove="all"></script>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="container container-expanded">
+				<div class="panel-canvas">
+					<div class="row-centered inner inner-expanded clearfix">
+						<div class="js-modalPage-header">
+							<h1 class="text-center">Darme de baja</h1>
+						</div>
+
+						<form method="post" action="#">
+    						<fieldset>
+								<legend>Configuración visibilidad en internet</legend>
+								<h2 class="h3 heading-divider">¿Sabes que...?</h2>
+								<p>No hace falta que completes la baja. Podrás recuperar tu CV de forma rápida si cambias de opinión.</p>
+
+								<ul>
+									<li>
+										<input id="mails" type="checkbox" checked/>
+										<label for="mails">Dejar de recibir emails...</label>
+    		                		</li>
+									<li>
+										<input id="applications" type="checkbox" checked/>
+										<label for="applications">Eliminar...</label>
+    		                		</li>
+									<li>
+										<input id="hidecv" type="checkbox" checked/>
+										<label for="hidecv">Ocultar...</label>
+    		                		</li>
+								</ul>
+								<button class="btn btn-primary btn-medium margin-top js-btn-save" type="submit">Guardar</button>
+								<a href="#" class="js-btn-cancel"><span class="hide-small-device">Cancelar</span></a>
+							</fieldset>
+							<fieldset>
+								<legend>Configuración visibilidad en internet</legend>
+								<h2 class="h3 heading-divider">Continuar con el proceso de baja</h2>
+							</fieldset>
+							<button class="btn btn-alert btn-medium margin-top" type="submit">Quiero darme de baja</button>
+
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

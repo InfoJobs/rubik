@@ -15,7 +15,7 @@ The modifier classes are `.notification-error` for errors, `.notification-succes
 Markup:
 <!-- Notification error -->
 <div class="notification notification-error notification-dismissable">
-	<button class="btn-close" type="button">×</button>
+	<button class="btn-close" type="button">x</button>
 	<p class="title">Lorem ipsum dolor sit</p>
 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
 </div>
@@ -23,7 +23,7 @@ Markup:
 <div class="container-expanded">
 <!-- Notification success -->
 <div class="notification notification-success notification-dismissable">
-	<button class="btn-close" type="button">×</button>
+	<button class="btn-close" type="button">x</button>
 	<p class="title">Lorem ipsum dolor sit</p>
 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
 </div>
@@ -32,7 +32,7 @@ Markup:
 <div class="container-expanded">
 <!-- Notification info -->
 <div class="notification notification-info notification-dismissable">
-	<button class="btn-close" type="button">×</button>
+	<button class="btn-close" type="button">x</button>
 	<p class="title">Lorem ipsum dolor sit</p>
 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
 </div>

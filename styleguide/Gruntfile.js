@@ -25,6 +25,16 @@ module.exports = function(grunt) {
           { src: ['fonts/*'], dest: 'styleguide/'}
         ]
       },
+      copyMedia: {
+        files: [
+          { src: ['./media/**'], dest: 'styleguide/'}
+        ]
+      },
+      copyJS: {
+        files: [
+          { src: ['./js/**'], dest: 'styleguide/'}
+        ]
+      },
       copyRubik: {
         expand: true,
         cwd: 'styleguide/',
@@ -57,7 +67,8 @@ module.exports = function(grunt) {
       dist: {
         options: {},
         files: [
-          {src: 'css/rubik.doc.css', dest: 'dist/', expand: true, cwd: ''}
+          {src: 'css/rubik.doc.css', dest: 'dist/', expand: true, cwd: ''},
+          {src: 'templates/infojobs/index.html', dest: '', expand: true, cwd: ''}
         ]
       }
     },
@@ -103,7 +114,7 @@ module.exports = function(grunt) {
         // Kss-node ------------------------------------------------------------
         kss: {
 //          command: 'kss-node css styleguide --css css/styles.doc.css'
-          command: 'kss-node dist/css styleguide --template templates/infojobs --helpers templates/helpers'
+          command: 'node_modules/kss/bin/kss-node dist/css styleguide --template templates/infojobs --helpers templates/helpers'
         //   command: 'kss-node dist/css styleguide --helpers templates/helpers'
         }
     }
@@ -117,7 +128,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('default', ['clean', 'sass', 'copy:styleguide', 'includereplace', 'less', 'shell', 'replace', 'copy:allStyles', 'copy:copyFonts']);
+  grunt.registerTask('default', ['clean', 'sass', 'copy:styleguide', 'includereplace', 'less', 'shell', 'replace', 'copy:allStyles', 'copy:copyFonts', 'copy:copyMedia', 'copy:copyJS']);
   grunt.registerTask('public', ['copy:copyRubik']);
 
 };

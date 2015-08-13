@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-15">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add class on scroll</title>
+
+<style>
+    .a {float: left; background: #ccc; height: 600px;}
+    .b {float: left; background: red; height: 200px;}
+    .b.wow {background: blue;}
+</style>
+
+</head>
+
+<body>
+
+  <div class="a js-itemMenu">Menu</div>
+  <div class="b sg-block-header">Heading</div>
+
+  <script>
+
+  var elMenu = document.querySelector('.js-itemMenu');
+  var elHeading = document.querySelector('.sg-block-header');
+
+
+  function scrollspy () {
+
+      var topPos = elHeading.offsetTop;
+      var scrollY = window.pageYOffset;
+      var total = window.innerHeight;
+      var myScroll = topPos - (total + scrollY);
+
+      if( myScroll > 0){
+       elMenu.style = 'color: red;';
+      } else { // to repeat animation
+          elMenu.style = 'color: green;';
+      }
+
+    }
+
+    window.addEventListener('scroll', scrollspy);
+    window.addEventListener('load', scrollspy);
+    window.addEventListener('resize', scrollspy);
+
+    console.log(elHeading.offsetTop);
+
+
+  </script>
+</body>
+
+</html>
