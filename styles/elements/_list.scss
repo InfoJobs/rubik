@@ -81,6 +81,17 @@ Styleguide #{$sgi-lists}
     & dd + dt {
         margin-top: 15px;
     }
+
+    @at-root .list-inline-description#{&} {
+
+        > dd {
+            display: inline-block;
+        }
+
+        > dd + dd {
+            margin: 0 0 0 10px;
+        }
+    }
 }
 
 /*
