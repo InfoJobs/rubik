@@ -9498,6 +9498,9 @@ $PANELS
   color: #fff;
   background-color: rgba(0, 0, 0, 0.5);
 }
+.panel-user {
+  background-color: #2d3133;
+}
 
 [class^="col-"].panel .col-child,
 [class^="col-"].panel + [class^="col-"] .col-child,
