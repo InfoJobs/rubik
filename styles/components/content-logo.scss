@@ -94,3 +94,9 @@ Styleguide 2.3
 		@include display-flex;
 	}
 }
+
+//dividers of content, se necesita nueva regla, las creadas llevan margin negativo
+
+.content-divider-default {
+	border-top: 1px solid $dark-shiro;
+}

@@ -3443,7 +3443,9 @@ Styleguide 1.2.7
 }
 .list-inline-description.list-default > dd {
   display: inline-block;
-  margin: 0 10px 0 0;
+}
+.list-inline-description.list-default > dd + dd {
+  margin: 1px 0 0 10px;
 }
 
 /*
@@ -5659,6 +5661,10 @@ Styleguide 2.3
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+}
+
+.content-divider-default {
+  border-top: 1px solid #f2f2f2;
 }
 
 /* Variables =================================================== */
