@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Input Group Date</title>
+	<style>
+		div {
+			margin-bottom: 20px;;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="input-group-date">
+		<input id="day1" type="text" data-regexp="[\d]{2}$" data-numdigits="2" data-next="month1">
+		<input id="month1" type="text" data-regexp="[\d]{2}$" data-numdigits="2" data-next="year1">
+		<input id="year1" type="text" data-regexp="[\d]{4}$" data-numdigits="4">
+	</div>
+
+	<div class="input-group-date">
+		<input id="month2" type="text" data-regexp="[\d]{2}$" data-numdigits="2" data-next="year2">
+		<input id="year2" type="text" data-regexp="[\d]{4}$" data-numdigits="4">
+	</div>
+	<div>
+		<button id="send">Enviar</button>
+	</div>
+
+	<script>
+	;(function(d,w){
+		var elGroupDate = d.querySelectorAll('.input-group-date');
+
+		var handlerField = function(event) {
+			var element = event.target;
+
+			if(	element.re.test(element.value) &&
+				element.value.lenght === element.dataset.maxdigits &&
+				element.dataset.next
+			  ) {
+				console.log(element.re);
+				d.getElementById( element.dataset.next ).focus();
+			}
+		};
+
+		function groupDates() {
+			[].forEach.call(elGroupDate, function(target) {
+				var date = [];
+				var elements = target.querySelectorAll('input');
+
+				[].forEach.call(elements, function(element) {
+					element.dataset.regexp ? element.re = new RegExp(element.dataset.regexp) : element.re = false;
+					element.addEventListener('keyup', handlerField);
+					date.push( element.value );
+				});
+				target.date = date.join('/');
+
+			});
+
+		}
+
+		w.addEventListener('DOMContentLoaded', groupDates);
+
+		d.getElementById('send').addEventListener('click', function(event){
+
+			[].forEach.call(elGroupDate, function(target) {
+				console.log(target.date);
+			});
+
+		});
+
+	})(document,window);
+	</script>
+</body>
+</html>
