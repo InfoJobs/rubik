@@ -12,7 +12,7 @@
 <body>
 
 	<div class="input-group-date">
-		<input id="day1" type="text" data-regexp="[\d]{2}$" data-numdigits="2" data-next="month1">
+		<input id="day1" type="text" data-regexp="[\d]{2}$"  data-numdigits="2" data-next="month1">
 		<input id="month1" type="text" data-regexp="[\d]{2}$" data-numdigits="2" data-next="year1">
 		<input id="year1" type="text" data-regexp="[\d]{4}$" data-numdigits="4">
 	</div>
@@ -36,25 +36,20 @@
 				element.value.lenght === element.dataset.maxdigits &&
 				element.dataset.next
 			  ) {
-				console.log(element.re);
 				d.getElementById( element.dataset.next ).focus();
 			}
 		};
 
 		function groupDates() {
 			[].forEach.call(elGroupDate, function(target) {
-				var date = [];
 				var elements = target.querySelectorAll('input');
 
 				[].forEach.call(elements, function(element) {
 					element.dataset.regexp ? element.re = new RegExp(element.dataset.regexp) : element.re = false;
+
 					element.addEventListener('keyup', handlerField);
-					date.push( element.value );
 				});
-				target.date = date.join('/');
-
 			});
-
 		}
 
 		w.addEventListener('DOMContentLoaded', groupDates);
@@ -62,9 +57,14 @@
 		d.getElementById('send').addEventListener('click', function(event){
 
 			[].forEach.call(elGroupDate, function(target) {
-				console.log(target.date);
-			});
+				var date = [];
+				var elements = target.querySelectorAll('input');
 
+				[].forEach.call(elements, function(element) {
+					date.push(element.value);
+				});
+				console.log(date.join('/'));
+			});
 		});
 
 	})(document,window);
