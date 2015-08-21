@@ -33,7 +33,7 @@ Styleguide 2.5
 	.social-footer {
 		height: 100%;
 		margin: 0 auto;
-		padding-bottom: 20px;
+		padding-bottom: 10px;
 
 		@include mediaquery ($bp-desktop) {
 			margin: 0;
