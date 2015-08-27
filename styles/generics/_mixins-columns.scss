@@ -37,6 +37,12 @@ $MIXIN COLUMNS
 			display: table;
 			margin-top: 10px;
 		}
+
+		&.contact {
+			.btn {
+			display: inline-block;
+			}
+		}
 	}
 
 	.content-logo-media,
