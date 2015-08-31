@@ -140,7 +140,7 @@ Styleguide $sgi-tabs
 }
 
 .tabs-scroll {
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-
 }
