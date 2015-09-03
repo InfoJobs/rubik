@@ -23,10 +23,6 @@ $MIXIN COLUMNS
 			margin: 0;
 			-moz-hyphens: auto;
 			word-wrap: break-word;
-
-			span {
-				font-family: $base-font-family-light;
-			}
 		}
 
 		p:only-of-type {

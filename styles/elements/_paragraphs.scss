@@ -84,9 +84,11 @@ Styleguide #{$sgi-textSize}
 Text variants
 
 Use class `.bold` to bold the content. Use only on the following tags: `<p>`, `<li>`, `<span>`, `dt` or `dd`.
+Use class `.light` to to change from bold to light content.
 
 Markup:
 <p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<h1>Lorem ipsum dolor sit amet, <span class="light">consectetur adipiscing elit</span>.</h1>
 
 Styleguide #{$sgi-textVariants}
 */
@@ -94,6 +96,9 @@ Styleguide #{$sgi-textVariants}
 
 .bold { //TODO: used in whatever kind of copy text (p, a, li...). Get out of _paragraphs.scss
 	font-family: $base-font-family-bold;
+}
+.light {
+	font-family: $base-font-family-light;//TODO: used in whatever kind of copy text or headings. Get out of _paragraphs.scss
 }
 
 /*
