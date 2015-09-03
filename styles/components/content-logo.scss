@@ -39,6 +39,7 @@ Styleguide 2.3
 .content-middle {
 	@include columns;
 	align-items: center;
+	-webkit-align-items: center;
 
 	h1 {
 		padding-top: 10px; //corrige centrado vertical exacto
