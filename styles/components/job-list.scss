@@ -1,6 +1,5 @@
 //generics
 @import "../generics/generics";
-//refactor
 @import "../core/fonts";
 @import "../core/colors";
 
@@ -45,6 +44,10 @@ Styleguide 2.8
         li  {
             padding-right: 20px;
         }
+
+        & + .sticker {
+        	margin-bottom: 10px;
+        }
     }
 
     > li {
@@ -84,6 +87,7 @@ Styleguide 2.8
 
         &.vhpt {
 			height: 1px;
+			width: 2px;
 			padding: 0;
 			border: 0;
 			opacity: 0.001;
@@ -154,8 +158,6 @@ Styleguide 2.8
     color: $mid-script;
 
     @include mediaquery ($bp-tablet) {
-        width: 80%;
-
         &.without-logo {
             width: 100%;
         }
@@ -171,37 +173,6 @@ Styleguide 2.8
     text-overflow: ellipsis;
     white-space: nowrap;
     padding-left: 1px;
-}
-
-
-/* job-list-pic-logo */
-.job-list-pic-logo {
-    width: 62px;
-    height: 62px;
-    float: right;
-    margin-left: 20px;
-
-    @include mediaquery ($bp-tablet) {
-        width: 82px;
-        height: 82px;
-    }
-
-    @include mediaquery ($bp-desktop) {
-        width: 108px;
-        height: 108px;
-    }
-
-    img {
-        width: 52px;
-
-        @include mediaquery ($bp-tablet) {
-            width: 72px;
-        }
-
-        @include mediaquery ($bp-desktop) {
-            width: 98px;
-        }
-    }
 }
 
 
@@ -223,6 +194,7 @@ li.list-logos {
         width: 25%;
         overflow: hidden;
         padding-right: 10px;
+        padding-left: 0;
 
         @include mediaquery ($bp-tablet) {
 	        padding-right: 20px;
