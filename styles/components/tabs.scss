@@ -125,6 +125,7 @@ Styleguide $sgi-tabs
         @media only screen and (max-width: $mobile-start) {
 	           @include display-flex;
                @include flex-flow;
+               width: 110%;// para android nativo
 
                li {
                    @include flex(0 0 auto);

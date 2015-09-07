@@ -932,7 +932,6 @@ Styleguide 1.1.1.2
 
 .col-child {
   margin: 0 0 0 10px;
-  max-width: calc(100% - 10px);
 }
 .col-child.inner {
   max-width: 100%;
@@ -3251,7 +3250,8 @@ Heading divider
 }
 
 h3.heading-divider,
-.h3.heading-divider {
+.h3.heading-divider,
+.medium.heading-divider {
   padding-bottom: 12px;
 }
 
@@ -3307,14 +3307,20 @@ Styleguide 1.2.3
 Text variants
 
 Use class `.bold` to bold the content. Use only on the following tags: `<p>`, `<li>`, `<span>`, `dt` or `dd`.
+Use class `.light` to to change from bold to light content.
 
 Markup:
 <p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<h1>Lorem ipsum dolor sit amet, <span class="light">consectetur adipiscing elit</span>.</h1>
 
 Styleguide 1.2.5
 */
 .bold {
   font-family: Proximanovabold, Helvetica, Arial, sans-serif;
+}
+
+.light {
+  font-family: Proximanovalight, Helvetica, Arial, sans-serif;
 }
 
 /*
@@ -3823,6 +3829,10 @@ textarea {
   min-height: 150px;
   resize: vertical;
   width: 100%;
+}
+
+.textarea .info {
+  margin-top: 5px;
 }
 
 input::-webkit-input-placeholder,
@@ -5252,6 +5262,7 @@ Styleguide 2.3
   display: flex;
   position: relative;
   align-items: center;
+  -webkit-align-items: center;
 }
 @media print {
   .content-logo,
@@ -5293,18 +5304,6 @@ Styleguide 2.3
   -moz-hyphens: auto;
   word-wrap: break-word;
 }
-.content-logo .content-logo-text h1 span, .content-logo .content-logo-text h2 span, .content-logo .content-logo-text h3 span,
-.content-logo .content-type-text h1 span,
-.content-logo .content-type-text h2 span,
-.content-logo .content-type-text h3 span,
-.content-middle .content-logo-text h1 span,
-.content-middle .content-logo-text h2 span,
-.content-middle .content-logo-text h3 span,
-.content-middle .content-type-text h1 span,
-.content-middle .content-type-text h2 span,
-.content-middle .content-type-text h3 span {
-  font-family: Proximanovalight, Helvetica, Arial, sans-serif;
-}
 .content-logo .content-logo-text p:only-of-type,
 .content-logo .content-type-text p:only-of-type,
 .content-middle .content-logo-text p:only-of-type,
@@ -5317,6 +5316,12 @@ Styleguide 2.3
 .content-middle .content-type-text .btn {
   display: table;
   margin-top: 10px;
+}
+.content-logo .content-logo-text.contact .btn,
+.content-logo .content-type-text.contact .btn,
+.content-middle .content-logo-text.contact .btn,
+.content-middle .content-type-text.contact .btn {
+  display: inline-block;
 }
 .content-logo .content-logo-media,
 .content-logo .content-type-media,
@@ -5538,12 +5543,6 @@ Styleguide 2.3
   -moz-hyphens: auto;
   word-wrap: break-word;
 }
-.content-top .content-logo-text h1 span, .content-top .content-logo-text h2 span, .content-top .content-logo-text h3 span,
-.content-top .content-type-text h1 span,
-.content-top .content-type-text h2 span,
-.content-top .content-type-text h3 span {
-  font-family: Proximanovalight, Helvetica, Arial, sans-serif;
-}
 .content-top .content-logo-text p:only-of-type,
 .content-top .content-type-text p:only-of-type {
   margin-bottom: 5px;
@@ -5552,6 +5551,10 @@ Styleguide 2.3
 .content-top .content-type-text .btn {
   display: table;
   margin-top: 10px;
+}
+.content-top .content-logo-text.contact .btn,
+.content-top .content-type-text.contact .btn {
+  display: inline-block;
 }
 .content-top .content-logo-media,
 .content-top .content-type-media {
@@ -6117,7 +6120,7 @@ Styleguide 2.5
 .footer .social-footer {
   height: 100%;
   margin: 0 auto;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 @media only screen and (min-width: 769px) {
   .footer .social-footer {
@@ -7641,6 +7644,9 @@ Styleguide 2.8
 .job-list .tag-group-top li {
   padding-right: 20px;
 }
+.job-list .tag-group-top + .sticker {
+  margin-bottom: 10px;
+}
 .job-list > li {
   position: relative;
   overflow: hidden;
@@ -7676,6 +7682,7 @@ Styleguide 2.8
 }
 .job-list .item.vhpt {
   height: 1px;
+  width: 2px;
   padding: 0;
   border: 0;
   opacity: 0.001;
@@ -7751,9 +7758,6 @@ Styleguide 2.8
   color: #666;
 }
 @media only screen and (min-width: 481px) {
-  .job-list-description {
-    width: 80%;
-  }
   .job-list-description.without-logo {
     width: 100%;
   }
@@ -7765,39 +7769,6 @@ Styleguide 2.8
   text-overflow: ellipsis;
   white-space: nowrap;
   padding-left: 1px;
-}
-
-/* job-list-pic-logo */
-.job-list-pic-logo {
-  width: 62px;
-  height: 62px;
-  float: right;
-  margin-left: 20px;
-}
-@media only screen and (min-width: 481px) {
-  .job-list-pic-logo {
-    width: 82px;
-    height: 82px;
-  }
-}
-@media only screen and (min-width: 769px) {
-  .job-list-pic-logo {
-    width: 108px;
-    height: 108px;
-  }
-}
-.job-list-pic-logo img {
-  width: 52px;
-}
-@media only screen and (min-width: 481px) {
-  .job-list-pic-logo img {
-    width: 72px;
-  }
-}
-@media only screen and (min-width: 769px) {
-  .job-list-pic-logo img {
-    width: 98px;
-  }
 }
 
 /* list-logos */
@@ -7818,6 +7789,7 @@ li.list-logos .item {
   width: 25%;
   overflow: hidden;
   padding-right: 10px;
+  padding-left: 0;
 }
 @media only screen and (min-width: 481px) {
   li.list-logos .item {
@@ -13532,20 +13504,20 @@ Styleguide $sgi-tabs
     display: flex;
     -webkit-flex-flow: row nowrap;
     flex-flow: row nowrap;
-  }
-  .tabs-scroll .tabs li {
-    -webkit-box-flex: 0 0 auto;
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    -webkit-box-flex: 0;
-    -moz-box-flex: 0;
-    box-flex: 0;
+    width: 110% li;
+    width--webkit-box-flex: 0 0 auto;
+    width--webkit-flex: 0 0 auto;
+    width--ms-flex: 0 0 auto;
+    width-flex: 0 0 auto;
+    width--webkit-box-flex: 0;
+    width--moz-box-flex: 0;
+    width-box-flex: 0;
   }
 }
 
 .tabs-scroll {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
 }
 
