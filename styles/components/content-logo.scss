@@ -49,7 +49,7 @@ Styleguide 2.3
 		padding-top: 5px; //corrige centrado vertical exacto
 	}
 
-	@at-root .content-center-small-device#{&} { //only mobile
+	&.content-center-small-device.content-center-small-device { //only mobile
 
 		@media only screen and (max-width: $mobile-start) {
 			display: block;
@@ -70,7 +70,7 @@ Styleguide 2.3
 			width: 100%;
 		}
 
-		@at-root .content-center-small-device#{&} { //only mobile
+		&.content-center-small-device# { //only mobile
 
 			@media only screen and (max-width: $mobile-start) {
 				margin: 0;
