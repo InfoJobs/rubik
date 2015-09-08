@@ -62,6 +62,20 @@ Styleguide 2.3
 
 	}
 
+	&.content-block-small-device { //only mobile
+
+		@media only screen and (max-width: $mobile-start) {
+			display: block;
+
+			.content-type-text + .content-type-media,
+			.content-type-media + .content-type-text {
+				margin-left: 0;
+			}
+
+		}
+
+	}
+
 	.content-logo-text,
 	.content-type-text {
 		text-align: left;
@@ -77,9 +91,7 @@ Styleguide 2.3
 				text-align: center;
 			}
 
-
 		}
-
 
 	}
 }
