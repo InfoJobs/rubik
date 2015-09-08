@@ -46,7 +46,7 @@ Markup:
 
 			.sticker {
 				position: absolute;
-				bottom: 0;
+				top: 75%;
 				left: 5px;
 
 				@include mediaquery ($bp-tablet) {
