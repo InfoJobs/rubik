@@ -509,6 +509,27 @@ Styleguide 1.4.5
 			border: 1px solid $trueblood;
 		}
 	}
+
+	&-disabled {
+
+		label {
+			color: $darkest-shiro;
+		}
+
+		input[disabled] {
+			background: transparent;
+			color: $darkest-shiro;
+		}
+
+		.input-group-date {
+			border-color: $darkest-shiro;
+
+			 > div::before {
+				 color: $darkest-shiro;
+			 }
+		}
+	}
+
 }
 
 input[type="number"] {
