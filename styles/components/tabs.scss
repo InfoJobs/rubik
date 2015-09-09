@@ -35,7 +35,6 @@ Styleguide $sgi-tabs
 			@include vendor-prefix('flex-flow', 'row wrap');
 			padding-top: 20px;
 			padding-bottom: 20px;
-			color: $dark-silk;
 
 			@include mediaquery ($bp-desktop) {
 				@include font-medium-line;
@@ -59,6 +58,7 @@ Styleguide $sgi-tabs
     }
 
     &.tabs-menu {
+        border-bottom: 0 none;
 
         @at-root .inner #{&} {
     		margin: 0 -10px;
@@ -77,6 +77,14 @@ Styleguide $sgi-tabs
                 margin-bottom: -40px;
         	}
     	}
+
+        @at-root .inner#{&} {
+
+            a {
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
 
         + h1 {
             margin-bottom: 20px;
@@ -116,8 +124,10 @@ Styleguide $sgi-tabs
         				background: none;
         			}
                 }
+
     		}
         }
+
     }
 
     .tabs-scroll & { //con scroll horizontal en movil
