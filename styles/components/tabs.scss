@@ -22,7 +22,7 @@ Styleguide $sgi-tabs
 
     border-bottom: 1px solid $darkest-shiro;
 
-    li {
+    > li {
 		display: inline-block;
 		font-family: $base-font-family-bold;
 
@@ -90,7 +90,7 @@ Styleguide $sgi-tabs
             margin-bottom: 20px;
         }
 
-        li {
+        > li {
     		position: relative;
     		display: block;
             border-top: 1px solid $darkest-shiro;
@@ -130,6 +130,18 @@ Styleguide $sgi-tabs
 
     }
 
+    @at-root .tabs-hover#{&} {
+
+        @include mediaquery ($bp-desktop) {
+
+            a:hover {
+                background: #e3f5fd;
+            }
+
+        }
+
+    }
+
     .tabs-scroll & { //con scroll horizontal en movil
 
         @media only screen and (max-width: $mobile-start) {
@@ -137,7 +149,7 @@ Styleguide $sgi-tabs
                @include flex-flow;
                width: 110%;// para android nativo
 
-               li {
+                li {
                    @include flex(0 0 auto);
                    -webkit-box-flex: 0;
                 	  -moz-box-flex: 0;

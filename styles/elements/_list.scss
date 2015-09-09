@@ -94,6 +94,10 @@ Styleguide #{$sgi-lists}
     }
 }
 
+.list-ordered {
+    list-style: inside none decimal-leading-zero;
+}
+
 /*
 Lists with bullets
 
