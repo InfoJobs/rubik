@@ -516,7 +516,8 @@ Styleguide 1.4.5
 			color: $darkest-shiro;
 		}
 
-		input[disabled] {
+		input[disabled],
+		input[placeholder] {
 			background: transparent;
 			color: $darkest-shiro;
 		}
