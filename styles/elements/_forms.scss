@@ -143,9 +143,15 @@ input[type="checkbox"]{
 }
 
 input[disabled="disabled"],
-select[disabled="disabled"] {
-	color: $wood-katana-smash;
+select[disabled="disabled"],
+.disabled {
+	color: $darkest-shiro;
 	cursor: default;
+}
+
+input[type="checkbox"]:disabled + label,
+input[type="radio"]:disabled + label {
+	color: $soft-script;
 }
 
 input[type="checkbox"] + label,
