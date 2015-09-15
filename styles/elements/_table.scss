@@ -99,6 +99,28 @@
 			background: #f5fcff;
 			cursor: pointer;
 
+			> td::before {
+				background: #f5fcff;
+			    content: "";
+			    display: block;
+			    height: 100%;
+			    left: -20px;
+			    top: 0;
+			    position: absolute;
+			    width: 20px;
+			 }
+
+ 			> td::after {
+				background: #f5fcff;
+			    content: "";
+			    display: block;
+			    height: 100%;
+			    right: -20px;
+			    top: 0;
+			    position: absolute;
+			    width: 20px;
+			 }
+
 			.action {
 				display: block;
 			}
