@@ -2,6 +2,8 @@
     $FORMS
 \*------------------------------------*/
 
+@include placeholder;
+
 fieldset {
 
 	& + fieldset {
@@ -78,15 +80,10 @@ select {
      border-radius: 0;
 }
 
-input[placeholder],
-textarea[placeholder] {
-	text-overflow: ellipsis;
-	color: $soft-script;
-}
-
 input,
 textarea {
 	@include input;
+	color: $dark-silk;
 	width: 330px;
 	margin: 0;
 	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss

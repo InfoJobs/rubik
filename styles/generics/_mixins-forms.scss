@@ -7,3 +7,21 @@ $MIXINS FORMS
 	font-size: $base-font-size;
 	line-height: $base-line-height;
 }
+
+@mixin placeholder {
+
+	::-webkit-input-placeholder {
+		text-overflow: ellipsis;
+	}
+	:-moz-placeholder {
+		text-overflow: ellipsis;
+
+	}
+	::-moz-placeholder {
+		text-overflow: ellipsis;
+	}
+	:-ms-input-placeholder {
+		text-overflow: ellipsis;
+	}
+
+}
