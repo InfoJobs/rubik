@@ -22,7 +22,7 @@ Styleguide $sgi-tabs
 
     border-bottom: 1px solid $darkest-shiro;
 
-    li {
+    > li {
 		display: inline-block;
 		font-family: $base-font-family-bold;
 
@@ -35,7 +35,6 @@ Styleguide $sgi-tabs
 			@include vendor-prefix('flex-flow', 'row wrap');
 			padding-top: 20px;
 			padding-bottom: 20px;
-			color: $dark-silk;
 
 			@include mediaquery ($bp-desktop) {
 				@include font-medium-line;
@@ -59,6 +58,7 @@ Styleguide $sgi-tabs
     }
 
     &.tabs-menu {
+        border-bottom: 0 none;
 
         @at-root .inner #{&} {
     		margin: 0 -10px;
@@ -78,11 +78,19 @@ Styleguide $sgi-tabs
         	}
     	}
 
+        @at-root .inner#{&} {
+
+            a {
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+
         + h1 {
             margin-bottom: 20px;
         }
 
-        li {
+        > li {
     		position: relative;
     		display: block;
             border-top: 1px solid $darkest-shiro;
@@ -116,8 +124,22 @@ Styleguide $sgi-tabs
         				background: none;
         			}
                 }
+
     		}
         }
+
+    }
+
+    @at-root .tabs-hover#{&} {
+
+        @include mediaquery ($bp-desktop) {
+
+            a:hover {
+                background: #e3f5fd;
+            }
+
+        }
+
     }
 
     .tabs-scroll & { //con scroll horizontal en movil
@@ -127,7 +149,7 @@ Styleguide $sgi-tabs
                @include flex-flow;
                width: 110%;// para android nativo
 
-               li {
+                li {
                    @include flex(0 0 auto);
                    -webkit-box-flex: 0;
                 	  -moz-box-flex: 0;
