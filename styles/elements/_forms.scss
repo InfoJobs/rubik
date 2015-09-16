@@ -78,6 +78,12 @@ select {
      border-radius: 0;
 }
 
+input[placeholder],
+textarea[placeholder] {
+	text-overflow: ellipsis;
+	color: $soft-script;
+}
+
 input,
 textarea {
 	@include input;
@@ -112,21 +118,6 @@ textarea {
 	.info {
 		margin-top: 5px;
 	}
-}
-
-input::-webkit-input-placeholder,
-input::-moz-placeholder,
-input:-ms-input-placeholder,
-textarea::-webkit-input-placeholder,
-textarea::-moz-placeholder,
-textarea:-ms-input-placeholder  {
-	color: $soft-script;
-}
-
-input[placeholder],
-textarea[placeholder] {
-	text-overflow: ellipsis;
-	color: $soft-script;
 }
 
 input[type="radio"],
