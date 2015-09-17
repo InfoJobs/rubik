@@ -80,6 +80,16 @@ Styleguide #{$sgi-textSize}
 	@extend %font-medium-line;
 }
 
+.xlarge {
+	font-size: $xlarge-font-size;
+	line-height: $xlarge-line-height;
+
+	@include mediaquery ($bp-desktop) {
+		font-size: $xxlarge-font-size;
+		line-height: $xxlarge-line-height;
+	}
+}
+
 /*
 Text variants
 
