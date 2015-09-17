@@ -485,9 +485,9 @@ Styleguide 1.4.5
 
 		input {
 			width: 50px;
-				margin-left: -4px;
-				text-align: center;
-				border: none;
+			margin-left: -4px;
+			text-align: center;
+			border: none;
 		}
 
 			&:last-child input  {
@@ -512,6 +512,11 @@ Styleguide 1.4.5
 
 		input[disabled],
 		input[placeholder] {
+			background: transparent;
+			color: $darkest-shiro;
+		}
+
+		input::-webkit-input-placeholder {// no agrupar, el browser invalida la regla si no interpreta todas las lineas
 			background: transparent;
 			color: $darkest-shiro;
 		}
