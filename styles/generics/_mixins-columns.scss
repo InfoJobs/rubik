@@ -25,6 +25,10 @@ $MIXIN COLUMNS
 			word-wrap: break-word;
 		}
 
+		p {
+			margin-bottom: 0;
+		}
+
 		p:only-of-type {
 			margin-bottom: 5px;
 		}
@@ -41,6 +45,21 @@ $MIXIN COLUMNS
 		}
 	}
 
+	.content-type {
+		&-media,
+		&-media-small {
+			img {
+				display: table;
+
+				& + .sticker {
+					display: table;
+					margin: 5px auto 0 auto;
+				}
+			}
+		}
+
+	}
+
 	.content-logo-media,
 	.content-type-media { // col with img, sticker inside content-top or content-middle
 		@include flex(none);
@@ -51,10 +70,16 @@ $MIXIN COLUMNS
 		}
 
 		img {
+			display: block;
 			width: 62px;
 
 			&.crop-circle {
 				height: 62px;
+			}
+
+			& + .sticker {
+				display: table;
+				margin: 10px auto 0 auto;
 			}
 
 			@include mediaquery ($bp-tablet) {
@@ -83,20 +108,12 @@ $MIXIN COLUMNS
 			@include mediaquery ($bp-desktop) {
 				padding: 4px;
 			}
-		}
 
-		img {
-			width: 34px;
+			img {
+				width: 34px;
 
-			&.crop-circle {
-				height: 34px;
-			}
-
-			@include mediaquery ($bp-desktop) {
-				width: 50px;
-
-				&.crop-circle {
-					height: 50px;
+				@include mediaquery ($bp-desktop) {
+					width: 50px;
 				}
 			}
 		}
@@ -109,25 +126,16 @@ $MIXIN COLUMNS
 	}
 
 	.content-type-media-xsmall {
+		.fig-thumbnail-logo {
+			img {
+				width: 30px;
 
-		img {
-			width: 30px;
-
-			&.crop-circle {
-				height: 30px;
-			}
-
-			@include mediaquery ($bp-desktop) {
-				width: 40px;
-
-				&.crop-circle {
-					height: 40px;
+				@include mediaquery ($bp-desktop) {
+					width: 40px;
 				}
 			}
 		}
-
 	}
-
 
 	.action {
 		@include flex(none);
