@@ -356,19 +356,18 @@ li.list-logos {
                     > .item {
                         margin-right: 10px;
                     }
+
                 }
 
             }
 
-            &:last-child {
+            + li > .item {
+                
                 @include mediaquery ($bp-tablet) {
-                    float: right;
-
-                    > .item {
-                        margin-left: 10px;
-                    }
+                    margin-left: 10px;
                 }
             }
+
         }
     }
 }
