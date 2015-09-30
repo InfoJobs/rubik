@@ -98,6 +98,9 @@ Styleguide 1.7.1.1
 
 	@at-root .btn-group .btn#{&} {
 		margin-right: 0;
+	}
+
+	@at-root .btn-group .btn:not(.disabled)#{&} {
 		color: $dark-silk;
 	}
 }
@@ -203,7 +206,7 @@ $icon-size: (30,50); //TODO: resolve problem when it s moved to _vars
 .iconfont-ArrowUp::before {
 	content: "\e602";
 }
-.iconfont-Arrow::before {
+.iconfont-Arrow {
 	@include iconfont-Arrow;
 }
 .iconfont-BurguerMenu {

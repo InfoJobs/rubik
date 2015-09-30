@@ -36,7 +36,6 @@ $MIXINS ICONS
 }
 
 @mixin iconfont-Arrow {
-	@include iconfont;
 
 	&::before {
 		content: "\e603";
