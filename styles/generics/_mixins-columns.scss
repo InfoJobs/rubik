@@ -121,7 +121,9 @@ $MIXIN COLUMNS
 		.sticker-skill {
 			top: 0;
 			width: 60px;
+			margin: 0;
 			text-align: center;
+			white-space: pre;
 		}
 	}
 
@@ -148,10 +150,12 @@ $MIXIN COLUMNS
 	.content-type-media + .content-type-text {
 		margin-left: 20px;
 	}
+
 	.content-type-text + .content-type-media-xsmall,
 	.content-type-media-xsmall + .content-type-text,
 	.content-type-text + .content-type-media-small,
 	.content-type-media-small + .content-type-text {
 		margin-left: 10px;
 	}
+
 }

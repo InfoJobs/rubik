@@ -2,6 +2,8 @@
     $FORMS
 \*------------------------------------*/
 
+@include placeholder;
+
 fieldset {
 
 	& + fieldset {
@@ -81,6 +83,7 @@ select {
 input,
 textarea {
 	@include input;
+	color: $dark-silk;
 	width: 330px;
 	margin: 0;
 	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
@@ -114,21 +117,6 @@ textarea {
 	}
 }
 
-input::-webkit-input-placeholder,
-input::-moz-placeholder,
-input:-ms-input-placeholder,
-textarea::-webkit-input-placeholder,
-textarea::-moz-placeholder,
-textarea:-ms-input-placeholder  {
-	color: $soft-script;
-}
-
-input[placeholder],
-textarea[placeholder] {
-	text-overflow: ellipsis;
-	color: $soft-script;
-}
-
 input[type="radio"],
 input[type="checkbox"]{
 	display: inline-block;
@@ -143,9 +131,15 @@ input[type="checkbox"]{
 }
 
 input[disabled="disabled"],
-select[disabled="disabled"] {
-	color: $wood-katana-smash;
+select[disabled="disabled"],
+.disabled {
+	color: $darkest-shiro;
 	cursor: default;
+}
+
+input[type="checkbox"]:disabled + label,
+input[type="radio"]:disabled + label {
+	color: $soft-script;
 }
 
 input[type="checkbox"] + label,
@@ -491,9 +485,9 @@ Styleguide 1.4.5
 
 		input {
 			width: 50px;
-				margin-left: -4px;
-				text-align: center;
-				border: none;
+			margin-left: -4px;
+			text-align: center;
+			border: none;
 		}
 
 			&:last-child input  {
@@ -509,6 +503,33 @@ Styleguide 1.4.5
 			border: 1px solid $trueblood;
 		}
 	}
+
+	&-disabled {
+
+		label {
+			color: $darkest-shiro;
+		}
+
+		input[disabled],
+		input[placeholder] {
+			background: transparent;
+			color: $darkest-shiro;
+		}
+
+		input::-webkit-input-placeholder {// no agrupar, el browser invalida la regla si no interpreta todas las lineas
+			background: transparent;
+			color: $darkest-shiro;
+		}
+
+		.input-group-date {
+			border-color: $darkest-shiro;
+
+			 > div::before {
+				 color: $darkest-shiro;
+			 }
+		}
+	}
+
 }
 
 input[type="number"] {
