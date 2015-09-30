@@ -63,6 +63,7 @@ Styleguide #{$sgi-lists}
     > dt {
         margin-bottom: 0;
         font-family: $base-font-family-bold;
+        color: $dark-silk;
 
         &.hide {
             display: none;
