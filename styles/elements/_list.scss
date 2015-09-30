@@ -63,6 +63,7 @@ Styleguide #{$sgi-lists}
     > dt {
         margin-bottom: 0;
         font-family: $base-font-family-bold;
+        color: $dark-silk;
 
         &.hide {
             display: none;
@@ -251,6 +252,32 @@ Lists with nested structure
 	}
 }
 
+/*
+list-item-divider
+
+Use class `.list-item-divider` to apply a border-top to each list items.
+
+Markup:
+<ul>
+    <li class="list-item-divider">Lorem ipsum dolor sit amet</li>
+    <li class="list-item-divider">Lorem ipsum</li>
+    <li class="list-item-divider">Lorem ipsum dolor</li>
+</ul>
+
+*/
+
+.list-item-divider {
+    padding: 10px 0;
+    border-bottom: 1px solid $darkest-shiro;
+
+    @include mediaquery ($bp-tablet) {
+        padding: 20px 0;
+    }
+
+    &:last-child {
+        border-bottom: 0;
+    }
+}
 
 /*
 Tag group
