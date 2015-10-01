@@ -40,6 +40,7 @@ Styleguide 2.3
 	@include columns;
 	align-items: center;
 	-webkit-align-items: center;
+	flex-grow: 1;
 
 	h1 {
 		padding-top: 10px; //corrige centrado vertical exacto

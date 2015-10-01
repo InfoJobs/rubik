@@ -94,7 +94,8 @@ Styleguide #{$sgi-headingAddons}
 .heading-single { //Panel solo incluye h1
 
 	h1,
-	h2 {
+	h2,
+	h3 {
 		margin: 0;
 		word-wrap : break-word;
 		-webkit-hyphens: auto;
