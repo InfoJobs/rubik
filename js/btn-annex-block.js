@@ -1,6 +1,6 @@
 function btnHeight() {
 
-    var elBtnGroup = document.querySelectorAll('.js-btn-group-annex');
+    var elBtnGroup = document.querySelectorAll('.js-btn-annex-block');
     var elBtn;
     var heightBtn;
 
