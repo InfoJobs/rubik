@@ -96,6 +96,23 @@ Styleguide #{$sgi-lists}
 }
 
 .list-ordered {
+
+	> li {
+		counter-increment: step-counter;
+		overflow: hidden;
+
+		&::before {
+		  content: counter(step-counter, decimal-leading-zero) ".";
+		  font-family: $base-font-family-bold;
+		  float: left;
+		  min-width: 35px;
+		  padding-top: 2px;
+		}
+
+		div {
+			overflow: hidden;
+		}
+	}
     list-style: inside none decimal-leading-zero;
 }
 
