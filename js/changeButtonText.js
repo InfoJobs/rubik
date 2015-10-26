@@ -31,7 +31,7 @@
 
   	function changeCopy() {
 
-  		var eCopy = document.querySelectorAll('.js-copy-device');
+  		var eCopy = document.querySelectorAll(".js-copy-device");
 
   		[].forEach.call( eCopy, function( target ){
 
