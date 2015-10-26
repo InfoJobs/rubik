@@ -751,7 +751,7 @@ Styleguide 1.4.6
 	}
 }
 
-.field-date-group {
+.field-date-group { // group of date fields
 
 	.input-group-date {
 		> div {
@@ -821,4 +821,9 @@ Styleguide 1.4.6
 			}
 		}
 	}
+}
+
+.row-centered .input-PostalCode,
+.input-PostalCode {
+	width: 70px; // 5 digits format (ES, IT)
 }
