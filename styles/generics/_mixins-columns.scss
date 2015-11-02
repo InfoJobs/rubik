@@ -25,14 +25,6 @@ $MIXIN COLUMNS
 			word-wrap: break-word;
 		}
 
-		p {
-			margin-bottom: 0;
-		}
-
-		p:only-of-type {
-			margin-bottom: 5px;
-		}
-
 		.btn {
 			display: table;
 			margin-top: 10px;
@@ -142,6 +134,10 @@ $MIXIN COLUMNS
 	.action {
 		@include flex(none);
 		margin-left: 20px;
+	}
+
+ 	.icon {
+		margin-right: 10px;
 	}
 
 	.content-logo-text + .content-logo-media,

@@ -103,10 +103,18 @@ Styleguide 2.3
 
 .content-top {
 	@include columns;
+
+	p:only-of-type {
+		margin-bottom: 5px;
+	}
 }
 
 .content-top,
 .content-middle {
+
+	p {
+		margin-bottom: 0;
+	}
 
 	.list-default & {
 		@include display-flex;
