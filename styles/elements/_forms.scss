@@ -25,6 +25,8 @@ legend {
 
 label,
 .label {
+	display: inline-block;
+	vertical-align: top;
 	margin-bottom: 5px;
 	font-size: $base-font-size;
 	line-height: 125%;
@@ -35,11 +37,6 @@ label,
 	.success &:first-of-type {
 		color: $bamboo;
 	}
-}
-
-label {
-	display: inline-block;
-	vertical-align: top;
 }
 
 select {
