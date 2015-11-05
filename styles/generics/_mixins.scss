@@ -74,6 +74,11 @@ $query2     = width, device-width
        flex-flow: $value;
 }
 
+@mixin flex-direction ( $value: row) {
+	-webkit-flex-direction: $value;
+       flex-direction: $value;
+}
+
 @mixin order($val) {
   -webkit-box-ordinal-group: $val;
   -moz-box-ordinal-group: $val;

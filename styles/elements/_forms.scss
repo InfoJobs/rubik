@@ -750,72 +750,47 @@ Styleguide 1.4.6
 
 .field-date-group { // group of date fields
 
-	.input-group-date {
-		> div {
-			width: 50%;
-
-			input {
-				width: 100%;
-			}
-		}
-	}
-
 	.start-date-group {
-		width: calc(50% - 5px);
 		float: left;
-		margin-right: 5px;
-
-		input {
-			width: 100%;
-		}
+		padding-right: 10px;
 
 		@include mediaquery ($bp-tablet) {
-			width: calc(33% - 10px);
-			margin-right: 10px;
+			padding-right: 20px;
 		}
 	}
 
 	.end-date-group {
-		width: calc(50% - 5px);
 		float: left;
-		margin-left: 5px;
 
-		input {
-			width: 100%;
-		}
+		.list-default {
+			@include display-flex;
+			@include flex-direction(column);
 
-		@include mediaquery ($bp-tablet) {
-			width: calc(66% - 10px);
-			margin-left: 10px;
+			@include mediaquery ($bp-tablet) {
+				@include flex-direction(row);
+			}
+
 		}
 
 		.end-date {
-
-			@include mediaquery ($bp-tablet) {
-				width: 50%;
-				float: left;
-			}
+			float: left;//Fallback
+			@include flex(1 0 auto);
 		}
 
 		.field-date-group-currently {
-			//margin-top: 40px;
-
-			input {
-				width: auto;
-			}
 
 			@include mediaquery ($bp-tablet) {
-				width: calc(50% - 20px);
-				float: left;
-				overflow: hidden;
-				margin-top: 40px;
-				margin-left: 20px;
-				padding-left: 1px;
+				float: left;//Fallback
+				@include flex(1 0 100%);
+				margin: 30px 0 0 20px;
 			}
+		}
 
-			@include mediaquery ($bp-desktop) {
-				margin-top: 30px;
-			}
+	}
+
+	.error-info {
+		@include mediaquery ($bp-tablet) {
+			max-width: 116px;
 		}
 	}
 }
