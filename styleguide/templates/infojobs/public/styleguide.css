@@ -291,7 +291,7 @@
 
 .sg-menu .sg-submenu,
 .sg-menu .sg-second-submenu {
-    height: 0;
+    /*height: 0;*/
     overflow: hidden;
     -webkit-transition: height 350ms ease;
     -moz-transition: height 350ms ease;
