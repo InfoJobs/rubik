@@ -1,0 +1,18 @@
+/*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+
+@mixin crop {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	margin: auto;
+	object-fit: cover;
+	object-position: 0 0;
+}
+
+@mixin crop-circle {
+	@include crop;
+	border-radius: 50%;
+}

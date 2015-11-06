@@ -1,0 +1,144 @@
+/*------------------------------------*\
+    $TABLE
+\*------------------------------------*/
+
+.table-default {
+	text-align: left;
+
+	thead, tfoot, tbody, th, td, tr {
+		text-align: left;
+	}
+
+	th,
+	td {
+		position: relative;
+
+		@at-root & [class^="panel-"] {
+			padding: 10px;
+			margin: 10px 0 0 0;
+		}
+	}
+
+	th {
+		color: $dark-silk;
+	}
+
+	td {
+		color: $mid-script;
+	}
+
+	> tbody > tr {
+		position: relative;
+	}
+
+	> tbody > tr + tr {
+		border-top: 1px solid $darkest-shiro;
+	}
+
+	@include mediaquery ($bp-tablet) {
+
+		width: 100%;
+		max-width: 100%;
+
+		table {
+			width: 100%;
+			max-width: 100%;
+		}
+
+		thead {
+			font-family: $base-font-family-bold;
+			border-bottom: 1px solid $darkest-shiro;
+		}
+
+		th,
+		td {
+			width: 25%;
+			padding: 10px 10px 10px 0;
+
+			@at-root &.cell-parent {
+				padding: 0;
+			}
+
+			@at-root & [class^="panel-"] {
+				margin-right: -10px;
+
+	      	}
+
+		}
+
+	}
+
+	@media only screen and (max-width: $mobile-start) {
+
+		thead, tfoot, tbody, th, td, tr {
+			display: block;
+		}
+
+		> tbody > tr {
+		    margin-top: 10px;
+			padding-top: 10px;
+		}
+
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+		td:before {
+			content: attr(data-th)" ";
+			white-space: nowrap;
+		}
+
+	}
+
+}
+
+.table-editable {
+
+	.action {
+		display: none;
+	}
+
+	@include mediaquery ($bp-desktop) {
+
+		> tbody > tr:hover,
+		> tbody > tr:focus {
+			background: #f5fcff;
+			cursor: pointer;
+
+			> td::before {
+				background: #f5fcff;
+			    content: "";
+			    display: block;
+			    height: 100%;
+			    left: -20px;
+			    top: 0;
+			    position: absolute;
+			    width: 20px;
+			 }
+
+ 			> td::after {
+				background: #f5fcff;
+			    content: "";
+			    display: block;
+			    height: 100%;
+			    right: -20px;
+			    top: 0;
+			    position: absolute;
+			    width: 20px;
+			 }
+
+			.action {
+				display: block;
+			}
+
+			.btn {
+				top: 10px;
+				right: 10px;
+				position: absolute;
+			}
+		}
+	}
+
+}

@@ -23,20 +23,33 @@ $MIXIN COLUMNS
 			margin: 0;
 			-moz-hyphens: auto;
 			word-wrap: break-word;
-
-			span {
-				font-family: $base-font-family-light;
-			}
-		}
-
-		p:only-of-type {
-			margin-bottom: 5px;
 		}
 
 		.btn {
 			display: table;
 			margin-top: 10px;
 		}
+
+		&.contact {
+			.btn {
+			display: inline-block;
+			}
+		}
+	}
+
+	.content-type {
+		&-media,
+		&-media-small {
+			img {
+				display: table;
+
+				& + .sticker {
+					display: table;
+					margin: -10px auto 0 auto;
+				}
+			}
+		}
+
 	}
 
 	.content-logo-media,
@@ -49,10 +62,16 @@ $MIXIN COLUMNS
 		}
 
 		img {
+			display: block;
 			width: 62px;
 
 			&.crop-circle {
 				height: 62px;
+			}
+
+			& + .sticker {
+				display: table;
+				margin: 10px auto 0 auto;
 			}
 
 			@include mediaquery ($bp-tablet) {
@@ -81,20 +100,12 @@ $MIXIN COLUMNS
 			@include mediaquery ($bp-desktop) {
 				padding: 4px;
 			}
-		}
 
-		img {
-			width: 34px;
+			img {
+				width: 34px;
 
-			&.crop-circle {
-				height: 34px;
-			}
-
-			@include mediaquery ($bp-desktop) {
-				width: 50px;
-
-				&.crop-circle {
-					height: 50px;
+				@include mediaquery ($bp-desktop) {
+					width: 50px;
 				}
 			}
 		}
@@ -102,34 +113,31 @@ $MIXIN COLUMNS
 		.sticker-skill {
 			top: 0;
 			width: 60px;
+			margin: 0;
 			text-align: center;
+			white-space: pre;
 		}
 	}
 
 	.content-type-media-xsmall {
+		.fig-thumbnail-logo {
+			img {
+				width: 30px;
 
-		img {
-			width: 30px;
-
-			&.crop-circle {
-				height: 30px;
-			}
-
-			@include mediaquery ($bp-desktop) {
-				width: 40px;
-
-				&.crop-circle {
-					height: 40px;
+				@include mediaquery ($bp-desktop) {
+					width: 40px;
 				}
 			}
 		}
-
 	}
-
 
 	.action {
 		@include flex(none);
 		margin-left: 20px;
+	}
+
+ 	.icon {
+		margin-right: 10px;
 	}
 
 	.content-logo-text + .content-logo-media,
@@ -138,10 +146,12 @@ $MIXIN COLUMNS
 	.content-type-media + .content-type-text {
 		margin-left: 20px;
 	}
+
 	.content-type-text + .content-type-media-xsmall,
 	.content-type-media-xsmall + .content-type-text,
 	.content-type-text + .content-type-media-small,
 	.content-type-media-small + .content-type-text {
 		margin-left: 10px;
 	}
+
 }

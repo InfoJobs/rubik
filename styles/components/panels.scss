@@ -42,6 +42,11 @@ $PANELS
 		color: $shiro;
 		background-color: rgba(0, 0, 0, 0.5);
 	}
+
+	&-user { // hasta tener efecto background de foto de perfil
+		background-color: #2d3133;
+	}
+
 }
 
 [class^="col-"].panel .col-child,

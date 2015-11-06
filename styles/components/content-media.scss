@@ -46,7 +46,7 @@ Markup:
 
 			.sticker {
 				position: absolute;
-				bottom: 0;
+				top: 75%;
 				left: 5px;
 
 				@include mediaquery ($bp-tablet) {
@@ -85,11 +85,11 @@ Markup:
 	}
 
 	&-expanded {
-		margin-bottom: 10px;
 
-		&:last-child {
-			margin-bottom: 0;
-		}
+		 & + & {
+			 margin-top: 10px;
+		 }
+
 	}
 
 	&-form {
