@@ -51,7 +51,7 @@ Styleguide 1.5
     }
 
     + .btn:not(.btn-group-justified) {
-        margin-left: 5px;
+        margin-right: 5px;
     }
 
     + .btn-group-justified {
@@ -263,6 +263,7 @@ Styleguide 1.5.1.4
 button[disabled],
 button:hover[disabled],
 button:active[disabled],
+button.btn-disabled,
 .btn-disabled,
 .btn-disabled:hover,
 .btn-disabled:active,
@@ -271,6 +272,7 @@ button:active[disabled],
    color: $wood-katana-smash;
    text-decoration: none;
    cursor: default;
+   border: 1px solid $darkest-shiro;
 }
 
 
@@ -335,6 +337,10 @@ Styleguide 1.5.1.6
             padding: 7px 10px 8px 10px;
             font-size: 16px;
         }
+    }
+
+    &.text-left { //already defined in tools.scss, but overwritten by btn{...text-align: center;...}
+    	text-align: left;
     }
 }
 

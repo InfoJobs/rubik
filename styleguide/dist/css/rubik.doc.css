@@ -200,11 +200,6 @@ body {
   background: #c0c7cb;
 }
 
-body.skin-executive {
-  font-family: Proximanovalight, Helvetica, Arial, sans-serif;
-  color: #666;
-}
-
 input,
 select,
 textarea,
@@ -235,9 +230,6 @@ a:focus {
 
 strong {
   font-family: Proximanovabold, Helvetica, Arial, sans-serif;
-}
-.skin-executive strong {
-  font-family: Proximanovalight, Helvetica, Arial, sans-serif;
 }
 
 /*
@@ -437,9 +429,6 @@ hr {
 
 .aside-wrapper {
   background-color: #f2f2f2;
-}
-.skin-executive .aside-wrapper {
-  background-color: #2d3133;
 }
 @media only screen and (min-width: 769px) {
   .aside-wrapper .aside-content {
@@ -1434,10 +1423,6 @@ Styleguide 1.2.7.1
 .marked[class*="iconfont-"]::before {
   color: #00a550;
 }
-.skin-executive .marked, .skin-executive
-.marked[class*="iconfont-"]::before {
-  color: #2088c2;
-}
 
 .marked-contrast,
 .marked-contrast[class*="iconfont-"]::before, .job-list .sticker-marked {
@@ -1454,24 +1439,13 @@ Styleguide 1.2.7.1
 .alternative-action[class*="iconfont-"]::before {
   color: #666;
 }
-.skin-executive .alternative-action, .skin-executive
-.alternative-action[class*="iconfont-"]::before {
-  color: #666;
-}
 .panel-info .alternative-action, .panel-info
-.alternative-action[class*="iconfont-"]::before {
-  color: #fff;
-}
-.panel-executive .alternative-action, .panel-executive
 .alternative-action[class*="iconfont-"]::before {
   color: #fff;
 }
 
 a.alternative-action:hover {
   color: #2088c2;
-}
-.skin-executive a.alternative-action:hover {
-  color: #27a8a8;
 }
 
 .highlight {
@@ -3141,13 +3115,6 @@ h3,
   font-family: Proximanovabold, Helvetica, Arial, sans-serif;
   color: #2d3133;
 }
-.skin-executive h1, .skin-executive
-h2, .skin-executive
-.h2, .skin-executive
-h3, .skin-executive
-.h3 {
-  font-family: Proximanovalight, Helvetica, Arial, sans-serif;
-}
 
 h1 {
   margin-bottom: 35px;
@@ -3474,6 +3441,12 @@ Styleguide 1.2.7
 .list-default dd + dt {
   margin-top: 15px;
 }
+.list-inline-description.list-default > dd {
+  display: inline-block;
+}
+.list-inline-description.list-default > dd + dd {
+  margin: 1px 0 0 10px;
+}
 
 /*
 Lists with bullets
@@ -3566,9 +3539,6 @@ Lists with nested structure
   margin: 0;
   font-size: 16px;
 }
-.skin-executive .list-default-title {
-  font-size: 16px;
-}
 
 .list-default-text {
   display: block;
@@ -3637,9 +3607,6 @@ Styleguide 1.2.7.5
   float: left;
   margin-bottom: 5px;
   padding-right: 20px;
-}
-.skin-executive .tag-group li:only-child {
-  margin-bottom: 0;
 }
 @media print {
   .tag-group li {
@@ -3794,9 +3761,6 @@ label,
 label {
   display: inline-block;
   vertical-align: top;
-}
-.panel-executive label {
-  color: #bebebe;
 }
 
 select {
@@ -5699,6 +5663,10 @@ Styleguide 2.3
   display: flex;
 }
 
+.content-divider-default {
+  border-top: 1px solid #f2f2f2;
+}
+
 /* Variables =================================================== */
 /*------------------------------------*\
     $FUNCTIONS
@@ -5820,12 +5788,6 @@ Styleguide 2.4
 .filters .label-checkbox a:active {
   text-decoration: none;
   color: #666;
-}
-.skin-executive .filters .label-checkbox a, .skin-executive
-.filters .label-checkbox a:hover, .skin-executive
-.filters .label-checkbox a:visited, .skin-executive
-.filters .label-checkbox a:active {
-  color: #bebebe;
 }
 .filters .label-checkbox .number {
   margin-left: 5px;
@@ -5968,19 +5930,12 @@ a.closed-list:after {
   width: 100%;
   height: 50px;
 }
-.skin-executive .filters-back {
-  border-bottom: 1px solid #666;
-  background: transparent;
-}
 
 .filters-back-bottom {
   padding: 10px 0px;
   background: #f2f2f2;
   width: 100%;
   height: 50px;
-}
-.skin-executive .filters-back-bottom {
-  background: transparent;
 }
 
 /*
@@ -7583,10 +7538,6 @@ Styleguide 1.2.7.1
 .marked[class*="iconfont-"]::before {
   color: #00a550;
 }
-.skin-executive .marked, .skin-executive
-.marked[class*="iconfont-"]::before {
-  color: #2088c2;
-}
 
 .marked-contrast,
 .marked-contrast[class*="iconfont-"]::before, .job-list .sticker-marked {
@@ -7603,24 +7554,13 @@ Styleguide 1.2.7.1
 .alternative-action[class*="iconfont-"]::before {
   color: #666;
 }
-.skin-executive .alternative-action, .skin-executive
-.alternative-action[class*="iconfont-"]::before {
-  color: #666;
-}
 .panel-info .alternative-action, .panel-info
-.alternative-action[class*="iconfont-"]::before {
-  color: #fff;
-}
-.panel-executive .alternative-action, .panel-executive
 .alternative-action[class*="iconfont-"]::before {
   color: #fff;
 }
 
 a.alternative-action:hover {
   color: #2088c2;
-}
-.skin-executive a.alternative-action:hover {
-  color: #27a8a8;
 }
 
 .highlight {
@@ -7686,9 +7626,6 @@ Styleguide 2.8
 }
 .job-list .sticker-marked {
   margin-left: 10px;
-}
-.skin-executive .job-list .sticker-marked {
-  background-color: #2088c2;
 }
 .job-list .sticker-secondary {
   margin-bottom: 5px;
@@ -7802,9 +7739,6 @@ Styleguide 2.8
     font-size: 10.5pt;
     line-height: 11.5pt;
   }
-}
-.skin-executive .job-list-subtitle {
-  font-size: 16px;
 }
 .job-list-subtitle a {
   color: #666;
@@ -9290,14 +9224,8 @@ $query2     = width, device-width
   border-radius: 2px;
   background: #2088c2;
 }
-.skin-executive .noUi-origin {
-  background: #27a8a8;
-}
 
 .noUi-background {
-  background: #999;
-}
-.skin-executive .noUi-background {
   background: #999;
 }
 
@@ -9551,11 +9479,11 @@ $PANELS
 .panel-canvas {
   background-color: #fff;
 }
-.panel-executive, .panel-contrast {
+.panel-contrast {
   color: #fff;
   background-color: #2d3133;
 }
-.panel-executive h1, .panel-executive h2, .panel-executive h3, .panel-executive p, .panel-contrast h1, .panel-contrast h2, .panel-contrast h3, .panel-contrast p {
+.panel-contrast h1, .panel-contrast h2, .panel-contrast h3, .panel-contrast p {
   color: #fff;
 }
 .panel-info {
@@ -9569,6 +9497,9 @@ $PANELS
 .panel-overlay {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.5);
+}
+.panel-user {
+  background-color: #2d3133;
 }
 
 [class^="col-"].panel .col-child,
@@ -9604,14 +9535,8 @@ $PANELS
   color: #fff;
   overflow: hidden;
 }
-.row-panel-8-4 .panel-executive {
-  background-color: #2d3133;
-}
 .row-panel-8-4 .panel-info {
   background-color: #393939;
-}
-.skin-executive .row-panel-8-4 {
-  color: #fff;
 }
 @media only screen and (min-width: 769px) {
   .row-panel-8-4 {
@@ -9683,10 +9608,6 @@ $PANELS
     padding: 5px 0;
     text-align: center;
     border-top: 1px solid #e2e5e6;
-  }
-  .skin-executive .panel-small-device-footer {
-    border-top: 1px solid #666;
-    background: #2d3133;
   }
 }
 /* Variables =================================================== */
@@ -9962,52 +9883,15 @@ h3,
   width: 16px;
 }
 
-a.sticker-skill,
-.skin-executive a.sticker-skill {
+a.sticker-skill {
   cursor: pointer;
 }
-a.sticker-skill:hover,
-.skin-executive a.sticker-skill:hover {
+a.sticker-skill:hover {
   color: #2d3133;
   background-color: #bac7cc;
 }
-a.sticker-skill:active,
-.skin-executive a.sticker-skill:active {
+a.sticker-skill:active {
   background-color: #97a1a6;
-}
-
-.sticker-executive {
-  font-size: 14px;
-  line-height: 18px;
-  position: relative;
-  top: -2px;
-  display: inline-block;
-  padding: 6px 10px;
-  border-radius: 15px;
-  font-family: Proximanova, Helvetica, Arial, sans-serif;
-  color: #2d3133;
-  background-color: #d5e1e5;
-  color: #fff;
-  background-color: #2d3133;
-}
-@media print {
-  .sticker-executive {
-    font-size: 10.5pt;
-    line-height: 11.5pt;
-  }
-}
-.nav-bar-notifications .sticker-executive {
-  position: absolute;
-  bottom: 12px;
-  right: -4px;
-}
-@media print {
-  .sticker-executive {
-    padding: 0;
-  }
-}
-.sticker-executive[class*="iconfont-"]::before {
-  color: #fff;
 }
 
 .sticker-small {
@@ -10591,9 +10475,6 @@ $query2     = width, device-width
 .search-bar-main label {
   color: #fff;
 }
-.skin-executive .search-bar {
-  background-color: #27a8a8;
-}
 .search-bar .search-field {
   float: left;
   padding-right: 10px;
@@ -11052,52 +10933,15 @@ h3,
   width: 16px;
 }
 
-a.sticker-skill,
-.skin-executive a.sticker-skill {
+a.sticker-skill {
   cursor: pointer;
 }
-a.sticker-skill:hover,
-.skin-executive a.sticker-skill:hover {
+a.sticker-skill:hover {
   color: #2d3133;
   background-color: #bac7cc;
 }
-a.sticker-skill:active,
-.skin-executive a.sticker-skill:active {
+a.sticker-skill:active {
   background-color: #97a1a6;
-}
-
-.sticker-executive {
-  font-size: 14px;
-  line-height: 18px;
-  position: relative;
-  top: -2px;
-  display: inline-block;
-  padding: 6px 10px;
-  border-radius: 15px;
-  font-family: Proximanova, Helvetica, Arial, sans-serif;
-  color: #2d3133;
-  background-color: #d5e1e5;
-  color: #fff;
-  background-color: #2d3133;
-}
-@media print {
-  .sticker-executive {
-    font-size: 10.5pt;
-    line-height: 11.5pt;
-  }
-}
-.nav-bar-notifications .sticker-executive {
-  position: absolute;
-  bottom: 12px;
-  right: -4px;
-}
-@media print {
-  .sticker-executive {
-    padding: 0;
-  }
-}
-.sticker-executive[class*="iconfont-"]::before {
-  color: #fff;
 }
 
 .sticker-small {
@@ -14007,7 +13851,7 @@ $query2     = width, device-width
   border-top: 1px solid #e2e5e6;
   display: block;
 }
-.panel-executive .border-top-expanded::before {
+.panel-contrast .border-top-expanded::before {
   border-top: 1px solid #666;
 }
 

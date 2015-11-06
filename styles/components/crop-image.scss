@@ -28,17 +28,10 @@ Markup:
 
 */
 
-.crop-image,
-.crop-circle {
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	overflow: hidden;
-	margin: auto;
+.crop-image {
+	@include crop;
 	width: 50px;
 	height: 50px;
-	object-fit: cover;
-	object-position: 0 0;
 
 	@include mediaquery ($bp-tablet) {
 		width: 60px;
@@ -46,11 +39,40 @@ Markup:
 	}
 
 	&-small {
+		@include crop;
 		width: 40px;
 		height: 40px;
+
+		@include mediaquery ($bp-tablet) {
+			height: 50px;
+		}
 	}
 }
 
 .crop-circle {
-	border-radius: 50%;
+	@include crop-circle;
+	width: 50px;
+	height: 50px;
+
+	@include mediaquery ($bp-tablet) {
+		width: 60px;
+		height: 60px;
+	}
+
+	&-small {
+		@include crop-circle;
+		width: 40px;
+		height: 40px;
+	}
+
+	&-xsmall {
+		@include crop-circle;
+		width: 30px;
+		height: 30px;
+
+		@include mediaquery ($bp-tablet) {
+			width: 40px;
+			height: 40px;
+		}
+	}
 }

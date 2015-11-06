@@ -33,7 +33,7 @@ Styleguide 2.16
 
 .chosen-container .chosen-drop {
   position: absolute;
-  top: 100%;
+  top: 102%;
   left: -9999px;
   z-index: 9999;
   margin-left: -1px;
@@ -149,8 +149,8 @@ Styleguide 2.16
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
-  margin: 0 4px 4px 0;
-  padding: 0 0 0 4px;
+  margin: 0 0 4px 0;
+  padding: 0;
   max-height: 160px;
   -webkit-overflow-scrolling: touch;
 }
@@ -305,10 +305,8 @@ Styleguide 2.16
 
 /* @end */
 /* @group Active  */
-.chosen-container-active .chosen-single {
-}
-.chosen-container-active.chosen-with-drop .chosen-single {
-    transition: none;
+.chosen-container.chosen-container-active {
+  border: 1px solid $day-blue;
 }
 .chosen-container-active.chosen-with-drop .chosen-single div {
   border-left: none;
@@ -317,11 +315,9 @@ Styleguide 2.16
 .chosen-container-active.chosen-with-drop .chosen-single div b {
   background-position: right 50%;
 }
-
 .chosen-container-active .chosen-choices li.search-field input[type="text"] {
   color: #111 !important;
 }
-
 /* @end */
 /* @group Disabled Support */
 .chosen-disabled {

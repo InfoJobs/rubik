@@ -22,6 +22,16 @@
 	}
 }
 
+.sticker-contrast {
+    @include sticker;
+    color: $shiro;
+	background-color: $dark-silk;
+
+    &[class*="iconfont-"]::before {
+		color: $shiro;
+	}
+}
+
 .sticker-secondary {
 	@include sticker;
     color: $shiro;

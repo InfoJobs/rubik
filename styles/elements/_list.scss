@@ -63,6 +63,7 @@ Styleguide #{$sgi-lists}
     > dt {
         margin-bottom: 0;
         font-family: $base-font-family-bold;
+        color: $dark-silk;
 
         &.hide {
             display: none;
@@ -81,6 +82,37 @@ Styleguide #{$sgi-lists}
     & dd + dt {
         margin-top: 15px;
     }
+
+    @at-root .list-inline-description#{&} {
+
+        > dd {
+            display: inline-block;
+        }
+
+        > dd + dd {
+            margin: 1px 0 0 10px;
+        }
+    }
+}
+
+.list-ordered {
+
+	> li {
+		counter-increment: step-counter;
+		overflow: hidden;
+
+		&::before {
+		  content: counter(step-counter, decimal-leading-zero) ".";
+		  font-family: $base-font-family-bold;
+		  float: left;
+		  min-width: 35px;
+		  padding-top: 2px;
+		}
+
+		div {
+			overflow: hidden;
+		}
+	}
 }
 
 /*
@@ -236,6 +268,32 @@ Lists with nested structure
 	}
 }
 
+/*
+list-item-divider
+
+Use class `.list-item-divider` to apply a border-top to each list items.
+
+Markup:
+<ul>
+    <li class="list-item-divider">Lorem ipsum dolor sit amet</li>
+    <li class="list-item-divider">Lorem ipsum</li>
+    <li class="list-item-divider">Lorem ipsum dolor</li>
+</ul>
+
+*/
+
+.list-item-divider {
+    padding: 10px 0;
+    border-bottom: 1px solid $darkest-shiro;
+
+    @include mediaquery ($bp-tablet) {
+        padding: 20px 0;
+    }
+
+    &:last-child {
+        border-bottom: 0;
+    }
+}
 
 /*
 Tag group

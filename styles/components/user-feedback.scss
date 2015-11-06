@@ -24,29 +24,44 @@ Styleguide 2.22
 	position: relative;
 	height: 0;
 
-	@media print {
-		display: none;
-	}
-
 	a:hover {
 		color: $shiro;
 	}
+
+	@media print {
+		display: none;
+	}
 }
-.user-feedback .link-user-feedback {
+
+.link-user-feedback {
     display: inline-block;
     position: fixed;
-    right: 5%;
-    bottom: 0;
     padding: 10px;
     background: $bamboo;
     color: #fff;
     font-size: 14px;
     font-weight: bold;
+	left:100%;
+   	top: 60%;
+	-webkit-transform-origin: -40px 0 0;
+		-ms-transform-origin: -40px 0 0;
+			transform-origin: -40px 0 0;   
+	-webkit-transform: rotate(-90deg);
+    	 -o-transform: rotate(-90deg);
+	        transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     z-index: 9999;
-}
 
-@media only screen and (max-width: $tablet-start) {
-	.user-feedback {
-		display: none;
+	@include mediaquery ($bp-tablet) {
+    	right: 5%;
+	    bottom: 0;
+		top: auto;
+		left: auto;
+	    transform: none;
+	    -webkit-transform: none;
+	    -moz-transform: none;
+	    -o-transform: none;
+	    filter: none;
 	}
+
 }

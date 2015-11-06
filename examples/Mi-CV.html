@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
 
 	<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/components/panel-clipboard.css" />
 	<link rel="stylesheet" type="text/css" href="../styles/components/content-logo.css" />
 	<link rel="stylesheet" type="text/css" href="../styles/components/thumbnail.css" />
     <link rel="stylesheet" type="text/css" href="../styles/components/stickers.css" />
@@ -25,13 +26,14 @@
 <body>
 	<div class="wrapper">
 		<div class="container">
+
 			<div class="container-expanded heading-addons panel-canvas inner inner-expanded">
 				<h1>Mi CV: Pedro Garc�a</h1>
 				<p class="alternative">Lorem ipsum</p>
 			</div>
 
 			<div class="container-expanded">
-				<div class="row row-faux row-panel">
+				<div class="row row-faux row-faux-card row-panel">
 					<div class="col-8 col-12-medium">
 						<div class="col-child panel-canvas inner-expanded">
 							<a href="#">
@@ -80,7 +82,7 @@
 											<dt>Twitter</dt>
 											<dd>@Pedro.garcia</dd>
 											<dt>Mi P�gina</dt>
-											<dd class="truncate">www.LoremipsumdolorsitametconsecteturadipisicingelitSolutaiustodoloremavoluptaserror.com</dd>
+											<dd class="truncate">www.Loremipsumdolorsitametconsecsadasdasdsdasdasdasdasdasdasdadsasdteturadr.com</dd>
 
 										</dl>
 									</div>
@@ -302,6 +304,78 @@
 									</li>
 								</ul>
 							</section>
+
+							<section>
+								<div class="content-middle inner">
+									<div class="content-type-text">
+										<h2 class="h3">Idiomas</h2>
+									</div>
+									<div class="action">
+										<span class="btn btn-default action">Aï¿œadir idioma</span>
+									</div>
+								</div>
+								<div class="border-bottom"></div>
+									<div class="inner">
+
+										<table class="table-default table-editable">
+											<thead class="medium">
+												<tr>
+												    <td></td>
+												    <th scope="col">Hablado</th>
+												    <th scope="col">Escrito</th>
+												    <th scope="col">Leido</th>
+										  		</tr>
+											</thead>
+											<tbody class="base">
+												<tr>
+												    <td colspan="4" class="cell-parent">
+												      <table>
+													        <tbody>
+																<tr>
+																	<th scope="row" >Castellano</th>
+																    <td data-th="Hablado:">Nativo</td>
+																    <td data-th="Escrito:">Excelente</td>
+																    <td data-th="Leido:">Excelente</td>
+														        </tr>
+														        <tr>
+																	<td colspan="4">
+																		<div class="panel-default alternative small">
+																		lorem ipsum dolor amet whatever lorem ipsum dolor amet whatever
+																		</div>
+																	</td>
+														        </tr>
+													      </tbody>
+												  		</table>
+														<div class="action">
+															<span class="btn btn-primary action">Editar</span>
+														</div>
+												    </td>
+												</tr>
+												<tr>
+												    <td colspan="4" class="cell-parent">
+												        <table>
+													        <tbody>
+																<tr>
+																	<th scope="row" >English</th>
+																    <td data-th="Hablado:">Nativo</td>
+																    <td data-th="Escrito:">Excelente</td>
+																    <td data-th="Leido:">Excelente</td>
+														        </tr>
+													      </tbody>
+												  		</table>
+																														<div class="action">
+														<div class="action">
+															<span class="btn btn-primary action">Editar</span>
+														</div>
+
+												    </td>
+												</tr>
+											</tbody>
+										</table>
+								</div>
+
+							</section>
+
 							<a href="mi-cv-otros-datos.html" class="js-modal-page-toggle">
 								<section class="inner container-editable">
 									<div class="content-middle">
@@ -325,6 +399,29 @@
 									</dl>
 								</section>
 							</a>
+
+
+							<a href="#">
+								<section class="inner container-editable">
+									<div class="content-middle">
+										<div class="content-type-text">
+												<h2 class="h3">Curriculum en texto</h2>
+										</div>
+										<div class="action">
+												<span class="btn btn-primary action">Editar</span>
+										</div>
+									</div>
+									<div class="h3 heading-divider heading-divider-bleed"></div>
+									<div class="panel-default panel-clipboard soft-script">
+										<span class="iconfont-Attach iconfont-36px"></span>
+										<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+										<p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, </p>
+									</div>
+
+								</section>
+							</a>
+
+
 						</div>
 					</div>
 					<div class="col-4 col-12-medium">
@@ -333,8 +430,15 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="user-feedback">
+				<a href="#" class="link-user-feedback js-copy-device" data-mobile="Opina" data-desktop="User Feedback">Opina</a>
+			</div>
+
 		</div>
 	</div>
+
+	<script src="../js/changeButtonText.js"></script>
 	<script>
 		var elModalPageToogle = document.querySelector('.js-modal-page-toggle');
 		var elWrapper = document.querySelector('.wrapper');

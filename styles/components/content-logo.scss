@@ -39,6 +39,8 @@ Styleguide 2.3
 .content-middle {
 	@include columns;
 	align-items: center;
+	-webkit-align-items: center;
+	flex-grow: 1;
 
 	h1 {
 		padding-top: 10px; //corrige centrado vertical exacto
@@ -48,7 +50,7 @@ Styleguide 2.3
 		padding-top: 5px; //corrige centrado vertical exacto
 	}
 
-	@at-root .content-center-small-device#{&} { //only mobile
+	&.content-center-small-device { //only mobile
 
 		@media only screen and (max-width: $mobile-start) {
 			display: block;
@@ -61,6 +63,24 @@ Styleguide 2.3
 
 	}
 
+	&.content-block-small-device { //only mobile
+
+		@media only screen and (max-width: $mobile-start) {
+			display: block;
+
+			.content-type-text + .content-type-media,
+			.content-type-media + .content-type-text {
+				margin-left: 0;
+			}
+
+			.content-type-media {
+				.btn {
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+
 	.content-logo-text,
 	.content-type-text {
 		text-align: left;
@@ -69,28 +89,40 @@ Styleguide 2.3
 			width: 100%;
 		}
 
-		@at-root .content-center-small-device#{&} { //only mobile
+		&.content-center-small-device { //only mobile
 
 			@media only screen and (max-width: $mobile-start) {
 				margin: 0;
 				text-align: center;
 			}
 
-
 		}
-
 
 	}
 }
 
 .content-top {
 	@include columns;
+
+	p:only-of-type {
+		margin-bottom: 5px;
+	}
 }
 
 .content-top,
 .content-middle {
 
+	p {
+		margin-bottom: 0;
+	}
+
 	.list-default & {
 		@include display-flex;
 	}
+}
+
+//dividers of content, se necesita nueva regla, las creadas llevan margin negativo
+
+.content-divider-default {
+	border-top: 1px solid $dark-shiro;
 }

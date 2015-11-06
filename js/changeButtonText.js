@@ -23,3 +23,31 @@
 
   window.addEventListener('load',changeButtonText);
   window.addEventListener('resize',changeButtonText);
+
+
+  //change copy text
+
+  (function(){
+
+  	function changeCopy() {
+
+  		var eCopy = document.querySelectorAll('.js-copy-device');
+
+  		[].forEach.call( eCopy, function( target ){
+
+  			if (window.innerWidth > 480) {
+  			    // target.textContent = target.getAttribute("data-desktop");
+  			    target.textContent = target.dataset.desktop;
+  			} else {
+  			    // target.textContent = target.getAttribute("data-mobile");
+  			    target.textContent = target.dataset.mobile;
+  			}
+
+  		});
+
+  	}
+
+  	window.addEventListener('load', changeCopy);
+  	window.addEventListener('resize', changeCopy);
+
+  }());
