@@ -83,6 +83,13 @@
 	display: block;
 }
 
+.text-hyphen {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
+
 //Use to add clickable area
 .hit-area {
 	position: relative;
