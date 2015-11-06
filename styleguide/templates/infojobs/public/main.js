@@ -17,7 +17,6 @@
 			}
 		};
 
-
 	//--------------------------------------------------------------------------
 	w.addEventListener('load', function() {
 		var sPath = window.location.pathname;
@@ -85,7 +84,7 @@
           d.querySelector('.sg-submenu.sg-selected').style.height = d.querySelector('.sg-submenu.sg-selected').clientHeight+'px';
         }
 
-        if( w.location.pathname.indexOf( '.html' ) < 0 ) {
+        if( w.location.pathname.indexOf( 'index.html' ) > -1 ) {
             d.getElementById('home').className = 'sg-active';
         }
 	}
