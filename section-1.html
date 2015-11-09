@@ -30,26 +30,6 @@
         			<div class="sg-section">Web Components</div>
         			<ul id="sg-menu">
                         <li>
-                            <a href="section--sgi-tabs.html#rubik-$sgi-tabs.1" class="js-itemMenu">
-                                Tabs
-                            </a>
-
-                            <ul class="sg-submenu">
-                            </ul>
-
-
-        				</li>
-                        <li>
-                            <a href="section--sgi-headings%7D.html#rubik-${$sgi-headings}.1" class="js-itemMenu">
-                                Headings
-                            </a>
-
-                            <ul class="sg-submenu">
-                            </ul>
-
-
-        				</li>
-                        <li>
                             <a href="section-1.html#rubik-1.1" class="js-itemMenu">
                                 Common CSS 
                             </a>
@@ -73,6 +53,9 @@
                                         <a href="section-1.html#rubik-1.2" class="js-itemMenu " data-link="true">Text elements</a>
                                         <ul class="sg-second-submenu">
                                             <li>
+                                                <a href="section-1.html#rubik-1.2.1" >Headings</a>
+                                            </li>
+                                            <li>
                                                 <a href="section-1.html#rubik-1.2.2" >Paragraphs</a>
                                             </li>
                                             <li>
@@ -88,13 +71,13 @@
                                                 <a href="section-1.html#rubik-1.2.6" >Blockquotes</a>
                                             </li>
                                             <li>
+                                                <a href="section-1.html#rubik-1.2.7" >Text colors</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.2.7" >Text colors</a>
+                                            </li>
+                                            <li>
                                                 <a href="section-1.html#rubik-1.2.7" >Lists</a>
-                                            </li>
-                                            <li>
-                                                <a href="section-1.html#rubik-1.2.7" >Text colors</a>
-                                            </li>
-                                            <li>
-                                                <a href="section-1.html#rubik-1.2.7" >Text colors</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -154,9 +137,6 @@
                                     <li>
                                         <a href="section-2.html#rubik-2.2" class="js-itemMenu " data-link="true">Notifications</a>
                                         <ul class="sg-second-submenu">
-                                            <li>
-                                                <a href="section-2.html#rubik-2.2.1" >Notifications</a>
-                                            </li>
                                         </ul>
                                     </li>
                                     <li>
@@ -179,7 +159,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="section-2.html#rubik-2.5" class="js-itemMenu " data-link="true">Footer</a>
+                                        <a href="section-2.html#rubik-2.8" class="js-itemMenu " data-link="true">Tabs</a>
                                         <ul class="sg-second-submenu">
                                         </ul>
                                     </li>
@@ -491,6 +471,52 @@ your content.
                             <div id="rubik-1.1.1.3" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
+                                        <h2 class="sg-block-title">Nested row</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.row</code> and <code>.row-matrioska</code> to nested rows.</p>
+<div class="sg-view">
+    <div class="sg-guide">
+          <!--ROW-FAUX-->
+          <div class="row clearfix">
+              <div class="col-6">
+                  <div class="col-child">
+                         .col-6
+                        <div class="row row-matrioska">
+                            <div class="col-6"><div class="col-child">.col-6</div></div>
+                            <div class="col-6"><div class="col-child">.col-6</div></div>
+                        </div>
+                  </div>
+              </div>
+              <div class="col-6">
+                  <div class="col-child">.col-6</div>
+              </div>
+          </div>
+          <!--/ROW-MATRIOSKA-->
+      </div>
+  </div>
+
+                                        </div>
+
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">
+&lt;div class=&quot;row row-faux&quot;&gt;
+	&lt;div class=&quot;col-4&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-4&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-4&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.1.1.3" class="row sg-block">
+                                    <div class="col-12">
+                                    <header class="sg-block-header">
                                         <h2 class="sg-block-title">Equal height columns</h2>
                                     </header>
                                         <div class="sg-block-description">
@@ -544,68 +570,10 @@ your content.
 
 
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-6&quot;&gt;
-		&lt;div class=&quot;col-child&quot;&gt;
-			&lt;div class=&quot;row row-matrioska&quot;&gt;
-				&lt;div class=&quot;col-6&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
-				&lt;div class=&quot;col-6&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;col-6&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
-
-                                </div>
-                            </div>
-
-
-
-
-                            <div id="rubik-1.1.1.3" class="row sg-block">
-                                    <div class="col-12">
-                                    <header class="sg-block-header">
-                                        <h2 class="sg-block-title">Nested row</h2>
-                                    </header>
-                                        <div class="sg-block-description">
-                                            <p>Use class <code>.row</code> and <code>.row-matrioska</code> to nested rows.</p>
-<div class="sg-view">
-    <div class="sg-guide">
-          <!--ROW-FAUX-->
-          <div class="row clearfix">
-              <div class="col-6">
-                  <div class="col-child">
-                         .col-6
-                        <div class="row row-matrioska">
-                            <div class="col-6"><div class="col-child">.col-6</div></div>
-                            <div class="col-6"><div class="col-child">.col-6</div></div>
-                        </div>
-                  </div>
-              </div>
-              <div class="col-6">
-                  <div class="col-child">.col-6</div>
-              </div>
-          </div>
-          <!--/ROW-MATRIOSKA-->
-      </div>
-  </div>
-
-                                        </div>
-
-
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-6&quot;&gt;
-		&lt;div class=&quot;col-child&quot;&gt;
-			&lt;div class=&quot;row row-matrioska&quot;&gt;
-				&lt;div class=&quot;col-6&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
-				&lt;div class=&quot;col-6&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;col-6&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;row row-faux&quot;&gt;
+	&lt;div class=&quot;col-4&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-4&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-4&quot;&gt;&lt;div class=&quot;col-child&quot;&gt;...&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
@@ -633,6 +601,40 @@ your content.
                                     </div>
                             </div>
                         </div>
+
+
+
+                            <div id="rubik-1.2.1" class="row sg-block">
+                                    <div class="col-12">
+                                    <header class="sg-block-header">
+                                        <h2 class="sg-block-title">Headings</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Definition of differents levels of titles: <br>
+<code>&lt;h1&gt;</code> for level 1,<br>
+<code>&lt;h2&gt;</code> for level 2,<br>
+<code>&lt;h3&gt;</code> for level 3.<br>
+<code>&lt;h1&gt;</code> defines the most important heading. Only one <code>&lt;h1&gt;</code> per page or <code>&lt;section&gt;</code>.</p>
+
+
+                                        </div>
+
+
+                                                <div class="sg-view">
+                                                    <h1>Heading level 1</h1>
+<h2>Heading level 2</h2>
+<h3>Heading level 3</h3>
+                                                </div>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">
+&lt;h1&gt;Heading level 1&lt;/h1&gt;
+&lt;h2&gt;Heading level 2&lt;/h2&gt;
+&lt;h3&gt;Heading level 3&lt;/h3&gt;
+</code></pre>
+<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+
+                                </div>
+                            </div>
+
 
 
 
@@ -735,10 +737,10 @@ your content.
 
 
                                                 <div class="sg-view">
-                                                    <p class="[modifier class]">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                                 </div>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;p class=&quot;[modifier class]&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+&lt;p class=&quot;{{modifier_class}}&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
 </code></pre>
 <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
 
@@ -802,16 +804,144 @@ Use class <code>.vip-quote</code> to emphasise a blockquote.</p>
 
 
                                                 <div class="sg-view">
-                                                    <blockquote class="[modifier class]">
+                                                    <blockquote class="">
 	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
 	<cite>Lorem ipsum</cite>
 </blockquote>
                                                 </div>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;blockquote class=&quot;[modifier class]&quot;&gt;
+&lt;blockquote class=&quot;{{modifier_class}}&quot;&gt;
 	&lt;span&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/span&gt;
 	&lt;cite&gt;Lorem ipsum&lt;/cite&gt;
 &lt;/blockquote&gt;
+</code></pre>
+<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.2.7" class="row sg-block">
+                                    <div class="col-12">
+                                    <header class="sg-block-header">
+                                        <h2 class="sg-block-title">Text colors</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <ul>
+<li>Use class <code>.script</code> to force text color as the default text color</li>
+<li>Use class <code>.soft-script</code> to force a text color as a secondary text</li>
+<li>Use class <code>.alternative</code> to mark text that contains details information</li>
+<li>Use class <code>.disabled</code> to mark a text option as disabled</li>
+<li>Use class <code>.marked</code> to focus attention in it</li>
+<li>Use class <code>.highlight</code> to highlight words as a result of a search</li>
+</ul>
+<p>{modifier_class}:</p>
+<p>.script
+.notification-success
+.alternative
+.disabled
+.marked
+.highlight</p>
+
+
+                                        </div>
+
+
+                                                <div class="sg-view">
+                                                    <!-- Example for unordered and ordered list. -->
+<ul class="list-default">
+    <li>Salario no disponible</li>
+    <li>Experiencia minima: no requerida</li>
+    <li>Tipo de oferta: de duracion determinada, jornada completa</li>
+</ul>
+<!-- Example for definition list. -->
+<dl class="list-default">
+    <dt>Salario:</dt>
+    <dd>No disponible</dd>
+    <dt>Tipo de oferta:</dt>
+    <dd>De duracion determinada, jornada completa</dd>
+</dl>
+                                                </div>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">
+&lt;!-- Example for unordered and ordered list. --&gt;
+&lt;ul class=&quot;list-default&quot;&gt;
+    &lt;li&gt;Salario no disponible&lt;/li&gt;
+    &lt;li&gt;Experiencia minima: no requerida&lt;/li&gt;
+    &lt;li&gt;Tipo de oferta: de duracion determinada, jornada completa&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- Example for definition list. --&gt;
+&lt;dl class=&quot;list-default&quot;&gt;
+    &lt;dt&gt;Salario:&lt;/dt&gt;
+    &lt;dd&gt;No disponible&lt;/dd&gt;
+    &lt;dt&gt;Tipo de oferta:&lt;/dt&gt;
+    &lt;dd&gt;De duracion determinada, jornada completa&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.2.7" class="row sg-block">
+                                    <div class="col-12">
+                                    <header class="sg-block-header">
+                                        <h2 class="sg-block-title">Text colors</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <ul>
+<li>Use class <code>.script</code> to force text color as the default text color</li>
+<li>Use class <code>.soft-script</code> to force a text color as a secondary text</li>
+<li>Use class <code>.alternative</code> to mark text that contains details information</li>
+<li>Use class <code>.disabled</code> to mark a text option as disabled</li>
+<li>Use class <code>.marked</code> to focus attention in it</li>
+<li>Use class <code>.highlight</code> to highlight words as a result of a search</li>
+</ul>
+<p>{modifier_class}:</p>
+<p>.script
+.notification-success
+.alternative
+.disabled
+.marked
+.highlight</p>
+
+
+                                        </div>
+
+
+                                                <div class="sg-view">
+                                                    <!-- Example for unordered and ordered list. -->
+<ul class="list-default">
+    <li>Salario no disponible</li>
+    <li>Experiencia minima: no requerida</li>
+    <li>Tipo de oferta: de duracion determinada, jornada completa</li>
+</ul>
+<!-- Example for definition list. -->
+<dl class="list-default">
+    <dt>Salario:</dt>
+    <dd>No disponible</dd>
+    <dt>Tipo de oferta:</dt>
+    <dd>De duracion determinada, jornada completa</dd>
+</dl>
+                                                </div>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">
+&lt;!-- Example for unordered and ordered list. --&gt;
+&lt;ul class=&quot;list-default&quot;&gt;
+    &lt;li&gt;Salario no disponible&lt;/li&gt;
+    &lt;li&gt;Experiencia minima: no requerida&lt;/li&gt;
+    &lt;li&gt;Tipo de oferta: de duracion determinada, jornada completa&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- Example for definition list. --&gt;
+&lt;dl class=&quot;list-default&quot;&gt;
+    &lt;dt&gt;Salario:&lt;/dt&gt;
+    &lt;dd&gt;No disponible&lt;/dd&gt;
+    &lt;dt&gt;Tipo de oferta:&lt;/dt&gt;
+    &lt;dd&gt;De duracion determinada, jornada completa&lt;/dd&gt;
+&lt;/dl&gt;
 </code></pre>
 <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
 
@@ -841,90 +971,34 @@ Use class <code>.list-default</code> for a basic list without decoration.</p>
 
 
                                                 <div class="sg-view">
-                                                    <p>Lorem ipsum dolor sit amet, <span class="[modifier class]">consectetur adipiscing</span> elit.</p>
-                                                </div>
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;p&gt;Lorem ipsum dolor sit amet, &lt;span class=&quot;[modifier class]&quot;&gt;consectetur adipiscing&lt;/span&gt; elit.&lt;/p&gt;
-</code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
-
-                                </div>
-                            </div>
-
-
-
-
-                            <div id="rubik-1.2.7" class="row sg-block">
-                                    <div class="col-12">
-                                    <header class="sg-block-header">
-                                        <h2 class="sg-block-title">Text colors</h2>
-                                    </header>
-                                        <div class="sg-block-description">
-                                            <ul>
-<li>Use class <code>.script</code> to force text color as the default text color</li>
-<li>Use class <code>.soft-script</code> to force a text color as a secondary text</li>
-<li>Use class <code>.alternative</code> to mark text that contains details information</li>
-<li>Use class <code>.disabled</code> to mark a text option as disabled</li>
-<li>Use class <code>.marked</code> to focus attention in it</li>
-<li>Use class <code>.highlight</code> to highlight words as a result of a search</li>
+                                                    <!-- Example for unordered and ordered list. -->
+<ul class="list-default">
+    <li>Salario no disponible</li>
+    <li>Experiencia minima: no requerida</li>
+    <li>Tipo de oferta: de duracion determinada, jornada completa</li>
 </ul>
-<p>{modifier_class}:</p>
-<p>.script
-.notification-success
-.alternative
-.disabled
-.marked
-.highlight</p>
-
-
-                                        </div>
-
-
-                                                <div class="sg-view">
-                                                    <p>Lorem ipsum dolor sit amet, <span class="[modifier class]">consectetur adipiscing</span> elit.</p>
+<!-- Example for definition list. -->
+<dl class="list-default">
+    <dt>Salario:</dt>
+    <dd>No disponible</dd>
+    <dt>Tipo de oferta:</dt>
+    <dd>De duracion determinada, jornada completa</dd>
+</dl>
                                                 </div>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;p&gt;Lorem ipsum dolor sit amet, &lt;span class=&quot;[modifier class]&quot;&gt;consectetur adipiscing&lt;/span&gt; elit.&lt;/p&gt;
-</code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
-
-                                </div>
-                            </div>
-
-
-
-
-                            <div id="rubik-1.2.7" class="row sg-block">
-                                    <div class="col-12">
-                                    <header class="sg-block-header">
-                                        <h2 class="sg-block-title">Text colors</h2>
-                                    </header>
-                                        <div class="sg-block-description">
-                                            <ul>
-<li>Use class <code>.script</code> to force text color as the default text color</li>
-<li>Use class <code>.soft-script</code> to force a text color as a secondary text</li>
-<li>Use class <code>.alternative</code> to mark text that contains details information</li>
-<li>Use class <code>.disabled</code> to mark a text option as disabled</li>
-<li>Use class <code>.marked</code> to focus attention in it</li>
-<li>Use class <code>.highlight</code> to highlight words as a result of a search</li>
-</ul>
-<p>{modifier_class}:</p>
-<p>.script
-.notification-success
-.alternative
-.disabled
-.marked
-.highlight</p>
-
-
-                                        </div>
-
-
-                                                <div class="sg-view">
-                                                    <p>Lorem ipsum dolor sit amet, <span class="[modifier class]">consectetur adipiscing</span> elit.</p>
-                                                </div>
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;p&gt;Lorem ipsum dolor sit amet, &lt;span class=&quot;[modifier class]&quot;&gt;consectetur adipiscing&lt;/span&gt; elit.&lt;/p&gt;
+&lt;!-- Example for unordered and ordered list. --&gt;
+&lt;ul class=&quot;list-default&quot;&gt;
+    &lt;li&gt;Salario no disponible&lt;/li&gt;
+    &lt;li&gt;Experiencia minima: no requerida&lt;/li&gt;
+    &lt;li&gt;Tipo de oferta: de duracion determinada, jornada completa&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- Example for definition list. --&gt;
+&lt;dl class=&quot;list-default&quot;&gt;
+    &lt;dt&gt;Salario:&lt;/dt&gt;
+    &lt;dd&gt;No disponible&lt;/dd&gt;
+    &lt;dt&gt;Tipo de oferta:&lt;/dt&gt;
+    &lt;dd&gt;De duracion determinada, jornada completa&lt;/dd&gt;
+&lt;/dl&gt;
 </code></pre>
 <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
 
@@ -937,10 +1011,10 @@ Use class <code>.list-default</code> for a basic list without decoration.</p>
                             <div id="rubik-1.2.7.1" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
-                                        <h2 class="sg-block-title">Lists with bullets</h2>
+                                        <h2 class="sg-block-title">Contrasted text color</h2>
                                     </header>
                                         <div class="sg-block-description">
-                                            <p>Use class <code>.list-default</code> and <code>.list-bullet-default</code> to add default bullets to the list.</p>
+                                            <p>Use class <code>.contrast</code> to define a text over dark background color</p>
 
 
                                         </div>
@@ -969,10 +1043,10 @@ Use class <code>.list-default</code> for a basic list without decoration.</p>
                             <div id="rubik-1.2.7.1" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
-                                        <h2 class="sg-block-title">Contrasted text color</h2>
+                                        <h2 class="sg-block-title">Lists with bullets</h2>
                                     </header>
                                         <div class="sg-block-description">
-                                            <p>Use class <code>.contrast</code> to define a text over dark background color</p>
+                                            <p>Use class <code>.list-default</code> and <code>.list-bullet-default</code> to add default bullets to the list.</p>
 
 
                                         </div>
@@ -1369,10 +1443,10 @@ Also add one of the following classes to give it format:</p>
 
 
                                                 <div class="sg-view">
-                                                    <a href="#" class="btn [modifier class]">Link Button</a>
+                                                    <a href="#" class="btn ">Link Button</a>
                                                 </div>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;a href=&quot;#&quot; class=&quot;btn [modifier class]&quot;&gt;Link Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn &quot;&gt;Link Button&lt;/a&gt;
 </code></pre>
 <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
 
@@ -1398,10 +1472,10 @@ Also add one of the following classes to give it format:</p>
 
 
                                                 <div class="sg-view">
-                                                    <a href="#" class="btn btn-default [modifier class]">Link Button</a>
+                                                    <a href="#" class="btn btn-default ">Link Button</a>
                                                 </div>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;a href=&quot;#&quot; class=&quot;btn btn-default [modifier class]&quot;&gt;Link Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-default &quot;&gt;Link Button&lt;/a&gt;
 </code></pre>
 <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
 
@@ -1805,12 +1879,12 @@ Use the following classes to apply an icon on a tag.</p>
 
                                                 <div class="sg-view">
                                                     <ul>
-	<li class="iconfont-Company [modifier class]"><span class="hide">Icon name</span></li>
+	<li class="iconfont-Company "><span class="hide">Icon name</span></li>
 </ul>
                                                 </div>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
 &lt;ul&gt;
-	&lt;li class=&quot;iconfont-Company [modifier class]&quot;&gt;&lt;span class=&quot;hide&quot;&gt;Icon name&lt;/span&gt;&lt;/li&gt;
+	&lt;li class=&quot;iconfont-Company &quot;&gt;&lt;span class=&quot;hide&quot;&gt;Icon name&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
 <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
