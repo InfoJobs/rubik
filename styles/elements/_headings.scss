@@ -24,7 +24,7 @@ Markup:
 <h2>Heading level 2</h2>
 <h3>Heading level 3</h3>
 
-Styleguide ${$sgi-headings}
+Styleguide #{$sgi-headings}
 */
 
 h1,
@@ -98,6 +98,10 @@ Styleguide #{$sgi-headingAddons}
 	h3 {
 		margin: 0;
 		word-wrap : break-word;
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		-ms-hyphens: auto;
+		hyphens: auto;
 	}
 }
 
