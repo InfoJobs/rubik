@@ -1,5 +1,5 @@
 /*
-Javascript Components #casper#
+Javascript Components
 
 Styleguide 3
 */
@@ -38,11 +38,11 @@ Markup:
 	</div>
 </div>
 
-Styleguide 3.1
+Styleguide #{$sgi-modal}
 */
 
 /*
-Modal size #disabled#
+Modal size
 
 Apply width and height styles in the container `.modal-inner` for rewrite the default modal size.
 
@@ -51,7 +51,7 @@ Markup:
 	...
 </div>
 
-Styleguide 3.1.1
+Styleguide #{$sgi-modal-size}
 */
 
 /*
@@ -65,11 +65,11 @@ Markup:
 	<h1 class="title">Title</h1>
 </div>
 
-Styleguide 3.1.2
+Styleguide #{$sgi-modal-header}
 */
 
 /*
-Modal content #disabled#
+Modal content
 
 Use the structure it's needed inside the `.modal-content` to create the layout.
 
@@ -78,7 +78,7 @@ Markup:
 	<p>Text content.</p>
 </div>
 
-Styleguide 3.1.3
+Styleguide #{$sgi-modal-content}
 */
 
 .modal-hidden {/*por defecto oculto*/

@@ -18,6 +18,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -118,6 +121,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -299,7 +305,7 @@ Markup:
     ...
 </div>
 
-Styleguide 1.2.4
+Styleguide 1.1.4
 */
 .content-wrapper,
 .inner {
@@ -932,7 +938,6 @@ Styleguide 1.1.1.2
 
 .col-child {
   margin: 0 0 0 10px;
-  max-width: calc(100% - 10px);
 }
 .col-child.inner {
   max-width: 100%;
@@ -1283,6 +1288,23 @@ h3,
   }
 }
 
+.large {
+  font-size: 20px;
+  line-height: 24px;
+}
+@media print {
+  .large {
+    font-size: 15.00038px;
+    line-height: 18.00045px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .large {
+    font-size: 25px;
+    line-height: 28px;
+  }
+}
+
 .carousel-claim {
   font-size: 36px;
   line-height: 37px;
@@ -1332,6 +1354,23 @@ h3,
   }
 }
 
+.large {
+  font-size: 20px;
+  line-height: 24px;
+}
+@media print {
+  .large {
+    font-size: 15.00038px;
+    line-height: 18.00045px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .large {
+    font-size: 25px;
+    line-height: 28px;
+  }
+}
+
 .carousel-claim {
   font-size: 36px;
   line-height: 37px;
@@ -1368,7 +1407,7 @@ Text colors
 Markup:
 <p>Lorem ipsum dolor sit amet, <span class="{{modifier_class}}">consectetur adipiscing</span> elit.</p>
 
-Styleguide 1.2.7
+Styleguide 1.2.2.3
 */
 /*
 Contrasted text color
@@ -1381,7 +1420,7 @@ Markup:
 	<a href="#" class="contrast">Curabitur varius</a>
 </div>
 
-Styleguide 1.2.7.1
+Styleguide 1.2.2.4
 */
 .contrast,
 .contrast[class*="iconfont-"]::before {
@@ -1918,6 +1957,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -2033,6 +2075,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -2209,8 +2254,13 @@ Styleguide 1.7.1.1
   margin-right: 8px;
   color: #fff;
 }
+.btn-default[class*="iconfont-"]::before {
+  color: #666;
+}
 .btn-group .btn[class*="iconfont-"]::before {
   margin-right: 0;
+}
+.btn-group .btn:not(.disabled)[class*="iconfont-"]::before {
   color: #2d3133;
 }
 
@@ -2248,6 +2298,10 @@ Styleguide 1.7.2.1
 
 .iconfont-30px::before {
   font-size: 30px;
+}
+
+.iconfont-36px::before {
+  font-size: 36px;
 }
 
 .iconfont-100px::before {
@@ -2333,21 +2387,6 @@ Styleguide 1.7.2.1
 }
 
 .iconfont-Arrow::before {
-  position: relative;
-  font-family: 'Icons';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 0;
-  left: 0;
-  color: #999;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.iconfont-Arrow::before::before {
   content: "\e603";
 }
 
@@ -2611,7 +2650,7 @@ Buttons
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
 
-Styleguide 1.5
+Styleguide 2.3
 */
 /*------------------------------------*\
     $BUTTONS
@@ -2654,7 +2693,7 @@ p > .btn {
   }
 }
 .btn + .btn:not(.btn-group-justified) {
-  margin-left: 5px;
+  margin-right: 5px;
 }
 .btn + .btn-group-justified {
   margin-top: 10px;
@@ -2682,7 +2721,7 @@ Also add one of the following classes to give it format:
 Markup:
 <a href="#" class="btn {{modifier_class}}">Link Button</a>
 
-Styleguide 1.5.1.1
+Styleguide 2.3.1
 */
 .btn-default {
   color: #666;
@@ -2787,7 +2826,7 @@ Markup:
 .btn-medium
 .btn-large
 
-Styleguide 1.5.1.2
+Styleguide 2.3.2
 */
 .btn-medium {
   height: 40px;
@@ -2829,7 +2868,7 @@ Use class `.iconfont-[name]` to display an icon inside the button.
 Markup:
 <a href="#" class="btn btn-primary btn-medium iconfont-Facebook">Link Button</a>
 
-Styleguide 1.5.1.3
+Styleguide 2.3.3
 */
 /*
 Buttons status
@@ -2839,11 +2878,12 @@ Use class `.btn-disabled` to show button as disabled.
 Markup:
 <a href="#" class="btn btn-default btn-medium btn-disabled">Link Button</a>
 
-Styleguide 1.5.1.4
+Styleguide 2.3.4
 */
 button[disabled],
 button:hover[disabled],
 button:active[disabled],
+button.btn-disabled,
 .btn-disabled,
 .btn-disabled:hover,
 .btn-disabled:active,
@@ -2852,6 +2892,7 @@ button:active[disabled],
   color: #b0c0c7;
   text-decoration: none;
   cursor: default;
+  border: 1px solid #e2e5e6;
 }
 
 /*
@@ -2863,7 +2904,7 @@ Markup:
 <a href="#" class="btn btn-primary btn-medium btn-annex">Button</a>
 <a href="#" class="link">Link</a>
 
-Styleguide 1.5.1.5
+Styleguide 2.3.5
 */
 .btn-annex {
   margin-right: 15px;
@@ -2894,7 +2935,7 @@ Use class `.btn-form-inline` to display a full width button.
 Markup:
 <a href="#" class="btn btn-primary btn-form-inline">Button Element</a>
 
-Styleguide 1.5.1.6
+Styleguide 2.3.6
 */
 .btn-form-inline {
   width: 100%;
@@ -2906,13 +2947,16 @@ Styleguide 1.5.1.6
     font-size: 16px;
   }
 }
+.btn-form-inline.text-left {
+  text-align: left;
+}
 
 /*
 Button group
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
 
-Styleguide 1.6
+Styleguide 2.4
 
 */
 /*
@@ -2935,7 +2979,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 1.6.1.1
+Styleguide 2.4.1
 */
 .btn-group {
   display: table;
@@ -3005,7 +3049,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 1.6.1.2
+Styleguide 2.4.2
 */
 /*
 Button group with icon
@@ -3022,7 +3066,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 1.6.1.3
+Styleguide 2.4.3
 */
 .btn-group-justified {
   width: 100%;
@@ -3066,7 +3110,7 @@ Markup:
 	<input type="file" value="Subir foto" />
 </div>
 
-Styleguide 1.6.1.4
+Styleguide 2.5
 */
 .btn-file {
   position: relative;
@@ -3105,7 +3149,7 @@ Markup:
 <h2>Heading level 2</h2>
 <h3>Heading level 3</h3>
 
-Styleguide ${$sgi-headings}
+Styleguide 1.2.1
 */
 h1,
 h2,
@@ -3173,8 +3217,10 @@ Styleguide 1.2.1.1
 */
 .heading-addons h1,
 .heading-addons h2,
+.heading-addons h3,
 .heading-single h1,
-.heading-single h2 {
+.heading-single h2,
+.heading-single h3 {
   margin: 0;
   word-wrap: break-word;
   -webkit-hyphens: auto;
@@ -3222,7 +3268,7 @@ Markup:
 	<h1 class="heading-middle">Header Level 1</h1>
 </div>
 
-Styleguide 1.3.1.3
+Styleguide 1.2.1.3
 */
 .heading-middle {
   padding-top: 10px;
@@ -3251,7 +3297,8 @@ Heading divider
 }
 
 h3.heading-divider,
-.h3.heading-divider {
+.h3.heading-divider,
+.medium.heading-divider {
   padding-bottom: 12px;
 }
 
@@ -3270,6 +3317,7 @@ Styleguide 1.2.2
 */
 p {
   margin-bottom: 15px;
+  word-wrap: break-word;
 }
 p:last-child, p:only-child {
   margin-bottom: 0;
@@ -3301,20 +3349,26 @@ Markup:
 .base
 .medium
 
-Styleguide 1.2.3
+Styleguide 1.2.2.1
 */
 /*
 Text variants
 
 Use class `.bold` to bold the content. Use only on the following tags: `<p>`, `<li>`, `<span>`, `dt` or `dd`.
+Use class `.light` to to change from bold to light content.
 
 Markup:
 <p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<h1>Lorem ipsum dolor sit amet, <span class="light">consectetur adipiscing elit</span>.</h1>
 
-Styleguide 1.2.5
+Styleguide 1.2.2.2
 */
 .bold {
   font-family: Proximanovabold, Helvetica, Arial, sans-serif;
+}
+
+.light {
+  font-family: Proximanovalight, Helvetica, Arial, sans-serif;
 }
 
 /*
@@ -3340,7 +3394,7 @@ Markup:
 .vip-quote
 .quote
 
-Styleguide 1.2.6
+Styleguide 1.2.3
 */
 .quote {
   display: block;
@@ -3397,7 +3451,7 @@ Markup:
     <dd>De duracion determinada, jornada completa</dd>
 </dl>
 
-Styleguide 1.2.7
+Styleguide 1.2.4
 */
 .list-default > li,
 .list-default > dt {
@@ -3428,6 +3482,7 @@ Styleguide 1.2.7
 .list-default > dt {
   margin-bottom: 0;
   font-family: Proximanovabold, Helvetica, Arial, sans-serif;
+  color: #2d3133;
 }
 .list-default > dt.hide {
   display: none;
@@ -3448,6 +3503,21 @@ Styleguide 1.2.7
   margin: 1px 0 0 10px;
 }
 
+.list-ordered > li {
+  counter-increment: step-counter;
+  overflow: hidden;
+}
+.list-ordered > li::before {
+  content: counter(step-counter,decimal-leading-zero) ".";
+  font-family: Proximanovabold, Helvetica, Arial, sans-serif;
+  float: left;
+  min-width: 35px;
+  padding-top: 2px;
+}
+.list-ordered > li div {
+  overflow: hidden;
+}
+
 /*
 Lists with bullets
 
@@ -3460,7 +3530,7 @@ Markup:
     <li>Tipo de oferta: de duracion determinada, jornada completa</li>
 </ul>
 
-Styleguide 1.2.7.1
+Styleguide 1.2.4.1
 */
 .list-bullet-default > li,
 .list-bullet-default > dt,
@@ -3499,7 +3569,7 @@ Markup:
     <li class="iconfont-Check iconfont-30px iconfont-soft-script">Lorem ipsum dolor</li>
 </ul>
 
-Styleguide 1.2.7.2
+Styleguide 1.2.4.2
 */
 .list-bullet-icon [class^="iconfont-"],
 .list-bullet-icon [class*="iconfont-"] {
@@ -3584,6 +3654,32 @@ Lists with nested structure
 }
 
 /*
+list-item-divider
+
+Use class `.list-item-divider` to apply a border-top to each list items.
+
+Markup:
+<ul>
+    <li class="list-item-divider">Lorem ipsum dolor sit amet</li>
+    <li class="list-item-divider">Lorem ipsum</li>
+    <li class="list-item-divider">Lorem ipsum dolor</li>
+</ul>
+
+*/
+.list-item-divider {
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e5e6;
+}
+@media only screen and (min-width: 481px) {
+  .list-item-divider {
+    padding: 20px 0;
+  }
+}
+.list-item-divider:last-child {
+  border-bottom: 0;
+}
+
+/*
 Tag group
 
 Use class `.tag-group` to display list items in the same line.
@@ -3595,7 +3691,7 @@ Markup:
     <li>Lorem ipsum dolor</li>
 </ul>
 
-Styleguide 1.2.7.5
+Styleguide 1.2.4.3
 */
 .tag-group {
   overflow: hidden;
@@ -3625,7 +3721,7 @@ Markup:
     <li class>Lorem ipsum</li>
 </ul>
 
-Styleguide 1.2.7.5.1
+Styleguide 1.2.4.4.1
 */
 .tag-group li.tag-divider {
   margin-right: 10px;
@@ -3654,7 +3750,7 @@ Markup:
 </ul>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-Styleguide 1.2.7.5.2
+Styleguide 1.2.4.4.2
 */
 .tag-group-top {
   margin-bottom: 10px;
@@ -3690,7 +3786,7 @@ Markup:
     <li>Lorem ipsum</li>
 </ul>
 
-Styleguide 1.2.7.5.4
+Styleguide 1.2.4.4.4
 */
 .tag-group .ellipsis {
   display: block;
@@ -3729,6 +3825,26 @@ Styleguide 1.2.7.5.4
 /*------------------------------------*\
     $FORMS
 \*------------------------------------*/
+::-webkit-input-placeholder {
+  text-overflow: ellipsis;
+  color: #999;
+}
+
+:-moz-placeholder {
+  text-overflow: ellipsis;
+  color: #999;
+}
+
+::-moz-placeholder {
+  text-overflow: ellipsis;
+  color: #999;
+}
+
+:-ms-input-placeholder {
+  text-overflow: ellipsis;
+  color: #999;
+}
+
 fieldset + fieldset {
   margin-top: 40px;
 }
@@ -3745,6 +3861,8 @@ legend {
 
 label,
 .label {
+  display: inline-block;
+  vertical-align: top;
   margin-bottom: 5px;
   font-size: 16px;
   line-height: 125%;
@@ -3756,11 +3874,6 @@ label,
 .success label:first-of-type, .success
 .label:first-of-type {
   color: #00a550;
-}
-
-label {
-  display: inline-block;
-  vertical-align: top;
 }
 
 select {
@@ -3799,6 +3912,7 @@ textarea {
   padding: 4px 10px;
   font-size: 16px;
   line-height: 20px;
+  color: #2d3133;
   width: 330px;
   margin: 0;
   border: 1px solid #c7c7c7;
@@ -3825,19 +3939,8 @@ textarea {
   width: 100%;
 }
 
-input::-webkit-input-placeholder,
-input::-moz-placeholder,
-input:-ms-input-placeholder,
-textarea::-webkit-input-placeholder,
-textarea::-moz-placeholder,
-textarea:-ms-input-placeholder {
-  color: #999;
-}
-
-input[placeholder],
-textarea[placeholder] {
-  text-overflow: ellipsis;
-  color: #999;
+.textarea .info {
+  margin-top: 5px;
 }
 
 input[type="radio"],
@@ -3854,9 +3957,15 @@ input[type="checkbox"] {
 }
 
 input[disabled="disabled"],
-select[disabled="disabled"] {
-  color: #b0c0c7;
+select[disabled="disabled"],
+.disabled {
+  color: #e2e5e6;
   cursor: default;
+}
+
+input[type="checkbox"]:disabled + label,
+input[type="radio"]:disabled + label {
+  color: #999;
 }
 
 input[type="checkbox"] + label,
@@ -3895,7 +4004,7 @@ Markup:
   </fieldset>
 </form>
 
-Styleguide 1.4
+Styleguide 2.10
 */
 .form--field-block > li {
   margin-bottom: 20px;
@@ -3975,7 +4084,7 @@ Markup:
 	</ul>
 </fieldset>
 
-Styleguide 1.4.1
+Styleguide 2.10.1
 */
 /*
 Radio buttons's inline #disabled#
@@ -3994,7 +4103,7 @@ Markup:
 	</li>
 </ul>
 
-Styleguide 1.4.2
+Styleguide 2.10.2
 */
 .radio-group {
   width: 100%;
@@ -4044,7 +4153,7 @@ Markup:
   </select>
 </div>
 
-Styleguide 1.4.3
+Styleguide 2.10.3
 */
 .form-select {
   position: relative;
@@ -4105,7 +4214,7 @@ Markup:
 	<option value="05">Option05</option>
 </select>
 
-Styleguide 1.4.4
+Styleguide 2.10.4
 */
 .form-select-medium {
   /* Used in SectionCvComponent*/
@@ -4119,7 +4228,7 @@ Input group #disabled#
 .input-group
 ```
 
-Styleguide 1.4.5
+Styleguide 2.10.5
 */
 .input-group {
   display: table;
@@ -4179,6 +4288,24 @@ Styleguide 1.4.5
 }
 .error .input-group-date {
   border: 1px solid #bf2102;
+}
+.input-group-disabled label {
+  color: #e2e5e6;
+}
+.input-group-disabled input[disabled],
+.input-group-disabled input[placeholder] {
+  background: transparent;
+  color: #e2e5e6;
+}
+.input-group-disabled input::-webkit-input-placeholder {
+  background: transparent;
+  color: #e2e5e6;
+}
+.input-group-disabled .input-group-date {
+  border-color: #e2e5e6;
+}
+.input-group-disabled .input-group-date > div::before {
+  color: #e2e5e6;
 }
 
 input[type="number"] {
@@ -4256,7 +4383,7 @@ Markup:
   </fieldset>
 </form>
 
-Styleguide 1.4.6
+Styleguide 2.10.6
 */
 .error-info {
   margin-top: 5px;
@@ -4377,62 +4504,183 @@ Styleguide 1.4.6
   margin-top: 25px;
 }
 
-.field-date-group .input-group-date > div {
-  width: 50%;
-}
-.field-date-group .input-group-date > div input {
-  width: 100%;
-}
 .field-date-group .start-date-group {
-  width: calc(50% - 5px);
   float: left;
-  margin-right: 5px;
-}
-.field-date-group .start-date-group input {
-  width: 100%;
+  padding-right: 10px;
 }
 @media only screen and (min-width: 481px) {
   .field-date-group .start-date-group {
-    width: calc(33% - 10px);
-    margin-right: 10px;
+    padding-right: 20px;
   }
 }
 .field-date-group .end-date-group {
-  width: calc(50% - 5px);
   float: left;
-  margin-left: 5px;
 }
-.field-date-group .end-date-group input {
-  width: 100%;
+.field-date-group .end-date-group .list-default {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 @media only screen and (min-width: 481px) {
-  .field-date-group .end-date-group {
-    width: calc(66% - 10px);
-    margin-left: 10px;
+  .field-date-group .end-date-group .list-default {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
 }
-@media only screen and (min-width: 481px) {
-  .field-date-group .end-date-group .end-date {
-    width: 50%;
-    float: left;
-  }
-}
-.field-date-group .end-date-group .field-date-group-currently input {
-  width: auto;
+.field-date-group .end-date-group .end-date {
+  float: left;
+  -webkit-box-flex: 1 0 auto;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 @media only screen and (min-width: 481px) {
   .field-date-group .end-date-group .field-date-group-currently {
-    width: calc(50% - 20px);
     float: left;
-    overflow: hidden;
-    margin-top: 40px;
-    margin-left: 20px;
-    padding-left: 1px;
+    -webkit-box-flex: 1 0 100%;
+    -webkit-flex: 1 0 100%;
+    -ms-flex: 1 0 100%;
+    flex: 1 0 100%;
+    margin: 30px 0 0 20px;
   }
+}
+@media only screen and (min-width: 481px) {
+  .field-date-group .error-info {
+    max-width: 116px;
+  }
+}
+
+.row-centered .input-PostalCode,
+.input-PostalCode {
+  width: 70px;
+}
+
+/*------------------------------------*\
+    $TABLE
+\*------------------------------------*/
+.table-default {
+  text-align: left;
+}
+.table-default thead, .table-default tfoot, .table-default tbody, .table-default th, .table-default td, .table-default tr {
+  text-align: left;
+}
+.table-default th,
+.table-default td {
+  position: relative;
+}
+.table-default th [class^="panel-"],
+.table-default td [class^="panel-"] {
+  padding: 10px;
+  margin: 10px 0 0 0;
+}
+.table-default th {
+  color: #2d3133;
+}
+.table-default td {
+  color: #666;
+}
+.table-default > tbody > tr {
+  position: relative;
+}
+.table-default > tbody > tr + tr {
+  border-top: 1px solid #e2e5e6;
+}
+@media only screen and (min-width: 481px) {
+  .table-default {
+    width: 100%;
+    max-width: 100%;
+  }
+  .table-default table {
+    width: 100%;
+    max-width: 100%;
+  }
+  .table-default thead {
+    font-family: Proximanovabold, Helvetica, Arial, sans-serif;
+    border-bottom: 1px solid #e2e5e6;
+  }
+  .table-default th,
+  .table-default td {
+    width: 25%;
+    padding: 10px 10px 10px 0;
+  }
+  .table-default th.cell-parent,
+  .table-default td.cell-parent {
+    padding: 0;
+  }
+  .table-default th [class^="panel-"],
+  .table-default td [class^="panel-"] {
+    margin-right: -10px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .table-default thead, .table-default tfoot, .table-default tbody, .table-default th, .table-default td, .table-default tr {
+    display: block;
+  }
+  .table-default > tbody > tr {
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  .table-default thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .table-default td:before {
+    content: attr(data-th) " ";
+    white-space: nowrap;
+  }
+}
+
+.table-editable .action {
+  display: none;
 }
 @media only screen and (min-width: 769px) {
-  .field-date-group .end-date-group .field-date-group-currently {
-    margin-top: 30px;
+  .table-editable > tbody > tr:hover,
+  .table-editable > tbody > tr:focus {
+    background: #f5fcff;
+    cursor: pointer;
+  }
+  .table-editable > tbody > tr:hover > td::before,
+  .table-editable > tbody > tr:focus > td::before {
+    background: #f5fcff;
+    content: "";
+    display: block;
+    height: 100%;
+    left: -20px;
+    top: 0;
+    position: absolute;
+    width: 20px;
+  }
+  .table-editable > tbody > tr:hover > td::after,
+  .table-editable > tbody > tr:focus > td::after {
+    background: #f5fcff;
+    content: "";
+    display: block;
+    height: 100%;
+    right: -20px;
+    top: 0;
+    position: absolute;
+    width: 20px;
+  }
+  .table-editable > tbody > tr:hover .action,
+  .table-editable > tbody > tr:focus .action {
+    display: block;
+  }
+  .table-editable > tbody > tr:hover .btn,
+  .table-editable > tbody > tr:focus .btn {
+    top: 10px;
+    right: 10px;
+    position: absolute;
   }
 }
 
@@ -4464,6 +4712,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -4622,6 +4873,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -4672,7 +4926,7 @@ Markup:
 	</div>
 </div>
 
-Styleguide 2.1
+Styleguide 2.2
 */
 .board {
   overflow: hidden;
@@ -4761,6 +5015,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -4821,6 +5078,23 @@ h3,
   .h3, .medium {
     font-size: 13.50034px;
     line-height: 16.50041px;
+  }
+}
+
+.large {
+  font-size: 20px;
+  line-height: 24px;
+}
+@media print {
+  .large {
+    font-size: 15.00038px;
+    line-height: 18.00045px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .large {
+    font-size: 25px;
+    line-height: 28px;
   }
 }
 
@@ -5186,6 +5460,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -5241,7 +5518,7 @@ Markup:
 	</div>
 </div>
 
-Styleguide 2.3
+Styleguide 2.6
 */
 .content-logo,
 .content-middle {
@@ -5252,6 +5529,8 @@ Styleguide 2.3
   display: flex;
   position: relative;
   align-items: center;
+  -webkit-align-items: center;
+  flex-grow: 1;
 }
 @media print {
   .content-logo,
@@ -5293,30 +5572,29 @@ Styleguide 2.3
   -moz-hyphens: auto;
   word-wrap: break-word;
 }
-.content-logo .content-logo-text h1 span, .content-logo .content-logo-text h2 span, .content-logo .content-logo-text h3 span,
-.content-logo .content-type-text h1 span,
-.content-logo .content-type-text h2 span,
-.content-logo .content-type-text h3 span,
-.content-middle .content-logo-text h1 span,
-.content-middle .content-logo-text h2 span,
-.content-middle .content-logo-text h3 span,
-.content-middle .content-type-text h1 span,
-.content-middle .content-type-text h2 span,
-.content-middle .content-type-text h3 span {
-  font-family: Proximanovalight, Helvetica, Arial, sans-serif;
-}
-.content-logo .content-logo-text p:only-of-type,
-.content-logo .content-type-text p:only-of-type,
-.content-middle .content-logo-text p:only-of-type,
-.content-middle .content-type-text p:only-of-type {
-  margin-bottom: 5px;
-}
 .content-logo .content-logo-text .btn,
 .content-logo .content-type-text .btn,
 .content-middle .content-logo-text .btn,
 .content-middle .content-type-text .btn {
   display: table;
   margin-top: 10px;
+}
+.content-logo .content-logo-text.contact .btn,
+.content-logo .content-type-text.contact .btn,
+.content-middle .content-logo-text.contact .btn,
+.content-middle .content-type-text.contact .btn {
+  display: inline-block;
+}
+.content-logo .content-type-media img, .content-logo .content-type-media-small img,
+.content-middle .content-type-media img,
+.content-middle .content-type-media-small img {
+  display: table;
+}
+.content-logo .content-type-media img + .sticker, .content-logo .content-type-media-small img + .sticker,
+.content-middle .content-type-media img + .sticker,
+.content-middle .content-type-media-small img + .sticker {
+  display: table;
+  margin: -10px auto 0 auto;
 }
 .content-logo .content-logo-media,
 .content-logo .content-type-media,
@@ -5338,6 +5616,7 @@ Styleguide 2.3
 .content-logo .content-type-media img,
 .content-middle .content-logo-media img,
 .content-middle .content-type-media img {
+  display: block;
   width: 62px;
 }
 .content-logo .content-logo-media img.crop-circle,
@@ -5345,6 +5624,13 @@ Styleguide 2.3
 .content-middle .content-logo-media img.crop-circle,
 .content-middle .content-type-media img.crop-circle {
   height: 62px;
+}
+.content-logo .content-logo-media img + .sticker,
+.content-logo .content-type-media img + .sticker,
+.content-middle .content-logo-media img + .sticker,
+.content-middle .content-type-media img + .sticker {
+  display: table;
+  margin: 10px auto 0 auto;
 }
 @media only screen and (min-width: 481px) {
   .content-logo .content-logo-media img,
@@ -5384,46 +5670,32 @@ Styleguide 2.3
     padding: 4px;
   }
 }
-.content-logo .content-type-media-small img,
-.content-middle .content-type-media-small img {
+.content-logo .content-type-media-small .fig-thumbnail-logo img,
+.content-middle .content-type-media-small .fig-thumbnail-logo img {
   width: 34px;
 }
-.content-logo .content-type-media-small img.crop-circle,
-.content-middle .content-type-media-small img.crop-circle {
-  height: 34px;
-}
 @media only screen and (min-width: 769px) {
-  .content-logo .content-type-media-small img,
-  .content-middle .content-type-media-small img {
+  .content-logo .content-type-media-small .fig-thumbnail-logo img,
+  .content-middle .content-type-media-small .fig-thumbnail-logo img {
     width: 50px;
-  }
-  .content-logo .content-type-media-small img.crop-circle,
-  .content-middle .content-type-media-small img.crop-circle {
-    height: 50px;
   }
 }
 .content-logo .content-type-media-small .sticker-skill,
 .content-middle .content-type-media-small .sticker-skill {
   top: 0;
   width: 60px;
+  margin: 0;
   text-align: center;
+  white-space: pre;
 }
-.content-logo .content-type-media-xsmall img,
-.content-middle .content-type-media-xsmall img {
+.content-logo .content-type-media-xsmall .fig-thumbnail-logo img,
+.content-middle .content-type-media-xsmall .fig-thumbnail-logo img {
   width: 30px;
 }
-.content-logo .content-type-media-xsmall img.crop-circle,
-.content-middle .content-type-media-xsmall img.crop-circle {
-  height: 30px;
-}
 @media only screen and (min-width: 769px) {
-  .content-logo .content-type-media-xsmall img,
-  .content-middle .content-type-media-xsmall img {
+  .content-logo .content-type-media-xsmall .fig-thumbnail-logo img,
+  .content-middle .content-type-media-xsmall .fig-thumbnail-logo img {
     width: 40px;
-  }
-  .content-logo .content-type-media-xsmall img.crop-circle,
-  .content-middle .content-type-media-xsmall img.crop-circle {
-    height: 40px;
   }
 }
 .content-logo .action,
@@ -5433,6 +5705,10 @@ Styleguide 2.3
   -ms-flex: none;
   flex: none;
   margin-left: 20px;
+}
+.content-logo .icon,
+.content-middle .icon {
+  margin-right: 10px;
 }
 .content-logo .content-logo-text + .content-logo-media,
 .content-logo .content-type-text + .content-type-media,
@@ -5463,12 +5739,30 @@ Styleguide 2.3
   padding-top: 5px;
 }
 @media only screen and (max-width: 480px) {
-  .content-center-small-device.content-logo, .content-middle {
+  .content-logo.content-center-small-device,
+  .content-middle.content-center-small-device {
     display: block;
   }
-  .content-center-small-device.content-logo .action, .content-middle .action {
+  .content-logo.content-center-small-device .action,
+  .content-middle.content-center-small-device .action {
     margin: 0;
     text-align: center;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .content-logo.content-block-small-device,
+  .content-middle.content-block-small-device {
+    display: block;
+  }
+  .content-logo.content-block-small-device .content-type-text + .content-type-media,
+  .content-logo.content-block-small-device .content-type-media + .content-type-text,
+  .content-middle.content-block-small-device .content-type-text + .content-type-media,
+  .content-middle.content-block-small-device .content-type-media + .content-type-text {
+    margin-left: 0;
+  }
+  .content-logo.content-block-small-device .content-type-media .btn,
+  .content-middle.content-block-small-device .content-type-media .btn {
+    margin-top: 20px;
   }
 }
 .content-logo .content-logo-text,
@@ -5493,7 +5787,10 @@ Styleguide 2.3
   width: 100%;
 }
 @media only screen and (max-width: 480px) {
-  .content-center-small-device.content-logo .content-logo-text, .content-logo .content-type-text, .content-middle .content-logo-text, .content-middle .content-type-text {
+  .content-logo .content-logo-text.content-center-small-device,
+  .content-logo .content-type-text.content-center-small-device,
+  .content-middle .content-logo-text.content-center-small-device,
+  .content-middle .content-type-text.content-center-small-device {
     margin: 0;
     text-align: center;
   }
@@ -5538,20 +5835,21 @@ Styleguide 2.3
   -moz-hyphens: auto;
   word-wrap: break-word;
 }
-.content-top .content-logo-text h1 span, .content-top .content-logo-text h2 span, .content-top .content-logo-text h3 span,
-.content-top .content-type-text h1 span,
-.content-top .content-type-text h2 span,
-.content-top .content-type-text h3 span {
-  font-family: Proximanovalight, Helvetica, Arial, sans-serif;
-}
-.content-top .content-logo-text p:only-of-type,
-.content-top .content-type-text p:only-of-type {
-  margin-bottom: 5px;
-}
 .content-top .content-logo-text .btn,
 .content-top .content-type-text .btn {
   display: table;
   margin-top: 10px;
+}
+.content-top .content-logo-text.contact .btn,
+.content-top .content-type-text.contact .btn {
+  display: inline-block;
+}
+.content-top .content-type-media img, .content-top .content-type-media-small img {
+  display: table;
+}
+.content-top .content-type-media img + .sticker, .content-top .content-type-media-small img + .sticker {
+  display: table;
+  margin: -10px auto 0 auto;
 }
 .content-top .content-logo-media,
 .content-top .content-type-media {
@@ -5567,11 +5865,17 @@ Styleguide 2.3
 }
 .content-top .content-logo-media img,
 .content-top .content-type-media img {
+  display: block;
   width: 62px;
 }
 .content-top .content-logo-media img.crop-circle,
 .content-top .content-type-media img.crop-circle {
   height: 62px;
+}
+.content-top .content-logo-media img + .sticker,
+.content-top .content-type-media img + .sticker {
+  display: table;
+  margin: 10px auto 0 auto;
 }
 @media only screen and (min-width: 481px) {
   .content-top .content-logo-media img,
@@ -5601,37 +5905,27 @@ Styleguide 2.3
     padding: 4px;
   }
 }
-.content-top .content-type-media-small img {
+.content-top .content-type-media-small .fig-thumbnail-logo img {
   width: 34px;
 }
-.content-top .content-type-media-small img.crop-circle {
-  height: 34px;
-}
 @media only screen and (min-width: 769px) {
-  .content-top .content-type-media-small img {
+  .content-top .content-type-media-small .fig-thumbnail-logo img {
     width: 50px;
-  }
-  .content-top .content-type-media-small img.crop-circle {
-    height: 50px;
   }
 }
 .content-top .content-type-media-small .sticker-skill {
   top: 0;
   width: 60px;
+  margin: 0;
   text-align: center;
+  white-space: pre;
 }
-.content-top .content-type-media-xsmall img {
+.content-top .content-type-media-xsmall .fig-thumbnail-logo img {
   width: 30px;
 }
-.content-top .content-type-media-xsmall img.crop-circle {
-  height: 30px;
-}
 @media only screen and (min-width: 769px) {
-  .content-top .content-type-media-xsmall img {
+  .content-top .content-type-media-xsmall .fig-thumbnail-logo img {
     width: 40px;
-  }
-  .content-top .content-type-media-xsmall img.crop-circle {
-    height: 40px;
   }
 }
 .content-top .action {
@@ -5640,6 +5934,9 @@ Styleguide 2.3
   -ms-flex: none;
   flex: none;
   margin-left: 20px;
+}
+.content-top .icon {
+  margin-right: 10px;
 }
 .content-top .content-logo-text + .content-logo-media,
 .content-top .content-type-text + .content-type-media,
@@ -5653,7 +5950,14 @@ Styleguide 2.3
 .content-top .content-type-media-small + .content-type-text {
   margin-left: 10px;
 }
+.content-top p:only-of-type {
+  margin-bottom: 5px;
+}
 
+.content-top p,
+.content-middle p {
+  margin-bottom: 0;
+}
 .list-default .content-top, .list-default
 .content-middle {
   display: -webkit-box;
@@ -5685,6 +5989,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -5750,6 +6057,23 @@ h3,
   }
 }
 
+.large {
+  font-size: 20px;
+  line-height: 24px;
+}
+@media print {
+  .large {
+    font-size: 15.00038px;
+    line-height: 18.00045px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .large {
+    font-size: 25px;
+    line-height: 28px;
+  }
+}
+
 .carousel-claim {
   font-size: 36px;
   line-height: 37px;
@@ -5767,7 +6091,7 @@ h3,
 /*
 Filters
 
-Styleguide 2.4
+Styleguide 2.8
 */
 .filters {
   padding: 25px 20px 20px 20px;
@@ -5853,7 +6177,7 @@ Markup:
 	</fieldset>
 </div>
 
-Styleguide 2.4.1
+Styleguide 2.8.1
 */
 .filter-keyword {
   display: table;
@@ -5953,7 +6277,7 @@ Markup:
 	</fieldset>
 </div>
 
-Styleguide 2.4.2
+Styleguide 2.8.2
 */
 /*
 Slider range group
@@ -5988,7 +6312,7 @@ Markup:
 	</fieldset>
 </div>
 
-Styleguide 2.4.3
+Styleguide 2.8.3
 */
 .range-group {
   display: -webkit-box;
@@ -6067,6 +6391,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -6095,11 +6422,6 @@ $query2     = width, device-width
 /*------------------------------------*\
 	$FOOTER
 \*------------------------------------*/
-/*
-Footer
-
-Styleguide 2.5
-*/
 .help-footer p {
   color: #666;
 }
@@ -6117,7 +6439,7 @@ Styleguide 2.5
 .footer .social-footer {
   height: 100%;
   margin: 0 auto;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 @media only screen and (min-width: 769px) {
   .footer .social-footer {
@@ -6318,6 +6640,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -6443,6 +6768,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -6524,6 +6852,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -7335,6 +7666,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -7398,6 +7732,23 @@ h3,
   }
 }
 
+.large {
+  font-size: 20px;
+  line-height: 24px;
+}
+@media print {
+  .large {
+    font-size: 15.00038px;
+    line-height: 18.00045px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .large {
+    font-size: 25px;
+    line-height: 28px;
+  }
+}
+
 .carousel-claim {
   font-size: 36px;
   line-height: 37px;
@@ -7447,6 +7798,23 @@ h3,
   }
 }
 
+.large {
+  font-size: 20px;
+  line-height: 24px;
+}
+@media print {
+  .large {
+    font-size: 15.00038px;
+    line-height: 18.00045px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .large {
+    font-size: 25px;
+    line-height: 28px;
+  }
+}
+
 .carousel-claim {
   font-size: 36px;
   line-height: 37px;
@@ -7483,7 +7851,7 @@ Text colors
 Markup:
 <p>Lorem ipsum dolor sit amet, <span class="{{modifier_class}}">consectetur adipiscing</span> elit.</p>
 
-Styleguide 1.2.7
+Styleguide 1.2.2.3
 */
 /*
 Contrasted text color
@@ -7496,7 +7864,7 @@ Markup:
 	<a href="#" class="contrast">Curabitur varius</a>
 </div>
 
-Styleguide 1.2.7.1
+Styleguide 1.2.2.4
 */
 .contrast,
 .contrast[class*="iconfont-"]::before {
@@ -7611,9 +7979,9 @@ a.soft-script:active,
     $JOB LIST
 \*------------------------------------*/
 /*
+Job List #disabled#
 
-
-Styleguide 2.8
+Styleguide 2.11
 */
 /* job-list */
 .inner .job-list {
@@ -7628,6 +7996,7 @@ Styleguide 2.8
   margin-left: 10px;
 }
 .job-list .sticker-secondary {
+  margin-top: 2px;
   margin-bottom: 5px;
 }
 .job-list .tag-group-top {
@@ -7640,6 +8009,9 @@ Styleguide 2.8
 }
 .job-list .tag-group-top li {
   padding-right: 20px;
+}
+.job-list .tag-group-top + .sticker {
+  margin-bottom: 10px;
 }
 .job-list > li {
   position: relative;
@@ -7676,6 +8048,7 @@ Styleguide 2.8
 }
 .job-list .item.vhpt {
   height: 1px;
+  width: 2px;
   padding: 0;
   border: 0;
   opacity: 0.001;
@@ -7751,9 +8124,6 @@ Styleguide 2.8
   color: #666;
 }
 @media only screen and (min-width: 481px) {
-  .job-list-description {
-    width: 80%;
-  }
   .job-list-description.without-logo {
     width: 100%;
   }
@@ -7765,39 +8135,6 @@ Styleguide 2.8
   text-overflow: ellipsis;
   white-space: nowrap;
   padding-left: 1px;
-}
-
-/* job-list-pic-logo */
-.job-list-pic-logo {
-  width: 62px;
-  height: 62px;
-  float: right;
-  margin-left: 20px;
-}
-@media only screen and (min-width: 481px) {
-  .job-list-pic-logo {
-    width: 82px;
-    height: 82px;
-  }
-}
-@media only screen and (min-width: 769px) {
-  .job-list-pic-logo {
-    width: 108px;
-    height: 108px;
-  }
-}
-.job-list-pic-logo img {
-  width: 52px;
-}
-@media only screen and (min-width: 481px) {
-  .job-list-pic-logo img {
-    width: 72px;
-  }
-}
-@media only screen and (min-width: 769px) {
-  .job-list-pic-logo img {
-    width: 98px;
-  }
 }
 
 /* list-logos */
@@ -7818,6 +8155,7 @@ li.list-logos .item {
   width: 25%;
   overflow: hidden;
   padding-right: 10px;
+  padding-left: 0;
 }
 @media only screen and (min-width: 481px) {
   li.list-logos .item {
@@ -7969,10 +8307,7 @@ li.list-logos:hover {
   }
 }
 @media only screen and (min-width: 481px) {
-  .job-list-suggest > .job-list > li:last-child {
-    float: right;
-  }
-  .job-list-suggest > .job-list > li:last-child > .item {
+  .job-list-suggest > .job-list > li + li > .item {
     margin-left: 10px;
   }
 }
@@ -7995,6 +8330,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -8054,6 +8392,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -8159,6 +8500,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -8477,7 +8821,7 @@ $query2     = width, device-width
 }
 
 /*
-Javascript Components #casper#
+Javascript Components
 
 Styleguide 3
 */
@@ -8499,6 +8843,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -8608,10 +8955,10 @@ Markup:
 	</div>
 </div>
 
-Styleguide 3.1
+Styleguide 3.3
 */
 /*
-Modal size #disabled#
+Modal size
 
 Apply width and height styles in the container `.modal-inner` for rewrite the default modal size.
 
@@ -8620,7 +8967,7 @@ Markup:
 	...
 </div>
 
-Styleguide 3.1.1
+Styleguide 3.3.1
 */
 /*
 Modal header #disabled#
@@ -8633,10 +8980,10 @@ Markup:
 	<h1 class="title">Title</h1>
 </div>
 
-Styleguide 3.1.2
+Styleguide 3.3.2
 */
 /*
-Modal content #disabled#
+Modal content
 
 Use the structure it's needed inside the `.modal-content` to create the layout.
 
@@ -8645,7 +8992,7 @@ Markup:
 	<p>Text content.</p>
 </div>
 
-Styleguide 3.1.3
+Styleguide 3.3.3
 */
 .modal-hidden {
   /*por defecto oculto*/
@@ -8897,6 +9244,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -8928,7 +9278,6 @@ $query2     = width, device-width
 /*
 Notifications
 
-###Notifications
 Contextual notificitions for confirmation messages.<br>
 The modifier classes are `.notification-error` for errors, `.notification-success` for success and `.notification-info` for information.
 
@@ -8968,7 +9317,7 @@ Markup:
 <!-- /Notification info -->
 </div>
 
-Styleguide 2.2
+Styleguide 2.13
 */
 .notification {
   color: #fff;
@@ -9037,9 +9386,6 @@ Markup:
 .notification-info -
 .notification-warning -
 .notification-dismissable -
-
-
-Styleguide 2.2.1
 */
 .notification-error {
   background: #bf2102;
@@ -9090,6 +9436,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -9333,6 +9682,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -9388,7 +9740,7 @@ Markup:
 	</div>
 </div>
 
-Styleguide 2.9
+Styleguide 2.14
 */
 .pagination .btn-group {
   margin: 0 auto;
@@ -9440,6 +9792,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -9630,6 +9985,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -9673,6 +10031,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -9735,6 +10096,23 @@ h3,
   .h3, .medium {
     font-size: 13.50034px;
     line-height: 16.50041px;
+  }
+}
+
+.large {
+  font-size: 20px;
+  line-height: 24px;
+}
+@media print {
+  .large {
+    font-size: 15.00038px;
+    line-height: 18.00045px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .large {
+    font-size: 25px;
+    line-height: 28px;
   }
 }
 
@@ -9812,6 +10190,40 @@ h3,
   }
 }
 .sticker-marked[class*="iconfont-"]::before {
+  color: #fff;
+}
+
+.sticker-contrast {
+  font-size: 14px;
+  line-height: 18px;
+  position: relative;
+  top: -2px;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 15px;
+  font-family: Proximanova, Helvetica, Arial, sans-serif;
+  color: #2d3133;
+  background-color: #d5e1e5;
+  color: #fff;
+  background-color: #2d3133;
+}
+@media print {
+  .sticker-contrast {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+.nav-bar-notifications .sticker-contrast {
+  position: absolute;
+  bottom: 12px;
+  right: -4px;
+}
+@media print {
+  .sticker-contrast {
+    padding: 0;
+  }
+}
+.sticker-contrast[class*="iconfont-"]::before {
   color: #fff;
 }
 
@@ -9933,8 +10345,9 @@ $MIXINS FORMS
     $CHOSEN
 \*------------------------------------*/
 /*
+Select chosen #disabled#
 
-Styleguide 2.16
+Styleguide 2.10.7
 */
 /* @group Base */
 .chosen-container {
@@ -9956,7 +10369,7 @@ Styleguide 2.16
 
 .chosen-container .chosen-drop {
   position: absolute;
-  top: 100%;
+  top: 102%;
   left: -9999px;
   z-index: 9999;
   margin-left: -1px;
@@ -10087,8 +10500,8 @@ Styleguide 2.16
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
-  margin: 0 4px 4px 0;
-  padding: 0 0 0 4px;
+  margin: 0 0 4px 0;
+  padding: 0;
   max-height: 160px;
   -webkit-overflow-scrolling: touch;
 }
@@ -10284,8 +10697,8 @@ Styleguide 2.16
 
 /* @end */
 /* @group Active  */
-.chosen-container-active.chosen-with-drop .chosen-single {
-  transition: none;
+.chosen-container.chosen-container-active {
+  border: 1px solid #2088c2;
 }
 
 .chosen-container-active.chosen-with-drop .chosen-single div {
@@ -10435,6 +10848,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -10653,6 +11069,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -10725,6 +11144,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -10785,6 +11207,23 @@ h3,
   .h3, .medium {
     font-size: 13.50034px;
     line-height: 16.50041px;
+  }
+}
+
+.large {
+  font-size: 20px;
+  line-height: 24px;
+}
+@media print {
+  .large {
+    font-size: 15.00038px;
+    line-height: 18.00045px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .large {
+    font-size: 25px;
+    line-height: 28px;
   }
 }
 
@@ -10862,6 +11301,40 @@ h3,
   }
 }
 .sticker-marked[class*="iconfont-"]::before {
+  color: #fff;
+}
+
+.sticker-contrast {
+  font-size: 14px;
+  line-height: 18px;
+  position: relative;
+  top: -2px;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 15px;
+  font-family: Proximanova, Helvetica, Arial, sans-serif;
+  color: #2d3133;
+  background-color: #d5e1e5;
+  color: #fff;
+  background-color: #2d3133;
+}
+@media print {
+  .sticker-contrast {
+    font-size: 10.5pt;
+    line-height: 11.5pt;
+  }
+}
+.nav-bar-notifications .sticker-contrast {
+  position: absolute;
+  bottom: 12px;
+  right: -4px;
+}
+@media print {
+  .sticker-contrast {
+    padding: 0;
+  }
+}
+.sticker-contrast[class*="iconfont-"]::before {
   color: #fff;
 }
 
@@ -10996,6 +11469,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -11027,7 +11503,6 @@ $query2     = width, device-width
 /*
 Thumbnail logo
 
-###Thumbnail logo
 Logo with caption at bottom.
 The combination of classes `.slide-up` in `<figure>` and `.slide-item` in `<figcaption>` is used to show the caption on hovering with the mouse over the logo.
 
@@ -11048,7 +11523,7 @@ Markup:
 	</div>
 </div>
 
-Styleguide 2.20
+Styleguide 2.17
 */
 .fig-thumbnail {
   position: relative;
@@ -11277,6 +11752,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -11714,6 +12192,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -11754,39 +12235,54 @@ Markup:
 </div>
 
 
-Styleguide 2.22
+Styleguide 2.18
 */
 .user-feedback {
   position: relative;
   height: 0;
+}
+.user-feedback a:hover {
+  color: #fff;
 }
 @media print {
   .user-feedback {
     display: none;
   }
 }
-.user-feedback a:hover {
-  color: #fff;
-}
 
-.user-feedback .link-user-feedback {
+.link-user-feedback {
   display: inline-block;
   position: fixed;
-  right: 5%;
-  bottom: 0;
   padding: 10px;
   background: #00a550;
   color: #fff;
   font-size: 14px;
   font-weight: bold;
+  left: 100%;
+  top: 60%;
+  -webkit-transform-origin: -40px 0 0;
+  -ms-transform-origin: -40px 0 0;
+  transform-origin: -40px 0 0;
+  -webkit-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   z-index: 9999;
 }
-
-@media only screen and (max-width: 768px) {
-  .user-feedback {
-    display: none;
+@media only screen and (min-width: 481px) {
+  .link-user-feedback {
+    right: 5%;
+    bottom: 0;
+    top: auto;
+    left: auto;
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -o-transform: none;
+    filter: none;
   }
 }
+
 /* Variables =================================================== */
 /*------------------------------------*\
     $FUNCTIONS
@@ -11805,6 +12301,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -11920,6 +12419,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -11965,7 +12467,7 @@ Markup:
 .overlay-60		- Overlay in background image
 
 
-Styleguide 2.24
+Styleguide 2.7
 */
 .custom-bg {
   -webkit-background-size: cover;
@@ -12026,6 +12528,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -12055,7 +12560,7 @@ $query2     = width, device-width
 $KPI
 \*------------------------------------*/
 /*
-KPI #disabled#
+KPI
 
 Markup:
 <div class="kpi">
@@ -12064,7 +12569,7 @@ Markup:
 	<p>Lorem ipsum <br><a href="#">Link</a></p>
 </div>
 
-Styleguide 2.25
+Styleguide 2.12
 */
 .kpi {
   margin: 0 auto;
@@ -12124,6 +12629,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -12171,33 +12679,87 @@ Markup:
 <div class="crop-circle" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg')"></div>
 
 */
-.crop-image,
+.crop-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  margin: auto;
+  object-fit: cover;
+  object-position: 0 0;
+  width: 50px;
+  height: 50px;
+}
+@media only screen and (min-width: 481px) {
+  .crop-image {
+    width: 60px;
+    height: 60px;
+  }
+}
+.crop-image-small {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  margin: auto;
+  object-fit: cover;
+  object-position: 0 0;
+  width: 40px;
+  height: 40px;
+}
+@media only screen and (min-width: 481px) {
+  .crop-image-small {
+    height: 50px;
+  }
+}
+
 .crop-circle {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
   margin: auto;
-  width: 50px;
-  height: 50px;
   object-fit: cover;
   object-position: 0 0;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
 }
 @media only screen and (min-width: 481px) {
-  .crop-image,
   .crop-circle {
     width: 60px;
     height: 60px;
   }
 }
-.crop-image-small,
 .crop-circle-small {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  margin: auto;
+  object-fit: cover;
+  object-position: 0 0;
+  border-radius: 50%;
   width: 40px;
   height: 40px;
 }
-
-.crop-circle {
+.crop-circle-xsmall {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  margin: auto;
+  object-fit: cover;
+  object-position: 0 0;
   border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+@media only screen and (min-width: 481px) {
+  .crop-circle-xsmall {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 /* Variables =================================================== */
@@ -12218,6 +12780,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -12447,6 +13012,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -12507,6 +13075,23 @@ h3,
   .h3, .medium {
     font-size: 13.50034px;
     line-height: 16.50041px;
+  }
+}
+
+.large {
+  font-size: 20px;
+  line-height: 24px;
+}
+@media print {
+  .large {
+    font-size: 15.00038px;
+    line-height: 18.00045px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .large {
+    font-size: 25px;
+    line-height: 28px;
   }
 }
 
@@ -12588,6 +13173,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -12659,6 +13247,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -12722,6 +13313,23 @@ h3,
   }
 }
 
+.large {
+  font-size: 20px;
+  line-height: 24px;
+}
+@media print {
+  .large {
+    font-size: 15.00038px;
+    line-height: 18.00045px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .large {
+    font-size: 25px;
+    line-height: 28px;
+  }
+}
+
 .carousel-claim {
   font-size: 36px;
   line-height: 37px;
@@ -12739,7 +13347,7 @@ h3,
 /*
 Form rating NPS #disabled#
 
-Styleguide 2.28
+Styleguide 2.15
 */
 .rating-nps .range {
   margin: 0 0 5px 0;
@@ -12783,6 +13391,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -12851,7 +13462,7 @@ Markup:
 }
 .content-media .media.connection .sticker {
   position: absolute;
-  bottom: 0;
+  top: 75%;
   left: 5px;
 }
 @media only screen and (min-width: 481px) {
@@ -12882,11 +13493,8 @@ li.content-media.content-media-expanded + .content-media::before {
   top: -16px;
   float: right;
 }
-.content-media-expanded {
-  margin-bottom: 10px;
-}
-.content-media-expanded:last-child {
-  margin-bottom: 0;
+.content-media-expanded + .content-media-expanded {
+  margin-top: 10px;
 }
 .content-media-form {
   position: relative;
@@ -12941,6 +13549,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -13043,6 +13654,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -13122,6 +13736,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -13182,6 +13799,23 @@ h3,
   .h3, .medium {
     font-size: 13.50034px;
     line-height: 16.50041px;
+  }
+}
+
+.large {
+  font-size: 20px;
+  line-height: 24px;
+}
+@media print {
+  .large {
+    font-size: 15.00038px;
+    line-height: 18.00045px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .large {
+    font-size: 25px;
+    line-height: 28px;
   }
 }
 
@@ -13322,6 +13956,9 @@ $MIXINS COLORS
 $MIXINS STICKERS
 \*------------------------------------*/
 /*------------------------------------*\
+$MIXIN CROP
+\*------------------------------------*/
+/*------------------------------------*\
 $MIXIN COLUMNS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -13385,6 +14022,23 @@ h3,
   }
 }
 
+.large {
+  font-size: 20px;
+  line-height: 24px;
+}
+@media print {
+  .large {
+    font-size: 15.00038px;
+    line-height: 18.00045px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .large {
+    font-size: 25px;
+    line-height: 28px;
+  }
+}
+
 .carousel-claim {
   font-size: 36px;
   line-height: 37px;
@@ -13408,19 +14062,19 @@ Markup:
 	<li>Personas</li>
 </ul>
 
-Styleguide $sgi-tabs
+Styleguide 2.16
 */
 .tabs {
   border-bottom: 1px solid #e2e5e6;
 }
-.tabs li {
+.tabs > li {
   display: inline-block;
   font-family: Proximanovabold, Helvetica, Arial, sans-serif;
 }
-.tabs li + li {
+.tabs > li + li {
   margin-left: 20px;
 }
-.tabs li a {
+.tabs a {
   font-size: 16px;
   line-height: 20px;
   -webkit-flex-flow: row wrap;
@@ -13433,22 +14087,22 @@ Styleguide $sgi-tabs
   color: #2d3133;
 }
 @media print {
-  .tabs li a {
+  .tabs a {
     font-size: 12.0003px;
     line-height: 15.00038px;
   }
 }
 @media only screen and (min-width: 769px) {
-  .tabs li a {
+  .tabs a {
     font-size: 18px;
     line-height: 22px;
   }
 }
-.tabs li a.tab-active {
+.tabs a.tab-active {
   position: relative;
   color: #2088c2;
 }
-.tabs li a.tab-active::after {
+.tabs a.tab-active::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -13456,6 +14110,9 @@ Styleguide $sgi-tabs
   width: 100%;
   height: 4px;
   background: #2088c2;
+}
+.tabs.tabs-menu {
+  border-bottom: 0 none;
 }
 .inner .tabs.tabs-menu {
   margin: 0 -10px;
@@ -13475,53 +14132,69 @@ Styleguide $sgi-tabs
     margin-bottom: -40px;
   }
 }
+.inner.tabs.tabs-menu a {
+  padding-right: 0;
+  padding-left: 0;
+}
 .tabs.tabs-menu + h1 {
   margin-bottom: 20px;
 }
-.tabs.tabs-menu li {
+.tabs.tabs-menu > li {
   position: relative;
   display: block;
   border-top: 1px solid #e2e5e6;
 }
-.tabs.tabs-menu li .iconfont-Arrow {
-  position: relative;
-  font-family: 'Icons';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 0;
-  left: 0;
-  color: #999;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.tabs.tabs-menu > li .iconfont-Arrow {
   position: absolute;
   top: 26px;
   right: 0;
   left: auto;
 }
-.tabs.tabs-menu li .iconfont-Arrow::before {
+.tabs.tabs-menu > li .iconfont-Arrow::before {
   content: "\e603";
 }
-.tabs.tabs-menu li + li {
+.tabs.tabs-menu > li + li {
   margin-left: 0;
 }
-.tabs.tabs-menu li a {
+.tabs.tabs-menu > li a {
   display: block;
   padding-right: 10px;
   padding-bottom: 15px;
   padding-left: 10px;
 }
 @media only screen and (min-width: 481px) {
-  .tabs.tabs-menu li a {
+  .tabs.tabs-menu > li a {
     padding-right: 20px;
     padding-left: 20px;
   }
 }
-.tabs.tabs-menu li a.tab-active::after {
+.tabs.tabs-menu > li a.tab-active::after {
   background: none;
+}
+.tabs.tabs-menu > li a.arrow-parent {
+  padding-left: 70px;
+}
+.tabs.tabs-menu > li a.arrow-parent .arrow {
+  width: 57px;
+  height: 57px;
+  display: block;
+  padding-top: 22px;
+  padding-left: 16px;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  background: #f2f2f2;
+}
+.tabs.tabs-menu--link a {
+  color: #2088c2;
+}
+.tabs.tabs-menu--link a:hover {
+  text-decoration: underline;
+}
+@media only screen and (min-width: 769px) {
+  .tabs-hover.tabs a:hover {
+    background: #e3f5fd;
+  }
 }
 @media only screen and (max-width: 480px) {
   .tabs-scroll .tabs {
@@ -13532,6 +14205,7 @@ Styleguide $sgi-tabs
     display: flex;
     -webkit-flex-flow: row nowrap;
     flex-flow: row nowrap;
+    width: 110%;
   }
   .tabs-scroll .tabs li {
     -webkit-box-flex: 0 0 auto;
@@ -13543,9 +14217,33 @@ Styleguide $sgi-tabs
     box-flex: 0;
   }
 }
+.tabs .tabs-content li,
+.tabs .tabs-content p {
+  font-family: Proximanova, Helvetica, Arial, sans-serif;
+}
+.tabs .tabs-content li a,
+.tabs .tabs-content p a {
+  display: inline;
+  padding: 0;
+  font-size: 16px;
+  line-height: 20px;
+}
+@media print {
+  .tabs .tabs-content li a,
+  .tabs .tabs-content p a {
+    font-size: 12.0003px;
+    line-height: 15.00038px;
+  }
+}
+.tabs .tabs-content li a:hover,
+.tabs .tabs-content p a:hover {
+  background: none;
+  text-decoration: underline;
+}
 
 .tabs-scroll {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -13557,6 +14255,18 @@ Styleguide $sgi-tabs
   min-height: 30px;
   overflow-y: auto;
   word-wrap: break-word;
+}
+
+/*------------------------------------*\
+    $PANEL CLIPBOARD
+\*------------------------------------*/
+.panel-clipboard {
+  padding: 10px;
+}
+.panel-clipboard .iconfont-Attach {
+  left: -10px;
+  position: relative;
+  top: -5px;
 }
 
 /* Variables =================================================== */
@@ -13577,6 +14287,9 @@ $MIXINS COLORS
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXINS STICKERS
+\*------------------------------------*/
+/*------------------------------------*\
+$MIXIN CROP
 \*------------------------------------*/
 /*------------------------------------*\
 $MIXIN COLUMNS
@@ -13770,6 +14483,13 @@ $query2     = width, device-width
 [class^="lines-"],
 [class*="lines-"] {
   display: block;
+}
+
+.text-hyphen {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
 .hit-area {
@@ -14180,9 +14900,6 @@ $COMPONENTS OVERWRITE
 \*------------------------------------*/
 .user-feedback {
   height: 40px;
-}
-.user-feedback .link-user-feedback {
-  position: absolute;
 }
 
 /*------------------------------------*\

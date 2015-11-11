@@ -6,78 +6,80 @@ $sgi-mediumDevices:                 '1.1.1.2';
 $sgi-equalHeightColumns:            '1.1.1.3';
 
 $sgi-containers:                '1.1.2';
-
 $sgi-bannersContainers:         '1.1.3';
+$sgi-innerContainers:           '1.1.4';
 
 $sgi-textElements:          '1.2';
 
 $sgi-headings:                  '1.2.1';
 $sgi-headingAddons:                 '1.2.1.1';
 $sgi-headingMega:                   '1.2.1.2';
+$sgi-headingMiddle:                 '1.2.1.3';
 
 $sgi-paragraphs:                '1.2.2';
+$sgi-textSize:                      '1.2.2.1';
+$sgi-textVariants:                  '1.2.2.2';
+$sgi-text-colors:                   '1.2.2.3';
+$sgi-text-colors-contrast:          '1.2.2.4';
 
-$sgi-textSize:                  '1.2.3';
 
-$sgi-innerContainers:           '1.2.4';
+$sgi-blockquotes:               '1.2.3';
 
-$sgi-textVariants:              '1.2.5';
-
-$sgi-blockquotes:               '1.2.6';
-
-$sgi-lists:                     '1.2.7';
-
-$sgi-listsWithBullets:              '1.2.7.1';
-$sgi-listsWithIcons:                '1.2.7.2';
-$sgi-tagGroup:                      '1.2.7.5';
-$sgi-tagDivider:                        '1.2.7.5.1';
-$sgi-tagGroupTop:                       '1.2.7.5.2';
-$sgi-tagGroupWithEllipsis:              '1.2.7.5.4';
-
-$sgi-headingMiddle:                 '1.3.1.3';
+$sgi-lists:                     '1.2.4';
+$sgi-listsWithBullets:              '1.2.4.1';
+$sgi-listsWithIcons:                '1.2.4.2';
+$sgi-tagGroup:                      '1.2.4.3';
+$sgi-tagDivider:                        '1.2.4.4.1';
+$sgi-tagGroupTop:                       '1.2.4.4.2';
+$sgi-tagGroupWithEllipsis:              '1.2.4.4.4';
 
 
 // Components
+$sgi-board:                   '2.2';
+$sgi-buttons:                 '2.3';
+$sgi-buttons-type:                  '2.3.1';
+$sgi-buttons-size:                  '2.3.2';
+$sgi-buttons-text-icon:             '2.3.3';
+$sgi-buttons-status:                '2.3.4';
+$sgi-buttons-annex:                 '2.3.5';
+$sgi-buttons-display:               '2.3.6';
+$sgi-button-group:             '2.4';
+$sgi-button-group-structure:         '2.4.1';
+$sgi-button-group-justified:         '2.4.2';
+$sgi-button-group-icon:              '2.4.3';
+$sgi-button-file:              '2.5';
 
-$sgi-board:                         '2.1';
-$sgi-pulldown-chosen:                   '2.16';
 
-$sgi-notifications:                 '2.2';
-$sgi-content-logo:                  '2.3';
-$sgi-filters:                       '2.4';
-$sgi-footer:                        '2.5';
-$sgi-application-list:              '2.6';
-$sgi-job-list:                      '2.7';
-$sgi-tabs:                          '2.8';
-$sgi-pagination:                    '2.9';
+$sgi-content-logo:             '2.6';
+$sgi-custom-background:        '2.7';
+$sgi-filters:                  '2.8';
+$sgi-filter-keyword:                 '2.8.1';
+$sgi-filter-slider-single:           '2.8.2';
+$sgi-filter-slider-group:            '2.8.3';
+$sgi-footer:                   '2.9';
+$sgi-forms:                    '2.10';
+$sgi-forms-radio:                   '2.10.1';
+$sgi-forms-radio-inline:            '2.10.2';
+$sgi-forms-select:                  '2.10.3';
+$sgi-forms-select-multiple:         '2.10.4';
+$sgi-forms-input-group:             '2.10.5';
+$sgi-forms-error:                   '2.10.6';
+$sgi-pulldown-chosen:               '2.10.7';
 
-$sgi-thumbnail:                     '2.20';
-$sgi-user-feedback:                 '2.22';
-$sgi-custom-background:             '2.24';
-$sgi-kpi:                           '2.25';
 
-// $sgi-banners:                         '2';
-// $sgi-carousel:                        '2';
-// $sgi-header-microsite:                '2';
-// $sgi-navigation:                      '2';
-// $sgi-header:                          '2';
-// $sgi-layer:                           '2';
-// $sgi-loading:                         '2';
-// $sgi-media-board:                     '2';
-// $sgi-modal:                           '2';
-// $sgi-nouislider:                      '2';
-// $sgi-panels:                          '2';
-// $sgi-search:                          '2';
-// $sgi-social-footer:                   '2';
-// $sgi-stickers:                        '2';
-// $sgi-tooltip:                         '2';
-// $sgi-ui-slider-pips:                  '2';
-// $sgi-value-proposition:               '2';
-// $sgi-crop-image:                      '2';
-// $sgi-tips-list:                       '2';
-// $sgi-weather:                         '2';
-// $sgi-collapsible:                     '2';
-// $sgi-form-rating-nps:                 '2';
-// $sgi-content-media:                   '2';
-// $sgi-steps:                           '2';
-// $sgi-application-list:                '2';
+$sgi-job-list:                 '2.11';
+$sgi-kpi:                      '2.12';
+$sgi-notifications:            '2.13';
+$sgi-pagination:               '2.14';
+$sgi-rating-nps:               '2.15';
+$sgi-tabs:                     '2.16';
+$sgi-thumbnail:                '2.17';
+$sgi-user-feedback:            '2.18';
+
+
+$sgi-collapsible:              '3.1';
+$sgi-collapsible-accordion:    '3.2';
+$sgi-modal:                    '3.3';
+$sgi-modal-size:                    '3.3.1';
+$sgi-modal-header:                  '3.3.2';
+$sgi-modal-content:                 '3.3.3';

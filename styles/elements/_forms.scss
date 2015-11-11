@@ -175,7 +175,7 @@ Markup:
   </fieldset>
 </form>
 
-Styleguide 1.4
+Styleguide #{$sgi-forms}
 */
 
 .form--field-block {
@@ -267,7 +267,7 @@ Markup:
 	</ul>
 </fieldset>
 
-Styleguide 1.4.1
+Styleguide #{$sgi-forms-radio}
 */
 
 /*
@@ -287,7 +287,7 @@ Markup:
 	</li>
 </ul>
 
-Styleguide 1.4.2
+Styleguide #{$sgi-forms-radio-inline}
 */
 
 .radio-group {
@@ -344,7 +344,7 @@ Markup:
   </select>
 </div>
 
-Styleguide 1.4.3
+Styleguide #{$sgi-forms-select}
 */
 
 .form-select {
@@ -413,7 +413,7 @@ Markup:
 	<option value="05">Option05</option>
 </select>
 
-Styleguide 1.4.4
+Styleguide #{$sgi-forms-select-multiple}
 */
 
 .form-select-medium { /* Used in SectionCvComponent*/
@@ -428,7 +428,7 @@ Input group #disabled#
 .input-group
 ```
 
-Styleguide 1.4.5
+Styleguide #{$sgi-forms-input-group}
 */
 
 .input-group {
@@ -605,7 +605,7 @@ Markup:
   </fieldset>
 </form>
 
-Styleguide 1.4.6
+Styleguide #{$sgi-forms-error}
 */
 
 .error-info {
