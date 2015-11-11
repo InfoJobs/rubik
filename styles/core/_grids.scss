@@ -278,6 +278,26 @@ $gridColumns: 12;
 	$ROW FAUX CARD
 \*------------------------------------*/
 
+/*
+Expand gutter columns
+
+Add class `.row`,`.row-faux` and `.row-faux-card` to expand the gutter between the columns.
+
+@@include('../templates/partials/grid-card.html')
+
+Markup:
+<div class="row row-faux row-faux-card casper">
+      <div class="col-8">
+          <div class="col-child">.col-8</div>
+      </div>
+      <div class="col-4">
+          <div class="col-child">.col-4</div>
+      </div>
+</div>
+
+Styleguide #{$sgi-expandGutterColumns}
+*/
+
 .row-faux-card { //expand default margin columns to 20
 
 	@include mediaquery ($bp-tablet) {
@@ -343,35 +363,6 @@ $gridColumns: 12;
 		}
 	}
 }
-
-
-/*------------------------------------*\
-	$ROW MATRIOSKA
-\*------------------------------------*/
-
-/*
-Nested row
-
-Use class `.row` and `.row-matrioska` to nested rows.
-
-@@include('../templates/partials/grid-nested.html')
-
-Markup:
-<div class="row casper">
-	<div class="col-6">
-		<div class="col-child">
-			<div class="row row-matrioska">
-				<div class="col-6"><div class="col-child">...</div></div>
-				<div class="col-6"><div class="col-child">...</div></div>
-			</div>
-		</div>
-	</div>
-	<div class="col-6"><div class="col-child">...</div></div>
-</div>
-
-Styleguide 1.1.1.3
-*/
-
 
 /*------------------------------------*\
 	$ROW FAUX
@@ -441,6 +432,30 @@ Styleguide #{$sgi-equalHeightColumns}
 
 }
 
+/*------------------------------------*\
+	$ROW PANEL
+\*------------------------------------*/
+
+/*
+Remove gutter columns
+
+Add class `.row`,`.row-faux` to build an equal height columns structure and `.row-panel` to remove the gutter between the columns.
+
+@@include('../templates/partials/grid-panel.html')
+
+Markup:
+<div class="row row-faux row-panel casper">
+      <div class="col-8">
+          <div class="col-child panel-canvas">.col-8</div>
+      </div>
+      <div class="col-4">
+          <div class="col-child">.col-4</div>
+      </div>
+</div>
+
+Styleguide #{$sgi-removeGutterColumns}
+*/
+
 .row-panel { //remove default margin columns
 	> [class*="col-"]:not(.col-12-medium):last-of-type {
   		.col-child {
@@ -462,3 +477,28 @@ Styleguide #{$sgi-equalHeightColumns}
 	    }
   	}
 }
+
+/*------------------------------------*\
+	$ROW NESTED
+\*------------------------------------*/
+
+/*
+Nested row
+
+@@include('../templates/partials/grid-nested.html')
+
+Markup:
+<div class="row casper">
+	<div class="col-6">
+		<div class="col-child">
+			<div class="row">
+				<div class="col-6"><div class="col-child">...</div></div>
+				<div class="col-6"><div class="col-child">...</div></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-6"><div class="col-child">...</div></div>
+</div>
+
+Styleguide #{$sgi-gridNested}
+*/
