@@ -18,6 +18,10 @@ body#kss-node {
         text-align: center;
         background-color: $darkest-shiro;
         overflow: hidden;
+
+        &.panel-canvas {
+            background-color: $shiro;
+        }
     }
 
     .col-6-medium {
@@ -27,16 +31,9 @@ body#kss-node {
     .row {
         margin-bottom: 10px;
 
-        .row-matrioska {
-
-            margin-top: 10px;
-            margin-bottom: 0;
-
+        .row .col-child {
+            border: 2px dashed $shiro;
         }
-    }
-
-    .row-matrioska .col-child {
-        background-color: $dark-shiro;
     }
 
     //Colors
