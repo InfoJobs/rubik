@@ -2,6 +2,16 @@
     $FORMS
 \*------------------------------------*/
 
+/*
+Form elements
+
+This section contains all the elements that we can use to build a form
+
+[Vew demo](../../html/forms.html)
+
+Styleguide #{$sgi-forms}
+*/
+
 @include placeholder;
 
 fieldset {
@@ -175,7 +185,7 @@ Markup:
   </fieldset>
 </form>
 
-Styleguide #{$sgi-forms}
+Styleguide #{$sgi-formsFieldblock}
 */
 
 .form--field-block {
