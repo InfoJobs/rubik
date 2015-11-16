@@ -73,15 +73,11 @@ Also add one of the following classes to give it format:
 
 `.btn-default` for a default action style<br>
 `.btn-primary` for a primary action style<br>
-`.btn-primary-contrast`for a primary action style over dark background
-
-{modifier_class}:
-.btn-default
-.btn-primary
-.btn-primary-contrast
 
 Markup:
-<a href="#" class="btn {{modifier_class}}">Link Button</a>
+<button class="btn btn-default" type="button">Default</button>
+<button class="btn btn-primary" type="button">Primary</button>
+<a href="#" class="btn btn-primary">Link</a>
 
 Styleguide #{$sgi-buttons-type}
 */
@@ -191,12 +187,9 @@ Buttons size
 Use class `.btn-medium` or `.btn-large` to change buttons size.
 
 Markup:
-<a href="#" class="btn btn-default {{modifier_class}}">Link Button</a>
-
-{modifier_class}:
-
-.btn-medium
-.btn-large
+<a href="#" class="btn btn-default btn-medium">Default Button</a>
+<a href="#" class="btn btn-default btn-medium">Medium Button</a>
+<a href="#" class="btn btn-default btn-large">Large Button</a>
 
 Styleguide #{$sgi-buttons-size}
 */
@@ -282,7 +275,7 @@ Button annex
 Use class `.btn-annex` to add an element adjacent to the button.
 
 Markup:
-<a href="#" class="btn btn-primary btn-medium btn-annex">Button</a>
+<button class="btn btn-primary btn-medium btn-annex" type="button">Button</button>
 <a href="#" class="link">Link</a>
 
 Styleguide #{$sgi-buttons-annex}
@@ -323,7 +316,7 @@ Buttons display
 Use class `.btn-form-inline` to display a full width button.
 
 Markup:
-<a href="#" class="btn btn-primary btn-form-inline">Button Element</a>
+<button class="btn btn-primary btn-medium btn-form-inline" type="button">Button</button>
 
 Styleguide #{$sgi-buttons-display}
 */
@@ -465,10 +458,10 @@ Use class `.iconfont-[name]` to display an icon inside the button.
 Markup:
 <div class="btn-group">
     <div>
-        <a class="btn btn-default iconfont-Facebook" href="#" title="Comparte esta oferta en Facebook"></a>
+        <a class="btn btn-default iconfont-Facebook" href="#" title="Comparte esta oferta en Facebook"><span class="hide">Comparte esta oferta en Facebook</span></a>
     </div>
     <div>
-        <a class="btn btn-default iconfont-Twitter" href="#" title="Tweetea esta oferta"></a>
+        <a class="btn btn-default iconfont-Twitter" href="#" title="Tweetea esta oferta"><span class="hide">Tweetea esta oferta</span></a>
     </div>
 </div>
 
