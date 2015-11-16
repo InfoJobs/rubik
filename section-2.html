@@ -322,7 +322,7 @@ Use class <code>.claim</code> to format the main title.</p>
 	&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -354,24 +354,23 @@ Use class <code>.claim</code> to format the main title.</p>
 <br>
 Also add one of the following classes to give it format:</p>
 <p><code>.btn-default</code> for a default action style<br>
-<code>.btn-primary</code> for a primary action style<br>
-<code>.btn-primary-contrast</code>for a primary action style over dark background</p>
-<p>{modifier_class}:
-.btn-default
-.btn-primary
-.btn-primary-contrast</p>
+<code>.btn-primary</code> for a primary action style<br></p>
 
 
                                         </div>
 
 
                                                 <div class="sg-view">
-                                                    <a href="#" class="btn [modifier class]">Link Button</a>
+                                                    <button class="btn btn-default" type="button">Default</button>
+<button class="btn btn-primary" type="button">Primary</button>
+<a href="#" class="btn btn-primary">Link</a>
                                                 </div>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;a href=&quot;#&quot; class=&quot;btn [modifier class]&quot;&gt;Link Button&lt;/a&gt;
+&lt;button class=&quot;btn btn-default&quot; type=&quot;button&quot;&gt;Default&lt;/button&gt;
+&lt;button class=&quot;btn btn-primary&quot; type=&quot;button&quot;&gt;Primary&lt;/button&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;Link&lt;/a&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -386,21 +385,22 @@ Also add one of the following classes to give it format:</p>
                                     </header>
                                         <div class="sg-block-description">
                                             <p>Use class <code>.btn-medium</code> or <code>.btn-large</code> to change buttons size.</p>
-<p>{modifier_class}:</p>
-<p>.btn-medium
-.btn-large</p>
 
 
                                         </div>
 
 
                                                 <div class="sg-view">
-                                                    <a href="#" class="btn btn-default [modifier class]">Link Button</a>
+                                                    <a href="#" class="btn btn-default btn-medium">Default Button</a>
+<a href="#" class="btn btn-default btn-medium">Medium Button</a>
+<a href="#" class="btn btn-default btn-large">Large Button</a>
                                                 </div>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;a href=&quot;#&quot; class=&quot;btn btn-default [modifier class]&quot;&gt;Link Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-default btn-medium&quot;&gt;Default Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-default btn-medium&quot;&gt;Medium Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-default btn-large&quot;&gt;Large Button&lt;/a&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -426,7 +426,7 @@ Also add one of the following classes to give it format:</p>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
 &lt;a href=&quot;#&quot; class=&quot;btn btn-primary btn-medium iconfont-Facebook&quot;&gt;Link Button&lt;/a&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -452,7 +452,7 @@ Also add one of the following classes to give it format:</p>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
 &lt;a href=&quot;#&quot; class=&quot;btn btn-default btn-medium btn-disabled&quot;&gt;Link Button&lt;/a&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -473,14 +473,14 @@ Also add one of the following classes to give it format:</p>
 
 
                                                 <div class="sg-view">
-                                                    <a href="#" class="btn btn-primary btn-medium btn-annex">Button</a>
+                                                    <button class="btn btn-primary btn-medium btn-annex" type="button">Button</button>
 <a href="#" class="link">Link</a>
                                                 </div>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;a href=&quot;#&quot; class=&quot;btn btn-primary btn-medium btn-annex&quot;&gt;Button&lt;/a&gt;
+&lt;button class=&quot;btn btn-primary btn-medium btn-annex&quot; type=&quot;button&quot;&gt;Button&lt;/button&gt;
 &lt;a href=&quot;#&quot; class=&quot;link&quot;&gt;Link&lt;/a&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -501,12 +501,12 @@ Also add one of the following classes to give it format:</p>
 
 
                                                 <div class="sg-view">
-                                                    <a href="#" class="btn btn-primary btn-form-inline">Button Element</a>
+                                                    <button class="btn btn-primary btn-medium btn-form-inline" type="button">Button</button>
                                                 </div>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;a href=&quot;#&quot; class=&quot;btn btn-primary btn-form-inline&quot;&gt;Button Element&lt;/a&gt;
+&lt;button class=&quot;btn btn-primary btn-medium btn-form-inline&quot; type=&quot;button&quot;&gt;Button&lt;/button&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -568,7 +568,7 @@ Use class <code>.active</code> to highlight the selected button.<br></p>
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -614,7 +614,7 @@ Use class <code>.active</code> to highlight the selected button.<br></p>
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -637,24 +637,24 @@ Use class <code>.active</code> to highlight the selected button.<br></p>
                                                 <div class="sg-view">
                                                     <div class="btn-group">
     <div>
-        <a class="btn btn-default iconfont-Facebook" href="#" title="Comparte esta oferta en Facebook"></a>
+        <a class="btn btn-default iconfont-Facebook" href="#" title="Comparte esta oferta en Facebook"><span class="hide">Comparte esta oferta en Facebook</span></a>
     </div>
     <div>
-        <a class="btn btn-default iconfont-Twitter" href="#" title="Tweetea esta oferta"></a>
+        <a class="btn btn-default iconfont-Twitter" href="#" title="Tweetea esta oferta"><span class="hide">Tweetea esta oferta</span></a>
     </div>
 </div>
                                                 </div>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
 &lt;div class=&quot;btn-group&quot;&gt;
     &lt;div&gt;
-        &lt;a class=&quot;btn btn-default iconfont-Facebook&quot; href=&quot;#&quot; title=&quot;Comparte esta oferta en Facebook&quot;&gt;&lt;/a&gt;
+        &lt;a class=&quot;btn btn-default iconfont-Facebook&quot; href=&quot;#&quot; title=&quot;Comparte esta oferta en Facebook&quot;&gt;&lt;span class=&quot;hide&quot;&gt;Comparte esta oferta en Facebook&lt;/span&gt;&lt;/a&gt;
     &lt;/div&gt;
     &lt;div&gt;
-        &lt;a class=&quot;btn btn-default iconfont-Twitter&quot; href=&quot;#&quot; title=&quot;Tweetea esta oferta&quot;&gt;&lt;/a&gt;
+        &lt;a class=&quot;btn btn-default iconfont-Twitter&quot; href=&quot;#&quot; title=&quot;Tweetea esta oferta&quot;&gt;&lt;span class=&quot;hide&quot;&gt;Tweetea esta oferta&lt;/span&gt;&lt;/a&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -686,7 +686,7 @@ Use class <code>.active</code> to highlight the selected button.<br></p>
 	&lt;input type=&quot;file&quot; value=&quot;Subir foto&quot; /&gt;
 &lt;/div&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -745,7 +745,7 @@ Use class <code>.active</code> to highlight the selected button.<br></p>
 	&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -770,7 +770,7 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
 
 
                                                 <div class="sg-view">
-                                                    <div class="custom-bg [modifier class]" style="background-image: url('./media/backgrounds/bg-header-grid-01.jpg');">
+                                                    <div class="custom-bg " style="background-image: url('./media/backgrounds/bg-header-grid-01.jpg');">
     <div class="inner">
         <h1>Custom background</h1>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
@@ -779,7 +779,7 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
 </div>
                                                 </div>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;div class=&quot;custom-bg [modifier class]&quot; style=&quot;background-image: url(&#x27;./media/backgrounds/bg-header-grid-01.jpg&#x27;);&quot;&gt;
+&lt;div class=&quot;custom-bg &quot; style=&quot;background-image: url(&#x27;./media/backgrounds/bg-header-grid-01.jpg&#x27;);&quot;&gt;
     &lt;div class=&quot;inner&quot;&gt;
         &lt;h1&gt;Custom background&lt;/h1&gt;
         &lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et &lt;/p&gt;
@@ -787,7 +787,7 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -844,7 +844,7 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
 	&lt;/fieldset&gt;
 &lt;/div&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -880,7 +880,7 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
 	&lt;/fieldset&gt;
 &lt;/div&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -950,7 +950,7 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
 	&lt;/fieldset&gt;
 &lt;/div&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -995,7 +995,7 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
   &lt;/select&gt;
 &lt;/div&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -1030,7 +1030,7 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
 	&lt;option value=&quot;05&quot;&gt;Option05&lt;/option&gt;
 &lt;/select&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -1071,7 +1071,7 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
 	&lt;p&gt;Lorem ipsum &lt;br&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -1164,7 +1164,7 @@ The modifier classes are <code>.notification-error</code> for errors, <code>.not
 &lt;!-- /Notification info --&gt;
 &lt;/div&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -1227,7 +1227,7 @@ Use class <code>.active</code> for the active button.</p>
 	&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -1257,7 +1257,7 @@ Use class <code>.active</code> for the active button.</p>
 	&lt;li&gt;Personas&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -1310,7 +1310,7 @@ The combination of classes <code>.slide-up</code> in <code>&lt;figure&gt;</code>
 	&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
@@ -1340,7 +1340,7 @@ The combination of classes <code>.slide-up</code> in <code>&lt;figure&gt;</code>
 	&lt;a href=&quot;#&quot; class=&quot;link-user-feedback&quot;&gt;User Feedback&lt;/a&gt;
 &lt;/div&gt;
 </code></pre>
-<p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
                                 </div>
                             </div>
