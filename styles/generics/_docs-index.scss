@@ -38,7 +38,12 @@ $sgi-tagGroupWithEllipsis:              '1.2.4.4.4';
 
 $sgi-forms:                    	'1.3';
 
+$sgi-forms-select:              '1.3.1';
+$sgi-forms-select-multiple:     '1.3.2';
+
 $sgi-icons:                    	'1.4';
+$sgi-icons-list:                '1.4.1.1';
+$sgi-icons-size:                '1.4.1.2';
 
 // Components
 $sgi-board:                   '2.2';
@@ -67,8 +72,6 @@ $sgi-footer:                   '2.9';
 $sgi-formsFieldblock:				'2.10';
 $sgi-forms-radio:                   '2.10.1';
 $sgi-forms-radio-inline:            '2.10.2';
-$sgi-forms-select:                  '2.10.3';
-$sgi-forms-select-multiple:         '2.10.4';
 $sgi-forms-input-group:             '2.10.5';
 $sgi-forms-error:                   '2.10.6';
 $sgi-pulldown-chosen:               '2.10.7';
@@ -90,3 +93,10 @@ $sgi-modal:                    '3.3';
 $sgi-modal-size:                    '3.3.1';
 $sgi-modal-header:                  '3.3.2';
 $sgi-modal-content:                 '3.3.3';
+
+// Demo html
+$sgp-grid:			'./html/grid.html';
+$sgp-forms:			'./html/forms.html';
+
+//JS
+$sgp-chosen:		'./js/chosen.jquery.js';

@@ -5,9 +5,9 @@
 /*
 Form elements
 
-This section contains all the elements that we can use to build a form
+This section contains all the elements that we can use to build a form.
 
-[Vew demo](../../html/forms.html)
+[View demo](#{$sgp-forms})
 
 Styleguide #{$sgi-forms}
 */
@@ -342,9 +342,9 @@ Styleguide #{$sgi-forms-radio-inline}
 /*
 Select
 
-```
-.form-select -  Field select
-```
+The `<select>` element is used to create a drop-down list.<br>
+The `<option>` tags inside the `<select>` element define the available options in the list.<br>
+This element needs the [chosen.jquery.js](#{$sgp-chosen}) and the script as code example.
 
 Markup:
 <div class="form-select">
@@ -353,6 +353,11 @@ Markup:
     <option value="1">Option 2</option>
   </select>
 </div>
+<script>
+	$(document).ready(function() {
+		$('.chosen-select').chosen({width:"100%",disable_search:true});
+	});
+</script>
 
 Styleguide #{$sgi-forms-select}
 */
