@@ -72,6 +72,12 @@
                                     <li>
                                         <a href="section-1.html#rubik-1.3" class="js-itemMenu " data-link="true">Form elements</a>
                                         <ul class="sg-second-submenu">
+                                            <li>
+                                                <a href="section-1.html#rubik-1.3.1" >Select</a>
+                                            </li>
+                                            <li>
+                                                <a href="section-1.html#rubik-1.3.2" >Multiple select</a>
+                                            </li>
                                         </ul>
                                     </li>
                                     <li>
@@ -168,12 +174,6 @@
                                             </li>
                                             <li>
                                                 <a href="section-2.html#rubik-2.10.2" class="disabled js-disabled">Radio buttons&#x27;s inline </a>
-                                            </li>
-                                            <li>
-                                                <a href="section-2.html#rubik-2.10.3" >Select</a>
-                                            </li>
-                                            <li>
-                                                <a href="section-2.html#rubik-2.10.4" >Multiple select</a>
                                             </li>
                                             <li>
                                                 <a href="section-2.html#rubik-2.10.5" class="disabled js-disabled">Input group </a>
@@ -967,77 +967,6 @@ Use modifier <code>.overlay-60</code> to apply an overlay.</p>
 
 
 
-                            <div id="rubik-2.10.3" class="row sg-block">
-                                    <div class="col-12">
-                                    <header class="sg-block-header">
-                                        <h2 class="sg-block-title">Select</h2>
-                                    </header>
-                                        <div class="sg-block-description">
-                                            <pre><code>.form-select -  Field select
-</code></pre>
-
-                                        </div>
-
-
-                                                <div class="sg-view">
-                                                    <div class="form-select">
-  <select data-placeholder="Cualquier provincia" class="chosen-select" tabindex="-1">
-    <option selected="selected" value="0">Option 1</option>
-    <option value="1">Option 2</option>
-  </select>
-</div>
-                                                </div>
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;div class=&quot;form-select&quot;&gt;
-  &lt;select data-placeholder=&quot;Cualquier provincia&quot; class=&quot;chosen-select&quot; tabindex=&quot;-1&quot;&gt;
-    &lt;option selected=&quot;selected&quot; value=&quot;0&quot;&gt;Option 1&lt;/option&gt;
-    &lt;option value=&quot;1&quot;&gt;Option 2&lt;/option&gt;
-  &lt;/select&gt;
-&lt;/div&gt;
-</code></pre>
-<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
-
-                                </div>
-                            </div>
-
-
-
-
-                            <div id="rubik-2.10.4" class="row sg-block">
-                                    <div class="col-12">
-                                    <header class="sg-block-header">
-                                        <h2 class="sg-block-title">Multiple select</h2>
-                                    </header>
-
-
-                                                <div class="sg-view">
-                                                    <label for="multiple-pulldown">Multiple pulldown</label>
-<select id="multiple-pulldown" multiple="true" class="chosen-select" data-placeholder="(Seleccionar)">
-	<option value="01">Option01</option>
-	<option value="02">Option02</option>
-	<option value="03">Option03</option>
-	<option value="04">Option04</option>
-	<option value="05">Option05</option>
-</select>
-                                                </div>
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;label for=&quot;multiple-pulldown&quot;&gt;Multiple pulldown&lt;/label&gt;
-&lt;select id=&quot;multiple-pulldown&quot; multiple=&quot;true&quot; class=&quot;chosen-select&quot; data-placeholder=&quot;(Seleccionar)&quot;&gt;
-	&lt;option value=&quot;01&quot;&gt;Option01&lt;/option&gt;
-	&lt;option value=&quot;02&quot;&gt;Option02&lt;/option&gt;
-	&lt;option value=&quot;03&quot;&gt;Option03&lt;/option&gt;
-	&lt;option value=&quot;04&quot;&gt;Option04&lt;/option&gt;
-	&lt;option value=&quot;05&quot;&gt;Option05&lt;/option&gt;
-&lt;/select&gt;
-</code></pre>
-<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
-
-                                </div>
-                            </div>
-
-
-
-
 
 
 
@@ -1360,5 +1289,12 @@ The combination of classes <code>.slide-up</code> in <code>&lt;figure&gt;</code>
         <script src="public/main.js"></script>
         <script src="js/scrollHeader.js"></script>
         <!-- <script src="js/scrollspyMenu.js"></script> -->
+        <script src="js/chosen.jquery.js"></script>
+		<script>
+    		$(document).ready(function() {
+    			$('.chosen-select').chosen({width:"100%",disable_search:true});
+    		});
+		</script>
+
     </body>
 </html>
