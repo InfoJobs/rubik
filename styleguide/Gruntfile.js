@@ -32,7 +32,8 @@ module.exports = function(grunt) {
       },
       copyJS: {
         files: [
-          { src: ['./js/**'], dest: 'styleguide/'}
+          { src: ['./js/**'], dest: 'styleguide/'},
+          { src: ['./../js/**'], dest: 'styleguide/styleguide/'}
         ]
       },
       copyHTML: {
