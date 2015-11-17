@@ -1077,7 +1077,7 @@ Use class <code>.light</code> to to change from bold to light content.</p>
                                         <h2 class="sg-block-title">Blockquotes</h2>
                                     </header>
                                         <div class="sg-block-description">
-                                            <p>Use tag <code>&lt;blockquote&gt;</code> intead of <code>&lt;p&gt;</code> to introduce a block of text that is quoted from another source.
+                                            <p>Use tag <code>&lt;blockquote&gt;</code> instead of <code>&lt;p&gt;</code> to introduce a block of text that is quoted from another source.
 <br>
 Use tag <code>&lt;cite&gt;</code> to cite the reference.
 <br><br>
@@ -1396,7 +1396,7 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
                                     <h1 class="sg-block-title">Form elements</h1>
                                 </header>
                                     <div class="sg-block-description">
-                                        <p>This section contains all the elements that we can use to build a form</p>
+                                        <p>This section contains all the elements that we can use to build a form.</p>
 <p><a href="./html/forms.html">View demo</a></p>
 
                                     </div>
@@ -1411,8 +1411,10 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
                                         <h2 class="sg-block-title">Select</h2>
                                     </header>
                                         <div class="sg-block-description">
-                                            <pre><code>.form-select -  Field select
-</code></pre>
+                                            <p>The <code>&lt;select&gt;</code> element is used to create a drop-down list.<br>
+The <code>&lt;option&gt;</code> tags inside the <code>&lt;select&gt;</code> element define the available options in the list.<br>
+This element needs the <a href="./js/chosen.jquery.js">chosen.jquery.js</a> and the script as code example.</p>
+
 
                                         </div>
 
@@ -1424,6 +1426,11 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
     <option value="1">Option 2</option>
   </select>
 </div>
+<script>
+	$(document).ready(function() {
+		$('.chosen-select').chosen({width:"100%",disable_search:true});
+	});
+</script>
                                                 </div>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
 &lt;div class=&quot;form-select&quot;&gt;
@@ -1432,6 +1439,11 @@ Add also the <code>.tag-ellipsis-col2</code> or <code>.tag-ellipsis-col3</code> 
     &lt;option value=&quot;1&quot;&gt;Option 2&lt;/option&gt;
   &lt;/select&gt;
 &lt;/div&gt;
+&lt;script&gt;
+	$(document).ready(function() {
+		$(&#x27;.chosen-select&#x27;).chosen({width:&quot;100%&quot;,disable_search:true});
+	});
+&lt;/script&gt;
 </code></pre>
 <!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
