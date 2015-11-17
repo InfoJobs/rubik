@@ -88,11 +88,7 @@ body#kss-node {
 			font-size: 30px;
 		}
     }
-
-
 }
-
-
 
 .sg-content {
     .home-intro {
@@ -230,6 +226,7 @@ body#kss-node {
         margin-top: 20px;
         padding: 20px;
         border: 1px solid $darkest-shiro;
+        background-color: $shiro;
 
         &::before {
             content: 'Example';
