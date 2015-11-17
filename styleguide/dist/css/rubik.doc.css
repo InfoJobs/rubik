@@ -489,6 +489,9 @@ Grid System
 
 Grid system is used for creating page layout through a series of rows and columns that house
 your content.
+
+[View demo](./html/grid.html)
+
 <br>
 <div class="sg-guide">
   <div class="row clearfix">
@@ -714,7 +717,7 @@ Markup:
 	<div class="col-4 col-12-medium"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.1.1.2
+Styleguide 1.1.1.3
 */
 @media only screen and (min-width: 481px) {
   .col-1 {
@@ -1014,6 +1017,39 @@ Styleguide 1.1.1.2
 /*------------------------------------*\
 	$ROW FAUX CARD
 \*------------------------------------*/
+/*
+Expand gutter columns
+
+Add class `.row`,`.row-faux` and `.row-faux-card` to expand the gutter between the columns.
+
+<div class="sg-view">
+    <div class="sg-guide">
+          <!--ROW-FAUX-CARD-->
+          <div class="row row-faux row-faux-card">
+              <div class="col-8">
+                  <div class="col-child">.col-8</div>
+              </div>
+              <div class="col-4">
+                  <div class="col-child">.col-4</div>
+              </div>
+		  </div>
+          <!--/ROW-FAUX-CARD-->
+	  </div>
+</div>
+
+
+Markup:
+<div class="row row-faux row-faux-card casper">
+      <div class="col-8">
+          <div class="col-child">.col-8</div>
+      </div>
+      <div class="col-4">
+          <div class="col-child">.col-4</div>
+      </div>
+</div>
+
+Styleguide 1.1.1.5
+*/
 @media only screen and (min-width: 481px) {
   .row-faux-card {
     margin-left: -20px;
@@ -1070,51 +1106,6 @@ Styleguide 1.1.1.2
 }
 
 /*------------------------------------*\
-	$ROW MATRIOSKA
-\*------------------------------------*/
-/*
-Nested row
-
-Use class `.row` and `.row-matrioska` to nested rows.
-
-<div class="sg-view">
-    <div class="sg-guide">
-          <!--ROW-FAUX-->
-          <div class="row clearfix">
-              <div class="col-6">
-                  <div class="col-child">
-                         .col-6
-                        <div class="row row-matrioska">
-                        	<div class="col-6"><div class="col-child">.col-6</div></div>
-                        	<div class="col-6"><div class="col-child">.col-6</div></div>
-                        </div>
-                  </div>
-              </div>
-              <div class="col-6">
-                  <div class="col-child">.col-6</div>
-              </div>
-          </div>
-          <!--/ROW-MATRIOSKA-->
-      </div>
-  </div>
-
-
-Markup:
-<div class="row casper">
-	<div class="col-6">
-		<div class="col-child">
-			<div class="row row-matrioska">
-				<div class="col-6"><div class="col-child">...</div></div>
-				<div class="col-6"><div class="col-child">...</div></div>
-			</div>
-		</div>
-	</div>
-	<div class="col-6"><div class="col-child">...</div></div>
-</div>
-
-Styleguide 1.1.1.3
-*/
-/*------------------------------------*\
 	$ROW FAUX
 \*------------------------------------*/
 /*
@@ -1125,7 +1116,7 @@ Add class `.row` and `.row-faux` to build an equal height columns structure.
 <div class="sg-view">
     <div class="sg-guide">
           <!--ROW-FAUX-->
-          <div class="row row-faux clearfix">
+          <div class="row row-faux">
               <div class="col-1">
                   <div class="col-child">.col-1 (more content)</div>
               </div>
@@ -1175,7 +1166,7 @@ Markup:
 	<div class="col-4"><div class="col-child">...</div></div>
 </div>
 
-Styleguide 1.1.1.3
+Styleguide 1.1.1.4
 */
 .row-faux > [class*="col-"]:last-child .col-child {
   margin-bottom: 0;
@@ -1234,6 +1225,42 @@ Styleguide 1.1.1.3
   }
 }
 
+/*------------------------------------*\
+	$ROW PANEL
+\*------------------------------------*/
+/*
+Remove gutter columns
+
+Add class `.row`,`.row-faux` to build an equal height columns structure and `.row-panel` to remove the gutter between the columns.
+
+<div class="sg-view">
+    <div class="sg-guide">
+          <!--ROW-PANEL-->
+          <div class="row row-faux row-panel">
+		      <div class="col-8">
+		          <div class="col-child panel-canvas">.col-8</div>
+		      </div>
+		      <div class="col-4">
+		          <div class="col-child">.col-4</div>
+		      </div>
+		  </div>
+          <!--/ROW-PANEL-->
+	  </div>
+</div>
+
+
+Markup:
+<div class="row row-faux row-panel casper">
+      <div class="col-8">
+          <div class="col-child panel-canvas">.col-8</div>
+      </div>
+      <div class="col-4">
+          <div class="col-child">.col-4</div>
+      </div>
+</div>
+
+Styleguide 1.1.1.6
+*/
 @media only screen and (min-width: 481px) {
   .row-panel > [class*="col-"]:not(.col-12-medium):last-of-type .col-child {
     margin-left: 0;
@@ -1250,6 +1277,49 @@ Styleguide 1.1.1.3
   }
 }
 
+/*------------------------------------*\
+	$ROW NESTED
+\*------------------------------------*/
+/*
+Nested row
+
+<div class="sg-view">
+    <div class="sg-guide">
+          <!--ROW-FAUX-->
+          <div class="row clearfix">
+              <div class="col-6">
+                  <div class="col-child">
+                         .col-6 with nested row
+                        <div class="row">
+                        	<div class="col-6"><div class="col-child">.col-6</div></div>
+                        	<div class="col-6"><div class="col-child">.col-6</div></div>
+                        </div>
+                  </div>
+              </div>
+              <div class="col-6">
+                  <div class="col-child">.col-6</div>
+              </div>
+          </div>
+          <!--/ROW-MATRIOSKA-->
+      </div>
+  </div>
+
+
+Markup:
+<div class="row casper">
+	<div class="col-6">
+		<div class="col-child">
+			<div class="row">
+				<div class="col-6"><div class="col-child">...</div></div>
+				<div class="col-6"><div class="col-child">...</div></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-6"><div class="col-child">...</div></div>
+</div>
+
+Styleguide 1.1.1.2
+*/
 /*------------------------------------*\
     $FONTS
 \*------------------------------------*/
@@ -2126,7 +2196,7 @@ Icons
 Icons are generated as fonts. Color and size can be modified as texts.
 Use the following classes to apply an icon on a tag.
 
-Styleguide 1.7
+Styleguide 1.4
 */
 /*
 Icons type
@@ -2711,15 +2781,11 @@ Also add one of the following classes to give it format:
 
 `.btn-default` for a default action style<br>
 `.btn-primary` for a primary action style<br>
-`.btn-primary-contrast`for a primary action style over dark background
-
-{modifier_class}:
-.btn-default
-.btn-primary
-.btn-primary-contrast
 
 Markup:
-<a href="#" class="btn {{modifier_class}}">Link Button</a>
+<button class="btn btn-default" type="button">Default</button>
+<button class="btn btn-primary" type="button">Primary</button>
+<a href="#" class="btn btn-primary">Link</a>
 
 Styleguide 2.3.1
 */
@@ -2819,12 +2885,9 @@ Buttons size
 Use class `.btn-medium` or `.btn-large` to change buttons size.
 
 Markup:
-<a href="#" class="btn btn-default {{modifier_class}}">Link Button</a>
-
-{modifier_class}:
-
-.btn-medium
-.btn-large
+<a href="#" class="btn btn-default btn-medium">Default Button</a>
+<a href="#" class="btn btn-default btn-medium">Medium Button</a>
+<a href="#" class="btn btn-default btn-large">Large Button</a>
 
 Styleguide 2.3.2
 */
@@ -2901,7 +2964,7 @@ Button annex
 Use class `.btn-annex` to add an element adjacent to the button.
 
 Markup:
-<a href="#" class="btn btn-primary btn-medium btn-annex">Button</a>
+<button class="btn btn-primary btn-medium btn-annex" type="button">Button</button>
 <a href="#" class="link">Link</a>
 
 Styleguide 2.3.5
@@ -2933,7 +2996,7 @@ Buttons display
 Use class `.btn-form-inline` to display a full width button.
 
 Markup:
-<a href="#" class="btn btn-primary btn-form-inline">Button Element</a>
+<button class="btn btn-primary btn-medium btn-form-inline" type="button">Button</button>
 
 Styleguide 2.3.6
 */
@@ -3059,10 +3122,10 @@ Use class `.iconfont-[name]` to display an icon inside the button.
 Markup:
 <div class="btn-group">
     <div>
-        <a class="btn btn-default iconfont-Facebook" href="#" title="Comparte esta oferta en Facebook"></a>
+        <a class="btn btn-default iconfont-Facebook" href="#" title="Comparte esta oferta en Facebook"><span class="hide">Comparte esta oferta en Facebook</span></a>
     </div>
     <div>
-        <a class="btn btn-default iconfont-Twitter" href="#" title="Tweetea esta oferta"></a>
+        <a class="btn btn-default iconfont-Twitter" href="#" title="Tweetea esta oferta"><span class="hide">Tweetea esta oferta</span></a>
     </div>
 </div>
 
@@ -3825,6 +3888,15 @@ Styleguide 1.2.4.4.4
 /*------------------------------------*\
     $FORMS
 \*------------------------------------*/
+/*
+Form elements
+
+This section contains all the elements that we can use to build a form
+
+[View demo](./html/forms.html)
+
+Styleguide 1.3
+*/
 ::-webkit-input-placeholder {
   text-overflow: ellipsis;
   color: #999;
@@ -4153,7 +4225,7 @@ Markup:
   </select>
 </div>
 
-Styleguide 2.10.3
+Styleguide 1.3.1
 */
 .form-select {
   position: relative;
@@ -4214,7 +4286,7 @@ Markup:
 	<option value="05">Option05</option>
 </select>
 
-Styleguide 2.10.4
+Styleguide 1.3.2
 */
 .form-select-medium {
   /* Used in SectionCvComponent*/
@@ -14699,18 +14771,17 @@ body#kss-node {
   background-color: #e2e5e6;
   overflow: hidden;
 }
+.sg-guide .col-child.panel-canvas {
+  background-color: #fff;
+}
 .sg-guide .col-6-medium {
   width: 50%;
 }
 .sg-guide .row {
   margin-bottom: 10px;
 }
-.sg-guide .row .row-matrioska {
-  margin-top: 10px;
-  margin-bottom: 0;
-}
-.sg-guide .row-matrioska .col-child {
-  background-color: #f2f2f2;
+.sg-guide .row .row .col-child {
+  border: 2px dashed #fff;
 }
 .sg-guide .sg-colors {
   overflow: hidden;
@@ -14860,6 +14931,9 @@ body#kss-node {
   font-family: Courier;
   font-size: 13px;
   color: #dc1a6c;
+}
+.sg-content .sg-block-description a {
+  text-decoration: underline;
 }
 .sg-content .sg-view {
   margin-top: 20px;
