@@ -96,11 +96,6 @@
                                         <ul class="sg-second-submenu">
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="section-1.html#rubik-1.6" class="js-itemMenu disabled js-disabled" data-link="true">Helper classes </a>
-                                        <ul class="sg-second-submenu">
-                                        </ul>
-                                    </li>
                             </ul>
 
 
@@ -782,7 +777,7 @@ your content.</p>
                                     <h1 class="sg-block-title">Text elements</h1>
                                 </header>
                                     <div class="sg-block-description">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.</p>
+                                        <p>Use the semantic tags to the text elements, these tags identify the purpose of that content.</p>
 
                                     </div>
                             </div>
@@ -796,11 +791,11 @@ your content.</p>
                                         <h2 class="sg-block-title">Headings</h2>
                                     </header>
                                         <div class="sg-block-description">
-                                            <p>Definition of differents levels of titles: <br>
-<code>&lt;h1&gt;</code> for level 1,<br>
+                                            <p>Definition of differents levels of titles:</p>
+<p><code>&lt;h1&gt;</code> for level 1,<br>
 <code>&lt;h2&gt;</code> for level 2,<br>
-<code>&lt;h3&gt;</code> for level 3.<br>
-<code>&lt;h1&gt;</code> defines the most important heading. Only one <code>&lt;h1&gt;</code> per page or <code>&lt;section&gt;</code>.</p>
+<code>&lt;h3&gt;</code> for level 3.<br></p>
+<p><code>&lt;h1&gt;</code> defines the most important heading. Only one <code>&lt;h1&gt;</code> per page or <code>&lt;section&gt;</code>.</p>
 
 
                                         </div>
@@ -827,7 +822,7 @@ your content.</p>
                             <div id="rubik-1.2.1.1" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
-                                        <h2 class="sg-block-title">Heading-addons</h2>
+                                        <h2 class="sg-block-title">Heading with addons</h2>
                                     </header>
                                         <div class="sg-block-description">
                                             <p>Use class <code>.heading-addons</code> to reset margin defined for generic <code>&lt;h1&gt;</code>.</p>
@@ -859,6 +854,36 @@ your content.</p>
                             <div id="rubik-1.2.1.2" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
+                                        <h2 class="sg-block-title">Heading only child</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.heading-single</code> when the container includes a heading as an only child.</p>
+
+
+                                        </div>
+
+
+                                                <div class="sg-view">
+                                                    <div class="heading-single panel-default inner">
+	<h1>Header Level 1</h1>
+</div>
+                                                </div>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">
+&lt;div class=&quot;heading-single panel-default inner&quot;&gt;
+	&lt;h1&gt;Header Level 1&lt;/h1&gt;
+&lt;/div&gt;
+</code></pre>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.2.1.3" class="row sg-block">
+                                    <div class="col-12">
+                                    <header class="sg-block-header">
                                         <h2 class="sg-block-title">Heading mega</h2>
                                     </header>
                                         <div class="sg-block-description">
@@ -882,7 +907,7 @@ your content.</p>
 
 
 
-                            <div id="rubik-1.2.1.3" class="row sg-block">
+                            <div id="rubik-1.2.1.4" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2 class="sg-block-title">Heading middle</h2>
@@ -1855,7 +1880,8 @@ You can force the <a href="#rubik-1.5.1.2">icon size</a> when there isn&#39;t te
                                         <h2 class="sg-block-title">Icons size</h2>
                                     </header>
                                         <div class="sg-block-description">
-                                            <p>Use the following classes to specify the icon size when it appears without text: <code>.iconfont-16px</code>, <code>.iconfont-18px</code>, <code>.iconfont-22px</code>, <code>.iconfont-30px</code> or <code>.iconfont-36px</code>.</p>
+                                            <p>Use the following classes to modify the icon size: <code>.iconfont-16px</code>, <code>.iconfont-18px</code>, <code>.iconfont-22px</code>, <code>.iconfont-30px</code> or <code>.iconfont-36px</code>.</p>
+<p>If it´s a text with icon doesn`t need any class.</p>
 
 
                                         </div>
@@ -1891,9 +1917,6 @@ You can force the <a href="#rubik-1.5.1.2">icon size</a> when there isn&#39;t te
 
                                 </div>
                             </div>
-
-
-
 
             </div>
 
