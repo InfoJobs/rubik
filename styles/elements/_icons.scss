@@ -106,9 +106,7 @@ Styleguide #{$sgi-icons-list}
 /*
 Icons size
 
-Use the following classes to modify the icon size: `.iconfont-16px`, `.iconfont-18px`, `.iconfont-22px`, `.iconfont-30px` or `.iconfont-36px`.
-
-If it´s a text with icon doesn`t need any class.
+Use the following classes to specify the icon size when it appears without text: `.iconfont-16px`, `.iconfont-18px`, `.iconfont-22px`, `.iconfont-30px` or `.iconfont-36px`.
 
 Markup:
 <ul class="list-inline">
