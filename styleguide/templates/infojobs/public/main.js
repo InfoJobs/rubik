@@ -148,3 +148,10 @@
 	});
 
 })(document, window);
+
+//prevent default anchor with #
+( function( $ ) {
+   $( 'a[href="#"]' ).click( function(e) {
+      e.preventDefault();
+   } );
+} )( jQuery );
