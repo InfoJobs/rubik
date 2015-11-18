@@ -45,7 +45,7 @@
                                                 <a href="section-1.html#rubik-1.1.2" >Containers</a>
                                             </li>
                                             <li>
-                                                <a href="section-1.html#rubik-1.1.3" class="disabled js-disabled">Banners&#x27;s containers </a>
+                                                <a href="section-1.html#rubik-1.1.3" >Banners&#x27;s containers</a>
                                             </li>
                                             <li>
                                                 <a href="section-1.html#rubik-1.1.4" >Inner containers</a>
@@ -723,6 +723,46 @@ your content.</p>
 
 
 
+                            <div id="rubik-1.1.3" class="row sg-block">
+                                    <div class="col-12">
+                                    <header class="sg-block-header">
+                                        <h2 class="sg-block-title">Banners's containers</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Add class <code>.wrapper-slotbanner</code> and <code>half-page-ad</code> to the wrapper container, to specify that the page contain banners positions.</p>
+<p>Wrap the container with <code>.slotbanner</code> to include the banner top position. Include <code>.slotbanner-top</code> inside it and add <code>.container-slotbanner</code> class to the container, to position the page to the left.
+<br><br>
+Create <code>.slotbanner-aside</code> to include a banner right position. Include <code>.slotbanner-fixed</code> to specify the side banner position as fixed.<br><br>
+<br>
+In case of Brand Bay campaign add <code>.slotbanner-top-brandday</code> to <code>.slotbanner-top</code>.
+<br><br></p>
+
+
+                                        </div>
+
+
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">
+&lt;div class=&quot;wrapper wrapper-slotbanner half-page-ad&quot;&gt;
+	&lt;div class=&quot;slotbanner&quot;&gt;
+		&lt;div class=&quot;slotbanner-top&quot;&gt;
+			// banner code
+		&lt;/div&gt;
+		&lt;div class=&quot;container container-slotbanner&quot;&gt;
+			// page content
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;slotbanner-aside&quot;&gt;
+		&lt;div class=&quot;slotbanner-fixed&quot;&gt;
+			// banner code
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
+
+                                </div>
+                            </div>
+
 
 
 
@@ -782,7 +822,7 @@ your content.</p>
                                     <h1 class="sg-block-title">Text elements</h1>
                                 </header>
                                     <div class="sg-block-description">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.</p>
+                                        <p>Use the semantic tags to the text elements, these tags identify the purpose of that content.</p>
 
                                     </div>
                             </div>
@@ -796,11 +836,11 @@ your content.</p>
                                         <h2 class="sg-block-title">Headings</h2>
                                     </header>
                                         <div class="sg-block-description">
-                                            <p>Definition of differents levels of titles: <br>
-<code>&lt;h1&gt;</code> for level 1,<br>
+                                            <p>Definition of differents levels of titles:</p>
+<p><code>&lt;h1&gt;</code> for level 1,<br>
 <code>&lt;h2&gt;</code> for level 2,<br>
-<code>&lt;h3&gt;</code> for level 3.<br>
-<code>&lt;h1&gt;</code> defines the most important heading. Only one <code>&lt;h1&gt;</code> per page or <code>&lt;section&gt;</code>.</p>
+<code>&lt;h3&gt;</code> for level 3.<br></p>
+<p><code>&lt;h1&gt;</code> defines the most important heading. Only one <code>&lt;h1&gt;</code> per page or <code>&lt;section&gt;</code>.</p>
 
 
                                         </div>
@@ -827,7 +867,7 @@ your content.</p>
                             <div id="rubik-1.2.1.1" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
-                                        <h2 class="sg-block-title">Heading-addons</h2>
+                                        <h2 class="sg-block-title">Heading with addons</h2>
                                     </header>
                                         <div class="sg-block-description">
                                             <p>Use class <code>.heading-addons</code> to reset margin defined for generic <code>&lt;h1&gt;</code>.</p>
@@ -859,6 +899,36 @@ your content.</p>
                             <div id="rubik-1.2.1.2" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
+                                        <h2 class="sg-block-title">Heading only child</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.heading-single</code> when the container includes a heading as an only child.</p>
+
+
+                                        </div>
+
+
+                                                <div class="sg-view">
+                                                    <div class="heading-single panel-default inner">
+	<h1>Header Level 1</h1>
+</div>
+                                                </div>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">
+&lt;div class=&quot;heading-single panel-default inner&quot;&gt;
+	&lt;h1&gt;Header Level 1&lt;/h1&gt;
+&lt;/div&gt;
+</code></pre>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div id="rubik-1.2.1.3" class="row sg-block">
+                                    <div class="col-12">
+                                    <header class="sg-block-header">
                                         <h2 class="sg-block-title">Heading mega</h2>
                                     </header>
                                         <div class="sg-block-description">
@@ -882,7 +952,7 @@ your content.</p>
 
 
 
-                            <div id="rubik-1.2.1.3" class="row sg-block">
+                            <div id="rubik-1.2.1.4" class="row sg-block">
                                     <div class="col-12">
                                     <header class="sg-block-header">
                                         <h2 class="sg-block-title">Heading middle</h2>
@@ -1862,30 +1932,18 @@ You can force the <a href="#rubik-1.5.1.2">icon size</a> when there isn&#39;t te
 
 
                                                 <div class="sg-view">
-                                                    <ul class="list-inline">
-	<li class="iconfont-Company iconfont-16px"><span class="hide">Icon name</span></li>
-	<li class="iconfont-Company iconfont-18px"><span class="hide">Icon name</span></li>
-	<li class="iconfont-Company iconfont-22px"><span class="hide">Icon name</span></li>
-	<li class="iconfont-Company iconfont-30px"><span class="hide">Icon name</span></li>
-	<li class="iconfont-Company iconfont-36px"><span class="hide">Icon name</span></li>
-</ul>
-<ul class="list-default margin-top">
-	<li class="base iconfont-Company">Text base with icon</li>
-	<li class="medium iconfont-Company">Text medium with icon</li>
-</ul>
+                                                    	<a href="#" class="iconfont-Company iconfont-16px"><span class="hide">Icon name</span></a>
+	<a href="#" class="iconfont-Company iconfont-18px"><span class="hide">Icon name</span></a>
+	<a href="#" class="iconfont-Company iconfont-22px"><span class="hide">Icon name</span></a>
+	<a href="#" class="iconfont-Company iconfont-30px"><span class="hide">Icon name</span></a>
+	<a href="#" class="iconfont-Company iconfont-36px"><span class="hide">Icon name</span></a>
                                                 </div>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;ul class=&quot;list-inline&quot;&gt;
-	&lt;li class=&quot;iconfont-Company iconfont-16px&quot;&gt;&lt;span class=&quot;hide&quot;&gt;Icon name&lt;/span&gt;&lt;/li&gt;
-	&lt;li class=&quot;iconfont-Company iconfont-18px&quot;&gt;&lt;span class=&quot;hide&quot;&gt;Icon name&lt;/span&gt;&lt;/li&gt;
-	&lt;li class=&quot;iconfont-Company iconfont-22px&quot;&gt;&lt;span class=&quot;hide&quot;&gt;Icon name&lt;/span&gt;&lt;/li&gt;
-	&lt;li class=&quot;iconfont-Company iconfont-30px&quot;&gt;&lt;span class=&quot;hide&quot;&gt;Icon name&lt;/span&gt;&lt;/li&gt;
-	&lt;li class=&quot;iconfont-Company iconfont-36px&quot;&gt;&lt;span class=&quot;hide&quot;&gt;Icon name&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul class=&quot;list-default margin-top&quot;&gt;
-	&lt;li class=&quot;base iconfont-Company&quot;&gt;Text base with icon&lt;/li&gt;
-	&lt;li class=&quot;medium iconfont-Company&quot;&gt;Text medium with icon&lt;/li&gt;
-&lt;/ul&gt;
+	&lt;a href=&quot;#&quot; class=&quot;iconfont-Company iconfont-16px&quot;&gt;&lt;span class=&quot;hide&quot;&gt;Icon name&lt;/span&gt;&lt;/a&gt;
+	&lt;a href=&quot;#&quot; class=&quot;iconfont-Company iconfont-18px&quot;&gt;&lt;span class=&quot;hide&quot;&gt;Icon name&lt;/span&gt;&lt;/a&gt;
+	&lt;a href=&quot;#&quot; class=&quot;iconfont-Company iconfont-22px&quot;&gt;&lt;span class=&quot;hide&quot;&gt;Icon name&lt;/span&gt;&lt;/a&gt;
+	&lt;a href=&quot;#&quot; class=&quot;iconfont-Company iconfont-30px&quot;&gt;&lt;span class=&quot;hide&quot;&gt;Icon name&lt;/span&gt;&lt;/a&gt;
+	&lt;a href=&quot;#&quot; class=&quot;iconfont-Company iconfont-36px&quot;&gt;&lt;span class=&quot;hide&quot;&gt;Icon name&lt;/span&gt;&lt;/a&gt;
 </code></pre>
 <!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
 
