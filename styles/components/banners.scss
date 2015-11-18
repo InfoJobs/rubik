@@ -12,32 +12,30 @@ Styleguide 2
 \*------------------------------------*/
 
 /*
-Banners's containers #disabled#
+Banners's containers
 
-```
-.wrapper-slotbanner
-.slotbanner
-.slotbanner-top
-.container-slotbanner
-.slotbanner-top-brandday
-.slotbanner-aside
-.slotbanner-fixed
-.half-page-ad
-```
+Add class `.wrapper-slotbanner` and `half-page-ad` to the wrapper container, to specify that the page contain banners positions.
+
+Wrap the container with `.slotbanner` to include the banner top position. Include `.slotbanner-top` inside it and add `.container-slotbanner` class to the container, to position the page to the left.
+<br><br>
+Create `.slotbanner-aside` to include a banner right position. Include `.slotbanner-fixed` to specify the side banner position as fixed.<br><br>
+<br>
+In case of Brand Bay campaign add `.slotbanner-top-brandday` to `.slotbanner-top`.
+<br><br>
 
 Markup:
-<div class="wrapper wrapper-slotbanner half-page-ad">
+<div class="wrapper wrapper-slotbanner half-page-ad casper">
 	<div class="slotbanner">
 		<div class="slotbanner-top">
-		...
+			// banner code
 		</div>
 		<div class="container container-slotbanner">
-		...
+			// page content
 		</div>
 	</div>
 	<div class="slotbanner-aside">
 		<div class="slotbanner-fixed">
-		...
+			// banner code
 		</div>
 	</div>
 </div>
