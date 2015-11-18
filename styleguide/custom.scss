@@ -234,6 +234,11 @@ body#kss-node {
             height: 30px;
             color: $soft-script;
         }
+
+        //blockquote
+        blockquote + blockquote {
+            margin-top: 20px;
+        }
     }
 
     .sg-modifiers {
