@@ -117,17 +117,15 @@ Use class `.quote` to give format to a blockquote.
 <br>
 Use class `.vip-quote` to emphasise a blockquote.
 
-
 Markup:
-<blockquote class="{{modifier_class}}">
+<blockquote class="quote">
 	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
 	<cite>Lorem ipsum</cite>
 </blockquote>
-
-{modifier_class}:
-
-.vip-quote
-.quote
+<blockquote class="vip-quote">
+	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
+	<cite>Lorem ipsum</cite>
+</blockquote>
 
 Styleguide #{$sgi-blockquotes}
 */
