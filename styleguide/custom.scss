@@ -235,11 +235,12 @@ body#kss-node {
             color: $soft-script;
         }
 
-        //blockquote
-        blockquote + blockquote {
+        blockquote + blockquote,
+        .list-default + .list-default {
             margin-top: 20px;
         }
-    }
+
+}
 
     .sg-modifiers {
         margin-bottom: 10px;
@@ -257,10 +258,6 @@ body#kss-node {
         background-color: $darkest-shiro;
     }
 
-        .list-default + .list-default {
-
-            margin-top: 20px;
-        }
 }
 
 .sg-footer {

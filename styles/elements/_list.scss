@@ -12,7 +12,12 @@ Use the following tags to create semantic lists:
 * `<ol>` for ordered lists
 * `<dl>` for definition lists
 
-<br>
+Styleguide #{$sgi-lists}
+*/
+
+/*
+List default
+
 Use class `.list-default` for a basic list without decoration.
 
 Markup:
@@ -30,7 +35,7 @@ Markup:
     <dd>De duracion determinada, jornada completa</dd>
 </dl>
 
-Styleguide #{$sgi-lists}
+Styleguide #{$sgi-listsDefault}
 */
 
 .list-default {
@@ -95,6 +100,50 @@ Styleguide #{$sgi-lists}
     }
 }
 
+/*
+List inline
+
+Use class `.list-inline` to generate a list inline without gutter between list items.
+
+Markup:
+<ul class="list-inline">
+    <li>Lorem ipsum 1/</li>
+    <li>Lorem ipsum 2/</li>
+    <li>Lorem ipsum 3</li>
+</ul>
+
+Styleguide #{$sgi-listsInline}
+*/
+.list-inline {
+	font-size: 0;
+
+	dt,
+	dd,
+	li {
+		display: inline-block;
+		font-size: $small-font-size;
+        font-family: $base-font-family;
+	}
+
+    dt {
+		margin-right: 10px;
+	}
+}
+
+/*
+Numbered list
+
+Use class `.list-ordered` to generate a numbered list.
+
+Markup:
+<ul class="list-ordered">
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
+</ul>
+
+Styleguide #{$sgi-listsOrdered}
+*/
 .list-ordered {
 
 	> li {
@@ -122,9 +171,9 @@ Use class `.list-default` and `.list-bullet-default` to add default bullets to t
 
 Markup:
 <ul class="list-default list-bullet-default">
-    <li>Salario no disponible</li>
-    <li>Experiencia minima: no requerida</li>
-    <li>Tipo de oferta: de duracion determinada, jornada completa</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
 </ul>
 
 Styleguide #{$sgi-listsWithBullets}
@@ -163,7 +212,7 @@ Lists with icons
 
 Use class `.list-default` and `.list-bullet-icon` to show icons in a list.<br>
 Use class `.iconfont-[name]` for icon type, `.iconfont-[size]` for icon size and `.iconfont-[color]` for icon color.<br>
-Visit the <a href="#rubik-1.6">icons guide</a>.
+Visit the [icons list](#rubik-#{$sgi-iconsList}).
 
 Markup:
 <ul class="list-default list-bullet-icon">
@@ -298,7 +347,7 @@ Markup:
 /*
 Tag group
 
-Use class `.tag-group` to display list items in the same line.
+Use class `.tag-group` to display list items in the same line with gutter between this items.
 
 Markup:
 <ul class="tag-group">
@@ -444,21 +493,3 @@ Styleguide #{$sgi-tagGroupWithEllipsis}
 //         }
 //     }
 // }
-
-
-
-.list-inline {
-	font-size: 0;
-
-	dt,
-	dd,
-	li {
-		display: inline-block;
-		font-size: $small-font-size;
-        font-family: $base-font-family;
-	}
-
-    dt {
-		margin-right: 10px;
-	}
-}
