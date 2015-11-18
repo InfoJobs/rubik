@@ -1,7 +1,7 @@
 /*
 Text elements
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+Use the semantic tags to the text elements, these tags identify the purpose of that content.
 
 Styleguide #{$sgi-textElements}
 */
@@ -13,10 +13,12 @@ $HEADINGS
 /*
 Headings
 
-Definition of differents levels of titles: <br>
+Definition of differents levels of titles:
+
 `<h1>` for level 1,<br>
 `<h2>` for level 2,<br>
 `<h3>` for level 3.<br>
+
 `<h1>` defines the most important heading. Only one `<h1>` per page or `<section>`.
 
 Markup:
@@ -75,9 +77,8 @@ h3,
 	@extend %font-medium-line;
 	margin-bottom: 15px;
 }
-
 /*
-Heading-addons
+Heading with addons
 
 Use class `.heading-addons` to reset margin defined for generic `<h1>`.
 
@@ -88,6 +89,19 @@ Markup:
 </div>
 
 Styleguide #{$sgi-headingAddons}
+*/
+
+/*
+Heading only child
+
+Use class `.heading-single` when the container includes a heading as an only child.
+
+Markup:
+<div class="heading-single panel-default inner">
+	<h1>Header Level 1</h1>
+</div>
+
+Styleguide #{$sgi-headingSingle}
 */
 
 .heading-addons,  //TODO: modificar nomenclatura de esta clase
