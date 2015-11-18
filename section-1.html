@@ -732,9 +732,11 @@ your content.</p>
                                             <p>Add class <code>.wrapper-slotbanner</code> and <code>half-page-ad</code> to the wrapper container, to specify that the page contain banners positions.</p>
 <p>Wrap the container with <code>.slotbanner</code> to include the banner top position. Include <code>.slotbanner-top</code> inside it and add <code>.container-slotbanner</code> class to the container, to position the page to the left.
 <br><br>
-Create <code>.slotbanner-aside</code> to include a banner right position. Include <code>.slotbanner-fixed</code> to specify the side banner position as fixed.<br><br>
-<br>
+Create <code>.slotbanner-aside</code> to include a banner right position. Include <code>.slotbanner-fixed</code> to specify the side banner position as fixed.
+<br><br>
 In case of Brand Bay campaign add <code>.slotbanner-top-brandday</code> to <code>.slotbanner-top</code>.
+<br><br>
+<a href="./html/banners.html" target="blank">View demo</a>
 <br><br></p>
 
 
@@ -808,7 +810,7 @@ In case of Brand Bay campaign add <code>.slotbanner-top-brandday</code> to <code
                                     <h2 class="sg-block-title">Examples Layouts</h2>
                                 </header>
                                     <div class="sg-block-description">
-                                        <p><a href="./html/grid.html" target="blank">View demo</a></p>
+                                        <p><a href="./html/layouts.html" target="blank">View demo</a></p>
 
                                     </div>
                             </div>
@@ -1222,22 +1224,27 @@ Use tag <code>&lt;cite&gt;</code> to cite the reference.
 Use class <code>.quote</code> to give format to a blockquote.
 <br>
 Use class <code>.vip-quote</code> to emphasise a blockquote.</p>
-<p>{modifier_class}:</p>
-<p>.vip-quote
-.quote</p>
 
 
                                         </div>
 
 
                                                 <div class="sg-view">
-                                                    <blockquote class="">
+                                                    <blockquote class="quote">
+	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
+	<cite>Lorem ipsum</cite>
+</blockquote>
+<blockquote class="vip-quote">
 	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
 	<cite>Lorem ipsum</cite>
 </blockquote>
                                                 </div>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;blockquote class=&quot;{{modifier_class}}&quot;&gt;
+&lt;blockquote class=&quot;quote&quot;&gt;
+	&lt;span&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/span&gt;
+	&lt;cite&gt;Lorem ipsum&lt;/cite&gt;
+&lt;/blockquote&gt;
+&lt;blockquote class=&quot;vip-quote&quot;&gt;
 	&lt;span&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/span&gt;
 	&lt;cite&gt;Lorem ipsum&lt;/cite&gt;
 &lt;/blockquote&gt;
