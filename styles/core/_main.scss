@@ -117,13 +117,12 @@ To wrap all page content in a responsive container use class `.wrapper`. Use cla
 Markup:
 <div class="wrapper casper">
     <div class="container container-expanded">
-        // Container is centered on page. The inner is
-        // fluid between small and middle viewports,
-        // and fixed width for larger dimensions:
-        //
-        // * 970px < 769px
-        // * 768px < 481px
-        // * > 480px
+        <!-- Container is centered on page. The inner is
+         fluid between small and middle viewports,
+         and fixed width for larger dimensions:
+            * 970px < 769px
+            * 768px < 481px
+            * > 480px -->
     </div>
 </div>
 
