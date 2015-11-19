@@ -210,14 +210,14 @@ Styleguide #{$sgi-listsWithBullets}
 /*
 Lists with icons
 
-Use class `.list-default` and `.list-bullet-icon` to show icons in a list.<br>
-Use class `.iconfont-[name]` for icon type, `.iconfont-[size]` for icon size and `.iconfont-[color]` for icon color.<br>
+Use class `.list-default` and `.list-bullet-icon` to show icons outside the content flow.<br>
+Use class `.iconfont-[name]` for icon type.<br>
 Visit the [icons list](#rubik-#{$sgi-iconsList}).
 
 Markup:
 <ul class="list-default list-bullet-icon">
-    <li class="iconfont-CV iconfont-30px iconfont-soft-script">Lorem ipsum dolor sit amet </li>
-    <li class="iconfont-Check iconfont-30px iconfont-soft-script">Lorem ipsum dolor</li>
+    <li class="iconfont-CV">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
+    <li class="iconfont-Check">Lorem ipsum dolor</li>
 </ul>
 
 Styleguide #{$sgi-listsWithIcons}
@@ -230,6 +230,7 @@ $iconfont-size: (16, 18, 22, 30, 100); //Duplicated in _icons.scss
     [class^="iconfont-"],
     [class*="iconfont-"] {
         position: relative;
+        padding-left: 20px;
 
         &::before {
             position: absolute;
@@ -444,15 +445,15 @@ Add also the `.tag-ellipsis-col2` or `.tag-ellipsis-col3` in `<li>` when the tag
 Markup:
 <ul class="tag-group">
     <li class="tag-divider tag-ellipsis-cols2">
-        <span class="ellipsis">Consectetur</span>
+        <span class="ellipsis">Consectetur Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
     </li>
     <li>Lorem ipsum</li>
 </ul>
 <ul class="tag-group">
     <li class="tag-divider tag-ellipsis-cols3">
-        <span class="ellipsis">Lorem ipsum</span>
+        <span class="ellipsis">Consectetur Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
     </li>
-    <li>Lorem ipsum</li>
+    <li class="tag-divider">Lorem ipsum</li>
     <li>Lorem ipsum</li>
 </ul>
 
