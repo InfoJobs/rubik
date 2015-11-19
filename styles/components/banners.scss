@@ -18,9 +18,11 @@ Add class `.wrapper-slotbanner` and `half-page-ad` to the wrapper container, to 
 
 Wrap the container with `.slotbanner` to include the banner top position. Include `.slotbanner-top` inside it and add `.container-slotbanner` class to the container, to position the page to the left.
 <br><br>
-Create `.slotbanner-aside` to include a banner right position. Include `.slotbanner-fixed` to specify the side banner position as fixed.<br><br>
-<br>
+Create `.slotbanner-aside` to include a banner right position. Include `.slotbanner-fixed` to specify the side banner position as fixed.
+<br><br>
 In case of Brand Bay campaign add `.slotbanner-top-brandday` to `.slotbanner-top`.
+<br><br>
+<a href="#{$sgp-banners}" target="blank">#{$sgp-openPage}</a>
 <br><br>
 
 Markup:
