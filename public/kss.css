@@ -1,5 +1,5 @@
 .kss-style {
-  color: #444;
+  color: #444444;
   font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -35,7 +35,7 @@
 .kss-style h6 {
   margin: 24px 0 0 0;
   font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
-  color: #111;
+  color: #111111;
   line-height: 1.15em;
 }
 .kss-style h4,
@@ -62,7 +62,7 @@
   font-size: 28px;
 }
 .kss-style blockquote {
-  color: #666;
+  color: #666666;
   margin: 0;
   padding-left: 24px;
   border-left: 0.5em #d9d9d9 solid;
@@ -90,12 +90,12 @@
   word-wrap: break-word;
 }
 .kss-style ins {
-  color: #111;
+  color: #111111;
   background: #ff9;
   text-decoration: none;
 }
 .kss-style mark {
-  color: #111;
+  color: #111111;
   background: #ff0;
   font-weight: bold;
 }
@@ -191,17 +191,17 @@
     /* Old browsers */
     background: #eee;
     /* FF3.6+ */
-    background: -webkit-linear-gradient(left, #eee, #e5e5e5 50%, #d7d7d7 100%) 20% 0 / 10px 1px repeat-y, -webkit-linear-gradient(left, #eee, #eee 20%, #fff 20%) 0 0 / 100% 1px;
+    background: -webkit-linear-gradient(left, #eeeeee, #e5e5e5 50%, #d7d7d7 100%) 20% 0 / 10px 1px repeat-y, -webkit-linear-gradient(left, #eeeeee, #eeeeee 20%, #ffffff 20%) 0 0 / 100% 1px;
     /* Chrome, Safari4+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #eee), color-stop(50%, #e5e5e5), color-stop(100%, #d7d7d7)) 20% 0 / 10px 1px repeat-y, -webkit-gradient(linear, left top, right top, color-stop(0%, #eee), color-stop(20%, #eee), color-stop(20%, #fff)) 0 0 / 100% 1px;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #eeeeee), color-stop(50%, #e5e5e5), color-stop(100%, #d7d7d7)) 20% 0 / 10px 1px repeat-y, -webkit-gradient(linear, left top, right top, color-stop(0%, #eeeeee), color-stop(20%, #eeeeee), color-stop(20%, #ffffff)) 0 0 / 100% 1px;
     /* Chrome10+, Safari5.1+ */
-    background: -webkit-linear-gradient(to right, #eee, #e5e5e5 50%, #d7d7d7 100%) 20% 0 / 10px 1px repeat-y, -webkit-linear-gradient(to right, #eee, #eee 20%, #fff 20%) 0 0 / 100% 1px;
+    background: -webkit-linear-gradient(to right, #eeeeee, #e5e5e5 50%, #d7d7d7 100%) 20% 0 / 10px 1px repeat-y, -webkit-linear-gradient(to right, #eeeeee, #eeeeee 20%, #ffffff 20%) 0 0 / 100% 1px;
     /* Opera 11.10+ */
-    background: -o-linear-gradient(to right, #eee, #e5e5e5 50%, #d7d7d7 100%) 20% 0 / 10px 1px repeat-y, -o-linear-gradient(to right, #eee, #eee 20%, #fff 20%) 0 0 / 100% 1px;
+    background: -o-linear-gradient(to right, #eeeeee, #e5e5e5 50%, #d7d7d7 100%) 20% 0 / 10px 1px repeat-y, -o-linear-gradient(to right, #eeeeee, #eeeeee 20%, #ffffff 20%) 0 0 / 100% 1px;
     /* IE10+ */
-    background: -ms-linear-gradient(to right, #eee, #e5e5e5 50%, #d7d7d7 100%) 20% 0 / 10px 1px repeat-y, -ms-linear-gradient(to right, #eee, #eee 20%, #fff 20%) 0 0 / 100% 1px;
+    background: -ms-linear-gradient(to right, #eeeeee, #e5e5e5 50%, #d7d7d7 100%) 20% 0 / 10px 1px repeat-y, -ms-linear-gradient(to right, #eeeeee, #eeeeee 20%, #ffffff 20%) 0 0 / 100% 1px;
     /* W3C */
-    background: linear-gradient(to right, #eee, #e5e5e5 50%, #d7d7d7 100%) 20% 0 / 10px 1px repeat-y, linear-gradient(to right, #eee, #eee 20%, #fff 20%) 0 0 / 100% 1px;
+    background: linear-gradient(to right, #eeeeee, #e5e5e5 50%, #d7d7d7 100%) 20% 0 / 10px 1px repeat-y, linear-gradient(to right, #eeeeee, #eeeeee 20%, #ffffff 20%) 0 0 / 100% 1px;
   }
   #kss-node .kss-main,
   #kss-node .kss-sidebar {
@@ -425,47 +425,47 @@
   border: 0;
 }
 #kss-node .pln {
-  color: #000;
+  color: #000000;
 }
 #kss-node .str {
-  color: #080;
+  color: #008800;
 }
 #kss-node .kwd {
-  color: #008;
+  color: #000088;
 }
 #kss-node .com {
-  color: #494949;
+  color: #999999;
 }
 #kss-node .typ {
-  color: #606;
+  color: #660066;
 }
 #kss-node .lit {
-  color: #066;
+  color: #006666;
 }
 #kss-node .pun,
 #kss-node .opn,
 #kss-node .clo {
-  color: #660;
+  color: #666600;
 }
 #kss-node .tag {
-  color: #008;
+  color: #000088;
 }
 #kss-node .atn {
-  color: #606;
+  color: #660066;
 }
 #kss-node .atv {
   color: #dc1a6c;
 }
 #kss-node .dec,
 #kss-node .var {
-  color: #606;
+  color: #660066;
 }
 #kss-node .fun {
   color: red;
 }
 @media print, projection {
   #kss-node .str {
-    color: #060;
+    color: #006600;
   }
   #kss-node .kwd {
     color: #006;
@@ -480,22 +480,22 @@
     font-weight: bold;
   }
   #kss-node .lit {
-    color: #044;
+    color: #004444;
   }
   #kss-node .pun,
   #kss-node .opn,
   #kss-node .clo {
-    color: #440;
+    color: #444400;
   }
   #kss-node .tag {
     color: #006;
     font-weight: bold;
   }
   #kss-node .atn {
-    color: #404;
+    color: #440044;
   }
   #kss-node .atv {
-    color: #060;
+    color: #006600;
   }
 }
 #kss-node ol.linenums {
