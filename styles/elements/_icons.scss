@@ -23,7 +23,7 @@ Icons
 
 Icons are generated as fonts.<br>
 Use the following classes to apply an icon on a tag.<br>
-You can force the [icon size](#rubik-#{$sgi-icons-size}) when there isn't text with icon.
+You can force the [icon size](#rubik-#{$sgi-iconsSize}) when there isn't text with icon.
 
 Styleguide #{$sgi-icons}
 */
@@ -33,7 +33,7 @@ Icons list
 
 @@include('../templates/partials/icons.html')
 
-Styleguide #{$sgi-icons-list}
+Styleguide #{$sgi-iconsList}
 
 */
 
@@ -115,7 +115,7 @@ Markup:
 	<a href="#" class="iconfont-Company iconfont-30px"><span class="hide">Icon name</span></a>
 	<a href="#" class="iconfont-Company iconfont-36px"><span class="hide">Icon name</span></a>
 
-Styleguide #{$sgi-icons-size}
+Styleguide #{$sgi-iconsSize}
 */
 
 $iconfont-size: (16, 18, 22, 30, 36, 100); //TODO: resolve problem when it s moved to _vars

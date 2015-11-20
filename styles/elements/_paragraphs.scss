@@ -58,17 +58,23 @@ $font-size: (small, base, medium); //TODO: resolve problem when it s moved to _v
 	}
 
 }
+/*
+Text Style
+
+These classes affect how text appears on a page.
+
+Styleguide #{$sgi-textStyle}
+*/
 
 /*
 Text size
 
-Use class `.base` to force body copy size or `.medium` to increase the text size.
+Use class `.base` to force body copy size or `.medium`, `.large` to increase the text size.
 
 Markup:
-<p class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-.base
-.medium
+<h2 class="base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+<p class="medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="large">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
 Styleguide #{$sgi-textSize}
 */
@@ -93,7 +99,7 @@ Use class `.light` to to change from bold to light content.
 
 Markup:
 <p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<h1>Lorem ipsum dolor sit amet, <span class="light">consectetur adipiscing elit</span>.</h1>
+<h2>Lorem ipsum dolor sit amet, <span class="light">consectetur adipiscing elit</span>.</h2>
 
 Styleguide #{$sgi-textVariants}
 */

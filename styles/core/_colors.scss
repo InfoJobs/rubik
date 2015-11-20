@@ -8,67 +8,29 @@
 Text colors
 
 * Use class `.script` to force text color as the default text color
-* Use class `.soft-script` to force a text color as a secondary text
+* Use class `.darkest-shiro` or .soft-script` for the neutral colors
 * Use class `.alternative` to mark text that contains details information
 * Use class `.disabled` to mark a text option as disabled
 * Use class `.marked` to focus attention in it
 * Use class `.highlight` to highlight words as a result of a search
-
-{modifier_class}:
-
-.script
-.notification-success
-.alternative
-.disabled
-.marked
-.highlight
+* Use class `.highlight` to highlight words as a result of a search
+* Use class `.focus` to mark a text as neutral informative change or action
+* Use class `.alert` to mark a text as potentially negative action
 
 Markup:
-<p>Lorem ipsum dolor sit amet, <span class="{{modifier_class}}">consectetur adipiscing</span> elit.</p>
+<p class="script">Lorem ipsum dolor sit amet.</p>
+<p class="darkest-shiro">Lorem ipsum dolor sit amet.</p>
+<p class="soft-script">Lorem ipsum dolor sit amet.</p>
+<p class="alternative">Lorem ipsum dolor sit amet.</p>
+<p class="disabled">Lorem ipsum dolor sit amet.</p>
+<p class="marked">Lorem ipsum dolor sit amet.</p>
+<p class="highlight">Lorem ipsum dolor sit amet.</p>
+<p class="focus">Lorem ipsum dolor sit amet.</p>
+<p class="alert">Lorem ipsum dolor sit amet.</p>
 
-Styleguide #{$sgi-text-colors}
+Styleguide #{$sgi-textColors}
 */
 
-/*
-Contrasted text color
-
-Use class `.contrast` to define a text over dark background color
-
-Markup:
-<div class="inner panel-info">
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-	<a href="#" class="contrast">Curabitur varius</a>
-</div>
-
-Styleguide #{$sgi-text-colors-contrast}
-*/
-
-//white text
-.contrast,
-.contrast[class*="iconfont-"]::before {
-	color: $shiro;
-
-	&:hover {
-		color: $shiro;
-	}
-
-	&:focus {
-		color: $shiro;
-	}
-}
-
-//underlined text
-.contrast-link,
-.contrast-link:visited {
-	color: #41a4db;
-
-	&:hover,
-	&:focus {
-		color: $day-blue;
-	}
- }
-
-//disabled text
 .disabled,
 .disabled:hover,
 .disabled:visited,
@@ -85,16 +47,6 @@ Styleguide #{$sgi-text-colors-contrast}
 .marked,
 .marked[class*="iconfont-"]::before {
 	color: $bamboo;
-}
-
-%marked-contrast {
-	color: $shiro;
-	background-color: $bamboo;
-}
-
-.marked-contrast,
-.marked-contrast[class*="iconfont-"]::before {
-	@extend %marked-contrast;
 }
 
 .alternative,
@@ -163,3 +115,54 @@ a.soft-script:active,
 .alert[class*="iconfont-"]::before {
 	color: $trueblood;
 }
+
+/*
+Contrasted text color
+
+Use class `.contrast` to define a text over dark background color
+
+Markup:
+<div class="inner panel-info">
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	<a href="#" class="contrast">Curabitur varius</a>
+</div>
+
+Styleguide #{$sgi-textContrastColors}
+*/
+
+//white text
+.contrast,
+.contrast[class*="iconfont-"]::before {
+	color: $shiro;
+}
+.contrast {
+
+	&:hover {
+		color: $shiro;
+	}
+
+	&:focus {
+		color: $shiro;
+	}
+}
+
+//underlined text
+.contrast-link,
+.contrast-link:visited {
+	color: #41a4db;
+
+	&:hover,
+	&:focus {
+		color: $day-blue;
+	}
+ }
+
+ %marked-contrast {
+ 	color: $shiro;
+ 	background-color: $bamboo;
+ }
+
+ .marked-contrast,
+ .marked-contrast[class*="iconfont-"]::before {
+ 	@extend %marked-contrast;
+ }

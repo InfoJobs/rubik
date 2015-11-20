@@ -12,7 +12,12 @@ Use the following tags to create semantic lists:
 * `<ol>` for ordered lists
 * `<dl>` for definition lists
 
-<br>
+Styleguide #{$sgi-lists}
+*/
+
+/*
+List default
+
 Use class `.list-default` for a basic list without decoration.
 
 Markup:
@@ -30,7 +35,7 @@ Markup:
     <dd>De duracion determinada, jornada completa</dd>
 </dl>
 
-Styleguide #{$sgi-lists}
+Styleguide #{$sgi-listsDefault}
 */
 
 .list-default {
@@ -95,6 +100,50 @@ Styleguide #{$sgi-lists}
     }
 }
 
+/*
+List inline
+
+Use class `.list-inline` to generate a list inline without gutter between list items.
+
+Markup:
+<ul class="list-inline">
+    <li>Lorem ipsum 1/</li>
+    <li>Lorem ipsum 2/</li>
+    <li>Lorem ipsum 3</li>
+</ul>
+
+Styleguide #{$sgi-listsInline}
+*/
+.list-inline {
+	font-size: 0;
+
+	dt,
+	dd,
+	li {
+		display: inline-block;
+		font-size: $small-font-size;
+        font-family: $base-font-family;
+	}
+
+    dt {
+		margin-right: 10px;
+	}
+}
+
+/*
+Numbered list
+
+Use class `.list-ordered` to generate a numbered list.
+
+Markup:
+<ul class="list-ordered">
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
+</ul>
+
+Styleguide #{$sgi-listsOrdered}
+*/
 .list-ordered {
 
 	> li {
@@ -122,9 +171,9 @@ Use class `.list-default` and `.list-bullet-default` to add default bullets to t
 
 Markup:
 <ul class="list-default list-bullet-default">
-    <li>Salario no disponible</li>
-    <li>Experiencia minima: no requerida</li>
-    <li>Tipo de oferta: de duracion determinada, jornada completa</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum</li>
 </ul>
 
 Styleguide #{$sgi-listsWithBullets}
@@ -161,14 +210,14 @@ Styleguide #{$sgi-listsWithBullets}
 /*
 Lists with icons
 
-Use class `.list-default` and `.list-bullet-icon` to show icons in a list.<br>
-Use class `.iconfont-[name]` for icon type, `.iconfont-[size]` for icon size and `.iconfont-[color]` for icon color.<br>
-Visit the <a href="#rubik-1.6">icons guide</a>.
+Use class `.list-default` and `.list-bullet-icon` to show icons outside the content flow.<br>
+Use class `.iconfont-[name]` for icon type.<br>
+Visit the [icons list](#rubik-#{$sgi-iconsList}).
 
 Markup:
 <ul class="list-default list-bullet-icon">
-    <li class="iconfont-CV iconfont-30px iconfont-soft-script">Lorem ipsum dolor sit amet </li>
-    <li class="iconfont-Check iconfont-30px iconfont-soft-script">Lorem ipsum dolor</li>
+    <li class="iconfont-CV">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
+    <li class="iconfont-Check">Lorem ipsum dolor</li>
 </ul>
 
 Styleguide #{$sgi-listsWithIcons}
@@ -181,6 +230,7 @@ $iconfont-size: (16, 18, 22, 30, 100); //Duplicated in _icons.scss
     [class^="iconfont-"],
     [class*="iconfont-"] {
         position: relative;
+        padding-left: 20px;
 
         &::before {
             position: absolute;
@@ -298,7 +348,7 @@ Markup:
 /*
 Tag group
 
-Use class `.tag-group` to display list items in the same line.
+Use class `.tag-group` to display list items in the same line with gutter between this items.
 
 Markup:
 <ul class="tag-group">
@@ -395,15 +445,15 @@ Add also the `.tag-ellipsis-col2` or `.tag-ellipsis-col3` in `<li>` when the tag
 Markup:
 <ul class="tag-group">
     <li class="tag-divider tag-ellipsis-cols2">
-        <span class="ellipsis">Consectetur</span>
+        <span class="ellipsis">Consectetur Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
     </li>
     <li>Lorem ipsum</li>
 </ul>
 <ul class="tag-group">
     <li class="tag-divider tag-ellipsis-cols3">
-        <span class="ellipsis">Lorem ipsum</span>
+        <span class="ellipsis">Consectetur Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
     </li>
-    <li>Lorem ipsum</li>
+    <li class="tag-divider">Lorem ipsum</li>
     <li>Lorem ipsum</li>
 </ul>
 
@@ -444,21 +494,3 @@ Styleguide #{$sgi-tagGroupWithEllipsis}
 //         }
 //     }
 // }
-
-
-
-.list-inline {
-	font-size: 0;
-
-	dt,
-	dd,
-	li {
-		display: inline-block;
-		font-size: $small-font-size;
-        font-family: $base-font-family;
-	}
-
-    dt {
-		margin-right: 10px;
-	}
-}
