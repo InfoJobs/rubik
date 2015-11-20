@@ -476,7 +476,7 @@ Add class `.row`,`.row-faux` to build an equal height columns structure and `.ro
 Markup:
 <div class="row row-faux row-panel casper">
       <div class="col-8">
-          <div class="col-child panel-canvas">.col-8</div>
+          <div class="col-child">.col-8</div>
       </div>
       <div class="col-4">
           <div class="col-child">.col-4</div>
