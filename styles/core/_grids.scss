@@ -3,6 +3,35 @@
 \*------------------------------------*/
 
 /*
+Boilerplate HTML
+
+Markup:
+<!doctype html>
+<html class="casper" lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Page title</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<!-- Place favicon.ico in the root directory -->
+		<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
+	</head>
+	<body>
+		<!-- content -->
+		<script src="js/polyfills.js"></script>
+		<script src="js/jquery-2.1.0.min.js"></script>
+		<script src="js/plugins.js"></script
+		<script src="js/main.js"></script>
+	    <script src="js/helper.js"></script>
+	</body>
+</html>
+
+Styleguide #{$sgi-boilerplate}
+*/
+
+/*
 Grid System
 
 **We are using a mobile first 12 column fluid responsive grid system that helps you to build solid multi-device layouts.**
