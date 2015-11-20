@@ -246,16 +246,22 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante 
 Styleguide 1.1
 */
 /*
-Containers #disabled#
+Containers
 
-- Use class `.wrapper` to wrap all page content.
-- Use class `.container` to create blocks content.
-- Use class `.container-expanded` to create a top gap between blocks contents.
+To wrap all page content in a responsive container use class `.wrapper`. Use class `.container` to create blocks of content and add class `.container-expanded` to create a top gap between blocks of content.
+<br>
+<br>
 
 Markup:
 <div class="wrapper casper">
     <div class="container container-expanded">
-        ...
+        // Container is centered on page. The inner is
+        // fluid between small and middle viewports,
+        // and fixed width for larger dimensions:
+        //
+        // * 970px < 769px
+        // * 768px < 481px
+        // * > 480px
     </div>
 </div>
 
@@ -295,13 +301,22 @@ Styleguide  1.1.2
 }
 
 /*
-Inner containers #disabled#
+Inner containers
 
-- Use class `.inner` to create a 20 pixels gap between previous, next, left and right containers. Class `.inner` can be nested several times.
-- Use class `.inner-expanded` to create a 40 pixels gap between previous and next container
+- Use class `.inner` to create 20px's inner space.
+- Add class `.inner-expanded` to create 40px's inner on the top and bottom.
+
+<br>
+<br>
 
 Markup:
-<div class="inner">
+<div class="inner casper">
+    ...
+    <div class="inner">
+        ...
+    </div>
+</div>
+<div class="inner inner-expanded casper">
     ...
 </div>
 
@@ -489,8 +504,6 @@ Grid System
 
 Grid system is used for creating page layout through a series of rows and columns that house
 your content.
-
-[View demo](./html/grid.html)
 
 <br>
 <div class="sg-guide">
@@ -1319,6 +1332,14 @@ Markup:
 </div>
 
 Styleguide 1.1.1.2
+*/
+/*
+Examples Layouts
+
+<a href="./html/grid.html" target="blank">View demo</a>
+
+Styleguide 1.1.5
+
 */
 /*------------------------------------*\
     $FONTS
@@ -2193,15 +2214,14 @@ $query2     = width, device-width
 /*
 Icons
 
-Icons are generated as fonts. Color and size can be modified as texts.
-Use the following classes to apply an icon on a tag.
+Icons are generated as fonts.<br>
+Use the following classes to apply an icon on a tag.<br>
+You can force the [icon size](#rubik-1.5.1.2) when there isn't text with icon.
 
-Styleguide 1.4
+Styleguide 1.5
 */
 /*
-Icons type
-
-List of icons.
+Icons list
 
 <div class="sg-guide sg-icons">
     <ul class="list-default">
@@ -2262,11 +2282,18 @@ List of icons.
     	<li class="iconfont-Lock">iconfont-Lock</li>
     	<li class="iconfont-Menumore">iconfont-Menumore</li>
     	<li class="iconfont-Alert-circle">iconfont-Alert-circle</li>
+    	<li class="iconfont-Save">iconfont-Save</li>
+    	<li class="iconfont-SaveAs">iconfont-SaveAs</li>
+    	<li class="iconfont-OneTime">iconfont-OneTime</li>
+    	<li class="iconfont-Applications">iconfont-Applications</li>
+    	<li class="iconfont-Attach">iconfont-Attach</li>
+    	<li class="iconfont-Phone">iconfont-Phone</li>
+    	<li class="iconfont-Website">iconfont-Website</li>
     </ul>
 </div>
 
 
-Styleguide 1.7.1.1
+Styleguide 1.5.1.1
 
 */
 [class^="iconfont-"]::before,
@@ -2337,22 +2364,16 @@ Styleguide 1.7.1.1
 /*
 Icons size
 
-Use the following classes to modify the icon size: `.iconfont-16px`, `.iconfont-18px`, `.iconfont-22px` or `.iconfont-30px`
-
+Use the following classes to specify the icon size when it appears without text: `.iconfont-16px`, `.iconfont-18px`, `.iconfont-22px`, `.iconfont-30px` or `.iconfont-36px`.
 
 Markup:
-<ul>
-	<li class="iconfont-Company {{modifier_class}}"><span class="hide">Icon name</span></li>
-</ul>
+	<a href="#" class="iconfont-Company iconfont-16px"><span class="hide">Icon name</span></a>
+	<a href="#" class="iconfont-Company iconfont-18px"><span class="hide">Icon name</span></a>
+	<a href="#" class="iconfont-Company iconfont-22px"><span class="hide">Icon name</span></a>
+	<a href="#" class="iconfont-Company iconfont-30px"><span class="hide">Icon name</span></a>
+	<a href="#" class="iconfont-Company iconfont-36px"><span class="hide">Icon name</span></a>
 
-{modifier_class}:
-
-.iconfont-16px
-.iconfont-18px
-.iconfont-22px
-.iconfont-30px
-
-Styleguide 1.7.2.1
+Styleguide 1.5.1.2
 */
 .iconfont-16px::before {
   font-size: 16px;
@@ -2720,7 +2741,7 @@ Buttons
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
 
-Styleguide 2.3
+Styleguide 1.4
 */
 /*------------------------------------*\
     $BUTTONS
@@ -2787,7 +2808,7 @@ Markup:
 <button class="btn btn-primary" type="button">Primary</button>
 <a href="#" class="btn btn-primary">Link</a>
 
-Styleguide 2.3.1
+Styleguide 1.4.1.1
 */
 .btn-default {
   color: #666;
@@ -2885,11 +2906,11 @@ Buttons size
 Use class `.btn-medium` or `.btn-large` to change buttons size.
 
 Markup:
-<a href="#" class="btn btn-default btn-medium">Default Button</a>
+<a href="#" class="btn btn-default">Default Button</a>
 <a href="#" class="btn btn-default btn-medium">Medium Button</a>
 <a href="#" class="btn btn-default btn-large">Large Button</a>
 
-Styleguide 2.3.2
+Styleguide 1.4.1.2
 */
 .btn-medium {
   height: 40px;
@@ -2931,7 +2952,7 @@ Use class `.iconfont-[name]` to display an icon inside the button.
 Markup:
 <a href="#" class="btn btn-primary btn-medium iconfont-Facebook">Link Button</a>
 
-Styleguide 2.3.3
+Styleguide 1.4.1.3
 */
 /*
 Buttons status
@@ -2939,9 +2960,9 @@ Buttons status
 Use class `.btn-disabled` to show button as disabled.
 
 Markup:
-<a href="#" class="btn btn-default btn-medium btn-disabled">Link Button</a>
+<a href="#" class="btn btn-default btn-medium btn-disabled">Disabled Button</a>
 
-Styleguide 2.3.4
+Styleguide 1.4.1.4
 */
 button[disabled],
 button:hover[disabled],
@@ -2967,7 +2988,7 @@ Markup:
 <button class="btn btn-primary btn-medium btn-annex" type="button">Button</button>
 <a href="#" class="link">Link</a>
 
-Styleguide 2.3.5
+Styleguide 1.4.1.5
 */
 .btn-annex {
   margin-right: 15px;
@@ -2998,7 +3019,7 @@ Use class `.btn-form-inline` to display a full width button.
 Markup:
 <button class="btn btn-primary btn-medium btn-form-inline" type="button">Button</button>
 
-Styleguide 2.3.6
+Styleguide 1.4.1.6
 */
 .btn-form-inline {
   width: 100%;
@@ -3042,7 +3063,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 2.4.1
+Styleguide 2.4.1.1
 */
 .btn-group {
   display: table;
@@ -3112,7 +3133,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 2.4.2
+Styleguide 2.4.1.2
 */
 /*
 Button group with icon
@@ -3129,7 +3150,7 @@ Markup:
     </div>
 </div>
 
-Styleguide 2.4.3
+Styleguide 2.4.1.3
 */
 .btn-group-justified {
   width: 100%;
@@ -3191,7 +3212,7 @@ Styleguide 2.5
 /*
 Text elements
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+Use the semantic tags to the text elements, these tags identify the purpose of that content.
 
 Styleguide 1.2
 */
@@ -3201,10 +3222,12 @@ $HEADINGS
 /*
 Headings
 
-Definition of differents levels of titles: <br>
+Definition of differents levels of titles:
+
 `<h1>` for level 1,<br>
 `<h2>` for level 2,<br>
 `<h3>` for level 3.<br>
+
 `<h1>` defines the most important heading. Only one `<h1>` per page or `<section>`.
 
 Markup:
@@ -3266,7 +3289,7 @@ h3,
 }
 
 /*
-Heading-addons
+Heading with addons
 
 Use class `.heading-addons` to reset margin defined for generic `<h1>`.
 
@@ -3277,6 +3300,18 @@ Markup:
 </div>
 
 Styleguide 1.2.1.1
+*/
+/*
+Heading only child
+
+Use class `.heading-single` when the container includes a heading as an only child.
+
+Markup:
+<div class="heading-single panel-default inner">
+	<h1>Header Level 1</h1>
+</div>
+
+Styleguide 1.2.1.2
 */
 .heading-addons h1,
 .heading-addons h2,
@@ -3300,7 +3335,7 @@ Use class `.heading-mega` for a big size heading.
 Markup:
 <h1 class="heading-mega">Heading mega</h1>
 
-Styleguide 1.2.1.2
+Styleguide 1.2.1.3
 */
 .heading-mega {
   font-size: 25px;
@@ -3331,7 +3366,7 @@ Markup:
 	<h1 class="heading-middle">Header Level 1</h1>
 </div>
 
-Styleguide 1.2.1.3
+Styleguide 1.2.1.4
 */
 .heading-middle {
   padding-top: 10px;
@@ -3437,7 +3472,7 @@ Styleguide 1.2.2.2
 /*
 Blockquotes
 
-Use tag `<blockquote>` intead of `<p>` to introduce a block of text that is quoted from another source.
+Use tag `<blockquote>` instead of `<p>` to introduce a block of text that is quoted from another source.
 <br>
 Use tag `<cite>` to cite the reference.
 <br><br>
@@ -3445,17 +3480,15 @@ Use class `.quote` to give format to a blockquote.
 <br>
 Use class `.vip-quote` to emphasise a blockquote.
 
-
 Markup:
-<blockquote class="{{modifier_class}}">
+<blockquote class="quote">
 	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
 	<cite>Lorem ipsum</cite>
 </blockquote>
-
-{modifier_class}:
-
-.vip-quote
-.quote
+<blockquote class="vip-quote">
+	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
+	<cite>Lorem ipsum</cite>
+</blockquote>
 
 Styleguide 1.2.3
 */
@@ -3891,9 +3924,7 @@ Styleguide 1.2.4.4.4
 /*
 Form elements
 
-This section contains all the elements that we can use to build a form
-
-[View demo](./html/forms.html)
+This section contains all the elements that we can use to build a form.
 
 Styleguide 1.3
 */
@@ -4213,9 +4244,9 @@ Styleguide 2.10.2
 /*
 Select
 
-```
-.form-select -  Field select
-```
+The `<select>` element is used to create a drop-down list.<br>
+The `<option>` tags inside the `<select>` element define the available options in the list.<br>
+This element needs the [chosen.jquery.js](./js/chosen.jquery.js) and the script as code example.
 
 Markup:
 <div class="form-select">
@@ -4224,6 +4255,11 @@ Markup:
     <option value="1">Option 2</option>
   </select>
 </div>
+<script>
+	$(document).ready(function() {
+		$('.chosen-select').chosen({width:"100%",disable_search:true});
+	});
+</script>
 
 Styleguide 1.3.1
 */
@@ -4637,6 +4673,14 @@ Styleguide 2.10.6
   width: 70px;
 }
 
+/*
+Examples Forms
+
+<a href="./html/forms.html" target="blank">View demo</a>
+
+Styleguide 1.3.3
+
+*/
 /*------------------------------------*\
     $TABLE
 \*------------------------------------*/
@@ -4818,32 +4862,30 @@ $query2     = width, device-width
     $BANNERS
 \*------------------------------------*/
 /*
-Banners's containers #disabled#
+Banners's containers
 
-```
-.wrapper-slotbanner
-.slotbanner
-.slotbanner-top
-.container-slotbanner
-.slotbanner-top-brandday
-.slotbanner-aside
-.slotbanner-fixed
-.half-page-ad
-```
+Add class `.wrapper-slotbanner` and `half-page-ad` to the wrapper container, to specify that the page contain banners positions.
+
+Wrap the container with `.slotbanner` to include the banner top position. Include `.slotbanner-top` inside it and add `.container-slotbanner` class to the container, to position the page to the left.
+<br><br>
+Create `.slotbanner-aside` to include a banner right position. Include `.slotbanner-fixed` to specify the side banner position as fixed.<br><br>
+<br>
+In case of Brand Bay campaign add `.slotbanner-top-brandday` to `.slotbanner-top`.
+<br><br>
 
 Markup:
-<div class="wrapper wrapper-slotbanner half-page-ad">
+<div class="wrapper wrapper-slotbanner half-page-ad casper">
 	<div class="slotbanner">
 		<div class="slotbanner-top">
-		...
+			// banner code
 		</div>
 		<div class="container container-slotbanner">
-		...
+			// page content
 		</div>
 	</div>
 	<div class="slotbanner-aside">
 		<div class="slotbanner-fixed">
-		...
+			// banner code
 		</div>
 	</div>
 </div>
@@ -4998,7 +5040,7 @@ Markup:
 	</div>
 </div>
 
-Styleguide 2.2
+Styleguide 2.1
 */
 .board {
   overflow: hidden;
@@ -5564,7 +5606,7 @@ $query2     = width, device-width
 	$CONTENT LOGO
 \*------------------------------------*/
 /*
-Content logo
+Content logo #disabled#
 
 Use class `.content-middle` nested with `.heading-addons` to center vertically text with logo.
 
@@ -6335,7 +6377,7 @@ a.closed-list:after {
 }
 
 /*
-Slider one range
+Slider one range #disabled#
 
 ```
 .js-ui-slider-pips
@@ -6352,7 +6394,7 @@ Markup:
 Styleguide 2.8.2
 */
 /*
-Slider range group
+Slider range group #disabled#
 
 ```
 .slider-value
@@ -8949,7 +8991,7 @@ $query2     = width, device-width
     $MODAL
 \*------------------------------------*/
 /*
-Modal #disabled#
+Modal
 
 Use the following classes structure to create a modal window:
 
@@ -8958,62 +9000,9 @@ Use the following classes structure to create a modal window:
 - Include the container `<div class="modal-header">` with the header structure.
 - Include the container `<div class="modal-content">` with the content structure.
 
-<a href="#" class="modal-click">Abrir modal</a>
 
 
-<div class="sg-view" id="sendMailModal">
-    <div class="sg-guide">
-        <div class="modal-layer" data-close="" data-headermodal="Modal title">
-            <div class="modal-inner">
-                <div class="modal-header">
-                    <a title="" class="close-modal iconfont-Close iconfont-22px hit-area" href="#"></a>
-                    <h1 class="title">Modal title</h1>
-                </div>
-                <div class="modal-content">
-                    <div class="inner">
-                        <p class="alternative">* Todos los campos son obligatorios</p>
-                           <form action="#">
-                               <fieldset>
-                                   <legend>Compartir por email</legend>
-                                <fieldset>
-                                    <legend>Datos de contacto</legend>
-                                    <ul class="form--field-block clearfix">
-                                        <li>
-                                            <label for="emailsend">Email del destinatario</label>
-                                            <input type="email" maxlength="200" id="emailsend" name="emailsend">
-                                        </li>
-                                        <li>
-                                            <label for="email">Tu email</label>
-                                            <input type="email" maxlength="200" id="email" name="email">
-                                        </li>
-                                        <li>
-                                            <label for="name">Tu nombre</label>
-                                            <input maxlength="200" id="name" name="name">
-                                        </li>
-                                        <li>
-                                            <label for="email">Tu mensaje</label>
-                                            <textarea type="" rows="3" cols="20"></textarea>
-                                            <p class="info alternative small">1/100</p>
-                                        </li>
-                                       </ul>
-                               </fieldset>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>
-  </div>
-
-
-  <script src="public/custom.js"></script>
-
-  <script type="text/javascript">
-			$(document).ready(function(){
-				$("#sendMailModal").modalWindow(modalOptions);
-			});
-		</script>
-
+<a href="./html/modal.html" target="blank">View demo</a>
 
 Markup:
 <div class="modal-layer modal-fade-in hide">
@@ -9039,7 +9028,7 @@ Markup:
 	...
 </div>
 
-Styleguide 3.3.1
+Styleguide 3.3.1.1
 */
 /*
 Modal header #disabled#
@@ -9052,7 +9041,7 @@ Markup:
 	<h1 class="title">Title</h1>
 </div>
 
-Styleguide 3.3.2
+Styleguide 3.3.2.2
 */
 /*
 Modal content
@@ -9064,7 +9053,7 @@ Markup:
 	<p>Text content.</p>
 </div>
 
-Styleguide 3.3.3
+Styleguide 3.3.3.3
 */
 .modal-hidden {
   /*por defecto oculto*/
@@ -9120,6 +9109,9 @@ Styleguide 3.3.3
 }
 .close-modal::before {
   content: "\e60a";
+}
+.close-modal:hover {
+  color: #fff;
 }
 @media only screen and (min-width: 481px) {
   .close-modal {
@@ -12520,7 +12512,7 @@ $query2     = width, device-width
 }
 
 /*
-Custom Background
+Custom Background #disabled#
 
 To create custom backgrounds use a style attribute in html for the background-image.<br>
 Use class `.custom-bg` responsive to make the image responsive.<br>
@@ -12632,7 +12624,7 @@ $query2     = width, device-width
 $KPI
 \*------------------------------------*/
 /*
-KPI
+KPI #disabled#
 
 Markup:
 <div class="kpi">
@@ -14126,7 +14118,7 @@ h3,
     $TABS
 \*------------------------------------*/
 /*
-Tabs
+Tabs #disabled#
 
 Markup:
 <ul class="tabs">
@@ -14486,6 +14478,11 @@ $query2     = width, device-width
 /*------------------------------------*\
     $UTILITIES
 \*------------------------------------*/
+/*
+Helper classes #disabled#
+
+Styleguide 1.6
+*/
 .pull-left {
   float: left;
 }
@@ -14939,12 +14936,16 @@ body#kss-node {
   margin-top: 20px;
   padding: 20px;
   border: 1px solid #e2e5e6;
+  background-color: #fff;
 }
 .sg-content .sg-view::before {
   content: 'Example';
   display: block;
   height: 30px;
   color: #999;
+}
+.sg-content .sg-view blockquote + blockquote {
+  margin-top: 20px;
 }
 .sg-content .sg-modifiers {
   margin-bottom: 10px;
