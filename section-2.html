@@ -635,21 +635,31 @@ Use class<code>.overlay-60</code> to apply an overlay.</p>
                                         <h2 class="sg-block-title">Notifications</h2>
                                     </header>
                                         <div class="sg-block-description">
-                                            <p>Contextual notificitions for confirmation messages.<br>
-The modifier classes are <code>.notification-error</code> for errors, <code>.notification-success</code> for success and <code>.notification-info</code> for information.</p>
+                                            <p>Contextual notifications for messages.</p>
+<p>The modifier classes are <code>.notification-error</code> for errors, <code>.notification-success</code> for success,  <code>.notification-info</code> for information and <code>.notification-warning</code> for warnings.<br>
+Use class <code>.notification-dismissable</code> for notifications with close button.<br>
+Wrap in div with class <code>.notification-toast-fixed</code> to fix at top of the page, <a href="./html/notifications.html" target="blank">View demo</a></p>
 
 
                                         </div>
 
 
                                                 <div class="sg-view">
-                                                    <!-- Notification error -->
+                                                    <!-- Notification-->
+<div class="notification notification-info">
+	<p class="title">Lorem ipsum dolor sit</p>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
+</div>
+<!-- /Notification-->
+<div class="container-expanded">
+<!-- Notification error -->
 <div class="notification notification-error notification-dismissable">
 	<button class="btn-close" type="button">x</button>
 	<p class="title">Lorem ipsum dolor sit</p>
 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
 </div>
 <!-- /Notification error -->
+</div>
 <div class="container-expanded">
 <!-- Notification success -->
 <div class="notification notification-success notification-dismissable">
@@ -675,10 +685,17 @@ The modifier classes are <code>.notification-error</code> for errors, <code>.not
 	<p class="title">Lorem ipsum dolor sit</p>
 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
 </div>
-<!-- /Notification info -->
+<!-- /Notification warning -->
 </div>
                                                 </div>
                                             <pre class="prettyprint linenums lang-html"><code data-language="html">
+&lt;!-- Notification--&gt;
+&lt;div class=&quot;notification notification-info&quot;&gt;
+	&lt;p class=&quot;title&quot;&gt;Lorem ipsum dolor sit&lt;/p&gt;
+	&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. &lt;a href=&quot;#&quot; class=&quot;link-underline&quot;&gt;Link underline&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- /Notification--&gt;
+&lt;div class=&quot;container-expanded&quot;&gt;
 &lt;!-- Notification error --&gt;
 &lt;div class=&quot;notification notification-error notification-dismissable&quot;&gt;
 	&lt;button class=&quot;btn-close&quot; type=&quot;button&quot;&gt;x&lt;/button&gt;
@@ -686,6 +703,7 @@ The modifier classes are <code>.notification-error</code> for errors, <code>.not
 	&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. &lt;a href=&quot;#&quot; class=&quot;link-underline&quot;&gt;Link underline&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;!-- /Notification error --&gt;
+&lt;/div&gt;
 &lt;div class=&quot;container-expanded&quot;&gt;
 &lt;!-- Notification success --&gt;
 &lt;div class=&quot;notification notification-success notification-dismissable&quot;&gt;
@@ -711,7 +729,7 @@ The modifier classes are <code>.notification-error</code> for errors, <code>.not
 	&lt;p class=&quot;title&quot;&gt;Lorem ipsum dolor sit&lt;/p&gt;
 	&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. &lt;a href=&quot;#&quot; class=&quot;link-underline&quot;&gt;Link underline&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;!-- /Notification info --&gt;
+&lt;!-- /Notification warning --&gt;
 &lt;/div&gt;
 </code></pre>
 <!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
