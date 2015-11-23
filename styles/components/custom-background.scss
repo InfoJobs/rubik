@@ -2,24 +2,21 @@
 @import "../generics/generics";
 
 /*
-Custom Background #disabled#
+Custom Background
 
-To create custom backgrounds use a style attribute in html for the background-image.<br>
-Use class `.custom-bg` responsive to make the image responsive.<br>
-Use modifier `.overlay-60` to apply an overlay.
+To create custom backgrounds use a style attribute in html for the background-image.
+
+Use class `.custom-bg` to make the image responsive.<br>
+Use class`.overlay-60` to apply an overlay.
 
 Markup:
-<div class="custom-bg {{modifier_class}}" style="background-image: url('./images/backgrounds/bg-header-grid-01.jpg');">
+<div class="custom-bg overlay-60" style="background-image: url('./images/backgrounds/bg-header-grid-01.jpg');">
     <div class="inner">
         <h1>Custom background</h1>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
     </div>
 </div>
-
-{modifier_class}:
-.overlay-60		- Overlay in background image
-
 
 Styleguide #{$sgi-custom-background}
 */
@@ -31,7 +28,7 @@ Styleguide #{$sgi-custom-background}
     background-repeat: no-repeat;
     background-position: center;
 
-
+    h1,
     a:link,
     a:visited,
     a:hover,

@@ -91,6 +91,7 @@ body#kss-node {
 }
 
 .sg-content {
+
     .home-intro {
         height: 100%;
         width: 100%;
@@ -150,10 +151,6 @@ body#kss-node {
     }
 
     //Styleguide theme
-    h1,
-    h2 {
-        margin: 0;
-    }
 
     h1.sg-block-title {
         font-size: 25px;
@@ -175,19 +172,9 @@ body#kss-node {
         font-size: 18px;
     }
 
-    p {
-        margin-bottom: 20px;
-    }
-
-    p:last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
-
     .sg-img {
         width: 100%;
         margin: 0;
-
     }
 
     .sg-link {
@@ -240,7 +227,7 @@ body#kss-node {
             margin-top: 20px;
         }
 
-}
+    }
 
     .sg-modifiers {
         margin-bottom: 10px;
@@ -256,6 +243,24 @@ body#kss-node {
         //white-space: nowrap;
         border-top: 1px solid $darkest-shiro;
         background-color: $darkest-shiro;
+    }
+
+}
+.sg-block-header {
+    h1,
+    h2 {
+        margin: 0;
+    }
+
+}
+.sg-block-description {
+    p {
+        margin-bottom: 20px;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
 }
