@@ -222,11 +222,6 @@ body#kss-node {
             color: $soft-script;
         }
 
-        blockquote + blockquote,
-        .list-default + .list-default {
-            margin-top: 20px;
-        }
-
     }
 
     .sg-modifiers {
@@ -272,16 +267,22 @@ body#kss-node {
         background: none;
     }
 }
-
 /*------------------------------------*\
 $COMPONENTS OVERWRITE
 \*------------------------------------*/
+.sg-view {
 
-.user-feedback {
-    height: 40px;
+    blockquote + blockquote,
+    .list-default + .list-default {
+        margin-top: 20px;
+    }
 
-    .link-user-feedback {
-        //position: absolute;
+    .user-feedback {
+        height: 40px;
+
+        .link-user-feedback {
+            position: absolute;
+        }
     }
 }
 

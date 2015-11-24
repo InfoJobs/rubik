@@ -8,10 +8,20 @@
 /*
 Notifications
 
-Contextual notificitions for confirmation messages.<br>
-The modifier classes are `.notification-error` for errors, `.notification-success` for success and `.notification-info` for information.
+Contextual notifications for messages.
+
+The modifier classes are `.notification-error` for errors, `.notification-success` for success,  `.notification-info` for information and `.notification-warning` for warnings.<br>
+Use class `.notification-dismissable` for notifications with close button.<br>
+Wrap in div with class `.notification-toast-fixed` to fix at top of the page, <a href="#{$sgp-notificationToast}" target="blank">#{$sgp-openPage}</a>
 
 Markup:
+<!-- Notification-->
+<div class="notification notification-info">
+	<p class="title">Lorem ipsum dolor sit</p>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
+</div>
+<!-- /Notification-->
+<div class="container-expanded">
 <!-- Notification error -->
 <div class="notification notification-error notification-dismissable">
 	<button class="btn-close" type="button">x</button>
@@ -19,6 +29,7 @@ Markup:
 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
 </div>
 <!-- /Notification error -->
+</div>
 <div class="container-expanded">
 <!-- Notification success -->
 <div class="notification notification-success notification-dismissable">
@@ -44,7 +55,7 @@ Markup:
 	<p class="title">Lorem ipsum dolor sit</p>
 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
 </div>
-<!-- /Notification info -->
+<!-- /Notification warning -->
 </div>
 
 Styleguide #{$sgi-notifications}
@@ -105,24 +116,6 @@ Styleguide #{$sgi-notifications}
 	line-height: 100%;
 	color: $shiro;
 }
-
-/*
-Notifications
-
-Loremew eqwfwaerg sefg sdfg sdfgsdfg sdfg sdfg sdf gsdf gsdfgsdfgsdfg
-
-Markup:
-<div class="notification {{modifier_class}}">
-<p class="title">Actualiza tu navegador para poder usar InfoJobs </p>
-<p>Utilizamos las ultimas tecnologias para ser mas rapidos y seguros. Tu navegador esta desactualizado y no permite el correcto funcionamiento de InfoJobs. <a href="#" class="link-underline">Consulta esta pagina para actualizar tu navegador</a></p>
-</div>
-
-.notification-error -
-.notification-success -
-.notification-info -
-.notification-warning -
-.notification-dismissable -
-*/
 
 .notification-error {
 	background: $trueblood;
