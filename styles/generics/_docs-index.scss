@@ -87,6 +87,8 @@ $sgi-notifications:          '2.13';
 $sgi-pagination:             '2.14';
 $sgi-rating-nps:             '2.15';
 $sgi-tabs:                   '2.16';
+$sgi-tabsMenu:               	'2.16.1.1';
+$sgi-tabsMenuLink:               	'2.16.1.2';
 $sgi-thumbnail:              '2.17';
 $sgi-user-feedback:          '2.18';
 
@@ -107,6 +109,7 @@ $sgp-banners:			'./html/banners.html';
 $sgp-modal:				'./html/modal.html';
 $sgp-notificationToast:	'./html/notifications.html';
 $sgp-userFeedback:		'./html/user_feedback.html';
+$sgp-tabs:				'./html/tabs.html';
 
 // JS path
 $sgp-chosen:		'./js/chosen.jquery.js';
