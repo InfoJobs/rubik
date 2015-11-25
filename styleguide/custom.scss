@@ -152,26 +152,6 @@ body#kss-node {
 
     //Styleguide theme
 
-    h1.sg-block-title {
-        font-size: 25px;
-        color: $day-blue;
-    }
-
-    h2,
-    h3 {
-        font-family: 'Proximanovasemibold';
-        color: $dark-silk;
-    }
-
-    h2 {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-
-    h3 {
-        font-size: 18px;
-    }
-
     .sg-img {
         width: 100%;
         margin: 0;
@@ -266,6 +246,26 @@ body#kss-node {
     &:before {
         background: none;
     }
+}
+//Headihgs
+h1.sg-block-title {
+    font-size: 25px;
+    color: $day-blue;
+}
+
+h2.sg-block-title,
+h3.sg-block-title {
+    font-family: 'Proximanovasemibold';
+    color: $dark-silk;
+}
+
+h2.sg-block-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+h3.sg-block-title {
+    font-size: 18px;
 }
 /*------------------------------------*\
 $COMPONENTS OVERWRITE
