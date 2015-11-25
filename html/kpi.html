@@ -1,32 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-15">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mi InfoJobs</title>
-<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/style.css" />
-<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" /><link rel="stylesheet" type="text/css" href="../styles/components/tips-list.css" />
-<link rel="stylesheet" type="text/css" href="../styles/components/crop-image.css" />
-<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
-<link rel="stylesheet" type="text/css" href="../styles/components/kpi.css" />
-<link rel="stylesheet" type="text/css" href="../styles/components/custom-background.css" />
+	<meta charset="ISO-8859-15">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>KPIs</title>
 
-<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
+	<!-- CSS FE styleguide -->
+	<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
+	<!-- /CSS FE styleguide -->
+	<!-- CSS rubik public styleguide -->
+	<link rel="stylesheet" type="text/css" href="../public/rubik.css" />
+	<!-- /CSS rubik public styleguide -->
+
+	<!-- <link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/components/kpi.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css"> -->
 </head>
 
 <body>
 
-<div class="kpi">
-	<h2 class="kpi-title">Ofertas para ti</h2>
-	<a href="#" id="kpi-indicator-offers"
-	data-endval="59"
-	data-duration="1"
-	class="kpi-indicator">158</a>
-	<p>Basada en tus últimas búsquedas</p>
-	<a class="link-underline" href="#">Buscar ofertas</a>
+<div class="container-expanded">
+	<div class="row row-faux">
+		<div class="col-4">
+			<div class="col-child inner panel-canvas">
+				<!-- kpi -->
+				<div class="kpi js-toggle-container" id="kpi-container-offers">
+            		<div class="js-toggle-switch clearfix">
+                		<span class="arrow iconfont-ArrowDown iconfont-22px hit-area pull-right alternative hide-medium-device hide-large-device"></span>
+                		<span class="kpi-indicator" data-duration="1" data-endval="77" id="kpi-indicator-offers">77</span>
+                		<h2 class="kpi-title">Ofertas recientes</h2>
+            		</div>
+	            	<div class="js-toggle hide-small-device">
+	            		<div class="kpi-body">
+							<ul class="list-default">
+								<li>
+									<a href="#" class="link">frontend en Barcelona (24)</a>
+								</li>
+								<li>
+									<a href="#" class="link">frontend (53)</a>
+								</li>
+							</ul>
+						</div>
+	            	</div>
+				</div>
+				<!-- /kpi -->
+			</div>
+		</div>
+		<div class="col-4">
+			<div class="col-child inner panel-canvas">
+				<!-- kpi -->
+				<div class="kpi js-toggle-container">
+					<div class="js-toggle-switch clearfix">
+                		<span class="arrow iconfont-ArrowDown iconfont-22px hit-area pull-right alternative hide-medium-device hide-large-device"></span>
+        				<span class="kpi-indicator" data-duration="1" data-endval="1">1</span>
+                		<h2 class="kpi-title">Visita a tu CV</h2>
+            		</div>
+            		<div class="js-toggle hide-small-device">
+            			<div class="kpi-body">
+	    					<p><a href="#" class="link-underline">1 empresa</a> ha visto tu CV<br>en las últimas 2 semanas.</p>
+    					</div>
+        	    	</div>
+				</div>
+				<!-- /kpi -->
+			</div>
+		</div>
+		<div class="col-4">
+			<div class="col-child inner panel-canvas">
+				<!-- kpi -->
+        		<div class="kpi js-toggle-container">
+            		<div class="js-toggle-switch clearfix">
+                		<span class="arrow iconfont-ArrowDown iconfont-22px hit-area pull-right alternative hide-medium-device hide-large-device"></span>
+                		<span class="kpi-indicator" data-duration="1" data-endval="0">0</span>
+                		<h2 class="kpi-title">Candidaturas activas</h2>
+		            </div>
+        		    <div class="js-toggle hide-small-device">
+            			<div class="kpi-body">
+	                		<p>No te has inscrito en ninguna oferta recientemente</p>
+                			<a href="#" class="link-underline">Buscar ofertas de empleo</a>
+           				</div>
+        		    </div>
+    		    </div>
+				<!-- /kpi -->
+			</div>
+		</div>
+	</div>
 </div>
 
 <script type="text/javascript" src="../js/count-up.js"></script>
+<script type="text/javascript" src="../js/toggle.js"></script>
 <script>
 	(function(){
 		var numAnim = new countUp('kpi-indicator-offers');
