@@ -62,7 +62,7 @@
 	}
 }
 
-@mixin font-large-line { //h2
+@mixin font-large-line {
 	font-size: $medium-font-size;
 	line-height: $medium-line-height;
 
@@ -78,7 +78,7 @@
 
 }
 
-%font-large-line { //h2
+%font-large-line {
 	font-size: $medium-font-size;
 	line-height: $medium-line-height;
 
@@ -93,6 +93,7 @@
 	}
 
 }
+
 @mixin font-xlarge-line { //h2
 	font-size: $large-font-size;
 	line-height: $large-line-height;
