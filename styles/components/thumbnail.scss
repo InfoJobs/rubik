@@ -135,7 +135,7 @@ Styleguide #{$sgi-thumbnail}
 		width: 100%;
 		height: 100%;
 		z-index: 2;
-		border-top: 2px solid $theme-color--primary;
+		border-top: 2px solid $color-primary;
 		background-color: #F4F4F4; //ToDo: no existe como variable
 		transition: all 500ms ease 0s;
 
@@ -152,7 +152,7 @@ Styleguide #{$sgi-thumbnail}
 		}
 
 		.details {
-			color: $theme-color--primary;
+			color: $color-primary;
 			margin-bottom: 10px;
 		}
 

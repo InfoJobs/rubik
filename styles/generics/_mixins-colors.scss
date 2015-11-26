@@ -11,10 +11,10 @@ $MIXINS COLORS
 }
 
 @mixin focus {
-	color: $theme-color--primary;
+	color: $color-primary;
 
 	[class*="iconfont-"]::before {
-		color: $theme-color--primary;
+		color: $color-primary;
 	}
 }
 

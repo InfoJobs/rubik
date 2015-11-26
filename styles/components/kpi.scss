@@ -53,7 +53,7 @@ Styleguide #{$sgi-kpi}
 	padding: 0 10px 0 0;
 	font-size: 36px;
 	line-height: 27px;
-	color: $theme-color--primary;
+	color: $color-primary;
 
     @include mediaquery ($bp-desktop) {
 		color: $dark-silk;

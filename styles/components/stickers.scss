@@ -35,14 +35,14 @@
 .sticker-secondary {
 	@include sticker;
     color: $shiro;
-	background-color: $theme-color--primary;
+	background-color: $color-primary;
 }
 
 @mixin sticker-skill {
 	@include sticker;
     margin: 0 5px 0 0;
     color: $dark-silk;
-    background-color: $theme-color--secondary;
+    background-color: $color-secondary;
 }
 
 .sticker-skill {

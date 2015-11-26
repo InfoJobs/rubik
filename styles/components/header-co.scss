@@ -4,7 +4,7 @@
 .global-nav {
 	margin-top: -10px; // delete margin from container-expanded on navigation menu (only mobile)
 	overflow: hidden;
-	background-color: $theme-color--contrast;
+	background-color: $color-contrast;
 	background-repeat: no-repeat;
 	background-position: center center;
 	//bg logo es
@@ -47,7 +47,7 @@
 	@at-root .global-nav#{&} {
 		height: 50px;
 		min-height: 50px;
-		background-color: $theme-color--contrast;
+		background-color: $color-contrast;
 		background-image: url(#{$path-media}/appgrade/backgrounds/bg-logo-reduced-white.png);
 		border: 0 none;
 
@@ -214,13 +214,13 @@ a.nav-bar-toggle {
 			color: $dark-silk;
 
 			@include mediaquery ($bp-header) {
-				color: $theme-color--primary;
+				color: $color-primary;
 			}
 
 		}
 
 		&  a:active {
-			color: $theme-color--primary
+			color: $color-primary
 		}
 	}
 
@@ -330,7 +330,7 @@ a.nav-bar-toggle {
 		background-color: $dark-shiro;
 
 		&:hover {
-			color:$theme-color--primary;
+			color:$color-primary;
 		}
 
 		@include mediaquery ($bp-header) {
@@ -390,7 +390,7 @@ a.nav-bar-toggle {
 			color: $shiro;
 
 			@include mediaquery ($bp-header) {
-				color: $theme-color--primary;
+				color: $color-primary;
 			}
 
 		}
