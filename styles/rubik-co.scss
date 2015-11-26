@@ -2,8 +2,6 @@
 @import "generics/settings-co";
 @import "generics/settings";
 
-@import "generics/generics";
-
 @import "rubik"; // generics.scss
 				 // core.scss
 				 // elements.scss
@@ -41,6 +39,7 @@
 @import 'components/tips-list';
 @import 'components/weather';
 @import 'components/collapsible';
+@import 'components/collapsible-accordion';
 @import 'components/form-rating-nps';
 @import 'components/content-media';
 @import 'components/steps';
