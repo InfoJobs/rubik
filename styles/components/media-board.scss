@@ -104,7 +104,7 @@
 		// Block 3 -------------------------------------------------------------
 		// ---------------------------------------------------------------------
 		&3 {
-			background-color: $day-blue;
+			background-color: $theme-color--primary;
 
 			a {
 				@include display-flex;
@@ -304,10 +304,10 @@
 			&3 {
 				height: 33.33%;
 				background-size: 100% 200%;
-				background-image: -webkit-linear-gradient(top, $day-blue 50%, #1d7aae 50%);
-				background-image:    -moz-linear-gradient(top, $day-blue 50%, #1d7aae 50%);
-				background-image:      -o-linear-gradient(top, $day-blue 50%, #1d7aae 50%);
-				background-image:         linear-gradient(top, $day-blue 50%, #1d7aae 50%);
+				background-image: -webkit-linear-gradient(top, $theme-color--primary 50%, #1d7aae 50%);
+				background-image:    -moz-linear-gradient(top, $theme-color--primary 50%, #1d7aae 50%);
+				background-image:      -o-linear-gradient(top, $theme-color--primary 50%, #1d7aae 50%);
+				background-image:         linear-gradient(top, $theme-color--primary 50%, #1d7aae 50%);
 				background-position: 0 0;
 
 				-webkit-transition: background-position 1s;

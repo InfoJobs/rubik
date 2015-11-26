@@ -1,7 +1,6 @@
-/* Variables =================================================== */
-
-
-// TIPOGRAPHY
+//
+// Tipography
+// -------------------------------------------
 
 $base-font-family: 			Proximanova, Helvetica, Arial, sans-serif;
 $base-font-family-light: 	Proximanovalight, Helvetica, Arial, sans-serif;
@@ -42,43 +41,49 @@ $xxxlarge-line-height: 		37px;
 $point-to-px:				1.3333;
 
 
-// GRID
+//
+// Grid
+// -------------------------------------------
 
 $padding:                   20px; //se usa en carousel y footer
 
 
-// Brand colors ----------------------------------------
+//
+// Brand colors
+// -------------------------------------------
 
-$day-blue:				#2088c2;
 $bamboo:				#00a550;
 
 
-// Text colors -----------------------------------------
+//
+// Text colors
+// -------------------------------------------
 
 $mid-script:			#666;
 $soft-script:			#999;
-$mediterranean-sea:		#27a8a8;
-$dark-mediterranean-sea:#008080;
 
 
-// Background and border colors -----------------------
+//
+// Background and border colors
+// -------------------------------------------
 
 $shiro:					#fff;
 $dark-shiro:			#f2f2f2;
 $darkest-shiro:			#e2e5e6;
-$dark-silk:				#2d3133;
+$dark-silk:				#2d3133; // grey text mobile menu
 $dark-softened:			#393939;
 $light-bamboo:			#effaf6;
 
 
-// Button colors --------------------------------------
+//
+// Button colors
+// -------------------------------------------
 
 $light-blue:			#41a4db;
 $late-blue: 			#00699b;
 $night-blue:			#004466;
 $midnight-blue:			#01324B;
 
-$resting-katana:		#d5e1e5;
 $katana-slash:			#bac7cc;
 $katana-smash:			#97a1a6;
 
@@ -87,52 +92,72 @@ $wood-katana-slash:		#d2dee3;
 $wood-katana-smash:		#b0c0c7;
 
 
-// Alert colors ---------------------------------------
+//
+// Alert colors
+// -------------------------------------------
 
 $outer-king:			#484f53;
 $trueblood:				#bf2102;
 
 
-// Off-canvas colors ----------------------------------
+//
+// Off-canvas colors
+// -------------------------------------------
 
 $outer-fields:			#c0c7cb;
 $outer-land:			#adb5ba;
 $outer-pawn:			#586066;
 $outer-wall:			#8C9397;
 
-// Borders --------------------------------------------
+
+//
+// Borders
+// -------------------------------------------
 
 $default-border-radius:	5px;
 
 
-// Backgrounds ----------------------------------------
+//
+// Backgrounds
+// -------------------------------------------
 
 $default-background-size:	100% auto;
 $mobile-background-size:	cover;
 
 
-// Box model ------------------------------------------
+//
+// Box model
+// -------------------------------------------
 
 $box-model:					border-box;
 
 
-// Orientations ---------------------------------------
+//
+// Orientations
+// -------------------------------------------
 
 $orientations: (top, right, bottom, left);
 
-// URLS
+//
+// URLs
+// -------------------------------------------
 
 $path-media:			    '//media.infojobs.net' !default;
 $path-icons:			    '//media.infojobs.net/appgrade/icons' !default;
 $path-sprites:			    '//media.infojobs.net/appgrade/sprites' !default;
 $path-backgrounds: 		    '//media.infojobs.net/appgrade/backgrounds' !default;
 
-// Z-INDEX
+//
+// Z-index
+// -------------------------------------------
 
-$zindex-menu   : 9000;
-$zindex-wrap-overlay: 8999;
+$zindex-menu:               9000;
+$zindex-wrap-overlay:       8999;
 
-// BREAKPONINTS START
+
+//
+// Breakpoints
+// -------------------------------------------
 
 $desk-start:		        1024px;
 $tablet-start:		        768px;
@@ -140,7 +165,5 @@ $mobile-start: 		        480px;
 
 $bp-desktop:		        769px;
 $bp-tablet:			        481px;
-
-// CUSTOM BREAKPONINTS
 
 $bp-header:					946px;

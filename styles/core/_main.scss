@@ -77,12 +77,12 @@ button {
 a {
 	@include transition;
  	text-decoration: none;
- 	color: $day-blue;
+ 	color: $theme-color--primary;
 }
 
 a:hover {
 	 text-decoration: none;
-	 color: $day-blue;
+	 color: $theme-color--primary;
 }
 
 a:focus {
@@ -136,7 +136,7 @@ Styleguide  #{$sgi-containers}
 }
 
 .container {
-	max-width: 970px;
+	max-width: $theme-container-width;
 	margin: 0 auto;
 }
 

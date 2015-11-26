@@ -1,0 +1,57 @@
+// $stylesheet: 'co';
+@import "generics/settings-co";
+@import "generics/settings";
+
+@import "generics/generics";
+
+@import "rubik"; // generics.scss
+				 // core.scss
+				 // elements.scss
+
+// components
+@import 'components/banners';
+@import 'components/board';
+@import 'components/carousel';
+@import 'components/content-logo';
+@import 'components/filters';
+@import 'components/footer';
+@import 'components/header-microsite';
+@import 'components/navigation';
+@import 'components/job-list';
+@import 'components/layer';
+@import 'components/loading';
+@import 'components/media-board';
+@import 'components/modal';
+@import 'components/notifications';
+@import 'components/nouislider';
+@import 'components/pagination';
+@import 'components/panels';
+@import 'components/pulldown-chosen';
+@import 'components/search';
+@import 'components/social-footer';
+@import 'components/stickers';
+@import 'components/thumbnail';
+@import 'components/tooltip';
+@import 'components/ui-slider-pips';
+@import 'components/user-feedback';
+@import 'components/value-proposition';
+@import 'components/custom-background';
+@import 'components/kpi';
+@import 'components/crop-image';
+@import 'components/tips-list';
+@import 'components/weather';
+@import 'components/collapsible';
+@import 'components/form-rating-nps';
+@import 'components/content-media';
+@import 'components/steps';
+@import 'components/message-page';
+@import 'components/timeline';
+@import 'components/tabs';
+@import 'components/textarea-resized';
+@import 'components/panel-clipboard';
+
+// specifics
+@import 'components/header-co';
+
+ // tools
+@import 'generics/tools';

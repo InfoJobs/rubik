@@ -1,6 +1,15 @@
 @import "docs-index";
-@import "vars";
+
+// @if $stylesheet == 'ca' {
+//     @import 'settings-ca';
+// }
+//
+// @if $stylesheet == 'co' {
+//     @import 'settings-co';
+// }
+
+@import "settings";
+
 @import "functions";
 @import "mixins";
 @import "placeholders";
-

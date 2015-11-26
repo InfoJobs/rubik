@@ -87,7 +87,7 @@
  */
 .noUi-connect {
 	//background: #3FB8AF;
-	background: $day-blue;
+	background: $theme-color--primary;
 	//box-shadow: inset 0 0 3px rgba(51,51,51,0.45);
 	-webkit-transition: background 450ms;
 	transition: background 450ms;
@@ -95,7 +95,7 @@
 
 .noUi-origin {
 	border-radius: 2px;
-	background: $day-blue;
+	background: $theme-color--primary;
 }
 
 .noUi-background {

@@ -83,8 +83,8 @@ Styleguide #{$sgi-buttons-type}
 */
 
 .btn-default {
-  color: $mid-script;
-  background-color: $resting-katana;
+  color: $theme-button-text-color;
+  background-color: $theme-color--secondary;
 }
 
 .btn-default:hover,
@@ -95,7 +95,7 @@ Styleguide #{$sgi-buttons-type}
 
 .btn-primary {
   color: $shiro;
-  background-color: $day-blue;
+  background-color: $theme-color--primary;
 
   .panel-focus & {
       background-color: $late-blue;
@@ -146,7 +146,7 @@ Styleguide #{$sgi-buttons-type}
 
 ///*DEPRECATED: .btn-link-primary only used in header and 'ver_oferta.html'*/
 .btn-link-primary {
-  color: $day-blue;
+  color: $theme-color--primary;
 }
 
 .btn-link-primary:hover,
@@ -393,7 +393,7 @@ Styleguide #{$sgi-button-group-structure}
   		background-color: $shiro;
 
   		&:hover:not([disabled]) {
-  			background-color: $resting-katana;
+  			background-color: $theme-color--secondary;
   		}
 
   		&.btn-disabled:hover {
@@ -407,7 +407,7 @@ Styleguide #{$sgi-button-group-structure}
 
   	.active .btn,
   	.active .btn.btn-disabled {
-  	    background-color: $resting-katana;
+  	    background-color: $theme-color--secondary;
   	    cursor: default;
   	}
 

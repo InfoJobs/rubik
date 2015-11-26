@@ -1,15 +1,13 @@
-//generics
-@import "generics/generics";
-
-	//vars.scss
-	//functions.scss
-	//mixins.scss
-	//placeholders.scss
+// generics
+@import "generics/generics"; // functions.scss
+							 // mixins.scss
+							 // placeholders.scss
 
 @import "generics/reset";
 @import "generics/clearfix";
 
-//core
+
+// core
 
 @import "core/main";
 @import "core/grids";
@@ -17,7 +15,9 @@
 @import "core/colors";
 @import "core/transitions";
 
-//elements
+
+// elements
+
 @import "elements/scroll";
 @import "elements/icons";
 @import "elements/buttons";
