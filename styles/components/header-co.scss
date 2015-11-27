@@ -4,7 +4,7 @@
 .global-nav {
 	margin-top: -10px; // delete margin from container-expanded on navigation menu (only mobile)
 	overflow: hidden;
-	background-color: $color-contrast;
+	background-color: $dark-blue;
 	background-repeat: no-repeat;
 	background-position: center center;
 	//bg logo es
@@ -72,45 +72,6 @@
 
 		}
 
-	}
-}
-
-.nav-bar-user li a {
-	padding: 15px 10px;
-
-	@include mediaquery ($bp-header) {
-		padding: 15px;
-	}
-}
-
-.nav-bar-user li:first-child a.avatar {
-	padding-top: 30px;
-
-	@include mediaquery ($bp-header) {
-		padding: 0;
-	}
-}
-
-.nav-bar-user li:last-child {
-	padding-left: 10px;
-	padding-right: 10px;
-	background: $dark-shiro;
-
-	@include mediaquery ($bp-header) {
-		padding: 0;
-		background: $shiro;
-	}
-
-	a {
-		padding-right: 0;
-		padding-bottom: 15px;
-		padding-left: 0;
-		border-top: 1px solid $darkest-shiro;
-
-		@include mediaquery ($bp-header) {
-			padding-bottom: 0;
-			border-top: 0;
-		}
 	}
 }
 
@@ -220,7 +181,7 @@ a.nav-bar-toggle {
 		}
 
 		&  a:active {
-			color: $color-primary
+			color: $color-primary;
 		}
 	}
 
@@ -330,7 +291,7 @@ a.nav-bar-toggle {
 		background-color: $dark-shiro;
 
 		&:hover {
-			color:$color-primary;
+			color: $color-primary;
 		}
 
 		@include mediaquery ($bp-header) {
