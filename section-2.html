@@ -208,7 +208,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="section-2.html#rubik-2.15" class="js-itemMenu disabled js-disabled" data-link="true">Form rating NPS </a>
+                                        <a href="section-2.html#rubik-2.15" class="js-itemMenu " data-link="true">Rating radio buttons</a>
                                         <ul class="sg-second-submenu">
                                         </ul>
                                     </li>
@@ -897,6 +897,143 @@ Use class <code>.active</code> for the active button.</p>
 
 
 
+
+                            <div id="rubik-2.15" class="row sg-block">
+                                    <div class="col-12">
+                                    <header class="sg-block-header">
+                                        <h2 class="sg-block-title">Rating radio buttons</h2>
+                                    </header>
+                                        <div class="sg-block-description">
+                                            <p>Use class <code>.rating-nps</code> in a container to create a rating based on a radio group structure.<br>
+Use class <code>.range-group</code> and <code>.rage</code> as example for min and max value.<br>
+Use class <code>.radio-group</code> to create a radio button group with inline structure.</p>
+
+
+                                        </div>
+
+
+                                                <div class="sg-view">
+                                                    <form>
+<div class="rating-nps">
+  <fieldset>
+    <legend>Lorem ipsum</legend>
+	<ul class="range-group margin-top">
+	  <li id="minRange" class="range">Nada probable</li>
+	  <li id="maxRange" class="range">Muy probable</li>
+	</ul>
+    <ul class="radio-group clearfix">
+	  <li>
+	    <input type="radio" name="nps" value="" id="nps0">
+		<label for="nps0">0</label>
+	  </li>
+	  <li>
+	    <input type="radio" name="nps" value="" id="nps1">
+		<label for="nps1">1</label>
+	  </li>
+	  <li>
+	    <input type="radio" name="nps" value="" id="nps2">
+		<label for="nps2">2</label>
+	  </li>
+	  <li>
+	    <input type="radio" name="nps" value="" id="nps3">
+		<label for="nps3">3</label>
+	  </li>
+	  <li>
+	    <input type="radio" name="nps" value="" id="nps4">
+		<label for="nps4">4</label>
+      </li>
+	  <li>
+	    <input type="radio" name="nps" value="" id="nps5">
+		<label for="nps5">5</label>
+	  </li>
+	  <li>
+	    <input type="radio" name="nps" value="" id="nps6">
+		<label for="nps6">6</label>
+      </li>
+	  <li>
+	    <input type="radio" name="nps" value="" id="nps7">
+		<label for="nps7">7</label>
+	  </li>
+	  <li>
+	    <input type="radio" name="nps" value="" id="nps8">
+		<label for="nps8">8</label>
+	  </li>
+	  <li>
+	    <input type="radio" name="nps" value="" id="nps9">
+		<label for="nps9">9</label>
+	  </li>
+	  <li>
+	    <input type="radio" name="nps" value="" id="nps10">
+		<label for="nps10">10</label>
+	  </li>
+    </ul>
+  </fieldset>
+  </div>
+</form>
+                                                </div>
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">
+&lt;form&gt;
+&lt;div class=&quot;rating-nps&quot;&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Lorem ipsum&lt;/legend&gt;
+	&lt;ul class=&quot;range-group margin-top&quot;&gt;
+	  &lt;li id=&quot;minRange&quot; class=&quot;range&quot;&gt;Nada probable&lt;/li&gt;
+	  &lt;li id=&quot;maxRange&quot; class=&quot;range&quot;&gt;Muy probable&lt;/li&gt;
+	&lt;/ul&gt;
+    &lt;ul class=&quot;radio-group clearfix&quot;&gt;
+	  &lt;li&gt;
+	    &lt;input type=&quot;radio&quot; name=&quot;nps&quot; value=&quot;&quot; id=&quot;nps0&quot;&gt;
+		&lt;label for=&quot;nps0&quot;&gt;0&lt;/label&gt;
+	  &lt;/li&gt;
+	  &lt;li&gt;
+	    &lt;input type=&quot;radio&quot; name=&quot;nps&quot; value=&quot;&quot; id=&quot;nps1&quot;&gt;
+		&lt;label for=&quot;nps1&quot;&gt;1&lt;/label&gt;
+	  &lt;/li&gt;
+	  &lt;li&gt;
+	    &lt;input type=&quot;radio&quot; name=&quot;nps&quot; value=&quot;&quot; id=&quot;nps2&quot;&gt;
+		&lt;label for=&quot;nps2&quot;&gt;2&lt;/label&gt;
+	  &lt;/li&gt;
+	  &lt;li&gt;
+	    &lt;input type=&quot;radio&quot; name=&quot;nps&quot; value=&quot;&quot; id=&quot;nps3&quot;&gt;
+		&lt;label for=&quot;nps3&quot;&gt;3&lt;/label&gt;
+	  &lt;/li&gt;
+	  &lt;li&gt;
+	    &lt;input type=&quot;radio&quot; name=&quot;nps&quot; value=&quot;&quot; id=&quot;nps4&quot;&gt;
+		&lt;label for=&quot;nps4&quot;&gt;4&lt;/label&gt;
+      &lt;/li&gt;
+	  &lt;li&gt;
+	    &lt;input type=&quot;radio&quot; name=&quot;nps&quot; value=&quot;&quot; id=&quot;nps5&quot;&gt;
+		&lt;label for=&quot;nps5&quot;&gt;5&lt;/label&gt;
+	  &lt;/li&gt;
+	  &lt;li&gt;
+	    &lt;input type=&quot;radio&quot; name=&quot;nps&quot; value=&quot;&quot; id=&quot;nps6&quot;&gt;
+		&lt;label for=&quot;nps6&quot;&gt;6&lt;/label&gt;
+      &lt;/li&gt;
+	  &lt;li&gt;
+	    &lt;input type=&quot;radio&quot; name=&quot;nps&quot; value=&quot;&quot; id=&quot;nps7&quot;&gt;
+		&lt;label for=&quot;nps7&quot;&gt;7&lt;/label&gt;
+	  &lt;/li&gt;
+	  &lt;li&gt;
+	    &lt;input type=&quot;radio&quot; name=&quot;nps&quot; value=&quot;&quot; id=&quot;nps8&quot;&gt;
+		&lt;label for=&quot;nps8&quot;&gt;8&lt;/label&gt;
+	  &lt;/li&gt;
+	  &lt;li&gt;
+	    &lt;input type=&quot;radio&quot; name=&quot;nps&quot; value=&quot;&quot; id=&quot;nps9&quot;&gt;
+		&lt;label for=&quot;nps9&quot;&gt;9&lt;/label&gt;
+	  &lt;/li&gt;
+	  &lt;li&gt;
+	    &lt;input type=&quot;radio&quot; name=&quot;nps&quot; value=&quot;&quot; id=&quot;nps10&quot;&gt;
+		&lt;label for=&quot;nps10&quot;&gt;10&lt;/label&gt;
+	  &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/fieldset&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
+
+                                </div>
+                            </div>
 
 
 
