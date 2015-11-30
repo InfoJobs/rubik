@@ -7,7 +7,7 @@ $MIXINS STICKERS
     @include font-small-line;
     position: relative;
     top: -2px;
-    display: inline-block;
+    display: inline-table;
     padding: 6px 10px;
     border-radius: 15px;
     font-family: $base-font-family;
@@ -21,7 +21,7 @@ $MIXINS STICKERS
     }
 
     @media print {
-    	padding: 0;
+    	border: 1px solid $darkest-shiro;
     }
 }
 
