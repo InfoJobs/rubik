@@ -1,14 +1,14 @@
 @import "docs-index";
 
-// @if $stylesheet == 'ca' {
-//     @import 'settings-ca';
+// @if $stylesheet == 'candidates' {
+//     @import 'vars-ca';
 // }
 //
-// @if $stylesheet == 'co' {
-//     @import 'settings-co';
+// @if $stylesheet == 'companies' {
+//     @import 'vars-co';
 // }
-// 
-// @import "settings";
+
+@import "vars";
 
 @import "functions";
 @import "mixins";

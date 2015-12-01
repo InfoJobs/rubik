@@ -1,15 +1,13 @@
-// $stylesheet: 'co';
-@import "generics/settings-co";
-@import "generics/settings";
+$stylesheet: 'companies';
 
 @import "rubik"; // generics.scss
 				 // core.scss
 				 // elements.scss
 
 // components
-@import "components/components";
+@import 'components/components';
 
-// components specifics
+// specifics components
 @import 'components/header-co';
 
  // tools

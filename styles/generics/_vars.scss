@@ -52,7 +52,8 @@ $padding:                   20px; //se usa en carousel y footer
 // Brand colors
 // -------------------------------------------
 
-$bamboo:				#00a550;
+$bamboo:					#00a550;
+$color-primary:				$theme-color--primary;
 
 
 //
@@ -73,6 +74,7 @@ $darkest-shiro:			#e2e5e6;
 $dark-silk:				#2d3133; // grey text mobile menu
 $dark-softened:			#393939;
 $light-bamboo:			#effaf6;
+$color-contrast:        $theme-color--contrast;
 
 
 //
@@ -90,6 +92,8 @@ $katana-smash:			#97a1a6;
 $wood-resting-katana:	#e3eaed;
 $wood-katana-slash:		#d2dee3;
 $wood-katana-smash:		#b0c0c7;
+
+$color-secondary:       $theme-color--secondary;
 
 
 //
@@ -167,3 +171,10 @@ $bp-desktop:		        769px;
 $bp-tablet:			        481px;
 
 $bp-header:					946px;
+
+
+//
+// Layout
+// -------------------------------------------
+
+$container-width:		    $theme-container-width;

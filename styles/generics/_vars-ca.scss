@@ -1,18 +1,19 @@
-@import "vars";
+$shiro:					#fff;
+$mid-script:			#666;
 
-//
+
+
 // Brand colors
 // -------------------------------------------
 
-$light-blue:				#55799A;
-$dark-blue:				    #2B3D4E;
-$soft-blue:				    #808B95;
+$day-blue:				#2088c2;
+$resting-katana:		#d5e1e5; // gray default button
 
-$theme-color--primary:       $light-blue;
-$theme-color--secondary:     $soft-blue;
-$theme-color--contrast:      $dark-blue;
+$theme-color--primary:       $day-blue;
+$theme-color--secondary:     $resting-katana;
+$theme-color--contrast:      $shiro;
 
-$theme-button-text-color:   $shiro;
+$theme-button-text-color:    $mid-script;
 $theme-button-primary--hover:     $shiro;
 $theme-button-primary--active:    $shiro;
 
@@ -24,7 +25,7 @@ $theme-button-secondary--active:    $shiro;
 // Breakpoints
 // -------------------------------------------
 
-$theme-container-width:          1140px;
+$theme-container-width:          970px;
 
 // $c-text: $c-gray-dark;
 // $c-contrast: $c-bg-light;
