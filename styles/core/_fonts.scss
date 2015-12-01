@@ -62,13 +62,45 @@
 	}
 }
 
-@mixin font-large-line { //h2
-	font-size: $large-font-size;
-	line-height: $large-line-height;
+@mixin font-large-line {
+	font-size: $medium-font-size;
+	line-height: $medium-line-height;
 
 	@media print {
 		font-size: ($large-font-size/$point-to-px);
 		line-height: ($large-line-height/$point-to-px);
+	}
+
+	@include mediaquery ($bp-desktop) {
+		font-size: $large-font-size;
+		line-height: $large-line-height;
+	}
+
+}
+
+%font-large-line {
+	font-size: $medium-font-size;
+	line-height: $medium-line-height;
+
+	@media print {
+		font-size: ($large-font-size/$point-to-px);
+		line-height: ($large-line-height/$point-to-px);
+	}
+
+	@include mediaquery ($bp-desktop) {
+		font-size: $large-font-size;
+		line-height: $large-line-height;
+	}
+
+}
+
+@mixin font-xlarge-line { //h2
+	font-size: $large-font-size;
+	line-height: $large-line-height;
+
+	@media print {
+		font-size: ($xlarge-font-size/$point-to-px);
+		line-height: (x$large-line-height/$point-to-px);
 	}
 
 	@include mediaquery ($bp-desktop) {
@@ -78,13 +110,13 @@
 
 }
 
-%font-large-line { //h2
+%font-xlarge-line { //h2
 	font-size: $large-font-size;
 	line-height: $large-line-height;
 
 	@media print {
-		font-size: ($large-font-size/$point-to-px);
-		line-height: ($large-line-height/$point-to-px);
+		font-size: ($xlarge-font-size/$point-to-px);
+		line-height: ($xlarge-line-height/$point-to-px);
 	}
 
 	@include mediaquery ($bp-desktop) {
