@@ -7,6 +7,7 @@ $path-icons:		'http://media.infojobs.net/appgrade/icons';
 $path-sprites:		'http://media.infojobs.net/appgrade/sprites';
 $path-backgrounds: 	'http://media.infojobs.net/appgrade/backgrounds/';
 
+$stylesheet: 'candidates';
 
 @import '../styles/generics/generics';
 
@@ -47,7 +48,7 @@ Styleguide 1
 @import '../styles/components/footer';
 @import '../styles/components/header-microsite';
 @import '../styles/components/navigation';
-@import '../styles/components/header';
+@import '../styles/components/header-ca';
 @import '../styles/components/job-list';
 @import '../styles/components/layer';
 @import '../styles/components/loading';

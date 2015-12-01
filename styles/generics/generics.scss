@@ -1,12 +1,12 @@
 @import "docs-index";
 
-// @if $stylesheet == 'candidates' {
-//     @import 'vars-ca';
-// }
-//
-// @if $stylesheet == 'companies' {
-//     @import 'vars-co';
-// }
+@if $stylesheet == 'candidates' {
+    @import 'vars-ca';
+}
+
+@if $stylesheet == 'companies' {
+    @import 'vars-co';
+}
 
 @import "vars";
 
