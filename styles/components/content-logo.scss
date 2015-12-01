@@ -6,20 +6,19 @@
 \*------------------------------------*/
 
 /*
-Content logo #disabled#
+Content logo
 
-Use class `.content-middle` nested with `.heading-addons` to center vertically text with logo.
+Use class `.content-middle` to center vertically text with other media content or  `.content-top` to align to top text and media.
 
-Apply `.text` and `.media` to build the text and logo structure.
-
+Apply `.content-type-text` and `.content-type-media` to build the text and media content structure.
 
 Markup:
 <div class="heading-addons">
 	<div class="content-middle">
-		<div class="text">
+		<div class="content-type-text">
 			<h1>Lorem ipsum dolor sit amet</h1>
 		</div>
-		<div class="media">
+		<div class="content-type-media">
 			<a href="#">
 				<figure class="fig-thumbnail fig-thumbnail-logo slide-up">
 					<img title="BROS GROUP - Ofertas de trabajo" src="./images/pictures/pic-company-logo.png" alt="Lorem ipsum dolor sit amet">

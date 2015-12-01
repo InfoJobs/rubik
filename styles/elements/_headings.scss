@@ -185,12 +185,11 @@ Heading divider
 			padding-left: 20px;
 		}
 	}
-}
 
-h3,
-.h3,
-.medium {
-  &.heading-divider {
-    padding-bottom: 12px;
-  }
+    @at-root h3#{&},
+	.h3#{&},
+	.medium#{&},
+	.large {
+    	padding-bottom: 12px;
+	}
 }

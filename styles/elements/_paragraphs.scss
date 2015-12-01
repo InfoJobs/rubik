@@ -69,12 +69,13 @@ Styleguide #{$sgi-textStyle}
 /*
 Text size
 
-Use class `.base` to force body copy size or `.medium`, `.large` to increase the text size.
+Use class `.base` to force body copy size or `.medium`, `.large`, `.xlarge` to increase the text size.
 
 Markup:
 <h2 class="base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
 <p class="medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 <p class="large">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="xlarge">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
 Styleguide #{$sgi-textSize}
 */
@@ -89,6 +90,10 @@ Styleguide #{$sgi-textSize}
 
 .large {
 	@extend %font-large-line;
+}
+
+.xlarge {
+	@extend %font-xlarge-line;
 }
 
 /*

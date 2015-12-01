@@ -6,13 +6,21 @@ $KPI
 \*------------------------------------*/
 
 /*
-KPI #disabled#
+KPI
+
+Structure to display indicators.
+
+<a href="#{$sgp-kpi}" target="blank">#{$sgp-openPage}</a> with toggle show/hide for mobile device.
+The example in demo needs toggle.js.
 
 Markup:
 <div class="kpi">
-	<h2 class="kpi-title">Ofertas para ti</h2>
-	<a href="#"><span class="kpi-indicator iconfont-Viewdetails">15</span></a>
-	<p>Lorem ipsum <br><a href="#">Link</a></p>
+  <span data-endval="0" data-duration="1" class="kpi-indicator">0</span>
+  <h2 class="kpi-title">Candidaturas activas</h2>
+  <div class="kpi-body">
+    <p>No te has inscrito en ninguna oferta recientemente</p>
+	<a class="link-underline" href="#">Buscar ofertas de empleo</a>
+  </div>
 </div>
 
 Styleguide #{$sgi-kpi}
