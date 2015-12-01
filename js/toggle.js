@@ -26,8 +26,6 @@ function hideContainer() {
 
 	[].forEach.call( eContainer, function( target ){
 		if (window.innerWidth < 481) {
-			target.classList.remove('hide-small-device');
-	    	target.nCollapsibleChildrenHeight = 0;
 
 	    	for (i = 0; i < target.children.length; i++ ) {
 	            target.nCollapsibleChildrenHeight += target.children[i].getBoundingClientRect().height +
@@ -37,8 +35,12 @@ function hideContainer() {
 	    	target.classList.add('slide-toggle');
 		} else {
 			target.classList.remove('slide-toggle');
-			target.removeAttribute("style");
-
+			target.classList.add('hide-small-device');
+			eArrow = document.querySelectorAll('.iconfont-ArrowUp');
+			[].forEach.call(eArrow, function(arrow){
+				arrow.classList.remove("iconfont-ArrowUp");
+				arrow.classList.add("iconfont-ArrowDown");
+			});
 		}
 	});
 
@@ -51,8 +53,7 @@ function getRealStyle(element, style ) {
 function listeners(event){
 	event.stopPropagation();
 	if(this.parentNode.bOcult) {
-		this.parentNode.querySelector('.js-toggle').style.height = Math.round(this.parentNode.querySelector('.js-toggle').nCollapsibleChildrenHeight) + 'px';
-
+		this.parentNode.querySelector('.js-toggle').classList.remove('hide-small-device');
 		eArrow = this.querySelectorAll('.iconfont-ArrowDown');
 		[].forEach.call(eArrow, function(arrow){
 			arrow.classList.remove("iconfont-ArrowDown");
@@ -60,7 +61,7 @@ function listeners(event){
 		});
 		this.parentNode.bOcult = false;
 	} else {
-		this.parentNode.querySelector('.js-toggle').style.height = 0;
+		this.parentNode.querySelector('.js-toggle').classList.add('hide-small-device');
 		eArrow = this.parentNode.querySelectorAll('.iconfont-ArrowUp');
 		[].forEach.call(eArrow, function(arrow){
 			arrow.classList.remove("iconfont-ArrowUp");

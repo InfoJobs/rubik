@@ -27,12 +27,18 @@ module.exports = function(grunt) {
       },
       copyMedia: {
         files: [
-          { src: ['./media/**'], dest: 'styleguide/'}
+          { src: ['./images/**'], dest: 'styleguide/'}
         ]
       },
       copyJS: {
         files: [
-          { src: ['./js/**'], dest: 'styleguide/'}
+          { src: ['./js/**'], dest: 'styleguide/'},
+          { src: ['./../js/**'], dest: 'styleguide/styleguide/'}
+        ]
+      },
+      copyHTML: {
+        files: [
+        { src: ['./../html/**'], dest: 'styleguide/styleguide/'}
         ]
       },
       copyRubik: {
@@ -128,7 +134,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('default', ['clean', 'sass', 'copy:styleguide', 'includereplace', 'less', 'shell', 'replace', 'copy:allStyles', 'copy:copyFonts', 'copy:copyMedia', 'copy:copyJS']);
+  grunt.registerTask('default', ['clean', 'sass', 'copy:styleguide', 'includereplace', 'less', 'shell', 'replace', 'copy:allStyles', 'copy:copyFonts', 'copy:copyMedia', 'copy:copyJS', 'copy:copyHTML']);
   grunt.registerTask('public', ['copy:copyRubik']);
 
 };

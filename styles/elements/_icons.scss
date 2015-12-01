@@ -21,21 +21,19 @@
 /*
 Icons
 
-Icons are generated as fonts. Color and size can be modified as texts.
-Use the following classes to apply an icon on a tag.
+Icons are generated as fonts.<br>
+Use the following classes to apply an icon on a tag.<br>
+You can force the [icon size](#rubik-#{$sgi-iconsSize}) when there isn't text with icon.
 
-Styleguide 1.7
+Styleguide #{$sgi-icons}
 */
 
-
 /*
-Icons type
-
-List of icons.
+Icons list
 
 @@include('../templates/partials/icons.html')
 
-Styleguide 1.7.1.1
+Styleguide #{$sgi-iconsList}
 
 */
 
@@ -108,22 +106,16 @@ Styleguide 1.7.1.1
 /*
 Icons size
 
-Use the following classes to modify the icon size: `.iconfont-16px`, `.iconfont-18px`, `.iconfont-22px` or `.iconfont-30px`
-
+Use the following classes to specify the icon size when it appears without text: `.iconfont-16px`, `.iconfont-18px`, `.iconfont-22px`, `.iconfont-30px` or `.iconfont-36px`.
 
 Markup:
-<ul>
-	<li class="iconfont-Company {{modifier_class}}"><span class="hide">Icon name</span></li>
-</ul>
+	<a href="#" class="iconfont-Company iconfont-16px"><span class="hide">Icon name</span></a>
+	<a href="#" class="iconfont-Company iconfont-18px"><span class="hide">Icon name</span></a>
+	<a href="#" class="iconfont-Company iconfont-22px"><span class="hide">Icon name</span></a>
+	<a href="#" class="iconfont-Company iconfont-30px"><span class="hide">Icon name</span></a>
+	<a href="#" class="iconfont-Company iconfont-36px"><span class="hide">Icon name</span></a>
 
-{modifier_class}:
-
-.iconfont-16px
-.iconfont-18px
-.iconfont-22px
-.iconfont-30px
-
-Styleguide 1.7.2.1
+Styleguide #{$sgi-iconsSize}
 */
 
 $iconfont-size: (16, 18, 22, 30, 36, 100); //TODO: resolve problem when it s moved to _vars

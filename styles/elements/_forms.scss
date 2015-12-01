@@ -2,6 +2,14 @@
     $FORMS
 \*------------------------------------*/
 
+/*
+Form elements
+
+This section contains all the elements that we can use to build a form.
+
+Styleguide #{$sgi-forms}
+*/
+
 @include placeholder;
 
 fieldset {
@@ -119,7 +127,7 @@ input[type="checkbox"]{
 	display: inline-block;
 	cursor: pointer;
   	padding: 0;
-  	margin: 3px 0 0 0;
+  	margin: 3px 6px 0 0;
 	width: auto;
   	border: 0 none;
   	vertical-align: top;
@@ -175,7 +183,7 @@ Markup:
   </fieldset>
 </form>
 
-Styleguide #{$sgi-forms}
+Styleguide #{$sgi-formsFieldblock}
 */
 
 .form--field-block {
@@ -332,9 +340,9 @@ Styleguide #{$sgi-forms-radio-inline}
 /*
 Select
 
-```
-.form-select -  Field select
-```
+The `<select>` element is used to create a drop-down list.<br>
+The `<option>` tags inside the `<select>` element define the available options in the list.<br>
+This element needs pulldown-chosen.css,[chosen.jquery.js](#{$sgp-chosen}) and the script as code example.
 
 Markup:
 <div class="form-select">
@@ -343,6 +351,11 @@ Markup:
     <option value="1">Option 2</option>
   </select>
 </div>
+<script>
+	$(document).ready(function() {
+		$('.chosen-select').chosen({width:"100%",disable_search:true});
+	});
+</script>
 
 Styleguide #{$sgi-forms-select}
 */
@@ -799,3 +812,13 @@ Styleguide #{$sgi-forms-error}
 .input-PostalCode {
 	width: 70px; // 5 digits format (ES, IT)
 }
+
+
+/*
+Examples Forms
+
+<a href="#{$sgp-forms}" target="blank">#{$sgp-openPage}</a>
+
+Styleguide #{$sgi-examplesForms}
+
+*/

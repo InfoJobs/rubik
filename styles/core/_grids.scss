@@ -3,12 +3,42 @@
 \*------------------------------------*/
 
 /*
+Boilerplate HTML
+
+Markup:
+<!doctype html>
+<html class="casper" lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Page title</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<!-- Place favicon.ico in the root directory -->
+		<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
+	</head>
+	<body>
+		<!-- content -->
+		<script src="js/polyfills.js"></script>
+		<script src="js/jquery-2.1.0.min.js"></script>
+		<script src="js/plugins.js"></script
+		<script src="js/main.js"></script>
+		<script src="js/helper.js"></script>
+	</body>
+</html>
+
+Styleguide #{$sgi-boilerplate}
+*/
+
+/*
 Grid System
 
 **We are using a mobile first 12 column fluid responsive grid system that helps you to build solid multi-device layouts.**
 
 Grid system is used for creating page layout through a series of rows and columns that house
 your content.
+
 <br>
 @@include('../templates/partials/grid.html')
 <br>
@@ -446,7 +476,7 @@ Add class `.row`,`.row-faux` to build an equal height columns structure and `.ro
 Markup:
 <div class="row row-faux row-panel casper">
       <div class="col-8">
-          <div class="col-child panel-canvas">.col-8</div>
+          <div class="col-child">.col-8</div>
       </div>
       <div class="col-4">
           <div class="col-child">.col-4</div>
@@ -501,4 +531,13 @@ Markup:
 </div>
 
 Styleguide #{$sgi-gridNested}
+*/
+
+/*
+Examples Layouts
+
+<a href="#{$sgp-layouts}" target="blank">#{$sgp-openPage}</a>
+
+Styleguide #{$sgi-examplesLayouts}
+
 */

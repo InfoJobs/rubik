@@ -12,7 +12,7 @@ Styleguide 3
 \*------------------------------------*/
 
 /*
-Modal #disabled#
+Modal
 
 Use the following classes structure to create a modal window:
 
@@ -21,10 +21,9 @@ Use the following classes structure to create a modal window:
 - Include the container `<div class="modal-header">` with the header structure.
 - Include the container `<div class="modal-content">` with the content structure.
 
-<a href="#" class="modal-click">Abrir modal</a>
 
 
-@@include('../templates/partials/modal.html')
+<a href="#{$sgp-modal}" target="blank">#{$sgp-openPage}</a>
 
 Markup:
 <div class="modal-layer modal-fade-in hide">
@@ -119,6 +118,10 @@ Styleguide #{$sgi-modal-content}
 	font-size: ($large-font-size + 2);
 	line-height: $large-line-height;
 	color: $shiro;
+
+	&:hover {
+		color: $shiro;
+	}
 
 	@include mediaquery ($bp-tablet) {
 		right: 10px;

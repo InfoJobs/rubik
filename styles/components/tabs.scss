@@ -9,10 +9,13 @@
 /*
 Tabs
 
+Use class `.tabs` to create a structure of tabs inline. You must also add the class `.ìnner` to generate the padding.<br>
+Use class `.tab-active` in active tab.
+
 Markup:
-<ul class="tabs">
-	<li class="tab-active">Empresa</li>
-	<li>Personas</li>
+<ul class="tabs inner">
+	<li><a class="tab-active" href="#">Empresa</a></li>
+	<li><a href="#">Personas</a></li>
 </ul>
 
 Styleguide #{$sgi-tabs}
@@ -206,3 +209,38 @@ Styleguide #{$sgi-tabs}
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
 }
+
+/*
+Vertical tabs menu
+
+Use class `.tabs-menu` and `.tabs` to create a structure of vertical tabs menu.<br>
+The tabs structure can also be with icons. <a href="#{$sgp-tabs}" target="blank">#{$sgp-openPage}</a>
+
+Markup:
+<ul class="tabs tabs-menu inner">
+	<li><a href="#">Lorem Ipsum Link</a></li>
+	<li><a href="#">Lorem Ipsum Link</a></li>
+	<li><a href="#">Lorem Ipsum Link</a></li>
+	<li><a href="#">Lorem Ipsum Link</a></li>
+	<li><a href="#">Lorem Ipsum Link</a></li>
+</ul>
+
+Styleguide #{$sgi-tabsMenu}
+*/
+
+/*
+Vertical tabs menu with link style
+
+Use class `.tabs-menu--link`, `.tabs-menu` and `.tabs` to create a structure of vertical tabs menu.
+
+Markup:
+<ul class="tabs tabs-menu tabs-menu--link inner">
+	<li><a href="#">Lorem Ipsum Link</a></li>
+	<li><a href="#">Lorem Ipsum Link</a></li>
+	<li><a href="#">Lorem Ipsum Link</a></li>
+	<li><a href="#">Lorem Ipsum Link</a></li>
+	<li><a href="#">Lorem Ipsum Link</a></li>
+</ul>
+
+Styleguide #{$sgi-tabsMenuLink}
+*/

@@ -88,13 +88,10 @@ body#kss-node {
 			font-size: 30px;
 		}
     }
-
-
 }
 
-
-
 .sg-content {
+
     .home-intro {
         height: 100%;
         width: 100%;
@@ -154,44 +151,10 @@ body#kss-node {
     }
 
     //Styleguide theme
-    h1,
-    h2 {
-        margin: 0;
-    }
-
-    h1.sg-block-title {
-        font-size: 25px;
-        color: $day-blue;
-    }
-
-    h2,
-    h3 {
-        font-family: 'Proximanovasemibold';
-        color: $dark-silk;
-    }
-
-    h2 {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-
-    h3 {
-        font-size: 18px;
-    }
-
-    p {
-        margin-bottom: 20px;
-    }
-
-    p:last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
 
     .sg-img {
         width: 100%;
         margin: 0;
-
     }
 
     .sg-link {
@@ -222,10 +185,15 @@ body#kss-node {
         color: #dc1a6c;
     }
 
+    .sg-block-description a {
+        text-decoration: underline;
+    }
+
     .sg-view {
         margin-top: 20px;
         padding: 20px;
         border: 1px solid $darkest-shiro;
+        background-color: $shiro;
 
         &::before {
             content: 'Example';
@@ -233,6 +201,7 @@ body#kss-node {
             height: 30px;
             color: $soft-script;
         }
+
     }
 
     .sg-modifiers {
@@ -251,10 +220,24 @@ body#kss-node {
         background-color: $darkest-shiro;
     }
 
-        .list-default + .list-default {
+}
+.sg-block-header {
+    h1,
+    h2 {
+        margin: 0;
+    }
 
-            margin-top: 20px;
-        }
+}
+.sg-block-description {
+    p {
+        margin-bottom: 20px;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
 }
 
 .sg-footer {
@@ -264,16 +247,42 @@ body#kss-node {
         background: none;
     }
 }
+//Headihgs
+h1.sg-block-title {
+    font-size: 25px;
+    color: $day-blue;
+}
 
+h2.sg-block-title,
+h3.sg-block-title {
+    font-family: 'Proximanovasemibold';
+    color: $dark-silk;
+}
+
+h2.sg-block-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+h3.sg-block-title {
+    font-size: 18px;
+}
 /*------------------------------------*\
 $COMPONENTS OVERWRITE
 \*------------------------------------*/
+.sg-view {
 
-.user-feedback {
-    height: 40px;
+    blockquote + blockquote,
+    .list-default + .list-default {
+        margin-top: 20px;
+    }
 
-    .link-user-feedback {
-        //position: absolute;
+    .user-feedback {
+        height: 40px;
+
+        .link-user-feedback {
+            position: absolute;
+        }
     }
 }
 
