@@ -1,10 +1,7 @@
-//generics
-@import "../generics/generics";
-
 /*------------------------------------*\
     $LOADING
 \*------------------------------------*/
-.loading-layer { 
+.loading-layer {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -61,4 +58,3 @@
     box-shadow: -15px 15px $bamboo, 0px 30px $color-primary;
   }
 }
-
