@@ -69,6 +69,7 @@ select:-moz-focusring {
 
 @mixin input {
 	display: block;
+	height: 44px;
 	padding: 4px 10px;
 	font-size: $base-font-size;
 	line-height: $base-line-height;
@@ -109,6 +110,22 @@ textarea {
 	}
 }
 
+::-webkit-input-placeholder {
+	font-size: $small-font-size;
+}
+
+::-moz-placeholder { // firefox 19+
+	font-size: $small-font-size;
+}
+
+:-ms-input-placeholder {
+	font-size: $small-font-size;
+}
+
+::placeholder {
+	font-size: $small-font-size;
+}
+
 textarea {
 	min-height: 150px;
 	resize: vertical;
@@ -127,7 +144,7 @@ input[type="checkbox"]{
 	display: inline-block;
 	cursor: pointer;
   	padding: 0;
-  	margin: 3px 6px 0 0;
+  	margin: 3px 0 0 0;
 	width: auto;
   	border: 0 none;
   	vertical-align: top;
@@ -478,15 +495,11 @@ Styleguide #{$sgi-forms-input-group}
 			position: relative;
 
 			&::before {
-			    content: "|";
-			    position: absolute;
-			    top: 12px;
-			    left: -5px;
+		    content: "|";
+		    position: absolute;
+		    top: 12px;
+		    left: -5px;
 				color: #c7c7c7;
-
-				@include mediaquery ($bp-desktop) {
-					top: 4px;
-				}
 			}
 
 			&:first-of-type::before {
@@ -562,18 +575,10 @@ input[type="tel"] {
 	~ label {
 		width: auto;
 		margin: 10px 0 0 0;
-
-		@include mediaquery ($bp-desktop) {
-			margin-top: 4px;
-		}
 	}
 
 	~ input {
 		margin: 12px 0 0 0;
-
-		@include mediaquery ($bp-desktop) {
-			margin-top: 7px;
-		}
 	}
 
 	~ .error-info {
@@ -642,7 +647,6 @@ Styleguide #{$sgi-forms-error}
 
 	input {
 		width: 100%;
-		height: 44px;
 	}
 
 	.radio-group {
@@ -686,12 +690,6 @@ Styleguide #{$sgi-forms-error}
 		font-size: $small-font-size;
 		line-height: $xsmall-line-height;
 		padding: 15px 10px;
-
-		@include mediaquery ($bp-desktop) {
-			top: 25px;
-			right: 5px 10px;
-			padding: 8px;
-		}
 	}
 
 	input {
