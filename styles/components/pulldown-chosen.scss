@@ -5,6 +5,12 @@
     $CHOSEN
 \*------------------------------------*/
 
+/*
+
+Styleguide 2.16
+*/
+
+/* @group Base */
 .chosen-container {
   position: relative;
   display: inline-block;
@@ -24,10 +30,15 @@
 }
 
 .chosen-container .chosen-drop {
+  margin-left: -1px;
+}
+
+.chosen-container .chosen-drop,
+.ui-autocomplete {
   position: absolute;
   top: 102%;
   left: -9999px;
-  z-index: 9999;
+  z-index: $zindex-pulldown;
   margin-left: -1px;
   width: calc(100% - -2px);
   border-top: 0;
@@ -48,10 +59,14 @@
   @include input;
   position: relative;
   overflow: hidden;
-  padding: 11px;
   border:0 none;
   text-decoration: none;
   white-space: nowrap;
+
+    @media only screen and (max-width: $tablet-start) {
+  	padding: 10px;
+  }
+
 }
 
 .chosen-container-single .chosen-default {
@@ -142,7 +157,8 @@
   max-height: 160px;
   -webkit-overflow-scrolling: touch;
 }
-.chosen-container .chosen-results li {
+.chosen-container .chosen-results li,
+.ui-autocomplete li {
   display: none;
   float: none;
   margin: 0;
@@ -152,6 +168,27 @@
   -webkit-touch-callout: none;
   color: $dark-silk;
 }
+
+.ui-autocomplete {
+	width: 333px;
+
+	li {
+		display: list-item;
+		cursor: pointer;
+
+		a {
+			display: block;
+			color: $dark-silk;
+		}
+
+		&:hover,
+		&.ui-list-item-hover {
+			background-color: $dark-shiro;
+  			color: $dark-silk;
+  		}
+	}
+}
+
 .chosen-container .chosen-results li.active-result {
   display: list-item;
   cursor: pointer;
@@ -193,10 +230,11 @@
     .chosen-choices {
         position: relative;
         overflow: hidden;
-        height: 42px;
         margin: 0;
         padding: 0 30px 0 0;
         width: 100%;
+        height: auto !important;
+        height: 1%;
         background: url(#{$path-backgrounds}/bg-select-arrow.png) right 15px no-repeat $shiro;
 
         li {
@@ -234,7 +272,11 @@
             @include sticker-multi;
             position: relative;
             top: 0;
-            margin: 6px 0 5px 5px;
+            margin: 8px 0 5px 5px;
+
+            @include mediaquery ($bp-desktop) {
+                margin-top: 5px;
+            }
 
             .search-choice-close {
                 @include iconfont-Close;
@@ -289,7 +331,7 @@
 /* @end */
 /* @group Active  */
 .chosen-container.chosen-container-active {
-  border: 1px solid $color-primary;
+  border: 1px solid $day-blue;
 }
 .chosen-container-active.chosen-with-drop .chosen-single div {
   border-left: none;
