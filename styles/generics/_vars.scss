@@ -149,9 +149,10 @@ $path-backgrounds: 		    '//media.infojobs.net/appgrade/backgrounds' !default;
 // Z-index
 // -------------------------------------------
 
-$zindex-menu:               9000;
-$zindex-wrap-overlay:       8999;
-
+$zindex-menu   : 9000;
+$zindex-wrap-overlay: 8999;
+$zindex-notification: 8998;
+$zindex-pulldown: 8997;
 
 //
 // Breakpoints

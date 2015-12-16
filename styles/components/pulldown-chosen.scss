@@ -331,7 +331,7 @@ Styleguide 2.16
 /* @end */
 /* @group Active  */
 .chosen-container.chosen-container-active {
-  border: 1px solid $day-blue;
+  border: 1px solid $theme-color--primary;
 }
 .chosen-container-active.chosen-with-drop .chosen-single div {
   border-left: none;
