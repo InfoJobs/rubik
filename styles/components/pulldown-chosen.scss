@@ -189,6 +189,24 @@ Styleguide 2.16
 	}
 }
 
+.autocomplete-multivalue {
+	border: 1px solid #c7c7c7;
+
+	&.autocomplete-multivalue-focus {
+		border: 1px solid $day-blue;
+	}
+	.autocomplete_jquery {
+		border: 0 none;
+	}
+	ul {
+		margin: 10px;
+	}
+	ul:empty {
+		margin: 0;
+	}
+
+}
+
 .chosen-container .chosen-results li.active-result {
   display: list-item;
   cursor: pointer;
