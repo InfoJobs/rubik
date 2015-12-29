@@ -219,6 +219,10 @@ Styleguide #{$sgi-formsFieldblock}
 				margin-top: 5px;
 			}
 		}
+
+		label + .info {
+			margin-top: -5px;
+		}
 	}
 
 	> li:last-child {
@@ -230,8 +234,8 @@ Styleguide #{$sgi-formsFieldblock}
 	}
 }
 
-form ul .indent { // Used in cartas presentacion
-	margin-left: 20px;
+form ul .indent { // Used in cartas presentacion and company registration
+	margin-left: 24px;
 	margin-top: 5px;
 }
 
@@ -564,11 +568,13 @@ input[type="number"] {
 	}
 }
 
-input[type="tel"] {
-	margin-right: 20px;
+input[type="tel"],
+.row-centered .input-cif {
+    margin-right: 20px;
 
 	@include mediaquery ($bp-desktop) {
 		width: 230px;
+		width: $input-tel-width;
 		float: left;
 	}
 
@@ -626,12 +632,18 @@ Markup:
 Styleguide #{$sgi-forms-error}
 */
 
-.error-info {
+.error-info,
+.success-info {
 	margin-top: 5px;
 	color: $trueblood;
 	font-size: 12px;
 	line-height: 110%;
 }
+
+.success-info {
+	color: $bamboo;
+}
+
 
 //helpers for form
 
@@ -680,7 +692,7 @@ Styleguide #{$sgi-forms-error}
 	}
 }
 
-.password {
+.strength-bar {
 	position: relative;
 
 	a {
@@ -692,7 +704,8 @@ Styleguide #{$sgi-forms-error}
 		padding: 15px 10px;
 	}
 
-	input {
+	input,
+	textarea {
 		margin-bottom: 10px;
 	}
 
@@ -811,6 +824,18 @@ Styleguide #{$sgi-forms-error}
 	width: 70px; // 5 digits format (ES, IT)
 }
 
+//reset default validation on ff
+:invalid {
+  box-shadow: none;
+}
+
+:-moz-submit-invalid {
+  box-shadow: none;
+}
+
+:-moz-ui-invalid {
+  box-shadow:none;
+}
 
 /*
 Examples Forms

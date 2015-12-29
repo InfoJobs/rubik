@@ -193,7 +193,7 @@ Styleguide 2.16
 	border: 1px solid #c7c7c7;
 
 	&.autocomplete-multivalue-focus {
-		border: 1px solid $day-blue;
+		border: 1px solid $theme-color--primary;
 	}
 	.autocomplete_jquery {
 		border: 0 none;
@@ -248,11 +248,10 @@ Styleguide 2.16
     .chosen-choices {
         position: relative;
         overflow: hidden;
+        height: 42px;
         margin: 0;
         padding: 0 30px 0 0;
         width: 100%;
-        height: auto !important;
-        height: 1%;
         background: url(#{$path-backgrounds}/bg-select-arrow.png) right 15px no-repeat $shiro;
 
         li {
@@ -290,11 +289,7 @@ Styleguide 2.16
             @include sticker-multi;
             position: relative;
             top: 0;
-            margin: 8px 0 5px 5px;
-
-            @include mediaquery ($bp-desktop) {
-                margin-top: 5px;
-            }
+            margin: 6px 0 5px 5px;
 
             .search-choice-close {
                 @include iconfont-Close;

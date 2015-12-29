@@ -108,3 +108,17 @@ Markup:
     }
 
 }
+
+.sticker-close {
+    @include iconfont-Close;
+    position: relative;
+    top: 3px;
+    padding: 10px 6px;
+    cursor: pointer;
+    color: $soft-script;
+    font-size: $base-font-size;
+
+    &:hover {
+        color: $dark-silk;
+    }
+}

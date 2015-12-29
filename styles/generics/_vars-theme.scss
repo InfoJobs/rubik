@@ -3,6 +3,9 @@
 // -------------------------------------------
 
 $color-primary:				$theme-color--primary;
+$color-primary-hover: 		$theme-color--primary-hover;
+
+$color-header:				$theme-color--header;
 
 //
 // Background and border colors
@@ -19,7 +22,14 @@ $color-secondary:       $theme-color--secondary;
 
 
 //
-// Layout
+// Form elements
 // -------------------------------------------
 
+$input-tel-width:       $theme-input-tel-width;
+
+
+//
+// Layout
+// -------------------------------------------
+$row-centered-width: 		$theme-row-centered-width;
 $container-width:		    $theme-container-width;

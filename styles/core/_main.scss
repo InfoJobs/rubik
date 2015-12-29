@@ -152,13 +152,31 @@ Styleguide  #{$sgi-containers}
 	width: 100%;
 
 	@include mediaquery ($bp-desktop) {
-		width: 486px;
+		width: $row-centered-width;
 		margin: 0 auto 10px auto;
 	}
 
 	input,
 	textarea {
 		width: 100%;
+	}
+}
+
+.row-flex {
+	@include display-flex;
+	@include align-items(center);
+
+	.col-flex-1 {
+		@include flex(1);
+
+		&:not(:only-child) {
+			margin-right: 20px;
+		}
+	}
+
+	.col-flex-min {
+		min-width: 75px;
+		text-align: right;
 	}
 }
 
@@ -277,6 +295,10 @@ img[alt] {
         .panel-default {
             opacity: .5;
         }
+    }
+
+    p {
+    	color: $dark-silk;
     }
 }
 
