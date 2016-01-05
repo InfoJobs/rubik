@@ -27,6 +27,9 @@ Styleguide 2.16
   .error & {
       border: 1px solid $trueblood;
   }
+  .success & {
+      border: 1px solid $bamboo;
+  }
 }
 
 .chosen-container .chosen-drop {
