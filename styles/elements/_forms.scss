@@ -49,13 +49,20 @@ label,
 
 select {
 	padding: 13px 10px;
-	border: 0;
+	height: 44px;
 	background: transparent;
 	font-size: 16px;
 	color: $dark-silk;
 	border: 0 none;
 	background: url(#{$path-backgrounds}/bg-select-arrow.png) right 15px no-repeat $shiro;
+	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
 	cursor: pointer;
+
+	&:focus {
+		border: 1px solid $color-primary;
+		outline: none;
+		color: #000;
+	}
 
 	.error & {
 		border: 1px solid $trueblood;
@@ -144,7 +151,7 @@ input[type="checkbox"]{
 	display: inline-block;
 	cursor: pointer;
   	padding: 0;
-  	margin: 3px 0 0 0;
+  	margin: 3px 6px 0 0;
 	width: auto;
   	border: 0 none;
   	vertical-align: top;
@@ -205,17 +212,17 @@ Styleguide #{$sgi-formsFieldblock}
 
 .form--field-block {
 	> li { //TODO: Could be possible to apply only a class in <form> to avoid do it in every <ul>?
-	margin-bottom: 20px;
-	vertical-align: middle;
+		margin-bottom: 20px;
+		vertical-align: middle;
 
-	&:last-child {
-		margin-bottom: 0;
-	}
+		&:last-child {
+			margin-bottom: 0;
+		}
 
-	.info {
+		.info {
 			margin-bottom: 0;
 
-			&:first-of-type {
+			&:first-of-type:only-child {
 				margin-top: 5px;
 			}
 		}
@@ -392,8 +399,8 @@ Styleguide #{$sgi-forms-select}
 		text-indent: 0.01px;
 		text-overflow: "";
 		-webkit-appearance: none;
-			 -moz-appearance: none;
-						appearance: none;
+		   -moz-appearance: none;
+				appearance: none;
 		top: 0;
 		left: 0;
 		margin: 0;
@@ -499,10 +506,10 @@ Styleguide #{$sgi-forms-input-group}
 			position: relative;
 
 			&::before {
-		    content: "|";
-		    position: absolute;
-		    top: 12px;
-		    left: -5px;
+			    content: "|";
+			    position: absolute;
+			    top: 12px;
+			    left: -5px;
 				color: #c7c7c7;
 			}
 
@@ -573,7 +580,6 @@ input[type="tel"],
     margin-right: 20px;
 
 	@include mediaquery ($bp-desktop) {
-		width: 230px;
 		width: $input-tel-width;
 		float: left;
 	}
