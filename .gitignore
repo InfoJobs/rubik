@@ -1,10 +1,11 @@
 .DS_Store
 .sass-cache
 **/node_modules
+node_modules
 npm-debug.log
-styleguide/styleguide/**
-styleguide/css/**
-styleguide/dist/**
+styleguide/styleguide/**/*
+styleguide/css/**/*
+styleguide/dist/**/*
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

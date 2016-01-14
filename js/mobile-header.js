@@ -21,7 +21,7 @@ $('document').ready(function(){
 
 			elH1.style.width = elH1Width + 'px';
 
-			elmodalPageHeader.style.top = "30px";
+			elmodalPageHeader.style.top = "20px";
 
 			elmodalPageHeader.nextElementSibling.classList.add('js-mobile-header-content');
 		} else {

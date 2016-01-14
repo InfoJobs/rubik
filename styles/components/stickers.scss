@@ -1,5 +1,3 @@
-@import "../generics/generics";
-
 //refactor
 @import "../core/fonts";
 //@import "../core/colors";
@@ -35,14 +33,14 @@
 .sticker-secondary {
 	@include sticker;
     color: $shiro;
-	background-color: $day-blue;
+	background-color: $color-primary;
 }
 
 @mixin sticker-skill {
 	@include sticker;
     margin: 0 5px 0 0;
     color: $dark-silk;
-    background-color: $resting-katana;
+    background-color: $color-secondary;
 }
 
 .sticker-skill {
@@ -109,4 +107,18 @@ Markup:
         float: left;
     }
 
+}
+
+.sticker-close {
+    @include iconfont-Close;
+    position: relative;
+    top: 3px;
+    padding: 10px 6px;
+    cursor: pointer;
+    color: $soft-script;
+    font-size: $base-font-size;
+
+    &:hover {
+        color: $dark-silk;
+    }
 }

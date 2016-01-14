@@ -26,10 +26,16 @@ p {
 	}
 
 
-	&.error {
+	&.error,
+	.error & {
 		margin-top: 5px;
 		color: $trueblood;
 	}
+}
+
+.error span {
+	margin-top: 5px;
+	color: $trueblood;
 }
 
 #prefijoDescripcion1 p:last-child {
@@ -37,7 +43,7 @@ p {
 }
 
 
-$font-size: (small, base, medium); //TODO: resolve problem when it s moved to _vars
+$font-size: (xsmall, small, base, medium); //TODO: resolve problem when it s moved to _vars
 
 @each $value in $font-size {
 

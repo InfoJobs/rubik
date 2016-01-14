@@ -83,8 +83,8 @@ Styleguide #{$sgi-buttons-type}
 */
 
 .btn-default {
-  color: $mid-script;
-  background-color: $resting-katana;
+  color: $theme-button-text-color;
+  background-color: $color-secondary;
 }
 
 .btn-default:hover,
@@ -95,11 +95,10 @@ Styleguide #{$sgi-buttons-type}
 
 .btn-primary {
   color: $shiro;
-  background-color: $day-blue;
+  background-color: $color-primary;
 
   .panel-focus & {
-      background-color: $late-blue;
-
+      background-color: $color-primary-hover;
     }
 
 }
@@ -107,7 +106,7 @@ Styleguide #{$sgi-buttons-type}
 .btn-primary:hover,
 .btn-primary:focus {
     color: $shiro;
-    background-color: $late-blue;
+    background-color: $color-primary-hover;
 }
 
 .btn-primary:active {
@@ -146,7 +145,7 @@ Styleguide #{$sgi-buttons-type}
 
 ///*DEPRECATED: .btn-link-primary only used in header and 'ver_oferta.html'*/
 .btn-link-primary {
-  color: $day-blue;
+  color: $color-primary;
 }
 
 .btn-link-primary:hover,
@@ -324,13 +323,13 @@ Styleguide #{$sgi-buttons-display}
 .btn-form-inline { //used on search-bar, filters and edit-cv(datos-personales)
   width: 100%;
 
-    @media only screen and (max-width: $tablet-start) {
-        @at-root button#{&} {
-            height: auto;
-            padding: 7px 10px 8px 10px;
-            font-size: 16px;
-        }
-    }
+      @at-root button#{&} {
+      	width: 100%;
+          height: auto;
+          padding: 7px 10px 8px 10px;
+          font-size: 16px;
+      }
+
 
     &.text-left { //already defined in tools.scss, but overwritten by btn{...text-align: center;...}
     	text-align: left;
@@ -393,7 +392,7 @@ Styleguide #{$sgi-button-group-structure}
   		background-color: $shiro;
 
   		&:hover:not([disabled]) {
-  			background-color: $resting-katana;
+  			background-color: $color-secondary;
   		}
 
   		&.btn-disabled:hover {
@@ -407,7 +406,7 @@ Styleguide #{$sgi-button-group-structure}
 
   	.active .btn,
   	.active .btn.btn-disabled {
-  	    background-color: $resting-katana;
+  	    background-color: $color-secondary;
   	    cursor: default;
   	}
 
@@ -527,6 +526,7 @@ Styleguide #{$sgi-button-file}
 	}
 
 	input {
+		height: auto;
 		opacity: 0;
 		cursor: pointer;
 	}

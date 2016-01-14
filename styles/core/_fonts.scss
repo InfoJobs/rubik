@@ -2,6 +2,26 @@
     $FONTS
 \*------------------------------------*/
 
+@mixin font-xsmall-line { //p.xsmall
+	font-size: $xsmall-font-size;
+	line-height: $xsmall-line-height;
+
+	@media print {
+		font-size: ($xsmall-font-size/$point-to-px);
+		line-height: ($xsmall-line-height/$point-to-px);
+	}
+}
+
+%font-xsmall-line { //p.xsmall
+	font-size: $xsmall-font-size;
+	line-height: $xsmall-line-height;
+
+	@media print {
+		font-size: ($xsmall-font-size/$point-to-px);
+		line-height: ($xsmall-line-height/$point-to-px);
+	}
+}
+
 @mixin font-small-line { //p.small
 	font-size: $small-font-size;
 	line-height: $small-line-height;

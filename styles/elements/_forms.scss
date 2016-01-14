@@ -49,13 +49,20 @@ label,
 
 select {
 	padding: 13px 10px;
-	border: 0;
+	height: 44px;
 	background: transparent;
 	font-size: 16px;
 	color: $dark-silk;
 	border: 0 none;
 	background: url(#{$path-backgrounds}/bg-select-arrow.png) right 15px no-repeat $shiro;
+	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
 	cursor: pointer;
+
+	&:focus {
+		border: 1px solid $color-primary;
+		outline: none;
+		color: #000;
+	}
 
 	.error & {
 		border: 1px solid $trueblood;
@@ -69,6 +76,7 @@ select:-moz-focusring {
 
 @mixin input {
 	display: block;
+	height: 44px;
 	padding: 4px 10px;
 	font-size: $base-font-size;
 	line-height: $base-line-height;
@@ -103,10 +111,26 @@ textarea {
 	}
 
 	&:focus {
-		border: 1px solid $day-blue;
+		border: 1px solid $color-primary;
 		outline: none;
 		color: #000;
 	}
+}
+
+::-webkit-input-placeholder {
+	font-size: $small-font-size;
+}
+
+::-moz-placeholder { // firefox 19+
+	font-size: $small-font-size;
+}
+
+:-ms-input-placeholder {
+	font-size: $small-font-size;
+}
+
+::placeholder {
+	font-size: $small-font-size;
 }
 
 textarea {
@@ -188,19 +212,23 @@ Styleguide #{$sgi-formsFieldblock}
 
 .form--field-block {
 	> li { //TODO: Could be possible to apply only a class in <form> to avoid do it in every <ul>?
-	margin-bottom: 20px;
-	vertical-align: middle;
+		margin-bottom: 20px;
+		vertical-align: middle;
 
-	&:last-child {
-		margin-bottom: 0;
-	}
+		&:last-child {
+			margin-bottom: 0;
+		}
 
-	.info {
+		.info {
 			margin-bottom: 0;
 
-			&:first-of-type {
+			&:first-of-type:only-child {
 				margin-top: 5px;
 			}
+		}
+
+		label + .info {
+			margin-top: -5px;
 		}
 	}
 
@@ -213,8 +241,8 @@ Styleguide #{$sgi-formsFieldblock}
 	}
 }
 
-form ul .indent { // Used in cartas presentacion
-	margin-left: 20px;
+form ul .indent { // Used in cartas presentacion and company registration
+	margin-left: 24px;
 	margin-top: 5px;
 }
 
@@ -371,8 +399,8 @@ Styleguide #{$sgi-forms-select}
 		text-indent: 0.01px;
 		text-overflow: "";
 		-webkit-appearance: none;
-			 -moz-appearance: none;
-						appearance: none;
+		   -moz-appearance: none;
+				appearance: none;
 		top: 0;
 		left: 0;
 		margin: 0;
@@ -483,10 +511,6 @@ Styleguide #{$sgi-forms-input-group}
 			    top: 12px;
 			    left: -5px;
 				color: #c7c7c7;
-
-				@include mediaquery ($bp-desktop) {
-					top: 4px;
-				}
 			}
 
 			&:first-of-type::before {
@@ -551,29 +575,22 @@ input[type="number"] {
 	}
 }
 
-input[type="tel"] {
-	margin-right: 20px;
+input[type="tel"],
+.row-centered .input-cif {
+    margin-right: 20px;
 
 	@include mediaquery ($bp-desktop) {
-		width: 230px;
+		width: $input-tel-width;
 		float: left;
 	}
 
 	~ label {
 		width: auto;
 		margin: 10px 0 0 0;
-
-		@include mediaquery ($bp-desktop) {
-			margin-top: 4px;
-		}
 	}
 
 	~ input {
 		margin: 12px 0 0 0;
-
-		@include mediaquery ($bp-desktop) {
-			margin-top: 7px;
-		}
 	}
 
 	~ .error-info {
@@ -621,12 +638,18 @@ Markup:
 Styleguide #{$sgi-forms-error}
 */
 
-.error-info {
+.error-info,
+.success-info {
 	margin-top: 5px;
 	color: $trueblood;
 	font-size: 12px;
 	line-height: 110%;
 }
+
+.success-info {
+	color: $bamboo;
+}
+
 
 //helpers for form
 
@@ -642,7 +665,6 @@ Styleguide #{$sgi-forms-error}
 
 	input {
 		width: 100%;
-		height: 44px;
 	}
 
 	.radio-group {
@@ -676,7 +698,7 @@ Styleguide #{$sgi-forms-error}
 	}
 }
 
-.password {
+.strength-bar {
 	position: relative;
 
 	a {
@@ -686,15 +708,10 @@ Styleguide #{$sgi-forms-error}
 		font-size: $small-font-size;
 		line-height: $xsmall-line-height;
 		padding: 15px 10px;
-
-		@include mediaquery ($bp-desktop) {
-			top: 25px;
-			right: 5px 10px;
-			padding: 8px;
-		}
 	}
 
-	input {
+	input,
+	textarea {
 		margin-bottom: 10px;
 	}
 
@@ -813,6 +830,18 @@ Styleguide #{$sgi-forms-error}
 	width: 70px; // 5 digits format (ES, IT)
 }
 
+//reset default validation on ff
+:invalid {
+  box-shadow: none;
+}
+
+:-moz-submit-invalid {
+  box-shadow: none;
+}
+
+:-moz-ui-invalid {
+  box-shadow:none;
+}
 
 /*
 Examples Forms

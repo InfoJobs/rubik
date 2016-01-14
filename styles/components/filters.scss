@@ -1,6 +1,3 @@
-//generics
-@import "../generics/generics";
-
 //refactor
 @import "../core/fonts";
 
@@ -142,14 +139,9 @@ Styleguide #{$sgi-filter-keyword}
 	}
 
 	button {
+		width: auto;
 		height: 44px;
 		line-height: 0;
-
-		@include mediaquery ($bp-desktop) {
-            height: 30px;
-			line-height: 28px;
-        }
-
 	}
 }
 

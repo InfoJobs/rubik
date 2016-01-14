@@ -1,6 +1,3 @@
-//generics
-@import "../generics/generics";
-
 .global-nav {
 	margin-top: -10px; // delete margin from container-expanded on navigation menu (only mobile)
 	overflow: hidden;
@@ -79,7 +76,7 @@
 	@at-root .global-nav#{&} {
 		height: 50px;
 		min-height: 50px;
-		background-color: $day-blue;
+		background-color: $color-primary;
 		background-image: url(#{$path-media}/appgrade/backgrounds/bg-logo-reduced-white.png);
 		border: 0 none;
 
@@ -274,13 +271,13 @@ a.nav-bar-toggle {
 			color: $dark-silk;
 
 			@include mediaquery ($bp-header) {
-				color: $day-blue;
+				color: $color-primary;
 			}
 
 		}
 
 		&  a:active {
-			color: $day-blue
+			color: $color-primary
 		}
 	}
 
@@ -367,7 +364,7 @@ a.nav-bar-toggle {
 					-webkit-tap-highlight-color: transparent; /* For some Androids */
 
 					&:hover {
-						color: $day-blue;
+						color: $color-primary;
 					}
 				}
 			}
@@ -455,7 +452,7 @@ a.nav-bar-toggle {
 		background-color: $dark-shiro;
 
 		&:hover {
-			color:$day-blue;
+			color:$color-primary;
 		}
 
 		@include mediaquery ($bp-header) {
@@ -515,7 +512,7 @@ a.nav-bar-toggle {
 			color: $shiro;
 
 			@include mediaquery ($bp-header) {
-				color:$day-blue;
+				color:$color-primary;
 			}
 
 		}
@@ -626,18 +623,18 @@ a.nav-bar-toggle {
 				color: $dark-silk;
 
 				@include mediaquery ($bp-header) {
-					color:$day-blue;
+					color:$color-primary;
 				}
 			}
 
 			&:active {
-				color:$day-blue;
+				color:$color-primary;
 			}
 		}
 	}
 
 	.active {
-		color: $day-blue;
+		color: $color-primary;
 	}
 
 	.sticker {

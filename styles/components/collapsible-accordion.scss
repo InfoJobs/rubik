@@ -1,0 +1,54 @@
+@import "../core/fonts";
+
+/*------------------------------------*\
+    $COLLAPSIBLE ACCORDION
+\*------------------------------------*/
+
+.collapsible-accordion {
+
+    &-header {
+        @include font-base-line;
+
+        @include mediaquery ($bp-desktop) {
+            @include font-medium-line;
+        }
+
+        display: block;
+        position: relative;
+        padding: 20px 20px 15px 70px;
+        border-bottom: 1px solid $darkest-shiro;
+        margin: 0;
+        font-family: $base-font-family-bold;
+
+        .arrow {
+            width: 57px;
+            height: 100%;
+            padding-top: 22px;
+            padding-left: 16px;
+            top: 0;
+            left: 0;
+            position: absolute;
+            background: $dark-shiro;
+        }
+
+        @include mediaquery ($bp-desktop) {
+            &:hover {
+                background: #e3f5fd;
+    		}
+        }
+    }
+
+    &-header:not(:first-of-type) {
+        border-top: 1px solid $darkest-shiro;
+    }
+
+    &-content {
+        @include inner;
+        border-bottom: 1px solid $darkest-shiro;
+
+        &:not(:last-of-type) {
+            border-bottom: 0;
+        }
+
+    }
+}

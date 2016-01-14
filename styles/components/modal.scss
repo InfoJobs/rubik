@@ -4,9 +4,6 @@ Javascript Components
 Styleguide 3
 */
 
-//generics
-@import "../generics/generics";
-
 /*------------------------------------*\
     $MODAL
 \*------------------------------------*/
@@ -89,7 +86,7 @@ Styleguide #{$sgi-modal-content}
 	padding: 20px 10px 15px 10px;
 	overflow: hidden;
 	color: $shiro;
-	background-color: $day-blue;
+	background-color: $color-header;
 
 	@include mediaquery ($bp-tablet) {
 		padding: 20px 20px 15px 20px;

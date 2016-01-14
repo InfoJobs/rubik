@@ -1,0 +1,534 @@
+.global-nav {
+	margin-top: -10px; // delete margin from container-expanded on navigation menu (only mobile)
+	overflow: hidden;
+	background-color: $dark-blue;
+	background-repeat: no-repeat;
+	background-position: center center;
+	//bg logo es
+	background-image: url(#{$path-media}/portales/ij/appgrade/backgrounds/bg-logo-reduced-white.png);
+	border-bottom: 1px solid $darkest-shiro;
+
+	@include mediaquery ($bp-header) {
+
+		background-image: none;
+		margin-top: 10px;
+
+		.logo span {
+			display: none;
+		}
+
+	}
+
+	h1 {
+		margin: 0;
+	}
+
+	.logo img {
+		display: none;
+
+	}
+
+	a:not(.btn) {
+		font-size: $large-font-size;
+		font-family: 'Proximanovabold';
+
+		@include mediaquery ($bp-header) {
+			font-size: $base-font-size;
+			font-family: 'Proximanova';
+		}
+	}
+
+}
+
+.global-nav-brand {
+	@at-root .global-nav#{&} {
+		height: 50px;
+		min-height: 50px;
+		background-color: $color-contrast;
+		background-image: url(#{$path-media}/appgrade/backgrounds/bg-logo-reduced-white.png);
+		border: 0 none;
+
+		@include mediaquery ($bp-header) {
+			background-position: 20px center;
+		}
+
+		.logo,
+		.logo:hover {
+			display: block;
+			height: 50px;
+			width: 130px;
+			margin: 0 auto;
+			padding: 10px 20px;
+			border: 0 none;
+
+			@include mediaquery ($bp-header) {
+
+				margin: 0;
+
+			}
+
+		}
+
+	}
+}
+
+a.nav-bar-toggle {
+	display: block;
+	margin: 0;
+	width: 50px;
+	height: 50px;
+	-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
+	-webkit-tap-highlight-color: transparent; /* For some Androids */
+
+	&::before {
+		position: relative;
+		top: 25px;
+		left: 10px;
+		color: $darkest-shiro;
+		font-size: $xlarge-font-size;
+	}
+
+	&:hover {
+		color: $dark-shiro;
+	}
+
+	span {
+		display: none;
+	}
+
+	@include mediaquery ($bp-header) {
+		display: none;
+	}
+
+}
+
+.nav-mobile {
+	@include display-flex;
+	@include flex-flow(column nowrap);
+	position: absolute;
+	top: 0;
+	left: -100%;
+	height: 100%;
+	max-height: 100vh;
+	width: 260px;
+	background: $dark-blue;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+	z-index: $zindex-menu;
+	-webkit-transition: all 0.3s ease;
+			transition: all 0.3s ease;
+
+	@include mediaquery ($bp-header) {
+		display: block;// en desktop quitamos el flexbox por compatibilidad con android 4.3
+        -webkit-transition: none 0s ease 0s;
+		        transition: none 0s ease 0s;
+		position: static;
+		height: auto;
+		width: auto;
+		overflow: hidden;
+
+	}
+
+	.global-nav-company & {
+		padding-top: 80px;
+
+		@include mediaquery ($bp-header) {
+			padding-top: 0;
+		}
+	}
+
+}
+
+.nav-bar-menu {
+	@include flex(1 1 auto);
+	@include order(1);
+	overflow: auto;
+
+	> li {
+		float: none;
+
+		@include mediaquery ($bp-header) {
+			float: left;
+		}
+
+		&  a {
+			display:block;
+			position: relative;
+			padding: 17px 10px 13px 10px;
+			margin: 0;
+			color: $dark-silk;
+			-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
+			-webkit-tap-highlight-color: transparent; /* For some Androids */
+
+			@include mediaquery ($bp-header) {
+				padding: 30px 15px;
+				color: $mid-script;
+			}
+		}
+
+		&  a:hover {
+			color: $dark-silk;
+
+			@include mediaquery ($bp-header) {
+				color: $color-primary;
+			}
+
+		}
+
+		&  a:active {
+			color: $color-primary;
+		}
+	}
+
+	.logo,
+	.logo:hover {
+		padding-top: 20px;
+
+		@include mediaquery ($bp-header) {
+			margin: 20px 0 0 0;
+			padding: 0;
+			display: block;
+			height: 41px;
+			width: 138px;
+			background-repeat: no-repeat;
+			background-position: left center;
+			//bg logo es
+			background-image: url(#{$path-media}/portales/ij/appgrade/backgrounds/bg-logo-white.png);
+			background-size: contain;
+		}
+	}
+
+	@include mediaquery ($bp-header) {
+
+		float: left;
+		overflow: visible;
+		padding: 0 20px;
+
+	}
+
+}
+
+.nav-bar-access,
+.nav-bar-user {
+	@include display-flex;
+	@include align-items(center);
+
+	@include mediaquery ($bp-header) {
+		float: right;
+		border: 0 none;
+	}
+}
+
+.nav-bar-access {
+	padding: 10px;
+	@include order(2);
+	border-top: 1px solid $darkest-shiro;
+
+	@include mediaquery ($bp-header) {
+		padding: 25.5px 20px;
+		border-top: 0;
+	}
+
+	li {
+		@include flex(1 1 50%);
+		margin-left: 10px;
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		@include mediaquery ($bp-header) {
+			@include flex(0 0 auto);
+		}
+	}
+
+	.btn {
+		width: 100%;
+
+		@include mediaquery ($bp-header) {
+			width: auto;
+		}
+	}
+}
+
+.nav-bar-user {
+	@include order(3);
+	@include flex(0 0 auto);
+
+	@include mediaquery ($bp-header) {
+		padding: 3.5px 20px;
+	}
+
+	li {
+		@include flex(1 0 auto);
+
+		@include mediaquery ($bp-header) {
+			position: relative;
+
+			&:first-child {
+				margin-right: 15px;
+			}
+
+			&:first-child::after {
+				content: "|";
+				position: absolute;
+				right: -5px;
+				top: calc(45% - 0.5em);
+				color: $darkest-shiro;
+			}
+		}
+	}
+
+	.logout {
+		display: block;
+		padding: 15px 10px;
+		color: $soft-script;
+		background-color: $dark-shiro;
+
+		&:hover {
+			color: $color-primary;
+		}
+
+		@include mediaquery ($bp-header) {
+			display: inline;
+			padding: 0;
+			background-color: $shiro;
+		}
+	}
+
+	.global-nav-logged &,
+	.global-nav-company & {
+		display: block;
+
+		@include mediaquery ($bp-header) {
+			@include display-flex;
+		}
+	}
+
+	.global-nav-company & {
+
+		@include mediaquery ($bp-header) {
+			padding: 30px 20px 30px 0;
+		}
+
+		.avatar {
+			height: 80px;
+
+			@include mediaquery ($bp-header) {
+				height: auto;
+			}
+		}
+	}
+
+	.avatar {
+		position: absolute;
+		left: 0;
+	    top: 0;
+		padding: 30px 20px;
+	    width: 100%;
+		height: 145px;
+		text-align: center;
+		color: $shiro;
+		background: $dark-silk;
+
+		@include mediaquery ($bp-header) {
+			position: relative;
+			padding: 0;
+			width: auto;
+			height: auto;
+			text-align: left;
+			color: $soft-script;
+			background: none;
+			white-space: nowrap;
+		}
+
+		&:hover {
+			color: $shiro;
+
+			@include mediaquery ($bp-header) {
+				color: $color-primary;
+			}
+
+		}
+
+		.name {
+			white-space: nowrap;
+			max-width: 100%;
+
+			@include mediaquery ($bp-header) {
+				display: table-cell;
+				vertical-align: middle;
+				max-width: 180px;
+				padding-right: 10px;
+				padding-left: 7px;
+			}
+		}
+
+		.picture {
+			width: 60px;
+			height: 60px;
+			border: 3px solid $shiro;
+			margin-bottom: 10px;
+			overflow: hidden;
+
+			img {
+				width: 57px;
+				height: 57px;
+			    object-fit: cover;
+			    object-position: 0 center;
+			    vertical-align: middle;
+
+				@include mediaquery ($bp-header) {
+					width: 27px;
+					height: 27px;
+				}
+			}
+
+			@include mediaquery ($bp-header) {
+				display: table-cell;
+				width: 33px;
+				height: 33px;
+				margin-bottom: 0;
+
+			}
+		}
+
+		.child-avatar {
+			position: absolute;
+			left: 0;
+			right: 0;
+			padding: 0 10px;
+
+			@include mediaquery ($bp-header) {
+				display: table;
+				position: static;
+				padding: 0;
+			}
+
+		}
+
+		.bg-blur {
+			display: block;
+		    position: absolute;
+		    left: 0;
+		    top: 0;
+		    height: 100%;
+		    width: 100%;
+		   background-size: 100%;
+		   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(46%, rgba(0, 0, 0, 0.08)), color-stop(59%, rgba(0, 0, 0, 0.08)), color-stop(100%, rgba(0, 0, 0, 0.9)));
+		   background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.08) 59%, rgba(0, 0, 0, 0.9) 100%);
+		   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.08) 59%, rgba(0, 0, 0, 0.9) 100%);
+		   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.08) 59%, rgba(0, 0, 0, 0.9) 100%);
+
+			@include mediaquery ($bp-header) {
+				display: none;
+			}
+
+		}
+	}
+}
+
+.wrap-overlay {
+	position: fixed;
+	width: 100%;
+}
+
+.wrap-overlay::before {
+	display: block;
+	content: "";
+	position: fixed;
+	width: 100%;
+	height: 100%;
+    -webkit-transition: background 1s;
+    -moz-transition: background 1s;
+    -o-transition: background 1s;
+    transition: background 2;
+	z-index: $zindex-wrap-overlay;
+}
+
+.wrap-transition .open-menu:nth-of-type(1) {
+	left: 0;
+    -webkit-box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.4);
+      -moz-box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.4);
+	       box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.4);
+}
+
+.wrap-transition::before {
+	background: rgba(0,0,0,0.6);
+}
+
+@media only screen and (max-width: 945px) {
+
+	// mantenemos a 10px el padding a partir de esta resolucion por coherencia con el punto de corte del menu (distitos -> 945 vs $tablet-start)
+	.wrapper {
+		padding: 0 10px;
+	}
+
+	.nav-mobile {
+		//android 4.3
+		-webkit-box-orient: block-axis;
+		   -moz-box-orient: block-axis;
+		        box-orient: block-axis;
+		//
+	}
+
+}
+
+@media only screen and (max-width: $mobile-start) {
+
+	.wrapper {
+		padding: 0;
+	}
+
+}
+
+//print header
+
+@media print {
+
+	.global-nav {
+		overflow: visible;
+		padding: 0;
+		margin: 0 0 20px 0;
+		background: none;
+		border: 0 none;
+
+		a.nav-bar-toggle {
+			display: none;
+		}
+
+		.nav-mobile {
+			position: static;
+
+		}
+		.nav-bar-menu {
+			border: 0 none;
+		}
+
+		.nav-bar-user,
+		&.global-nav-logged .nav-bar-user,
+		.nav-bar-access,
+		.nav-bar-menu li span,
+		.nav-bar-menu li + li {
+
+			display: none;
+		}
+
+		.nav-bar-menu .logo,
+		&.global-nav-brand .logo {
+			height: auto;
+			width: auto;
+			padding: 0;
+			margin: 0;
+			display: block;
+		}
+
+		.logo img {
+			display: block;
+		}
+
+
+	}
+}

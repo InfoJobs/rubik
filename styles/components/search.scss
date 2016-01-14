@@ -1,6 +1,3 @@
-//generics
-@import "../generics/generics";
-
 /*------------------------------------*\
     $search-bar
 \*------------------------------------*/
@@ -20,7 +17,6 @@
 
 	.search-field {
 		float: left;
-		padding-right: 10px;
 		margin-bottom: 10px;
 
 		&:last-child {

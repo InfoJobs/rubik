@@ -2,50 +2,54 @@ module.exports = function(grunt) {
 
   require('time-grunt')(grunt);
 
+  require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
+
   grunt.initConfig({
 
     // Clean -------------------------------------------------------------------
     clean: {
-      style: ['css', 'dist', 'styleguide']
+      style: ['./styleguide/css', './styleguide/dist', './styleguide/styleguide']
     },
     // Copy --------------------------------------------------------------------
     copy: {
       styleguide: {
         files: [
-          { src: ['styleguide.md'], dest: 'css/styleguide.md'}
+          { src: ['./styleguide/styleguide.md'], dest: './styleguide/css/styleguide.md'}
         ]
       },
       allStyles: {
         files: [
-          { src: ['css/rubik.css'], dest: 'styleguide/public/rubik.css'}
+          { src: ['./styleguide/css/rubik.css'], dest: './styleguide/styleguide/public/rubik.css'},
+          { src: ['./styleguide/css/candidates.css'], dest: './styleguide/styleguide/public/candidates.css'},
+          { src: ['./styleguide/css/companies.css'], dest: './styleguide/styleguide/public/companies.css'}
         ]
       },
       copyFonts: {
         files: [
-          { src: ['fonts/*'], dest: 'styleguide/'}
+          { src: ['./styleguide/fonts/*'], dest: './styleguide/'}
         ]
       },
       copyMedia: {
         files: [
-          { src: ['./images/**'], dest: 'styleguide/'}
+          { src: ['./styleguide/images/**'], dest: './styleguide/'}
         ]
       },
       copyJS: {
         files: [
-          { src: ['./js/**'], dest: 'styleguide/'},
-          { src: ['./../js/**'], dest: 'styleguide/styleguide/'}
+          { src: ['./styleguide/js/**'], dest: 'styleguide/'},
+          { src: ['./js/**'], dest: 'styleguide/styleguide/'}
         ]
       },
       copyHTML: {
         files: [
-        { src: ['./../html/**'], dest: 'styleguide/styleguide/'}
+        { src: ['./html/**'], dest: 'styleguide/styleguide/'}
         ]
       },
       copyRubik: {
         expand: true,
-        cwd: 'styleguide/',
+        cwd: 'styleguide/styleguide/',
         src: ['**'],
-        dest: '../../rubik.public/'
+        dest: '../rubik.public/'
       }
     },
     // Sass --------------------------------------------------------------------
@@ -55,7 +59,7 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: [
-          { src: ['rubik-styleguide.scss'], dest: 'css/rubik.doc.css'}
+          { src: ['styleguide/rubik-styleguide.scss'], dest: 'styleguide/css/rubik.doc.css'}
         ]
       },
       production: {
@@ -63,7 +67,9 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: [
-          { src: ['rubik-styleguide.scss'], dest: 'css/rubik.css'}
+          { src: ['styleguide/rubik-styleguide.scss'], dest: 'styleguide/css/rubik.css'},
+          { src: ['styles/candidates.scss'], dest: 'styleguide/css/candidates.css'},
+          { src: ['styles/companies.scss'], dest: 'styleguide/css/companies.css'}
         ]
 
       }
@@ -73,15 +79,15 @@ module.exports = function(grunt) {
       dist: {
         options: {},
         files: [
-          {src: 'css/rubik.doc.css', dest: 'dist/', expand: true, cwd: ''},
-          {src: 'templates/infojobs/index.html', dest: '', expand: true, cwd: ''}
+          {src: './styleguide/css/rubik.doc.css', dest: 'styleguide/dist/', expand: true, cwd: ''},
+          {src: 'styleguide/templates/infojobs/index.html', dest: '', expand: true, cwd: ''}
         ]
       }
     },
     // Text replace ------------------------------------------------------------
     replace: {
       casper: {
-        src: ['styleguide/*.html'],
+        src: ['styleguide/styleguide/*.html'],
         overwrite: true,                 // overwrite matched source files
         replacements: [{
           from: ' casper',
@@ -111,7 +117,7 @@ module.exports = function(grunt) {
           paths: ["assets/css"]
         },
         files: {
-          "templates/infojobs/public/kss.css": "templates/infojobs/public/kss.less"
+          "./styleguide/templates/infojobs/public/kss.css": "./styleguide/templates/infojobs/public/kss.less"
         }
       }
     },
@@ -120,14 +126,14 @@ module.exports = function(grunt) {
         // Kss-node ------------------------------------------------------------
         kss: {
 //          command: 'kss-node css styleguide --css css/styles.doc.css'
-          command: 'node_modules/kss/bin/kss-node dist/css styleguide --template templates/infojobs --helpers templates/helpers'
+          command: './node_modules/.bin/kss-node styleguide/dist/styleguide/css styleguide/styleguide --template styleguide/templates/infojobs --helpers styleguide/templates/helpers'
         //   command: 'kss-node dist/css styleguide --helpers templates/helpers'
         }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  //grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-include-replace');
   grunt.loadNpmTasks('grunt-text-replace');

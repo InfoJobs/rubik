@@ -1,10 +1,7 @@
-//generics
-@import "../generics/generics";
-
 /*------------------------------------*\
     $LOADING
 \*------------------------------------*/
-.loading-layer { 
+.loading-layer {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -22,43 +19,42 @@
   top: 50%;
   left: 50%;
   border-radius: 0px;
-  box-shadow: -15px 15px $bamboo, 0 30px $day-blue;
+  box-shadow: -15px 15px $bamboo, 0 30px $color-primary;
   animation: Spinner 1.5s ease-in-out infinite;
   -webkit-animation: Spinner 1.5s ease-in-out infinite;
 }
 
 @keyframes Spinner {
   0% {
-    box-shadow: -15px 15px $bamboo, 0 30px $day-blue;
+    box-shadow: -15px 15px $bamboo, 0 30px $color-primary;
   }
   25% {
-    box-shadow: 0px 15px $bamboo, -15px 30px $day-blue;
+    box-shadow: 0px 15px $bamboo, -15px 30px $color-primary;
   }
   50% {
-    box-shadow: 0px 30px $bamboo, -15px 15px $day-blue;
+    box-shadow: 0px 30px $bamboo, -15px 15px $color-primary;
   }
   75% {
-    box-shadow: -15px 30px $bamboo, 0px 15px $day-blue;
+    box-shadow: -15px 30px $bamboo, 0px 15px $color-primary;
   }
   100% {
-    box-shadow: -15px 15px $bamboo, 0px 30px $day-blue;
+    box-shadow: -15px 15px $bamboo, 0px 30px $color-primary;
   }
 }
 @-webkit-keyframes Spinner {
   0% {
-    box-shadow: -15px 15px $bamboo, 0 30px $day-blue;
+    box-shadow: -15px 15px $bamboo, 0 30px $color-primary;
   }
   25% {
-    box-shadow: 0px 15px $bamboo, -15px 30px $day-blue;
+    box-shadow: 0px 15px $bamboo, -15px 30px $color-primary;
   }
   50% {
-    box-shadow: 0px 30px $bamboo, -15px 15px $day-blue;
+    box-shadow: 0px 30px $bamboo, -15px 15px $color-primary;
   }
   75% {
-    box-shadow: -15px 30px $bamboo, 0px 15px $day-blue;
+    box-shadow: -15px 30px $bamboo, 0px 15px $color-primary;
   }
   100% {
-    box-shadow: -15px 15px $bamboo, 0px 30px $day-blue;
+    box-shadow: -15px 15px $bamboo, 0px 30px $color-primary;
   }
 }
-

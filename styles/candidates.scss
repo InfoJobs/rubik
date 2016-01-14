@@ -1,0 +1,14 @@
+$stylesheet: 'candidates';
+
+@import "rubik"; // generics.scss
+				 // core.scss
+				 // elements.scss
+
+// components
+@import 'components/components';
+
+// specifics components
+@import 'components/header-ca';
+
+ // tools
+@import 'generics/tools';
