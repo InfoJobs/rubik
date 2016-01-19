@@ -109,6 +109,16 @@ $query2     = width, device-width
 	}
 }
 
+@mixin inner-expanded {
+	padding-top: 20px;
+    padding-bottom: 20px;
+
+    @include mediaquery ($bp-tablet) {
+	    padding-top: 40px;
+	    padding-bottom: 40px;
+    }
+}
+
 @mixin panel-default {
 	background-color: $dark-shiro;
 }

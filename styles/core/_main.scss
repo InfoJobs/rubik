@@ -165,15 +165,15 @@ Styleguide  #{$sgi-containers}
 .row-flex {
 	@include display-flex;
 	@include align-items(center);
-
+	
 	.col-flex-1 {
 		@include flex(1);
-
+		
 		&:not(:only-child) {
 			margin-right: 20px;
 		}
 	}
-
+	
 	.col-flex-min {
 		min-width: 75px;
 		text-align: right;
@@ -209,18 +209,7 @@ Styleguide #{$sgi-innerContainers}
 }
 
 .inner-expanded {
-    padding-top: 20px;
-    padding-bottom: 20px;
-
-    @include mediaquery ($bp-tablet) {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-
-    @include mediaquery ($bp-tablet) {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
+	@include inner-expanded;
 
     & > .inner:first-child,
     & > .inner:only-child {
@@ -296,7 +285,7 @@ img[alt] {
             opacity: .5;
         }
     }
-
+    
     p {
     	color: $dark-silk;
     }

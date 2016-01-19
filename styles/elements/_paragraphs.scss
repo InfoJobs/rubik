@@ -27,7 +27,7 @@ p {
 
 
 	&.error,
-	.error & {
+	.error-info {
 		margin-top: 5px;
 		color: $trueblood;
 	}

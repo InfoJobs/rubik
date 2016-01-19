@@ -40,8 +40,8 @@ h3,
 
 h1 {
 	margin-bottom: 35px;
-	font-size: $xlarge-font-size;
-	line-height: $xlarge-line-height;
+	font-size: $xxlarge-font-size-mobile;
+	line-height: $xxlarge-line-height-mobile;
 
 	@include mediaquery ($bp-desktop) {
 		font-size: $xxlarge-font-size;

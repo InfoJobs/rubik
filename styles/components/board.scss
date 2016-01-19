@@ -5,74 +5,99 @@
 /*
 Board
 
-Use class `.board` followed by the nested structure `.text`, `.child` and `.child-center` to create a container with vertically centered text content.<br />
-Use class `.claim` to format the main title.
+Use class `.board` followed by the nested structure `.child` and `.child-middle` to create a container with vertically centered text content.<br><br>
+Use class `.claim` to format the main title and `.description` to format the paraghraps.
 
-Use class `.board-executive` to apply a background image.
+Use class `.break` to break the description text in a new line.
+
+Add class `.board-center` to center content.
 
 Markup:
-<div class="board board-executive">
-	<div class="text">
-		<div class="child">
-			<div class="child-center">
-				<h1 class="claim">Cuenta Executive, exclusiva para directivos, managers y especialistas de alto nivel</h1>
-				<p class="description">Tenemos las mejores oportunidades del mercado para acercarte al siguiente paso en tu carrera.</p>
-				<a class="btn btn-primary btn-large" href="#" onclick="unfold();">Activar mi cuenta Executive</a>
-				<p class="small">En un solo click recuperando tu CV de InfoJobs</p>
-			</div>
+<section class="board board-center panel-contrast">
+	<div class="child">
+		<div class="child-middle">
+			<h1 class="claim">Lorem ipsum dolor sit amet <span class="break iconfont-CallCenter">902 10 60 90</span></h1>
+			<p></p>
 		</div>
 	</div>
-</div>
+</section>
 
 Styleguide #{$sgi-board}
 */
 
+/*
+Board Variants
+
+Add class `.board-half` to display content in the left side.<br>
+Add class `.board-large` to increse the hight of the board.<br>
+Add class `.board-executive` or `.board-welcome` to apply a background image.<br>
+
+Markup:
+<div class="board board-half board-large board-executive">
+	<div class="child">
+		<div class="child-middle">
+			<h1 class="claim">Cuenta Executive, exclusiva para directivos, managers y especialistas de alto nivel</h1>
+			<p class="description">Tenemos las mejores oportunidades del mercado para acercarte al siguiente paso en tu carrera.</p>
+			<a class="btn btn-primary btn-large" href="#" onclick="unfold();">Activar mi cuenta Executive</a>
+			<p class="small">En un solo click recuperando tu CV de InfoJobs</p>
+		</div>
+	</div>
+</div>
+
+Styleguide #{$sgi-board-variants}
+*/
+
 .board {
+	@include inner;
 	overflow: hidden;
 	width: 100%;
-	color: $shiro;
 
-	.text {
-		width: 100%;
-		bottom: 0;
-		padding: 20px 0;
-
-		@include mediaquery ($bp-tablet) {
-
-			min-height: 245px;
-			height: 365px;
-		}
+	@include mediaquery ($bp-tablet) {
+		padding: 80px;
 	}
 
 	.child {
 		display: table;
+		width: 100%;
 		height: 100%;
 		color: $shiro;
-	}
 
-	.child-center {
-		display: table-cell;
-		vertical-align: middle;
-		margin-top: 0;
-		margin-bottom: 20px;
-		padding-right: 10px;
-		padding-left: 10px;
-		text-shadow: 0px 0px 5px rgba(51, 51, 51, 0.5);
-
-		@include mediaquery ($bp-tablet) {
-			width: 500px;
-			padding-right: 20px;
-			padding-left: 20px;
+		&-middle {
+			display: table-cell;
+			vertical-align: middle;
+			margin-top: 0;
+			margin-bottom: 20px;
+			text-shadow: 0px 0px 5px rgba(51, 51, 51, 0.5);
 		}
 	}
 
 	.claim {
-		margin-bottom: 15px;
+		font-size: $xlarge-font-size;
+		line-height: $xlarge-line-height;
+		margin-bottom: 0;
+		color: $shiro;
+
+		@include mediaquery ($bp-tablet) {
+			font-size: $xxxlarge-font-size;
+			line-height: $xxxlarge-line-height;
+			margin-bottom: 10px;
+		}
+	}
+
+	[class*=" iconfont-"]::before {
+		font-size: $xxlarge-font-size;
 		color: $shiro;
 	}
 
+	.claim:only-child,
 	.claim + p {
 		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.break {
+		display: block;
+		margin-top: 20px;
 	}
 
 	.description + .btn {
@@ -83,9 +108,39 @@ Styleguide #{$sgi-board}
 		left: $padding;
 	}
 
-
 	.btn + p {
 		margin-top: 10px;
+	}
+
+	&-large {
+		@include mediaquery ($bp-tablet) {
+			padding: 140px 80px;
+		}
+	}
+
+	&-half {
+		@include mediaquery ($bp-tablet) {
+			padding: 80px 20px;
+		}
+
+		.child {
+			@include mediaquery ($bp-tablet) {
+				width: 500px;
+			}
+		}
+	}
+
+	&-center {
+		text-align: center;
+	}
+
+	.slideup {
+		margin: 20px -10px -20px -10px;
+
+		@include mediaquery ($bp-tablet) {
+			margin: 40px -20px -40px -20px;
+		}
+
 	}
 
 	&.board-executive {
@@ -100,5 +155,13 @@ Styleguide #{$sgi-board}
 			background-image: url(#{$path-media}/appgrade/pictures/pic-crsl-executive-big.jpg);
 		}
 
+	}
+
+	&-welcome {
+		background: $theme-color--primary;
+		background-image: url(#{$path-media}/appgrade/backgrounds/bg-hr-welcome.gif);
+		background-position:  0 0;
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
 }

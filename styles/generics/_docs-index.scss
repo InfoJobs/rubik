@@ -40,6 +40,12 @@ $sgi-forms:                  '1.4';
 $sgi-forms-select:              '1.4.1';
 $sgi-forms-select-multiple:     '1.4.2';
 $sgi-examplesForms:             '1.4.3';
+$sgi-formsFieldblock:		        '1.4.4';
+$sgi-forms-radio:               '1.4.5';
+$sgi-forms-radio-inline:        '1.4.6';
+$sgi-forms-input-group:         '1.4.7';
+$sgi-forms-error:               '1.4.8';
+$sgi-pulldown-chosen:           '1.4.9';
 
 $sgi-buttons:                '1.5';
 $sgi-buttons-type:                  '1.5.1.1';
@@ -57,6 +63,7 @@ $sgi-helpers:                '1.7';
 
 // Components
 $sgi-board:                  '2.1';
+$sgi-board-variants:            '2.1.1.1';
 
 $sgi-button-group:           '2.4';
 $sgi-button-group-structure:         '2.4.1.1';
@@ -73,13 +80,6 @@ $sgi-filter-slider-single:       '2.8.2';
 $sgi-filter-slider-group:        '2.8.3';
 
 $sgi-footer:                 '2.9';
-
-$sgi-formsFieldblock:		 '2.10';
-$sgi-forms-radio:                '2.10.1';
-$sgi-forms-radio-inline:         '2.10.2';
-$sgi-forms-input-group:          '2.10.5';
-$sgi-forms-error:                '2.10.6';
-$sgi-pulldown-chosen:            '2.10.7';
 
 $sgi-job-list:               '2.11';
 $sgi-kpi:                    '2.12';
