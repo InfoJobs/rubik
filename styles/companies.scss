@@ -1,3 +1,4 @@
+
 $stylesheet: 'companies';
 
 @import "rubik"; // generics.scss
@@ -9,6 +10,7 @@ $stylesheet: 'companies';
 
 // specifics components
 @import 'components/header-co';
+@import 'components/value-proposition-co';
 
  // tools
 @import 'generics/tools';

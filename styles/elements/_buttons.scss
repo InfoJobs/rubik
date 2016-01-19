@@ -83,8 +83,8 @@ Styleguide #{$sgi-buttons-type}
 */
 
 .btn-default {
-  color: $theme-button-text-color;
-  background-color: $color-secondary;
+  color: $mid-script;
+  background-color: $resting-katana;
 }
 
 .btn-default:hover,
@@ -98,7 +98,8 @@ Styleguide #{$sgi-buttons-type}
   background-color: $color-primary;
 
   .panel-focus & {
-      background-color: $color-primary-hover;
+      background-color: $late-blue;
+
     }
 
 }
@@ -329,7 +330,6 @@ Styleguide #{$sgi-buttons-display}
           padding: 7px 10px 8px 10px;
           font-size: 16px;
       }
-
 
     &.text-left { //already defined in tools.scss, but overwritten by btn{...text-align: center;...}
     	text-align: left;

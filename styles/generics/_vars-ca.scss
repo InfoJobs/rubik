@@ -1,17 +1,17 @@
 // Brand colors
 // -------------------------------------------
 
-$day-blue:				#2088c2;
-$resting-katana:		#d5e1e5; // gray default button
+$day-blue:							#2088c2;
+$dark-silk:							#2d3133; // grey text mobile menu
+$resting-katana:					#d5e1e5; // gray default button
 
-$theme-color--primary:       $day-blue;
-$theme-color--primary-hover:	$late-blue;
-$theme-color--secondary:     $resting-katana;
-$theme-color--contrast:      $shiro;
+$theme-color--primary:       		$day-blue;
+$theme-color--primary-hover:		$late-blue;
+$theme-color--secondary:     		$resting-katana;
+$theme-color--contrast:      		$dark-silk;
 
-$theme-button-text-color:    $mid-script;
-$theme-button-primary--hover:     $shiro;
-$theme-button-primary--active:    $shiro;
+$theme-button-primary--hover:     	$shiro;
+$theme-button-primary--active:    	$shiro;
 
 $theme-button-secondary--hover:     $shiro;
 $theme-button-secondary--active:    $shiro;

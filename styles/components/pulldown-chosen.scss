@@ -18,7 +18,7 @@ Styleguide 2.16
   font-size: $base-font-size;
   zoom: 1;
   *display: inline;
-  border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
+  border: 1px solid $katana-slash;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -75,6 +75,7 @@ Styleguide 2.16
 .chosen-container-single .chosen-single span {
   display: block;
   overflow: hidden;
+  margin-top: 0;
   margin-right: 26px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -190,7 +191,7 @@ Styleguide 2.16
 }
 
 .autocomplete-multivalue {
-	border: 1px solid #c7c7c7;
+	border: 1px solid $katana-slash;
 
 	&.autocomplete-multivalue-focus {
 		border: 1px solid $theme-color--primary;
@@ -439,7 +440,7 @@ Styleguide 2.16
 }
 
 .chosen-select {
-    border: 1px solid #c7c7c7;
+    border: 1px solid $katana-slash;
 }
 
 .chosen-container-multi.chosen-container-active .chosen-choices {

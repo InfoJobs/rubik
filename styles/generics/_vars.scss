@@ -21,19 +21,22 @@ $base-font-size: 			16px;
 $base-line-height: 			20px;
 
 $medium-font-size: 			18px;
-$medium-line-height: 		22px;
+$medium-line-height: 		21px;
 
 $large-font-size: 			20px;
-$large-line-height: 		24px;
+$large-line-height: 		23px;
 
 $xlarge-font-size: 			25px;
 $xlarge-line-height: 		28px;
+
+$xxlarge-font-size-mobile: 	23px;
+$xxlarge-line-height-mobile:28px;
 
 $xxlarge-font-size: 		30px;
 $xxlarge-line-height: 		33px;
 
 $xxxlarge-font-size: 		36px;
-$xxxlarge-line-height: 		37px;
+$xxxlarge-line-height: 		39px;
 
 
 //convertion pt to px
@@ -84,6 +87,7 @@ $midnight-blue:			#01324B;
 
 $katana-slash:			#bac7cc;
 $katana-smash:			#97a1a6;
+$resting-katana:		#d5e1e5; // gray default button
 
 $wood-resting-katana:	#e3eaed;
 $wood-katana-slash:		#d2dee3;
