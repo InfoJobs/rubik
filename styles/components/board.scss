@@ -5,18 +5,19 @@
 /*
 Board
 
-Board centered
-
-Use class `.board` and `.board-center` followed by the nested structure `.child` and `.child-middle` to create a container with vertically centered text content.<br />
+Use class `.board` followed by the nested structure `.child` and `.child-middle` to create a container with vertically centered text content.<br><br>
 Use class `.claim` to format the main title and `.description` to format the paraghraps.
 
 Use class `.break` to break the description text in a new line.
+
+Add class `.board-center` to center content.
 
 Markup:
 <section class="board board-center panel-contrast">
 	<div class="child">
 		<div class="child-middle">
 			<h1 class="claim">Lorem ipsum dolor sit amet <span class="break iconfont-CallCenter">902 10 60 90</span></h1>
+			<p></p>
 		</div>
 	</div>
 </section>
@@ -25,12 +26,11 @@ Styleguide #{$sgi-board}
 */
 
 /*
-Board Large
+Board Variants
 
-Use class `.board`, `.board-half` and `.board-large` followed by the nested structure `.child` and `.child-middle` to create a container with vertically centered text content.<br />
-Use class `.claim` to format the main title.
-
-Use class `.board-executive` or `.board-welcome` to apply a background image.
+Add class `.board-half` to display content in the left side.<br>
+Add class `.board-large` to increse the hight of the board.<br>
+Add class `.board-executive` or `.board-welcome` to apply a background image.<br>
 
 Markup:
 <div class="board board-half board-large board-executive">
