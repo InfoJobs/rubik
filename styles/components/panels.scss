@@ -28,7 +28,7 @@ $PANELS
 	&-info {
 		color: $shiro;
 		background-color: $dark-softened;
-		
+
 		h1, h2, h3, p {
 			color: $shiro;
 		}
@@ -45,7 +45,7 @@ $PANELS
 	}
 
 	&-user { // hasta tener efecto background de foto de perfil
-		background-color: #2d3133;
+		background-color: $dark-silk;
 	}
 
 }

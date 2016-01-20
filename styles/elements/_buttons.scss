@@ -17,6 +17,7 @@ Styleguide #{$sgi-buttons}
     height: 30px;
     padding: 0 10px;
     border: 1px solid transparent;
+    border-radius: 3px;
     color: $shiro;
     cursor: pointer;
     font-size: $small-font-size;
@@ -83,25 +84,29 @@ Styleguide #{$sgi-buttons-type}
 */
 
 .btn-default {
-  color: $mid-script;
-  background-color: $resting-katana;
+    color: $mid-script;
+    background-color: $button-secondary;
+
+    .panel-focus &,
+    .panel-contrast & {
+        color: $dark-silk;
+        background-color: $button-secondary-contrast;
+    }
 }
 
 .btn-default:hover,
 .btn-default:active {
-    background: $katana-slash;
-	color: $dark-silk;
+    color: $dark-silk;
+    background: $button-secondary--hover;
 }
 
 .btn-primary {
-  color: $shiro;
-  background-color: $color-primary;
+    color: $shiro;
+    background-color: $color-primary;
 
-  .panel-focus & {
-      background-color: $late-blue;
-
+    .panel-focus & {
+        background-color: $late-blue;
     }
-
 }
 
 .btn-primary:hover,
@@ -111,12 +116,12 @@ Styleguide #{$sgi-buttons-type}
 }
 
 .btn-primary:active {
-  background-color: $night-blue;
+    background-color: $night-blue;
 }
 
 .btn-primary-contrast {
-  color: $shiro;
-  background-color: $late-blue;
+    color: $shiro;
+    background-color: $late-blue;
 }
 
 .btn-primary-contrast:hover,
@@ -126,7 +131,7 @@ Styleguide #{$sgi-buttons-type}
 }
 
 .btn-primary-contrast:active {
-  background-color: $midnight-blue;
+    background-color: $midnight-blue;
 }
 
 .btn-alert {
@@ -146,38 +151,38 @@ Styleguide #{$sgi-buttons-type}
 
 ///*DEPRECATED: .btn-link-primary only used in header and 'ver_oferta.html'*/
 .btn-link-primary {
-  color: $color-primary;
+    color: $color-primary;
 }
 
 .btn-link-primary:hover,
 .btn-link-primary:focus {
-  text-decoration: underline;
-  color: $late-blue;
+    text-decoration: underline;
+    color: $late-blue;
 }
 
 .btn-link-primary + .btn-link-primary,
 .btn-link-secondary + .btn-link-secondary {
-  padding-left: 0;
+    padding-left: 0;
 }
 
 ///*DEPRECATED: .btn-link-secondary only used in header*/
 .btn-link-secondary {
-  color: $mid-script;
+    color: $mid-script;
 }
 
 .btn-link-secondary:hover {
-  text-decoration: underline;
-  color: $dark-silk;
+    text-decoration: underline;
+    color: $dark-silk;
 }
 
 ///*DEPRECATED: .btn-link-company only used in header*/
 .btn-link-company {
-  color: $soft-script;
+    color: $soft-script;
 }
 
 .btn-link-company:hover {
-  @extend .btn-link-secondary:hover;
-  color: $shiro;
+    @extend .btn-link-secondary:hover;
+    color: $shiro;
 }
 
 
@@ -261,11 +266,11 @@ button.btn-disabled,
 .btn-disabled:hover,
 .btn-disabled:active,
 .btn-disabled:focus {
-   background: $shiro;
-   color: $wood-katana-smash;
-   text-decoration: none;
-   cursor: default;
-   border: 1px solid $darkest-shiro;
+    background: $shiro;
+    color: $wood-katana-smash;
+    text-decoration: none;
+    cursor: default;
+    border: 1px solid $darkest-shiro;
 }
 
 
@@ -322,14 +327,14 @@ Styleguide #{$sgi-buttons-display}
 */
 
 .btn-form-inline { //used on search-bar, filters and edit-cv(datos-personales)
-  width: 100%;
+    width: 100%;
 
-      @at-root button#{&} {
-      	width: 100%;
-          height: auto;
-          padding: 7px 10px 8px 10px;
-          font-size: 16px;
-      }
+    @at-root button#{&} {
+    	width: 100%;
+      height: auto;
+      padding: 7px 10px 8px 10px;
+      font-size: 16px;
+    }
 
     &.text-left { //already defined in tools.scss, but overwritten by btn{...text-align: center;...}
     	text-align: left;
@@ -392,7 +397,7 @@ Styleguide #{$sgi-button-group-structure}
   		background-color: $shiro;
 
   		&:hover:not([disabled]) {
-  			background-color: $color-secondary;
+  			background-color: $button-secondary;
   		}
 
   		&.btn-disabled:hover {
@@ -406,7 +411,7 @@ Styleguide #{$sgi-button-group-structure}
 
   	.active .btn,
   	.active .btn.btn-disabled {
-  	    background-color: $color-secondary;
+  	    background-color: $button-secondary;
   	    cursor: default;
   	}
 
@@ -482,12 +487,12 @@ Styleguide #{$sgi-button-group-icon}
 
 ///*DEPRECATED: .btn-divider and .btn-divider-company only used on header*/
 .btn-divider {
-  border-right: 1px solid $darkest-shiro;
+    border-right: 1px solid $darkest-shiro;
 }
 
 ///*DEPRECATED: .btn-divider and .btn-divider-company only used on header*/
 .btn-divider-company {
-  border-right:  1px solid $mid-script;
+    border-right:  1px solid $mid-script;
 }
 
 ///*DEPRECATED: .btn-close only used on .toast, .notifications and red_de_contactos*/

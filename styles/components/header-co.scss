@@ -158,22 +158,22 @@ a.nav-bar-toggle {
 			position: relative;
 			padding: 17px 10px 13px 10px;
 			margin: 0;
-			color: $dark-silk;
+			color: $shiro;
 			-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
 			-webkit-tap-highlight-color: transparent; /* For some Androids */
 
 			@include mediaquery ($bp-header) {
-				padding: 30px 15px;
-				color: $mid-script;
+				padding: 30px 20px;
+				//color: $mid-script;
 			}
 		}
 
 		&  a:hover {
-			color: $dark-silk;
+			//color: $dark-silk;
 
-			@include mediaquery ($bp-header) {
-				color: $color-primary;
-			}
+			//@include mediaquery ($bp-header) {
+				//color: $color-primary;
+			//}
 
 		}
 
@@ -201,11 +201,9 @@ a.nav-bar-toggle {
 	}
 
 	@include mediaquery ($bp-header) {
-
 		float: left;
 		overflow: visible;
 		padding: 0 20px;
-
 	}
 
 }
@@ -249,6 +247,15 @@ a.nav-bar-toggle {
 
 		@include mediaquery ($bp-header) {
 			width: auto;
+		}
+	}
+
+	.btn-default {
+		color: $dark-silk;
+    background-color: $sunrise-blue;
+
+		&:hover {
+	    background-color: $midnight-blue;
 		}
 	}
 }

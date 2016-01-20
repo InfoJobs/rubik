@@ -8,7 +8,7 @@ $base-font-family-bold: 	Proximanovabold, Helvetica, Arial, sans-serif;
 $alternative-font-family: 	Slabo-regular, Helvetica, Arial, sans-serif;
 $base-font-icons: 			Icons;
 
-$path-font:					"/" !default;
+$path-font:					"../../fonts/" !default;
 
 
 $xsmall-font-size: 			12px;
@@ -69,12 +69,12 @@ $soft-script:			#999;
 // Background and border colors
 // -------------------------------------------
 
-$shiro:					#fff;
+$shiro:					  #fff;
 $dark-shiro:			#f2f2f2;
-$darkest-shiro:			#e2e5e6;
+$darkest-shiro:		#e2e5e6;
 $dark-silk:				#2d3133; // grey text mobile menu
-$dark-softened:			#393939;
-$light-bamboo:			#effaf6;
+$dark-softened:		#393939;
+$light-bamboo:		#effaf6;
 
 //
 // Button colors

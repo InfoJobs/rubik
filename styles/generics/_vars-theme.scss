@@ -1,32 +1,30 @@
 //
 // Brand colors
 // -------------------------------------------
-
-$color-primary:				$theme-color--primary;
-$color-primary-hover: 		$theme-color--primary-hover;
-$color-contrast: 			$theme-color--contrast;
-
-$color-header:				$theme-color--header;
+$color-primary:				$theme-color-primary;
+$color-primary-hover: 		$theme-color-primary--hover;
+$color-secondary:   		$theme-color-secondary;
+$color-contrast: 			$theme-color-contrast;
+$color-header:				$theme-color-header;
 
 
 //
 // Background and border colors
 // -------------------------------------------
-
-$color-contrast:        	$theme-color--contrast;
+$color-contrast:        	$theme-color-contrast;
 
 
 //
 // Button colors
 // -------------------------------------------
-
-$color-secondary:       	$theme-color--secondary;
-
+$button-secondary:                      $theme-button-secondary;
+$button-secondary--hover:               $theme-button-secondary--hover;
+$button-secondary-contrast:             $theme-button-secondary-contrast;
+$button-secondary-contrast--hover:      $theme-button-secondary-contrast--hover;
 
 //
 // Form elements
 // -------------------------------------------
-
 $input-tel-width:       	$theme-input-tel-width;
 
 

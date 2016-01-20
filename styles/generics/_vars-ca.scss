@@ -4,19 +4,27 @@
 $day-blue:							#2088c2;
 $dark-silk:							#2d3133; // grey text mobile menu
 $resting-katana:					#d5e1e5; // gray default button
+$katana-slash:						#bac7cc;
 
-$theme-color--primary:       		$day-blue;
-$theme-color--primary-hover:		$late-blue;
-$theme-color--secondary:     		$resting-katana;
-$theme-color--contrast:      		$dark-silk;
+$theme-color-primary:       		$day-blue;
+$theme-color-primary--hover:		$late-blue;
+$theme-color-secondary:     		$resting-katana;
+$theme-color-contrast:      		$dark-silk;
 
-$theme-button-primary--hover:     	$shiro;
-$theme-button-primary--active:    	$shiro;
 
-$theme-button-secondary--hover:     $shiro;
-$theme-button-secondary--active:    $shiro;
+//
+// Buttons
+// -------------------------------------------
+$theme-button-secondary:     		$resting-katana;
+$theme-button-secondary--hover:     $katana-slash;
+$theme-button-secondary-contrast:   $resting-katana;
+$theme-button-secondary-contrast--hover: $katana-slash;
 
-$theme-color--header:				$day-blue;
+
+//
+// Header
+// -------------------------------------------
+$theme-color-header:				$day-blue;
 
 
 //
@@ -27,15 +35,3 @@ $theme-row-centered-width:			486px;
 $theme-container-width:				970px;
 
 $theme-input-tel-width:				230px;
-
-// $c-text: $c-gray-dark;
-// $c-contrast: $c-bg-light;
-// $c-text-soft: $c-gray-light;
-// $c-border-base: $c-bg-transparent;
-// $c-base: $c-gray-lighter;
-// $c-primary: $c-gray-dark;
-// $c-soft: $c-gray-extralighter;
-// $c-alert: $c-danger;
-// $c-base-variant: $c-gray-light; // hover
-// $c-primary-variant: $c-bg-dark;
-// $c-alert-variant: darken($c-danger,20%);
