@@ -74,11 +74,13 @@ Also add one of the following classes to give it format:
 
 `.btn-default` for a default action style<br>
 `.btn-primary` for a primary action style<br>
+`.btn-highlight` for a highlight action style<br>
 
 Markup:
 <button class="btn btn-default" type="button">Default</button>
 <button class="btn btn-primary" type="button">Primary</button>
 <a href="#" class="btn btn-primary">Link</a>
+<a href="#" class="btn btn-highlight">Highlight</a>
 
 Styleguide #{$sgi-buttons-type}
 */
@@ -149,7 +151,18 @@ Styleguide #{$sgi-buttons-type}
     }
 }
 
-///*DEPRECATED: .btn-link-primary only used in header and 'ver_oferta.html'*/
+.btn-highlight {
+    color: $dark-silk;
+    background-color: $sun;
+
+    &:hover,
+    &:focus {
+        color: $dark-silk;
+        background-color: darken( $sun, 10% );
+    }
+}
+
+///*DEPRECATED: .btn-link-primary only used in 'ver_oferta.html'*/
 .btn-link-primary {
     color: $color-primary;
 }
