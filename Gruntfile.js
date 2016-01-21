@@ -26,7 +26,7 @@ module.exports = function(grunt) {
       },
       copyFonts: {
         files: [
-          { src: ['./styleguide/fonts/*'], dest: './styleguide/'}
+          { src: ['./fonts/*'], dest: './styleguide/styleguide/'}
         ]
       },
       copyMedia: {

@@ -6,7 +6,6 @@
 	background-position: center center;
 	//bg logo es
 	background-image: url(#{$path-media}/portales/ij/appgrade/backgrounds/bg-logo-reduced-white.png);
-	border-bottom: 1px solid $darkest-shiro;
 
 	@include mediaquery ($bp-header) {
 
@@ -252,7 +251,7 @@ a.nav-bar-toggle {
 
 	.btn-default {
 		color: $dark-silk;
-    background-color: $sunrise-blue;
+    	background-color: $sunrise-blue;
 
 		&:hover {
 	    background-color: $midnight-blue;
