@@ -30,19 +30,19 @@ Board Variants
 
 Add class `.board-half` to display content in the left side.<br>
 Add class `.board-large` to increse the hight of the board.<br>
-Add class `.board-executive` or `.board-welcome` to apply a background image.<br>
+Add class `.board-executive`, `.board-welcome`, `.board-hiring` or `.board-help` to apply a background image.<br>
 
 Markup:
-<div class="board board-half board-large board-executive">
+<section class="board board-half board-large board-executive">
 	<div class="child">
 		<div class="child-middle">
-			<h1 class="claim">Cuenta Executive, exclusiva para directivos, managers y especialistas de alto nivel</h1>
-			<p class="description">Tenemos las mejores oportunidades del mercado para acercarte al siguiente paso en tu carrera.</p>
-			<a class="btn btn-primary btn-large" href="#" onclick="unfold();">Activar mi cuenta Executive</a>
-			<p class="small">En un solo click recuperando tu CV de InfoJobs</p>
+			<h1 class="claim">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed felis porta.</h1>
+			<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed felis porta nam congue diam magna.</p>
+			<a class="btn btn-primary btn-large" href="#" onclick="unfold();">Lorem ipsum dolor sit amet</a>
+			<p class="small">Nam congue diam magna, vel rhoncus neque dapibus id.</p>
 		</div>
 	</div>
-</div>
+</section>
 
 Styleguide #{$sgi-board-variants}
 */
@@ -160,6 +160,22 @@ Styleguide #{$sgi-board-variants}
 	&-welcome {
 		background: $theme-color-primary;
 		background-image: url(#{$path-media}/appgrade/backgrounds/bg-hr-welcome.gif);
+		background-position:  0 0;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	&-hiring {
+		background: $theme-color-primary;
+		background-image: url(#{$path-media}/appgrade/backgrounds/bg-header.png);
+		background-position:  0 0;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	&-help {
+		background: $theme-color-primary;
+		background-image: url(#{$path-media}/appgrade/backgrounds/bg-help.png);
 		background-position:  0 0;
 		background-repeat: no-repeat;
 		background-size: cover;
