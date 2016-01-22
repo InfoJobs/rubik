@@ -13,7 +13,7 @@
 }
 
 .value-proposition-title {
-	margin:5px 0;
+	margin: 5px 0;
 }
 
 .value-proposition-medium {
@@ -21,36 +21,39 @@
 }
 
 .value-proposition-offers {
-	background-image: url(//media.infojobs.net/appgrade/pictures/pic-value-offers.png);
+	background-image: url(#{$path-pictures}/pic-value-offers.png);
 }
 
 .value-proposition-visibility {
-	background-image: url(//media.infojobs.net/appgrade/pictures/pic-value-visibility.png);
+	background-image: url(#{$path-pictures}/pic-value-visibility.png);
 }
 
 .value-proposition-hired {
-	background-image: url(//media.infojobs.net/appgrade/pictures/pic-value-hired.png);
+	background-image: url(#{$path-pictures}/pic-value-hired.png);
 }
+
 .value-proposition-network {
-	background-image: url(//media.infojobs.net/appgrade/backgrounds/bg-landing-social-icon01.png);
+	background-image: url(#{$path-backgrounds}/bg-landing-social-icon01.png);
 }
+
 .value-proposition-contacts {
-	background-image: url(//media.infojobs.net/appgrade/backgrounds/bg-landing-social-icon02.png);
+	background-image: url(#{$path-backgrounds}/bg-landing-social-icon02.png);
 }
+
 .value-proposition-references {
-	background-image: url(//media.infojobs.net/appgrade/backgrounds/bg-landing-social-icon03.png);
+	background-image: url(#{$path-backgrounds}/bg-landing-social-icon03.png);
 }
 
 .value-proposition-offers-executive {
-	background-image: url(//media.infojobs.net/appgrade/pictures/pic-value-offer-executive.png);
+	background-image: url(#{$path-pictures}/pic-value-offer-executive.png);
 }
 
 .value-proposition-find-executive {
-	background-image: url(//media.infojobs.net/appgrade/pictures/pic-value-find-executive.png);
+	background-image: url(#{$path-pictures}/pic-value-find-executive.png);
 }
 
 .value-proposition-power-executive {
-	background-image: url(//media.infojobs.net/appgrade/pictures/pic-value-power-executive.png);
+	background-image: url(#{$path-pictures}/pic-value-power-executive.png);
 }
 
 @media only screen and (max-width: $tablet-start) {
