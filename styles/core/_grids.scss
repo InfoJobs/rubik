@@ -170,6 +170,7 @@ $gridColumns: 12;
 		}
 	}
 
+	.col-#{$i}.col-6-small,
 	.col-#{$i}.col-6-medium,
 	.col-#{$i}.col-12-medium {
 		@include mediaquery ($bp-desktop) {
@@ -205,6 +206,19 @@ $gridColumns: 12;
 
 	@include mediaquery ($bp-tablet) {
 		margin-top: 20px;
+	}
+}
+
+.col-6-small {
+	width: 50%;
+	float: left;
+
+	@include mediaquery ($bp-tablet) {
+		width: 33%;
+	}
+
+	& + .col-6-small {
+		margin-top: 0;
 	}
 }
 
@@ -340,6 +354,28 @@ Styleguide #{$sgi-expandGutterColumns}
 		@include mediaquery ($bp-tablet) {
 			margin-left: 20px;
 			max-width: calc(100% - 20px);
+		}
+	}
+
+	> .col-2.col-6-small {
+		&:nth-child(1n+3) {
+			margin-top: 10px;
+		}
+
+		@include mediaquery ($bp-tablet) {
+			&:nth-child(1n+3) {
+				margin-top: 0;
+			}
+
+			&:nth-child(1n+4) {
+				margin-top: 20px;
+			}
+		}
+
+		@include mediaquery ($bp-desktop) {
+			& + .col-2.col-6-small {
+				margin-top: 0;
+			}
 		}
 	}
 
