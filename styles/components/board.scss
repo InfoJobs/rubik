@@ -17,7 +17,6 @@ Markup:
 	<div class="child">
 		<div class="child-middle">
 			<h1 class="claim">Lorem ipsum dolor sit amet <span class="break iconfont-CallCenter">902 10 60 90</span></h1>
-			<p></p>
 		</div>
 	</div>
 </section>
@@ -74,13 +73,18 @@ Styleguide #{$sgi-board-variants}
 	.claim {
 		font-size: $xlarge-font-size;
 		line-height: $xlarge-line-height;
-		margin-bottom: 0;
+		margin-bottom: 10px;
 		color: $shiro;
 
 		@include mediaquery ($bp-tablet) {
 			font-size: $xxxlarge-font-size;
 			line-height: $xxxlarge-line-height;
-			margin-bottom: 10px;
+		}
+
+		&:only-child,
+		& + p  {
+			margin-bottom: 0;
+			padding-bottom: 0;
 		}
 	}
 
@@ -89,19 +93,13 @@ Styleguide #{$sgi-board-variants}
 		color: $shiro;
 	}
 
-	.claim:only-child,
-	.claim + p {
-		margin-bottom: 0;
-		padding-bottom: 0;
-	}
-
 	.break {
 		display: block;
 		margin-top: 20px;
 	}
 
 	.description + .btn {
-		margin-top: 30px;
+		margin-top: 20px;
 	}
 
 	.btn {
