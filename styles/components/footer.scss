@@ -1,36 +1,50 @@
 /*------------------------------------*\
-	$FOOTER
+	$FOOTER-CO
 \*------------------------------------*/
 
-.help-footer {
+.footer-help {
+	@include inner;
 
-	p {
+	&::after {
+	    display: block;
+	    content: "";
+	    position: relative;
+	    top: 20px;
+		left: -20px;
+		right: -20px;
+	    border-bottom: 1px solid $outer-wall;
+	}
+
+	&-details {
 		color: $mid-script;
+		text-align: center;
+
+		&.list-default > li {
+			@include mediaquery ($bp-desktop) {
+				display: inline;
+			}
+		}
 	}
 
 	a,
 	strong {
-		padding-right: 20px;
+		@include mediaquery ($bp-desktop) {
+			padding-right: 20px;
+		}
 	}
-
 }
 
 .footer {
-	padding-bottom: 40px;
+	padding-bottom: 20px;
 	font-family: $base-font-family;
 	text-align: center;
 	background-color: $outer-land;
 
 	.social-footer {
+		@include inner;
 		height: 100%;
 		margin: 0 auto;
 		padding-bottom: 10px;
-
-		@include mediaquery ($bp-desktop) {
-			margin: 0;
-			padding: 0;
-		}
-
 	}
 
 	.social-icons {
@@ -39,6 +53,7 @@
 	}
 
 	.apps {
+		@include inner;
 
 		&:before {
 		    display: block;
@@ -74,8 +89,6 @@
 		@include mediaquery ($bp-desktop) {
 				display: table;
 		}
-
-
 	}
 
 	&::before {
@@ -103,9 +116,6 @@
 		text-align: left;
 		background-color: $outer-land;
 		//z-index: -1;
-
-
-
 	}
 
 	@media print {
@@ -134,7 +144,7 @@
 		color: $outer-king;
 	}
 
-	&:after {
+	&::after {
 	    display: block;
 	    content: "";
 	    position: relative;
@@ -154,7 +164,7 @@
 		padding-left: 20px;
 		margin: 0;
 
-		&::after {
+		& ~ .nav-item-visible::after {
 		    color: $outer-wall;
 		    content: "|";
 		    position: absolute;
@@ -176,7 +186,6 @@
 		}
 
 		@include mediaquery ($bp-desktop) {
-
 			display: block;
 			padding: 0;
 			margin-bottom: 10px;
