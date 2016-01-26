@@ -161,7 +161,7 @@
 		padding-left: 20px;
 		margin: 0;
 
-		&::after {
+		& ~ .nav-item-visible::after {
 		    color: $outer-wall;
 		    content: "|";
 		    position: absolute;
@@ -183,7 +183,6 @@
 		}
 
 		@include mediaquery ($bp-desktop) {
-
 			display: block;
 			padding: 0;
 			margin-bottom: 10px;
