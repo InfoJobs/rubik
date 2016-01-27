@@ -145,6 +145,7 @@
 .fade-in-up {
   -webkit-animation: fade-in-up 1s both;
           animation: fade-in-up 1s both;
+  backface-visibility: hidden;
 }
 
 @keyframes fade-in-up  {
@@ -185,7 +186,7 @@
 	}
 
 	@keyframes slidedown  {
-		
+
 	  0% {
 	    height: 0;
 
