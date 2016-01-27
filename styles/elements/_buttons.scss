@@ -17,7 +17,7 @@ Styleguide #{$sgi-buttons}
     height: 30px;
     padding: 0 10px;
     border: 1px solid transparent;
-    //border-radius: 3px;
+    border-radius: 3px;
     color: $shiro;
     cursor: pointer;
     font-size: $small-font-size;
@@ -392,6 +392,18 @@ Styleguide #{$sgi-button-group-structure}
 
     & > div {
         display: table-cell;
+
+        &:first-child > .btn {
+            border-radius: 3px 0 0 3px;
+        }
+
+        &:last-child > .btn {
+            border-radius: 0 3px 3px 0;
+        }
+
+        & > .btn {
+            border-radius: 0;
+        }
     }
 
     .btn {
