@@ -6,13 +6,11 @@
 	@include inner;
 
 	&::after {
-	    display: block;
-	    content: "";
-	    position: relative;
-	    top: 20px;
-		left: -20px;
-		right: -20px;
-	    border-bottom: 1px solid $outer-wall;
+		display: block;
+		content: "";
+		position: relative;
+		top: 20px;
+		border-bottom: 1px solid $outer-wall;
 	}
 
 	&-details {
@@ -35,27 +33,44 @@
 }
 
 .footer {
-	padding-bottom: 20px;
 	font-family: $base-font-family;
 	text-align: center;
 	background-color: $outer-land;
 
 	.social-footer {
 		@include inner;
-		height: 100%;
-		margin: 0 auto;
-		padding-bottom: 10px;
+		width: 100%;
+
+		.col-child {
+			margin-bottom: 20px;
+
+			@include mediaquery ($bp-desktop) {
+				margin-bottom: 0;
+			}
+		}
 	}
 
 	.social-icons {
-		display: table-cell;
-		vertical-align: middle;
+		display: table;
+		margin: 0 auto;
+	}
+
+	.col-child .social-icons {
+		@include mediaquery ($bp-desktop) {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
 	}
 
 	.apps {
-		@include inner;
+		margin: 0 auto;
 
-		&:before {
+		@include mediaquery ($bp-desktop) {
+			float: right;
+		}
+
+		&::before {
 		    display: block;
 		    content: "";
 		    position: relative;
@@ -65,25 +80,22 @@
 			@include mediaquery ($bp-desktop) {
 				display: none;
 			}
-
 		}
+
 		li {
 			display: block;
 			padding: 20px 0 0 0;
 
 			@include mediaquery ($bp-desktop) {
-
 				display: table-cell;
 				padding: 0 0 0 20px;
 				vertical-align: middle;
-
 			}
 
 			img {
 				display: block;
 				margin: 0 auto;
 			}
-
 		}
 
 		@include mediaquery ($bp-desktop) {
@@ -92,9 +104,7 @@
 	}
 
 	&::before {
-
 		@include mediaquery ($bp-desktop) {
-
 		    content: "";
 		    display: block;
 			height: 100%;
@@ -103,7 +113,6 @@
 		    top: -80px;
 			background-color: $outer-land;
 		    z-index: -1;
-
 		}
 	}
 
@@ -111,11 +120,8 @@
 		position: absolute;
 		left: 0;
 		right: 0;
-		//margin-top: -80px;
-		//padding-top: 100px;
 		text-align: left;
 		background-color: $outer-land;
-		//z-index: -1;
 	}
 
 	@media print {
@@ -124,7 +130,6 @@
 }
 
 .footer-nav {
-
 	h3,
 	.row li li:not(.nav-item-visible) {
 		display: none;
@@ -150,26 +155,30 @@
 	    position: relative;
 	    top: 20px;
 	    border-bottom: 1px solid $outer-wall;
-
-		@include mediaquery ($bp-desktop) {
-			margin: 0 -20px;
-		}
-
 	}
 
-
 	.nav-item-visible {
-
 		display: inline-block;
-		padding-left: 20px;
 		margin: 0;
 
-		& ~ .nav-item-visible::after {
-		    color: $outer-wall;
-		    content: "|";
-		    position: absolute;
-		    left: 5px;
-		    top: 1px;
+		& ~ .nav-item-visible {
+			padding-left: 20px;
+
+			@include mediaquery ($bp-desktop) {
+				padding-left: 0;
+			}
+
+			&::after {
+			    color: $outer-wall;
+			    content: "|";
+			    position: absolute;
+			    left: 5px;
+			    top: 1px;
+
+				@include mediaquery ($bp-desktop) {
+					content: none;
+				}
+			}
 
 			@include mediaquery ($bp-desktop) {
 				content: none;
@@ -182,7 +191,6 @@
 			&::after {
 			    content: none;
 			}
-
 		}
 
 		@include mediaquery ($bp-desktop) {
@@ -193,60 +201,71 @@
 	}
 
 	@include mediaquery ($bp-desktop) {
-
 		h3 {
 			color: $dark-softened;
 		}
-
 	}
 }
 
 .footer-nav-bar {
+	display: none;
 
-	li,
-	a {
-		color: $outer-pawn;
-	}
+	@include mediaquery ($bp-desktop) {
+		@include inner;
+		display: block;
+		text-align: center;
 
-	a:hover {
-		text-decoration: underline;
-		color: $outer-king;
-	}
+		ul {
+			margin-bottom: 20px;
 
-	& > li > a,
-	& > li:first-child {
-		font-size: $small-font-size;
-		line-height: $small-line-height;
-	}
-
-	& > li {
-		position: relative;
-		display: inline-block;
-		margin-left: 20px;
-
-		&:first-child,
-		&:only-child {
-			margin: 0;
+			&::before {
+				display: block;
+				content: "";
+				position: relative;
+				top: -20px;
+				border-bottom: 1px solid $outer-wall;
+			}
 		}
 
-		+ li::after {
-		    color: $outer-wall;
-		    content: "|";
-		    position: absolute;
-		    left: -14px;
-		    top: 1px;
+		a {
+			color: $outer-pawn;
+
+			&:hover {
+				text-decoration: underline;
+				color: $outer-king;
+			}
 		}
 
+		li {
+			position: relative;
+			display: inline-block;
+			margin-left: 20px;
+			color: $outer-pawn;
+
+			&:first-child,
+			&:only-child {
+				margin: 0;
+			}
+
+			& > a,
+			&:first-child {
+				font-size: $small-font-size;
+				line-height: $small-line-height;
+			}
+
+			+ li::after {
+			    color: $outer-wall;
+			    content: "|";
+			    position: absolute;
+			    left: -14px;
+			    top: 1px;
+			}
+		}
 	}
-
-
 }
 
-
 //banners
-
 .footer-slotbanner {
-
 	@include mediaquery (1256px) {
 		left: -287px;
 	}
@@ -254,11 +273,9 @@
 	@include mediaquery (1278px) {
 		left: -310px;
 	}
-
 }
 
 @media only screen and (max-width: $tablet-start) {
-
 	.footer-nav .col-child {
 		margin-bottom: 0;
 	}
