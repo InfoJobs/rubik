@@ -216,7 +216,7 @@
 		text-align: center;
 		color: $outer-pawn;
 
-		ul {
+		&-sites {
 			&::before {
 				display: block;
 				content: "";
@@ -224,10 +224,35 @@
 				top: -20px;
 				border-bottom: 1px solid $outer-wall;
 			}
+
+			li {
+				position: relative;
+				margin-left: 20px;
+
+				&:first-child,
+				&:only-child {
+					margin: 0;
+				}
+
+				+ li::after {
+				    color: $outer-wall;
+				    content: "|";
+				    position: absolute;
+				    left: -14px;
+				    top: 1px;
+				}
+			}
 		}
 
-		.footer-thumbnail {
-			display: block;
+		&-badges {
+			li {
+				margin-left: 20px;
+
+				&:first-child,
+				&:only-child {
+					margin: 0;
+				}
+			}
 		}
 
 		a {
@@ -236,31 +261,6 @@
 			&:hover {
 				text-decoration: underline;
 				color: $outer-king;
-			}
-		}
-
-		li {
-			position: relative;
-			display: inline-block;
-			margin-left: 20px;
-
-			&:first-child,
-			&:only-child {
-				margin: 0;
-			}
-
-			& > a,
-			&:first-child {
-				font-size: $small-font-size;
-				line-height: $small-line-height;
-			}
-
-			+ li::after {
-			    color: $outer-wall;
-			    content: "|";
-			    position: absolute;
-			    left: -14px;
-			    top: 1px;
 			}
 		}
 	}
