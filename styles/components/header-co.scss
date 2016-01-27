@@ -221,7 +221,7 @@ a.nav-bar-toggle {
 .nav-bar-access {
 	padding: 10px;
 	@include order(2);
-	border-top: 1px solid $darkest-shiro;
+	border-top: 1px solid $midnight-blue;
 
 	@include mediaquery ($bp-header) {
 		padding: 25.5px 20px;
