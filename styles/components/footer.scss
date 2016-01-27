@@ -214,10 +214,9 @@
 		@include inner;
 		display: block;
 		text-align: center;
+		color: $outer-pawn;
 
 		ul {
-			margin-bottom: 20px;
-
 			&::before {
 				display: block;
 				content: "";
@@ -225,6 +224,10 @@
 				top: -20px;
 				border-bottom: 1px solid $outer-wall;
 			}
+		}
+
+		.footer-thumbnail {
+			display: block;
 		}
 
 		a {
@@ -240,7 +243,6 @@
 			position: relative;
 			display: inline-block;
 			margin-left: 20px;
-			color: $outer-pawn;
 
 			&:first-child,
 			&:only-child {

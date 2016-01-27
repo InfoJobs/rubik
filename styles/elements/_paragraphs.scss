@@ -56,7 +56,8 @@ $font-size: (xsmall, small, base, medium); //TODO: resolve problem when it s mov
 		p.#{$value} {
 			margin-bottom: 7px;
 
-			&:last-child {
+			&:last-child,
+			&:only-of-type {
 				margin-bottom: 0;
 			}
 		}
