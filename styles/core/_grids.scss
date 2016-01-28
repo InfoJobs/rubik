@@ -214,7 +214,7 @@ $gridColumns: 12;
 	float: left;
 
 	@include mediaquery ($bp-tablet) {
-		width: 33%;
+		width: 33.33%;
 	}
 
 	& + .col-6-small {
