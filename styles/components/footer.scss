@@ -238,8 +238,12 @@
 				    color: $outer-wall;
 				    content: "|";
 				    position: absolute;
-				    left: -12px;
+				    right: -12px;
 				    top: 1px;
+				}
+
+				&:last-child::after {
+				    content: "";
 				}
 			}
 		}
