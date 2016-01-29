@@ -30,7 +30,7 @@ Markup:
 	vertical-align: middle;//aligned left to text
 }
 
-.Spinner--small {
+.spinner--small {
 	@include spinner;
 	width: 20px;
 }
