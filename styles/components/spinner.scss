@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    $SPINNER
+\*------------------------------------*/
+
+/*
+Markup:
+<img src="//media.infojobs.net/appgrade/svgs/loader.svg" class="Spinner--small" alt="loading">
+*/
+
+@-webkit-keyframes rotate {
+	100% {
+	    transform: rotate(360deg);
+	}
+}
+@keyframes rotate {
+	100% {
+	    transform: rotate(360deg);
+	}
+}
+
+@mixin spinner {
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 0.7s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+	animation-name: rotate;
+	animation-duration: 0.7s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	vertical-align: middle;//aligned left to text
+}
+
+.spinner--small {
+	@include spinner;
+	width: 20px;
+}
