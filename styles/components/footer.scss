@@ -1,46 +1,76 @@
 /*------------------------------------*\
-	$FOOTER
+	$FOOTER-CO
 \*------------------------------------*/
 
-.help-footer {
+.footer-help {
+	@include inner;
 
-	p {
+	&::after {
+		display: block;
+		content: "";
+		position: relative;
+		top: 20px;
+		border-bottom: 1px solid $outer-wall;
+	}
+
+	&-details {
 		color: $mid-script;
+		text-align: center;
+
+		&.list-default > li {
+			@include mediaquery ($bp-desktop) {
+				display: inline;
+			}
+		}
 	}
 
 	a,
 	strong {
-		padding-right: 20px;
+		@include mediaquery ($bp-desktop) {
+			padding-right: 20px;
+		}
 	}
-
 }
 
 .footer {
-	padding-bottom: 40px;
 	font-family: $base-font-family;
 	text-align: center;
 	background-color: $outer-land;
 
 	.social-footer {
-		height: 100%;
-		margin: 0 auto;
-		padding-bottom: 10px;
+		@include inner;
+		width: 100%;
 
-		@include mediaquery ($bp-desktop) {
-			margin: 0;
-			padding: 0;
+		.col-child {
+			margin-bottom: 20px;
+
+			@include mediaquery ($bp-desktop) {
+				margin-bottom: 0;
+			}
 		}
-
 	}
 
 	.social-icons {
-		display: table-cell;
-		vertical-align: middle;
+		display: table;
+		margin: 0 auto;
+	}
+
+	.col-child .social-icons {
+		@include mediaquery ($bp-desktop) {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
 	}
 
 	.apps {
+		margin: 0 auto;
 
-		&:before {
+		@include mediaquery ($bp-desktop) {
+			float: right;
+		}
+
+		&::before {
 		    display: block;
 		    content: "";
 		    position: relative;
@@ -50,38 +80,31 @@
 			@include mediaquery ($bp-desktop) {
 				display: none;
 			}
-
 		}
+
 		li {
 			display: block;
 			padding: 20px 0 0 0;
 
 			@include mediaquery ($bp-desktop) {
-
 				display: table-cell;
 				padding: 0 0 0 20px;
 				vertical-align: middle;
-
 			}
 
 			img {
 				display: block;
 				margin: 0 auto;
 			}
-
 		}
 
 		@include mediaquery ($bp-desktop) {
 				display: table;
 		}
-
-
 	}
 
 	&::before {
-
 		@include mediaquery ($bp-desktop) {
-
 		    content: "";
 		    display: block;
 			height: 100%;
@@ -90,7 +113,6 @@
 		    top: -80px;
 			background-color: $outer-land;
 		    z-index: -1;
-
 		}
 	}
 
@@ -98,14 +120,8 @@
 		position: absolute;
 		left: 0;
 		right: 0;
-		//margin-top: -80px;
-		//padding-top: 100px;
 		text-align: left;
 		background-color: $outer-land;
-		//z-index: -1;
-
-
-
 	}
 
 	@media print {
@@ -114,7 +130,6 @@
 }
 
 .footer-nav {
-
 	h3,
 	.row li li:not(.nav-item-visible) {
 		display: none;
@@ -134,32 +149,36 @@
 		color: $outer-king;
 	}
 
-	&:after {
+	&::after {
 	    display: block;
 	    content: "";
 	    position: relative;
 	    top: 20px;
 	    border-bottom: 1px solid $outer-wall;
-
-		@include mediaquery ($bp-desktop) {
-			margin: 0 -20px;
-		}
-
 	}
 
-
 	.nav-item-visible {
-
 		display: inline-block;
-		padding-left: 20px;
 		margin: 0;
 
-		&::after {
-		    color: $outer-wall;
-		    content: "|";
-		    position: absolute;
-		    left: 5px;
-		    top: 1px;
+		& ~ .nav-item-visible {
+			padding-left: 20px;
+
+			@include mediaquery ($bp-desktop) {
+				padding-left: 0;
+			}
+
+			&::after {
+			    color: $outer-wall;
+			    content: "|";
+			    position: absolute;
+			    left: 5px;
+			    top: 1px;
+
+				@include mediaquery ($bp-desktop) {
+					content: none;
+				}
+			}
 
 			@include mediaquery ($bp-desktop) {
 				content: none;
@@ -172,11 +191,9 @@
 			&::after {
 			    content: none;
 			}
-
 		}
 
 		@include mediaquery ($bp-desktop) {
-
 			display: block;
 			padding: 0;
 			margin-bottom: 10px;
@@ -184,60 +201,77 @@
 	}
 
 	@include mediaquery ($bp-desktop) {
-
 		h3 {
 			color: $dark-softened;
 		}
-
 	}
 }
 
 .footer-nav-bar {
+	display: none;
 
-	li,
-	a {
+	@include mediaquery ($bp-desktop) {
+		@include inner;
+		display: block;
+		text-align: center;
 		color: $outer-pawn;
-	}
 
-	a:hover {
-		text-decoration: underline;
-		color: $outer-king;
-	}
+		&-sites {
+			&::before {
+				display: block;
+				content: "";
+				position: relative;
+				top: -20px;
+				border-bottom: 1px solid $outer-wall;
+			}
 
-	& > li > a,
-	& > li:first-child {
-		font-size: $small-font-size;
-		line-height: $small-line-height;
-	}
+			li {
+				position: relative;
+				margin-left: 20px;
 
-	& > li {
-		position: relative;
-		display: inline-block;
-		margin-left: 20px;
+				&:first-child,
+				&:only-child {
+					margin: 0;
+				}
 
-		&:first-child,
-		&:only-child {
-			margin: 0;
+				+ li::after {
+				    color: $outer-wall;
+				    content: "|";
+				    position: absolute;
+				    right: -12px;
+				    top: 1px;
+				}
+
+				&:last-child::after {
+				    content: "";
+				}
+			}
 		}
 
-		+ li::after {
-		    color: $outer-wall;
-		    content: "|";
-		    position: absolute;
-		    left: -14px;
-		    top: 1px;
+		&-badges {
+			li {
+				margin-left: 20px;
+
+				&:first-child,
+				&:only-child {
+					margin: 0;
+				}
+			}
 		}
 
+		a {
+			color: $outer-pawn;
+
+			&:hover {
+				text-decoration: underline;
+				color: $outer-king;
+			}
+		}
 	}
-
-
 }
 
-
 //banners
-
 .footer-slotbanner {
-
 	@include mediaquery (1256px) {
 		left: -287px;
 	}
@@ -245,11 +279,9 @@
 	@include mediaquery (1278px) {
 		left: -310px;
 	}
-
 }
 
 @media only screen and (max-width: $tablet-start) {
-
 	.footer-nav .col-child {
 		margin-bottom: 0;
 	}

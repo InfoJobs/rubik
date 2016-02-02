@@ -248,3 +248,20 @@ Styleguide #{$sgi-helpers}
 	max-width: 100%;
 	height: auto;
 }
+
+
+/*------------------------------------*\
+    $TYPOGRAPHY
+\*------------------------------------*/
+
+.break {
+	display: block;
+
+	&-small {
+		display: block;
+		
+		@include mediaquery ($bp-desktop) {
+			display: inline;
+		}
+	}
+}

@@ -16,7 +16,7 @@ Markup:
 	<!-- Thumbnail logo -->
 	<figure class="fig-thumbnail fig-thumbnail-logo slide-up">
 		<a href="#">
-			<img style="width: 100%;" border="0" alt="" src="./media/pictures/pic-company-logo.png">
+			<img style="width: 100%;" border="0" alt="" src="../styleguide/images/pictures/pic-company-logo.png">
 			<figcaption class="fig-thumbnail-caption slide-item">
 				<p class="fig-thumbnail-details">Ver ofertas</p>
 			</figcaption>
@@ -67,6 +67,10 @@ Styleguide #{$sgi-thumbnail}
 
 	.fig-thumbnail-caption {
 		display: none;
+	}
+
+	img {
+		width: 100%;
 	}
 }
 

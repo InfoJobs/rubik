@@ -17,7 +17,6 @@ Markup:
 	<div class="child">
 		<div class="child-middle">
 			<h1 class="claim">Lorem ipsum dolor sit amet <span class="break iconfont-CallCenter">902 10 60 90</span></h1>
-			<p></p>
 		</div>
 	</div>
 </section>
@@ -30,19 +29,19 @@ Board Variants
 
 Add class `.board-half` to display content in the left side.<br>
 Add class `.board-large` to increse the hight of the board.<br>
-Add class `.board-executive` or `.board-welcome` to apply a background image.<br>
+Add class `.board-executive`, `.board-welcome`, `.board-hiring` or `.board-help` to apply a background image.<br>
 
 Markup:
-<div class="board board-half board-large board-executive">
+<section class="board board-half board-large board-executive">
 	<div class="child">
 		<div class="child-middle">
-			<h1 class="claim">Cuenta Executive, exclusiva para directivos, managers y especialistas de alto nivel</h1>
-			<p class="description">Tenemos las mejores oportunidades del mercado para acercarte al siguiente paso en tu carrera.</p>
-			<a class="btn btn-primary btn-large" href="#" onclick="unfold();">Activar mi cuenta Executive</a>
-			<p class="small">En un solo click recuperando tu CV de InfoJobs</p>
+			<h1 class="claim">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed felis porta.</h1>
+			<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed felis porta nam congue diam magna.</p>
+			<a class="btn btn-primary btn-large" href="#" onclick="unfold();">Lorem ipsum dolor sit amet</a>
+			<p class="small">Nam congue diam magna, vel rhoncus neque dapibus id.</p>
 		</div>
 	</div>
-</div>
+</section>
 
 Styleguide #{$sgi-board-variants}
 */
@@ -67,20 +66,25 @@ Styleguide #{$sgi-board-variants}
 			vertical-align: middle;
 			margin-top: 0;
 			margin-bottom: 20px;
-			text-shadow: 0px 0px 5px rgba(51, 51, 51, 0.5);
 		}
 	}
 
 	.claim {
 		font-size: $xlarge-font-size;
 		line-height: $xlarge-line-height;
-		margin-bottom: 0;
+		margin-bottom: 10px;
 		color: $shiro;
 
 		@include mediaquery ($bp-tablet) {
 			font-size: $xxxlarge-font-size;
 			line-height: $xxxlarge-line-height;
-			margin-bottom: 10px;
+		}
+
+		&:only-child,
+		&:only-of-type,
+		& + p  {
+			margin-bottom: 0;
+			padding-bottom: 0;
 		}
 	}
 
@@ -89,19 +93,12 @@ Styleguide #{$sgi-board-variants}
 		color: $shiro;
 	}
 
-	.claim:only-child,
-	.claim + p {
-		margin-bottom: 0;
-		padding-bottom: 0;
-	}
-
 	.break {
-		display: block;
 		margin-top: 20px;
 	}
 
 	.description + .btn {
-		margin-top: 30px;
+		margin-top: 20px;
 	}
 
 	.btn {
@@ -143,25 +140,37 @@ Styleguide #{$sgi-board-variants}
 
 	}
 
-	&.board-executive {
-		background: $dark-softened;
-		background-image: url(#{$path-media}/appgrade/pictures/pic-crsl-executive-mobile.jpg);
+	@mixin board-image {
 		background-position:  0 0;
 		background-repeat: no-repeat;
 		background-size: cover;
+		background-color: $dark-softened;
+		text-shadow: 0px 0px 5px rgba(51, 51, 51, 0.5);
+	}
+
+	&-executive {
+		@include board-image;
+		background-color: $dark-softened;
+		background-image: url(#{$path-media}/appgrade/pictures/pic-crsl-executive-mobile.jpg);
 
 		@include mediaquery ($bp-tablet) {
 			background-color: $dark-silk;
 			background-image: url(#{$path-media}/appgrade/pictures/pic-crsl-executive-big.jpg);
 		}
-
 	}
 
 	&-welcome {
-		background: $theme-color-primary;
+		@include board-image;
 		background-image: url(#{$path-media}/appgrade/backgrounds/bg-hr-welcome.gif);
-		background-position:  0 0;
-		background-repeat: no-repeat;
-		background-size: cover;
+	}
+
+	&-hiring {
+		@include board-image;
+		background-image: url(#{$path-media}/appgrade/backgrounds/bg-header.png);
+	}
+
+	&-help {
+		@include board-image;
+		background-image: url(#{$path-media}/appgrade/backgrounds/bg-help.png);
 	}
 }

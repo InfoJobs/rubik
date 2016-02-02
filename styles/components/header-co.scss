@@ -29,11 +29,11 @@
 
 	a:not(.btn) {
 		font-size: $large-font-size;
-		font-family: 'Proximanovabold';
+		font-family: $base-font-family-bold;
 
 		@include mediaquery ($bp-header) {
 			font-size: $base-font-size;
-			font-family: 'Proximanova';
+			font-family: $base-font-family;
 		}
 	}
 
@@ -157,7 +157,7 @@ a.nav-bar-toggle {
 			position: relative;
 			padding: 17px 10px 13px 10px;
 			margin: 0;
-			color: $shiro;
+			color: $soft-blue;
 			-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
 			-webkit-tap-highlight-color: transparent; /* For some Androids */
 
@@ -165,19 +165,12 @@ a.nav-bar-toggle {
 				padding: 30px 20px;
 				//color: $mid-script;
 			}
-		}
 
-		&  a:hover {
-			//color: $dark-silk;
-
-			//@include mediaquery ($bp-header) {
-				//color: $color-primary;
-			//}
-
-		}
-
-		&  a:active {
-			color: $color-primary;
+			&:hover {
+				@include mediaquery ($bp-header) {
+					color: $shiro;
+				}
+			}
 		}
 	}
 
@@ -221,7 +214,7 @@ a.nav-bar-toggle {
 .nav-bar-access {
 	padding: 10px;
 	@include order(2);
-	border-top: 1px solid $darkest-shiro;
+	border-top: 1px solid $midnight-blue;
 
 	@include mediaquery ($bp-header) {
 		padding: 25.5px 20px;
