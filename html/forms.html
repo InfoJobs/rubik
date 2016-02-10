@@ -6,21 +6,16 @@
 		<title>Forms</title>
 
 		<!-- CSS FE styleguide -->
-		<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
+		<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/candidates.css" />
 		<!-- /CSS FE styleguide -->
 		<!-- CSS rubik public styleguide -->
-		<link rel="stylesheet" type="text/css" href="../public/rubik.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/candidates.css" />
 		<!-- /CSS rubik public styleguide -->
-
-		<!-- <link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
-		<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
-		<link rel="stylesheet" type="text/css" href="../styles/components/pulldown-chosen.css" />
-		<link rel="stylesheet" type="text/css" href="../styles/components/modal.css" />
-		<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css"> -->
 
 		<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
         <script type="text/javascript" src="../js/chosen.jquery.js" th:remove="all"></script>
-        <script type="text/javascript" src="http://es-static0.infojobs.com/components/responsive/cProvincesPullDown.js" th:remove="all"></script>
+        <script type="text/javascript" src="../js/cProvincesPullDown.js" th:remove="all"></script>
+		<script type="text/javascript" src="../js/autocomplete-jquery-ui.js.js" th:remove="all"></script>
 
         <script type="text/javascript" src="../js/filling-date.js" th:remove="all"></script>
         <script type="text/javascript" src="../js/mobile-header.js" th:remove="all"></script>
@@ -195,16 +190,6 @@
     		                		</li>
 
 									<li>
-										<p class="label">Lorem ipsum</p>
-										<div class="chosen-container chosen-container-multi chosen-options-selected">
-											<ul class="chosen-choices">
-												<li class="search-choice"><span>Option01</span><a class="search-choice-close"></a></li>
-												<li class="search-choice"><span>Option03</span><a class="search-choice-close"></a></li>
-											</ul>
-										</div>
-									</li>
-
-									<li>
 										<p class="label">Lorem ipsum dolor sit amet</p>
 
 										<div class="row">
@@ -248,6 +233,30 @@
 												</div>
 											</div>
 										</div>
+									</li>
+								</ul>
+
+								<h2 class="h3 heading-divider margin-top">Autocomplete</h2>
+								<ul class="form--field-block clearfix">
+									<li>
+										<p class="label">Autocomplete stikers</p>
+										<div class="chosen-container chosen-container-multi chosen-options-selected">
+											<ul class="chosen-choices">
+												<li class="search-choice"><span>Option01</span><a class="search-choice-close"></a></li>
+												<li class="search-choice"><span>Option03</span><a class="search-choice-close"></a></li>
+											</ul>
+										</div>
+									</li>
+
+									<li style="position: relative;">
+										<label for="email" >Autocomplete email</label>
+                    <input type="text" name="email" class="js-required ui-autocomplete-input" id="email" maxlength="150" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+                    <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox" aria-activedescendant="ui-active-menuitem" style="z-index: 1; top: 69px; left: 1px; display: none; width: 446px;">
+                        <li class="ui-menu-item autocompleteEmail-gmail" role="menuitem"><a class="ui-corner-all" tabindex="-1">email@gmail.com</a></li>
+                        <li class="ui-menu-item autocompleteEmail-hotmail" role="menuitem"><a class="ui-corner-all" tabindex="-1">email@hotmail.com</a></li>
+                        <li class="ui-menu-item autocompleteEmail-yahoo" role="menuitem"><a class="ui-corner-all" tabindex="-1">email@yahoo.es</a></li>
+                        <li class="ui-menu-item autocompleteEmail-outlook" role="menuitem"><a class="ui-corner-all" tabindex="-1">email@outlook.es</a></li>
+                        <li class="ui-menu-item autocompleteEmail-libero" role="menuitem"><a class="ui-corner-all" tabindex="-1">email@libero.it</a></li>
 									</li>
 								</ul>
 
@@ -461,9 +470,21 @@
 		</div>
 
 		<script>
-		$(document).ready(function() {
-			$('.chosen-select').chosen({width:"100%",disable_search:true});
-		});
+  		$(document).ready(function() {
+  			$('.chosen-select').chosen({width:"100%",disable_search:true});
+  		});
+
+      // Autocomplete Layer JS
+      var elInputEmail = document.getElementById("email");
+      var elAutocompleteLayer = document.querySelector(".ui-autocomplete");
+
+      elInputEmail.addEventListener('click', function () {
+        if(elAutocompleteLayer.style.display == 'block') {
+          elAutocompleteLayer.style.display = 'none';
+        } else {
+          elAutocompleteLayer.style.display = 'block';
+        }
+      });
 
 		</script>
 	</body>

@@ -29,7 +29,6 @@ Styleguide #{$sgi-buttons}
     white-space: nowrap;
     text-shadow: none;
     -webkit-appearance: none;
-    -webkit-border-radius: 0;
 
     &:hover {
       @include transition;

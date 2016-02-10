@@ -843,6 +843,20 @@ Styleguide #{$sgi-forms-error}
   box-shadow:none;
 }
 
+
+// autocomplete email
+$icons: gmail, hotmail, yahoo, outlook, libero;
+
+@each $mail-icon in $icons {
+	.autocompleteEmail-#{$mail-icon} a {
+  	padding-left: 30px;
+  	background-position: 0 center;
+  	background-repeat: no-repeat;
+  	background-size: 18px 18px;
+    background-image: url('#{$path-icons}/ico-#{$mail-icon}.png');
+	}
+}
+
 /*
 Examples Forms
 
