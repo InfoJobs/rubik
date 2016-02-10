@@ -159,11 +159,17 @@ input[type="checkbox"]{
 	font-size: 15px;
 }
 
+//disabled styles
 input[disabled="disabled"],
 select[disabled="disabled"],
 .disabled {
 	color: $darkest-shiro;
 	cursor: default;
+}
+
+input[type="text"]:disabled {
+	background: transparent;
+	border-color: $darkest-shiro;
 }
 
 input[type="checkbox"]:disabled + label,
