@@ -125,6 +125,7 @@ Styleguide #{$sgi-job-list}
 
 .job-list-title {
     @include font-medium-line;
+    line-height: $medium-line-height + 6; // fix overflow: hidden; defined inline to hide breaking lines
     clear: left;
     margin-top: 0;
     margin-bottom: 0;
