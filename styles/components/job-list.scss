@@ -120,6 +120,10 @@ Styleguide #{$sgi-job-list}
                 transition: none;
             }
         }
+
+        &-highlight {
+	    	background-color: tint($kiiro,80%);
+	    }
     }
 }
 

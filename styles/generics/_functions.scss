@@ -53,3 +53,10 @@
 @function clear-units($value){
   @return ($value / ($value * 0 + 1));
 }
+
+/**
+ * Returns a mix your $color with a %percentage of white
+ */
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
