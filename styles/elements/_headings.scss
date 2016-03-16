@@ -21,10 +21,15 @@ Definition of differents levels of titles:
 
 `<h1>` defines the most important heading. Only one `<h1>` per page or `<section>`.
 
+You can use the classes `.h2` and `.h3` to force the heading appearance.
+
 Markup:
 <h1>Heading level 1</h1>
 <h2>Heading level 2</h2>
 <h3>Heading level 3</h3>
+<p class="h2">Heading style level 2</p>
+<p class="h3">Heading style level 3</p>
+
 
 Styleguide #{$sgi-headings}
 */
