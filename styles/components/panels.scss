@@ -1,6 +1,37 @@
 /*------------------------------------*\
-$PANELS
+    $PANELS
 \*------------------------------------*/
+
+/*
+Panels
+
+Use these classes classes to color panels
+
+Markup:
+    <div class="panel-default inner">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, sit necessitatibus, dolorem quaerat ducimus reprehenderit corporis doloribus delectus voluptate commodi rem sunt placeat maxime esse libero tempore dignissimos architecto pariatur.</p>
+    </div>
+    <div class="panel-base inner">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, sit necessitatibus, dolorem quaerat ducimus reprehenderit corporis doloribus delectus voluptate commodi rem sunt placeat maxime esse libero tempore dignissimos architecto pariatur.</p>
+    </div>
+    <div class="panel-canvas inner">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, sit necessitatibus, dolorem quaerat ducimus reprehenderit corporis doloribus delectus voluptate commodi rem sunt placeat maxime esse libero tempore dignissimos architecto pariatur.</p>
+    </div>
+    <div class="panel-contrast inner">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, sit necessitatibus, dolorem quaerat ducimus reprehenderit corporis doloribus delectus voluptate commodi rem sunt placeat maxime esse libero tempore dignissimos architecto pariatur.</p>
+    </div>
+    <div class="panel-info inner">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, sit necessitatibus, dolorem quaerat ducimus reprehenderit corporis doloribus delectus voluptate commodi rem sunt placeat maxime esse libero tempore dignissimos architecto pariatur.</p>
+    </div>
+    <div class="panel-focus inner">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, sit necessitatibus, dolorem quaerat ducimus reprehenderit corporis doloribus delectus voluptate commodi rem sunt placeat maxime esse libero tempore dignissimos architecto pariatur.</p>
+    </div>
+    <div class="panel-overlay inner">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, sit necessitatibus, dolorem quaerat ducimus reprehenderit corporis doloribus delectus voluptate commodi rem sunt placeat maxime esse libero tempore dignissimos architecto pariatur.</p>
+    </div>
+
+Styleguide #{$sgi-panels}
+*/
 
 .panel {
 
