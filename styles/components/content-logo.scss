@@ -17,7 +17,6 @@ Use class `.content-middle` to center vertically text with other media content.
 
 Apply `.content-type-text` and `.content-type-media` to build the text and media content structure.<br>
 Use class `.content-divider-default` to create a divider line.<br>
-Add structure with class `.action` to align buttons on the right.
 
 Markup:
 <div class="content-middle inner">
@@ -48,10 +47,6 @@ Markup:
 	</div>
 	<div class="content-type-text">
 		<h1>Lorem ipsum dolor sit amet</h1>
-	</div>
-    <div class="action">
-		<a class="btn btn-primary" href="#">Button</a>
-		<a class="btn btn-default" href="#">Button</a>
 	</div>
 </div>
 
@@ -130,7 +125,6 @@ Use class `.content-top` to align to top text and media.
 
 Apply `.content-type-text` and `.content-type-media` to build the text and media content structure.
 Use class `.content-divider-default` to create a divider line.
-Add structure with class `.action` to align buttons on the right.
 
 Markup:
 <div class="content-top inner">
@@ -161,10 +155,6 @@ Markup:
 	</div>
 	<div class="content-type-text">
 		<h1>Lorem ipsum dolor sit amet</h1>
-	</div>
-    <div class="action">
-		<a class="btn btn-primary" href="#">Button</a>
-		<a class="btn btn-default" href="#">Button</a>
 	</div>
 </div>
 
