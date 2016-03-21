@@ -47,31 +47,57 @@ label,
 	}
 }
 
-select {
-	padding: 13px 10px;
-	height: 44px;
-	background: transparent;
-	font-size: 16px;
-	color: $dark-silk;
-	border: 0 none;
-	background: url(#{$path-backgrounds}/bg-select-arrow.png) right 15px no-repeat $shiro;
-	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
-	cursor: pointer;
+.form--field-block {
+	> li { //TODO: Could be possible to apply only a class in <form> to avoid do it in every <ul>?
+		margin-bottom: 20px;
+		vertical-align: middle;
 
-	&:focus {
-		border: 1px solid $color-primary;
-		outline: none;
-		color: #000;
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.info {
+			margin-bottom: 0;
+
+			&:first-of-type:only-child {
+				margin-top: 5px;
+			}
+		}
+
+		label + .info {
+			margin-top: -5px;
+		}
 	}
 
-	.error & {
-		border: 1px solid $trueblood;
+	> li:last-child {
+			margin-bottom: 0;
+	}
+
+	label {
+		width: 100%;
 	}
 }
 
-select:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 $outer-wall;
+form ul .indent { // Used in cartas presentacion and company registration
+	margin-left: 24px;
+	margin-top: 5px;
+}
+
+//TODO: Nest .form-field-inline in .search-bar.scss component, because is not possible to apply this layout independently
+.form-field-inline { // Used in search box + filters job search
+	display: table;
+
+	> label {
+		margin-right: 10px;
+		margin-bottom: 0;
+   		vertical-align: middle;
+	}
+
+	> input,
+	> .form-select  {
+		display: inline-block;
+		width: 220px!important;
+	}
 }
 
 @mixin input {
@@ -132,351 +158,6 @@ textarea {
 ::placeholder {
 	font-size: $small-font-size;
 }
-
-textarea {
-	min-height: 150px;
-	resize: vertical;
-	width: 100%;
-}
-
-.textarea {
-
-	.info {
-		margin-top: 5px;
-	}
-}
-
-input[type="radio"],
-input[type="checkbox"]{
-	display: inline-block;
-	cursor: pointer;
-  	padding: 0;
-  	margin: 3px 6px 0 0;
-	width: auto;
-  	border: 0 none;
-  	vertical-align: top;
-  	height: auto;
-	font-size: 15px;
-}
-
-//disabled styles
-input[disabled="disabled"],
-select[disabled="disabled"],
-.disabled {
-	color: $darkest-shiro;
-	cursor: default;
-}
-
-input[type="text"]:disabled {
-	background: transparent;
-	border-color: $darkest-shiro;
-}
-
-input[type="checkbox"]:disabled + label,
-input[type="radio"]:disabled + label {
-	color: $soft-script;
-}
-
-input[type="checkbox"] + label,
-input[type="radio"] + label,
-.label-checkbox { //class ".label-checkbox" deprecated. actualy used in filters only
-	cursor: pointer;
-	max-width: 85%;
-}
-
-/*
-Forms structure #disabled#
-
-```
-.form--field-block 	- Fields disposition: block
-```
-
-Markup:
-<form>
-  <fieldset>
-    <legend>Lorem ipsum</legend>
-    <ul class="form--field-block clearfix">
-		<li>
-			<label for="field1">Label</label>
-			<input type="text" id="field1">
-		</li>
-		<li>
-			<label for="field2">Label</label>
-			<input type="text" id="field2">
-		</li>
-    </ul>
-    <button type="submit" class="btn btn-primary" id="button">Send</button>
-	<div class="field-annex">
-		<input type="checkbox" id="permanent-login">
-		<label for="permanent-login">Recordar</label>
-	</div>
-  </fieldset>
-</form>
-
-Styleguide #{$sgi-formsFieldblock}
-*/
-
-.form--field-block {
-	> li { //TODO: Could be possible to apply only a class in <form> to avoid do it in every <ul>?
-		margin-bottom: 20px;
-		vertical-align: middle;
-
-		&:last-child {
-			margin-bottom: 0;
-		}
-
-		.info {
-			margin-bottom: 0;
-
-			&:first-of-type:only-child {
-				margin-top: 5px;
-			}
-		}
-
-		label + .info {
-			margin-top: -5px;
-		}
-	}
-
-	> li:last-child {
-			margin-bottom: 0;
-	}
-
-	label {
-		width: 100%;
-	}
-}
-
-form ul .indent { // Used in cartas presentacion and company registration
-	margin-left: 24px;
-	margin-top: 5px;
-}
-
-//TODO: Nest .form-field-inline in .search-bar.scss component, because is not possible to apply this layout independently
-.form-field-inline { // Used in search box + filters job search
-	display: table;
-
-	> label {
-		margin-right: 10px;
-		margin-bottom: 0;
-   		vertical-align: middle;
-	}
-
-	> input,
-	> .form-select  {
-		display: inline-block;
-		width: 220px!important;
-	}
-}
-
-
-/*
-Radio buttons / Checkbox #disabled#
-
-```
-.fieldset-title - To format radio button/checkbox's title
-.label-checkbox - To align label in a radio button/checkbox structure
-```
-
-Markup:
-<fieldset>
-	<legend class="fieldset-title">Fecha</legend>
-	<ul>
-		<li>
-			<input type="radio" checked="checked" id="fecha_a">
-			<label title="Ofertas de empleo para cualquier fecha" class="label-checkbox" for="fecha_a">
-				Cualquier fecha
-			</label>
-		</li>
-		<li>
-			<input type="radio" id="fecha_b">
-			<label title="Ofertas de empleo ultimas 24h" class="label-checkbox" for="fecha_b">
-				Ultimas <span class="marked">24 horas</span>
-			</label>
-		</li>
-		<li>
-			<input type="radio" id="fecha_c">
-			<label title="Ofertas de empleo ultimos 7 dias" class="label-checkbox" for="fecha_c">
-				Ultimos 7 dias
-			</label>
-		</li>
-		<li>
-			<input type="radio" id="fecha_d">
-			<label title="Ofertas de empleo ultimos 15 dias" class="label-checkbox" for="fecha_d">
-				Ultimos 15 dias
-			</label>
-		</li>
-	</ul>
-</fieldset>
-
-Styleguide #{$sgi-forms-radio}
-*/
-
-/*
-Radio buttons's inline #disabled#
-
-```
-.radio-group - To create a radio button's group with inline structure
-```
-
-Markup:
-<ul class="radio-group clearfix">
-	<li>
-		<input type="radio" checked="checked" id="option1"><label for="option1">Option 1</label>
-	</li>
-	<li>
-		<input type="radio" id="option2"><label for="option2">Option 2</label>
-	</li>
-</ul>
-
-Styleguide #{$sgi-forms-radio-inline}
-*/
-
-.radio-group {
-	width: 100%;
-}
-
-.radio-group li {
-	float: left;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-.radio-group li + li {
-	margin-left: 10px;
-}
-
-.radio-group label {
-    position: relative;
-    width: 100%;
-    margin-bottom: 5px;
-
-		//TODO: Fix line-height
-
-    &:before,
-    &:after {
-    	content: "";
-	    position: absolute;
-	    right: 0;
-	    left: 0;
-	    height: 10px;
-    }
-
-		&:before {
-			top: -10px;
-		}
-
-		&:after {
-	    top: 100%;
-		}
-}
-
-/*
-Select
-
-The `<select>` element is used to create a drop-down list.<br>
-The `<option>` tags inside the `<select>` element define the available options in the list.<br>
-This element needs pulldown-chosen.css,[chosen.jquery.js](#{$sgp-chosen}) and the script as code example.
-
-Markup:
-<div class="form-select">
-  <select data-placeholder="Cualquier provincia" class="chosen-select" tabindex="-1">
-    <option selected="selected" value="0">Option 1</option>
-    <option value="1">Option 2</option>
-  </select>
-</div>
-<script>
-	$(document).ready(function() {
-		$('.chosen-select').chosen({width:"100%",disable_search:true});
-	});
-</script>
-
-Styleguide #{$sgi-forms-select}
-*/
-
-.form-select {
-	position: relative;
-	line-height: 14px;
-	-webkit-appearance: none;
-
-	select {
-		width: 100%;
-		padding:6px;
-		text-indent: 0.01px;
-		text-overflow: "";
-		-webkit-appearance: none;
-		   -moz-appearance: none;
-				appearance: none;
-		top: 0;
-		left: 0;
-		margin: 0;
-	}
-
-	&-disabled {
-		overflow: hidden;
-		background-color: $dark-shiro;
-	}
-
-	optgroup:before {
-		content: "";
-		display: block;
-		height: 1px;
-		border-bottom: 1px solid $darkest-shiro;
-		margin-bottom: 5px;
-	}
-
-	optgroup {
-		padding: 0;
-		margin: 10px 0;
-
-		option {
-			background: transparent;
-		}
-
-		option:after {
-			content: "";
-			display: block;
-			padding: 2px;
-		}
-
-		option:before {
-			content: "";
-			display: block;
-			padding: 2px;
-		}
-	}
-}
-
-/*
-Multiple select
-
-Markup:
-<label for="multiple-pulldown">Multiple pulldown</label>
-<select id="multiple-pulldown" multiple="true" class="chosen-select" data-placeholder="(Seleccionar)">
-	<option value="01">Option01</option>
-	<option value="02">Option02</option>
-	<option value="03">Option03</option>
-	<option value="04">Option04</option>
-	<option value="05">Option05</option>
-</select>
-
-Styleguide #{$sgi-forms-select-multiple}
-*/
-
-.form-select-medium { /* Used in SectionCvComponent*/
-	width: 350px;
-}
-
-
-/*
-Input group #disabled#
-
-```
-.input-group
-```
-
-Styleguide #{$sgi-forms-input-group}
-*/
 
 .input-group {
     display: table;
@@ -606,6 +287,602 @@ input[type="tel"],
 	}
 }
 
+.row-centered .input-PostalCode,
+.input-PostalCode {
+	width: 70px; // 5 digits format (ES, IT)
+}
+
+.field-date-group { // group of date fields
+
+	.start-date-group {
+		float: left;
+		padding-right: 10px;
+
+		@include mediaquery ($bp-tablet) {
+			padding-right: 20px;
+		}
+	}
+
+	.end-date-group {
+		float: left;
+
+		.list-default {
+			@include display-flex;
+			@include flex-direction(column);
+
+			@include mediaquery ($bp-tablet) {
+				@include flex-direction(row);
+			}
+
+		}
+
+		.end-date {
+			float: left;//Fallback
+			@include flex(1 0 auto);
+		}
+
+		.field-date-group-currently {
+
+			@include mediaquery ($bp-tablet) {
+				float: left;//Fallback
+				@include flex(1 0 100%);
+				margin: 30px 0 0 20px;
+			}
+		}
+
+	}
+
+	.error-info {
+		@include mediaquery ($bp-tablet) {
+			max-width: 116px;
+		}
+	}
+}
+
+/*
+Input fields
+
+Markup:
+<form method="post" action="#">
+    <fieldset>
+        <legend>Lorem ipsum</legend>
+        <ul class="form--field-block clearfix">
+            <li>
+                <label for="input">Basic field <span class="alternative">(opcional)</span></label>
+                <input id="input" type="text" placeholder="Lorem ipsum..." />
+            </li>
+            <li class="success">
+                <label for="input-success">Basic success field</label>
+                <input id="input-success" type="text" />
+            </li>
+            <li class="error">
+                <label for="input-error">Basic error field</label>
+                <input id="input-error" type="text" />
+                <p class="error-info">Lorem ipsum dolor sit amet.</p>
+            </li>
+            <li class="disabled">
+                <label for="input-disabled">Basic disabled field</label>
+                <input id="input-disabled" type="text" disabled />
+            </li>
+            <li>
+                <label for="input-PostalCode">Postal Code</label>
+                <input id="input-PostalCode" type="text" class="input-PostalCode" />
+            </li>
+        </ul>
+    </fieldset>
+</form>
+
+Styleguide #{$sgi-forms-basic-fields}
+*/
+
+/*
+Input group date
+
+Markup:
+<form method="post" action="#">
+    <fieldset>
+        <legend>Lorem ipsum</legend>
+        <ul class="form--field-block clearfix">
+            <li>
+                <label for="day">Input group date</label>
+                <div class="input-group input-group-date">
+                    <div>
+                        <input placeholder="DD" type="number" id="day" name="day" maxlength="2" />
+                    </div>
+                    <div>
+                        <input placeholder="MM" type="number" id="month" name="month" maxlength="2" />
+                    </div>
+                    <div>
+                        <input placeholder="AAAA" type="number" id="year" name="year" maxlength="4" />
+                    </div>
+                </div>
+            </li>
+            <li class="error">
+                <label for="day-error">Input group date</label>
+                <div class="input-group input-group-date">
+                    <div>
+                        <input placeholder="DD" type="number" id="day-error" name="day" maxlength="2" />
+                    </div>
+                    <div>
+                        <input placeholder="MM" type="number" id="month" name="month" maxlength="2" />
+                    </div>
+                    <div>
+                        <input placeholder="AAAA" type="number" id="year" name="year" maxlength="4" />
+                    </div>
+                </div>
+                <p class="error-info">Lorem ipsum dolor sit amet.</p>
+            </li>
+            <li class="field-date-group">
+                <ul class="list-default clearfix">
+                    <li>
+                        <input name="cursando00" id="cursando00" type="checkbox">
+                        <label for="cursando00" class="label-checkbox">Cursando</label>
+                    </li>
+                    <li class="start-date-group">
+                        <label for="month01">Input group date</label>
+                        <div class="input-group input-group-date">
+                            <div>
+                                <input placeholder="MM" type="number" id="month01" name="month" maxlength="2" />
+                            </div>
+                            <div>
+                                <input placeholder="AAAA" type="number" id="year" name="year" maxlength="4" />
+                            </div>
+                        </div>
+                    </li>
+                    <li class="end-date-group">
+                        <ul class="list-default">
+                            <li class="end-date">
+                                <label for="month02">Input group date</label>
+                                <div class="input-group input-group-date">
+                                    <div>
+                                        <input placeholder="MM" type="number" id="month02" name="month" maxlength="2" />
+                                    </div>
+                                    <div>
+                                        <input placeholder="AAAA" type="number" id="year" name="year" maxlength="4" />
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </fieldset>
+</form>
+
+Styleguide #{$sgi-forms-group-date}
+*/
+
+textarea {
+	min-height: 150px;
+	resize: vertical;
+	width: 100%;
+}
+
+.textarea {
+	.info {
+		margin-top: 5px;
+	}
+}
+
+/*
+Textarea
+
+Markup:
+<form method="post" action="#">
+    <fieldset>
+        <legend>Lorem ipsum</legend>
+        <ul class="form--field-block clearfix">
+            <li>
+                <label for="comment">Textarea</label>
+                <div class="textarea">
+                    <textarea placeholder="Lorem ipsum..." id="comment"></textarea>
+                    <p class="info alternative small"><span>114</span>/<span>250</span></p>
+                </div>
+            </li>
+            <li class="error">
+                <label for="comment-error">Textarea</label>
+                <div class="textarea">
+                    <textarea id="comment-error"></textarea>
+                    <p class="info alternative small"><span>114</span>/<span>250</span></p>
+                </div>
+            </li>
+            <li class="disabled">
+                <label for="comment">Textarea</label>
+                <div class="textarea">
+                    <textarea disabled></textarea>
+                    <p class="info alternative small"><span>114</span>/<span>250</span></p>
+                </div>
+            </li>
+        </ul>
+    </fieldset>
+</form>
+
+Styleguide #{$sgi-forms-textarea}
+*/
+
+select {
+	padding: 13px 10px;
+	height: 44px;
+	background: transparent;
+	font-size: 16px;
+	color: $dark-silk;
+	border: 0 none;
+	background: url(#{$path-backgrounds}/bg-select-arrow.png) right 15px no-repeat $shiro;
+	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
+	cursor: pointer;
+
+	&:focus {
+		border: 1px solid $color-primary;
+		outline: none;
+		color: #000;
+	}
+
+	.error & {
+		border: 1px solid $trueblood;
+	}
+}
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 $outer-wall;
+}
+
+/*
+Select
+
+Markup:
+<form method="post" action="#">
+    <fieldset>
+        <legend>Lorem ipsum</legend>
+        <ul class="form--field-block clearfix">
+            <li>
+                <label for="pulldown">Pulldown</label>
+                <select id="pulldown" class="chosen-select" data-placeholder="(Seleccionar)">
+                        <option value="01">Option01</option>
+                        <option value="02">Option02</option>
+                        <option value="03">Option03</option>
+                        <option value="04">Option04</option>
+                        <option value="05">Option05</option>
+                </select>
+                <p class="info alternative small clearfix">Puedes seleccionar varios permisos de conducir</p>
+            </li>
+            <li class="error">
+                <label for="pulldown">Pulldown error</label>
+                <select id="pulldown" class="chosen-select" data-placeholder="(Seleccionar)">
+                        <option value="01">Option01</option>
+                        <option value="02">Option02</option>
+                        <option value="03">Option03</option>
+                        <option value="04">Option04</option>
+                        <option value="05">Option05</option>
+                </select>
+                <p class="error-info">Lorem ipsum dolor sit amet.</p>
+            </li>
+            <li class="disabled">
+                <label for="pulldown">Pulldown disabled</label>
+                <select id="pulldown" class="chosen-select" data-placeholder="(Seleccionar)" disabled>
+                        <option value="01">Option01</option>
+                        <option value="02">Option02</option>
+                        <option value="03">Option03</option>
+                        <option value="04">Option04</option>
+                        <option value="05">Option05</option>
+                </select>
+            </li>
+        </ul>
+    </fieldset>
+</form>
+
+Styleguide #{$sgi-forms-select}
+*/
+
+/*
+Select inline
+
+Markup:
+<form method="post" action="#">
+    <fieldset>
+        <legend>Lorem ipsum</legend>
+        <div class="form-field-inline">
+            <label for="name">Pulldown inline:</label>
+            <div class="form-select">
+                <select id="pulldown" class="chosen-select" data-placeholder="(Seleccionar)">
+                        <option value="01">Option01</option>
+                        <option value="02">Option02</option>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+Styleguide #{$sgi-forms-select-inline}
+*/
+
+/*
+Multiple Selects
+
+Markup:
+<form method="post" action="#">
+    <fieldset>
+        <legend>Lorem ipsum</legend>
+        <ul class="form--field-bock clearfix">
+            <li>
+                <label for="multiple-pulldown">Multiple pulldown</label>
+                <select id="multiple-pulldown" multiple="true" class="chosen-select" data-placeholder="(Seleccionar)">
+                    <option value="01">Option01</option>
+                    <option value="02">Option02</option>
+                    <option value="03">Option03</option>
+                    <option value="04">Option04</option>
+                    <option value="05">Option05</option>
+                </select>
+            </li>
+        </ul>
+    </fieldset>
+</form>
+
+Styleguide #{$sgi-forms-multiple-select}
+*/
+
+
+
+
+input[type="radio"],
+input[type="checkbox"]{
+	display: inline-block;
+	cursor: pointer;
+  	padding: 0;
+  	margin: 3px 6px 0 0;
+	width: auto;
+  	border: 0 none;
+  	vertical-align: top;
+  	height: auto;
+	font-size: 15px;
+}
+
+//disabled styles
+input[disabled="disabled"],
+select[disabled="disabled"],
+.disabled {
+	color: $darkest-shiro;
+	cursor: default;
+}
+
+input[type="text"]:disabled {
+	background: transparent;
+	border-color: $darkest-shiro;
+}
+
+input[type="checkbox"]:disabled + label,
+input[type="radio"]:disabled + label {
+	color: $soft-script;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label,
+.label-checkbox { //class ".label-checkbox" deprecated. actualy used in filters only
+	cursor: pointer;
+	max-width: 85%;
+}
+
+/*
+Input radio / Input check
+
+Markup:
+<form method="post" action="#">
+    <fieldset>
+        <legend>Lorem ipsum</legend>
+        <h2 class="h3 heading-divider">Basic fields</h2>
+        <ul class="form--field-block">
+            <li>
+                <p class="label bold">Radio button field</p>
+                <ul>
+                    <li>
+                        <input id="gender1" name="gender" type="radio" />
+                        <label for="gender1">Radio button field 1</label>
+                    </li>
+                    <li>
+                        <input id="gender2" name="gender" type="radio" />
+                        <label for="gender2">Radio button field 2</label>
+                    </li>
+                </ul>
+            </li>
+            <li class="error">
+                <p class="label bold">Radio button field with error</p>
+                <ul>
+                    <li>
+                        <input id="gender1-error" name="gender-error" type="radio" />
+                        <label for="gender1-error">Radio button field 1</label>
+                    </li>
+                    <li>
+                        <input id="gender2-error" name="gender-error" type="radio" />
+                        <label for="gender2-error">Radio button field 2</label>
+                    </li>
+                </ul>
+                <p class="error-info">Lorem ipsum dolor sit amet.</p>
+            </li>
+            <li class="disabled">
+                <p class="label bold">Radio button field with error</p>
+                <ul>
+                    <li>
+                        <input id="gender1-disabled" name="gender-disabled" type="radio" disabled />
+                        <label for="gender1-disabled">Radio button field 1</label>
+                    </li>
+                    <li>
+                        <input id="gender2-disabled" name="gender-disabled" type="radio" disabled />
+                        <label for="gender2-disabled">Radio button field 2</label>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="label bold">Check button field</p>
+                <ul>
+                    <li>
+                        <input id="option01" type="checkbox" />
+                        <label for="option01">Check button field 1</label>
+                    </li>
+                    <li>
+                        <input id="option02" type="checkbox" />
+                        <label for="option02">Check button field 1</label>
+                    </li>
+                </ul>
+            </li>
+            <li class="error">
+                <p class="label bold">Check button field error</p>
+                <ul>
+                    <li>
+                        <input id="option03" type="checkbox" />
+                        <label for="option03">Check button field 1</label>
+                    </li>
+                    <li>
+                        <input id="option04" type="checkbox" />
+                        <label for="option04">Check button field 1</label>
+                    </li>
+                </ul>
+            </li>
+            <li class="disabled">
+                <p class="label bold">Check button field disabled</p>
+                <ul>
+                    <li>
+                        <input id="option05" type="checkbox" disabled />
+                        <label for="option05">Check button field 1</label>
+                    </li>
+                    <li>
+                        <input id="option06" type="checkbox" disabled />
+                        <label for="option06">Check button field 1</label>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </fieldset>
+</form>
+
+Styleguide #{$sgi-forms-radio}
+*/
+
+
+.radio-group {
+	width: 100%;
+}
+
+.radio-group li {
+	float: left;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.radio-group li + li {
+	margin-left: 10px;
+}
+
+.radio-group label {
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+
+		//TODO: Fix line-height
+
+    &:before,
+    &:after {
+    	content: "";
+	    position: absolute;
+	    right: 0;
+	    left: 0;
+	    height: 10px;
+    }
+
+		&:before {
+			top: -10px;
+		}
+
+		&:after {
+	    top: 100%;
+		}
+}
+
+.form-select {
+	position: relative;
+	line-height: 14px;
+	-webkit-appearance: none;
+
+	select {
+		width: 100%;
+		padding:6px;
+		text-indent: 0.01px;
+		text-overflow: "";
+		-webkit-appearance: none;
+		   -moz-appearance: none;
+				appearance: none;
+		top: 0;
+		left: 0;
+		margin: 0;
+	}
+
+	&-disabled {
+		overflow: hidden;
+		background-color: $dark-shiro;
+	}
+
+	optgroup:before {
+		content: "";
+		display: block;
+		height: 1px;
+		border-bottom: 1px solid $darkest-shiro;
+		margin-bottom: 5px;
+	}
+
+	optgroup {
+		padding: 0;
+		margin: 10px 0;
+
+		option {
+			background: transparent;
+		}
+
+		option:after {
+			content: "";
+			display: block;
+			padding: 2px;
+		}
+
+		option:before {
+			content: "";
+			display: block;
+			padding: 2px;
+		}
+	}
+}
+
+/*
+Special fields
+
+Markup:
+<form method="post" action="#">
+    <fieldset>
+        <legend>Lorem ipsum</legend>
+        <ul class="form--field-block clearfix">
+            <li class="clearfix">
+                <label for="phone">Phone number <span class="alternative">(optional)</span></label>
+                <input id="phone" type="tel">
+                <input name="phone-check" id="phone-check" type="radio">
+                <label for="phone-check" class="label-checkbox">Preferent</label>
+            </li>
+            <li class="error clearfix">
+                <label for="phone-error">Phone number <span class="alternative">(optional)</span></label>
+                <input id="phone-error" type="tel">
+                <input name="phone-check" id="phone-check-error" type="radio">
+                <label for="phone-check-error" class="label-checkbox">Preferent</label>
+                <p class="error-info">Lorem ipsum dolor sit amet.</p>
+            </li>
+        </ul>
+    </fieldset>
+</form>
+
+Styleguide #{$sgi-forms-special-files}
+*/
+
+.form-select-medium { /* Used in SectionCvComponent*/
+	width: 350px;
+}
+
 .fieldset-title { /* DEPRECATED: used in registration-index + KQ + filters job search */
 	display: block;
 	padding-bottom:10px;
@@ -614,35 +891,6 @@ input[type="tel"],
 		color: $trueblood;
 	}
 }
-
-/*
-Field error #disabled#
-
-```
-.error-info - Error description
-```
-
-Markup:
-<form>
-  <fieldset>
-    <legend>Lorem ipsum</legend>
-    <ul class="form--field-block clearfix">
-      <li class="error">
-        <label for="field1">Label</label>
-        <input type="text" id="field1">
-		<p class="error-info">Descripcion del error</p>
-      </li>
-      <li>
-        <label for="field2">Label</label>
-        <input type="text" id="field2">
-      </li>
-    </ul>
-    <button type="submit" class="btn btn-primary" id="button">Send</button>
-  </fieldset>
-</form>
-
-Styleguide #{$sgi-forms-error}
-*/
 
 .error-info,
 .success-info {
@@ -658,7 +906,6 @@ Styleguide #{$sgi-forms-error}
 
 
 //helpers for form
-
 .input-link-annex {
 	margin: 10px 0 0 0;
 }
@@ -767,6 +1014,20 @@ Styleguide #{$sgi-forms-error}
 
 }
 
+/*
+Strength bar
+
+Markup:
+<dl class="strength-bar">
+    <dt>Lorem ipsum</dt>
+    <dd>
+      <meter max="3" min="0" value="2" high="2" low="2" optimum="3"></meter>
+    </dd>
+</dl>
+
+Styleguide #{$sgi-forms-strength-bar}
+*/
+
 .field-group-grow { //used on edit-cv when an input + button sizes needs to be 100%
 	@include display-flex;
 
@@ -784,72 +1045,6 @@ Styleguide #{$sgi-forms-error}
 	}
 }
 
-.field-date-group { // group of date fields
-
-	.start-date-group {
-		float: left;
-		padding-right: 10px;
-
-		@include mediaquery ($bp-tablet) {
-			padding-right: 20px;
-		}
-	}
-
-	.end-date-group {
-		float: left;
-
-		.list-default {
-			@include display-flex;
-			@include flex-direction(column);
-
-			@include mediaquery ($bp-tablet) {
-				@include flex-direction(row);
-			}
-
-		}
-
-		.end-date {
-			float: left;//Fallback
-			@include flex(1 0 auto);
-		}
-
-		.field-date-group-currently {
-
-			@include mediaquery ($bp-tablet) {
-				float: left;//Fallback
-				@include flex(1 0 100%);
-				margin: 30px 0 0 20px;
-			}
-		}
-
-	}
-
-	.error-info {
-		@include mediaquery ($bp-tablet) {
-			max-width: 116px;
-		}
-	}
-}
-
-.row-centered .input-PostalCode,
-.input-PostalCode {
-	width: 70px; // 5 digits format (ES, IT)
-}
-
-//reset default validation on ff
-:invalid {
-  box-shadow: none;
-}
-
-:-moz-submit-invalid {
-  box-shadow: none;
-}
-
-:-moz-ui-invalid {
-  box-shadow:none;
-}
-
-
 // autocomplete email
 $icons: gmail, hotmail, yahoo, outlook, libero;
 
@@ -862,12 +1057,3 @@ $icons: gmail, hotmail, yahoo, outlook, libero;
     background-image: url('#{$path-icons}/ico-#{$mail-icon}.png');
 	}
 }
-
-/*
-Examples Forms
-
-<a href="#{$sgp-forms}" target="blank">#{$sgp-openPage}</a>
-
-Styleguide #{$sgi-examplesForms}
-
-*/
