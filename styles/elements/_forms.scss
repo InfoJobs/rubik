@@ -366,7 +366,7 @@ Markup:
             </li>
             <li>
                 <label for="input-PostalCode">Postal Code</label>
-                <input id="input-PostalCode" type="text" class="input-PostalCode" />
+                <input id="input-PostalCode" type="text" class="input-PostalCode" maxlength="5" />
             </li>
         </ul>
     </fieldset>
