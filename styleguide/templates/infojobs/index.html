@@ -1,85 +1,90 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta charset="utf-8">
         <title>InfoJobs Rubik Styleguides</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="stylesheet" href="public/kss.css">
-        <link rel="stylesheet" href="public/styleguide.css">
         <link rel="stylesheet" href="public/rubik.css">
-
-
+        <link rel="stylesheet" href="public/main.css">
     </head>
-    <body id="kss-node">
 
-    	<nav class="sg-menu">
-            <div class="sg-logo">
-                <a href="./index.html" id="logo"><img src="./images/pictures/pic-logo-infojobs.png"></a>
+    <body>
+        <header>
+            <div class="row">
+                <div class="center">
+                    <div class="container-center">
+                        <div class="col-2 no-padding">
+                            <a href="index.html"><h1 class="logo">Infojobs</h1></a>
+                        </div>
+                        <div class="col-8">
+                            <nav class="main-menu">
+                                <ul>
+                                    {{#eachRoot}}
+                                        <li>
+                                            <a href="section-{{referenceURI}}.html" class="js-itemMenu">
+                                                {{header}}
+                                            </a>
+                                            {{#if overview}}
+                                            {{else}}
+                                            {{/if}}
+                                        </li>
+                                    {{/eachRoot}}
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
             </div>
-        	<ul>
-        		<li>
-        			<div class="sg-section">Rubik</div>
-        			<ul>
-        				<li><a href="./index.html" id="home">Introduction</a></li>
-        			</ul>
-        		</li>
-        		<li>
-        			<div class="sg-section">Web Components</div>
-        			<ul id="sg-menu">
-        				{{#eachRoot}}
-                        <li>
-                            <a href="section-{{referenceURI}}.html#rubik-{{{reference}}}.1" class="js-itemMenu">
-                                {{header}}
-                            </a>
-                            {{#if overview}}
-                            {{else}}
-
-                            <ul class="sg-submenu">
-                                {{#eachSection reference}}
-                                    {{#ifDepth 2}}
-                                    <li>
-                                        <a href="section-{{../../reference}}.html#rubik-{{{reference}}}" class="js-itemMenu {{#isDisabled header}}disabled js-disabled{{/isDisabled}}" data-link="true">{{header}}</a>
-                                        <ul class="sg-second-submenu">
-                                        {{#eachSection reference}}
-                                            {{#ifDepth 3}}
-                                            <li>
-                                                <a href="section-{{../../../../reference}}.html#rubik-{{{reference}}}" {{#isDisabled header}}class="disabled js-disabled"{{/isDisabled}}>{{header}}</a>
-                                            </li>
-                                            {{/ifDepth}}
-                                        {{/eachSection}}
-                                        </ul>
-                                    </li>
-                                    {{/ifDepth}}
-                                {{/eachSection}}
-                            </ul>
-
-                            {{/if}}
-
-        				</li>
-        				{{/eachRoot}}
-                        <!-- <li><a href="#">Pages</a></li>
-                        <li><a href="#">Templates</a></li> -->
-        			</ul>
-        		</li>
-        	</ul>
-        </nav>
-        <div class="sg-overlay"></div>
-
-        <header class="sg-header">
-            <a id="burgerMenu" class="iconfont-BurguerMenu"></a>
-            <h1>
-                {{#if homepage}}
-                Rubik Components
-                {{else}}
-                {{header}}
-                {{/if}}
-            </h1>
         </header>
-
-        <section class="sg-content">
+        <section class="title">
+            <div class="center">
+                <div class="row">
+                    <div class="container-center clear">
+                        <div class="col-8">
+                            <h1>Getting started</h1>
+                            <h2>An overview of Bootstrap, how to download and use, basic templates and examples, and more.</h2>
+                        </div>
+                    </div>
+                    <div class="container-menu">
+                        <aside class="menu-float">
+                            <nav class="nav-float">
+                                <ul>
+                                    {{#eachRoot}}
+                                    <li>
+                                        <a href="section-{{referenceURI}}.html#rubik-{{{reference}}}.1" class="js-itemMenu">
+                                            {{header}}
+                                        </a>
+                                        {{#if overview}}
+                                        {{else}}
+                                        {{/if}}
+                                        <ul class="submenu">
+                                                {{#eachSection reference}}
+                                                    {{#ifDepth 2}}
+                                                    <li>
+                                                        <a href="section-{{../../reference}}.html#rubik-{{{reference}}}" class="js-itemMenu {{#isDisabled header}}disabled js-disabled{{/isDisabled}}" data-link="true">{{header}}</a>
+                                                        <ul class="sg-second-submenu">
+                                                        {{#eachSection reference}}
+                                                            {{#ifDepth 3}}
+                                                            <li>
+                                                                <a href="section-{{../../../../reference}}.html#rubik-{{{reference}}}" {{#isDisabled header}}class="disabled js-disabled"{{/isDisabled}}>{{header}}</a>
+                                                            </li>
+                                                            {{/ifDepth}}
+                                                        {{/eachSection}}
+                                                        </ul>
+                                                    </li>
+                                                    {{/ifDepth}}
+                                                {{/eachSection}}
+                                            </ul>
+                    				</li>
+                    				{{/eachRoot}}
+                                </ul>
+                            </nav>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
 
             {{#if homepage}}
             {{! - HOME ------------------------------------------------------ }}
@@ -156,49 +161,40 @@
                                     </div>
                                 </div>
                               </div>
-
                       </div>
-
                   </div>
               </div>
 
-
             {{else}}
 
-            <div class="sg-wrapper">
-            {{! - SECTIONS -------------------------------------------------- }}
+            <!-- <div class="sg-wrapper"> -->
+            <div class="center">
+                <section class="content" id="rubik-{{reference}}">
+                    <div class="row">
+                        <div class="container-center">
+                            <div class="col-12">
+                            {{! - SECTIONS -------------------------------------------------- }}
+                            {{#eachSection rootName}}
+                                {{#isDisabled header}}
+                                    {{! - If header have ##disabled## don't render section --}}
+                                {{else}}
 
-            {{#eachSection rootName}}
-
-                {{#isDisabled header}}
-
-                    {{! - If header have ##disabled## don't render section --}}
-
-                {{else}}
-
-
-                    {{#isntCasper header}}
-                        {{#if markup}}
-                            <div id="rubik-{{reference}}" class="row sg-block">
-                                    <div class="col-12">
-                                    <header class="sg-block-header">
-                                        <h2 class="sg-block-title">{{{header}}}</h2>
-                                    </header>
-                                    {{#if description}}
-                                        <div class="sg-block-description">
-                                            {{{description}}}
-
-                                        </div>
-                                    {{/if}}
-
+                                {{#isntCasper header}}
                                     {{#if markup}}
+                                        <h2>{{{header}}}</h2>
+                                        {{#if description}}
+                                            <div class="sg-block-description">
+                                                {{{description}}}
+                                            </div>
+                                        {{/if}}
 
+                                        {{#if markup}}
                                             {{#if modifiers}}
                                                 {{#eachModifier}}
                                                     {{!
-                                                    <div>
-                                                        {{name}} <span style="display:none;">{{{description}}}</span>
-                                                    </div>
+                                                        <div>
+                                                            {{name}} <span style="display:none;">{{{description}}}</span>
+                                                        </div>
                                                     }}
                                                 {{/eachModifier}}
 
@@ -211,67 +207,76 @@
                                                         {{/eachModifier}}
                                                     </div>
                                                 {{/isntCasper}}
-                                            {{else}}
-                                                {{#isntCasper markup}}
-                                                <div class="sg-view">
-                                                    {{{markup}}}
+                                                {{else}}
+                                                    {{#isntCasper markup}}
+                                                        <div class="sg-view">
+                                                            {{{markup}}}
+                                                        </div>
+                                                        {{/isntCasper}}
+                                                {{/if}}
+                                                <!-- <div class="code col-12 no-padding">
+                                                    <pre class="prettyprint linenums lang-html">
+                                                        <code data-language="html">
+                                                            {{#isModifiers markup}}
+                                                                {{markup}}
+                                                            {{/isModifiers}}
+                                                        </code>
+                                                    </pre>
+                                                </div> -->
+                                                <div class="code col-12 no-padding">
+                                                    <pre class="prettyprint">{{#isModifiers markup}}{{markup}}{{/isModifiers}}</pre>
                                                 </div>
-                                                {{/isntCasper}}
                                             {{/if}}
-                                            <pre class="prettyprint linenums lang-html"><code data-language="html">
-{{#isModifiers markup}}
-{{markup}}
-{{/isModifiers}}
-</code></pre>
-<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
-                                    {{/if}}
 
-                                </div>
-                            </div>
+                                            {{else}}
+                                                <div id="rubik-{{reference}}" class="row sg-block">
+                                                    <!-- <div class="col-12"> -->
+                                                        {{#ifDepth 2}}
+                                                            <h1>{{{header}}}</h1>
+                                                        {{else}}
+                                                            <h2>{{{header}}}</h2>
+                                                        {{/ifDepth}}
 
-                        {{else}}
-                        <div id="rubik-{{reference}}" class="row sg-block">
-                            <div class="col-12">
-                                <header class="sg-block-header">
-                                    {{#ifDepth 2}}
-                                    <h1 class="sg-block-title">{{{header}}}</h1>
-                                    {{else}}
-                                    <h2 class="sg-block-title">{{{header}}}</h2>
-                                    {{/ifDepth}}
-                                </header>
-                                {{#if description}}
-                                    <div class="sg-block-description">
-                                        {{{description}}}
-                                    </div>
-                                {{/if}}
+                                                        {{#if description}}
+                                                            <div class="sg-block-description">
+                                                                {{{description}}}
+                                                            </div>
+                                                        {{/if}}
+                                                    <!-- </div> -->
+                                                </div>
+                                            {{/if}}
+                                        {{/isntCasper}}
+                                    {{/isDisabled}}
+                                {{/eachSection}}
                             </div>
                         </div>
-                        {{/if}}
-                    {{/isntCasper}}
-                {{/isDisabled}}
-            {{/eachSection}}
-            </div>
+                    </div>
+                </section>
             {{/if}}
+        </div>
 
-        </section>
+        <!-- </section> -->
         <section class="sg-content sg-footer">
         Â© Infojobs 2015
         </section>
 
-        <script src="public/jquery-2.1.0.min.js"></script>
+        <!-- <script src="public/jquery-2.1.0.min.js"></script>
         <script src="public/jquery.modal.js"></script>
         <script src="public/kss.js"></script>
         <script src="public/prettify.js"></script>
         <script src="public/plugins.js"></script>
         <script src="public/main.js"></script>
-        <script src="js/scrollHeader.js"></script>
+        <script src="js/scrollHeader.js"></script> -->
         <!-- <script src="js/scrollspyMenu.js"></script> -->
-        <script src="js/chosen.jquery.js"></script>
+        <!-- <script src="js/chosen.jquery.js"></script>
 		<script>
     		$(document).ready(function() {
     			$('.chosen-select').chosen({width:"100%",disable_search:true});
     		});
-		</script>
+		</script> -->
 
-    </body>
+            <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+            <script src="public/index.js"></script>
+
+  </body>
 </html>
