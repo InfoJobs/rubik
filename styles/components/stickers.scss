@@ -6,6 +6,20 @@
     $STICKERS
 \*------------------------------------*/
 
+/*
+Stickers
+
+Examples of stickers.
+
+Markup:
+<a href="#" class="sticker">Javascript</a>
+<a href="#" class="sticker-marked">Javascript</a>
+<a href="#" class="sticker-contrast">Javascript</a>
+<a href="#" class="sticker-secondary">Javascript</a>
+
+Styleguide #{$sgi-stickers}
+*/
+
 .sticker {
     @include sticker;
 }
@@ -14,6 +28,10 @@
     @include sticker;
     color: $shiro;
 	background-color: $bamboo;
+
+    &:hover {
+        color: $shiro;
+    }
 
     &[class*="iconfont-"]::before {
 		color: $shiro;
@@ -25,6 +43,10 @@
     color: $shiro;
 	background-color: $dark-silk;
 
+    &:hover {
+        color: $shiro;
+    }
+
     &[class*="iconfont-"]::before {
 		color: $shiro;
 	}
@@ -34,7 +56,57 @@
 	@include sticker;
     color: $shiro;
 	background-color: $color-primary;
+
+    &:hover {
+        color: $shiro;
+    }
 }
+
+/*
+Stickers size
+
+Size for stickers.
+
+Markup:
+<a href="#" class="sticker-small">Javascript</a>
+
+Styleguide #{$sgi-stickerSize}
+*/
+
+.sticker-small {
+	@include sticker;
+    padding: 0 10px;
+    font-size: $xsmall-font-size;
+    line-height: 14.6px;
+
+    &[class*="iconfont-"]::before {
+		font-size: $small-font-size;
+	}
+}
+
+/*
+Stickers skill
+
+Examples of stickers like skills in a list.
+
+Markup:
+<ul class="list-default list-inline">
+    <li class="sticker-skill">
+        <img src="//media.infojobs.net/portales/ij//appgrade/pictures/pic-skills.svg#high" alt="High level">Adobe Photoshop
+	    <a class="sticker-close" title="close" href="#"></a>
+    </li>
+    <li class="sticker-skill">
+	    <img src="//media.infojobs.net/portales/ij//appgrade/pictures/pic-skills.svg#medium" alt="Medium level">CSS
+	    <a class="sticker-close" title="close" href="#"></a>
+    </li>
+    <li class="sticker-skill">
+	    <img src="//media.infojobs.net/portales/ij//appgrade/pictures/pic-skills.svg#low" alt="Low level">Java
+	    <a class="sticker-close" title="close" href="#"></a>
+    </li>
+</ul>
+
+Styleguide #{$sgi-stickerSkill}
+*/
 
 @mixin sticker-skill {
 	@include sticker;
@@ -47,10 +119,11 @@
     @include sticker-skill;
 
     img {
-        float: left;
         margin: 0 10px 0 0;
+        vertical-align: text-top;
         width: $base-font-size;// equivalencia del width y font-size
     }
+
 }
 
 a.sticker-skill {
@@ -66,49 +139,6 @@ a.sticker-skill {
     }
 }
 
-@mixin sticker-multi {
-    @include sticker;
-    @include sticker-skill;
-    padding-right: 5px;
-}
-
-.sticker-small {
-    padding: 0 10px;
-    font-size: $xsmall-font-size;
-    line-height: 14.6px;
-
-    &[class*="iconfont-"]::before {
-		font-size: $small-font-size;
-	}
-}
-
-/*
-Sticker Tag group
-
-Use class `.tag-group` and `.tag-group-sticker` for list items inline of stickers.
-
-Markup:
-<ul class="tag-group tag-group-sticker">
-    <li><a href="#" class="sticker sticker-skill">Javascript</a></li>
-    <li><a href="#" class="sticker sticker-skill">Office</a></li>
-    <li><a href="#" class="sticker sticker-skill">HTML</a></li>
-    <li><a href="#" class="sticker sticker-skill">Java</a></li>
-</ul>
-
-*/
-
-.tag-group-sticker li {
-    padding-right: 0;
-}
-
-@include mediaquery ($bp-desktop) {
-
-    .tag-group li.tag-sticker {
-        float: left;
-    }
-
-}
-
 .sticker-close {
     @include iconfont-Close;
     position: relative;
@@ -121,4 +151,38 @@ Markup:
     &:hover {
         color: $dark-silk;
     }
+}
+
+@mixin sticker-multi {
+    @include sticker;
+    @include sticker-skill;
+    padding-right: 5px;
+}
+
+/*
+Stickers Tag group
+
+Use class `.tag-group` and `.tag-group-sticker` for list items inline of stickers.
+
+Markup:
+<ul class="tag-group tag-group-sticker">
+    <li><a href="#" class="sticker sticker-skill">Javascript</a></li>
+    <li><a href="#" class="sticker sticker-skill">Office</a></li>
+    <li><a href="#" class="sticker sticker-skill">HTML</a></li>
+    <li><a href="#" class="sticker sticker-skill">Java</a></li>
+</ul>
+
+Styleguide #{$sgi-stickersGroup}
+*/
+
+.tag-group-sticker li {
+    padding-right: 0;
+}
+
+@include mediaquery ($bp-desktop) { //ver oferta
+
+    .tag-group li.tag-sticker {
+        float: left;
+    }
+
 }
