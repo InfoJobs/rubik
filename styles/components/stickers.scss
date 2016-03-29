@@ -92,15 +92,15 @@ Examples of stickers like skills in a list.
 Markup:
 <ul class="list-default list-inline">
     <li class="sticker-skill">
-        <img src="//media.infojobs.net/portales/ij//appgrade/pictures/pic-skills.svg#high" alt="Adobe Photoshop">Adobe Photoshop
+        <img src="//media.infojobs.net/portales/ij//appgrade/pictures/pic-skills.svg#high" alt="High level">Adobe Photoshop
 	    <a class="sticker-close" title="close" href="#"></a>
     </li>
     <li class="sticker-skill">
-	    <img src="//media.infojobs.net/portales/ij//appgrade/pictures/pic-skills.svg#high" alt="CSS">CSS
+	    <img src="//media.infojobs.net/portales/ij//appgrade/pictures/pic-skills.svg#medium" alt="Medium level">CSS
 	    <a class="sticker-close" title="close" href="#"></a>
     </li>
     <li class="sticker-skill">
-	    <img src="//media.infojobs.net/portales/ij//appgrade/pictures/pic-skills.svg#high" alt="Java">Java
+	    <img src="//media.infojobs.net/portales/ij//appgrade/pictures/pic-skills.svg#low" alt="Low level">Java
 	    <a class="sticker-close" title="close" href="#"></a>
     </li>
 </ul>
@@ -119,10 +119,11 @@ Styleguide #{$sgi-stickerSkill}
     @include sticker-skill;
 
     img {
-        float: left;
         margin: 0 10px 0 0;
+        vertical-align: text-top;
         width: $base-font-size;// equivalencia del width y font-size
     }
+
 }
 
 a.sticker-skill {
