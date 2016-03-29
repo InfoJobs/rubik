@@ -1,0 +1,54 @@
+// ==========================================================================
+// Helpers
+// ==========================================================================
+.no-margin {
+  margin: 0;
+}
+.no-padding {
+  padding: 0;
+}
+.featured {
+  background-color: $color-dark-pink;
+  color: $color-pink;
+  padding: 0 4px;
+}
+.active {
+  a {
+    color: $color-blue;
+    &:hover,
+    &:visited {
+      color: $color-blue;
+    }
+  }
+}
+.hover {
+  a {
+    color: $color-black;
+    &:hover,
+    &:visited {
+      color: $color-black;
+    }
+  }
+}
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
+}
+.clearfix {
+  clear: both;
+}
+a {
+  text-decoration: none;
+  &:hover,
+  &:visited {
+    text-decoration: none;
+  }
+}
+.polygon {
+  width: 100%;
+  background-color: $color-white;
+  border: 1px solid $color-light-gray;
+  height: 100px;
+}

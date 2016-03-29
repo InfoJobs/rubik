@@ -1,0 +1,41 @@
+// ==========================================================================
+// Messages
+// ==========================================================================
+section.messages {
+  padding: 0;
+}
+.message {
+  font-family: $global-font-family;
+  font-weight: $global-font-weight;
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 20px 0;
+  outline: 1px solid #e2e5e6;
+  p {
+    font-size: $p-font-size;
+    line-height: $global-line-height;
+    color: $message-color;
+  }
+  h4 {
+    font-weight: $font-bold;
+    margin-bottom: 10px;
+  }
+}
+.message.error {
+  border-left: $message-border solid $color-red;
+  h4 {
+    color: $message-color-red;
+  }
+}
+.message.warning {
+  border-left: $message-border solid $color-yellow;
+  h4 {
+    color: $color-yellow;
+  }
+}
+.message.info {
+  border-left: $message-border solid $color-light-blue;
+  h4 {
+    color: $color-light-blue;
+  }
+}

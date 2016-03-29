@@ -1,0 +1,131 @@
+/*
+Zeus Project
+Version: 1.0
+*/
+
+@import 'includes/_reset';
+@import 'includes/_variables';
+@import 'includes/_header';
+@import 'includes/_buttons';
+@import 'includes/_code';
+@import 'includes/_forms';
+@import 'includes/_grid';
+@import 'includes/_messages';
+@import 'includes/_tables';
+@import 'includes/_menus';
+@import 'includes/_sections';
+@import 'includes/_footer';
+@import 'includes/_helpers';
+
+/* General */
+body {
+  font-family: $global-font-family;
+  font-size: $global-font-size;
+  color: $color-gray;
+  font-weight: $global-font-weight;
+  background: $global-background-color;
+  padding: 0 0 50px 0;
+
+  &.home{
+    background-color: $color-blue;
+    min-height: 100%;
+  }
+}
+
+h1 {
+    font-size: $h1-font-size;
+    color: $color-black;
+    font-weight: $font-bold;
+    font-family: $global-font-family;
+    line-height:$h1-lh;
+    margin-bottom:10px;
+}
+
+h2 {
+    font-size: $h2-font-size;
+    line-height:$h2-lh;
+    color: $color-black;
+    font-weight: $font-regular;
+    font-family: $global-font-family;
+    margin-bottom:10px;
+}
+
+h3 {
+    font-size: $h3-font-size;
+    line-height:$h3-lh;
+    color: $color-black;
+    font-weight: $font-regular;
+    font-family: $global-font-family;
+}
+
+h4 {
+    font-size: $h4-font-size;
+    line-height:$h4-lh;
+    color: $color-black;
+    font-weight: $font-regular;
+    font-family: $global-font-family;
+}
+
+h5 {
+    font-size: $h5-font-size;
+    line-height:$h5-lh;
+    color: $color-black;
+    font-weight: $font-regular;
+    font-family: $global-font-family;
+}
+
+h6 {
+    font-size: $h6-font-size;
+    line-height:$h6-lh;
+    color: $color-black;
+    font-weight: $font-regular;
+    font-family: $global-font-family;
+}
+
+p {
+    font-size: $global-font-size;
+    line-height:$global-line-height;
+    color: $color-gray;
+    font-weight: $font-regular;
+    font-family: $global-font-family;
+}
+
+strong {
+    font-weight: $font-bold;
+}
+
+.version {
+    font-size: $global-font-size;
+    line-height:$global-line-height;
+    color: $color-gray;
+    font-weight: $font-regular;
+    font-family: $global-font-family;
+    background-color: $color-light-gray;
+    padding:10px 20px;
+    border-radius:20px;
+    vertical-align:middle;
+    position: relative;
+    top: -4px;
+}
+
+.row {
+	margin: 0 auto;
+}
+
+.divider {
+    border-bottom:1px solid $color-light-gray;
+    padding-bottom:20px;
+    margin-bottom:40px;
+}
+
+a {
+    color:$color-blue;
+}
+
+.img-content-example {
+    margin: 50px 0px 10px 0px;
+    max-width: 100%;
+}
+
+/*---*/
+.button a,.button a:hover,.main-menu ul li a{text-decoration:none}

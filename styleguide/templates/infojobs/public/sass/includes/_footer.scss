@@ -1,0 +1,17 @@
+footer {
+  padding: 20px 0;
+  background-color: $color-white;
+  h1.logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0;
+    background-image: url('../img/logo.png');
+    background-repeat: no-repeat;
+    width: 107px;
+    height: 27px;
+    text-indent: -9999px;
+    a {
+      font-size: 0;
+    }
+  }
+}

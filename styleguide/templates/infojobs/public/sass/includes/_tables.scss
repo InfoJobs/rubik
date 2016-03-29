@@ -1,0 +1,51 @@
+// ==========================================================================
+// Tables
+// ==========================================================================
+.table-striped {
+  tr:nth-child(2n+1) {
+    background-color: $color-white;
+  }
+}
+.table {
+  width: 100%;
+  thead {
+    tr {
+      background-color: $code-background-color !important;
+      th {
+        text-align: left;
+        color: $table-color-gray;
+        font-size: $h3-font-size;
+        font-weight: $font-bold;
+        padding: 10px 20px;
+      }
+    }
+  }
+  tbody {
+    td {
+      text-align: left;
+      padding: 20px;
+    }
+    td.featured {
+      background-color: $color-pink;
+      color: $color-dark-pink;
+    }
+  }
+}
+table {
+  border: 1px solid $code-border-color;
+  border-collapse: collapse;
+  th {
+    border-right: 1px solid $code-border-color;
+    border-bottom: 1px solid $code-border-color;
+    &:last-child {
+      border-right: none;
+    }
+  }
+  td {
+    border-right: 1px solid $code-border-color;
+    border-collapse: collapse;
+    &:last-child {
+      border-right: none;
+    }
+  }
+}

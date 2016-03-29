@@ -1,0 +1,69 @@
+section {
+  padding: 10px 0;
+  p {
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+section.title {
+  background-color: $color-blue;
+  padding-top: 70px;
+  padding-bottom: 20px;
+  margin-bottom: 14px;
+  h1 {
+    color: $color-white;
+  }
+  h2 {
+    color: $color-white;
+    opacity: 0.5;
+    font-weight: 300;
+  }
+}
+section.content {
+  h1 {
+    font-size: $h1-font-size-medium;
+    font-weight: $font-bold;
+  }
+  h2 {
+    font-weight: $font-bold;
+  }
+}
+section.grid {
+  .row {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+section.home-wrapper {
+  position: absolute;
+  top: 50%;
+  margin-top: -200px;
+  left: 0;
+  width: 100%;
+  .wrapper {
+    margin: 0 auto 20px;
+    text-align: center;
+    .logo-zeus {
+      margin: 0 auto 40px;
+      width: 300px;
+      height: 200px;
+      margin-right: 303px;
+    }
+    h1 {
+      text-align: center;
+      text-transform: uppercase;
+      color: $color-white;
+      font-weight: $font-bold;
+      margin-bottom: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: $color-white;
+      opacity: 0.5;
+      margin-bottom: 20px;
+    }
+  }
+}
