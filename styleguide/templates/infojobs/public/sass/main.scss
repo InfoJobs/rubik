@@ -9,7 +9,6 @@ Version: 1.0
 @import 'includes/_buttons';
 @import 'includes/_code';
 @import 'includes/_forms';
-@import 'includes/_grid';
 @import 'includes/_messages';
 @import 'includes/_tables';
 @import 'includes/_menus';
@@ -18,11 +17,7 @@ Version: 1.0
 @import 'includes/_helpers';
 
 /* General */
-body {
-  font-family: $global-font-family;
-  font-size: $global-font-size;
-  color: $color-gray;
-  font-weight: $global-font-weight;
+.sg-body {
   background: $global-background-color;
   padding: 0 0 50px 0;
 
@@ -30,68 +25,15 @@ body {
     background-color: $color-blue;
     min-height: 100%;
   }
-}
 
-h1 {
-    font-size: $h1-font-size;
-    color: $color-black;
-    font-weight: $font-bold;
-    font-family: $global-font-family;
-    line-height:$h1-lh;
-    margin-bottom:10px;
-}
+  h1.sg-block-title {
+      margin-bottom:10px;
+  }
 
-h2 {
-    font-size: $h2-font-size;
-    line-height:$h2-lh;
-    color: $color-black;
-    font-weight: $font-regular;
-    font-family: $global-font-family;
-    margin-bottom:10px;
-}
+  h2.sg-block-title  {
+      margin-bottom:10px;
+  }
 
-h3 {
-    font-size: $h3-font-size;
-    line-height:$h3-lh;
-    color: $color-black;
-    font-weight: $font-regular;
-    font-family: $global-font-family;
-}
-
-h4 {
-    font-size: $h4-font-size;
-    line-height:$h4-lh;
-    color: $color-black;
-    font-weight: $font-regular;
-    font-family: $global-font-family;
-}
-
-h5 {
-    font-size: $h5-font-size;
-    line-height:$h5-lh;
-    color: $color-black;
-    font-weight: $font-regular;
-    font-family: $global-font-family;
-}
-
-h6 {
-    font-size: $h6-font-size;
-    line-height:$h6-lh;
-    color: $color-black;
-    font-weight: $font-regular;
-    font-family: $global-font-family;
-}
-
-p {
-    font-size: $global-font-size;
-    line-height:$global-line-height;
-    color: $color-gray;
-    font-weight: $font-regular;
-    font-family: $global-font-family;
-}
-
-strong {
-    font-weight: $font-bold;
 }
 
 .version {
@@ -108,7 +50,7 @@ strong {
     top: -4px;
 }
 
-.row {
+.sg-row {
 	margin: 0 auto;
 }
 
@@ -118,14 +60,46 @@ strong {
     margin-bottom:40px;
 }
 
-a {
-    color:$color-blue;
-}
-
 .img-content-example {
     margin: 50px 0px 10px 0px;
     max-width: 100%;
 }
 
 /*---*/
+.sg-container-center {
+    width: 990px;
+    float: left
+}
+
+.sg-center,
+.version {
+    position: relative
+}
+
+.sg-center {
+    width: 1230px;
+    margin: 0 auto
+}
+
+@media (max-width:1260px) {
+    .sg-center {
+        width: 1175px;
+        -webkit-transition: width .5s;
+        transition: width .5s;
+        margin: 0 0 0 7px
+    }
+}
+
+@media (max-width:1199px) {
+    .menu-float {
+        right: -160px
+    }
+    .menu-float:hover {
+        right: 0
+    }
+    .sg-center {
+        width: auto
+    }
+}
+
 .button a,.button a:hover,.main-menu ul li a{text-decoration:none}

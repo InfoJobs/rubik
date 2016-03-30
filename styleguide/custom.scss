@@ -3,11 +3,6 @@ body {
     height: auto;
 }
 
-body#kss-node {
-    padding: 0;
-    background: $dark-shiro;
-}
-
 .sg-guide {
     font-size: 13px;
 
@@ -247,26 +242,7 @@ body#kss-node {
         background: none;
     }
 }
-//Headihgs
-h1.sg-block-title {
-    font-size: 25px;
-    color: $day-blue;
-}
 
-h2.sg-block-title,
-h3.sg-block-title {
-    font-family: 'Proximanovasemibold';
-    color: $dark-silk;
-}
-
-h2.sg-block-title {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-h3.sg-block-title {
-    font-size: 18px;
-}
 /*------------------------------------*\
 $COMPONENTS OVERWRITE
 \*------------------------------------*/
@@ -281,12 +257,4 @@ $COMPONENTS OVERWRITE
         height: 40px;
         position: static;
     }
-}
-
-/*------------------------------------*\
-$KSS-NODE
-\*------------------------------------*/
-
-#kss-node ol.linenums {
-    white-space: pre-wrap;
 }

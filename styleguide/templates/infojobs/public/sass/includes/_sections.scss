@@ -1,4 +1,4 @@
-section {
+.sg-section {
   padding: 10px 0;
   p {
     a {
@@ -6,11 +6,12 @@ section {
     }
   }
 }
-section.title {
+.sg-section.title {
   background-color: $color-blue;
   padding-top: 70px;
   padding-bottom: 20px;
-  margin-bottom: 14px;
+  margin-bottom: 40px;
+
   h1 {
     color: $color-white;
   }
@@ -20,7 +21,7 @@ section.title {
     font-weight: 300;
   }
 }
-section.content {
+.sg-section.sg-content {
   h1 {
     font-size: $h1-font-size-medium;
     font-weight: $font-bold;
@@ -29,15 +30,15 @@ section.content {
     font-weight: $font-bold;
   }
 }
-section.grid {
-  .row {
+.sg-section.grid {
+  .sg-row {
     margin-bottom: 20px;
     &:last-child {
       margin-bottom: 0;
     }
   }
 }
-section.home-wrapper {
+.sg-section.home-wrapper {
   position: absolute;
   top: 50%;
   margin-top: -200px;
@@ -66,4 +67,11 @@ section.home-wrapper {
       margin-bottom: 20px;
     }
   }
+}
+.sg-block {
+    max-width: 970px;
+
+    & + .sg-block {
+        margin-bottom: 40px;
+    }
 }
