@@ -22,10 +22,10 @@
             </div>
             <div class="col-10">
               <nav class="sg-main-menu">
-        		<ul id="sg-menu">
+        		<ul id="sg-menu" class="js-sg-main-menu">
         			{{#eachRoot}}
                     <li>
-                        <a href="section-{{referenceURI}}.html#rubik-{{{reference}}}.1" class="js-itemMenu">
+                        <a href="section-{{referenceURI}}.html">
                             {{header}}
                         </a>
                         {{#if overview}}
@@ -133,16 +133,18 @@
 
       <section class="sg-section title">
         <div class="row">
-          <div class="sg-center clear">
+          <div class="sg-center clear inner">
             <div class="col-8">
-                <h1>Common</h1>
-                <h2>An overview of Bootstrap, how to download and use, basic templates and examples, and more.</h2>
+                <h1 class="js-h1"></h1>
+                <h2 class="js-description-0" style="display: none;">Layouts, buttons, forms,  paragraphs, lists... .</h2>
+                <h2 class="js-description-1" style="display: none;">Components used in InfoJobs.</h2>
+                <h2 class="js-description-2" style="display: none;">Components with javascript used in InfoJobs.</h2>
             </div>
           </div>
         </div>
       </section>
 
-        <div class="sg-center">
+        <div class="sg-center clear inner">
         {{! - SECTIONS -------------------------------------------------- }}
 
         {{#eachSection rootName}}
@@ -231,11 +233,11 @@
         {{/if}}
 
     </section>
-    <section class="sg-content sg-footer">
-    Â© Infojobs 2015
+    <section class="sg-content sg-footer inner">
+        <p>&copy; Infojobs <span class="sg-year"></span></p>
     </section>
 
-	<aside class="menu-float">
+    <aside class="menu-float">
 		<nav class="nav-float">
         	<ul>
         		<li>
@@ -288,6 +290,7 @@
 
     <script src="public/jquery-2.1.0.min.js"></script>
     <script src="public/prettify.js"></script>
+    <script src="public/scrollspyMenu.js"></script>
         <!-- <script src="public/jquery.modal.js"></script>
 
     <script src="public/plugins.js"></script>
@@ -300,6 +303,33 @@
     		$('.chosen-select').chosen({width:"100%",disable_search:true});
     	});
     </script>
+    <!-- active item main menu -->
+    <script>
+        var eMainMenuItem = document.querySelectorAll('.js-sg-main-menu li');
+        for (var i=0; i <= eMainMenuItem.length; i++) {
 
+            if(window.location.href.indexOf('section-' + (i+1) ) > -1) {
+                eMainMenuItem[i].classList.toggle('active');
+
+                document.querySelector('.js-h1').textContent = eMainMenuItem[i].textContent;
+                showHeadingDescription(i);
+            }
+        }
+
+        function showHeadingDescription(e) {
+            if(i == e) {
+                document.querySelector('.js-description-'+ e).style.display = 'block';
+            }
+
+        }
+    </script>
+    <!-- copyright year -->
+    <script>
+        (function() {
+            var d = new Date();
+            var y= d.getFullYear();
+            document.querySelector('.sg-year').textContent = y;
+        })();
+    </script>
 </body>
 </html>

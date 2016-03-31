@@ -6,9 +6,8 @@ Version: 1.0
 @import 'includes/_reset';
 @import 'includes/_variables';
 @import 'includes/_header';
-@import 'includes/_buttons';
+//@import 'includes/_buttons';
 @import 'includes/_code';
-@import 'includes/_forms';
 @import 'includes/_messages';
 @import 'includes/_tables';
 @import 'includes/_menus';
@@ -101,5 +100,3 @@ Version: 1.0
         width: auto
     }
 }
-
-.button a,.button a:hover,.main-menu ul li a{text-decoration:none}

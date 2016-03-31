@@ -1,35 +1,34 @@
 .sg-section {
-  padding: 10px 0;
-  p {
-    a {
-      text-decoration: underline;
-    }
-  }
-}
-.sg-section.title {
-  background-color: $color-blue;
-  padding-top: 70px;
-  padding-bottom: 20px;
-  margin-bottom: 40px;
+    padding: 10px 0;
 
-  h1 {
-    color: $color-white;
-  }
-  h2 {
-    color: $color-white;
-    opacity: 0.5;
-    font-weight: 300;
-  }
+    p {
+        a {
+            text-decoration: underline;
+        }
+    }
 }
+
+.sg-section.title {
+    background-color: $color-blue;
+    padding-top: 70px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+
+    h1 {
+        color: $color-white;
+    }
+    h2 {
+        color: $color-white;
+        opacity: 0.5;
+    }
+}
+
 .sg-section.sg-content {
-  h1 {
-    font-size: $h1-font-size-medium;
-    font-weight: $font-bold;
-  }
-  h2 {
-    font-weight: $font-bold;
-  }
+    h1 {
+        font-size: $h1-font-size-medium;
+    }
 }
+
 .sg-section.grid {
   .sg-row {
     margin-bottom: 20px;

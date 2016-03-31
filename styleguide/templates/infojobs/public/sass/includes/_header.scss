@@ -1,33 +1,37 @@
 .sg-header {
-  background-color: $color-white;
-  padding: 20px 0 0 16px;
-  height: 60px;
-  h1.sg-logo {
-    display: inline-block;
-    vertical-align: middle;
-    margin-bottom: 0;
-    background-image: url('../images/pictures/pic-logo.png');
-    background-repeat: no-repeat;
-    width: 107px;
-    height: 27px;
-    text-indent: -9999px;
-    a {
-      font-size: 0;
+    background-color: $color-white;
+    padding: 20px 40px;
+
+    h1.sg-logo {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 0;
+        background-image: url('../images/pictures/pic-logo.png');
+        background-repeat: no-repeat;
+        width: 107px;
+        height: 27px;
+        text-indent: -9999px;
+        a {
+            font-size: 0;
+        }
     }
-  }
-  h1.logo-light {
-    background-image: url('../img/logo_white.png');
-  }
+
+    h1.logo-light {
+        background-image: url('../img/logo_white.png');
+    }
 }
+
 .sg-header.light {
-  background-color: $color-dark-blue;
-  .sg-main-menu {
-    a {
-      color: $color-white;
-      &:hover {
-        color: $color-white;
-        opacity: 0.6;
-      }
+    background-color: $color-dark-blue;
+
+    .sg-main-menu {
+        a {
+            color: $color-white;
+    
+            &:hover {
+                color: $color-white;
+                opacity: 0.6;
+            }
+        }
     }
-  }
 }
