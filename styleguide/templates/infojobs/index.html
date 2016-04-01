@@ -22,7 +22,7 @@
             </div>
             <div class="col-10">
               <nav class="sg-main-menu">
-        		<ul id="sg-menu" class="js-sg-main-menu">
+        		<ul id="sg-menu" class="js-main-menu">
         			{{#eachRoot}}
                     <li>
                         <a href="section-{{referenceURI}}.html">
@@ -237,27 +237,27 @@
         <p>&copy; Infojobs <span class="sg-year"></span></p>
     </section>
 
-    <aside class="menu-float">
+    <aside class="menu-float js-menu-float">
 		<nav class="nav-float">
         	<ul>
         		<li>
-        			<div class="sg-section">Rubik</div>
+        			<div class="sg-section sg-nav-title">Rubik</div>
         			<ul>
         				<li><a href="./index.html" id="home">Introduction</a></li>
         			</ul>
         		</li>
         		<li>
-        			<div class="sg-section">Web Components</div>
-        			<ul id="sg-menu">
+        			<div class="sg-section sg-nav-title">Web Components</div>
+        			<ul id="sg-menu" class="js-nav-float">
         				{{#eachRoot}}
-                        <li>
-                            <a href="section-{{referenceURI}}.html#rubik-{{{reference}}}.1" class="js-itemMenu">
+                        <li class="sg-dropdown">
+                            <a href="section-{{referenceURI}}.html" class="js-itemMenu">
                                 {{header}}
                             </a>
                             {{#if overview}}
                             {{else}}
 
-                            <ul class="sg-submenu">
+                            <ul class="sg-submenu js-submenu">
                                 {{#eachSection reference}}
                                     {{#ifDepth 2}}
                                     <li>
@@ -303,25 +303,47 @@
     		$('.chosen-select').chosen({width:"100%",disable_search:true});
     	});
     </script>
-    <!-- active item main menu -->
+    <!-- Main menu and Float menu -->
     <script>
-        var eMainMenuItem = document.querySelectorAll('.js-sg-main-menu li');
+        var offset = 210;
+        var floatMenu = document.querySelector('.js-menu-float');
+        var eFloatMenuItem = document.querySelectorAll('.js-nav-float > li');
+        var eMainMenuItem = document.querySelectorAll('.js-main-menu li');
+        var eSubMenu = document.querySelectorAll('.js-submenu');
+
+        //scroll float menu fixed
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > offset) {
+                 floatMenu.classList.add('fixed');
+             } else {
+                 floatMenu.classList.remove('fixed');
+             }
+         });
+
+        // If url active menu
         for (var i=0; i <= eMainMenuItem.length; i++) {
 
             if(window.location.href.indexOf('section-' + (i+1) ) > -1) {
+                //active main menu
                 eMainMenuItem[i].classList.toggle('active');
+                //active float menu
+                eFloatMenuItem[i].classList.toggle('active');
+                // show items section in float menu
+                eSubMenu[i].classList.toggle('show-submenu');
 
                 document.querySelector('.js-h1').textContent = eMainMenuItem[i].textContent;
                 showHeadingDescription(i);
             }
         }
 
+        // show heading section menu
         function showHeadingDescription(e) {
             if(i == e) {
                 document.querySelector('.js-description-'+ e).style.display = 'block';
             }
 
         }
+
     </script>
     <!-- copyright year -->
     <script>
@@ -331,5 +353,6 @@
             document.querySelector('.sg-year').textContent = y;
         })();
     </script>
+
 </body>
 </html>

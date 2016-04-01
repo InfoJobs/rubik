@@ -36,13 +36,18 @@
 }
 
 .menu-float {
-    position: fixed;
+    position: absolute;
     top: 210px;
     right: 40px;
     padding: 20px 25px;
     background-color: $color-white;
     box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
     z-index: 999;
+
+    &.fixed {
+        position: fixed;
+        top: 0;
+    }
 
     @media (max-width: $max-size) {
         right: -80px;
@@ -64,43 +69,67 @@
   }
 
   nav.nav-float {
-    ul {
-      li {
-        display: block;
-        margin: 10px 0;
-        &:first-child {
-          margin-top: 0;
-        }
-        &:last-child {
-          margin-bottom: 0;
-        }
-        > a {
-          color: $color-gray;
-          &:hover {
-            color: $color-black;
-          }
-        }
-        ul.submenu {
-          margin: 15px 0 15px 20px;
+
+      ul {
+
           li {
-            font-size: $min-font-size;
-            a {
-              color: $color-gray;
-              &:hover {
-                color: $color-black;
+              display: block;
+              margin: 5px 0;
+
+              &:first-child {
+                  margin-top: 0;
               }
-            }
+              &:last-child {
+                  margin-bottom: 0;
+              }
+
+              &.active > a {
+                color: $color-blue;
+              }
+
+              > a {
+                  color: $color-gray;
+
+                  &:hover {
+                      color: $color-black;
+                  }
+              }
+              ul.sg-submenu {
+                  display: none;
+                  margin: 5px 0 10px 20px;
+
+                  &.show-submenu {
+                      display: block;
+                  }
+
+                  li {
+                      font-size: $min-font-size;
+
+                      a {
+                          color: $color-gray;
+
+                          &:hover {
+                              color: $color-black;
+                          }
+                      }
+                  }
+              }
           }
-        }
+
+          li.active-submenu {
+              > a {
+                  color: $color-blue;
+              }
+          }
       }
-      li.active-submenu {
-        > a {
-          color: $color-blue;
-        }
-      }
-    }
+  }
+
+  .sg-dropdown > a::after {
+      content: "▼";
+      font-size: 10px;
   }
 }
+
 .menu-dark {
   background-color: $color-black;
   display: none;
@@ -133,4 +162,13 @@
 .rotated-right {
   transform: rotate(-180deg);
   transition-duration: 0.5s;
+}
+
+.sg-section.sg-nav-title {
+    font-weight: bold;
+    padding: 0 0 5px 0;
+}
+
+.sg-second-submenu {
+    display:none;
 }
