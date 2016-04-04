@@ -72,55 +72,58 @@
 
       ul {
 
-          li {
-              display: block;
-              margin: 5px 0;
+        li {
+          display: block;
+          margin: 5px 0;
 
-              &:first-child {
-                  margin-top: 0;
-              }
-              &:last-child {
-                  margin-bottom: 0;
-              }
+          &:first-child {
+              margin-top: 0;
+          }
+          &:last-child {
+              margin-bottom: 0;
+          }
 
-              &.active > a {
-                color: $color-blue;
-              }
+          &.active > a {
+            color: $color-blue;
+          }
 
-              > a {
-                  color: $color-gray;
+          > a {
+              color: $color-gray;
 
-                  &:hover {
-                      color: $color-black;
-                  }
-              }
-              ul.sg-submenu {
-                  display: none;
-                  margin: 5px 0 10px 20px;
-
-                  &.show-submenu {
-                      display: block;
-                  }
-
-                  li {
-                      font-size: $min-font-size;
-
-                      a {
-                          color: $color-gray;
-
-                          &:hover {
-                              color: $color-black;
-                          }
-                      }
-                  }
+              &:hover {
+                  color: $color-black;
               }
           }
 
-          li.active-submenu {
-              > a {
-                  color: $color-blue;
-              }
+        }
+
+        .sg-submenu {
+            display: none;
+            margin: 5px 0 10px 20px;
+
+            &.show-submenu {
+                display: block;
+            }
+
+            li {
+                font-size: $min-font-size;
+
+                a {
+                    color: $color-gray;
+
+                    &:hover {
+                        color: $color-black;
+                    }
+                }
+            }
+        }
+
+        li.active-submenu {
+          > a {
+              color: $color-blue;
           }
+        }
+
       }
   }
 

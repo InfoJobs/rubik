@@ -238,6 +238,8 @@
     </section>
 
     <aside class="menu-float js-menu-float">
+                <h1 class="xxx"></h1>
+
 		<nav class="nav-float">
         	<ul>
         		<li>
@@ -290,60 +292,17 @@
 
     <script src="public/jquery-2.1.0.min.js"></script>
     <script src="public/prettify.js"></script>
-    <script src="public/scrollspyMenu.js"></script>
+    <script src="public/menu.js"></script>
         <!-- <script src="public/jquery.modal.js"></script>
 
     <script src="public/plugins.js"></script>
     <script src="public/main.js"></script>
     <script src="js/scrollHeader.js"></script> -->
-    <!-- <script src="js/scrollspyMenu.js"></script> -->
     <script src="js/chosen.jquery.js"></script>
     <script>
     	$(document).ready(function() {
     		$('.chosen-select').chosen({width:"100%",disable_search:true});
     	});
-    </script>
-    <!-- Main menu and Float menu -->
-    <script>
-        var offset = 210;
-        var floatMenu = document.querySelector('.js-menu-float');
-        var eFloatMenuItem = document.querySelectorAll('.js-nav-float > li');
-        var eMainMenuItem = document.querySelectorAll('.js-main-menu li');
-        var eSubMenu = document.querySelectorAll('.js-submenu');
-
-        //scroll float menu fixed
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > offset) {
-                 floatMenu.classList.add('fixed');
-             } else {
-                 floatMenu.classList.remove('fixed');
-             }
-         });
-
-        // If url active menu
-        for (var i=0; i <= eMainMenuItem.length; i++) {
-
-            if(window.location.href.indexOf('section-' + (i+1) ) > -1) {
-                //active main menu
-                eMainMenuItem[i].classList.toggle('active');
-                //active float menu
-                eFloatMenuItem[i].classList.toggle('active');
-                // show items section in float menu
-                eSubMenu[i].classList.toggle('show-submenu');
-
-                document.querySelector('.js-h1').textContent = eMainMenuItem[i].textContent;
-                showHeadingDescription(i);
-            }
-        }
-
-        // show heading section menu
-        function showHeadingDescription(e) {
-            if(i == e) {
-                document.querySelector('.js-description-'+ e).style.display = 'block';
-            }
-
-        }
-
     </script>
     <!-- copyright year -->
     <script>
@@ -352,6 +311,11 @@
             var y= d.getFullYear();
             document.querySelector('.sg-year').textContent = y;
         })();
+    </script>
+
+
+    <script>
+
     </script>
 
 </body>
