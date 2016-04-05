@@ -7,13 +7,15 @@ var eMainMenuItem = document.querySelectorAll('.js-main-menu li');
 var eSubMenu = document.querySelectorAll('.js-submenu');
 
 //scroll float menu fixed
-$(window).scroll(function() {
+function floatMenuFixed() {
+
     if ($(this).scrollTop() > offset) {
          floatMenu.classList.add('fixed');
      } else {
          floatMenu.classList.remove('fixed');
      }
- });
+
+};
 
 // If url active menu
 for (var i=0; i <= eMainMenuItem.length; i++) {
@@ -27,16 +29,8 @@ for (var i=0; i <= eMainMenuItem.length; i++) {
         eSubMenu[i].classList.toggle('show-submenu');
 
         document.querySelector('.js-h1').textContent = eMainMenuItem[i].textContent;
-        showHeadingDescription(i);
+        document.querySelector('.js-description-'+ i).style.display = 'block';
     }
-}
-
-// show heading section menu
-function showHeadingDescription(e) {
-    if(i == e) {
-        document.querySelector('.js-description-'+ e).style.display = 'block';
-    }
-
 }
 
 // scroll menu
@@ -88,3 +82,6 @@ function scrollspy () {
 window.addEventListener('scroll', scrollspy);
 window.addEventListener('load', scrollspy);
 window.addEventListener('resize', scrollspy);
+window.addEventListener('scroll', floatMenuFixed);
+window.addEventListener('load', floatMenuFixed);
+window.addEventListener('resize', floatMenuFixed);
