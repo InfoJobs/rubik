@@ -21,7 +21,8 @@ module.exports = function(grunt) {
         files: [
           { src: ['./styleguide/css/rubik.css'], dest: './styleguide/styleguide/public/rubik.css'},
           { src: ['./styleguide/css/candidates.css'], dest: './styleguide/styleguide/public/candidates.css'},
-          { src: ['./styleguide/css/companies.css'], dest: './styleguide/styleguide/public/companies.css'}
+          { src: ['./styleguide/css/companies.css'], dest: './styleguide/styleguide/public/companies.css'},
+          { src: ['./styleguide/css/main.css'], dest: './styleguide/styleguide/public/main.css'}
         ]
       },
       copyFonts: {
@@ -59,7 +60,9 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: [
-          { src: ['styleguide/rubik-styleguide.scss'], dest: 'styleguide/css/rubik.doc.css'}
+          { src: ['styleguide/rubik-styleguide.scss'], dest: 'styleguide/css/rubik.doc.css'},
+          { src: ['styleguide/templates/infojobs/public/sass/main.scss'], dest: 'styleguide/css/main.doc.css'}
+
         ]
       },
       production: {
@@ -69,7 +72,8 @@ module.exports = function(grunt) {
         files: [
           { src: ['styleguide/rubik-styleguide.scss'], dest: 'styleguide/css/rubik.css'},
           { src: ['styles/candidates.scss'], dest: 'styleguide/css/candidates.css'},
-          { src: ['styles/companies.scss'], dest: 'styleguide/css/companies.css'}
+          { src: ['styles/companies.scss'], dest: 'styleguide/css/companies.css'},
+          { src: ['styleguide/templates/infojobs/public/sass/main.scss'], dest: 'styleguide/css/main.css'}
         ]
 
       }
@@ -80,6 +84,7 @@ module.exports = function(grunt) {
         options: {},
         files: [
           {src: './styleguide/css/rubik.doc.css', dest: 'styleguide/dist/', expand: true, cwd: ''},
+          {src: './styleguide/css/main.doc.css', dest: 'styleguide/dist/', expand: true, cwd: ''},
           {src: 'styleguide/templates/infojobs/index.html', dest: '', expand: true, cwd: ''}
         ]
       }

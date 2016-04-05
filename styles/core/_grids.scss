@@ -5,6 +5,12 @@
 /*
 Boilerplate HTML
 
+Styleguide #{$sgi-boilerplate}
+*/
+
+/*
+Basic page
+
 Markup:
 <!doctype html>
 <html class="casper" lang="">
@@ -28,8 +34,9 @@ Markup:
 	</body>
 </html>
 
-Styleguide #{$sgi-boilerplate}
+Styleguide #{$sgi-basic-page}
 */
+
 
 /*
 Grid System
@@ -42,9 +49,9 @@ your content.
 <br>
 @@include('../templates/partials/grid.html')
 <br>
-- Use class `.row` to create a horizontal group of columns.
-- Then nest as many containers `<div class="col-[number]">` as columns are necessary to build the layout
-- Include the container `<div class="col-child">` as immediate children of `.col-[number]`.
+- Use class <span class="featured">.row</span> to create a horizontal group of columns.
+- Then nest as many containers <span class="featured">`<div class="col-[number]">`</span> as columns are necessary to build the layout
+- Include the container <span class="featured">`<div class="col-child">`</span> as immediate children of <span class="featured">.col-[number]</span>.
 <br>
 @@include('../templates/partials/grid-layouts.html')
 
@@ -143,7 +150,7 @@ Styleguide #{$sgi-gridSystem}
 /*
 Medium devices
 
-Therefore, applying at any column the class `.col-6-medium` content will adjust to 50% width or `.col-12-medium` 100% width defined for medium devices.
+Therefore, applying at any column the class <span class="featured">.col-6-medium</span> content will adjust to 50% width or <span class="featured">.col-12-medium</span> 100% width defined for medium devices.
 
 @@include('../templates/partials/grid-devices.html')
 
@@ -325,7 +332,7 @@ $gridColumns: 12;
 /*
 Expand gutter columns
 
-Add class `.row`,`.row-faux` and `.row-faux-card` to expand the gutter between the columns.
+Add class <span class="featured">.row</span>,<span class="featured">.row-faux</span> and <span class="featured">.row-faux-card</span> to expand the gutter between the columns.
 
 @@include('../templates/partials/grid-card.html')
 
@@ -437,7 +444,7 @@ Styleguide #{$sgi-expandGutterColumns}
 /*
 Equal height columns
 
-Add class `.row` and `.row-faux` to build an equal height columns structure.
+Add class <span class="featured">.row</span> and <span class="featured">.row-faux</span> to build an equal height columns structure.
 
 @@include('../templates/partials/grid-equal.html')
 
@@ -505,7 +512,7 @@ Styleguide #{$sgi-equalHeightColumns}
 /*
 Remove gutter columns
 
-Add class `.row`,`.row-faux` to build an equal height columns structure and `.row-panel` to remove the gutter between the columns.
+Add class <span class="featured">.row</span>,<span class="featured">.row-faux</span> to build an equal height columns structure and <span class="featured">.row-panel</span> to remove the gutter between the columns.
 
 @@include('../templates/partials/grid-panel.html')
 

@@ -1,0 +1,102 @@
+/*
+Zeus Project
+Version: 1.0
+*/
+
+@import 'includes/_reset';
+@import 'includes/_variables';
+@import 'includes/_header';
+//@import 'includes/_buttons';
+@import 'includes/_code';
+@import 'includes/_messages';
+@import 'includes/_tables';
+@import 'includes/_menus';
+@import 'includes/_sections';
+@import 'includes/_footer';
+@import 'includes/_helpers';
+
+/* General */
+.sg-body {
+  background: $global-background-color;
+  padding: 0 0 50px 0;
+
+  &.home{
+    background-color: $color-blue;
+    min-height: 100%;
+  }
+
+  h1.sg-block-title {
+      margin-bottom:10px;
+  }
+
+  h2.sg-block-title  {
+      margin-bottom:10px;
+  }
+
+}
+
+.version {
+    font-size: $global-font-size;
+    line-height:$global-line-height;
+    color: $color-gray;
+    font-weight: $font-regular;
+    font-family: $global-font-family;
+    background-color: $color-light-gray;
+    padding:10px 20px;
+    border-radius:20px;
+    vertical-align:middle;
+    position: relative;
+    top: -4px;
+}
+
+.sg-row {
+	margin: 0 auto;
+}
+
+.divider {
+    border-bottom:1px solid $color-light-gray;
+    padding-bottom:20px;
+    margin-bottom:40px;
+}
+
+.img-content-example {
+    margin: 50px 0px 10px 0px;
+    max-width: 100%;
+}
+
+/*---*/
+.sg-container-center {
+    width: 990px;
+    float: left
+}
+
+.sg-center,
+.version {
+    position: relative
+}
+
+.sg-center {
+    width: 1230px;
+    margin: 0 auto
+}
+
+@media (max-width:1260px) {
+    .sg-center {
+        width: 1175px;
+        -webkit-transition: width .5s;
+        transition: width .5s;
+        margin: 0 0 0 7px
+    }
+}
+
+@media (max-width:1199px) {
+    .menu-float {
+        right: -160px
+    }
+    .menu-float:hover {
+        right: 0
+    }
+    .sg-center {
+        width: auto
+    }
+}
