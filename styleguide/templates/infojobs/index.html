@@ -22,7 +22,7 @@
             </div>
             <div class="col-10">
               <nav class="sg-main-menu">
-        		<ul id="sg-menu" class="js-sg-main-menu">
+        		<ul id="sg-menu" class="js-main-menu">
         			{{#eachRoot}}
                     <li>
                         <a href="section-{{referenceURI}}.html">
@@ -237,27 +237,27 @@
         <p>&copy; Infojobs <span class="sg-year"></span></p>
     </section>
 
-    <aside class="menu-float">
+    <aside class="menu-float js-menu-float">
 		<nav class="nav-float">
         	<ul>
         		<li>
-        			<div class="sg-section">Rubik</div>
+        			<div class="sg-section sg-nav-title">Rubik</div>
         			<ul>
         				<li><a href="./index.html" id="home">Introduction</a></li>
         			</ul>
         		</li>
         		<li>
-        			<div class="sg-section">Web Components</div>
-        			<ul id="sg-menu">
+        			<div class="sg-section sg-nav-title">Web Components</div>
+        			<ul id="sg-menu" class="js-nav-float">
         				{{#eachRoot}}
-                        <li>
-                            <a href="section-{{referenceURI}}.html#rubik-{{{reference}}}.1" class="js-itemMenu">
+                        <li class="sg-dropdown">
+                            <a href="section-{{referenceURI}}.html" class="js-itemMenu">
                                 {{header}}
                             </a>
                             {{#if overview}}
                             {{else}}
 
-                            <ul class="sg-submenu">
+                            <ul class="sg-submenu js-submenu">
                                 {{#eachSection reference}}
                                     {{#ifDepth 2}}
                                     <li>
@@ -290,38 +290,17 @@
 
     <script src="public/jquery-2.1.0.min.js"></script>
     <script src="public/prettify.js"></script>
-    <script src="public/scrollspyMenu.js"></script>
+    <script src="public/menu.js"></script>
         <!-- <script src="public/jquery.modal.js"></script>
 
     <script src="public/plugins.js"></script>
     <script src="public/main.js"></script>
     <script src="js/scrollHeader.js"></script> -->
-    <!-- <script src="js/scrollspyMenu.js"></script> -->
     <script src="js/chosen.jquery.js"></script>
     <script>
     	$(document).ready(function() {
     		$('.chosen-select').chosen({width:"100%",disable_search:true});
     	});
-    </script>
-    <!-- active item main menu -->
-    <script>
-        var eMainMenuItem = document.querySelectorAll('.js-sg-main-menu li');
-        for (var i=0; i <= eMainMenuItem.length; i++) {
-
-            if(window.location.href.indexOf('section-' + (i+1) ) > -1) {
-                eMainMenuItem[i].classList.toggle('active');
-
-                document.querySelector('.js-h1').textContent = eMainMenuItem[i].textContent;
-                showHeadingDescription(i);
-            }
-        }
-
-        function showHeadingDescription(e) {
-            if(i == e) {
-                document.querySelector('.js-description-'+ e).style.display = 'block';
-            }
-
-        }
     </script>
     <!-- copyright year -->
     <script>
@@ -331,5 +310,11 @@
             document.querySelector('.sg-year').textContent = y;
         })();
     </script>
+
+
+    <script>
+
+    </script>
+
 </body>
 </html>
