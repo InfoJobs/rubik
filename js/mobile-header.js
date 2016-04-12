@@ -50,11 +50,13 @@ $('document').ready(function(){
 
 			elH1Width = elH1Width - elBtnSave.offsetWidth;
 			elH1.style.width = elH1Width + 'px';
+            document.querySelector('body').classList.add('panel-canvas');
 		}
 		else if(elBtnSave != null && window.innerWidth >= 481) {
 			elBtnSave.classList.remove('btn-save');
 			elBtnSave.classList.add('btn-medium');
 			elBtnSave.classList.add('margin-top');
+            document.querySelector('body').classList.remove('panel-canvas');
 		}
 	}
 
