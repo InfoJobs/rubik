@@ -1071,3 +1071,66 @@ $icons: gmail, hotmail, yahoo, outlook, libero;
     background-image: url('#{$path-icons}/ico-#{$mail-icon}.png');
 	}
 }
+
+/*
+Switch radio button
+
+Markup:
+<dl class="strength-bar">
+    <dt>Lorem ipsum</dt>
+    <dd>
+      <meter max="3" min="0" value="2" high="2" low="2" optimum="3"></meter>
+    </dd>
+</dl>
+
+Styleguide #{$sgi-forms-switch-radio}
+*/
+
+.switch-radio {
+
+    input {
+        display: none;
+    }
+
+    input:checked + label {
+        color: $theme-color-primary;
+
+        &:last-of-type::before {
+            margin: 0 10px 0 -30px;
+        }
+
+    }
+
+    label {
+        display: inline;
+    }
+
+    label:first-of-type::after {
+        content:"";
+        display: inline-block;
+        width: 30px;
+        height: 20px;
+        border: 1px solid $theme-color-primary;
+        background-color: $theme-color-secondary;
+        margin: 0 5px 0 10px;
+
+    }
+
+    label:last-of-type {
+        margin-left: -30px;
+        padding-left: 30px;
+    }
+    label:last-of-type::before {
+        content:"";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $theme-color-primary;
+        margin: 0 20px 0 -40px;
+        -webkit-transition: margin 500ms linear;
+           -moz-transition: margin 500ms linear;
+             -o-transition: margin 500ms linear;
+                transition: margin 500ms linear;
+    }
+
+}
