@@ -1102,7 +1102,7 @@ Styleguide #{$sgi-forms-switch-radio}
     }
 
     label {
-        display: inline;
+        width: auto;
     }
 
     label:first-of-type::after {
@@ -1126,6 +1126,7 @@ Styleguide #{$sgi-forms-switch-radio}
         width: 20px;
         height: 20px;
         border: 1px solid $theme-color-primary;
+        background-color: grey;
         margin: 0 20px 0 -40px;
         -webkit-transition: margin 500ms linear;
            -moz-transition: margin 500ms linear;
