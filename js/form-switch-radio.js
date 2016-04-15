@@ -4,17 +4,15 @@
     var switchLabel = document.querySelector('.switch-radio label:last-of-type');
 
     if(switchLabel) {
+        var switchPosFirstLabel = document.querySelector('.switch-radio label:first-of-type').getBoundingClientRect().right;
 
         switchLabel.onclick = function(event) {
-            if(switchCheck[1].checked === true) {
+            if(switchCheck[1].checked === true && ( switchPosFirstLabel > event.clientX)) {
                 event.preventDefault();
-                var i;
-                for(i = 0; i < switchCheck.length ; i++ ) {
+                for(var i = 0; i < switchCheck.length ; i++ ) {
                     switchCheck[0].checked = true;
-                    switchCheck[1].checked = false;
                 }
             }
-
         }
     }
 })();
