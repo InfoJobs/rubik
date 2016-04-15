@@ -1076,12 +1076,12 @@ $icons: gmail, hotmail, yahoo, outlook, libero;
 Switch radio button
 
 Markup:
-<dl class="strength-bar">
-    <dt>Lorem ipsum</dt>
-    <dd>
-      <meter max="3" min="0" value="2" high="2" low="2" optimum="3"></meter>
-    </dd>
-</dl>
+<div class="switch-radio">
+    <input id="yes" name="i" checked="" type="radio">
+    <label for="yes">Yes</label>
+    <input id="no" name="i" type="radio">
+    <label for="no">No</label>
+</div>
 
 Styleguide #{$sgi-forms-switch-radio}
 */
@@ -1093,25 +1093,28 @@ Styleguide #{$sgi-forms-switch-radio}
     }
 
     input:checked + label {
-        color: $theme-color-primary;
+        color: $dark-silk;
 
         &:last-of-type::before {
-            margin: 0 10px 0 -30px;
+            margin: 3px 10px 0 -30px;
         }
 
     }
 
     label {
         width: auto;
+        color: $soft-script;
     }
 
     label:first-of-type::after {
         content:"";
-        display: inline-block;
-        width: 30px;
+        display: block;
+        float: right;
+        width: 40px;
         height: 20px;
-        border: 1px solid $theme-color-primary;
-        background-color: $theme-color-secondary;
+        border: 1px solid transparent;
+        border-radius: 15px;
+        background-color: $theme-color-primary;
         margin: 0 5px 0 10px;
 
     }
@@ -1122,12 +1125,13 @@ Styleguide #{$sgi-forms-switch-radio}
     }
     label:last-of-type::before {
         content:"";
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        border: 1px solid $theme-color-primary;
-        background-color: grey;
-        margin: 0 20px 0 -40px;
+        display: block;
+        float: left;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: $shiro;
+        margin: 3px 20px 0 -44px;
         -webkit-transition: margin 500ms linear;
            -moz-transition: margin 500ms linear;
              -o-transition: margin 500ms linear;

@@ -476,18 +476,20 @@
   			$('.chosen-select').chosen({width:"100%",disable_search:true});
   		});
 
-      // Autocomplete Layer JS
-      var elInputEmail = document.getElementById("email");
-      var elAutocompleteLayer = document.querySelector(".ui-autocomplete");
+          // Autocomplete Layer JS
+          var elInputEmail = document.getElementById("email");
+          var elAutocompleteLayer = document.querySelector(".ui-autocomplete");
 
-      elInputEmail.addEventListener('click', function () {
-        if(elAutocompleteLayer.style.display == 'block') {
-          elAutocompleteLayer.style.display = 'none';
-        } else {
-          elAutocompleteLayer.style.display = 'block';
-        }
-      });
+          elInputEmail.addEventListener('click', function () {
+            if(elAutocompleteLayer.style.display == 'block') {
+              elAutocompleteLayer.style.display = 'none';
+            } else {
+              elAutocompleteLayer.style.display = 'block';
+            }
+          });
 
 		</script>
+        <script type="text/javascript" src="../js/form-switch-radio.js" th:remove="all"></script>
+
 	</body>
 </html>
