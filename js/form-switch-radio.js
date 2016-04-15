@@ -14,5 +14,9 @@
                 }
             }
         }
+
+        window.addEventListener("resize", function() {
+            switchPosFirstLabel = document.querySelector('.switch-radio label:first-of-type').getBoundingClientRect().right;
+        });
     }
 })();
