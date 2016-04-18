@@ -1071,3 +1071,71 @@ $icons: gmail, hotmail, yahoo, outlook, libero;
     background-image: url('#{$path-icons}/ico-#{$mail-icon}.png');
 	}
 }
+
+/*
+Switch radio button
+
+Markup:
+<div class="switch-radio">
+    <input id="yes" name="i" checked="" type="radio">
+    <label for="yes">Yes</label>
+    <input id="no" name="i" type="radio">
+    <label for="no">No</label>
+</div>
+
+Styleguide #{$sgi-forms-switch-radio}
+*/
+
+.switch-radio {
+
+    input {
+        display: none;
+    }
+
+    input:checked + label {
+        color: $dark-silk;
+
+        &:last-of-type::before {
+            margin: 3px 10px 0 -30px;
+        }
+
+    }
+
+    label {
+        width: auto;
+        color: $soft-script;
+    }
+
+    label:first-of-type::after {
+        content:"";
+        display: block;
+        float: right;
+        width: 40px;
+        height: 20px;
+        border: 1px solid transparent;
+        border-radius: 15px;
+        background-color: $theme-color-primary;
+        margin: 0 5px 0 10px;
+
+    }
+
+    label:last-of-type {
+        margin-left: -30px;
+        padding-left: 30px;
+    }
+    label:last-of-type::before {
+        content:"";
+        display: block;
+        float: left;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: $shiro;
+        margin: 3px 20px 0 -44px;
+        -webkit-transition: margin 500ms linear;
+           -moz-transition: margin 500ms linear;
+             -o-transition: margin 500ms linear;
+                transition: margin 500ms linear;
+    }
+
+}

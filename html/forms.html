@@ -433,6 +433,14 @@
                                     </li>
 								</ul>
 
+								<h2 class="h3 heading-divider margin-top">Switch radio button</h2>
+                                <div class="switch-radio">
+                                    <input type="radio" id="yes" name="i" checked>
+                                    <label for="yes">Yes</label>
+                                    <input type="radio" id="no" name="i">
+                                    <label for="no">No</label>
+                                </diV>
+
 								<h2 class="h3 heading-divider margin-top">Captcha</h2>
 								<ul class="form--field-block clearfix">
 									<li>
@@ -468,18 +476,20 @@
   			$('.chosen-select').chosen({width:"100%",disable_search:true});
   		});
 
-      // Autocomplete Layer JS
-      var elInputEmail = document.getElementById("email");
-      var elAutocompleteLayer = document.querySelector(".ui-autocomplete");
+          // Autocomplete Layer JS
+          var elInputEmail = document.getElementById("email");
+          var elAutocompleteLayer = document.querySelector(".ui-autocomplete");
 
-      elInputEmail.addEventListener('click', function () {
-        if(elAutocompleteLayer.style.display == 'block') {
-          elAutocompleteLayer.style.display = 'none';
-        } else {
-          elAutocompleteLayer.style.display = 'block';
-        }
-      });
+          elInputEmail.addEventListener('click', function () {
+            if(elAutocompleteLayer.style.display == 'block') {
+              elAutocompleteLayer.style.display = 'none';
+            } else {
+              elAutocompleteLayer.style.display = 'block';
+            }
+          });
 
 		</script>
+        <script type="text/javascript" src="../js/form-switch-radio.js" th:remove="all"></script>
+
 	</body>
 </html>
