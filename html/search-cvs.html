@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-15">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Buscador de CVs</title>
+	<link rel="stylesheet" type="text/css" href="../public/companies.css" />
+
+</head>
+
+<body>
+	<div class="wrapper">
+        <div class="container">
+            <div class="heading-addons custom-bg" style="background-image: url("//media.infojobs.net/appgrade/backgrounds/bg-search-cvs.png";); height: 236px;">
+                <div class="inner inner-expanded ">
+                    <h1 class="heading-mega heading-middle contrast">Buscador de CVs</h1>
+                </div>
+                <div id="searchBoxDiscovery" class="search-bar inner panel-default overlay-85">
+				    <!-- BUSCADOR -->
+
+            	<form id="curriculumSearchForm" method="post" action="/employer/cv-search/employer-cv-search-results.xhtml">
+                	<input name="xsrfa" value="JEUCOAlbG1kVwaA$.BL" type="hidden">
+                	<input name="ambito" value="1" type="hidden">
+                	<input name="country" value="17" type="hidden">
+                	<input name="origenInicio" value="100" type="hidden">
+
+                	<div class="row row-faux pull-end">
+                        <div class="col-7 col-12-medium">
+                            <div class="col-child">
+                                <label for="keyword" class="script">Busco CVs que incluyan estas palabras:</label>
+                                <input id="keyword" placeholder="Puesto, empresa, conocimientos, estudios..." value="" name="palabra" maxlength="400" type="text">
+                                <div class="row input-drop-down">
+                                    <div class="col-10">
+                                        <div class="col-child">
+                                            <!-- ULTIMAS BUSQUEDAS -->
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 col-12-medium">
+                            <div class="col-child">
+                                <label for="provinces" class="hide">Provincia de residencia</label>
+                                <div class="form-select" id="div_provinces">
+               	<select style="display: none;" class="chosen-select" data-placeholder="En toda españa" id="id_provincias" data-vars="{&quot;num_selected_provinces&quot;:&quot;provincias seleccionadas&quot;,&quot;numberOfOptionsToHideSearchInput&quot;:10,&quot;no_results&quot;:&quot;No encontramos&quot;,&quot;maxSelectedOptions&quot;:50,&quot;displaySelectedOptions&quot;:true,&quot;autocomplete&quot;:false}" name="provinces" multiple="true">
+               		 <option value="28">A Coruña</option><option value="2">Álava/Araba</option><option value="3">Albacete</option><option value="4">Alicante/Alacant</option><option value="5">Almería</option><option value="6">Asturias</option><option value="7">Ávila</option><option value="8">Badajoz</option><option value="9">Barcelona</option><option value="10">Burgos</option><option value="11">Cáceres</option><option value="12">Cádiz</option><option value="13">Cantabria</option><option value="14">Castellón/Castelló</option><option value="15">Ceuta</option><option value="16">Ciudad Real</option><option value="17">Córdoba</option><option value="18">Cuenca</option><option value="19">Girona</option><option value="21">Granada</option><option value="22">Guadalajara</option><option value="23">Guipúzcoa/Gipuzkoa</option><option value="24">Huelva</option><option value="25">Huesca</option><option value="26">Illes Balears</option><option value="27">Jaén</option><option value="29">La Rioja</option><option value="20">Las Palmas</option><option value="30">León</option><option value="31">Lleida</option><option value="32">Lugo</option><option value="33">Madrid</option><option value="34">Málaga</option><option value="35">Melilla</option><option value="36">Murcia</option><option value="37">Navarra</option><option value="38">Ourense</option><option value="39">Palencia</option><option value="40">Pontevedra</option><option value="41">Salamanca</option><option value="46">Santa Cruz de Tenerife</option><option value="42">Segovia</option><option value="43">Sevilla</option><option value="44">Soria</option><option value="45">Tarragona</option><option value="47">Teruel</option><option value="48">Toledo</option><option value="49">Valencia/València</option><option value="50">Valladolid</option><option value="51">Vizcaya/Bizkaia</option><option value="52">Zamora</option><option value="53">Zaragoza</option>
+            	</select><div id="id_provincias_chosen" title="" style="width: 100%; z-index: 1; margin-top: 22px;" class="chosen-container chosen-container-multi"><ul class="chosen-choices"><li class="search-field"><input value="En toda españa" class="default" autocomplete="off" style="width: 134px;" type="text"></li><li id="copyProvinces" style="padding: 14px 5px; color: rgb(45, 49, 51);"></li></ul><div class="chosen-drop"><ul class="chosen-results"></ul></div></div>
+            </div>
+                            </div>
+                        </div>
+                        <div class="col-2 col-12-medium">
+                            <div class="col-child">
+
+                                <div class="switch-radio">
+                                    <input type="radio" id="yes" name="i" checked>
+                                    <label for="yes">Yes</label>
+                                    <input type="radio" id="no" name="i">
+                                    <label for="no">No</label>
+                                </div>
+
+
+                                <button style="margin-top: 22px;" id="btn-search" class="btn btn-primary btn-form-inline" type="submit">Buscar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">CurriculumSearchFormComponent.init('/employer/cv-search/employer-cv-search-results.xhtml','JEUCOAlbG1kVwaA$.BL',11);</script>
+            	</form>
+
+    				</div>
+                </div>
+            </div>
+	</div>
+    <script type="text/javascript" src="../js/form-switch-radio.js" th:remove="all"></script>
+
+</body>
+</html>

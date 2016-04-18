@@ -1059,6 +1059,13 @@ Styleguide #{$sgi-forms-strength-bar}
 	}
 }
 
+.input-drop-down {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	margin-top: 5px;
+}
+
 // autocomplete email
 $icons: gmail, hotmail, yahoo, outlook, libero;
 
@@ -1078,9 +1085,9 @@ Switch radio button
 Markup:
 <div class="switch-radio">
     <input id="yes" name="i" checked="" type="radio">
-    <label for="yes">Yes</label>
+    <label class="switch-radio-label" for="yes">Yes</label>
     <input id="no" name="i" type="radio">
-    <label for="no">No</label>
+    <label class="switch-radio-label" for="no">No</label>
 </div>
 
 Styleguide #{$sgi-forms-switch-radio}
@@ -1088,12 +1095,14 @@ Styleguide #{$sgi-forms-switch-radio}
 
 .switch-radio {
 
+  position: relative;
+
     input {
         display: none;
     }
 
     input:checked + label {
-        color: $dark-silk;
+        color: $mid-script;
 
         &:last-of-type::before {
             margin: 3px 10px 0 -30px;
@@ -1101,41 +1110,44 @@ Styleguide #{$sgi-forms-switch-radio}
 
     }
 
-    label {
+    .switch-radio-label {
         width: auto;
-        color: $soft-script;
-    }
+        color: $theme-color-primary;
+        margin: 0;
+        line-height: 125%;
 
-    label:first-of-type::after {
-        content:"";
-        display: block;
-        float: right;
-        width: 40px;
-        height: 20px;
-        border: 1px solid transparent;
-        border-radius: 15px;
-        background-color: $theme-color-primary;
-        margin: 0 5px 0 10px;
+        &:first-of-type::after {
+            content:"";
+            display: block;
+            float: right;
+            width: 40px;
+            height: 20px;
+            border: 1px solid transparent;
+            border-radius: 15px;
+            background-color: $theme-color-primary;
+            margin: 0 5px 0 10px;
 
-    }
+        }
 
-    label:last-of-type {
-        margin-left: -30px;
-        padding-left: 30px;
-    }
-    label:last-of-type::before {
-        content:"";
-        display: block;
-        float: left;
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        background-color: $shiro;
-        margin: 3px 20px 0 -44px;
-        -webkit-transition: margin 500ms linear;
-           -moz-transition: margin 500ms linear;
-             -o-transition: margin 500ms linear;
-                transition: margin 500ms linear;
+        &:last-of-type {
+            margin-left: -30px;
+            padding-left: 30px;
+        }
+
+        &:last-of-type::before {
+            content:"";
+            display: block;
+            float: left;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: $shiro;
+            margin: 3px 20px 0 -44px;
+            -webkit-transition: margin 500ms linear;
+               -moz-transition: margin 500ms linear;
+                 -o-transition: margin 500ms linear;
+                    transition: margin 500ms linear;
+        }
     }
 
 }
