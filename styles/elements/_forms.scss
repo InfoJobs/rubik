@@ -1089,6 +1089,9 @@ Markup:
     <input id="no" name="i" type="radio">
     <label class="switch-radio-label" for="no">No</label>
 </div>
+<div class="js-to-show margin-top hide">
+    <p>Show something</p>
+</div>
 
 Styleguide #{$sgi-forms-switch-radio}
 */
