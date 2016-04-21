@@ -1110,7 +1110,7 @@ Styleguide #{$sgi-forms-switch-radio}
         color: $mid-script;
 
         &:last-of-type::before {
-            margin: 3px 10px 0 -30px;
+            margin: 1px 10px 0 -28px;
         }
 
     }
@@ -1125,11 +1125,11 @@ Styleguide #{$sgi-forms-switch-radio}
             content:"";
             display: block;
             float: right;
-            width: 40px;
+            width: 30px;
             height: 20px;
-            border: 1px solid transparent;
+            border: 1px solid #55799a;
             border-radius: 15px;
-            background-color: $theme-color-primary;
+            background-color: #99afc2;
             margin: 0 5px 0 10px;
 
         }
@@ -1143,15 +1143,16 @@ Styleguide #{$sgi-forms-switch-radio}
             content:"";
             display: block;
             float: left;
-            width: 14px;
-            height: 14px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background-color: $shiro;
-            margin: 3px 20px 0 -44px;
-            -webkit-transition: margin 500ms linear;
-               -moz-transition: margin 500ms linear;
-                 -o-transition: margin 500ms linear;
-                    transition: margin 500ms linear;
+            border: 1px solid #55799a;
+            margin: 1px 20px 0 -38px;
+            -webkit-transition: margin 200ms linear;
+               -moz-transition: margin 200ms linear;
+                 -o-transition: margin 200ms linear;
+                    transition: margin 200ms linear;
         }
     }
 
