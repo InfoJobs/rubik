@@ -1083,7 +1083,7 @@ $icons: gmail, hotmail, yahoo, outlook, libero;
 Switch radio button
 
 Markup:
-<div class="switch-radio">
+<div class="switch-radio" data-vars="{&quot;onChange&quot;:&quot;(function(selectedItem){console.log(selectedItem);})&quot;}">
     <input id="yes" name="i" checked="" type="radio">
     <label class="switch-radio-label" for="yes">Yes</label>
     <input id="no" name="i" type="radio">

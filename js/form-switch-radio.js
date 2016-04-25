@@ -1,48 +1,47 @@
-(function(){
+(function() {
 
-    var switchCheck = document.querySelectorAll('.switch-radio input');
-    var switchLabel = document.querySelector('.switch-radio label:last-of-type');
+	function switchRadioSetup(target) {
 
-    if(switchLabel) {
-		var setSwitchPosFirstLabel = document.querySelector('.switch-radio label:first-of-type').getBoundingClientRect().right;
-        var switchPosFirstLabel = setSwitchPosFirstLabel;
+		var dataVars = JSON.parse(target.getAttribute("data-vars"));
+		var onChange = eval(dataVars.onChange);
 
-        switchLabel.onclick = function(event) {
-            if(switchCheck[1].checked == true && ( switchPosFirstLabel > event.clientX)) {
-                event.preventDefault();
-                for(var i = 0; i < switchCheck.length ; i++ ) {
-                    switchCheck[0].checked = true;
-                }
-            }
+		var switchInputList = target.querySelectorAll("input");
+		var switchLastLabel = target.querySelector("label:last-of-type");
 
-        }
+		if (switchLastLabel) {
 
-        window.addEventListener('resize', function() {
-            switchPosFirstLabel = setSwitchPosFirstLabel;
-        });
+			function setContainer() {
+				if (switchInputList[1].checked == true) {
+					onChange("second");
+				}
+				else if (switchInputList[0].checked == true) {
+					onChange("first");
+				}
+			};
 
-		// show something with this switcher.
-        for(var i = 0; i < switchCheck.length ; i++ ) {
-			switchCheck[i].addEventListener('change', function () {
-				if(switchCheck[1].checked === true) {
-					toggleDiv(elSelector);
-				} else {
-					toggleDiv(elSelector);
+			var setSwitchPosFirstLabel = target.querySelector("label:first-of-type").getBoundingClientRect().right;
+			var switchPosFirstLabel = setSwitchPosFirstLabel;
+
+			switchLastLabel.addEventListener("click", function(event) {
+				if (switchInputList[1].checked == true && switchPosFirstLabel > event.clientX) {
+					event.preventDefault();
+					switchInputList[0].checked = true;
+					setContainer();
 				}
 			});
+			window.addEventListener("resize", function() {
+				switchPosFirstLabel = setSwitchPosFirstLabel;
+			});
+
+			for (var i = 0; i < switchInputList.length ; i++) {
+				switchInputList[i].addEventListener("change", setContainer);
+			}
 		}
+	};
 
-		var elSelector = document.querySelector('.js-to-show');
-		// you can redefine this var, elSelector = your selector;
-
-		function toggleDiv(elSelector) {
-			if(elSelector) {
-				elSelector.classList.toggle('hide');
-			};
-		}
-
-    }
-
-
+	window.addEventListener("load", function() {
+		var containerList = document.querySelectorAll(".switch-radio");
+		[].forEach.call(containerList, switchRadioSetup);
+	});
 
 })();
