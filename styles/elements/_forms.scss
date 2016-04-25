@@ -339,6 +339,19 @@ input[type="tel"],
 	}
 }
 
+//disabled styles
+input[disabled="disabled"],
+select[disabled="disabled"],
+.disabled {
+	color: $darkest-shiro;
+	cursor: default;
+}
+
+input[type="text"]:disabled {
+	background: transparent;
+	border-color: $darkest-shiro;
+}
+
 /*
 Input fields
 
@@ -652,19 +665,6 @@ input[type="checkbox"]{
 	font-size: 15px;
 }
 
-//disabled styles
-input[disabled="disabled"],
-select[disabled="disabled"],
-.disabled {
-	color: $darkest-shiro;
-	cursor: default;
-}
-
-input[type="text"]:disabled {
-	background: transparent;
-	border-color: $darkest-shiro;
-}
-
 input[type="checkbox"]:disabled + label,
 input[type="radio"]:disabled + label {
 	color: $soft-script;
@@ -675,6 +675,42 @@ input[type="radio"] + label,
 .label-checkbox { //class ".label-checkbox" deprecated. actualy used in filters only
 	cursor: pointer;
 	max-width: 85%;
+}
+
+.appearance-sticker {
+    input[type="radio"],
+    input[type="checkbox"] {
+        display: none;
+
+        ~ ul {
+            display: none;
+        }
+
+        + label {
+            width: auto;
+            //margin-bottom: 5px;
+
+            .sticker-close {
+                display: none;
+            }
+        }
+
+        &:checked {
+            + label {
+                border: 1px solid red;
+
+                .sticker-close {
+                    display: inline-block;
+                }
+            }
+
+            ~ ul {
+                display: block;
+            }
+        }
+    }
+
+
 }
 
 /*
