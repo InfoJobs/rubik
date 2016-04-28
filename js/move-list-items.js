@@ -2,8 +2,8 @@
 
 	function moveChecKed() {
 
-        var elMoveList = document.querySelector('.js-to-move');
-		var elMoveListItems = document.querySelectorAll('.js-to-move label:first-of-type');
+        var elMoveList = document.querySelector('.js-list-to-move');
+		var elMoveListItems = document.querySelectorAll('.js-list-to-move label:first-of-type');
 		var elMainListItems = document.querySelectorAll('.js-main-list > li');
         var elMoved;
 
@@ -14,7 +14,7 @@
 				elMoved = target.parentNode;
 				if(elMoved.parentNode == elMoveList) {
 					elMoved.parentNode.parentNode.querySelector('.js-main-list').insertBefore(elMoved, elMainListItems[elMainListItems.length-1]);
-					elMoveListItems = document.querySelectorAll('.js-to-move label');
+					elMoveListItems = document.querySelectorAll('.js-list-to-move label');
 				}
 
             };
