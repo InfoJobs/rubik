@@ -1118,9 +1118,11 @@ $icons: gmail, hotmail, yahoo, outlook, libero;
 /*
 Switch radio button
 
+<a href="./js/form-switch-radio.js" target="_blank">View javascript</a>
+
 Markup:
 <div class="switch-radio">
-    <input id="yes" name="i" checked="" type="radio">
+    <input id="yes" name="i" type="radio" checked>
     <label class="switch-radio-label" for="yes">Yes</label>
     <input id="no" name="i" type="radio">
     <label class="switch-radio-label" for="no">No</label>
