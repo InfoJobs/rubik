@@ -682,10 +682,6 @@ input[type="radio"] + label,
     input[type="checkbox"] {
         display: none;
 
-        ~ ul {
-            display: none;
-        }
-
         + label {
             width: auto;
             //margin-bottom: 5px;
@@ -702,10 +698,6 @@ input[type="radio"] + label,
                 .sticker-close {
                     display: inline-block;
                 }
-            }
-
-            ~ ul {
-                display: block;
             }
         }
     }
