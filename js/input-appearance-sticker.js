@@ -2,11 +2,23 @@
 	function init() {
 		// show/hide level list
 		function showLevels(label,event){
+			//event.preventDefault();
+			event.stopPropagation();
 			label.parentNode.querySelector('ul').classList.toggle('hide');
 			if(label.parentNode.querySelector('input').checked) {
 				event.preventDefault();
 			}
-		}
+		};
+
+		function insertAfter(newNode, referenceNode) {
+		    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+		};
+
+		// document.querySelector('html').onclick = function(event){
+		// 	[].forEach.call( document.querySelectorAll('.js-appearance-sticker'), function( target ){
+		//         target.querySelector('ul').classList.add('hide');
+		//     });
+		// };
 
 		//ocultar las listas que contienen los niveles
 		[].forEach.call( document.querySelectorAll('.js-appearance-sticker ul'), function( target ){
@@ -17,8 +29,9 @@
 	    [].forEach.call( document.querySelectorAll('.js-container-sticker'), function( target ) {
 			[].forEach.call( target.querySelectorAll(':scope > li > label'), function( label ){
 				var span = document.createElement('span');
-				span.classList.add('level');
+				span.classList.add('level','xsmall');
 				label.appendChild(span);
+				insertAfter(label.querySelector('.sticker-close'), label.querySelector('.level'));
 
 				label.onclick = function(event) {showLevels(this,event)};
 
@@ -33,7 +46,7 @@
 
 		    [].forEach.call( target.querySelectorAll(':scope > li > ul > li > label'), function( level ){
 		        level.onclick=function(){
-		            level.parentNode.parentNode.parentNode.querySelector('.level').innerHTML = level.textContent;
+		            level.parentNode.parentNode.parentNode.querySelector('.level').innerHTML = '(' + level.textContent + ')';
 					level.parentNode.parentNode.classList.add('hide');
 		        };
 		    });
@@ -47,8 +60,8 @@
 			var elListItemsToMoved = target.querySelector('.js-list-to-move');
 			elListItemsToMoved.classList.toggle('hide');
 
-			target.querySelector('.js-toggle').addEventListener("click", function() {
-
+			target.querySelector('.js-toggle').addEventListener("click", function(event) {
+				event.preventDefault();
 				elListItemsToMoved.classList.toggle('hide');
 
 				}

@@ -684,7 +684,6 @@ input[type="radio"] + label,
 
         + label {
             width: auto;
-            //margin-bottom: 5px;
 
             .sticker-close {
                 display: none;
@@ -693,7 +692,9 @@ input[type="radio"] + label,
 
         &:checked {
             + label {
-                border: 1px solid red;
+				color: #2b3d4e;
+                border: none;
+				background-color: #bbc9d7;
 
                 .sticker-close {
                     display: inline-block;

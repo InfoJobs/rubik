@@ -160,6 +160,12 @@ Styleguide #{$sgi-buttons-type}
     }
 }
 
+.btn-input {
+    color: $mid-script;
+    border: 1px solid #c7c7c7;
+    background-color: $dark-shiro;
+}
+
 ///*DEPRECATED: .btn-link-primary only used in 'ver_oferta.html'*/
 .btn-link-primary {
     color: $color-primary;
