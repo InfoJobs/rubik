@@ -482,15 +482,32 @@ Styleguide #{$sgi-tagGroupWithEllipsis}
     color: $soft-script;
 }
 
-// @for $i from 1 through 4 {
-//     $percentage: $i * 25;
-//     .cols-per-#{$percentage} {
-//         overflow: hidden;
-//
-//         li {
-//             float:left;
-//             width: calc((1% * #{$percentage}) - 10px);
-//             margin-right: 10px;
-//         }
-//     }
-// }
+/*
+List in columns
+
+Use class `.list-columns-2`, `.list-columns-3`, `.list-columns-4` in `<ul>`tag to generate columns.
+
+Markup:
+<ul class="list-columns-4">
+    <li>1 Lorem ipsum</li>
+    <li>2 Lorem ipsum</li>
+    <li>3 Lorem ipsum</li>
+    <li>4 Lorem ipsum</li>
+</ul>
+
+Styleguide #{$sgi-listsColumns}
+*/
+
+
+ @for $i from 1 through 4{
+     $column-unit: 100 / $i;
+
+     .list-columns-#{$i} {
+         @include display-flex;
+         @include flex-flow(row wrap);
+
+         li {
+             width: calc(1% * #{$column-unit});
+         }
+     }
+ }
