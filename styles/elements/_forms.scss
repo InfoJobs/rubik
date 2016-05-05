@@ -684,10 +684,17 @@ input[type="radio"] + label,
 
         + label {
             width: auto;
+			max-width: 100%;
 
             .sticker-close {
                 display: none;
             }
+
+			&:hover {
+				color: #2b3d4e;
+				border-color: transparent;
+				background-color: #bbc9d7;
+			}
         }
 
         &:checked {
@@ -702,8 +709,6 @@ input[type="radio"] + label,
             }
         }
     }
-
-
 }
 
 /*

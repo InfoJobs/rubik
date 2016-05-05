@@ -239,6 +239,9 @@ Styleguide #{$sgi-helpers}
 
 }
 
+.invisible {
+    visibility: hidden;
+}
 
 /*------------------------------------*\
     $IMG
@@ -259,7 +262,7 @@ Styleguide #{$sgi-helpers}
 
 	&-small {
 		display: block;
-		
+
 		@include mediaquery ($bp-desktop) {
 			display: inline;
 		}

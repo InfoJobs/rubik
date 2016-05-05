@@ -41,6 +41,9 @@
 					label.parentNode.querySelector('input').checked = false;
 					label.parentNode.querySelector('ul').classList.add('hide');
 					label.querySelector('.level').innerHTML = '';
+                    [].forEach.call( label.parentNode.querySelectorAll('ul > li > input'), function( input ){
+                        input.checked = false;
+                    });
 				};
 			});
 
