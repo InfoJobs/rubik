@@ -109,6 +109,9 @@ Styleguide #{$sgi-helpers}
 	}
 }
 
+.pull-end {
+	align-items: flex-end;
+}
 
 /*------------------------------------*\
     $BORDERS
@@ -126,6 +129,10 @@ Styleguide #{$sgi-helpers}
 	}
   }
 
+}
+
+.border-all {
+	border: 1px solid #c7c7c7;
 }
 
 .border-divider { // Used to generate a gap with a top border
