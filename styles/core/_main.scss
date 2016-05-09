@@ -153,6 +153,14 @@ Styleguide  #{$sgi-containers}
 		margin: 0 auto 10px auto;
 	}
 
+	form {
+		@include mediaquery ($bp-desktop) {
+			width: $row-centered-width-form;
+			margin: 0 auto 10px auto;
+		}
+	}
+
+
 	input,
 	textarea {
 		width: 100%;
@@ -267,7 +275,15 @@ img[alt] {
             .action {
                 display: block;
             }
+
         }
+
+        &.border-all:hover {
+            border: 1px solid #dae8ee;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
     }
 
     .action {

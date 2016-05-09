@@ -185,3 +185,37 @@ Styleguide #{$sgi-content-top}
 .content-divider-default {
 	border-top: 1px solid $dark-shiro;
 }
+
+//toolbar
+.content-toolbar {
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include mediaquery ($bp-desktop) {
+        display: none;
+    }
+
+    li {
+        display:inline-block;
+        margin-left: 10px;
+    }
+    .edit {
+        //("//media.infojobs.net/appgrade/icons/ico-edit-card.svg", "#55acee");
+    }
+
+}
+
+//background cover alternative
+.content-alt-cover {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}

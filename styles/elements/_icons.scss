@@ -390,3 +390,24 @@ $icon-size: (30,50); //TODO: resolve problem when it s moved to _vars
 .iconfont-CallCenter::before {
     content: "\e900";
 }
+
+//icons svg
+
+a[class^="Icon--"],
+a[class*=" Icon--"],
+a[class^="Icon--"],
+a[class*=" Icon--"] {
+
+    fill: #d1d8dc;
+
+    &:hover svg {
+        fill: $color-primary;
+    }
+    span {
+        display: none;
+    }
+}
+.Icon--small svg {
+    width: 20px;
+    height: 20px;
+}

@@ -3,155 +3,202 @@ $MIXIN COLUMNS
 \*------------------------------------*/
 
 @mixin columns {
-	@include display-flex;
-	position: relative;
-	//min-height: 60px; //related with logo on content-logo (mobile)
+    @include display-flex;
+    flex-wrap: wrap;
+    position: relative;
+    height: 100%;
+    //min-height: 60px; //related with logo on content-logo (mobile)
 
-	@media print {
-		min-height: auto;
-	}
+    @media print {
+    	min-height: auto;
+    }
 
-	.content-logo-text,
-	.content-type-text { // col with text inside content-top or content-middle
-		@include display-flex;
-		@include flex(1);
-		@include flex-direction(column);
+    @include mediaquery ($bp-desktop) {
+    &:hover {
 
-		overflow: hidden;
+      .content-toolbar {
+        display: block;
+      }
 
-		h1,h2,h3 {
-			margin: 0;
-			-moz-hyphens: auto;
-			word-wrap: break-word;
-		}
+    }
+  }
 
-		.btn {
-			display: table;
-			margin-top: 10px;
-		}
+  .content-logo-text,
+  .content-type-text { // col with text inside content-top or content-middle
+  	@include display-flex;
+  	@include flex(1);
+  	@include flex-direction(column);
 
-		&.contact {
-			.btn {
-			display: inline-block;
-			}
-		}
-	}
+  	overflow: hidden;
+  	height: 100%;
 
-	.content-type {
-		&-media,
-		&-media-small {
-			img {
-				display: table;
+  	h1,h2,h3 {
+  		margin: 0;
+  		-moz-hyphens: auto;
+  		word-wrap: break-word;
+  	}
 
-				& + .sticker {
-					display: table;
-					margin: -10px auto 0 auto;
-				}
-			}
-		}
+  	.btn {
+  		display: table;
+  		margin-top: 20px;
+  	}
 
-	}
+  	.content-end {
+  		margin-top: auto;
+  	}
 
-	.content-logo-media,
-	.content-type-media { // col with img, sticker inside content-top or content-middle
-		@include flex(none);
 
-		a {
-		    width: 100px;
-		    height: 100px;
-		}
+  	&.contact {
+  		.btn {
+  			display: inline-block;
+  		}
+  	}
+  }
 
-		img {
-			display: block;
-			width: 62px;
+  .content-type {
+  	&-media,
+  	&-media-small {
+  		img {
+  			display: table;
 
-			&.crop-circle {
-				height: 62px;
-			}
+  			& + .sticker {
+  				display: table;
+  				margin: -10px auto 0 auto;
+  			}
+  		}
+  	}
 
-			& + .sticker {
-				display: table;
-				margin: 10px auto 0 auto;
-			}
+  }
 
-			@include mediaquery ($bp-tablet) {
-				width: 82px;
+  .content-logo-media,
+  .content-type-media { // col with img, sticker inside content-top or content-middle
+  	@include flex(none);
 
-				&.crop-circle {
-					height: 82px;
-				}
-			}
+  	a {
+  	    width: 100px;
+  	    height: 100px;
+  	}
 
-			@include mediaquery ($bp-desktop) {
-				width: 92px;
+  	img {
+  		display: block;
+  		width: 62px;
 
-				&.crop-circle {
-					height: 92px;
-				}
-			}
-		}
-	}
+  		&.crop-circle {
+  			height: 62px;
+  		}
 
-	.content-type-media-small {
+  		& + .sticker {
+  			display: table;
+  			margin: 10px auto 0 auto;
+  		}
 
-		.fig-thumbnail-logo {
-			padding: 2px;
+  		@include mediaquery ($bp-tablet) {
+  			width: 82px;
 
-			@include mediaquery ($bp-desktop) {
-				padding: 4px;
-			}
+  			&.crop-circle {
+  				height: 82px;
+  			}
+  		}
 
-			img {
-				width: 34px;
+  		@include mediaquery ($bp-desktop) {
+  			width: 92px;
 
-				@include mediaquery ($bp-desktop) {
-					width: 50px;
-				}
-			}
-		}
+  			&.crop-circle {
+  				height: 92px;
+  			}
+  		}
+  	}
+  }
 
-		.sticker-skill {
-			top: 0;
-			width: 60px;
-			margin: 0;
-			text-align: center;
-			white-space: pre;
-		}
-	}
+  .content-type-media-small {
 
-	.content-type-media-xsmall {
-		.fig-thumbnail-logo {
-			img {
-				width: 30px;
+  	.fig-thumbnail-logo {
+  		padding: 2px;
 
-				@include mediaquery ($bp-desktop) {
-					width: 40px;
-				}
-			}
-		}
-	}
+  		@include mediaquery ($bp-desktop) {
+  			padding: 4px;
+  		}
 
-	.action {
-		@include flex(none);
-		margin-left: 20px;
-	}
+  		img {
+  			width: 34px;
 
- 	.icon {
-		margin-right: 10px;
-	}
+  			@include mediaquery ($bp-desktop) {
+  				width: 50px;
+  			}
+  		}
+  	}
 
-	.content-logo-text + .content-logo-media,
-	.content-type-text + .content-type-media,
-	.content-logo-media + .content-logo-text,
-	.content-type-media + .content-type-text {
-		margin-left: 20px;
-	}
+  	.sticker-skill {
+  		top: 0;
+  		width: 60px;
+  		margin: 0;
+  		text-align: center;
+  		white-space: pre;
+  	}
+  }
 
-	.content-type-text + .content-type-media-xsmall,
-	.content-type-media-xsmall + .content-type-text,
-	.content-type-text + .content-type-media-small,
-	.content-type-media-small + .content-type-text {
-		margin-left: 10px;
-	}
+  .content-type-media-xsmall {
+  	.fig-thumbnail-logo {
+  		img {
+  			width: 30px;
+
+  			@include mediaquery ($bp-desktop) {
+  				width: 40px;
+  			}
+  		}
+  	}
+  }
+
+  .content-type-media-big {
+  	flex-basis: 100%;
+
+  	@include mediaquery ($bp-tablet) {
+  		flex-basis: auto;
+  	}
+
+  	img {
+  		width: 140px;
+
+  		@include mediaquery ($bp-tablet) {
+  			width: 175px;
+  		}
+
+  		@include mediaquery ($bp-desktop) {
+  			width: 140px;
+  		}
+  	}
+
+  	+ .content-type-text {
+  		text-align: center;
+
+  		@include mediaquery ($bp-tablet) {
+  			text-align: left;
+  		}
+  	}
+  }
+
+  .action {
+  	@include flex(none);
+  	margin-left: 20px;
+  }
+
+  	.icon {
+  	margin-right: 10px;
+  }
+
+  .content-logo-text + .content-logo-media,
+  .content-type-text + .content-type-media,
+  .content-logo-media + .content-logo-text,
+  .content-type-media + .content-type-text,
+  .content-type-media-big + .content-type-text {
+  	margin-left: 20px;
+  }
+
+  .content-type-text + .content-type-media-xsmall,
+  .content-type-media-xsmall + .content-type-text,
+  .content-type-text + .content-type-media-small,
+  .content-type-media-small + .content-type-text {
+  	margin-left: 10px;
+  }
 
 }
