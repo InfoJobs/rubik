@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://www.design.infojobs.net/rubik/public/rubik.css">
+    <style>
+    .sg-svg-content {
+      border: 1px dotted grey;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container panel-canvas inner inner-expanded margin-top border-all">
+        <h1>SVG</h1>
+        <h2>svg width</h2>
+        <svg height="150" width="150" class="sg-svg-content">
+            <circle cx="75" cy="75" r="50" fill="beige"/>
+        </svg>
+        <p>width y height definen el size del contenedor donde dibujamos las figuras svg</p>
+        <h2>circle</h2>
+        <svg height="100" width="100">
+            <circle cx="50" cy="50" r="46" fill="beige" stroke="grey" stroke-width="2" />
+        </svg>
+        <p>cx y cy definen su posicion xy desde su centro</p>
+        <p>fill: relleno, stroke: borde</p>
+        <h2>rect</h2>
+        <svg width="320" height="120">
+            <rect x="10" y="10" width="300" height="100" fill="beige" stroke="grey" stroke-width="10"/>
+        </svg>
+        <p>Definir x y para que stroke-width se visualice correctamente.
+            <br> x="10" y="10" stroke-width="10" </p>
+        <svg width="320" height="120">
+            <rect rx="20" ry="20" x="10" y="10" width="300" height="100" fill="beige" stroke="grey" stroke-width="10"/>
+        </svg>
+        <p>rx ry para definir rounded corners</p>
+        <h2>ellipse</h2>
+        <svg height="106" width="206">
+            <ellipse cx="103" cy="53" rx="100" ry="50" fill="beige" stroke="grey" stroke-width="6"/>
+        </svg>
+        <p>rx radio horizontal, ry radio vertical</p>
+
+        <h2>opacity</h2>
+        <svg width="320" height="120">
+            <rect x="10" y="10" width="300" height="100" fill="beige" stroke="grey" stroke-width="10" style="opacity: 0.5"/>
+        </svg>
+        <p>opacity</p>
+        <svg width="320" height="120">
+            <rect x="10" y="10" width="300" height="100" fill="beige" stroke="grey" stroke-width="10" style="stroke-opacity: 0.5"/>
+        </svg>
+        <p>stroke-opacity</p>
+        <svg width="320" height="120">
+            <rect x="10" y="10" width="300" height="100" fill="beige" stroke="grey" stroke-width="10" fill-opacity="0.5"/>
+        </svg>
+        <p>fill-opacity</p>
+        <svg height="150" width="500">
+          <ellipse cx="200" cy="100" rx="100" ry="30" fill="purple" fill-opacity="0.2" />
+          <ellipse cx="200" cy="70" rx="100" ry="30" fill="purple" fill-opacity="0.5" />
+          <ellipse cx="200" cy="40" rx="100" ry="30" fill="purple" fill-opacity="1" />
+        </svg>
+  </div>
+</body>
+
+</html>
