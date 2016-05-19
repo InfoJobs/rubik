@@ -7,10 +7,34 @@
 	display: none;
 
 	@media only screen and (min-width: 769px) {
-
 		visibility: visible;
 		display: block;
-
 	}
+
+}
+
+.layer-stickers {
+	left: 0;
+    border: 1px solid #c7c7c7;
+    padding: 20px 15px 0 15px;
+    position: absolute;
+    z-index: $zindex-pulldown;
+
+    > li {
+        margin: 0;
+        padding: 0 5px 20px;
+    }
+
+    input[type="checkbox"] + label,
+    input[type="radio"] + label  {
+        max-width: 100%;
+        width: 100%;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .title {
+    	width: 100%;
+    }
 
 }
