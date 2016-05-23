@@ -262,7 +262,7 @@ a.nav-bar-toggle {
 			-webkit-tap-highlight-color: transparent; /* For some Androids */
 
 			@include mediaquery ($bp-header) {
-				padding: 30px 15px;
+				padding: 30px 14px;
 				color: $mid-script;
 			}
 		}
