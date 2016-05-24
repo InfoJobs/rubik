@@ -252,6 +252,7 @@ $gridColumns: 12;
 }
 
 .col-child {
+    max-width: calc(100% - 10px);
 	margin: 0 0 0 10px;
 
 	&.inner {
@@ -359,6 +360,8 @@ Styleguide #{$sgi-expandGutterColumns}
 		margin-left: 10px;
 
 		@include mediaquery ($bp-tablet) {
+      @include display-flex;
+
 			margin-left: 20px;
 			max-width: calc(100% - 20px);
 		}
@@ -396,6 +399,14 @@ Styleguide #{$sgi-expandGutterColumns}
 		@include mediaquery ($bp-desktop) {
 			&:nth-child(3) {
 				margin-top: 0;
+			}
+		}
+
+		&:last-child .col-child {
+			margin-bottom: 10px;
+
+			@include mediaquery ($bp-desktop) {
+				margin-bottom: 0;
 			}
 		}
 	}
@@ -437,6 +448,7 @@ Styleguide #{$sgi-expandGutterColumns}
 	}
 }
 
+
 /*------------------------------------*\
 	$ROW FAUX
 \*------------------------------------*/
@@ -476,7 +488,9 @@ Styleguide #{$sgi-equalHeightColumns}
 			//overflow: hidden; Si hay tooltip se corta por el overflow
 		}
 
-		.col-12-medium {
+		.col-12-medium,
+		.col-6-medium,
+		.col-12-medium [class*="col-"]:last-child {
 			display: block;
 
 			.col-child {
@@ -491,10 +505,14 @@ Styleguide #{$sgi-equalHeightColumns}
 		.col-child {
 			display: block;
 			@include flex;
+
+      @at-root .row-faux-card .col-child {
+        @include display-flex;
+      }
 		}
 	}
 
-	@include mediaquery ($bp-desktop) {
+	@include mediaquery ($bp-tablet) {
 
 		.col-6-medium,
 		.col-12-medium  {
