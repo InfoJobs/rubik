@@ -6,8 +6,11 @@ $MIXIN COLUMNS
     @include display-flex;
     flex-wrap: wrap;
     position: relative;
-    height: 100%;
     //min-height: 60px; //related with logo on content-logo (mobile)
+
+    .row-faux-card & {
+  	  @include flex(1 1 auto);
+    }
 
     @media print {
     	min-height: auto;
