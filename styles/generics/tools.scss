@@ -275,3 +275,14 @@ Styleguide #{$sgi-helpers}
 		}
 	}
 }
+
+/*------------------------------------*\
+    $POSITION
+\*------------------------------------*/
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  //max width se incluye por js si usamos sticky-on-scroll.js 
+}
