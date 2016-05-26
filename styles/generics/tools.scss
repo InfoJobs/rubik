@@ -283,4 +283,6 @@ Styleguide #{$sgi-helpers}
 .sticky {
   position: fixed;
   top: 0;
+  width: 100%;
+  //max width lo inclue por js, sticky-on-scroll.js
 }

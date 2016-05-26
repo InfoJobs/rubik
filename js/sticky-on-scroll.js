@@ -3,22 +3,26 @@
   var stickyElement = $('.js-sticky');
   var stickyElementOffset;
 
-  //stickyElement.parent().width();
 
   function offsetElement() {
-
+    if(stickyElement) {
       stickyElementOffset = stickyElement.offset().top;
       return stickyElement;
+    }
 
   }
-
   function sticky() {
+    if(stickyElement) {
 
-    if ($(window).scrollTop() >= stickyElementOffset) {
-        stickyElement.addClass('sticky');
-    }
-    else {
-        stickyElement.removeClass('sticky');
+      var widthParent = stickyElement.parent().width();
+      stickyElement.css('max-width', widthParent);
+
+      if ($(window).scrollTop() >= stickyElementOffset) {
+          stickyElement.addClass('sticky');
+      }
+      else {
+          stickyElement.removeClass('sticky');
+      }
     }
 
   }
