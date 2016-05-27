@@ -284,5 +284,6 @@ Styleguide #{$sgi-helpers}
   position: fixed;
   top: 0;
   width: 100%;
-  //max width se incluye por js si usamos sticky-on-scroll.js 
+  z-index: $zindex-wrap-overlay;
+  //max width se incluye por js si usamos sticky-on-scroll.js
 }

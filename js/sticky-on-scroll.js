@@ -1,5 +1,6 @@
 
 (function(){
+
   var stickyElement = $('.js-sticky');
   var stickyElementOffset;
 
@@ -7,7 +8,7 @@
   function offsetElement() {
     if(stickyElement) {
       stickyElementOffset = stickyElement.offset().top;
-      return stickyElement;
+      return stickyElementOffset;
     }
 
   }
