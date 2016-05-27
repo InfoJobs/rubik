@@ -1,9 +1,12 @@
 
 (function(){
-
-  var stickyElement = $('.js-sticky');
+  var stickyElement;
   var stickyElementOffset;
 
+  window.onload = function() {
+    stickyElement = $('.js-sticky');
+
+  }
 
   function offsetElement() {
     if(stickyElement) {
