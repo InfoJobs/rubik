@@ -1,13 +1,17 @@
 
 (function(){
-  var stickyElement = $('.js-sticky');
+  var stickyElement;
   var stickyElementOffset;
 
+  window.onload = function() {
+    stickyElement = $('.js-sticky');
+
+  }
 
   function offsetElement() {
     if(stickyElement) {
       stickyElementOffset = stickyElement.offset().top;
-      return stickyElement;
+      return stickyElementOffset;
     }
 
   }
@@ -28,7 +32,6 @@
   }
 
   window.addEventListener('load', offsetElement);
-  window.addEventListener('resize', offsetElement);
   window.addEventListener('scroll', sticky);
   window.addEventListener('load', sticky);
   window.addEventListener('resize', sticky);
