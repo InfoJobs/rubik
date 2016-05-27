@@ -32,7 +32,6 @@
   }
 
   window.addEventListener('load', offsetElement);
-  window.addEventListener('resize', offsetElement);
   window.addEventListener('scroll', sticky);
   window.addEventListener('load', sticky);
   window.addEventListener('resize', sticky);
