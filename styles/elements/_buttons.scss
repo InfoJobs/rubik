@@ -14,20 +14,21 @@ Styleguide #{$sgi-buttons}
     /*@include transition;*/
     display: inline-block;
     width: auto;
-    height: 30px;
-    padding: 0 10px;
+    height: 40px;
+    padding: 0 20px;
     border: 1px solid transparent;
-    border-radius: 3px;
+    border-radius: 2px;
     color: $shiro;
     cursor: pointer;
     font-size: $small-font-size;
     font-weight: normal;
-    line-height: 28px;
+    line-height: 38px;
     overflow: visible;
     text-decoration: none;
     text-align: center;
     white-space: nowrap;
     text-shadow: none;
+    text-transform: uppercase;
     -webkit-appearance: none;
 
     &:hover {
