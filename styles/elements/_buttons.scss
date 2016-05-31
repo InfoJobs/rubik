@@ -109,6 +109,7 @@ Styleguide #{$sgi-buttons-type}
     line-height: 40px;
     color: $shiro;
     background-color: $color-primary;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
 
     .panel-focus & {
         background-color: $late-blue;
