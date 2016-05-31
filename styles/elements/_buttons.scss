@@ -63,6 +63,10 @@ Styleguide #{$sgi-buttons}
 
 .btn {
 	@include btn;
+
+  &-full-width {
+    width: 100%;
+  }
 }
 
 
@@ -101,6 +105,16 @@ Styleguide #{$sgi-buttons-type}
         color: $shiro;
         background-color: shade($color-primary,20%);
     }
+
+    &-alternative {
+      background-color: shade($color-primary,40%);
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: shade($color-primary,60%);
+      }
+    }
 }
 
 .btn-default {
@@ -113,6 +127,31 @@ Styleguide #{$sgi-buttons-type}
     &:active {
         color: $shiro;
         background-color: shade($color-primary,20%);
+    }
+
+    &-contrast {
+      color: $shiro;
+      border: 1px solid $shiro;
+      background-color: rgba($shiro, 0.2);
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: shade($color-primary,20%);
+        background-color: $shiro;
+      }
+    }
+
+    &-alternative {
+      color: $color-primary;
+      background-color: $shiro;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: shade($color-primary,20%);
+        background-color: $dark-shiro;
+      }
     }
 }
 
@@ -139,6 +178,7 @@ Styleguide #{$sgi-buttons-type}
     }
 }
 
+//new design: idem that btn-primary -> to be deleted and refactor on "empleo"
 .btn-primary-contrast {
     color: $shiro;
     background-color: $late-blue;
@@ -152,42 +192,6 @@ Styleguide #{$sgi-buttons-type}
 
 .btn-primary-contrast:active {
     background-color: $midnight-blue;
-}
-
-///*DEPRECATED: .btn-link-primary only used in 'ver_oferta.html'*/
-.btn-link-primary {
-    color: $color-primary;
-}
-
-.btn-link-primary:hover,
-.btn-link-primary:focus {
-    text-decoration: underline;
-    color: $late-blue;
-}
-
-.btn-link-primary + .btn-link-primary,
-.btn-link-secondary + .btn-link-secondary {
-    padding-left: 0;
-}
-
-///*DEPRECATED: .btn-link-secondary only used in header*/
-.btn-link-secondary {
-    color: $mid-script;
-}
-
-.btn-link-secondary:hover {
-    text-decoration: underline;
-    color: $dark-silk;
-}
-
-///*DEPRECATED: .btn-link-company only used in header*/
-.btn-link-company {
-    color: $soft-script;
-}
-
-.btn-link-company:hover {
-    @extend .btn-link-secondary:hover;
-    color: $shiro;
 }
 
 
@@ -240,7 +244,7 @@ Buttons status
 Use class `.btn-disabled` to show button as disabled.
 
 Markup:
-<a href="#" class="btn btn-default btn-medium btn-disabled">Disabled Button</a>
+<a href="#" class="btn btn-default btn-disabled">Disabled Button</a>
 
 Styleguide #{$sgi-buttons-status}
 */
@@ -248,25 +252,27 @@ Styleguide #{$sgi-buttons-status}
 button[disabled],
 button:hover[disabled],
 button:active[disabled],
-button.btn-disabled,
+button:focus[disabled],
 .btn-disabled,
 .btn-disabled:hover,
 .btn-disabled:active,
 .btn-disabled:focus {
-    background: $shiro;
-    color: $wood-katana-smash;
+    line-height: 40px;
     text-decoration: none;
+    color: $shiro;
+    border: 0;
+    box-shadow: none;
+    background: #dfdfdf; //add to vars (pending to be defined for companies)
     cursor: default;
-    border: 1px solid $darkest-shiro;
 }
 
 /*
 Buttons display
 
-Use class `.btn-form-inline` to display a full width button.
+Use class `.btn-full-width` to display a full width button.
 
 Markup:
-<button class="btn btn-primary btn-medium btn-form-inline" type="button">Button</button>
+<button class="btn btn-primary btn-full-width" type="button">Button</button>
 
 Styleguide #{$sgi-buttons-display}
 */
@@ -284,6 +290,87 @@ Styleguide #{$sgi-buttons-display}
     &.text-left { //already defined in tools.scss, but overwritten by btn{...text-align: center;...}
     	text-align: left;
     }
+}
+
+/*
+Button file
+
+Use class `.btn-file` to display an input type file.
+
+Markup:
+<div class="btn btn-default btn-file">
+	<span>Subir foto</span>
+	<input type="file" value="Subir foto" />
+</div>
+
+Styleguide #{$sgi-buttons-file}
+*/
+
+.btn-file {
+	position: relative;
+
+	span {
+		position: absolute;
+		left: 0;
+		width: 100%;
+	}
+
+	input {
+		height: auto;
+		opacity: 0;
+		cursor: pointer;
+	}
+}
+
+/*
+Buttons variants
+
+Lorem ipsum...
+
+Markup:
+<div class="panel-focus inner">
+  <button class="btn btn-primary-alternative" type="button">Primary alternative</button>
+  <button class="btn btn-default-contrast" type="button">Secondary contrast</button>
+  <button class="btn btn-default-alternative" type="button">Secondary alternative</button>
+</div>
+
+Styleguide #{$sgi-buttons-variants}
+*/
+
+///*DEPRECATED: .btn-link-primary only used in 'ver_oferta.html'*/
+.btn-link-primary {
+    color: $color-primary;
+}
+
+.btn-link-primary:hover,
+.btn-link-primary:focus {
+    text-decoration: underline;
+    color: $late-blue;
+}
+
+.btn-link-primary + .btn-link-primary,
+.btn-link-secondary + .btn-link-secondary {
+    padding-left: 0;
+}
+
+///*DEPRECATED: .btn-link-secondary only used in header*/
+.btn-link-secondary {
+    color: $mid-script;
+}
+
+.btn-link-secondary:hover {
+    text-decoration: underline;
+    color: $dark-silk;
+}
+
+///*DEPRECATED: .btn-link-company only used in header*/
+.btn-link-company {
+    color: $soft-script;
+}
+
+.btn-link-company:hover {
+    @extend .btn-link-secondary:hover;
+    color: $shiro;
 }
 
 /*
@@ -462,34 +549,4 @@ Styleguide #{$sgi-button-group-icon}
     border: 0 none;
     background: none repeat scroll 0 0 transparent;
     cursor: pointer;
-}
-
-/*
-Button file
-
-Use class `.btn-file` to display an input type file.
-
-Markup:
-<div class="btn btn-default btn-file">
-	<span>Subir foto</span>
-	<input type="file" value="Subir foto" />
-</div>
-
-Styleguide #{$sgi-button-file}
-*/
-
-.btn-file {
-	position: relative;
-
-	span {
-		position: absolute;
-		left: 0;
-		width: 100%;
-	}
-
-	input {
-		height: auto;
-		opacity: 0;
-		cursor: pointer;
-	}
 }
