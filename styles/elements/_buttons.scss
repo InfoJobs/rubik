@@ -74,28 +74,26 @@ Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (o
 Also add one of the following classes to give it format:
 
 `.btn-primary` for a primary action style<br>
-`.btn-default` for a default action style<br>
+`.btn-default` for a secondary action style<br>
+`.btn-tertiary` for a tertiary action style<br>
 `.btn-highlight` for a highlight action style
 
 Markup:
 <button class="btn btn-primary" type="button">Primary</button>
-<button class="btn btn-default" type="button">Default</button>
+<button class="btn btn-default" type="button">Secondary</button>
+<button class="btn btn-tertiary" type="button">Tertiary</button>
 <a href="#" class="btn btn-highlight">Highlight</a>
 <a href="#" class="btn btn-primary">Link</a>
 
 Styleguide #{$sgi-buttons-type}
 */
 
-.btn-default {
-    color: $color-primary;
-    border: 1px solid $color-primary;
-    background-color: $button-secondary;
-
-    .panel-focus &,
-    .panel-contrast & {
-        color: $dark-silk;
-        background-color: $button-secondary-contrast;
-    }
+.btn-primary {
+    line-height: 40px;
+    color: $shiro;
+    border: 0;
+    background-color: $color-primary;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
 
     &:hover,
     &:focus,
@@ -105,21 +103,39 @@ Styleguide #{$sgi-buttons-type}
     }
 }
 
-.btn-primary {
-    line-height: 40px;
-    color: $shiro;
-    background-color: $color-primary;
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
-
-    .panel-focus & {
-        background-color: $late-blue;
-    }
+.btn-default {
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    background-color: $button-secondary;
 
     &:hover,
     &:focus,
     &:active {
         color: $shiro;
         background-color: shade($color-primary,20%);
+    }
+}
+
+.btn-tertiary {
+    color: $color-primary;
+    background-color: transparent;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color-primary;
+        background-color: $dark-shiro;
+    }
+}
+
+.btn-highlight {
+    color: $dark-silk;
+    background-color: $sun;
+
+    &:hover,
+    &:focus {
+        color: $dark-silk;
+        background-color: darken( $sun, 10% );
     }
 }
 
@@ -136,17 +152,6 @@ Styleguide #{$sgi-buttons-type}
 
 .btn-primary-contrast:active {
     background-color: $midnight-blue;
-}
-
-.btn-highlight {
-    color: $dark-silk;
-    background-color: $sun;
-
-    &:hover,
-    &:focus {
-        color: $dark-silk;
-        background-color: darken( $sun, 10% );
-    }
 }
 
 ///*DEPRECATED: .btn-link-primary only used in 'ver_oferta.html'*/
@@ -192,9 +197,9 @@ Buttons size
 Use class `.btn-medium` or `.btn-large` to change buttons size.
 
 Markup:
-<a href="#" class="btn btn-default">Default Button</a>
-<a href="#" class="btn btn-default btn-medium">Medium Button</a>
-<a href="#" class="btn btn-default btn-large">Large Button</a>
+<a href="#" class="btn btn-default">Default size Button</a>
+<a href="#" class="btn btn-default btn-medium">Medium size Button</a>
+<a href="#" class="btn btn-default btn-large">Large size Button</a>
 
 Styleguide #{$sgi-buttons-size}
 */
