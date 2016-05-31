@@ -194,55 +194,34 @@ Styleguide #{$sgi-buttons-type}
 /*
 Buttons size
 
-Use class `.btn-medium` or `.btn-large` to change buttons size.
+Use class `.btn-small` or `.btn-large` to change buttons size.<br>
+Base button don't need an additional class.
 
 Markup:
-<a href="#" class="btn btn-default">Default size Button</a>
-<a href="#" class="btn btn-default btn-medium">Medium size Button</a>
+<a href="#" class="btn btn-default btn-small">Small size Button</a>
+<a href="#" class="btn btn-default">Base size Button</a>
 <a href="#" class="btn btn-default btn-large">Large size Button</a>
 
 Styleguide #{$sgi-buttons-size}
 */
 
-@mixin btn-medium {
-    height: 40px;
+.btn-small {
+    height: 30px;
+    padding: 0 10px;
+    font-size: $xsmall-font-size;
+    line-height: 28px;
+}
+
+.btn-large {
+    height: 50px;
     padding: 0 10px;
     font-size: $base-font-size;
-    line-height: 38px;
+    line-height: 48px;
 
     @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
         font-size: 22px;
     }
-
-    /*@at-root button#{&} {
-        height: 40px;
-    }*/
 }
-
-.btn-medium {
-	@include btn-medium;
-}
-
-.btn-large {
-    height: 42px;
-    padding: 0 20px;
-    font-size: $large-font-size;
-    line-height: 40px;
-
-    @media only screen and (max-width: $mobile-start) {
-        font-size: $medium-font-size;
-    }
-
-    @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
-        top: 7px;
-        font-size: 30px;
-    }
-
-    /*@at-root button#{&} {
-        height: 42px;
-    }*/
-}
-
 
 /*
 Buttons with text and icon

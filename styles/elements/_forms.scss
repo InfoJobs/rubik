@@ -732,7 +732,6 @@ input[type="radio"] + label,
 .appearance-btn {
     label {
         	@include btn;
-        	@include btn-medium;
         	color: $mid-script;
         	border: 1px solid #c7c7c7;  //TODO: pending a crossbrowser solution
 			font-size: $base-font-size;
