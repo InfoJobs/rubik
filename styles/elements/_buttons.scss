@@ -154,42 +154,6 @@ Styleguide #{$sgi-buttons-type}
     background-color: $midnight-blue;
 }
 
-///*DEPRECATED: .btn-link-primary only used in 'ver_oferta.html'*/
-.btn-link-primary {
-    color: $color-primary;
-}
-
-.btn-link-primary:hover,
-.btn-link-primary:focus {
-    text-decoration: underline;
-    color: $late-blue;
-}
-
-.btn-link-primary + .btn-link-primary,
-.btn-link-secondary + .btn-link-secondary {
-    padding-left: 0;
-}
-
-///*DEPRECATED: .btn-link-secondary only used in header*/
-.btn-link-secondary {
-    color: $mid-script;
-}
-
-.btn-link-secondary:hover {
-    text-decoration: underline;
-    color: $dark-silk;
-}
-
-///*DEPRECATED: .btn-link-company only used in header*/
-.btn-link-company {
-    color: $soft-script;
-}
-
-.btn-link-company:hover {
-    @extend .btn-link-secondary:hover;
-    color: $shiro;
-}
-
 
 /*
 Buttons size
@@ -307,6 +271,72 @@ Styleguide #{$sgi-buttons-display}
     &.text-left { //already defined in tools.scss, but overwritten by btn{...text-align: center;...}
     	text-align: left;
     }
+}
+
+/*
+Button file
+
+Use class `.btn-file` to display an input type file.
+
+Markup:
+<div class="btn btn-default btn-file">
+	<span>Subir foto</span>
+	<input type="file" value="Subir foto" />
+</div>
+
+Styleguide #{$sgi-buttons-file}
+*/
+
+.btn-file {
+	position: relative;
+
+	span {
+		position: absolute;
+		left: 0;
+		width: 100%;
+	}
+
+	input {
+		height: auto;
+		opacity: 0;
+		cursor: pointer;
+	}
+}
+
+///*DEPRECATED: .btn-link-primary only used in 'ver_oferta.html'*/
+.btn-link-primary {
+    color: $color-primary;
+}
+
+.btn-link-primary:hover,
+.btn-link-primary:focus {
+    text-decoration: underline;
+    color: $late-blue;
+}
+
+.btn-link-primary + .btn-link-primary,
+.btn-link-secondary + .btn-link-secondary {
+    padding-left: 0;
+}
+
+///*DEPRECATED: .btn-link-secondary only used in header*/
+.btn-link-secondary {
+    color: $mid-script;
+}
+
+.btn-link-secondary:hover {
+    text-decoration: underline;
+    color: $dark-silk;
+}
+
+///*DEPRECATED: .btn-link-company only used in header*/
+.btn-link-company {
+    color: $soft-script;
+}
+
+.btn-link-company:hover {
+    @extend .btn-link-secondary:hover;
+    color: $shiro;
 }
 
 /*
@@ -485,34 +515,4 @@ Styleguide #{$sgi-button-group-icon}
     border: 0 none;
     background: none repeat scroll 0 0 transparent;
     cursor: pointer;
-}
-
-/*
-Button file
-
-Use class `.btn-file` to display an input type file.
-
-Markup:
-<div class="btn btn-default btn-file">
-	<span>Subir foto</span>
-	<input type="file" value="Subir foto" />
-</div>
-
-Styleguide #{$sgi-button-file}
-*/
-
-.btn-file {
-	position: relative;
-
-	span {
-		position: absolute;
-		left: 0;
-		width: 100%;
-	}
-
-	input {
-		height: auto;
-		opacity: 0;
-		cursor: pointer;
-	}
 }
