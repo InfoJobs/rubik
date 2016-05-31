@@ -101,6 +101,16 @@ Styleguide #{$sgi-buttons-type}
         color: $shiro;
         background-color: shade($color-primary,20%);
     }
+
+    &-alternative {
+      background-color: shade($color-primary,40%);
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: shade($color-primary,60%);
+      }
+    }
 }
 
 .btn-default {
@@ -113,6 +123,31 @@ Styleguide #{$sgi-buttons-type}
     &:active {
         color: $shiro;
         background-color: shade($color-primary,20%);
+    }
+
+    &-contrast {
+      color: $shiro;
+      border: 1px solid $shiro;
+      background-color: rgba($shiro, 0.2);
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: shade($color-primary,20%);
+        background-color: $shiro;
+      }
+    }
+
+    &-alternative {
+      color: $color-primary;
+      background-color: $shiro;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: shade($color-primary,20%);
+        background-color: $dark-shiro;
+      }
     }
 }
 
@@ -139,6 +174,7 @@ Styleguide #{$sgi-buttons-type}
     }
 }
 
+//new design: idem that btn-primary -> to be deleted and refactor on "empleo"
 .btn-primary-contrast {
     color: $shiro;
     background-color: $late-blue;
@@ -302,6 +338,20 @@ Styleguide #{$sgi-buttons-file}
 		cursor: pointer;
 	}
 }
+
+/*
+Buttons variants
+
+Markup:
+<div class="panel-focus inner">
+  <button class="btn btn-primary-alternative" type="button">Primary alternative</button>
+  <button class="btn btn-default-contrast" type="button">Secondary contrast</button>
+  <button class="btn btn-default-alternative" type="button">Secondary alternative</button>
+
+</div>
+
+Styleguide #{$sgi-buttons-variants}
+*/
 
 ///*DEPRECATED: .btn-link-primary only used in 'ver_oferta.html'*/
 .btn-link-primary {
