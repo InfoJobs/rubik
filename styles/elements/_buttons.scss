@@ -35,10 +35,6 @@ Styleguide #{$sgi-buttons}
       @include transition;
     }
 
-    @at-root button#{&} {
-      border: 0 none; //TODO: pending a crossbrowser solution
-    }
-
     @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
         font-size: $medium-font-size;
     }
@@ -91,7 +87,8 @@ Styleguide #{$sgi-buttons-type}
 */
 
 .btn-default {
-    color: $mid-script;
+    color: $color-primary;
+    border: 1px solid $color-primary;
     background-color: $button-secondary;
 
     .panel-focus &,
@@ -99,12 +96,13 @@ Styleguide #{$sgi-buttons-type}
         color: $dark-silk;
         background-color: $button-secondary-contrast;
     }
-}
 
-.btn-default:hover,
-.btn-default:active {
-    color: $dark-silk;
-    background: $button-secondary--hover;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $shiro;
+        background-color: shade($color-primary,20%);
+    }
 }
 
 .btn-primary {
