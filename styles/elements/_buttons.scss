@@ -261,7 +261,7 @@ Buttons status
 Use class `.btn-disabled` to show button as disabled.
 
 Markup:
-<a href="#" class="btn btn-default btn-medium btn-disabled">Disabled Button</a>
+<a href="#" class="btn btn-default btn-disabled">Disabled Button</a>
 
 Styleguide #{$sgi-buttons-status}
 */
@@ -269,16 +269,18 @@ Styleguide #{$sgi-buttons-status}
 button[disabled],
 button:hover[disabled],
 button:active[disabled],
-button.btn-disabled,
+button:focus[disabled],
 .btn-disabled,
 .btn-disabled:hover,
 .btn-disabled:active,
 .btn-disabled:focus {
-    background: $shiro;
-    color: $wood-katana-smash;
+    line-height: 40px;
     text-decoration: none;
+    color: $shiro;
+    border: 0;
+    box-shadow: none;
+    background: #dfdfdf; //add to vars (pending to be defined for companies)
     cursor: default;
-    border: 1px solid $darkest-shiro;
 }
 
 /*
