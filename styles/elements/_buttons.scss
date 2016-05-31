@@ -275,48 +275,6 @@ button.btn-disabled,
     border: 1px solid $darkest-shiro;
 }
 
-
-/*
-Button annex
-
-Use class `.btn-annex` to add an element adjacent to the button.
-
-Markup:
-<button class="btn btn-primary btn-medium btn-annex" type="button">Button</button>
-<a href="#" class="link">Link</a>
-
-Styleguide #{$sgi-buttons-annex}
-*/
-
-.btn-annex {
-    margin-right: 15px;
-
-    & + .link {
-      white-space: nowrap;  //TODO: solve margin-top when .link fall down below .btn
-      font-size: $small-font-size;
-    }
-
-    @at-root #{&}.btn-medium + .link {
-        font-size: $medium-font-size;
-    }
-
-    @at-root #{&}.btn-large + .link {
-        font-size: $large-font-size;
-    }
-
-    & + .field-annex { //needed for a check/radiobutton/link structure close to the btn
-
-      display: inline-block;
-        margin-top: 10px;
-
-      input[type="checkbox"] + label {
-        width: auto;
-      }
-    }
-
-}
-
-
 /*
 Buttons display
 
