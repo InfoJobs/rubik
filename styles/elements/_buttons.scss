@@ -63,6 +63,10 @@ Styleguide #{$sgi-buttons}
 
 .btn {
 	@include btn;
+
+  &-full-width {
+    width: 100%;
+  }
 }
 
 
@@ -286,10 +290,10 @@ button:focus[disabled],
 /*
 Buttons display
 
-Use class `.btn-form-inline` to display a full width button.
+Use class `.btn-full-width` to display a full width button.
 
 Markup:
-<button class="btn btn-primary btn-medium btn-form-inline" type="button">Button</button>
+<button class="btn btn-primary btn-full-width" type="button">Button</button>
 
 Styleguide #{$sgi-buttons-display}
 */
@@ -342,12 +346,13 @@ Styleguide #{$sgi-buttons-file}
 /*
 Buttons variants
 
+Lorem ipsum...
+
 Markup:
 <div class="panel-focus inner">
   <button class="btn btn-primary-alternative" type="button">Primary alternative</button>
   <button class="btn btn-default-contrast" type="button">Secondary contrast</button>
   <button class="btn btn-default-alternative" type="button">Secondary alternative</button>
-
 </div>
 
 Styleguide #{$sgi-buttons-variants}
