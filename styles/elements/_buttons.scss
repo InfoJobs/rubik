@@ -137,21 +137,6 @@ Styleguide #{$sgi-buttons-type}
     background-color: $midnight-blue;
 }
 
-.btn-alert {
-    width: 100%;
-    color: $shiro;
-    background-color: $trueblood;
-
-    @include mediaquery ($bp-tablet) {
-        width: auto;
-    }
-
-    &:hover,
-    &:focus {
-        background-color: darken( $trueblood, 10% );
-    }
-}
-
 .btn-highlight {
     color: $dark-silk;
     background-color: $sun;
