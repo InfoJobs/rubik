@@ -28,6 +28,17 @@ Styleguide #{$sgi-buttons}
       @include transition;
     }
 
+    img {
+      width: 16px;
+      height: 16px;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+
+    @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
+        font-size: $medium-font-size;
+    }
+
     p > & {
         margin-left: 10px;
 
@@ -244,7 +255,7 @@ Buttons with text and icon
 Use class `.iconfont-[name]` to display an icon inside the button.
 
 Markup:
-<a href="#" class="btn btn-primary btn-medium iconfont-Facebook">Link Button</a>
+<a href="#" class="btn btn-primary"><img src="http://media.infojobs.net/appgrade/svgs/bell.svg" />Crear alerta</a>
 
 Styleguide #{$sgi-buttons-text-icon}
 */
@@ -255,7 +266,7 @@ Buttons status
 Use class `.btn-disabled` to show button as disabled.
 
 Markup:
-<a href="#" class="btn btn-default btn-disabled">Disabled Button</a>
+<button class="btn btn-primary btn-disabled" type="button" disabled>Disabled</button>
 
 Styleguide #{$sgi-buttons-status}
 */
@@ -291,6 +302,7 @@ Styleguide #{$sgi-buttons-display}
 btn-full-width {
   width: 100%;
 }
+//deprecated with btn-full-width?
 
 .btn-form-inline { //used on search-bar, filters and edit-cv(datos-personales)
     width: 100%;
