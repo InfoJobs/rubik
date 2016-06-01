@@ -102,6 +102,7 @@ Styleguide #{$sgi-buttons-type}
     &-alternative {
     	@include btn;
       border: 1px solid shade($color-primary,40%);
+      color: $shiro;
       background-color: shade($color-primary,40%);
 
       &:hover,
@@ -255,7 +256,9 @@ Buttons with text and icon
 Use class `.iconfont-[name]` to display an icon inside the button.
 
 Markup:
+<a href="#" class="btn-small btn-primary"><img src="http://media.infojobs.net/appgrade/svgs/bell.svg" />Crear alerta</a>
 <a href="#" class="btn btn-primary"><img src="http://media.infojobs.net/appgrade/svgs/bell.svg" />Crear alerta</a>
+<a href="#" class="btn-large btn-primary"><img src="http://media.infojobs.net/appgrade/svgs/bell.svg" />Crear alerta</a>
 
 Styleguide #{$sgi-buttons-text-icon}
 */
