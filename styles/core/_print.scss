@@ -89,7 +89,7 @@
     }
 
    	.no-print, //no-print es una helper class, usar cuando no podemos ocultar el elemento por defecto o en la definicion de un componente
-    .btn,
+    [class^="btn-"],
     .top-searches,
     #footer-help-companies,
     #ij-policy-disclaimer {

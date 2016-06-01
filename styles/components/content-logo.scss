@@ -92,7 +92,7 @@ Styleguide #{$sgi-content-middle}
 			}
 
 			.content-type-media {
-				.btn {
+				[class^="btn-"] {
 					margin-top: 20px;
 				}
 			}

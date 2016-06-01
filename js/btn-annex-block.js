@@ -5,7 +5,7 @@ function btnHeight() {
 
 
     [].forEach.call( elBtnGroup, function( target ){
-        elBtn = target.querySelector('.btn');
+        elBtn = target.querySelector('[class^="btn-"]');
 
         if (target.offsetHeight > elBtn.offsetHeight) {
             elBtn.classList.add('margin-bottom');

@@ -48,7 +48,8 @@ Styleguide #{$sgi-buttons}
         }
     }
 
-    + .btn:not(.btn-group-justified) {
+    + [class^="btn-"]:not(.btn-group-justified),
+      [class*="btn-"]:not(.btn-group-justified) {
         margin-left: 5px;
     }
 

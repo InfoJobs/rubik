@@ -80,7 +80,7 @@ Styleguide #{$sgi-iconsList}
 		margin-right: 6px;
 	}
 
-	@at-root .btn#{&} {
+	@at-root [class^="btn-"]#{&} {
 		top: 4px;
 		margin-right: 8px; //needed to separate icon from the text
 		color: $shiro;
@@ -91,11 +91,11 @@ Styleguide #{$sgi-iconsList}
 	}
 
 
-	@at-root .btn-group .btn#{&} {
+	@at-root .btn-group [class^="btn-"]#{&} {
 		margin-right: 0;
 	}
 
-	@at-root .btn-group .btn:not(.disabled)#{&} {
+	@at-root .btn-group [class^="btn-"]:not(.disabled)#{&} {
 		color: $dark-silk;
 	}
 }

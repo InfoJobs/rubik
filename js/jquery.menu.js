@@ -63,7 +63,8 @@ $(function() {
     });
 
 	if (window.innerWidth <= eBpHeader) {
-		$('.nav-bar-access .btn').addClass('btn-medium');
+		$('.nav-bar-access
+    ').addClass('btn-medium');
 		bgBlur();
 
 	} else {

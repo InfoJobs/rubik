@@ -27,7 +27,7 @@
 
 	}
 
-	a:not(.btn) {
+	a:not([class^="btn-"]) {
 		font-size: $large-font-size;
 		font-family: $base-font-family-bold;
 
@@ -234,7 +234,7 @@ a.nav-bar-toggle {
 		}
 	}
 
-	.btn {
+	[class^="btn-"] {
 		width: 100%;
 
 		@include mediaquery ($bp-header) {
@@ -244,7 +244,7 @@ a.nav-bar-toggle {
 
 	.btn-default {
 		color: $dark-silk;
-    	background-color: $sunrise-blue;
+    background-color: $sunrise-blue;
 
 		&:hover {
 	    background-color: $midnight-blue;

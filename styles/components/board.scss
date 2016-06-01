@@ -97,17 +97,17 @@ Styleguide #{$sgi-board-variants}
 		margin-top: 20px;
 	}
 
-	.description + .btn {
+	.description + [class^="btn-"] {
 		margin-top: 20px;
 	}
 
-	.btn {
+	[class^="btn-"] {
 		left: $padding;
 	}
 
-	.btn + p {
-		margin-top: 10px;
-	}
+  [class^="btn-"] + p {
+  		margin-top: 10px;
+  	}
 
 	&-large {
 		@include mediaquery ($bp-tablet) {
