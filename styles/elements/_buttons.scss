@@ -9,20 +9,13 @@ Styleguide #{$sgi-buttons}
 /*------------------------------------*\
     $BUTTONS
 \*------------------------------------*/
-
 @mixin btn {
     /*@include transition;*/
     display: inline-block;
     width: auto;
-    height: 40px;
-    padding: 0 20px;
-    border: 1px solid transparent;
     border-radius: 2px;
-    color: $shiro;
     cursor: pointer;
-    font-size: $small-font-size;
     font-weight: normal;
-    line-height: 38px;
     overflow: visible;
     text-decoration: none;
     text-align: center;
@@ -33,10 +26,6 @@ Styleguide #{$sgi-buttons}
 
     &:hover {
       @include transition;
-    }
-
-    @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
-        font-size: $medium-font-size;
     }
 
     p > & {
@@ -59,16 +48,8 @@ Styleguide #{$sgi-buttons}
             margin-bottom: 0;
         }
     }
+
 }
-
-.btn {
-	@include btn;
-
-  &-full-width {
-    width: 100%;
-  }
-}
-
 
 /*
 Buttons type
@@ -93,9 +74,9 @@ Styleguide #{$sgi-buttons-type}
 */
 
 .btn-primary {
-    line-height: 40px;
+  	@include btn;
     color: $shiro;
-    border: 0;
+    border: 1px solid $color-primary;
     background-color: $color-primary;
     box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
 
@@ -104,20 +85,25 @@ Styleguide #{$sgi-buttons-type}
     &:active {
         color: $shiro;
         background-color: shade($color-primary,20%);
+        border-color: shade($color-primary,20%);
     }
 
     &-alternative {
+    	@include btn;
+      border: 1px solid shade($color-primary,40%);
       background-color: shade($color-primary,40%);
 
       &:hover,
       &:focus,
       &:active {
         background-color: shade($color-primary,60%);
+        border-color: shade($color-primary,60%);
       }
     }
 }
 
 .btn-default {
+  	@include btn;
     color: $color-primary;
     border: 1px solid $color-primary;
     background-color: $button-secondary;
@@ -130,6 +116,7 @@ Styleguide #{$sgi-buttons-type}
     }
 
     &-contrast {
+      @include btn;
       color: $shiro;
       border: 1px solid $shiro;
       background-color: rgba($shiro, 0.2);
@@ -143,6 +130,8 @@ Styleguide #{$sgi-buttons-type}
     }
 
     &-alternative {
+    	@include btn;
+      border: 0 none;
       color: $color-primary;
       background-color: $shiro;
 
@@ -156,6 +145,8 @@ Styleguide #{$sgi-buttons-type}
 }
 
 .btn-tertiary {
+  	@include btn;
+    border: 1px solid transparent;
     color: $color-primary;
     background-color: transparent;
 
@@ -164,23 +155,30 @@ Styleguide #{$sgi-buttons-type}
     &:active {
         color: $color-primary;
         background-color: $dark-shiro;
+        border-color: $dark-shiro;
     }
 }
 
 .btn-highlight {
+  	@include btn;
     color: $dark-silk;
+    border: 1px solid $sun;
     background-color: $sun;
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
         color: $dark-silk;
         background-color: darken( $sun, 10% );
+        border-color: darken( $sun, 10% );
     }
 }
 
 //new design: idem that btn-primary -> to be deleted and refactor on "empleo"
 .btn-primary-contrast {
+  	@include btn;
     color: $shiro;
+    border: 1px solid $late-blue;
     background-color: $late-blue;
 }
 
@@ -188,10 +186,12 @@ Styleguide #{$sgi-buttons-type}
 .btn-primary-contrast:focus {
     color: $shiro;
     background-color: $night-blue;
+    border-color: $night-blue;
 }
 
 .btn-primary-contrast:active {
     background-color: $midnight-blue;
+    border-color: $midnight-blue;
 }
 
 
@@ -199,30 +199,41 @@ Styleguide #{$sgi-buttons-type}
 Buttons size
 
 Use class `.btn-small` or `.btn-large` to change buttons size.<br>
-Base button don't need an additional class.
+The base button size is class `.btn`
 
 Markup:
-<a href="#" class="btn btn-default btn-small">Small size Button</a>
+<a href="#" class="btn-small btn-default ">Small size Button</a>
 <a href="#" class="btn btn-default">Base size Button</a>
-<a href="#" class="btn btn-default btn-large">Large size Button</a>
+<a href="#" class="btn-large btn-default">Large size Button</a>
 
 Styleguide #{$sgi-buttons-size}
 */
 
 .btn-small {
-    height: 30px;
-    padding: 0 10px;
     font-size: $xsmall-font-size;
+    padding: 0 10px;
+    height: 30px;
     line-height: 28px;
 }
 
+.btn {
+    font-size: $small-font-size;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 38px;
+
+    @at-root #{&}[class*="iconfont-"]::before { ////DEPRECATED
+        font-size: $medium-font-size;
+    }
+  }
+
 .btn-large {
-    height: 50px;
-    padding: 0 10px;
     font-size: $base-font-size;
+    padding: 0 30px;
+    height: 50px;
     line-height: 48px;
 
-    @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
+    @at-root #{&}[class*="iconfont-"]::before { //DEPRECATED
         font-size: 22px;
     }
 }
@@ -269,13 +280,17 @@ button:focus[disabled],
 /*
 Buttons display
 
-Use class `.btn-full-width` to display a full width button.
+Add class `.btn-full-width` to display a full width button.
 
 Markup:
 <button class="btn btn-primary btn-full-width" type="button">Button</button>
 
 Styleguide #{$sgi-buttons-display}
 */
+
+btn-full-width {
+  width: 100%;
+}
 
 .btn-form-inline { //used on search-bar, filters and edit-cv(datos-personales)
     width: 100%;
@@ -339,14 +354,16 @@ Styleguide #{$sgi-buttons-variants}
 
 ///*DEPRECATED: .btn-link-primary only used in 'ver_oferta.html'*/
 .btn-link-primary {
+    @include btn;
     color: $color-primary;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      color: $late-blue;
+    }
 }
 
-.btn-link-primary:hover,
-.btn-link-primary:focus {
-    text-decoration: underline;
-    color: $late-blue;
-}
 
 .btn-link-primary + .btn-link-primary,
 .btn-link-secondary + .btn-link-secondary {
@@ -355,22 +372,25 @@ Styleguide #{$sgi-buttons-variants}
 
 ///*DEPRECATED: .btn-link-secondary only used in header*/
 .btn-link-secondary {
+    @include btn;
     color: $mid-script;
+
+    &:hover {
+        text-decoration: underline;
+        color: $dark-silk;
+    }
 }
 
-.btn-link-secondary:hover {
-    text-decoration: underline;
-    color: $dark-silk;
-}
 
 ///*DEPRECATED: .btn-link-company only used in header*/
 .btn-link-company {
+    @include btn;
     color: $soft-script;
-}
 
-.btn-link-company:hover {
-    @extend .btn-link-secondary:hover;
-    color: $shiro;
+    &:hover {
+        @extend .btn-link-secondary:hover;
+        color: $shiro;
+    }
 }
 
 /*
