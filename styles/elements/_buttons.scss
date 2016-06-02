@@ -49,11 +49,15 @@ Styleguide #{$sgi-buttons}
         }
     }
 
-    + [class^="btn-"]:not(.btn-group-justified),
-      [class*="btn-"]:not(.btn-group-justified) {
+    + [class^="btn-"]:not(.btn-group-justified) {
         margin-left: 5px;
     }
-
+    + [class*="btn-"]:not(.btn-group-justified) {
+        margin-left: 5px;
+    }
+    + .btn:not(.btn-group-justified) {
+        margin-left: 5px;
+    }
     + .btn-group-justified {
         margin-top: 10px;
 
