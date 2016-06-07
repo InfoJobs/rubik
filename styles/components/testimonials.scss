@@ -4,6 +4,5 @@
 .testimonials {
   @include display-flex;
   @include flex-direction(column);
-  display: flex !important;
   justify-content: space-between;
 }
