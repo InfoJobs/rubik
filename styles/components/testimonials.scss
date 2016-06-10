@@ -5,4 +5,30 @@
   @include display-flex;
   @include flex-direction(column);
   justify-content: space-between;
+  overflow: hidden;
+
+  &-body {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  &-footer {
+    li {
+      width: 10px;
+      height: 10px;
+      margin-right: 10px;
+      margin-bottom: 0;
+      border-radius: 10px;
+      background: $outer-fields;
+      cursor: pointer;
+
+      &.active {
+        background: $soft-script;
+      }
+
+      span {
+        display: none;
+      }
+    }
+  }
 }
