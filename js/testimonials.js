@@ -56,7 +56,7 @@ function testimonials(){
     clearInterval(interval);
   });
   document.querySelector('.testimonials').addEventListener('mouseout',function(){
-    interval = setInterval(automaticTestimonials,2000);
+    interval = setInterval(automaticTestimonials,4000);
   });
 
   for(var i = 0; i < aPagination.length; i++){
@@ -77,7 +77,7 @@ function testimonials(){
     countAutomaticTestimonials = (countAutomaticTestimonials + 1) % aTestimonialsBody.length;
   };
 
-  var interval = setInterval(automaticTestimonials,2000);
+  var interval = setInterval(automaticTestimonials,4000);
 
   if(document.querySelector('.testimonials').clientWidth < 769){
     document.querySelector('.testimonials').style.height = 100 + '%';
