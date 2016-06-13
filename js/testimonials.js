@@ -80,10 +80,10 @@ function testimonials(){
 
   showTestimonialsBody(0,true);
 
-  var manel = 0;
+  var countAutomaticTestimonials = 1;
   function automaticTestimonials() {
-    showTestimonialsBody(manel,true);
-    manel = (manel + 1) % aTestimonialsBody.length;
+    showTestimonialsBody(countAutomaticTestimonials,true);
+    countAutomaticTestimonials = (countAutomaticTestimonials + 1) % aTestimonialsBody.length;
   };
 
   var interval = setInterval(automaticTestimonials,6000);
@@ -106,7 +106,6 @@ function showTestimonialsBody(item,automatic){
   var aPagination = document.querySelectorAll('.js-testimonials-pagination li');
   [].forEach.call(aTestimonialsBody, function(content) {
     content.classList.add('hide');
-    aTestimonialsBody[item].classList.remove('fade-in-left','fade-in-right');
   });
 
   aTestimonialsBody[item].classList.remove('fade-out-left','fade-out-right','hide');
@@ -120,6 +119,7 @@ function showTestimonialsBody(item,automatic){
 }
 
 window.addEventListener('load', testimonials);
+window.addEventListener('resize', testimonials);
 
 
 
