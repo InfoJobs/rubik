@@ -4,12 +4,21 @@
 .testimonials {
   @include display-flex;
   @include flex-direction(column);
-  justify-content: space-between;
   overflow: hidden;
 
   &-body {
-    width: 70%;
-    margin: 0 auto;
+    padding: 0 25%;
+  }
+
+  &-body-container {
+    @include display-flex;
+    align-items: center;
+    position: relative;
+    transition: left 1s;
+
+    .testimonials-body {
+      flex: 1 0 100%;
+    }
   }
 
   &-footer {

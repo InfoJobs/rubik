@@ -212,44 +212,6 @@
 
 }
 
-//fade-out-left
-
-.fade-out-left {
-  -webkit-animation: fade-out-left 1s both;
-          animation: fade-out-left 1s both;
-  backface-visibility: hidden;
-}
-
-@keyframes fade-out-left  {
-
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-    width: 100%;
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateX(-100%);
-    width: 0;
-  }
-
-}
-
-@-webkit-keyframes fade-out-left {
-
-  0% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(-100%);
-  }
-
-}
-
 //fade-in-right
 
 .fade-in-right {
