@@ -1,17 +1,19 @@
 <!DOCTYPE html>
+
 <head>
-<meta charset="ISO-8859-15">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Filters</title>
-<link rel="stylesheet" type="text/css" href="../public/rubik.css" />
-<script type="text/javascript" src="//es-static0.infojobs.com/jquery-1.7.1.min.js?v=367620405" ></script>
-<script src="js/slider/nouislider.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui/jquery-ui-1.8.4.custom.min.js"></script>
-<script src="js/slider/jquery-ui-slider-pips.js"></script>
+  <meta charset="ISO-8859-15">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Filters</title>
+  <link rel="stylesheet" type="text/css" href="../public/rubik.css" />
+  <script type="text/javascript" src="//es-static0.infojobs.com/jquery-1.7.1.min.js?v=367620405"></script>
+  <script src="js/slider/nouislider.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui/jquery-ui-1.8.4.custom.min.js"></script>
+  <script src="js/slider/jquery-ui-slider-pips.js"></script>
 </head>
+
 <body>
-<div class="aside">
-<!-- La maqueta del spinner esta ahora en: g-spinner.html
+  <div class="aside">
+    <!-- La maqueta del spinner esta ahora en: g-spinner.html
 
 	<div class="loading-layer">
 		<div class="loading"></div>
@@ -19,170 +21,171 @@
 
 	-->
 
-	<div class=" hide-large-device filters-show">
-		<a class="btn btn-primary" href="#" id="open-layer">Ver filtros</a>
-	</div>
-	<!--  filters  -->
-	<aside class="layer-hidden"> <!-- a�adir  class="hide-small-device hide-medium-device" para que no se viusalice de entrada ni en mobile ni en tablet -->
-		<div class="filters-back hide-large-device">
-			<a class="btn btn-primary" href="#" id="close-layer">Mostrar ofertas</a>
-		</div>
+    <div class=" hide-large-device filters-show">
+      <a class="btn btn-primary" href="#" id="open-layer">Ver filtros</a>
+    </div>
+    <!--  filters  -->
+    <aside class="layer-hidden">
+      <!-- a�adir  class="hide-small-device hide-medium-device" para que no se viusalice de entrada ni en mobile ni en tablet -->
+      <div class="filters-back hide-large-device">
+        <a class="btn btn-primary" href="#" id="close-layer">Mostrar ofertas</a>
+      </div>
 
-		<form method="post" class="form filters" action="#">
-			<fieldset>
-				<legend class="fieldset-title">Filtrar por palabra clave</legend>
-		    	<ul class="filter-keyword">
-		        	<li class="form-field-inline keyword">
-		            	<label class="hide-small-device hide-medium-device hide-large-device" for="keyword">Filtrar por palabra clave</label>
-		                <input class="input-little" type="text" maxlength="200" id="keyword" placeholder="Jardinero en lorem ipsum whatever">
-		            </li>
-					<li class="form-field-inline keyword-submit">
-						<button class="btn btn-default btn-form-inline" type="submit">Filtrar</button>
-					</li>
-		       </ul>
-			</fieldset>
-			<fieldset>
-				<legend class="fieldset-title">Executive</legend>
-				<ul>
-					<li>
-	                   	<input type="checkbox" id="executive">
-	                   	<label class="label-checkbox icon-executive" for="executive">Executive<span class="number">(540)</span></label>
-	                 </li>
-				</ul>
-			</fieldset>
-			<fieldset>
-				<legend class="fieldset-title">Filtrar por fecha</legend>
-				<ul>
-					<li class="disabled">
-	                   	<input type="radio" id="fecha_a" name="filtro_fecha">
-	                   	<label class="label-checkbox" for="fecha_a">Cualquier fecha</label>
-	                 </li>
-					<li>
-	                   	<input type="radio" id="fecha_b" name="filtro_fecha">
-	                   	<label class="label-checkbox" for="fecha_b">�ltimas <span class="marked">24 horas</span></label>
-	                 </li>
-					<li>
-	                   	<input type="radio" id="fecha_c" name="filtro_fecha">
-	                   	<label class="label-checkbox" for="fecha_c">�ltimos 7 d�as</label>
-	                 </li>
-					<li>
-	                   	<input type="radio" id="fecha_d" name="filtro_fecha">
-	                   	<label class="label-checkbox" for="fecha_d">�ltimos 15 d�as</label>
-	                 </li>
-				</ul>
-			</fieldset>
-			<!-- provincia solo las top -->
-			<fieldset>
-				<legend class="fieldset-title">Por provincia</legend>
-					<ul>
-						<li>
-		                   	<input type="checkbox" id="madrid">
-		                   	<label class="label-checkbox" for="madrid">Madrid<span class="number">(34)</span></label>
-		                 </li>
-		                 <li>
-		                   	<input type="checkbox" id="barcelona">
-		                   	<label class="label-checkbox" for="barcelona">Barcelona<span class="number">(31)</span></label>
-		                 </li>
-		                 <li>
-		                   	<input type="checkbox" id="valencia">
-		                   	<label class="label-checkbox" for="valencia">Valencia<span class="number">(22)</span></label>
-		                 </li>
-					</ul>
-					<a href="#" class="closed-list" data-opened-list="Mostrar menos" data-closed-list="Mostrar todas"></a>
-			</fieldset>
-			<!-- provincia orden alfabetico -->
-			<fieldset>
-				<legend class="fieldset-title">Por provincia</legend>
-					<ul>
-						<li>
-		                   	<input type="checkbox" id="avila">
-		                   	<label class="label-checkbox" for="avila">A Coru�a<span class="number">(13)</span></label>
-		                 </li>
-		                 <li>
-		                   	<input type="checkbox" id="araba">
-		                   	<label class="label-checkbox" for="araba">�lava/Araba<span class="number">(34)</span></label>
-		                 </li>
-		                 <li>
-		                   	<input type="checkbox" id="albacete">
-		                   	<label class="label-checkbox" for="albacete">Albacete<span class="number">(2)</span></label>
-		                 </li>
-		                 <li>
-		                   	<input type="checkbox" id="alacant">
-		                   	<label class="label-checkbox" for="alacant">Alicante/Alacant<span class="number">(4)</span></label>
-		                 </li>
-		                 <li>
-		                   	<input type="checkbox" id="almeria">
-		                   	<label class="label-checkbox" for="almeria">Almer�a<span class="number">(17)</span></label>
-		                 </li>
-		                 <li>
-		                   	<input type="checkbox" id="asturias">
-		                   	<label class="label-checkbox" for="asturias">Asturias<span class="number">(8)</span></label>
-		                 </li>
-		                 <li>
-		                   	<input type="checkbox" id="barcelona2">
-		                   	<label class="label-checkbox" for="barcelona2">Barcelona<span class="number">(31)</span></label>
-		                 </li>
-						<li>
-		                   	<input type="checkbox" id="madrid2">
-		                   	<label class="label-checkbox" for="madrid2">Madrid<span class="number">(34)</span></label>
-		                 </li>
-		                 <li>
-		                   	<input type="checkbox" id="zaragoza">
-		                   	<label class="label-checkbox" for="zaragoza">Zaragoza<span class="number">(22)</span></label>
-		                 </li>
-					</ul>
-					<a href="#" class="opened-list" data-opened-list="Mostrar menos" data-closed-list="Mostrar todas"></a>
-			</fieldset>
-			<!-- provincia seleccionadas + orden alfabetico -->
-			<fieldset>
-				<legend class="fieldset-title">Por provincia</legend>
-					<ul class="filters-selected">
-						<li>
-		                   	<input type="checkbox" id="madrid3" checked="checked">
-		                   	<label class="label-checkbox" for="madrid3">Madrid<span class="number">(34)</span></label>
-		                 </li>
-		                 <li>
-		                   	<input type="checkbox" id="barcelona3" checked="checked">
-		                   	<label class="label-checkbox" for="barcelona3">Barcelona<span class="number">(31)</span></label>
-		                 </li>
-					</ul>
-					<hr />
-					<ul>
-						<li>
-		                   	<input type="checkbox" id="valencia3">
-		                   	<label class="label-checkbox" for="valencia3">Val�ncia<span class="number">(13)</span></label>
-		                 </li>
-		                 <li>
-		                   	<input type="checkbox" id="sevilla3">
-		                   	<label class="label-checkbox" for="sevilla3">Sevilla<span class="number">(34)</span></label>
-		                 </li>
-		                 <li>
-		                   	<input type="checkbox" id="gipuzkoa3">
-		                   	<label class="label-checkbox" for="gipuzkoa3">Gipuzkoa<span class="number">(2)</span></label>
-		                 </li>
-					</ul>
-					<a href="#" class="closed-list" data-opened-list="Mostrar menos" data-closed-list="Mostrar todas"></a>
-			</fieldset>
-			<!-- poblacion no disponible -->
-			<fieldset>
-				<legend class="fieldset-title">Por poblaci�n</legend>
-				<p>Selecciona una sola Provincia</p>
-			</fieldset>
-			<fieldset>
-				<legend class="fieldset-title">Estudios</legend>
-				<ul class="js-compacted-list">
-					<li>
-	                   	<input type="checkbox" id="eso">
-	                   	<label class="label-checkbox" for="eso">Educaci�n Secundaria Obligatoria<span class="number">(4197)</span></label>
-	                 </li>
+      <form method="post" class="form filters" action="#">
+        <fieldset>
+          <legend class="fieldset-title">Filtrar por palabra clave</legend>
+          <ul class="filter-keyword">
+            <li class="form-field-inline keyword">
+              <label class="hide-small-device hide-medium-device hide-large-device" for="keyword">Filtrar por palabra clave</label>
+              <input class="input-little" type="text" maxlength="200" id="keyword" placeholder="Jardinero en lorem ipsum whatever">
+            </li>
+            <li class="form-field-inline keyword-submit">
+              <button class="btn btn-default btn-form-inline" type="submit">Filtrar</button>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend class="fieldset-title">Executive</legend>
+          <ul>
+            <li>
+              <input type="checkbox" id="executive">
+              <label class="label-checkbox icon-executive" for="executive">Executive<span class="number">(540)</span></label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend class="fieldset-title">Filtrar por fecha</legend>
+          <ul>
+            <li class="disabled">
+              <input type="radio" id="fecha_a" name="filtro_fecha">
+              <label class="label-checkbox" for="fecha_a">Cualquier fecha</label>
+            </li>
+            <li>
+              <input type="radio" id="fecha_b" name="filtro_fecha">
+              <label class="label-checkbox" for="fecha_b">�ltimas <span class="marked">24 horas</span></label>
+            </li>
+            <li>
+              <input type="radio" id="fecha_c" name="filtro_fecha">
+              <label class="label-checkbox" for="fecha_c">�ltimos 7 d�as</label>
+            </li>
+            <li>
+              <input type="radio" id="fecha_d" name="filtro_fecha">
+              <label class="label-checkbox" for="fecha_d">�ltimos 15 d�as</label>
+            </li>
+          </ul>
+        </fieldset>
+        <!-- provincia solo las top -->
+        <fieldset>
+          <legend class="fieldset-title">Por provincia</legend>
+          <ul>
+            <li>
+              <input type="checkbox" id="madrid">
+              <label class="label-checkbox" for="madrid">Madrid<span class="number">(34)</span></label>
+            </li>
+            <li>
+              <input type="checkbox" id="barcelona">
+              <label class="label-checkbox" for="barcelona">Barcelona<span class="number">(31)</span></label>
+            </li>
+            <li>
+              <input type="checkbox" id="valencia">
+              <label class="label-checkbox" for="valencia">Valencia<span class="number">(22)</span></label>
+            </li>
+          </ul>
+          <a href="#" class="closed-list" data-opened-list="Mostrar menos" data-closed-list="Mostrar todas"></a>
+        </fieldset>
+        <!-- provincia orden alfabetico -->
+        <fieldset>
+          <legend class="fieldset-title">Por provincia</legend>
+          <ul>
+            <li>
+              <input type="checkbox" id="avila">
+              <label class="label-checkbox" for="avila">A Coru�a<span class="number">(13)</span></label>
+            </li>
+            <li>
+              <input type="checkbox" id="araba">
+              <label class="label-checkbox" for="araba">�lava/Araba<span class="number">(34)</span></label>
+            </li>
+            <li>
+              <input type="checkbox" id="albacete">
+              <label class="label-checkbox" for="albacete">Albacete<span class="number">(2)</span></label>
+            </li>
+            <li>
+              <input type="checkbox" id="alacant">
+              <label class="label-checkbox" for="alacant">Alicante/Alacant<span class="number">(4)</span></label>
+            </li>
+            <li>
+              <input type="checkbox" id="almeria">
+              <label class="label-checkbox" for="almeria">Almer�a<span class="number">(17)</span></label>
+            </li>
+            <li>
+              <input type="checkbox" id="asturias">
+              <label class="label-checkbox" for="asturias">Asturias<span class="number">(8)</span></label>
+            </li>
+            <li>
+              <input type="checkbox" id="barcelona2">
+              <label class="label-checkbox" for="barcelona2">Barcelona<span class="number">(31)</span></label>
+            </li>
+            <li>
+              <input type="checkbox" id="madrid2">
+              <label class="label-checkbox" for="madrid2">Madrid<span class="number">(34)</span></label>
+            </li>
+            <li>
+              <input type="checkbox" id="zaragoza">
+              <label class="label-checkbox" for="zaragoza">Zaragoza<span class="number">(22)</span></label>
+            </li>
+          </ul>
+          <a href="#" class="opened-list" data-opened-list="Mostrar menos" data-closed-list="Mostrar todas"></a>
+        </fieldset>
+        <!-- provincia seleccionadas + orden alfabetico -->
+        <fieldset>
+          <legend class="fieldset-title">Por provincia</legend>
+          <ul class="filters-selected">
+            <li>
+              <input type="checkbox" id="madrid3" checked="checked">
+              <label class="label-checkbox" for="madrid3">Madrid<span class="number">(34)</span></label>
+            </li>
+            <li>
+              <input type="checkbox" id="barcelona3" checked="checked">
+              <label class="label-checkbox" for="barcelona3">Barcelona<span class="number">(31)</span></label>
+            </li>
+          </ul>
+          <hr />
+          <ul>
+            <li>
+              <input type="checkbox" id="valencia3">
+              <label class="label-checkbox" for="valencia3">Val�ncia<span class="number">(13)</span></label>
+            </li>
+            <li>
+              <input type="checkbox" id="sevilla3">
+              <label class="label-checkbox" for="sevilla3">Sevilla<span class="number">(34)</span></label>
+            </li>
+            <li>
+              <input type="checkbox" id="gipuzkoa3">
+              <label class="label-checkbox" for="gipuzkoa3">Gipuzkoa<span class="number">(2)</span></label>
+            </li>
+          </ul>
+          <a href="#" class="closed-list" data-opened-list="Mostrar menos" data-closed-list="Mostrar todas"></a>
+        </fieldset>
+        <!-- poblacion no disponible -->
+        <fieldset>
+          <legend class="fieldset-title">Por poblaci�n</legend>
+          <p>Selecciona una sola Provincia</p>
+        </fieldset>
+        <fieldset>
+          <legend class="fieldset-title">Estudios</legend>
+          <ul class="js-compacted-list">
+            <li>
+              <input type="checkbox" id="eso">
+              <label class="label-checkbox" for="eso">Educaci�n Secundaria Obligatoria<span class="number">(4197)</span></label>
+            </li>
 
-					<li>
-	                   	<input type="checkbox" id="cfs">
-	                   	<label class="label-checkbox" for="cfs">Ciclo Formativo Superior<span class="number">(153)</span></label>
-	                 </li>
-					<li>
-	                   	<input type="checkbox" id="fp">
-	                   	<label class="label-checkbox" for="fp">Formaci�n Profesional Grado Medio<span class="number">(59)</label>
+            <li>
+              <input type="checkbox" id="cfs">
+              <label class="label-checkbox" for="cfs">Ciclo Formativo Superior<span class="number">(153)</span></label>
+            </li>
+            <li>
+              <input type="checkbox" id="fp">
+              <label class="label-checkbox" for="fp">Formaci�n Profesional Grado Medio<span class="number">(59)</label>
 	                 </li>
 					<li class="hide">
 	                   	<input type="checkbox" id="d">
@@ -203,147 +206,147 @@
 			<fieldset class="salary">
 				<legend class="fieldset-title">Por salario m�nimo</legend>
 				<span id="field" class="slider-value"></span>
-				<div id="salary"></div>
-				<ul class="range-group">
-					<li class="range">6K <span>(valor m�nimo)</span></li>
-					<li class="range">240k <span>(valor m�ximo)</span></li>
-				</ul>
-				<div class="btn-group btn-group-justified">
-					<div class="active">
-						<button type="button" class="btn btn-default">hora</a>
-					</div>
-					<div>
-						<button type="button" class="btn btn-default">mes</a>
-					</div>
-					<div>
-						<button type="button" class="btn btn-default">a�o</a>
-					</div>
-				</div>
-				<p>S�lo para ofertas con salario especificado</p>
-			</fieldset>
-			<fieldset class="experience">
-				<legend class="fieldset-title">Por experiencia m�nima</legend>
-				<div id="experience" class="js-ui-slider-pips"></div>
-			</fieldset>
-			<fieldset class="experience">
-				<legend class="fieldset-title">Por experiencia m�nima</legend>
-				<div id="experience-disabled" class="js-ui-slider-pips" disabled="disabled"></div>
-			</fieldset>
-			<div class="end-list">
-				<a data-closed-list="Ver m�s filtros" data-opened-list="Ver menos filtros" class="closed-list" href="#"></a>
-			</div>
-		</form>
+                <div id="salary"></div>
+                <ul class="range-group">
+                  <li class="range">6K <span>(valor m�nimo)</span></li>
+                  <li class="range">240k <span>(valor m�ximo)</span></li>
+                </ul>
+                <div class="btn-group btn-group-justified">
+                  <div class="active">
+                    <button type="button" class="btn btn-default">hora</a>
+                  </div>
+                  <div>
+                    <button type="button" class="btn btn-default">mes</a>
+                  </div>
+                  <div>
+                    <button type="button" class="btn btn-default">a�o</a>
+                  </div>
+                </div>
+                <p>S�lo para ofertas con salario especificado</p>
+        </fieldset>
+        <fieldset class="experience">
+          <legend class="fieldset-title">Por experiencia m�nima</legend>
+          <div id="experience" class="js-ui-slider-pips"></div>
+        </fieldset>
+        <fieldset class="experience">
+          <legend class="fieldset-title">Por experiencia m�nima</legend>
+          <div id="experience-disabled" class="js-ui-slider-pips" disabled="disabled"></div>
+        </fieldset>
+        <div class="end-list">
+          <a data-closed-list="Ver m�s filtros" data-opened-list="Ver menos filtros" class="closed-list" href="#"></a>
+        </div>
+      </form>
     </aside>
     <!--  /filters -->
-    </div>
+  </div>
 
-    <!--
+  <!--
 
     show / hide list items
 
    -->
 
-    <script>
+  <script>
+    var list = $('.js-compacted-list li')
+    var delay = 0;
 
-	    var list = $('.js-compacted-list li')
-		var delay = 0;
+    $('.closed-list').on('click', function() {
 
-		$('.closed-list').on('click', function(){
+      $.each(list, function() {
 
-			$.each(list, function(){
+        var $li = $(this);
 
-			        var $li = $(this);
+        $li.queue('fade', function(next) {
 
-			        $li.queue('fade', function(next) {
+          $li.delay(delay).fadeIn(600, next);
 
-			            $li.delay(delay).fadeIn(600, next);
+        });
 
-			  		});
+        $li.dequeue('fade');
 
-			        $li.dequeue('fade');
+        delay += 50;
+      });
 
-			        delay += 50;
-			});
+      return false;
 
-		    return false;
+    });
 
-		});
+    $('.opened-list').on('click', function() {
 
-		$('.opened-list').on('click', function(){
+      $.each(list, function() {
 
-			$.each(list, function(){
+        var $li = $(this);
 
-			        var $li = $(this);
+        $li.queue('fade', function(next) {
 
-			        $li.queue('fade', function(next) {
+          $li.delay(delay).fadeOut(400, next);
 
-			            $li.delay(delay).fadeOut(400, next);
+        });
 
-			  		});
+        $li.dequeue('fade');
 
-			        $li.dequeue('fade');
+        delay += 50;
+      });
 
-			        delay += 50;
-			});
+      return false;
 
-		    return false;
+    });
+  </script>
 
-		});
-	</script>
+  <!-- inicializador sliders -->
+  <script>
+    $("#salary").noUiSlider({
+      start: [50],
+      step: 1,
+      range: {
+        'min': [6],
+        'max': [240]
+      },
+      serialization: {
+        lower: [
+          $.Link({
+            target: $("#field")
+          })
+        ],
+        format: {
+          decimals: 3,
+          mark: '.'
+        }
+      }
+    });
 
-    <!-- inicializador sliders -->
-    <script>
-	    $("#salary").noUiSlider({
-			start: [ 50 ],
-			step: 1,
-			range: {
-				'min': [ 6 ],
-				'max': [ 240 ]
-			},
-			serialization: {
-				lower: [
-					$.Link({
-						target: $("#field")
-					})
-				],
-				format: {
-					decimals: 3,
-					mark: '.'
-				}
-			}
-		});
+    $("#experience,#experience-disabled").noUiSlider({
+      start: [2, 4],
+      step: 1,
+      connect: true,
+      range: {
+        'min': [0],
+        'max': [6]
+      }
+    });
+    // iniciar numeros
+    var months = ["0", "1", "2", "3", "4", "5", "+10"];
+    var $experience = $('.js-ui-slider-pips').slider({
+      min: 0,
+      max: 6
+    });
+    $experience.slider('pips', {
+      rest: "label",
+      labels: months
+    });
+  </script>
 
-		$("#experience,#experience-disabled").noUiSlider({
-			start: [ 2, 4 ],
-			step: 1,
-			connect: true,
-			range: {
-				'min': [ 0 ],
-				'max': [ 6 ]
-			}
-		});
-		// iniciar numeros
-		var months = ["0", "1", "2", "3", "4", "5", "+10"];
-		var $experience = $('.js-ui-slider-pips').slider({min:0,max:6});
-		$experience.slider('pips', {
-			rest: "label",
-			labels: months
-		} );
-	</script>
+  <!--  mostrar capa -->
 
-	<!--  mostrar capa -->
-
-	<script>
-
-			$('#open-layer').click(function(){
-			    $('.layer-hidden').addClass('move-up-layer').removeClass('layer-sm-hidden');
-			    $('.move-down-layer').addClass('move-up-layer').removeClass('move-down-layer');
-			});
+  <script>
+    $('#open-layer').click(function() {
+      $('.layer-hidden').addClass('move-up-layer').removeClass('layer-sm-hidden');
+      $('.move-down-layer').addClass('move-up-layer').removeClass('move-down-layer');
+    });
 
 
-			$('#close-layer').click(function(){
-			    $('.move-up-layer').addClass('move-down-layer').removeClass('move-up-layer');
-			});
-
-	</script>
+    $('#close-layer').click(function() {
+      $('.move-up-layer').addClass('move-down-layer').removeClass('move-up-layer');
+    });
+  </script>
 </body>

@@ -220,37 +220,19 @@ Styleguide #{$sgi-filter-slider-single}
 */
 
 /*
-Slider range group #disabled#
-
-```
-.slider-value
-.range-group
-.range
-```
+Slider range group
 
 Markup:
-<div class="form filters">
-	<fieldset class="salary">
-		<span id="field" class="slider-value"></span>
-		<div id="salary"></div>
-		<ul class="range-group">
-			<li class="range" id="minRange">6K <span>[(min value)]</span></li>
-			<li class="range" id="maxRange">+60k <span>[(max value)]</span></li>
-		</ul>
-		<div class="btn-group btn-group-justified">
-			<div id="mode_3">
-				<button type="button" id="periodo-salario-3" class="btn btn-default">[year]</button>
-			</div>
-			<div id="mode_2">
-				<button type="button" id="periodo-salario-2" class="btn btn-default">[month]</button>
-			</div>
-			<div id="mode_1">
-				<button type="button" id="periodo-salario-1" class="btn btn-default">[hour]</button>
-			</div>
-		</div>
-		<p>[Solo para ofertas con salario especificado]</p>
-	</fieldset>
-</div>
+<fieldset class="salary">
+	<legend class="fieldset-title">[Por salario mínimo]</legend>
+	<span id="field" class="slider-value"></span>
+	<div id="salary"></div>
+	<ul class="range-group">
+		<li class="range" id="minRange"></li>
+		<li class="range" id="maxRange">ddd</li>
+	</ul>
+</fieldset>
+
 
 Styleguide #{$sgi-filter-slider-group}
 */
