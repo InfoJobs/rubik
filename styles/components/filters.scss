@@ -223,10 +223,9 @@ Styleguide #{$sgi-filter-slider-single}
 Slider range group
 
 Markup:
-<fieldset class="salary">
-	<legend class="fieldset-title">[Por salario mínimo]</legend>
-	<span id="field" class="slider-value"></span>
-	<div id="salary"></div>
+<fieldset>
+	<legend class="fieldset-title">Por edad</legend>
+	<div id="sliderAge"></div>
 	<ul class="range-group">
 		<li class="range" id="minRange"></li>
 		<li class="range" id="maxRange">ddd</li>
@@ -264,6 +263,7 @@ Styleguide #{$sgi-filter-slider-group}
 
 .slider-value {
 	display: block;
+  font-size: $small-font-size;
 	margin-bottom: 5px;
 }
 
