@@ -5,7 +5,7 @@
 	var AGE_MIN = 16;
 	var AGE_MAX = 65;
 
-	function initSliderSalary(minValueSalary, modeSlider, init){
+	function initSliderSalary(minValue,maxValue, modeSlider, init){
 		if(typeof modeSlider=='undefined' || modeSlider==0){modeSlider = MODE_YEAR;}
 		mode = modeSlider;
 		var idDiv = $("#mode_"+mode);
@@ -17,8 +17,9 @@
 			idDiv.toggleClass("active");
 
 			 $("#salary").noUiSlider({
-					start: [ minValueSalary ],
+					start: [ minValue, maxValue],
 					step: 1,
+          connect: true,
 					range: {
 						'min': [ minRange ],
 						'max': [ maxRange ]
@@ -29,14 +30,18 @@
 									target: $("#minRange")
 								})
 						],
+						upper: [
+								$.Link({
+									target: $("#maxRange")
+								})
+						],
 						format: {
 							decimals: decimals
-							//mark: '.'
 						}
 					}
 				}, init);
 
-			$("#salary").val(minValueSalary,true);
+			$("#salary").val(minValue,true);
 			$("#minRange").html(minRange);
 			$("#maxRange").html(maxRange);
 		}

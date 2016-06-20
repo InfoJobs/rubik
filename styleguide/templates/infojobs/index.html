@@ -318,12 +318,12 @@
     <script type="text/javascript" src="js/cFilterEdad.js" th:remove="all"></script>
 			<script type="text/javascript">
 			/*<![CDATA[*/
-			   	var minValueSalary = /*[[${cData.minValue}]]*/ '0';
-			   	var mode = /*[[${cData.mode}]]*/ '0';
+			   	var minValue = '0';
+			   	var maxValue = '65';
+			   	var mode = '0';
 
 				$(function() {
-					initSliderSalary(minValueSalary, mode, false);
-					addSalaryEvent();
+					initSliderSalary(minValue,maxValue, mode, false);
 				});
 			/*]]>*/
 		</script>
