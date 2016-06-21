@@ -12,9 +12,9 @@ function testimonials(){
 
   var aTestimonialsBody = document.querySelectorAll('.testimonials-body');
   var nTestimonialsBody = 0;
-
+  aHeight = [];
+  
   [].forEach.call(aTestimonialsBody, function(content) {
-    content.style.padding = '0 5%';
     aHeight.push(content.clientHeight);
 
     if(content.clientHeight >= testimonialsBodyHeight) {
@@ -23,8 +23,6 @@ function testimonials(){
 
     nTestimonialsBody = nTestimonialsBody + 1;
   });
-
-  console.log(aHeight);
 
   var ul = document.createElement("ul");
   var div = document.createElement("div");
@@ -78,7 +76,6 @@ function testimonials(){
   };
 
   var interval = setInterval(automaticTestimonials,4000);
-
   if(document.querySelector('.testimonials').clientWidth < 769){
     document.querySelector('.testimonials').style.height = 100 + '%';
     clearInterval(interval);
@@ -102,70 +99,16 @@ function showTestimonialsBody(item){
   nCurrentTestimonialsBody = item;
   if(document.querySelector('.testimonials').clientWidth < 769){
     document.querySelector('.testimonials-body-container').style.height = aHeight[item] + 'px';
-    aTestimonialsBody[item].style.padding = '0 5%';
+    document.querySelector('.testimonials-body-container').style.alignItems = 'flex-start';
+    // Code for Safari 7.0+
+    document.querySelector('.testimonials-body-container').style.WebkitAlignItems = "flex-start";
+
+    document.querySelector('.js-testimonials-pagination').style.paddingBottom = '10px';
+    document.querySelector('.js-testimonials-pagination').style.marginBottom = '10px';
+    document.querySelector('.js-testimonials-pagination').style.borderBottom = '1px solid #e2e5e6';
+
   }
 }
 
 window.addEventListener('load', testimonials);
-
-// var xDown = null;
-// var yDown = null;
-//
-//   var iTouch = 0;
-//
-// function handleTouchStart(evt) {
-//     xDown = evt.touches[0].clientX;
-//     yDown = evt.touches[0].clientY;
-// };
-//
-// function handleTouchMove(evt) {
-//     if ( ! xDown || ! yDown ) {
-//         return;
-//     }
-//
-//     var xUp = evt.touches[0].clientX;
-//     var yUp = evt.touches[0].clientY;
-//
-//     var xDiff = xDown - xUp;
-//     var yDiff = yDown - yUp;
-//
-//     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-//         if ( xDiff > 0 ) {
-//             var aTestimonialsBody = document.querySelectorAll('.testimonials-body');
-//
-//             if (iTouch < aTestimonialsBody.length-1) {
-//               aTestimonialsBody[iTouch].classList.add('fade-out','hide');
-//               aTestimonialsBody[iTouch].classList.remove('fade-in-left');
-//
-//               aTestimonialsBody[iTouch+1].classList.remove('fade-out','hide');
-//               aTestimonialsBody[iTouch+1].classList.add('fade-in-left');
-//
-//               iTouch = iTouch+1;
-//             }
-//         } else {
-//             var aTestimonialsBody = document.querySelectorAll('.testimonials-body');
-//
-//             if (iTouch < aTestimonialsBody.length && iTouch > 0) {
-//
-//               aTestimonialsBody[iTouch].classList.add('fade-out','hide');
-//               aTestimonialsBody[iTouch].classList.remove('fade-in-right');
-//
-//               aTestimonialsBody[iTouch-1].classList.remove('fade-out','hide');
-//               aTestimonialsBody[iTouch-1].classList.add('fade-in-right');
-//
-//               iTouch = iTouch-1;
-//             }
-//         }
-//         var aPagination = document.querySelectorAll('.js-testimonials-pagination li');
-//         aPagination[nCurrentTestimonialsBody].classList.remove('active');
-//         aPagination[iTouch].classList.add('active');
-//
-//         nCurrentTestimonialsBody = iTouch;
-//     }
-//     /* reset values */
-//     xDown = null;
-//     yDown = null;
-// };
-
-// document.addEventListener('touchstart', handleTouchStart, false);
-// document.addEventListener('touchmove', handleTouchMove, false);
+window.addEventListener('resize', testimonials);

@@ -6,8 +6,13 @@
   @include flex-direction(column);
   overflow: hidden;
 
-  &-body {
-    padding: 0 25%;
+  &-header {
+    border-bottom: 1px solid $darkest-shiro;
+
+    h1 {
+      margin-bottom: 20px;
+      padding-bottom: 0;
+    }
   }
 
   &-body-container {
@@ -18,6 +23,12 @@
 
     .testimonials-body {
       flex: 1 0 100%;
+      padding-top: 20px;
+
+      .testimonials-quote {
+        width: 70%;
+        margin: 0 auto;
+      }
     }
   }
 
