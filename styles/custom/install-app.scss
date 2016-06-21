@@ -40,14 +40,3 @@
     margin: 20px 0;
   }
 }
-
-.install-app-link {
-  margin-top: 40px;
-
-  @media only screen
-  and (max-width: 640px)
-  and (orientation: landscape) {
-    margin-top: 20px;
-  }
-
-}
