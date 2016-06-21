@@ -3,40 +3,51 @@
 \*------------------------------------*/
 
 .install-app-wrapper {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(center);
   position: absolute;
   width: 100%;
-}
-.install-app-body {
-  max-width: 320px;
-  margin: 0 auto;
-  padding-top: 20px;
-
-	@include mediaquery (360px) {
-    padding-top: 150px;
-	}
+  -webkit-justify-content: center;
+          justify-content: center;
 
   @media only screen
   and (max-width: 640px)
   and (orientation: landscape) {
-    padding-top: 20px;
+    display: block;
   }
 
-  a {
-    text-transform: uppercase;
-  }
+}
+.install-app-body {
+  //@include flex-direction(column);
+  max-width: 320px;
+  margin: 0 auto;
 }
 .install-app-logo {
   width: 120px;
+  margin: 0 auto 0 ;
 }
 
 .install-app-heading {
-  margin: 30px 0 100px;
+  margin: 0;
   font-size: $xxlarge-font-size;
   line-height: $xxlarge-line-height;
+}
+.install-app-footer {
+  position: absolute;
+  padding-bottom: 40px;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
   @media only screen
   and (max-width: 640px)
   and (orientation: landscape) {
-    margin: 20px 0;
+    position: static;
+  }
+
+
+  a {
+    text-transform: uppercase;
   }
 }
