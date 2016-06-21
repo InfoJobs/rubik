@@ -1,0 +1,53 @@
+/*------------------------------------*\
+    $INSTALL APP
+\*------------------------------------*/
+
+.install-app-wrapper {
+  position: absolute;
+  width: 100%;
+}
+.install-app-body {
+  max-width: 320px;
+  margin: 0 auto;
+  padding-top: 20px;
+
+	@include mediaquery (360px) {
+    padding-top: 150px;
+	}
+
+  @media only screen
+  and (max-width: 640px)
+  and (orientation: landscape) {
+    padding-top: 20px;
+  }
+
+  a {
+    text-transform: uppercase;
+  }
+}
+.install-app-logo {
+  width: 120px;
+}
+
+.install-app-heading {
+  margin: 30px 0 100px;
+  font-size: $xxlarge-font-size;
+  line-height: $xxlarge-line-height;
+
+  @media only screen
+  and (max-width: 640px)
+  and (orientation: landscape) {
+    margin: 20px 0;
+  }
+}
+
+.install-app-link {
+  margin-top: 40px;
+
+  @media only screen
+  and (max-width: 640px)
+  and (orientation: landscape) {
+    margin-top: 20px;
+  }
+
+}
