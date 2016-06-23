@@ -9,59 +9,106 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <!-- code discovery -->
-    <div class="install-app-wrapper panel-canvas text-center">
-        <div class="install-app-body inner">
-          <img class="install-app-logo margin-bottom" src="//media.infojobs.net/appgrade/icons/ico-ij-android.png" />
-          <h1 class="install-app-heading">M&aacute;s f&aacute;cil y r&aacute;pido con la App</h1>
-        </div>
-        <div class="install-app-footer">
-          <div class="margin-bottom">
-            <a href="#" class="js-close-interstitial btn btn-primary btn-medium">Abrir la App</a>
-          </div>
-          <a href="#" class="js-close-interstitial small">Continuar en la web</a>
-        </div>
-  	</div>
-  <!-- /code discovery -->
-  </div>
-
-    <script>
-      (function(){
-
-        var elWrapper = document.querySelector('.wrapper');
-        var elInterstitial = document.querySelector('.install-app-wrapper');
-        var isOpen = true;
-        function heightViewport(){
-          if(isOpen === true) {
-            elWrapper.style.overflow = 'hidden';
-            elWrapper.style.height = window.innerHeight +'px';
-          }
-        }
-
-        function installApp() {
-          var elLinkClose = document.querySelectorAll('.js-close-interstitial');
-
-          [].forEach.call( elLinkClose , function( target ){
-            target.onclick = function() {
-              heightViewport();
-              elInterstitial.style.display = 'none';
-              elWrapper.removeAttribute('style');
-              isOpen = false;
-            }
-
-          });
-
-        };
-
-        window.addEventListener('load', heightViewport);
-        window.addEventListener('load', installApp);
-        window.addEventListener('resize', heightViewport);
+  <div class="wrapper"></div>
 
 
+    <style>
+ /*------------------------------------*    $INSTALL APP
+ \*------------------------------------*/
+ .install-app-wrapper {
+   display: -webkit-box;
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+   -webkit-flex-direction: column;
+   -ms-flex-direction: column;
+   flex-direction: column;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   -webkit-align-items: center;
+   -moz-align-items: center;
+   align-items: center;
+   position: absolute;
+   overflow: hidden;
+   overflow-y: auto;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 999999;
+   width: 100%;
+   height: 100%;
+   -webkit-justify-content: center;
+   justify-content: center; }
+   @media only screen and (max-width: 640px) and (orientation: landscape) {
+     .install-app-wrapper {
+       display: block; } }
 
+ .install-app-body {
+   max-width: 320px;
+   margin: -40px auto 0; }
+   @media only screen and (max-width: 640px) and (orientation: landscape) {
+     .install-app-body {
+       margin-top: 0; } }
 
-      })();
-    </script>
+ .install-app-logo {
+   width: 120px;
+   margin: 0 auto 0; }
+
+ .install-app-heading {
+   margin: 0;
+   font-size: 30px;
+   line-height: 33px; }
+
+ .install-app-footer {
+   position: absolute;
+   padding-bottom: 40px;
+   bottom: 0;
+   left: 0;
+   right: 0; }
+   @media only screen and (max-width: 640px) and (orientation: landscape) {
+     .install-app-footer {
+       position: static; } }
+ </style>
+   <script>
+     (function(){
+
+       var elWrapper = document.querySelector('.wrapper');
+
+       var isOpen = true;
+       function heightViewport(){
+         if(isOpen === true) {
+           elWrapper.style.overflow = 'hidden';
+           elWrapper.style.height = window.innerHeight +'px';
+         }
+       }
+
+       function installApp() {
+         var elDiv =  '<div class="install-app-wrapper panel-canvas text-center"><div class="install-app-body inner"><img class="install-app-logo margin-bottom" src="//media.infojobs.net/appgrade/icons/ico-ij-android.png"><h1 class="install-app-heading">Más fácil y rápido con la App</h1></div><div class="install-app-footer"><div class="margin-bottom"><a href="#" class="js-close-interstitial btn btn-primary btn-medium">Abrir la App</a></div><a href="#" class="js-close-interstitial small">Continuar en la web</a</div></div>';
+         elWrapper.innerHTML = elDiv + elWrapper.innerHTML;
+
+         var elInterstitial = document.querySelector('.install-app-wrapper');
+
+         var elLinkClose = document.querySelectorAll('.js-close-interstitial');
+             heightViewport();
+
+         [].forEach.call( elLinkClose , function( target ){
+           target.onclick = function() {
+             elInterstitial.style.display = 'none';
+             elWrapper.removeAttribute('style');
+             isOpen = false;
+           }
+
+         });
+
+       };
+
+       window.addEventListener('load', heightViewport);
+       window.addEventListener('load', installApp);
+       window.addEventListener('resize', heightViewport);
+     })();
+   </script>
 </body>
 </html>
