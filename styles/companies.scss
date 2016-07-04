@@ -8,6 +8,9 @@ $stylesheet: 'companies';
 // components
 @import 'components/components';
 
+//custom
+@import 'custom/custom';
+
 // specifics components
 @import 'components/header-co';
 @import 'components/value-proposition-co';
