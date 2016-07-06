@@ -313,6 +313,20 @@
 
 
     <script type="text/javascript" src="js/form-switch-radio.js" th:remove="all"></script>
+    <script type="text/javascript" src="js/nouislider.min.js" th:remove="all"></script>
+    <script type="text/javascript" src="js/jquery-ui-slider-pips.js" th:remove="all"></script>
+    <script type="text/javascript" src="js/cFilterEdad.js" th:remove="all"></script>
+			<script type="text/javascript">
+			/*<![CDATA[*/
+			   	var minValue = '0';
+			   	var maxValue = '65';
+			   	var mode = '0';
+
+				$(function() {
+					initSliderAge(minValue,maxValue, mode, false);
+				});
+			/*]]>*/
+		</script>
 
 
 </body>

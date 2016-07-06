@@ -1,20 +1,20 @@
 /*! jQuery-ui-Slider-Pips - v1.5.2 - 2014-04-28
 * Copyright (c) 2014 ; Licensed  */
-    
+
     // PIPS
 
     (function($) {
-        
+
         var extensionMethods = {
-            
+
             pips: function( settings ) {
-                
+
                 var slider = this,
                     $pip,
                     pips = ( slider.options.max - slider.options.min ) / slider.options.step;
 
                 var options = {
-                    
+
                     first: "label",
                     // "label", "pip", false
 
@@ -41,9 +41,9 @@
                     }
                     // function
                     // must return a value to display in the pip labels
-                    
+
                 };
-                
+
                 $.extend( options, settings );
 
                 // get rid of all pips that might already exist.
@@ -89,7 +89,7 @@
                 }
 
                 var $collection = $();
-                 
+
                 // for every stop in the slider; we create a pip.
                 for( var i=0; i<=pips; i++ ) {
 
@@ -105,17 +105,17 @@
                             label = labelValue;
                         }
 
-                        if( typeof(label) === "undefined" ) { 
-                            label = ""; 
+                        if( typeof(label) === "undefined" ) {
+                            label = "";
                         }
-                        
+
                         // hold a span element for the pip
-                        var pipHtml = 
+                        var pipHtml =
                             "<span class=\"ui-slider-pip ui-slider-pip-"+labelValue+"\">"+
                                 "<span class=\"ui-slider-line\"></span>"+
                                 "<span class=\"ui-slider-label\">"+ options.formatLabel(label) +"</span>"+
                             "</span>";
-                        
+
                         $pip = $(pipHtml).data("value", labelValue );
 
                         // first pip
@@ -124,39 +124,39 @@
                             $pip.addClass("ui-slider-pip-first");
                             if( "label" === options.first ) { $pip.addClass("ui-slider-pip-label"); }
                             if( false === options.first ) { $pip.addClass("ui-slider-pip-hide"); }
-                        
+
                         // last pip
                         } else if ( pips === i ) {
 
                             $pip.addClass("ui-slider-pip-last");
                             if( "label" === options.last ) { $pip.addClass("ui-slider-pip-label"); }
                             if( false === options.last ) { $pip.addClass("ui-slider-pip-hide"); }
-                        
+
                         // all other pips
                         } else {
 
                             if( "label" === options.rest ) { $pip.addClass("ui-slider-pip-label"); }
                             if( false === options.rest ) { $pip.addClass("ui-slider-pip-hide"); }
-                        
+
                         }
-                        
+
                         // if it's a horizontal slider we'll set the left offset,
                         // and the top if it's vertical.
                         if( slider.options.orientation === "horizontal" ) {
-                            
+
                             $pip.css({ left: "" + (100/pips)*i + "%"  });
-                        
+
                         } else {
-                            
+
                             $pip.css({ bottom: "" + (100/pips)*i + "%"  });
-                        
+
                         }
 
                         // add this current pip to the collection
                         $collection = $collection.add( $pip );
 
                     }
-                
+
                 }
 
                 // add events for clicking labels.. basically we dont
@@ -169,17 +169,17 @@
 
                 // append the collection of pips.
                 slider.element.append( $collection );
-                
+
             }
-            
-            
+
+
         };
-    
+
         $.extend(true, $["ui"]["slider"].prototype, extensionMethods);
-    
+
     })(jQuery);
-    
-    
+
+
 
 
 
@@ -189,13 +189,13 @@
 
 
     // FLOATS
-        
+
     (function($) {
 
         var extensionMethods = {
 
             float: function( settings ) {
-                
+
                 var slider = this,
                     $tip,
                     vals = [],
@@ -205,16 +205,16 @@
 
                     handle: true,
                     // false
-                    
+
                     pips: false,
                     // true
 
                     labels: false,
                     // array
-                    
+
                     prefix: "",
                     // "", string
-                    
+
                     suffix: "",
                     // "", string
 
@@ -246,13 +246,13 @@
                     .addClass("ui-slider-float")
                     .find(".ui-slider-tip, .ui-slider-tip-label")
                     .remove();
-        
+
                 // apply handle tip if settings allows.
                 if( options.handle ) {
-                    
+
                     // if this is a range slider
                     if( slider.options.values ) {
-                        
+
                         if( options.labels ) {
 
                             vals[0] = options.labels[ slider.options.values[0] - slider.options.min ];
@@ -299,38 +299,38 @@
 
                         // create a tip element
                         $tip = $("<span class=\"ui-slider-tip\">"+ options.formatLabel(val) +"</span>");
-                    
+
                     }
-                    
+
 
                     // now we append it to all the handles
                     slider.element.find(".ui-slider-handle").each( function(k,v) {
                         $(v).append($tip[k]);
                     });
-                
+
                 }
-                    
-                    
+
+
                 if( options.pips ) {
-                        
+
                     // if this slider also has pip-labels, we"ll make those into tips, too; by cloning and changing class.
                     slider.element.find(".ui-slider-label").each(function(k,v) {
                         var $e = $(v).clone().removeClass("ui-slider-label").addClass("ui-slider-tip-label");
                         $e.insertAfter($(v));
                     });
-                    
+
                 }
 
 
-                if( options.event !== "slide" && 
-                    options.event !== "slidechange" && 
-                    options.event !== "slide slidechange" && 
+                if( options.event !== "slide" &&
+                    options.event !== "slidechange" &&
+                    options.event !== "slide slidechange" &&
                     options.event !== "slidechange slide" ) {
 
                     options.event = "slidechange slide";
-                
+
                 }
-                
+
                 // when slider changes, update handle tip label.
                 slider.element.on( options.event , function( e, ui ) {
 
@@ -348,11 +348,11 @@
                         val = ui.value;
 
                     }
-                    
+
                     $(ui.handle).find(".ui-slider-tip").html( options.formatLabel(val) );
 
                 });
-            
+
 
             }
 
