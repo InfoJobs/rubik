@@ -728,17 +728,97 @@ input[type="radio"] + label,
 }
 
 .appearance-btn {
-<<<<<<< HEAD
-    label {
-        	@include btn;
-        	color: $mid-script;
-        	border: 1px solid #c7c7c7;  //TODO: pending a crossbrowser solution
-			font-size: $base-font-size;
+	width: 50%;
+	margin-right: 0;
 
-        	@at-root button#{&} {
-				font-size: $base-font-size;
-		    }
-        }
+	@at-root .layer-stickers #{&} {
+    width: auto;
+  }
+
+	@include mediaquery ($bp-tablet) {
+		width: auto;
+	}
+
+	input[type="radio"] {
+
+		+ label {
+      @include btn;
+	    @include btn-medium;
+	    height: 44px;
+      line-height: 42px;
+	    display: block;
+	    color: $color-primary;
+	    border: 1px solid $color-primary;
+			font-size: $small-font-size;
+			text-align: left;
+			margin-right: 10px;
+
+      @at-root button#{&} {
+        font-size: $base-font-size;
+		  }
+
+	    &::before {
+        content: " ";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-right: 5px;
+        border: 1px solid $color-primary;
+        border-radius: 5px;
+        background-color: $dark-shiro;
+      }
+
+    }
+    &:checked {
+  		+ label {
+  			&::before {
+  				border: 1px solid $shiro;
+  				background-color: $color-primary;
+  			}
+
+		  }
+	  }
+  }
+
+
+}
+
+.appearance-btn:nth-child(2n) input[type="radio"] + label {
+	margin-right: 0;
+
+	@include mediaquery ($bp-tablet) {
+		margin-right: 10px;
+	}
+}
+
+.sticker.appearance-sticker {
+	height: 34px;
+	line-height: 32px;
+	padding: 5px 15px;
+	border: 1px solid $color-primary;
+	border-radius: 21px;
+
+  &[class*="iconfont-"] {
+	  padding: 5px 13px;
+  }
+	&:hover,
+	&:active {
+		background-color: $dark-shiro;
+	}
+
+	@include mediaquery ($bp-desktop) {
+		&:hover {
+			background-color: #BBC9D7;
+
+			&::before {
+				color: #2b3d4e;
+			}
+		}
+	}
+
+	&::before {
+		color: $color-primary;
+	}
 }
 
 /*
