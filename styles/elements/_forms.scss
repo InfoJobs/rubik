@@ -743,7 +743,6 @@ input[type="radio"] + label,
 
 		+ label {
       @include btn;
-	    @include btn-medium;
 	    height: 44px;
       line-height: 42px;
 	    display: block;
@@ -779,7 +778,6 @@ input[type="radio"] + label,
 		  }
 	  }
   }
-
 
 }
 
