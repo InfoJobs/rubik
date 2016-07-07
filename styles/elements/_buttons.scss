@@ -9,6 +9,11 @@ Styleguide #{$sgi-buttons}
 /*------------------------------------*\
     $BUTTONS
 \*------------------------------------*/
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
 @mixin btn {
     /*@include transition;*/
     font-family: $base-font-family-semi-bold;
@@ -24,10 +29,8 @@ Styleguide #{$sgi-buttons}
     text-shadow: none;
     text-transform: uppercase;
     -webkit-appearance: none;
+    vertical-align: bottom;
     @include transition-button;
-
-    &:hover {
-    }
 
     img {
       width: 16px;
