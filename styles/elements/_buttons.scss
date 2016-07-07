@@ -232,7 +232,7 @@ Styleguide #{$sgi-buttons-size}
     font-size: $xsmall-font-size;
     padding: 0 10px;
     height: 30px;
-    line-height: 28px;
+    line-height: 32px;
 
     img {
       width: 12px;
@@ -245,7 +245,7 @@ Styleguide #{$sgi-buttons-size}
     font-size: $small-font-size;
     padding: 0 20px;
     height: 40px;
-    line-height: 38px;
+    line-height: 42px;
 
     @at-root #{&}[class*="iconfont-"]::before { ////DEPRECATED
         font-size: $medium-font-size;
@@ -256,7 +256,7 @@ Styleguide #{$sgi-buttons-size}
     font-size: $base-font-size;
     padding: 0 30px;
     height: 50px;
-    line-height: 48px;
+    line-height: 52px;
 
     @at-root #{&}[class*="iconfont-"]::before { //DEPRECATED
         font-size: 22px;
