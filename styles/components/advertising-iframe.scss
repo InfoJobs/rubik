@@ -1,0 +1,15 @@
+/*------------------------------------*\
+    $advertising iframe
+\*------------------------------------*/
+
+.advertising-iframe {
+   height: 0;
+   width: 100%;
+   opacity: 0;
+   -o-transition: all 400ms ease-in-out;
+   -moz-transition: all 400ms ease-in-out;
+   -webkit-transition: all 400ms ease-in-out;
+   transition: all 400ms ease-in-out;
+   border: 0;
+   overflow: hidden;
+}
