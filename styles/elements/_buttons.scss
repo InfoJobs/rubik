@@ -486,15 +486,6 @@ Styleguide #{$sgi-button-group-structure}
   	.btn:hover {
   		border-right-width: 0;
   		width: 100%;
-  		background-color: $shiro;
-
-  		&:hover:not([disabled]) {
-  			background-color: $button-secondary;
-  		}
-
-  		&.btn-disabled:hover {
-  			background: $shiro;
-  		}
   	}
 
   	div:last-of-type .btn{
@@ -503,7 +494,6 @@ Styleguide #{$sgi-button-group-structure}
 
   	.active .btn,
   	.active .btn.btn-disabled {
-  	    background-color: $button-secondary;
   	    cursor: default;
   	}
 
