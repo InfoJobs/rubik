@@ -20,15 +20,16 @@ $(function() {
 
 	}
 
-	function bgBlur() {
-
-		$('.avatar').backgroundBlur({
-		    imageURL : srcAvatar,
-		    blurAmount : 50,
-		    imageClass : 'bg-blur'
-		});
-
-	}
+  //commented because is not in empleo, but maybe will be in the future
+	// function bgBlur() {
+  //
+	// 	$('.avatar').backgroundBlur({
+	// 	    imageURL : srcAvatar,
+	// 	    blurAmount : 50,
+	// 	    imageClass : 'bg-blur'
+	// 	});
+  //
+	// }
 
   $('.js-open-menu').click(function(){
 
@@ -69,7 +70,8 @@ $(function() {
       buttonAccess.addClass('btn');
     }
 
-		bgBlur();
+    //commented because is not in empleo, but maybe will be in the future
+		//bgBlur();
 
 	}
 
