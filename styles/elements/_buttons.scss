@@ -29,7 +29,6 @@ button::-moz-focus-inner {
     text-shadow: none;
     text-transform: uppercase;
     -webkit-appearance: none;
-    vertical-align: bottom;
     @include transition-button;
 
     img {
