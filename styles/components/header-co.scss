@@ -245,6 +245,7 @@ a.nav-bar-toggle {
 	.btn-default {
 		color: $dark-silk;
     background-color: $sunrise-blue;
+    border-color: transparent;
 
 		&:hover {
 	    background-color: $midnight-blue;
