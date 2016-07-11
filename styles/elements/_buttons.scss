@@ -329,8 +329,6 @@ Styleguide #{$sgi-buttons-display}
     @at-root button#{&} {
     	width: 100%;
       height: auto;
-      padding: 7px 10px 8px 10px;
-      font-size: 16px;
     }
 
     &.text-left { //already defined in tools.scss, but overwritten by btn{...text-align: center;...}
