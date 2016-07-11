@@ -58,7 +58,7 @@ button::-moz-focus-inner {
     + [class*="btn-"]:not(.btn-group-justified) {
         margin-left: 5px;
     }
-    + .btn:not(.btn-group-justified) {
+    + [class*="btn-"]:not(.btn-group-justified) {
         margin-left: 5px;
     }
     + .btn-group-justified {
@@ -492,22 +492,25 @@ Styleguide #{$sgi-button-group-structure}
   		border-right-width: 1px;
   	}
 
-  	.active .btn,
-  	.active .btn.btn-disabled {
+  	.active [class^="btn"],
+  	.active [class^="btn"].btn-disabled {
   	    cursor: default;
+  	    color: $shiro;
+  	    background-color: $color-primary;
   	}
 
     &.btn-group-expanded {
 		div {
 			padding-left: 10px;
 
-			.btn {
+			[class^="btn-"] {
 				border-right-width: 1px;
 
 				&.disabled:hover {
-					background-color: white;
-					cursor: default;
 					border-right-width: 1px;
+					color: $shiro;
+					background-color: $color-primary;
+					cursor: default;
 				}
 			}
 		}
