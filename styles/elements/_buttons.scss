@@ -52,7 +52,7 @@ button::-moz-focus-inner {
         }
     }
 
-    + [class*="btn"]]:not(.btn-group-justified) {
+    + [class*="btn"]:not(.btn-group-justified) {
         margin-left: 5px;
     }
     + [class*="btn"]:not(.btn-group-justified) {
@@ -459,21 +459,21 @@ Styleguide #{$sgi-button-group-structure}
     & > div {
         display: table-cell;
 
-        &:first-child > .btn {
+        &:first-child > [class*="btn"]  {
             border-radius: 3px 0 0 3px;
         }
 
-        &:last-child > .btn {
+        &:last-child > [class*="btn"] {
             border-radius: 0 3px 3px 0;
         }
 
-        & > .btn {
+        & > [class*="btn"]  {
             border-radius: 0;
         }
     }
 
-    .btn {
-        border-color: $katana-slash;
+    [class*="btn"]  {
+        border-color: $color-primary;
         border-width: 1px;
         border-style: solid;
     }
@@ -482,13 +482,13 @@ Styleguide #{$sgi-button-group-structure}
   		margin: 0;
   	}
 
-  	.btn,
-  	.btn:hover {
+  	[class*="btn"] ,
+  	[class*="btn"] :hover {
   		border-right-width: 0;
   		width: 100%;
   	}
 
-  	div:last-of-type .btn{
+  	div:last-of-type [class*="btn"] {
   		border-right-width: 1px;
   	}
 
@@ -496,7 +496,7 @@ Styleguide #{$sgi-button-group-structure}
   	.active [class*="btn"].btn-disabled {
   	    cursor: default;
   	    color: $shiro;
-  	    background-color: $color-primary;
+  	    background-color: shade($color-primary,20%);
   	}
 
     &.btn-group-expanded {
@@ -560,7 +560,7 @@ Styleguide #{$sgi-button-group-icon}
 .btn-group-justified { //TODO: same properties than .btn-form-inline class
      width: 100%;
 
-    .btn {
+    [class*="btn"]  {
         width: 100%;
     }
 }
