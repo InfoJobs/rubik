@@ -91,7 +91,11 @@ Styleguide #{$sgi-iconsList}
 	}
 
 	@at-root .btn-default#{&} {
-		color: $mid-script;
+		color: $color-primary;
+	}
+
+	@at-root .btn-default:hover#{&} {
+		color: $shiro;
 	}
 
 
@@ -99,8 +103,13 @@ Styleguide #{$sgi-iconsList}
 		margin-right: 0;
 	}
 
-  @at-root .btn-group [class*="btn"]:not(.disabled)#{&} {
-		color: $dark-silk;
+	@at-root .btn-group [class*="btn"]:not(.disabled)#{&} {
+		margin-right: 0;
+		color: $color-primary;
+	}
+
+	@at-root .btn-group [class*="btn"]:not(.disabled):hover#{&} {
+		color: $shiro;
 	}
 }
 

@@ -490,6 +490,8 @@ Styleguide #{$sgi-button-group-structure}
 
   	div:last-of-type [class*="btn"] {
   		border-right-width: 1px;
+  		border-top-right-radius: 2px;
+  		border-bottom-right-radius: 2px;
   	}
 
   	.active [class*="btn"],
