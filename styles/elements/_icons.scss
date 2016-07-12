@@ -98,7 +98,6 @@ Styleguide #{$sgi-iconsList}
 		color: $shiro;
 	}
 
-
 	@at-root .btn-group ^="btn-"]#{&} {
 		margin-right: 0;
 	}
@@ -109,6 +108,10 @@ Styleguide #{$sgi-iconsList}
 	}
 
 	@at-root .btn-group [class*="btn"]:not(.disabled):hover#{&} {
+		color: $shiro;
+	}
+
+	@at-root .btn-group [class*="btn"]:not(.disabled):active#{&} {
 		color: $shiro;
 	}
 }
