@@ -97,15 +97,15 @@ Styleguide #{$sgi-board-variants}
 		margin-top: 20px;
 	}
 
-	.description + [class^="btn-"] {
+	.description + [class*="btn"] {
 		margin-top: 20px;
 	}
 
-	[class^="btn-"] {
+	[class*="btn"] {
 		left: $padding;
 	}
 
-  [class^="btn-"] + p {
+  [class*="btn"] + p {
 		margin-top: 10px;
 	}
 

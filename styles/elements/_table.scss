@@ -133,7 +133,7 @@
 				display: block;
 			}
 
-			[class^="btn-"] {
+			[class*="btn"] {
 				top: 10px;
 				right: 10px;
 				position: absolute;

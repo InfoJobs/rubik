@@ -52,13 +52,13 @@ button::-moz-focus-inner {
         }
     }
 
-    + [class^="btn-"]:not(.btn-group-justified) {
+    + [class*="btn"]]:not(.btn-group-justified) {
         margin-left: 5px;
     }
-    + [class*="btn-"]:not(.btn-group-justified) {
+    + [class*="btn"]:not(.btn-group-justified) {
         margin-left: 5px;
     }
-    + [class*="btn-"]:not(.btn-group-justified) {
+    + [class*="btn"]:not(.btn-group-justified) {
         margin-left: 5px;
     }
     + .btn-group-justified {
@@ -492,8 +492,8 @@ Styleguide #{$sgi-button-group-structure}
   		border-right-width: 1px;
   	}
 
-  	.active [class^="btn"],
-  	.active [class^="btn"].btn-disabled {
+  	.active [class*="btn"],
+  	.active [class*="btn"].btn-disabled {
   	    cursor: default;
   	    color: $shiro;
   	    background-color: $color-primary;
@@ -503,7 +503,7 @@ Styleguide #{$sgi-button-group-structure}
 		div {
 			padding-left: 10px;
 
-			[class^="btn-"] {
+			[class*="btn"] {
 				border-right-width: 1px;
 
 				&.disabled:hover {

@@ -40,7 +40,7 @@ $MIXIN COLUMNS
   		word-wrap: break-word;
   	}
 
-  	[class^="btn-"] {
+  	[class*="btn"] {
   		display: table;
   		margin-top: 20px;
   	}
@@ -51,7 +51,7 @@ $MIXIN COLUMNS
 
 
   	&.contact {
-  		[class^="btn-"] {
+  		[class*="btn"] {
   			display: inline-block;
   		}
   	}

@@ -48,7 +48,7 @@ Styleguide #{$sgi-pagination}
 
 	}
 
-	[class^="btn-"] {
+  [class*="btn"] {
 		width: 100%;
 
 		@include mediaquery ($bp-desktop) {
