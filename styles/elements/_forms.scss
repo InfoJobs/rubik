@@ -740,8 +740,9 @@ input[type="radio"] + label,
 
 		+ label {
       @include btn;
+      font-family: $base-font-family;
+      text-transform: none;
 	    height: 44px;
-      line-height: 42px;
 	    display: block;
 	    color: $color-primary;
 	    border: 1px solid $color-primary;
