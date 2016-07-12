@@ -47,6 +47,10 @@ Styleguide #{$sgi-iconsList}
 	margin-right: 6px;
 	font-size: $medium-font-size;
 
+	@at-root .sticker#{&} {
+		margin-right: 0;
+	}
+
 	@at-root .small#{&} {
 		font-size: ($small-font-size + 2);
 		margin-right: 3px;
@@ -80,23 +84,35 @@ Styleguide #{$sgi-iconsList}
 		margin-right: 6px;
 	}
 
-	@at-root .btn#{&} {
+	@at-root [class*="btn"]#{&} {
 		top: 4px;
 		margin-right: 8px; //needed to separate icon from the text
 		color: $shiro;
 	}
 
 	@at-root .btn-default#{&} {
-		color: $mid-script;
+		color: $color-primary;
 	}
 
+	@at-root .btn-default:hover#{&} {
+		color: $shiro;
+	}
 
-	@at-root .btn-group .btn#{&} {
+	@at-root .btn-group ^="btn-"]#{&} {
 		margin-right: 0;
 	}
 
-	@at-root .btn-group .btn:not(.disabled)#{&} {
-		color: $dark-silk;
+	@at-root .btn-group [class*="btn"]:not(.disabled)#{&} {
+		margin-right: 0;
+		color: $color-primary;
+	}
+
+	@at-root .btn-group [class*="btn"]:not(.disabled):hover#{&} {
+		color: $shiro;
+	}
+
+	@at-root .btn-group [class*="btn"]:not(.disabled):active#{&} {
+		color: $shiro;
 	}
 }
 
@@ -124,6 +140,12 @@ $iconfont-size: (16, 18, 22, 30, 36, 100); //TODO: resolve problem when it s mov
 		&::before {
 			font-size: #{$value}px;
 		}
+	}
+
+	.ico-width-#{$value}px {
+		width: #{$value}px;
+		margin-right: 5px;
+		vertical-align: middle;
 	}
 }
 

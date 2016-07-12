@@ -7,7 +7,6 @@ $resting-katana:					#d5e1e5; // gray default button
 $katana-slash:						#bac7cc;
 
 $theme-color-primary:       		$day-blue;
-$theme-color-primary--hover:		$late-blue;
 $theme-color-secondary:     		$resting-katana;
 $theme-color-contrast:      		$dark-silk;
 
@@ -15,11 +14,19 @@ $theme-color-contrast:      		$dark-silk;
 //
 // Buttons
 // -------------------------------------------
-$theme-button-secondary:     		$resting-katana;
+$theme-button-secondary:     		transparent;
 $theme-button-secondary--hover:     $katana-slash;
 $theme-button-secondary-contrast:   $resting-katana;
 $theme-button-secondary-contrast--hover: $katana-slash;
 
+//
+// Sticker colors
+// -------------------------------------------
+$theme-sticker-color: 				    $dark-silk;
+$theme-sticker-color--hover:	  	$dark-silk;
+$theme-sticker-border:				    none;
+$theme-sticker-background:			  $theme-color-secondary;
+$theme-sticker-background--hover:	$theme-color-secondary;
 
 //
 // Header
@@ -31,8 +38,7 @@ $theme-color-header:				$day-blue;
 // Breakpoints
 // -------------------------------------------
 
-$theme-row-centered-width:			645px;
+$theme-row-centered-width:			  645px;
 $theme-row-centered-width-form:		446px;
-$theme-container-width:				970px;
-
-$theme-input-tel-width:				230px;
+$theme-container-width:				    970px;
+$theme-input-tel-width:				    230px;

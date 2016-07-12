@@ -33,7 +33,6 @@ $MIXIN COLUMNS
   	@include flex-direction(column);
 
   	overflow: hidden;
-  	height: 100%;
 
   	h1,h2,h3 {
   		margin: 0;
@@ -41,7 +40,7 @@ $MIXIN COLUMNS
   		word-wrap: break-word;
   	}
 
-  	.btn {
+  	[class*="btn"] {
   		display: table;
   		margin-top: 20px;
   	}
@@ -52,7 +51,7 @@ $MIXIN COLUMNS
 
 
   	&.contact {
-  		.btn {
+  		[class*="btn"] {
   			display: inline-block;
   		}
   	}

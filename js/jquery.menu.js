@@ -6,6 +6,7 @@ $(function() {
 	var eWrapper= $('.wrapper');
 	var srcAvatar = $('.avatar .picture').attr('src');
 	var vpHeight = $( window ).height();
+  var buttonAccess = $('.nav-bar-access .js-access-button');
 
 	function closeMenu() {
 
@@ -19,17 +20,18 @@ $(function() {
 
 	}
 
-	function bgBlur() {
+  //commented because is not in empleo, but maybe will be in the future
+	// function bgBlur() {
+  //
+	// 	$('.avatar').backgroundBlur({
+	// 	    imageURL : srcAvatar,
+	// 	    blurAmount : 50,
+	// 	    imageClass : 'bg-blur'
+	// 	});
+  //
+	// }
 
-		$('.avatar').backgroundBlur({
-		    imageURL : srcAvatar,
-		    blurAmount : 50,
-		    imageClass : 'bg-blur'
-		});
-
-	}
-
-    $('.js-open-menu').click(function(){
+  $('.js-open-menu').click(function(){
 
 		eWrapper.css( 'overflow', 'hidden').css('height', vpHeight);
         $(this).next('.nav-mobile').addClass('open-menu');
@@ -57,17 +59,20 @@ $(function() {
     $(document).on('keyup', function(event) {
 
         if(event.keyCode === 27 && eMenu.hasClass('open-menu')) {
-			closeMenu();
+			       closeMenu();
         }
 
     });
 
 	if (window.innerWidth <= eBpHeader) {
-		$('.nav-bar-access .btn').addClass('btn-medium');
-		bgBlur();
+    if(buttonAccess.lenght) {
+      buttonAccess.removeClass('btn-small');
+      buttonAccess.addClass('btn');
+    }
 
-	} else {
-		$('.nav-bar-access .btn').removeClass('btn-medium');
+    //commented because is not in empleo, but maybe will be in the future
+		//bgBlur();
+
 	}
 
 	$( window ).resize(function() {
@@ -79,10 +84,14 @@ $(function() {
 		}
 
 		if (window.innerWidth <= eBpHeader) {
-			$('.nav-bar-access .btn').addClass('btn-medium');;
+      if(buttonAccess.length) {
+          buttonAccess.removeClass('btn-small');
+          buttonAccess.addClass('btn');
+      } else {
+        buttonAccess.removeClass('btn');
+        buttonAccess.addClass('btn-small');
+  		}
 
-		} else {
-			$('.nav-bar-access .btn').removeClass('btn-medium');
 		}
 
 		if(eWrapper.hasClass('wrap-overlay') && window.innerWidth > eBpHeader) {

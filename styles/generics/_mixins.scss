@@ -27,7 +27,12 @@ $query2     = width, device-width
 }
 
 @mixin transition {
-	transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease 0s;
+}
+
+@mixin transition-button {
+	transition: background-color 0.3s ease,
+              color 0.3s ease;
 }
 
 @mixin box-sizing($box-model) {

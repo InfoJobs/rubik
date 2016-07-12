@@ -9,33 +9,34 @@ Styleguide #{$sgi-buttons}
 /*------------------------------------*\
     $BUTTONS
 \*------------------------------------*/
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
 
 @mixin btn {
     /*@include transition;*/
+    font-family: $base-font-family-semi-bold;
     display: inline-block;
     width: auto;
-    height: 30px;
-    padding: 0 10px;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    color: $shiro;
+    border-radius: 2px;
     cursor: pointer;
-    font-size: $small-font-size;
     font-weight: normal;
-    line-height: 28px;
     overflow: visible;
     text-decoration: none;
     text-align: center;
     white-space: nowrap;
     text-shadow: none;
+    text-transform: uppercase;
     -webkit-appearance: none;
+    @include transition-button;
 
-    &:hover {
-      @include transition;
-    }
-
-    @at-root button#{&} {
-      border: 0 none; //TODO: pending a crossbrowser solution
+    img {
+      width: 16px;
+      height: 16px;
+      margin-top: -4px;
+      margin-right: 12px;
+      vertical-align: middle;
     }
 
     @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
@@ -51,10 +52,15 @@ Styleguide #{$sgi-buttons}
         }
     }
 
-    + .btn:not(.btn-group-justified) {
+    + [class*="btn"]:not(.btn-group-justified) {
         margin-left: 5px;
     }
-
+    + [class*="btn"]:not(.btn-group-justified) {
+        margin-left: 5px;
+    }
+    + [class*="btn"]:not(.btn-group-justified) {
+        margin-left: 5px;
+    }
     + .btn-group-justified {
         margin-top: 10px;
 
@@ -62,12 +68,8 @@ Styleguide #{$sgi-buttons}
             margin-bottom: 0;
         }
     }
-}
 
-.btn {
-	@include btn;
 }
-
 
 /*
 Buttons type
@@ -76,57 +78,128 @@ Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (o
 <br>
 Also add one of the following classes to give it format:
 
-`.btn-default` for a default action style<br>
 `.btn-primary` for a primary action style<br>
-`.btn-highlight` for a highlight action style<br>
+`.btn-default` for a secondary action style<br>
+`.btn-tertiary` for a tertiary action style<br>
+`.btn-highlight` for a highlight action style
 
 Markup:
-<button class="btn btn-default" type="button">Default</button>
 <button class="btn btn-primary" type="button">Primary</button>
-<a href="#" class="btn btn-primary">Link</a>
+<button class="btn btn-default" type="button">Secondary</button>
+<button class="btn btn-tertiary" type="button">Tertiary</button>
 <a href="#" class="btn btn-highlight">Highlight</a>
+<a href="#" class="btn btn-primary">Link</a>
 
 Styleguide #{$sgi-buttons-type}
 */
 
+.btn-primary {
+  	@include btn;
+    color: $shiro;
+    border: 1px solid $color-primary;
+    background-color: $color-primary;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $shiro;
+        background-color: shade($color-primary,20%);
+        border-color: shade($color-primary,20%);
+    }
+
+    &-alternative {
+    	@include btn;
+      border: 1px solid shade($color-primary,40%);
+      color: $shiro;
+      background-color: shade($color-primary,40%);
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: shade($color-primary,60%);
+        border-color: shade($color-primary,60%);
+      }
+    }
+}
+
 .btn-default {
-    color: $mid-script;
+  	@include btn;
+    color: $color-primary;
+    border: 1px solid $color-primary;
     background-color: $button-secondary;
 
-    .panel-focus &,
-    .panel-contrast & {
-        color: $dark-silk;
-        background-color: $button-secondary-contrast;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $shiro;
+        background-color: shade($color-primary,20%);
+    }
+
+    &-contrast {
+      @include btn;
+      color: $shiro;
+      border: 1px solid $shiro;
+      background-color: rgba($shiro, 0.2);
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: shade($color-primary,20%);
+        background-color: $shiro;
+      }
+    }
+
+    &-alternative {
+    	@include btn;
+      border: 0 none;
+      color: $color-primary;
+      background-color: $shiro;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: shade($color-primary,20%);
+        background-color: $dark-shiro;
+      }
     }
 }
 
-.btn-default:hover,
-.btn-default:active {
+.btn-tertiary {
+  	@include btn;
+    border: 1px solid transparent;
+    color: $color-primary;
+    background-color: transparent;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color-primary;
+        background-color: $dark-shiro;
+        border-color: $dark-shiro;
+    }
+}
+
+.btn-highlight {
+  	@include btn;
     color: $dark-silk;
-    background: $button-secondary--hover;
-}
+    border: 1px solid $sun;
+    background-color: $sun;
 
-.btn-primary {
-    color: $shiro;
-    background-color: $color-primary;
-
-    .panel-focus & {
-        background-color: $late-blue;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $dark-silk;
+        background-color: darken( $sun, 10% );
+        border-color: darken( $sun, 10% );
     }
 }
 
-.btn-primary:hover,
-.btn-primary:focus {
-    color: $shiro;
-    background-color: $color-primary-hover;
-}
-
-.btn-primary:active {
-    background-color: $night-blue;
-}
-
+//new design: idem that btn-primary -> to be deleted and refactor on "empleo"
 .btn-primary-contrast {
+  	@include btn;
     color: $shiro;
+    border: 1px solid $late-blue;
     background-color: $late-blue;
 }
 
@@ -134,127 +207,63 @@ Styleguide #{$sgi-buttons-type}
 .btn-primary-contrast:focus {
     color: $shiro;
     background-color: $night-blue;
+    border-color: $night-blue;
 }
 
 .btn-primary-contrast:active {
     background-color: $midnight-blue;
-}
-
-.btn-alert {
-    width: 100%;
-    color: $shiro;
-    background-color: $trueblood;
-
-    @include mediaquery ($bp-tablet) {
-        width: auto;
-    }
-
-    &:hover,
-    &:focus {
-        background-color: darken( $trueblood, 10% );
-    }
-}
-
-.btn-highlight {
-    color: $dark-silk;
-    background-color: $sun;
-
-    &:hover,
-    &:focus {
-        color: $dark-silk;
-        background-color: darken( $sun, 10% );
-    }
-}
-
-///*DEPRECATED: .btn-link-primary only used in 'ver_oferta.html'*/
-.btn-link-primary {
-    color: $color-primary;
-}
-
-.btn-link-primary:hover,
-.btn-link-primary:focus {
-    text-decoration: underline;
-    color: $late-blue;
-}
-
-.btn-link-primary + .btn-link-primary,
-.btn-link-secondary + .btn-link-secondary {
-    padding-left: 0;
-}
-
-///*DEPRECATED: .btn-link-secondary only used in header*/
-.btn-link-secondary {
-    color: $mid-script;
-}
-
-.btn-link-secondary:hover {
-    text-decoration: underline;
-    color: $dark-silk;
-}
-
-///*DEPRECATED: .btn-link-company only used in header*/
-.btn-link-company {
-    color: $soft-script;
-}
-
-.btn-link-company:hover {
-    @extend .btn-link-secondary:hover;
-    color: $shiro;
+    border-color: $midnight-blue;
 }
 
 
 /*
 Buttons size
 
-Use class `.btn-medium` or `.btn-large` to change buttons size.
+Use class `.btn-small` or `.btn-large` to change buttons size.<br>
+The base button size is class `.btn`
 
 Markup:
-<a href="#" class="btn btn-default">Default Button</a>
-<a href="#" class="btn btn-default btn-medium">Medium Button</a>
-<a href="#" class="btn btn-default btn-large">Large Button</a>
+<a href="#" class="btn-small btn-default ">Small size Button</a>
+<a href="#" class="btn btn-default">Base size Button</a>
+<a href="#" class="btn-large btn-default">Large size Button</a>
 
 Styleguide #{$sgi-buttons-size}
 */
 
-@mixin btn-medium {
-    height: 40px;
+.btn-small {
+    font-size: $xsmall-font-size;
     padding: 0 10px;
-    font-size: $base-font-size;
-    line-height: 38px;
+    height: 30px;
+    line-height: 32px;
 
-    @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
-        font-size: 22px;
+    img {
+      width: 12px;
+      height: 12px;
+      margin-right: 5px;
     }
-
-    /*@at-root button#{&} {
-        height: 40px;
-    }*/
 }
 
-.btn-medium {
-	@include btn-medium;
-}
-
-.btn-large {
-    height: 42px;
+.btn {
+    font-size: $small-font-size;
     padding: 0 20px;
-    font-size: $large-font-size;
-    line-height: 40px;
+    height: 40px;
+    line-height: 42px;
 
-    @media only screen and (max-width: $mobile-start) {
+    @at-root #{&}[class*="iconfont-"]::before { ////DEPRECATED
         font-size: $medium-font-size;
     }
+  }
 
-    @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
-        top: 7px;
-        font-size: 30px;
+.btn-large {
+    font-size: $base-font-size;
+    padding: 0 30px;
+    height: 50px;
+    line-height: 52px;
+
+    @at-root #{&}[class*="iconfont-"]::before { //DEPRECATED
+        font-size: 22px;
     }
-
-    /*@at-root button#{&} {
-        height: 42px;
-    }*/
 }
-
 
 /*
 Buttons with text and icon
@@ -262,7 +271,9 @@ Buttons with text and icon
 Use class `.iconfont-[name]` to display an icon inside the button.
 
 Markup:
-<a href="#" class="btn btn-primary btn-medium iconfont-Facebook">Link Button</a>
+<a href="#" class="btn-small btn-primary"><img src="http://media.infojobs.net/appgrade/svgs/bell.svg" />Crear alerta</a>
+<a href="#" class="btn btn-primary"><img src="http://media.infojobs.net/appgrade/svgs/bell.svg" />Crear alerta</a>
+<a href="#" class="btn-large btn-primary"><img src="http://media.infojobs.net/appgrade/svgs/bell.svg" />Crear alerta</a>
 
 Styleguide #{$sgi-buttons-text-icon}
 */
@@ -273,7 +284,7 @@ Buttons status
 Use class `.btn-disabled` to show button as disabled.
 
 Markup:
-<a href="#" class="btn btn-default btn-medium btn-disabled">Disabled Button</a>
+<button class="btn btn-primary btn-disabled" type="button" disabled>Disabled</button>
 
 Styleguide #{$sgi-buttons-status}
 */
@@ -281,70 +292,35 @@ Styleguide #{$sgi-buttons-status}
 button[disabled],
 button:hover[disabled],
 button:active[disabled],
-button.btn-disabled,
+button:focus[disabled],
 .btn-disabled,
 .btn-disabled:hover,
 .btn-disabled:active,
 .btn-disabled:focus {
-    background: $shiro;
-    color: $wood-katana-smash;
+    line-height: 40px;
     text-decoration: none;
+    color: $shiro;
+    border: 0;
+    box-shadow: none;
+    background: #dfdfdf; //add to vars (pending to be defined for companies)
     cursor: default;
-    border: 1px solid $darkest-shiro;
 }
-
-
-/*
-Button annex
-
-Use class `.btn-annex` to add an element adjacent to the button.
-
-Markup:
-<button class="btn btn-primary btn-medium btn-annex" type="button">Button</button>
-<a href="#" class="link">Link</a>
-
-Styleguide #{$sgi-buttons-annex}
-*/
-
-.btn-annex {
-    margin-right: 15px;
-
-    & + .link {
-      white-space: nowrap;  //TODO: solve margin-top when .link fall down below .btn
-      font-size: $small-font-size;
-    }
-
-    @at-root #{&}.btn-medium + .link {
-        font-size: $medium-font-size;
-    }
-
-    @at-root #{&}.btn-large + .link {
-        font-size: $large-font-size;
-    }
-
-    & + .field-annex { //needed for a check/radiobutton/link structure close to the btn
-
-      display: inline-block;
-        margin-top: 10px;
-
-      input[type="checkbox"] + label {
-        width: auto;
-      }
-    }
-
-}
-
 
 /*
 Buttons display
 
-Use class `.btn-form-inline` to display a full width button.
+Add class `.btn-full-width` to display a full width button.
 
 Markup:
-<button class="btn btn-primary btn-medium btn-form-inline" type="button">Button</button>
+<button class="btn btn-primary btn-full-width" type="button">Button</button>
 
 Styleguide #{$sgi-buttons-display}
 */
+
+.btn-full-width {
+  width: 100%;
+}
+//deprecated with btn-full-width?
 
 .btn-form-inline { //used on search-bar, filters and edit-cv(datos-personales)
     width: 100%;
@@ -352,12 +328,96 @@ Styleguide #{$sgi-buttons-display}
     @at-root button#{&} {
     	width: 100%;
       height: auto;
-      padding: 7px 10px 8px 10px;
-      font-size: 16px;
     }
 
     &.text-left { //already defined in tools.scss, but overwritten by btn{...text-align: center;...}
     	text-align: left;
+    }
+}
+
+/*
+Button file
+
+Use class `.btn-file` to display an input type file.
+
+Markup:
+<div class="btn btn-default btn-file">
+	<span>Subir foto</span>
+	<input type="file" value="Subir foto" />
+</div>
+
+Styleguide #{$sgi-buttons-file}
+*/
+
+.btn-file {
+	position: relative;
+
+	span {
+		position: absolute;
+		left: 0;
+		width: 100%;
+	}
+
+	input {
+		height: auto;
+		opacity: 0;
+		cursor: pointer;
+	}
+}
+
+/*
+Buttons variants
+
+Lorem ipsum...
+
+Markup:
+<div class="panel-focus inner">
+  <button class="btn btn-primary-alternative" type="button">Primary alternative</button>
+  <button class="btn btn-default-contrast" type="button">Secondary contrast</button>
+  <button class="btn btn-default-alternative" type="button">Secondary alternative</button>
+</div>
+
+Styleguide #{$sgi-buttons-variants}
+*/
+
+///*DEPRECATED: .btn-link-primary only used in 'ver_oferta.html'*/
+.btn-link-primary {
+    @include btn;
+    color: $color-primary;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      color: $late-blue;
+    }
+}
+
+
+.btn-link-primary + .btn-link-primary,
+.btn-link-secondary + .btn-link-secondary {
+    padding-left: 0;
+}
+
+///*DEPRECATED: .btn-link-secondary only used in header*/
+.btn-link-secondary {
+    @include btn;
+    color: $mid-script;
+
+    &:hover {
+        text-decoration: underline;
+        color: $dark-silk;
+    }
+}
+
+
+///*DEPRECATED: .btn-link-company only used in header*/
+.btn-link-company {
+    @include btn;
+    color: $soft-script;
+
+    &:hover {
+        @extend .btn-link-secondary:hover;
+        color: $shiro;
     }
 }
 
@@ -399,21 +459,21 @@ Styleguide #{$sgi-button-group-structure}
     & > div {
         display: table-cell;
 
-        &:first-child > .btn {
+        &:first-child > [class*="btn"]  {
             border-radius: 3px 0 0 3px;
         }
 
-        &:last-child > .btn {
+        &:last-child > [class*="btn"] {
             border-radius: 0 3px 3px 0;
         }
 
-        & > .btn {
+        & > [class*="btn"]  {
             border-radius: 0;
         }
     }
 
-    .btn {
-        border-color: $katana-slash;
+    [class*="btn"]  {
+        border-color: $color-primary;
         border-width: 1px;
         border-style: solid;
     }
@@ -422,42 +482,37 @@ Styleguide #{$sgi-button-group-structure}
   		margin: 0;
   	}
 
-  	.btn,
-  	.btn:hover {
+  	[class*="btn"] ,
+  	[class*="btn"] :hover {
   		border-right-width: 0;
   		width: 100%;
-  		background-color: $shiro;
-
-  		&:hover:not([disabled]) {
-  			background-color: $button-secondary;
-  		}
-
-  		&.btn-disabled:hover {
-  			background: $shiro;
-  		}
   	}
 
-  	div:last-of-type .btn{
+  	div:last-of-type [class*="btn"] {
   		border-right-width: 1px;
+  		border-top-right-radius: 2px;
+  		border-bottom-right-radius: 2px;
   	}
 
-  	.active .btn,
-  	.active .btn.btn-disabled {
-  	    background-color: $button-secondary;
+  	.active [class*="btn"],
+  	.active [class*="btn"].btn-disabled {
   	    cursor: default;
+  	    color: $shiro;
+  	    background-color: shade($color-primary,20%);
   	}
 
     &.btn-group-expanded {
 		div {
 			padding-left: 10px;
 
-			.btn {
+			[class*="btn"] {
 				border-right-width: 1px;
 
 				&.disabled:hover {
-					background-color: white;
-					cursor: default;
 					border-right-width: 1px;
+					color: $shiro;
+					background-color: $color-primary;
+					cursor: default;
 				}
 			}
 		}
@@ -507,7 +562,7 @@ Styleguide #{$sgi-button-group-icon}
 .btn-group-justified { //TODO: same properties than .btn-form-inline class
      width: 100%;
 
-    .btn {
+    [class*="btn"]  {
         width: 100%;
     }
 }
@@ -537,34 +592,4 @@ Styleguide #{$sgi-button-group-icon}
     border: 0 none;
     background: none repeat scroll 0 0 transparent;
     cursor: pointer;
-}
-
-/*
-Button file
-
-Use class `.btn-file` to display an input type file.
-
-Markup:
-<div class="btn btn-default btn-file">
-	<span>Subir foto</span>
-	<input type="file" value="Subir foto" />
-</div>
-
-Styleguide #{$sgi-button-file}
-*/
-
-.btn-file {
-	position: relative;
-
-	span {
-		position: absolute;
-		left: 0;
-		width: 100%;
-	}
-
-	input {
-		height: auto;
-		opacity: 0;
-		cursor: pointer;
-	}
 }
