@@ -45,6 +45,7 @@ Styleguide #{$sgi-listsDefault}
         display: block;
         position: relative;
         margin-bottom: 10px;
+        word-break: break-word;
 
         @at-root .small#{&} {
             margin-bottom: 5px;
@@ -223,8 +224,6 @@ Markup:
 Styleguide #{$sgi-listsWithIcons}
 */
 
-$iconfont-size: (16, 18, 22, 30, 100); //Duplicated in _icons.scss
-
 .list-bullet-icon {
 
     [class^="iconfont-"],
@@ -278,6 +277,7 @@ Lists with nested structure
     padding-top: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid $darkest-shiro;
+    @include flex(100%);
 
     &:first-child {
         padding-top: 0;
@@ -376,6 +376,11 @@ Styleguide #{$sgi-tagGroup}
         @media print {
             margin: 0;
         }
+
+		&:last-of-type {
+			padding-right: 0;
+		}
+
     }
 }
 
