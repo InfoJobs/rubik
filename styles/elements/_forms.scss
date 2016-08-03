@@ -1212,7 +1212,7 @@ Styleguide #{$sgi-forms-strength-bar}
 
 .input-drop-down {
 	position: absolute;
-	z-index: 9000;
+	z-index: $zindex-notification;
 	width: 100%;
 	margin-top: 5px;
 }

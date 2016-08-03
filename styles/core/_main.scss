@@ -167,6 +167,13 @@ Styleguide  #{$sgi-containers}
 	}
 }
 
+.modal-content .row-centered {
+	@include mediaquery ($bp-desktop) {
+		width: 450px;
+		margin-bottom: 0;
+	}
+}
+
 .row-flex {
 	@include display-flex;
 	@include align-items(center);
@@ -360,13 +367,31 @@ hr {
     }
 }
 
-.truncate {
+@mixin truncate {
 	display: block;
  	max-width: 99%;
   	white-space: nowrap;
   	overflow: hidden;
   	text-overflow: ellipsis;
     padding-left: 1px;
+}
+
+.truncate {
+	@include truncate;
+}
+
+.truncate-small-device {
+	@include truncate;
+
+	@include mediaquery ($bp-desktop) {
+		display: inline;
+	 	max-width: auto;
+	  	white-space: unset;
+	  	overflow: hidden;
+	  	text-overflow: unset;
+	    padding-left: 0;
+	}
+
 }
 
 //.truncate-comma:after {
