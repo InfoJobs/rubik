@@ -1,3 +1,4 @@
+@import "stickers";
 @import "../generics/mixins-forms";
 
 /*------------------------------------*\
@@ -33,6 +34,7 @@ Styleguide 2.16
 
 .chosen-container .chosen-drop {
   margin-left: -1px;
+  padding-bottom: 15px;
 }
 
 .chosen-container .chosen-drop,
@@ -43,14 +45,20 @@ Styleguide 2.16
   z-index: $zindex-pulldown;
   margin-left: -1px;
   width: calc(100% - -2px);
-  border-top: 0;
+  border-top: 1px;
   border-right:1px;
   border-bottom:1px;
   border-left:1px;
   border-style: solid;
   border-color: #c7c9ca;
+  border-top-color: $theme-color-primary;
   background: $shiro;
 }
+
+.chosen-container-multi .chosen-drop {
+	border-top: 0;
+}
+
 .chosen-container.chosen-with-drop .chosen-drop {
   left: 0;
 }
@@ -115,7 +123,7 @@ Styleguide 2.16
 }
 .chosen-container-single .chosen-search {
   position: relative;
-  z-index: 1010;
+  z-index: $zindex-pulldown;
   margin: 0;
   padding: 3px 4px;
   white-space: nowrap;
@@ -195,7 +203,7 @@ Styleguide 2.16
 	&.autocomplete-multivalue-focus {
 		border: 1px solid $theme-color-primary;
 	}
-	.autocomplete_jquery {
+	.ui-autocomplete-input {
 		border: 0 none;
 	}
 	ul {
