@@ -1,0 +1,47 @@
+/*------------------------------------*\
+    $LANDING BUNDLES
+\*------------------------------------*/
+
+.lb {
+
+  h1 {
+    color: #fff;
+    max-width: 670px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  &-container {
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+  }
+
+  &-row {
+    width: 1060px;
+    margin: 0 auto;
+  }
+
+  &-heading-offer {
+    height: 240px;
+
+  }
+  &-featured-offer {
+    margin-top: -10px;
+
+    .lb-heading-offer {
+      height: 250px;
+    }
+  }
+
+  .list-inline li {
+    margin-left: 20px;
+  }
+
+}
