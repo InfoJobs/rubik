@@ -69,6 +69,12 @@ Styleguide #{$sgi-stickers}
     background-color: $dark-shiro;
 }
 
+.sticker-opacity {
+  @include sticker;
+  color: $shiro;
+  background-color: tint(transparent,30%);
+}
+
 /*
 Stickers size
 
