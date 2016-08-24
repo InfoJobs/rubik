@@ -87,6 +87,10 @@ Markup:
 Styleguide #{$sgi-textSize}
 */
 
+.xsmall {
+  @extend %font-xsmall-line;
+}
+
 .base { //TODO: used in whatever kind of copy text (p, a, li...). Get out of _paragraphs.scss
 	@extend %font-base-line;
 }
