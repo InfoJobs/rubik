@@ -16,14 +16,17 @@ Styleguide #{$sgi-toolbar}
 */
 
 .container-toolbar {
-  position: relative;
+  @include mediaquery ($bp-desktop) {
+    position: relative;
+  }
 
   .toolbar {
     @include inner;
-    position: absolute;
-    top: 0;
-    right: 0;
-    //add class inner to generate paddings
+    @include mediaquery ($bp-desktop) {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
 
     li {
       display: inline-block;
