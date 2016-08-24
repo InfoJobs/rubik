@@ -1,0 +1,41 @@
+/*------------------------------------*\
+    $TOOLBAR
+\*------------------------------------*/
+
+/*
+Toolbar
+
+Markup:
+<div class="container-toolbar">
+  <ul class="toolbar">
+    <li><img src="//media.infojobs.net/appgrade/icons/ico-print.svg" alt="Print">
+  </ul>
+</div>
+
+Styleguide #{$sgi-toolbar}
+*/
+
+.container-toolbar {
+  position: relative;
+
+  .toolbar {
+    @include inner;
+    position: absolute;
+    top: 0;
+    right: 0;
+    //add class inner to generate paddings
+
+    li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    li:last-child {
+      margin-right: 0;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+  }
+}
