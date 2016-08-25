@@ -7,7 +7,7 @@ Use class `.custom-bg` to make the image responsive.<br>
 Use class`.overlay-60` to apply an overlay.
 
 Markup:
-<div class="custom-bg overlay-60" style="background-image: url('../images/backgrounds/bg-header-grid-01.jpg');">
+<div class="custom-bg overlay-60" style="background-image: url('./images/backgrounds/bg-header-grid-01.jpg');">
     <div class="inner">
         <h1>Custom background</h1>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et </p>
@@ -19,35 +19,26 @@ Styleguide #{$sgi-custom-background}
 */
 
 .custom-bg {
-    @include vendor-prefix('background-size', 'cover');
     color: $shiro;
     //the background-image is not reusable, inline in html
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
+    background-color: $dark-softened;
 
-    h1,
-    a:link,
-    a:visited,
-    a:hover,
-    a:active {
+    h1 {
         color: $shiro;
-    }
-    a:hover,
-    a:active {
-        text-decoration: underline;
     }
 }
 
 //Overlay in background
 
-$overlay-opacity: (60);
+$overlay-opacity: (60,85);
 
 @each $value in $overlay-opacity {
 
 	.overlay-#{$value} {
 
         position: relative;
-        z-index: 0;
 
 		&::before {
             content: "";
@@ -60,7 +51,6 @@ $overlay-opacity: (60);
             height: 100%;
             background-color: #000;
             opacity: $value/100;
-            z-index: -1;
 		}
 	}
 }

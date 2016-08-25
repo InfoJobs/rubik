@@ -121,11 +121,18 @@ Styleguide #{$sgi-listsInline}
 	dd,
 	li {
 		display: inline-block;
-		font-size: $small-font-size;
-        font-family: $base-font-family;
 	}
 
-    dt {
+  &:not(.base) {
+  	dt,
+  	dd,
+  	li {
+  		font-size: $small-font-size;
+      font-family: $base-font-family;
+  	}
+  }
+
+  dt {
 		margin-right: 10px;
 	}
 }
