@@ -1,0 +1,45 @@
+/*
+List with item checked
+
+Markup:
+<ul class="list-default list-item-checked">
+  <li>
+    <span class="checked">
+      M&aacute;s de 10 a&ntilde;os <span class="break alternative">Puntuacion: 10</span>
+    </span>
+  </li>
+  <li>
+    <span>
+      M&aacute;s de 5 a&ntilde;os <span class="break alternative">Puntuacion: 5</span></li>
+    </span>
+  <li>
+    <span>
+      No tengo experiencia <span class="break alternative">Excluido</span>
+    </span>
+  </li>
+</ul>
+Styleguide #{$sgi-listsItemChecked}
+*/
+
+.list-item-checked {
+
+  > li {
+
+    > span {
+      display: inline-block;
+      padding: 10px 40px;
+
+    }
+
+    > .checked {
+      background-color: rgba(0,0,0,0.05);
+      border:1px solid rgba(0,0,0,0.05);
+      border-radius: 2px;
+    }
+  }
+
+  &.list-default > li {
+    margin-bottom: 0;
+  }
+
+}

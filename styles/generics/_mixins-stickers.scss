@@ -26,6 +26,10 @@ $MIXINS STICKERS
     	right: -4px;
     }
 
+    &.small {
+      padding: 3px 6px;
+    }
+
     @media print {
     	padding: 0;
     }
