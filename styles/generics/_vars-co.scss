@@ -19,10 +19,17 @@ $theme-color-contrast:      		$dark-blue;
 // -------------------------------------------
 $theme-button-secondary:     		$soft-blue;
 $theme-button-secondary--hover:     $sunrise-blue;
-
 $theme-button-secondary-contrast:		         $sunrise-blue;
 $theme-button-secondary-contrast--hover:		 $midnight-blue;
 
+//
+// Sticker colors
+// -------------------------------------------
+$theme-sticker-color: 				$mid-script;
+$theme-sticker-color--hover:		#2b3d4e;
+$theme-sticker-border:				1px solid #c7c7c7;
+$theme-sticker-background:			$dark-shiro;
+$theme-sticker-background--hover:	#bbc9d7;
 
 //
 // Header

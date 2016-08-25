@@ -73,6 +73,13 @@ Styleguide #{$sgi-stickers}
   @include sticker;
   color: $shiro;
   background-color: tint(transparent,30%);
+  border: transparent;
+
+  &:hover {
+    color: $shiro;
+    background-color: tint(transparent,30%);
+  }
+
 }
 
 /*

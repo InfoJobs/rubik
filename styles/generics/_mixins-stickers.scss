@@ -11,8 +11,14 @@ $MIXINS STICKERS
     padding: 6px 10px;
     border-radius: 15px;
     font-family: $base-font-family;
-    color: $dark-silk;
-    background-color: $color-secondary;
+    border: $sticker-border;
+    color: $sticker-color;
+    background-color: $sticker-background;
+
+    &:hover {
+    	color: $sticker-color--hover;
+    	background-color: $sticker-background--hover;
+    }
 
     .nav-bar-notifications & {
     	position: absolute;
@@ -21,7 +27,7 @@ $MIXINS STICKERS
     }
 
     @media print {
-    	border: 1px solid $darkest-shiro;
+    	padding: 0;
     }
 }
 
