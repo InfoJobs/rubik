@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    $LIST ICON
+\*------------------------------------*/
+
+.list-icon {
+
+  img {
+    vertical-align: text-bottom;
+  }
+
+  &.list-items-expanded {
+    img {
+      margin-right: 20px;
+    }
+  }
+
+}

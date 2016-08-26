@@ -1,3 +1,4 @@
+@import "list-icon";
 @import "list-item-checked";
 
 // Text elements
@@ -519,4 +520,12 @@ Styleguide #{$sgi-listsColumns}
              width: calc(1% * #{$column-unit});
          }
      }
+ }
+
+ .list-items-expanded {
+   margin-top: -30px;
+   
+   li {
+     margin-top: 30px;
+   }
  }
