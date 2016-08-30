@@ -41,6 +41,10 @@ h3,
 .h3 {
 	font-family: $base-font-family-bold;
 	color: $dark-silk;
+
+  &.inner {
+    padding: 0 $padding;
+  }
 }
 
 h1 {
@@ -63,6 +67,7 @@ h1 {
 			line-height: 100%;
 		}
 	}
+
 }
 
 h2,
@@ -193,8 +198,7 @@ Heading divider
 
     @at-root h3#{&},
 	.h3#{&},
-	.medium#{&},
-	.large {
+	.medium#{&} {
     	padding-bottom: 12px;
 	}
 }
