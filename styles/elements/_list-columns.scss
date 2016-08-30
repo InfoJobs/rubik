@@ -1,0 +1,53 @@
+
+/*
+List in columns
+
+Use class `.list-columns-2`, `.list-columns-3`, `.list-columns-4` in `<ul>`tag to generate columns.
+
+Markup:
+<ul class="list-columns-4">
+    <li>1 Lorem ipsum</li>
+    <li>2 Lorem ipsum</li>
+    <li>3 Lorem ipsum</li>
+    <li>4 Lorem ipsum</li>
+</ul>
+
+Styleguide #{$sgi-listsColumns}
+*/
+
+
+@for $i from 1 through 4{
+  $column-unit: 100 / $i;
+
+  .list-columns-#{$i} {
+     @include display-flex;
+     @include flex-flow(row wrap);
+
+     li {
+       width: calc(1% * #{$column-unit});
+     }
+   }
+}
+
+.list-grid-columns-2 {
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+  dd {
+    display: none;
+  }
+  dt {
+    -webkit-column-break-inside: avoid;
+              page-break-inside: avoid;
+                 break-inside: avoid;
+  }
+  dt::after {
+    content: attr(data-attr);
+    display: block;
+  }
+
+  dt.light + dt::after {
+    font-weight: bold;
+  }
+
+}
