@@ -120,12 +120,11 @@ Markup:
 Styleguide #{$sgi-textVariants}
 */
 
-
-.bold { //TODO: used in whatever kind of copy text (p, a, li...). Get out of _paragraphs.scss
-	font-family: $base-font-family-bold;
+.bold {
+  @include bold;
 }
 .light {
-	font-family: $base-font-family-light;//TODO: used in whatever kind of copy text or headings. Get out of _paragraphs.scss
+  @include light;
 }
 
 /*
