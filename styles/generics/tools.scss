@@ -171,6 +171,10 @@ Styleguide #{$sgi-helpers}
 	@include border-top-expanded;
 }
 
+.shadow {
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
 
 /*------------------------------------*\
     $MARGINS and PADDINGS
