@@ -39,7 +39,7 @@ Styleguide #{$sgi-listsColumns}
      dt::after {
        content: attr(data-text);
        display: block;
-       margin:5px 0 0 0;
+       margin:3px 0 0 0;
      }
 
      dt.light::after {
@@ -72,6 +72,7 @@ Styleguide #{$sgi-listsColumns}
   dt::after {
     content: attr(data-text);
     display: block;
+    margin:3px 0 0 0;
   }
 
   dt.light::after {

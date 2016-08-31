@@ -16,69 +16,81 @@ Markup:
 <a href="#" class="sticker-marked">Javascript</a>
 <a href="#" class="sticker-contrast">Javascript</a>
 <a href="#" class="sticker-secondary">Javascript</a>
+<a href="#" class="sticker-label-marked">Javascript</a>
+<a href="#" class="sticker-label-opacity">Javascript</a>
 
 Styleguide #{$sgi-stickers}
 */
 
 .sticker {
-    @include sticker;
+  @include sticker;
+  color: $sticker-color;
+  background-color: $sticker-background;
+
+  @at-root {
+    a#{&}:hover {
+      color: $sticker-color--hover;
+    	background-color: $sticker-background--hover;
+    }
+  }
 }
 
 .sticker-marked {
-    @include sticker;
-    color: $shiro;
+  @include sticker;
+  color: $shiro;
 	background-color: $bamboo;
 
-    &:hover {
-        color: $shiro;
-    }
+  &:hover {
+      color: $shiro;
+  }
 
-    &[class*="iconfont-"]::before {
-		color: $shiro;
-	}
+  &[class*="iconfont-"]::before {
+    color: $shiro;
+  }
 }
 
 .sticker-contrast {
-    @include sticker;
-    color: $shiro;
+  @include sticker;
+  color: $shiro;
 	background-color: $dark-silk;
 
-    &:hover {
-        color: $shiro;
-    }
+  &:hover {
+      color: $shiro;
+  }
 
-    &[class*="iconfont-"]::before {
-		color: $shiro;
-	}
+  &[class*="iconfont-"]::before {
+	  color: $shiro;
+  }
 }
 
 .sticker-secondary {
 	@include sticker;
-    color: $shiro;
+  color: $shiro;
 	background-color: $color-primary;
 
-    &:hover {
-        color: $shiro;
-    }
+  &:hover {
+      color: $shiro;
+  }
 }
 
 .sticker-input {
-    @include sticker;
-    color: $mid-script;
-    border: 1px solid #c7c7c7;
-    background-color: $dark-shiro;
-}
-
-.sticker-opacity {
   @include sticker;
+  color: $mid-script;
+  border: 1px solid #c7c7c7;
+  background-color: $dark-shiro;
+}
+.sticker-label-opacity {
+  @include sticker-label;
   color: $shiro;
   background-color: tint(transparent,30%);
   border: transparent;
+}
 
-  &:hover {
-    color: $shiro;
-    background-color: tint(transparent,30%);
-  }
+.sticker-label-marked {
+  @include sticker-label;
+  color: $shiro;
+  background-color: $bamboo;
+  border: solid 1px rgba(0, 0, 0, 0.1);
 }
 
 /*
@@ -94,13 +106,13 @@ Styleguide #{$sgi-stickerSize}
 
 .sticker-small {
 	@include sticker;
-    padding: 0 10px;
-    font-size: $xsmall-font-size;
-    line-height: 14.6px;
+  padding: 0 10px;
+  font-size: $xsmall-font-size;
+  line-height: 14.6px;
 
-    &[class*="iconfont-"]::before {
-		font-size: $small-font-size;
-	}
+  &[class*="iconfont-"]::before {
+	font-size: $small-font-size;
+  }
 }
 
 /*
@@ -127,35 +139,24 @@ Markup:
 Styleguide #{$sgi-stickerSkill}
 */
 
-@mixin sticker-skill {
-	@include sticker;
-    margin: 0 5px 0 0;
-    color: $dark-silk;
-    background-color: $color-secondary;
-}
-
 .sticker-skill {
-    @include sticker-skill;
+  @include sticker-skill;
 
-    img {
-        margin: 0 10px 0 0;
-        vertical-align: text-top;
-        width: $base-font-size;// equivalencia del width y font-size
-    }
+  a#{&}:hover {
+      color: $dark-silk;
+      background-color: $katana-slash;
+  }
 
-}
+  a#{&}:active {
+      background-color: $katana-smash;
+  }
 
-.sticker-skill {
-    cursor: pointer;
+  img {
+    margin: 0 10px 0 0;
+    vertical-align: text-top;
+    width: $base-font-size;// equivalencia del width y font-size
+  }
 
-    &:hover {
-        color: $dark-silk;
-        background-color: $katana-slash;
-    }
-
-    &:active {
-        background-color: $katana-smash;
-    }
 }
 
 .sticker-close {
@@ -170,12 +171,6 @@ Styleguide #{$sgi-stickerSkill}
     &:hover {
         color: $dark-silk;
     }
-}
-
-@mixin sticker-multi {
-    @include sticker;
-    @include sticker-skill;
-    padding-right: 5px;
 }
 
 /*

@@ -4,44 +4,42 @@ $MIXINS STICKERS
 //@import "../core/fonts";
 
 @mixin sticker {
-    @include font-small-line;
-    position: relative;
-    top: -2px;
-    display: inline-table;
-    padding: 6px 10px;
-    border-radius: 15px;
-    font-family: $base-font-family;
-    border: $sticker-border;
-    color: $sticker-color;
-    background-color: $sticker-background;
+  @include font-small-line;
+  position: relative;
+  top: -2px;
+  display: inline-table;
+  padding: 6px 10px;
+  border-radius: 15px;
+  font-family: $base-font-family;
+  border: $sticker-border;
 
-    &:hover {
-    	color: $sticker-color--hover;
-    	background-color: $sticker-background--hover;
-    }
 
-    .nav-bar-notifications & {
-    	position: absolute;
-    	bottom: 12px;
-    	right: -4px;
-    }
+  .nav-bar-notifications & {
+  	position: absolute;
+  	bottom: 12px;
+  	right: -4px;
+  }
 
-    &.small {
-      padding: 3px 6px;
-    }
-
-    @media print {
-    	padding: 0;
-    }
+  @media print {
+  	padding: 0;
+  }
 }
 
 @mixin sticker-skill {
-	@include sticker;
-    margin: 0 5px 0 0;
+  @include sticker;
+  margin: 0 5px 0 0;
+  color: $dark-silk;
+  background-color: $color-secondary;
 }
 
 @mixin sticker-multi {
-    @include sticker;
-    @include sticker-skill;
-    padding-right: 5px;
+  @include sticker;
+  @include sticker-skill;
+  padding-right: 5px;
+}
+
+@mixin sticker-label {
+  @include font-xsmall-line;
+  padding: 3px 6px;
+  border-radius: 2px;
 }
