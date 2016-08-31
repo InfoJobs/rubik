@@ -40,6 +40,11 @@ $MIXINS STICKERS
 
 @mixin sticker-label {
   @include font-xsmall-line;
+  display: inline-table;
   padding: 3px 6px;
   border-radius: 2px;
+
+  &-top {
+    margin-bottom: 5px;
+  }
 }

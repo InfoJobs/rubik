@@ -79,6 +79,13 @@ Styleguide #{$sgi-stickers}
   border: 1px solid #c7c7c7;
   background-color: $dark-shiro;
 }
+
+.sticker-label {
+  @include sticker-label;
+  color: $sticker-color;
+  background-color: $sticker-background;
+}
+
 .sticker-label-opacity {
   @include sticker-label;
   color: $shiro;
