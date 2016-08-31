@@ -164,7 +164,6 @@ $query2     = width, device-width
 	}
 }
 
-
 @mixin clearfix {
    &::after {
      content: " "; 	// 1
@@ -179,4 +178,15 @@ $query2     = width, device-width
 
  @mixin light{
 	font-family: $base-font-family-light;
+}
+
+@mixin custom-bg {
+  color: $shiro;
+  //the background-image is not reusable, inline in html
+  background-repeat: no-repeat;
+  background-color: $dark-softened;
+
+  h1 {
+      color: $shiro;
+  }
 }

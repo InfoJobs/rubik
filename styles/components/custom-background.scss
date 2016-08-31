@@ -19,15 +19,14 @@ Styleguide #{$sgi-custom-background}
 */
 
 .custom-bg {
-    color: $shiro;
-    //the background-image is not reusable, inline in html
-    background-repeat: no-repeat;
-    background-position: top;
-    background-color: $dark-softened;
+  @include custom-bg;
+  background-position: top;
 
-    h1 {
-        color: $shiro;
-    }
+  &-center {
+    @include custom-bg;
+    background-position: center;
+
+  }
 }
 
 //Overlay in background
