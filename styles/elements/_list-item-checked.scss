@@ -27,12 +27,13 @@ Styleguide #{$sgi-listsItemChecked}
 
     > span {
       display: inline-block;
-      padding: 10px 40px;
+      padding: 7px 20px 7px 40px;
+      line-height: 1.1;
 
     }
 
     > .checked {
-      background-color: rgba(0,0,0,0.05);
+      background: rgba(0,0,0,0.05) url("#{$path-icons}/ico-check-24x24.svg") no-repeat 10px center;
       border:1px solid rgba(0,0,0,0.05);
       border-radius: 2px;
     }
