@@ -102,6 +102,17 @@ Styleguide #{$sgi-listsDefault}
             margin: 1px 0 0 10px;
         }
     }
+
+    &[class^="list-grid-columns-"],
+    &[class*="list-grid-columns-"] {
+      dt {
+        margin: 0;
+
+        &::after {
+          margin-bottom: 20px;  
+        }
+      }
+    }
 }
 
 /*
