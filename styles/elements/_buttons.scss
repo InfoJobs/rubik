@@ -361,6 +361,24 @@ Styleguide #{$sgi-buttons-display}
     }
 }
 
+.btn-justify {
+  display: table;
+  width: 100%;
+
+  li {
+    display: table-cell;
+
+    + li {
+      padding: 0 0 0 10px;
+    }
+  }
+
+  [class^="btn-"],
+  [class*="btn-"] {
+    width: 100%;
+  }
+}
+
 /*
 Button group
 
