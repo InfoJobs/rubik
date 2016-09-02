@@ -292,12 +292,25 @@ Styleguide #{$sgi-helpers}
 /*------------------------------------*\
     $POSITION
 \*------------------------------------*/
+@mixin sticky {
+    position: fixed;
+    top: 0;
+    height: auto;
+    width: 100%;
+    z-index: $zindex-wrap-overlay;
+
+}
 
 .sticky {
-  position: fixed;
-  top: 0;
-  height: auto;
-  width: 100%;
-  z-index: $zindex-wrap-overlay;
+  @include sticky;
   //max width se incluye por js si usamos sticky-on-scroll.js
+  &.sticky-disabled-mobile {
+    position: static;
+    width: auto;
+
+    @include mediaquery ($bp-tablet) {
+      @include sticky;
+    }
+
+  }
 }
