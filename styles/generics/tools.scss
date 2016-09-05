@@ -304,7 +304,7 @@ Styleguide #{$sgi-helpers}
 .sticky {
   @include sticky;
   //max width se incluye por js si usamos sticky-on-scroll.js
-  &.sticky-disabled-mobile {
+  &.sticky-disabled-tablet {
     position: static;
     width: auto;
 

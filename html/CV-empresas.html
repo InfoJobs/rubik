@@ -9,8 +9,9 @@
 <body>
 <div class="wrapper">
   <div class="container container-expanded">
-    <div class="row">
-      <div class="col-8">
+    <div class="row row-faux">
+      <div class="col-8 col-12-medium">
+        <div class="col-child">
           <div class="custom-bg-center text-center container-toolbar inner inner-expanded shadow" style="background-image: url('//media.infojobs.net/appgrade/backgrounds/bg-header-cv.png');">
             <ul class="toolbar margin-right">
               <li><img src="//media.infojobs.net/appgrade/icons/ico-print.svg" alt="Imprimir"></li>
@@ -31,7 +32,7 @@
             <div class="container-expanded panel-canvas inner shadow">
               <h2 class="medium light inner">Datos basicos <span class="pull-right base"><a href="#">Ver datos completos</a></span></h2>
               <div class="inner">
-                <ul class="list-default list-columns-2 list-icon list-items-expanded">
+                <ul class="list-default list-columns-2 list-columns-12-medium list-icon list-items-expanded">
                   <li><img src="//media.infojobs.net/appgrade/icons/ico-mail.svg" alt="e-mail"/><span class="focus">pepe@pepe.com</span></li>
                   <li><img src="//media.infojobs.net/appgrade/icons/ico-phone.svg" alt="Phone">694 576 175</li>
                   <li><img src="//media.infojobs.net/appgrade/icons/ico-birthday.svg" alt="Age">27 años <span class="alternative">(16/03/1989)</span></li>
@@ -168,7 +169,7 @@
             <div class="container-expanded panel-canvas inner shadow">
               <h2 class="medium light inner">Idiomas</h2>
               <div class="inner">
-                <dl class="base list-columns-3 dl-inline">
+                <dl class="base list-columns-3 list-inline">
                   <dt data-text="Nativo" class="bold">English</dt>
                   <dd>Nativo</dd>
                   <dt data-text="Catal&aacute;n" class="bold">Catal&aacute;n</dt>
@@ -208,10 +209,11 @@
             </div>
           </section>
           <!-- /otros datos -->
+      </div>
     </div>
-    <div class="col-4">
+    <div class="col-4 col-12-medium">
       <div class="col-child">
-        <div class="js-sticky sticky-disabled-mobile">
+        <div class="js-sticky sticky-disabled-tablet">
           <div class="inner panel-canvas shadow">
             <h2 class="medium light inner">Por leer en Head of UX</h2>
             <div class="inner">
@@ -230,8 +232,8 @@
 
       </div>
     </div>
-  </div>
-
+    <!-- /col-->
+    </div>
   </div>
 </div>
   <script type="text/javascript" src="../js/sticky-on-scroll.js" th:remove="all"></script>

@@ -15,6 +15,13 @@ Markup:
 Styleguide #{$sgi-listsColumns}
 */
 
+   /*&.list-columns-12-medium {
+     @include flex-flow(column wrap);
+
+     li {
+       width: auto;
+     }
+   }*/
 
 @for $i from 1 through 4{
   $column-unit: 100 / $i;
@@ -50,10 +57,36 @@ Styleguide #{$sgi-listsColumns}
        @include light;
      }
 
-     &.dl-inline dt::after {
-       display: inline-block;
-       margin: 0 0 0 10px;
+     &.list-inline {
+
+       dt {
+         margin-right: 0;
+       }
+
+       dd {
+         display: none;
+       }
+
+       dt::after {
+         display: inline-block;
+         margin: 0 0 0 10px;
+       }
      }
+
+     @media only screen and (max-width: $tablet-start) {
+       &.list-columns-1-md {
+         li,
+         dt {
+           width: 100%;
+           margin: 0 0 20px 0;
+         }
+         li:last-of-type,
+         dt:last-of-type {
+           margin: 0;
+         }
+       }
+      }
+
    }
 }
 
