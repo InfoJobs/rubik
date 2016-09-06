@@ -43,7 +43,11 @@ h3,
 	color: $dark-silk;
 
   &.inner {
-    padding: 0 $padding;
+  	padding: 0 10px;
+
+  	@include mediaquery ($bp-tablet) {
+  		padding: 0 $padding;
+  	}
   }
 }
 
