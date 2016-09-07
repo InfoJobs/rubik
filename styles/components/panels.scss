@@ -29,6 +29,9 @@ Markup:
     <div class="panel-overlay inner">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, sit necessitatibus, dolorem quaerat ducimus reprehenderit corporis doloribus delectus voluptate commodi rem sunt placeat maxime esse libero tempore dignissimos architecto pariatur.</p>
     </div>
+    <div class="panel-highlight inner">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, sit necessitatibus, dolorem quaerat ducimus reprehenderit corporis doloribus delectus voluptate commodi rem sunt placeat maxime esse libero tempore dignissimos architecto pariatur.</p>
+    </div>
 
 Styleguide #{$sgi-panels}
 */
@@ -37,6 +40,16 @@ Styleguide #{$sgi-panels}
 
 	&-default {
 		background-color: $dark-shiro;
+
+		&[class^="overlay-"],
+		&[class*="overlay-"] {
+			background-color: transparent;
+
+			&::before {
+				background-color: $dark-shiro;
+			}
+		}
+
 	}
 
 	&-base {
@@ -73,6 +86,10 @@ Styleguide #{$sgi-panels}
 	&-overlay {
 		color: $shiro;
 		background-color: rgba(0, 0, 0, 0.5);
+	}
+
+	&-highlight {
+		background-color: #fff5e5;
 	}
 
 	&-user { // hasta tener efecto background de foto de perfil

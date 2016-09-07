@@ -114,6 +114,14 @@ Styleguide #{$sgi-helpers}
 }
 
 /*------------------------------------*\
+    $FONT
+\*------------------------------------*/
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+/*------------------------------------*\
     $BORDERS
 \*------------------------------------*/
 
@@ -163,6 +171,10 @@ Styleguide #{$sgi-helpers}
 	@include border-top-expanded;
 }
 
+.shadow {
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
 
 /*------------------------------------*\
     $MARGINS and PADDINGS
@@ -250,6 +262,7 @@ Styleguide #{$sgi-helpers}
    visibility: hidden;
 }
 
+
 /*------------------------------------*\
     $IMG
 \*------------------------------------*/
@@ -279,12 +292,25 @@ Styleguide #{$sgi-helpers}
 /*------------------------------------*\
     $POSITION
 \*------------------------------------*/
+@mixin sticky {
+    position: fixed;
+    top: 0;
+    height: auto;
+    width: 100%;
+    z-index: $zindex-wrap-overlay;
+
+}
 
 .sticky {
-  position: fixed;
-  top: 0;
-  height: auto;
-  width: 100%;
-  z-index: $zindex-wrap-overlay;
+  @include sticky;
   //max width se incluye por js si usamos sticky-on-scroll.js
+  &.sticky-disabled-tablet {
+    position: static;
+    width: auto;
+
+    @include mediaquery ($bp-tablet) {
+      @include sticky;
+    }
+
+  }
 }

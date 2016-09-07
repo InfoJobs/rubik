@@ -1,0 +1,26 @@
+/*------------------------------------*\
+    $LIST ICON
+\*------------------------------------*/
+
+//with tag img (size 24x24)
+
+.list-icon {
+
+  li {
+    position: relative;
+    padding: 2px 20px 2px 34px;
+  }
+
+  img {
+    position: absolute;
+    left: 0;
+    top: -1px;  }
+
+  &.list-items-expanded {
+    li {
+      margin-bottom: 28px;
+      padding-left: 44px;
+    }
+  }
+
+}

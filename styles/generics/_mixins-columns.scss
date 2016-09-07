@@ -33,7 +33,6 @@ $MIXIN COLUMNS
   	@include flex-direction(column);
 
   	overflow: hidden;
-  	height: 100%;
 
   	h1,h2,h3 {
   		margin: 0;
@@ -96,21 +95,26 @@ $MIXIN COLUMNS
   		}
 
   		@include mediaquery ($bp-tablet) {
-  			width: 82px;
+  			width: 76px;
 
   			&.crop-circle {
-  				height: 82px;
+  				height: 76px;
   			}
   		}
 
   		@include mediaquery ($bp-desktop) {
-  			width: 92px;
+  			width: 76px;
 
   			&.crop-circle {
-  				height: 92px;
+  				height: 76px;
   			}
   		}
   	}
+
+    .fig-thumbnail-logo img {
+      width: 72px;//include padding and border, total size: 76
+    }
+
   }
 
   .content-type-media-small {

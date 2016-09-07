@@ -1,0 +1,132 @@
+
+/*
+List in columns
+
+Use class `.list-columns-2`, `.list-columns-3`, `.list-columns-4` in `<ul>`tag to generate columns.
+
+Markup:
+<ul class="list-columns-4">
+    <li>1 Lorem ipsum</li>
+    <li>2 Lorem ipsum</li>
+    <li>3 Lorem ipsum</li>
+    <li>4 Lorem ipsum</li>
+</ul>
+
+Styleguide #{$sgi-listsColumns}
+*/
+
+   /*&.list-columns-12-medium {
+     @include flex-flow(column wrap);
+
+     li {
+       width: auto;
+     }
+   }*/
+
+@for $i from 1 through 4{
+  $column-unit: 100 / $i;
+
+  .list-columns-#{$i} {
+     @include display-flex;
+     @include flex-flow(row wrap);
+
+     li,
+     dt {
+       width: calc(1% * #{$column-unit});
+     }
+
+     dt:nth-of-type(n+#{$i+1}) {
+       margin-top: 20px;
+     }
+
+     dd {
+       display: none;
+     }
+
+     dt::after {
+       content: attr(data-text);
+       display: block;
+       margin:3px 0 0 0;
+     }
+
+     dt.light::after {
+       @include bold;
+     }
+
+     dt.bold::after {
+       @include light;
+     }
+
+     &.list-inline {
+
+       dt {
+         margin-right: 0;
+       }
+
+       dd {
+         display: none;
+       }
+
+       dt::after {
+         display: inline-block;
+         margin: 0 0 0 10px;
+       }
+     }
+
+     @media only screen and (max-width: $tablet-start) {
+       &.list-columns-1-md {
+         li,
+         dt {
+           width: 100%;
+           margin: 0 0 20px 0;
+         }
+         li:last-of-type,
+         dt:last-of-type {
+           margin: 0;
+         }
+       }
+      }
+
+     @media only screen and (max-width: $mobile-start) {
+       &.list-columns-1-sm {
+         li,
+         dt {
+           width: 100%;
+           margin: 0 0 20px 0;
+         }
+         li:last-of-type,
+         dt:last-of-type {
+           margin: 0;
+         }
+       }
+      }
+   }
+}
+
+.list-grid-columns-2 {
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+  dd {
+    display: none;
+  }
+  dt {
+    -webkit-column-break-inside: avoid;
+              page-break-inside: avoid;
+                 break-inside: avoid;
+  }
+  dt::after {
+    content: attr(data-text);
+    display: block;
+    margin:3px 0 0 0;
+  }
+
+  dt.light::after {
+    @include bold;
+  }
+
+  .inner & {
+    margin-bottom: -#{$padding};
+  }
+
+}

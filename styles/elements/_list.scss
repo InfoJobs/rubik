@@ -1,3 +1,7 @@
+@import "list-icon";
+@import "list-item-checked";
+@import "list-columns";
+
 // Text elements
 
 /*------------------------------------*\
@@ -85,7 +89,7 @@ Styleguide #{$sgi-listsDefault}
     }
 
     & dd + dt {
-        margin-top: 15px;
+        margin-top: $padding;
     }
 
     @at-root .list-inline-description#{&} {
@@ -97,6 +101,17 @@ Styleguide #{$sgi-listsDefault}
         > dd + dd {
             margin: 1px 0 0 10px;
         }
+    }
+
+    &[class^="list-grid-columns-"],
+    &[class*="list-grid-columns-"] {
+      dt {
+        margin: 0;
+
+        &::after {
+          padding-bottom: 20px;  
+        }
+      }
     }
 }
 
@@ -121,11 +136,18 @@ Styleguide #{$sgi-listsInline}
 	dd,
 	li {
 		display: inline-block;
-		font-size: $small-font-size;
-        font-family: $base-font-family;
 	}
 
-    dt {
+  &:not(.base) {
+  	dt,
+  	dd,
+  	li {
+  		font-size: $small-font-size;
+      font-family: $base-font-family;
+  	}
+  }
+
+  dt {
 		margin-right: 10px;
 	}
 }
@@ -482,32 +504,11 @@ Styleguide #{$sgi-tagGroupWithEllipsis}
     color: $soft-script;
 }
 
-/*
-List in columns
 
-Use class `.list-columns-2`, `.list-columns-3`, `.list-columns-4` in `<ul>`tag to generate columns.
+.list-items-expanded {
+  margin-top: -30px;
 
-Markup:
-<ul class="list-columns-4">
-    <li>1 Lorem ipsum</li>
-    <li>2 Lorem ipsum</li>
-    <li>3 Lorem ipsum</li>
-    <li>4 Lorem ipsum</li>
-</ul>
-
-Styleguide #{$sgi-listsColumns}
-*/
-
-
- @for $i from 1 through 4{
-     $column-unit: 100 / $i;
-
-     .list-columns-#{$i} {
-         @include display-flex;
-         @include flex-flow(row wrap);
-
-         li {
-             width: calc(1% * #{$column-unit});
-         }
-     }
- }
+  li {
+   margin-top: 30px;
+  }
+}

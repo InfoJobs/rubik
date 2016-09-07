@@ -1,0 +1,9 @@
+/*------------------------------------*\
+$MIXINS BORDERS
+\*------------------------------------*/
+
+@mixin border-contrast($size-border: 1px){
+    border-width: $size-border;
+    border-style: solid;
+    border-color: $shiro;
+}

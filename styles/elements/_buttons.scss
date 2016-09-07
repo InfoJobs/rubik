@@ -361,6 +361,22 @@ Styleguide #{$sgi-buttons-display}
     }
 }
 
+.btn-justify {
+  @include display-flex;
+  @include flex-flow(wrap);
+  margin-left: -5px;
+  margin-right: -5px;
+  li {
+    @include flex(1 1 auto);
+    padding: 5px;
+  }
+
+  [class^="btn-"],
+  [class*="btn-"] {
+    width: 100%;
+  }
+}
+
 /*
 Button group
 

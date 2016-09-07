@@ -55,6 +55,16 @@ Markup:
 		height: 60px;
 	}
 
+	&-large {
+		@include crop-circle;
+		width: 120px;
+		height: 120px;
+
+    &.border-contrast {
+      @include border-contrast(3px);
+    }
+	}
+
 	&-small {
 		@include crop-circle;
 		width: 40px;
