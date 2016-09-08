@@ -232,9 +232,8 @@ Styleguide #{$sgi-buttons-size}
 
 .btn-small {
     font-size: $xsmall-font-size;
-    padding: 0 10px;
-    height: 30px;
-    line-height: 32px;
+    padding: 9px 10px 7px 10px;
+    line-height: 1;
 
     img {
       width: 12px;
@@ -245,9 +244,8 @@ Styleguide #{$sgi-buttons-size}
 
 .btn {
     font-size: $small-font-size;
-    padding: 0 20px;
-    height: 40px;
-    line-height: 42px;
+    padding: 13px 20px 11px 20px;
+    line-height: 1;
 
     @at-root #{&}[class*="iconfont-"]::before { ////DEPRECATED
         font-size: $medium-font-size;
@@ -256,9 +254,8 @@ Styleguide #{$sgi-buttons-size}
 
 .btn-large {
     font-size: $base-font-size;
-    padding: 0 30px;
-    height: 50px;
-    line-height: 52px;
+    padding: 17px 30px 15px 30px;
+    line-height: 1;
 
     @at-root #{&}[class*="iconfont-"]::before { //DEPRECATED
         font-size: 22px;
@@ -297,10 +294,9 @@ button:focus[disabled],
 .btn-disabled:hover,
 .btn-disabled:active,
 .btn-disabled:focus {
-    line-height: 40px;
     text-decoration: none;
     color: $shiro;
-    border: 0;
+    border: 1px solid #dcdcdc;
     box-shadow: none;
     background: #dfdfdf; //add to vars (pending to be defined for companies)
     cursor: default;
@@ -327,7 +323,9 @@ Styleguide #{$sgi-buttons-display}
 
     @at-root button#{&} {
     	width: 100%;
-      height: auto;
+      	height: auto;
+      	padding-top: 15px;
+		padding-bottom: 13px;
     }
 
     &.text-left { //already defined in tools.scss, but overwritten by btn{...text-align: center;...}
@@ -359,7 +357,7 @@ Styleguide #{$sgi-buttons-file}
 	}
 
 	input {
-		height: auto;
+		height: $small-font-size;
 		opacity: 0;
 		cursor: pointer;
 	}
@@ -419,6 +417,22 @@ Styleguide #{$sgi-buttons-variants}
         @extend .btn-link-secondary:hover;
         color: $shiro;
     }
+}
+
+.btn-justify {
+  @include display-flex;
+  @include flex-flow(wrap);
+  margin-left: -5px;
+  margin-right: -5px;
+  li {
+    @include flex(1 1 auto);
+    padding: 5px;
+  }
+
+  [class^="btn-"],
+  [class*="btn-"] {
+    width: 100%;
+  }
 }
 
 /*
