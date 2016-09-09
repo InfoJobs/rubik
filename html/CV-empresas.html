@@ -9,6 +9,48 @@
 <body>
 <div class="wrapper">
   <div class="container container-expanded">
+
+				<header class="global-nav global-nav-logged global-nav-submenu">
+					<a class="js-open-menu nav-bar-toggle iconfont-BurguerMenu" href="javascript:">
+						<span>[Menu]</span>
+					</a>
+					<nav id="nav-mobile" class="nav-mobile">
+
+						<!-- Menu -->
+						<ul class="nav-bar-menu clearfix">
+
+							<!-- Home item: No logado -->
+
+
+							<!-- Home item: Logado -->
+							<li>
+								<h1>
+									<a class="logo" href="/" onclick="return xt_click(this,'C',infojobs.pageConfig.getXitiPortalLevelTwo(),'hnl_header_em_title','N');">
+										<img id="logo-header" alt="" src="//media.infojobs.net/appgrade/backgrounds/bg-logo.png">
+										<span>Inicio</span>
+									</a>
+								</h1>
+							</li>
+
+							<!-- Menu items -->
+							<li>
+								<a href="//orientacion-laboral.infojobs.net" onclick="return xt_click(this,'C',infojobs.pageConfig.getXitiPortalLevelTwo(),'hnl_header_consejos','N');" title="Orientación laboral y coaching en la búsqueda de empleo">Consejos</a>
+							</li><li>
+								<a href="/home/index.xhtml?homeCandidate=true&amp;dgv=4082225253899466802" onclick="return xt_click(this,'C',infojobs.pageConfig.getXitiPortalLevelTwo(),'home_ca_soy_A','N');" title="Zona candidatos">Zona candidatos</a>
+							</li>
+
+						</ul>
+
+						<!-- Login items -->
+
+
+
+
+					</nav>
+				</header>
+
+			</div>
+  <div class="container container-expanded">
     <div class="row row-faux">
       <div class="col-8 col-12-medium">
         <div class="col-child">
@@ -32,7 +74,7 @@
             <div class="container-expanded panel-canvas inner shadow">
               <h2 class="medium light inner">Datos basicos <span class="pull-right base"><a href="#">Ver datos completos</a></span></h2>
               <div class="inner">
-                <ul class="list-default list-columns-2 list-icon list-items-expanded">
+                <ul class="list-default list-columns-2 list-columns-1-sm list-icon list-items-expanded">
                   <li><img src="//media.infojobs.net/appgrade/icons/ico-mail.svg" alt="e-mail"/><span class="focus">pepe@pepe.com</span></li>
                   <li><img src="//media.infojobs.net/appgrade/icons/ico-phone.svg" alt="Phone">694 576 175</li>
                   <li><img src="//media.infojobs.net/appgrade/icons/ico-birthday.svg" alt="Age">27 aÃ±os <span class="alternative">(16/03/1989)</span></li>
@@ -169,18 +211,24 @@
             <div class="container-expanded panel-canvas inner shadow">
               <h2 class="medium light inner">Idiomas</h2>
               <div class="inner">
-                <dl class="base list-columns-3 list-columns-1-sm list-inline">
-                  <dt data-text="Nativo" class="bold">English</dt>
-                  <dd>Nativo</dd>
-                  <dt data-text="Catal&aacute;n" class="bold">Catal&aacute;n</dt>
-                  <dd>Alto</dd>
-                  <dt data-text="Catal&aacute;n" class="bold">Catal&aacute;n</dt>
-                  <dd>Alto</dd>
-                  <dt data-text="Catal&aacute;n" class="bold">Catal&aacute;n</dt>
-                  <dd>Alto</dd>
-                  <dt data-text="Catal&aacute;n" class="bold">Catal&aacute;n</dt>
-                  <dd>Alto</dd>
-                </dl>
+                <ul class="base list-columns-3 list-columns-1-sm list-inline">
+                  <li class="truncate">
+                    <span class="dt bold">English</span>
+                    <span class="light">Nativo</span>
+                  </li>
+                  <li class="truncate">
+                    <span class="dt bold">English</span>
+                    <span class="light">Nativo Lorem ipsum</span>
+                  </li>
+                  <li class="truncate">
+                    <span class="dt bold">English</span>
+                    <span class="light">Nativo</span>
+                  </li>
+                  <li class="truncate">
+                    <span class="dt bold">English</span>
+                    <span class="light">Nativo</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </section>
