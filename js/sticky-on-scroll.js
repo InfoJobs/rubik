@@ -3,7 +3,7 @@
   var stickyElement = $('.js-sticky');
   var stickyElementDesktop = $('.js-sticky-desktop');
   var stickyElementOffset;
-
+  var offsetFooter;
 
   window.onload = function() {
     stickyElement = $('.js-sticky');
