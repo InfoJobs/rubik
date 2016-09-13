@@ -60,9 +60,44 @@ Styleguide #{$sgi-notifications}
 
 .notification {
 	color: $shiro;
-	padding: 20px;
+	padding: $padding;
 	font-size: 16px;
 	line-height: $base-line-height; //revisar line-height
+
+  &.notification-contextual {
+    display: inline-block;
+    padding: $padding/2;
+    color: $dark-silk;
+
+    &.notification-success {
+      //@include iconfont-Big-check;
+      background-color: tint($bamboo,80%);
+
+      &::before {
+        color: $bamboo;
+      }
+    }
+    &.notification-error {
+      background-color: tint($trueblood,80%);
+
+      &::before {
+        color: $trueblood;
+      }
+    }
+
+  }
+
+  &.notification-icon {
+    padding-left: $padding*2 ;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: $padding;
+      left: $padding/2;
+    }
+
+  }
 
 	a,
 	a:hover,
@@ -74,11 +109,11 @@ Styleguide #{$sgi-notifications}
 		opacity: .9;
 	}
 
-	.notification-toast-fixed & {
-		position: fixed;
-		width: 100%;
-		max-width: 970px;
-		top: 0;
+  .notification-toast-fixed & {
+    position: fixed;
+    width: 100%;
+    max-width: $container-width;
+    top: 0;
 
 		@include mediaquery ($bp-tablet) {
 
@@ -95,8 +130,8 @@ Styleguide #{$sgi-notifications}
 }
 
 .notification-toast {
-	position: relative;
-	z-index: 9998;
+  position: relative;
+  z-index: $zindex-notification;
 }
 
 .notification .btn-close { //TODO: update for font-icons
@@ -120,6 +155,7 @@ Styleguide #{$sgi-notifications}
 
 .notification-success {
 	background: $bamboo;
+
 }
 
 .notification-info {
@@ -141,6 +177,7 @@ Styleguide #{$sgi-notifications}
 		color: $dark-silk;
 	}
 }
+
 .notification-dismissable {
 	position: relative;
 	padding-right: 70px;
