@@ -171,8 +171,8 @@ Styleguide #{$sgi-content-top}
 .content-top,
 .content-middle {
 
-	p {
-		margin-bottom: 0;
+	p:not(:last-child) {
+		margin-bottom: 5px;
 	}
 
 	.list-default & {
