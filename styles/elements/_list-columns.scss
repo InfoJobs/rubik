@@ -23,6 +23,22 @@ Styleguide #{$sgi-listsColumns}
      }
    }*/
 
+@mixin list-columns-1 {
+
+  margin: 0;
+
+  li,
+  dt {
+   width: 100%;
+   margin: 0 0 20px 0;
+  }
+  li:last-of-type,
+  dt:last-of-type {
+   margin: 0;
+  }
+
+}
+
 @for $i from 1 through 4{
   $column-unit: 100 / $i;
 
@@ -35,7 +51,8 @@ Styleguide #{$sgi-listsColumns}
        width: calc(1% * #{$column-unit});
      }
 
-     dt:nth-of-type(n+#{$i+1}) {
+     dt:nth-of-type(n+#{$i+1}),
+     li {
        margin-top: 20px;
      }
 
@@ -75,29 +92,13 @@ Styleguide #{$sgi-listsColumns}
 
      @media only screen and (max-width: $tablet-start) {
        &.list-columns-1-md {
-         li,
-         dt {
-           width: 100%;
-           margin: 0 0 20px 0;
-         }
-         li:last-of-type,
-         dt:last-of-type {
-           margin: 0;
-         }
+         @include list-columns-1
        }
       }
 
      @media only screen and (max-width: $mobile-start) {
        &.list-columns-1-sm {
-         li,
-         dt {
-           width: 100%;
-           margin: 0 0 20px 0;
-         }
-         li:last-of-type,
-         dt:last-of-type {
-           margin: 0;
-         }
+         @include list-columns-1
        }
       }
    }
