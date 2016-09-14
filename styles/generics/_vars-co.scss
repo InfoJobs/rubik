@@ -9,7 +9,6 @@ $sunrise-blue:                #a7adb0; //grey
 $midnight-blue:               #7e8284;
 
 $theme-color-primary:       		$light-blue;
-$theme-color-primary--hover:		$sunset-blue;
 $theme-color-secondary:     		$soft-blue;
 $theme-color-contrast:      		$dark-blue;
 
@@ -17,11 +16,10 @@ $theme-color-contrast:      		$dark-blue;
 //
 // Buttons
 // -------------------------------------------
-$theme-button-secondary:     		$soft-blue;
-$theme-button-secondary--hover:     $sunrise-blue;
-$theme-button-secondary-contrast:		         $sunrise-blue;
-$theme-button-secondary-contrast--hover:		 $midnight-blue;
-
+$theme-button-secondary:     		            transparent;
+$theme-button-secondary--hover:             $sunrise-blue;
+$theme-button-secondary-contrast:		        $sunrise-blue;
+$theme-button-secondary-contrast--hover:		$midnight-blue;
 //
 // Sticker colors
 // -------------------------------------------
