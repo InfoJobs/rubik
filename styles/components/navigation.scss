@@ -51,3 +51,35 @@
 	}
 
 }
+
+.navigation-prev-next {
+
+  li {
+    display: inline-block;
+    font-size: $small-font-size;
+
+    &.navigation-prev-next-counter {
+      padding: 0 5px;
+    }
+  }
+
+  &-inner {
+    @include inner;
+    height: 50px;
+    overflow: hidden;
+
+    .navigation-prev-next {
+      float: right;
+    }
+    .navigation-prev-next,
+    .navigation-back {
+      line-height: 1;
+    }
+
+  }
+
+
+  [class*="iconfont-"]::before  {
+    margin: 0;
+  }
+}
