@@ -118,7 +118,7 @@ Styleguide
 	}
 }
 
-.carousel-selected-item .btn {
+.carousel-selected-item [class*="btn"] {
 	left: $padding;
 }
 
@@ -293,7 +293,7 @@ Styleguide
 		}
 	}
 
-	.carousel-selected-item .btn {
+	.carousel-selected-item [class*="btn"] {
 	    text-align: center;
 	}
 
@@ -330,7 +330,7 @@ Styleguide
 		display: none;
 	}
 
-	.carousel-selected-item .btn {
+	.carousel-selected-item [class*="btn"] {
 		display: block;
 		margin: 0 auto;
 	    text-align: center;

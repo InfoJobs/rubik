@@ -1,17 +1,16 @@
 //
 // Brand colors
 // -------------------------------------------
-$color-primary:				$theme-color-primary;
-$color-primary-hover: 		$theme-color-primary--hover;
-$color-secondary:   		$theme-color-secondary;
-$color-contrast: 			$theme-color-contrast;
-$color-header:				$theme-color-header;
+$color-primary:        $theme-color-primary;
+$color-secondary:      $theme-color-secondary;
+$color-contrast:       $theme-color-contrast;
+$color-header:         $theme-color-header;
 
 
 //
 // Background and border colors
 // -------------------------------------------
-$color-contrast:        	$theme-color-contrast;
+$color-contrast:        $theme-color-contrast;
 
 
 //
@@ -25,11 +24,11 @@ $button-secondary-contrast--hover:      $theme-button-secondary-contrast--hover;
 //
 // Stickers colors
 // -------------------------------------------
-$sticker-color:				$theme-sticker-color;
-$sticker-color--hover:		$theme-sticker-color--hover;
-$sticker-border:			$theme-sticker-border;
-$sticker-background:       	$theme-sticker-background;
-$sticker-background--hover:	$theme-sticker-background--hover;
+$sticker-color:              $theme-sticker-color;
+$sticker-color--hover:       $theme-sticker-color--hover;
+$sticker-border:             $theme-sticker-border;
+$sticker-background:         $theme-sticker-background;
+$sticker-background--hover:  $theme-sticker-background--hover;
 
 //
 // Form elements
@@ -41,5 +40,5 @@ $input-tel-width:       	$theme-input-tel-width;
 // Layout
 // -------------------------------------------
 $row-centered-width-form:	$theme-row-centered-width-form;
-$row-centered-width: 		$theme-row-centered-width;
-$container-width:		    $theme-container-width;
+$row-centered-width: 		  $theme-row-centered-width;
+$container-width:		      $theme-container-width;

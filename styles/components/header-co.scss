@@ -27,7 +27,7 @@
 
 	}
 
-	a:not(.btn) {
+	a:not([class*="btn"]) {
 		font-size: $large-font-size;
 		font-family: $base-font-family-bold;
 
@@ -35,6 +35,38 @@
 			font-size: $base-font-size;
 			font-family: $base-font-family;
 		}
+	}
+
+	&.global-nav-submenu {
+		a {
+			font-size: $medium-font-size;
+
+			@include mediaquery ($bp-header) {
+				font-size: $small-font-size;
+			}
+		}
+
+		.nav-bar-submenu a {
+			font-size: $large-font-size;
+
+			@include mediaquery ($bp-header) {
+				font-size: $base-font-size;
+			}
+		}
+
+		//ocultamos Inicio en movil cuando hay submenu
+		.logo {
+			display: none;
+
+			@include mediaquery ($bp-header) {
+				display: block;
+			}
+
+		}
+	}
+
+	.nav-bar-submenu a {
+		font-size: $base-font-size;
 	}
 
 }
@@ -71,6 +103,71 @@
 	}
 }
 
+.nav-bar-user li a,
+.nav-bar-submenu li a {
+	padding: 15px 10px;
+
+	@include mediaquery ($bp-header) {
+		padding: 15px;
+	}
+}
+
+.nav-bar-submenu li:first-child a {
+	padding-top: 20px;
+
+	@include mediaquery ($bp-header) {
+		padding: 0;
+	}
+}
+
+.nav-bar-user li:first-child a.avatar {
+	padding-top: 40px;
+
+	@include mediaquery ($bp-header) {
+		padding: 0;
+	}
+}
+
+.nav-bar-submenu li:first-child {
+	a {
+		@include mediaquery ($bp-header) {
+			padding: 15px 10px 15px 20px;
+		}
+	}
+}
+
+.nav-bar-submenu li:last-child {
+	a {
+		padding-bottom: 20px;
+
+		@include mediaquery ($bp-header) {
+			padding-right: 20px;
+			padding-bottom: 15px;
+		}
+	}
+}
+
+.nav-bar-user li:last-child {
+	padding-left: 10px;
+	padding-right: 10px;
+
+	@include mediaquery ($bp-header) {
+		padding: 0;
+	}
+
+	a {
+		padding-right: 0;
+		padding-bottom: 15px;
+		padding-left: 0;
+		border-top: 1px solid $darkest-shiro;
+
+		@include mediaquery ($bp-header) {
+			padding-bottom: 0;
+			border-top: 0;
+		}
+	}
+}
+
 a.nav-bar-toggle {
 	display: block;
 	margin: 0;
@@ -84,7 +181,7 @@ a.nav-bar-toggle {
 		top: 25px;
 		left: 10px;
 		color: $darkest-shiro;
-		font-size: $xlarge-font-size;
+		font-size: $xxlarge-font-size;
 	}
 
 	&:hover {
@@ -110,7 +207,7 @@ a.nav-bar-toggle {
 	height: 100%;
 	max-height: 100vh;
 	width: 260px;
-	background: $dark-blue;
+	background: $dark-shiro;
     overflow: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -127,7 +224,7 @@ a.nav-bar-toggle {
 		height: auto;
 		width: auto;
 		overflow: hidden;
-
+		background: $dark-blue;
 	}
 
 	.global-nav-company & {
@@ -157,13 +254,13 @@ a.nav-bar-toggle {
 			position: relative;
 			padding: 17px 10px 13px 10px;
 			margin: 0;
-			color: $soft-blue;
+			color: $dark-silk;
 			-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
 			-webkit-tap-highlight-color: transparent; /* For some Androids */
 
 			@include mediaquery ($bp-header) {
 				padding: 30px 20px;
-				//color: $mid-script;
+				color: $soft-blue;
 			}
 
 			&:hover {
@@ -192,10 +289,73 @@ a.nav-bar-toggle {
 		}
 	}
 
+	.global-nav-submenu & {
+		@include order(2);
+		@include flex(0 0 auto);
+		overflow: visible;
+	}
+
+	.global-nav-submenu & .logo,
+	.global-nav-submenu & .logo:hover {
+
+		@include mediaquery ($bp-header) {
+			padding: 0;
+			margin: 10px 0 0 0;
+			height: 19px;
+			width: 77px;
+			background-image: url(#{$path-media}/portales/ij/appgrade/backgrounds/bg-logo-reduced-white.png);
+
+		}
+	}
+
 	@include mediaquery ($bp-header) {
 		float: left;
 		overflow: visible;
 		padding: 0 20px;
+
+		.global-nav-submenu & > li > a {
+			padding: 10px 15px;
+		}
+	}
+
+}
+
+.global-nav-logged.global-nav-submenu {
+
+	.nav-bar-menu {
+		background: $dark-shiro;
+		border-top: 1px solid $darkest-shiro;
+
+		@include mediaquery ($bp-header) {
+			border-top: 0;
+		}
+
+		li {
+			border-bottom: 1px solid $darkest-shiro;
+
+			&:first-child,
+			&:last-child {
+				border: 0;
+			}
+
+			@include mediaquery ($bp-header) {
+				border-bottom: 0;
+
+				& > a {
+					color: $soft-blue;
+					-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
+					-webkit-tap-highlight-color: transparent; /* For some Androids */
+
+					&:hover {
+						color: $shiro;
+					}
+				}
+			}
+		}
+
+		@include mediaquery ($bp-header) {
+			background: $dark-blue;
+		}
 	}
 
 }
@@ -234,7 +394,7 @@ a.nav-bar-toggle {
 		}
 	}
 
-	.btn {
+[class*="btn"] {
 		width: 100%;
 
 		@include mediaquery ($bp-header) {
@@ -243,8 +403,9 @@ a.nav-bar-toggle {
 	}
 
 	.btn-default {
-		color: $dark-silk;
+		  color: $dark-silk;
     	background-color: $sunrise-blue;
+      border-color: transparent;
 
 		&:hover {
 	    background-color: $midnight-blue;
@@ -257,7 +418,7 @@ a.nav-bar-toggle {
 	@include flex(0 0 auto);
 
 	@include mediaquery ($bp-header) {
-		padding: 3.5px 20px;
+		padding: 10px 20px;
 	}
 
 	li {
@@ -284,16 +445,15 @@ a.nav-bar-toggle {
 		display: block;
 		padding: 15px 10px;
 		color: $soft-script;
-		background-color: $dark-shiro;
 
 		&:hover {
-			color: $color-primary;
+			color: $shiro;
 		}
 
 		@include mediaquery ($bp-header) {
 			display: inline;
 			padding: 0;
-			background-color: $shiro;
+			color: $soft-blue;
 		}
 	}
 
@@ -327,7 +487,7 @@ a.nav-bar-toggle {
 	    top: 0;
 		padding: 30px 20px;
 	    width: 100%;
-		height: 145px;
+		height: 90px;
 		text-align: center;
 		color: $shiro;
 		background: $dark-silk;
@@ -338,18 +498,13 @@ a.nav-bar-toggle {
 			width: auto;
 			height: auto;
 			text-align: left;
-			color: $soft-script;
+			color: $soft-blue;
 			background: none;
 			white-space: nowrap;
 		}
 
 		&:hover {
 			color: $shiro;
-
-			@include mediaquery ($bp-header) {
-				color: $color-primary;
-			}
-
 		}
 
 		.name {
@@ -427,6 +582,67 @@ a.nav-bar-toggle {
 
 		}
 	}
+}
+
+.nav-bar-submenu {
+	padding-top: 90px;
+	background: $shiro;
+	@include order(1);
+
+	@include mediaquery ($bp-header) {
+		clear: both;
+		float: left;
+		width: 100%;
+		padding-top:0;
+		background: $darkest-shiro;
+	}
+
+	> li  {
+		@include mediaquery ($bp-header) {
+			float: left;
+			position: relative; // for position of sticker
+		}
+
+		& > a {
+			display: block;
+			color: $dark-silk;
+			-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
+			-webkit-tap-highlight-color: transparent; /* For some Androids */
+
+			&:hover {
+				color: $dark-silk;
+
+				@include mediaquery ($bp-header) {
+					color:$color-primary;
+				}
+			}
+
+			&:active {
+				color:$color-primary;
+			}
+		}
+	}
+
+	.active {
+		color: $color-primary;
+	}
+
+	.sticker {
+		position: relative;
+    	top: -2px;
+
+		@include mediaquery ($bp-header) {
+			position: absolute;
+		    top: 26px;
+		    right: -5px;
+		}
+	}
+
+	.global-nav-submenu & {
+		@include flex(0 0 auto);
+
+	}
+
 }
 
 .wrap-overlay {

@@ -112,7 +112,8 @@ a.soft-script:active,
 }
 
 .alert,
-.alert[class*="iconfont-"]::before {
+.alert[class*="iconfont-"]::before,
+.alert:hover {
 	color: $trueblood;
 }
 

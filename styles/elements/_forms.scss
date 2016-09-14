@@ -33,7 +33,7 @@ legend {
 
 label,
 .label {
-	display: inline-block;
+  display: inline-block;
 	vertical-align: top;
 	margin-bottom: 5px;
 	font-size: $base-font-size;
@@ -90,13 +90,13 @@ form ul .indent { // Used in cartas presentacion and company registration
 	> label {
 		margin-right: 10px;
 		margin-bottom: 0;
-   		vertical-align: middle;
+    vertical-align: middle;
 	}
 
 	> input,
 	> .form-select  {
-		display: inline-block;
-		width: 220px!important;
+  		display: inline-block;
+  		width: 220px!important;
 	}
 }
 
@@ -115,8 +115,8 @@ input[type="tel"],
 input[type="button"],
 input[type="submit"],
 select {
-     -webkit-appearance: none;
-     border-radius: 0;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 
 input,
@@ -164,7 +164,7 @@ textarea {
 }
 
 .input-group {
-    display: table;
+  display: table;
 	width: 100%;
 
 	& > div {
@@ -185,43 +185,43 @@ textarea {
 	}
 
 	.active input {
-	    background-color: $shiro;
-	    cursor: default;
+    background-color: $shiro;
+    cursor: default;
 	}
 
 	&-date {
-		width: auto;
-		border: 1px solid #c7c7c7;
+    width: auto;
+    border: 1px solid #c7c7c7;
 
 		> div {
-			position: relative;
+      position: relative;
 
 			&::before {
-			    content: "|";
-			    position: absolute;
-			    top: 12px;
-			    left: -5px;
+        content: "|";
+        position: absolute;
+        top: 12px;
+        left: -5px;
 				color: #c7c7c7;
 			}
 
 			&:first-of-type::before {
-			    content: "";
+        content: "";
 			}
 
-		input {
-			width: 50px;
-			margin-left: -4px;
-			text-align: center;
-			border: none;
-		}
+      input {
+      	width: 50px;
+      	margin-left: -4px;
+      	text-align: center;
+      	border: none;
+		  }
 
 			&:last-child input  {
-			width: 66px;
-		}
-	}
+        width: 66px;
+		  }
+	  }
 
 		> div:first-of-type input {
-			margin-left: 0;
+      margin-left: 0;
 		}
 
 		.error & {
@@ -262,13 +262,13 @@ input[type="number"] {
 
 	&::-webkit-inner-spin-button {
 		-webkit-appearance: none;
-	    margin: 0;
+    margin: 0;
 	}
 }
 
 input[type="tel"],
 .row-centered .input-cif {
-    margin-right: 20px;
+  margin-right: 20px;
 
 	@include mediaquery ($bp-desktop) {
 		width: $input-tel-width;
@@ -285,9 +285,9 @@ input[type="tel"],
 	}
 
 	~ .error-info {
-	    clear: both;
-	    display: block;
-	    padding-top: 5px;
+    clear: both;
+	  display: block;
+	  padding-top: 5px;
 	}
 }
 
@@ -640,19 +640,16 @@ Markup:
 Styleguide #{$sgi-forms-multiple-select}
 */
 
-
-
-
 input[type="radio"],
 input[type="checkbox"]{
 	display: inline-block;
 	cursor: pointer;
-  	padding: 0;
-  	margin: 3px 6px 0 0;
+  padding: 0;
+  margin: 3px 6px 0 0;
 	width: auto;
-  	border: 0 none;
-  	vertical-align: top;
-  	height: auto;
+  border: 0 none;
+  vertical-align: top;
+  height: auto;
 	font-size: 15px;
 }
 
@@ -685,34 +682,34 @@ input[type="radio"] + label,
 .appearance-sticker {
 	margin-right: 10px;
 
-    input[type="radio"],
-    input[type="checkbox"] {
-        display: none;
+  input[type="radio"],
+  input[type="checkbox"] {
+    display: none;
 
-        + label {
-          width: auto;
-        	height: 34px;
-        	line-height: 32px;
-    	    max-width: 100%;
-    	    margin-bottom: 5px;
-    	    padding: 5px 15px;
-    	    color: $color-primary;
-    	  	background-color: $dark-shiro;
-    	  	border: 1px solid $color-primary;
-    	  	border-radius: 21px;
+    + label {
+      width: auto;
+    	height: 34px;
+    	line-height: 32px;
+      max-width: 100%;
+      margin-bottom: 5px;
+      padding: 5px 15px;
+      color: $color-primary;
+    	background-color: $dark-shiro;
+    	border: 1px solid $color-primary;
+    	border-radius: 21px;
 
 			@include mediaquery ($bp-desktop) {
-	  		    &:hover,
-	  		    &:active {
-	  		    	color: #2b3d4e;
-	  	    		background-color: #BBC9D7;
-	  	    		border: 1px solid $color-primary;
-	  	    	}
-	  	    }
+  	    &:hover,
+  	    &:active {
+  	    	color: #2b3d4e;
+      		background-color: #BBC9D7;
+      		border: 1px solid $color-primary;
+      	}
+	    }
 
-	    	.sticker-close {
-              display: none;
-          }
+    	.sticker-close {
+            display: none;
+        }
     	}
 
     	&:checked {
@@ -721,12 +718,11 @@ input[type="radio"] + label,
     			background-color: $color-primary;
 
     			.sticker-close {
-	                display: inline-block;
-	                padding: 0 0 0 6px;
-	                color: $shiro;
-	            }
+            display: inline-block;
+            padding: 0 0 0 6px;
+            color: $shiro;
+          }
     		}
-
 
     	}
     }
@@ -737,8 +733,8 @@ input[type="radio"] + label,
 	margin-right: 0;
 
 	@at-root .layer-stickers #{&} {
-				width: auto;
-		    }
+    width: auto;
+  }
 
 	@include mediaquery ($bp-tablet) {
 		width: auto;
@@ -747,46 +743,43 @@ input[type="radio"] + label,
 	input[type="radio"] {
 
 		+ label {
-	    	@include btn;
-	    	@include btn-medium;
-	    	height: 44px;
-        line-height: 42px;
-	    	display: block;
-	    	color: $color-primary;
-	    	border: 1px solid $color-primary;
+      @include btn;
+      font-family: $base-font-family;
+      text-transform: none;
+	    height: 44px;
+	    display: block;
+	    color: $color-primary;
+	    border: 1px solid $color-primary;
 			font-size: $small-font-size;
 			text-align: left;
 			margin-right: 10px;
 
-	    	@at-root button#{&} {
-				font-size: $base-font-size;
-		    }
+      @at-root button#{&} {
+        font-size: $base-font-size;
+		  }
 
-		    &::before {
-		        content: " ";
-		        display: inline-block;
-		        width: 10px;
-		        height: 10px;
-		        margin-right: 5px;
-		        border: 1px solid $color-primary;
-		        border-radius: 5px;
-		        background-color: $dark-shiro;
-	      }
+	    &::before {
+        content: " ";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-right: 5px;
+        border: 1px solid $color-primary;
+        border-radius: 5px;
+        background-color: $dark-shiro;
+      }
 
-	    }
+    }
+    &:checked {
+  		+ label {
+  			&::before {
+  				border: 1px solid $shiro;
+  				background-color: $color-primary;
+  			}
 
-	    &:checked {
-		+ label {
-			&::before {
-				border: 1px solid $shiro;
-				background-color: $color-primary;
-			}
-
-
-		}
-	}
-	}
-
+		  }
+	  }
+  }
 
 }
 
@@ -939,28 +932,28 @@ Styleguide #{$sgi-forms-radio}
 }
 
 .radio-group label {
-    position: relative;
-    width: 100%;
-    margin-bottom: 5px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 5px;
 
-		//TODO: Fix line-height
+	//TODO: Fix line-height
 
-    &:before,
-    &:after {
-    	content: "";
-	    position: absolute;
-	    right: 0;
-	    left: 0;
-	    height: 10px;
-    }
+  &:before,
+  &:after {
+  	content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 10px;
+  }
 
-		&:before {
-			top: -10px;
-		}
+	&:before {
+		top: -10px;
+	}
 
-		&:after {
-	    top: 100%;
-		}
+	&:after {
+    top: 100%;
+	}
 }
 
 .form-select {
@@ -973,12 +966,12 @@ Styleguide #{$sgi-forms-radio}
 		padding:6px;
 		text-indent: 0.01px;
 		text-overflow: "";
-		-webkit-appearance: none;
-		   -moz-appearance: none;
-				appearance: none;
 		top: 0;
 		left: 0;
 		margin: 0;
+		-webkit-appearance: none;
+		   -moz-appearance: none;
+				    appearance: none;
 	}
 
 	&-disabled {
@@ -1099,7 +1092,7 @@ Styleguide #{$sgi-forms-special-files}
 		}
 
 		label {
-		    margin-bottom: 0;
+	    margin-bottom: 0;
 		}
 	}
 
@@ -1141,13 +1134,10 @@ Styleguide #{$sgi-forms-special-files}
 	meter {
 		width: 100%;
 		vertical-align: top;
-
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		appearance: none;
-
 		background: $dark-shiro;
-
 
 		/* WebKit */
 		&::-webkit-meter-bar {
@@ -1162,7 +1152,6 @@ Styleguide #{$sgi-forms-special-files}
 		&::-webkit-meter-even-less-good-value  {
 			background: $trueblood;
 		}
-
 
 		/* Firefox */
 		&:-moz-meter-optimum::-moz-meter-bar,
@@ -1219,6 +1208,10 @@ Styleguide #{$sgi-forms-strength-bar}
 	z-index: $zindex-notification;
 	width: 100%;
 	margin-top: 5px;
+
+	@at-root .search-bar #{&} ul {
+		display: block;
+	}
 }
 
 // autocomplete email
@@ -1256,58 +1249,57 @@ Styleguide #{$sgi-forms-switch-radio}
   position: relative;
 
     input {
-        display: none;
+      display: none;
     }
 
     input:checked + label {
-        color: $mid-script;
+      color: $mid-script;
 
-        &:last-of-type::before {
-            margin: 1px 10px 0 -28px;
-        }
+      &:last-of-type::before {
+        margin: 1px 10px 0 -28px;
+      }
 
     }
 
     .switch-radio-label {
-        width: auto;
-        color: $mid-script;
-        margin: 0;
-        @include font-small-line;
-        line-height: 150%;
+      width: auto;
+      color: $mid-script;
+      margin: 0;
+      @include font-small-line;
+      line-height: 150%;
 
-        &:first-of-type::after {
-            content:"";
-            display: block;
-            float: right;
-            width: 30px;
-            height: 20px;
-            border: 1px solid #55799a;
-            border-radius: 15px;
-            background-color: #99afc2;
-            margin: 0 5px 0 10px;
+      &:first-of-type::after {
+        content:"";
+        display: block;
+        float: right;
+        width: 30px;
+        height: 20px;
+        border: 1px solid #55799a;
+        border-radius: 15px;
+        background-color: #99afc2;
+        margin: 0 5px 0 10px;
+      }
 
-        }
+      &:last-of-type {
+        margin-left: -30px;
+        padding-left: 30px;
+      }
 
-        &:last-of-type {
-            margin-left: -30px;
-            padding-left: 30px;
-        }
-
-        &:last-of-type::before {
-            content:"";
-            display: block;
-            float: left;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background-color: $shiro;
-            border: 1px solid #55799a;
-            margin: 1px 20px 0 -38px;
-            -webkit-transition: margin 200ms linear;
-               -moz-transition: margin 200ms linear;
-                 -o-transition: margin 200ms linear;
-                    transition: margin 200ms linear;
-        }
+      &:last-of-type::before {
+        content:"";
+        display: block;
+        float: left;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: $shiro;
+        border: 1px solid #55799a;
+        margin: 1px 20px 0 -38px;
+        -webkit-transition: margin 200ms linear;
+           -moz-transition: margin 200ms linear;
+             -o-transition: margin 200ms linear;
+                transition: margin 200ms linear;
+      }
     }
 
 }

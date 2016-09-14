@@ -92,7 +92,7 @@ Styleguide #{$sgi-content-middle}
 			}
 
 			.content-type-media {
-				.btn {
+				[class*="btn"] {
 					margin-top: 20px;
 				}
 			}
@@ -171,8 +171,12 @@ Styleguide #{$sgi-content-top}
 .content-top,
 .content-middle {
 
-	p:not(:last-child) {
+	p {
 		margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 	}
 
 	.list-default & {

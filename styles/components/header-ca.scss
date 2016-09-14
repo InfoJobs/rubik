@@ -28,7 +28,7 @@
 
 	}
 
-	a:not(.btn) {
+	a:not([class*="btn"]) {
 		font-size: $large-font-size;
 		font-family: 'Proximanovabold';
 
@@ -408,7 +408,7 @@ a.nav-bar-toggle {
 		}
 	}
 
-	.btn {
+	[class*="btn"] {
 		width: 100%;
 
 		@include mediaquery ($bp-header) {

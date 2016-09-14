@@ -83,6 +83,7 @@ Styleguide #{$sgi-modal-content}
 
 .modal-header {
 	position: relative;
+	height: 58px;
 	padding: 20px 10px 15px 10px;
 	overflow: hidden;
 	color: $shiro;
@@ -124,6 +125,10 @@ Styleguide #{$sgi-modal-content}
 		right: 10px;
 	}
 
+	&.hit-area { //rules overwritten by .hit-area {position: relative;} on tools.scss
+		position: absolute;
+	}
+
 }
 
 .modal-content { //TODO: confirm this structure is necessary instead of .inner
@@ -132,6 +137,16 @@ Styleguide #{$sgi-modal-content}
  	textarea {
  		min-height: 140px;
  	}
+
+ 	img {
+		vertical-align: bottom;
+		max-height: 160px;
+
+		@include mediaquery ($bp-desktop) {
+			max-height: 242px;
+		}
+
+	}
 
 }
 
@@ -170,7 +185,7 @@ Styleguide #{$sgi-modal-content}
  	z-index: 9999;
 
 	//problems with iOS & safari
-    //-webkit-animation: modal-flipinX .3s both;
+    -webkit-animation: modal-flipinX .3s both;
     animation: modal-flipinX .3s both;
 	-webkit-transition: height 600ms;
 	        transition: height 600ms;
@@ -225,28 +240,9 @@ Styleguide #{$sgi-modal-content}
   animation: flipInX .6s both;
 }
 
-@-webkit-keyframes modal-flipinX {
-  from {
-    -webkit-transform: perspective(800px) rotate3d(1, 0, 0, 30deg) translateY(-60%);
-    -webkit-transition-timing-function: ease-in;
-    opacity: 0;
-  }
-
-  to {
-    -webkit-transform: perspective(800px);
-    opacity: 1;
-
-	@include mediaquery ($bp-desktop) {
-
-      -webkit-transform: perspective(800px) translateY(-50%);
-
-    }
-  }
-}
-
 @keyframes modal-flipinX {
   from {
-    transform: perspective(800px) rotate3d(1, 0, 0, 30deg) translateY(-60%);
+    transform: perspective(800px) translateY(-60%);
     transition-timing-function: ease-in;
     opacity: 0;
   }
@@ -258,6 +254,25 @@ Styleguide #{$sgi-modal-content}
 	@include mediaquery ($bp-desktop) {
 
       transform: perspective(800px) translateY(-50%);
+
+    }
+  }
+}
+
+@-webkit-keyframes modal-flipinX {
+  from {
+    -webkit-transform: perspective(800px) translateY(-60%);
+    -webkit-transition-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: perspective(800px);
+    opacity: 1;
+
+	@include mediaquery ($bp-desktop) {
+
+      -webkit-transform: perspective(800px) translateY(-50%);
 
     }
   }
@@ -310,7 +325,7 @@ Styleguide #{$sgi-modal-content}
 	position: fixed;
 	top: 0;
 	right: 10px;
-	margin-top: 15px;
+	margin-top: 10px;
 	background-color: #1a6d9b; //ToDo: add to _vars.scss
 }
 .btn-cancel {
@@ -327,5 +342,25 @@ Styleguide #{$sgi-modal-content}
 
 	&.hit-area {
 		position: fixed;
+	}
+}
+
+.modal-pagination {
+	li {
+		display: inline-block;
+
+		&::before {
+			content: " ";
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			margin-right: 5px;
+			border: 1px solid #55799A;
+			border-radius: 5px;
+		}
+
+		&.active::before {
+			background-color: #55799A;
+		}
 	}
 }
