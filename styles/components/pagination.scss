@@ -47,15 +47,6 @@ Styleguide #{$sgi-pagination}
 		}
 
 	}
-
-  [class*="btn"] {
-		width: 100%;
-
-		@include mediaquery ($bp-desktop) {
-			width: auto;
-		}
-	}
-
 }
 
 .pagination-top-microsite {

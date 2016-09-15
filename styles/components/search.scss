@@ -51,6 +51,10 @@
 	.radio-group {
 		display: block;
 		margin-bottom: 0;
+
+		label {
+			line-height: 105%;
+		}
 	}
 
 	.radio-group li {
@@ -64,7 +68,6 @@
 
 	label {
 		margin-bottom: 5px;
-		line-height: 105%;
 	}
 
 	input {
@@ -116,10 +119,14 @@
 	.search-bar {
 
 		ul {
-			@include display-flex;
+      @include display-flex;
 			@include vendor-prefix('flex-flow', 'row wrap');
-  			@include align-items (flex-end);
+      @include align-items (flex-end);
 		}
+
+    .range-group {
+      @include align-items (flex-start);
+    }
 
 		.search-field {
 			@include flex (1);
@@ -155,11 +162,6 @@
 
 		}
 
-		.search-submit-field {
-			overflow: hidden;
-			width: auto;
-		}
-
 		.radio-group li {
 			padding: 0;
 		}
@@ -178,6 +180,10 @@
 
 		.chosen-results {
 			display: block;
+		}
+
+		.hide { //advanced search: doesn't work because ul is display: flex;
+			display: none;
 		}
 
 	}
