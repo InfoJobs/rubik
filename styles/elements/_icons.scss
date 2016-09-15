@@ -115,6 +115,10 @@ Styleguide #{$sgi-iconsList}
 	@at-root .btn-group [class*="btn"]:not(.disabled):active#{&} {
 		color: $shiro;
 	}
+
+	@at-root a#{&} {
+ 	  color: $color-primary;
+	}
 }
 
 /*
