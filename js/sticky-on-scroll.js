@@ -3,7 +3,10 @@
   var stickyElement = $('.js-sticky');
   var stickyElementDesktop = $('.js-sticky-desktop');
   var stickyElementOffset;
-
+  //var offsetFooter;
+  var totalViewport;
+  var scrollY;
+  var heightSide;
 
   window.onload = function() {
     stickyElement = $('.js-sticky');
@@ -12,6 +15,7 @@
 
   function offsetElement() {
 
+    //offsetFooter = $('.footer').offset().top;
     returnOffset(stickyElement);
     returnOffset(stickyElementDesktop);
 
@@ -26,13 +30,14 @@
   }
 
   function sticky() {
+    scrollY = $(window).scrollTop();
 
     if(stickyElement.length) {
 
       var widthParent = stickyElement.parent().width();
       stickyElement.css('max-width', widthParent);
 
-      if ($(window).scrollTop() >= stickyElementOffset) {
+      if (scrollY >= stickyElementOffset) {
 
           stickyElement.addClass('sticky');
       }
@@ -46,7 +51,7 @@
       var widthParent = stickyElementDesktop.parent().width();
       stickyElementDesktop.css('max-width', widthParent);
 
-      if ($(window).scrollTop() >= stickyElementOffset) {
+      if (scrollY >= stickyElementOffset) {
 
           stickyElementDesktop.addClass('sticky');
       }
@@ -60,8 +65,28 @@
     }
 
 
+    // elFooterScroll = offsetFooter - (totalViewport + scrollY);
+    // console.log (elFooterScroll);
+    //
+    // if (elFooterScroll < 0 ) {
+    //     elFooterScroll = elFooterScroll * -1;
+    // }
+
+
   }
 
+  function scrollSideBar() {
+    stickyElementDesktop.css('height', 'auto');
+    heightSide = stickyElementDesktop.height();
+    totalViewport = window.innerHeight;
+
+    if (heightSide > totalViewport) {
+      stickyElementDesktop.css('height', totalViewport);
+      stickyElementDesktop.css('overflow-y', 'auto');
+
+    }
+
+  }
 
   window.addEventListener('load', offsetElement);
   window.addEventListener('resize', offsetElement);
@@ -69,6 +94,10 @@
   window.addEventListener('scroll', sticky);
   window.addEventListener('load', sticky);
   window.addEventListener('resize', sticky);
+
+  window.addEventListener('load', scrollSideBar);
+  window.addEventListener('resize', scrollSideBar);
+
 
 
 })();
