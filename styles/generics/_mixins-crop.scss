@@ -9,7 +9,7 @@ $MIXIN CROP
 	overflow: hidden;
 	margin: auto;
 	object-fit: cover;
-	object-position: 0 0;
+	object-position: center;
 }
 
 @mixin crop-circle {
