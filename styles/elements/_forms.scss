@@ -682,34 +682,34 @@ input[type="radio"] + label,
 .appearance-sticker {
 	margin-right: 10px;
 
-  input[type="radio"],
-  input[type="checkbox"] {
-    display: none;
+	input[type="radio"],
+	input[type="checkbox"] {
+	    display: none;
 
-    + label {
-      width: auto;
-    	height: 34px;
-    	line-height: 32px;
-      max-width: 100%;
-      margin-bottom: 5px;
-      padding: 5px 15px;
-      color: $color-primary;
-    	background-color: $dark-shiro;
-    	border: 1px solid $color-primary;
-    	border-radius: 21px;
+	    + label {
+			width: auto;
+			height: 34px;
+	    	line-height: 32px;
+			max-width: 100%;
+			margin-bottom: 5px;
+			padding: 5px 10px;
+			color: $color-primary;
+	    	background-color: $dark-shiro;
+	    	border: 1px solid $color-primary;
+	    	border-radius: 21px;
 
 			@include mediaquery ($bp-desktop) {
-  	    &:hover,
-  	    &:active {
-  	    	color: #2b3d4e;
-      		background-color: #BBC9D7;
-      		border: 1px solid $color-primary;
-      	}
-	    }
+		  	    &:hover,
+		  	    &:active {
+		  	    	color: #2b3d4e;
+		      		background-color: #BBC9D7;
+		      		border: 1px solid $color-primary;
+		      	}
+		    }
 
-    	.sticker-close {
-            display: none;
-        }
+	    	.sticker-close {
+	            display: none;
+	        }
     	}
 
     	&:checked {
@@ -752,7 +752,6 @@ input[type="radio"] + label,
 	    border: 1px solid $color-primary;
 			font-size: $small-font-size;
 			text-align: left;
-			margin-right: 10px;
 
       @at-root button#{&} {
         font-size: $base-font-size;
@@ -783,13 +782,6 @@ input[type="radio"] + label,
 
 }
 
-.appearance-btn:nth-child(2n) input[type="radio"] + label {
-	margin-right: 0;
-
-	@include mediaquery ($bp-tablet) {
-		margin-right: 10px;
-	}
-}
 
 .sticker.appearance-sticker {
 	height: 34px;
@@ -1205,7 +1197,7 @@ Styleguide #{$sgi-forms-strength-bar}
 
 .input-drop-down {
 	position: absolute;
-	z-index: $zindex-notification;
+	z-index: zindex-notification;
 	width: 100%;
 	margin-top: 5px;
 
