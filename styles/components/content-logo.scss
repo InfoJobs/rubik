@@ -190,6 +190,12 @@ Styleguide #{$sgi-content-top}
 	border-top: 1px solid $dark-shiro;
 }
 
+.content-divider-expanded {
+  border-top: 1px solid $dark-shiro;
+  margin-top: $padding;
+  padding-top: $padding*2;
+}
+
 /*
 Content with toolbar
 
