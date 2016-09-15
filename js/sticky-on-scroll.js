@@ -16,7 +16,7 @@
     returnOffset(stickyElementDesktop);
 
     function returnOffset(e) {
-      if(e.length) {
+      if(e.offset() != null) {
         e.removeClass('sticky');
         stickyElementOffset = e.offset().top;
         return stickyElementOffset;
@@ -27,12 +27,12 @@
 
   function sticky() {
 
-    if(stickyElement.length) {
+    if(stickyElement.offset() != null) {
 
       var widthParent = stickyElement.parent().width();
       stickyElement.css('max-width', widthParent);
 
-      if ($(window).scrollTop() >= stickyElementOffset) {
+      if ($(window).scrollTop() > stickyElementOffset) {
 
           stickyElement.addClass('sticky');
       }
@@ -41,12 +41,12 @@
       }
     }
 
-    if(window.innerWidth > 767 && stickyElementDesktop.length) {
+    if(window.innerWidth > 767 && stickyElementDesktop.offset() != null) {
 
       var widthParent = stickyElementDesktop.parent().width();
       stickyElementDesktop.css('max-width', widthParent);
 
-      if ($(window).scrollTop() >= stickyElementOffset) {
+      if ($(window).scrollTop() > stickyElementOffset) {
 
           stickyElementDesktop.addClass('sticky');
       }
@@ -55,7 +55,7 @@
       }
 
     }
-    if (window.innerWidth <= 767 && stickyElementDesktop.length) {
+    if (window.innerWidth <= 767 && stickyElementDesktop.offset() != null) {
       stickyElementDesktop.css('max-width', 'none');
     }
 
