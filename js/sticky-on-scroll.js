@@ -28,47 +28,36 @@
   function sticky() {
 
     if(stickyElement.offset() != null) {
-
-      var widthParent = stickyElement.parent().width();
-      stickyElement.css('max-width', widthParent);
-
-      if ($(window).scrollTop() > stickyElementOffset) {
-
-          stickyElement.addClass('sticky');
-      }
-      else {
-          stickyElement.removeClass('sticky');
-      }
+      makeMeSticky(stickyElement);
     }
 
     if(window.innerWidth > 767 && stickyElementDesktop.offset() != null) {
-
-      var widthParent = stickyElementDesktop.parent().width();
-      stickyElementDesktop.css('max-width', widthParent);
-
-      if ($(window).scrollTop() > stickyElementOffset) {
-
-          stickyElementDesktop.addClass('sticky');
-      }
-      else {
-          stickyElementDesktop.removeClass('sticky');
-      }
-
+      makeMeSticky(stickyElementDesktop);
     }
+
     if (window.innerWidth <= 767 && stickyElementDesktop.offset() != null) {
       stickyElementDesktop.css('max-width', 'none');
     }
 
-    function addMargin(e) {
+    function makeMeSticky(el) {
+      var widthParent = el.parent().width();
+      el.css('max-width', widthParent);
 
-      if(e.parentNode.classList.contains('container-expanded')) {
-        console.log('hola');
+      if ($(window).scrollTop() > stickyElementOffset) {
+          el.addClass('sticky');
+      } else {
+        el.removeClass('sticky');
       }
+
+      if(el.hasClass('sticky') && el.parents().hasClass('container-expanded')) {
+        el.css('margin-top', '10px');
+      } else {
+        el.css('margin-top', 'inherit');
+      }
+
     }
 
-
   }
-
 
   window.addEventListener('load', offsetElement);
   window.addEventListener('resize', offsetElement);
@@ -76,6 +65,5 @@
   window.addEventListener('scroll', sticky);
   window.addEventListener('load', sticky);
   window.addEventListener('resize', sticky);
-
 
 })();
