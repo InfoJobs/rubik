@@ -114,6 +114,13 @@
 			}
 		}
 
+		img {
+			object-fit: cover;
+			display: block;
+			max-height: 180px;
+			width: 100%;
+		}
+
 	}
 
 	.item-group {
@@ -316,6 +323,10 @@
 					line-height: 22px;
 					font-family: Proximanova;
 				}
+			}
+
+			img {
+				max-height: none;
 			}
 		}
 
