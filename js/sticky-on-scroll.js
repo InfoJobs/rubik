@@ -87,8 +87,11 @@
   }
 
   function styleContainer() {
-    var style = document.querySelector('.container-expanded').currentStyle || window.getComputedStyle(document.querySelector('.container-expanded'));
+    var elContainer = document.querySelector('.container-expanded');
+    if(elContainer !=null) {
+    var style = elContainer.currentStyle || window.getComputedStyle(elContainer);
     return style
+  }
   }
 
   window.addEventListener('load', offsetElement);
