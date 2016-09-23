@@ -18,7 +18,7 @@
     returnOffset(stickyElementDesktop);
 
     function returnOffset(e) {
-      if(e.offset() != null) {
+      if(e.offset() !== null) {
         e.removeClass('sticky');
         e.css('margin-top', 'inherit');
 
@@ -31,15 +31,15 @@
 
   function sticky() {
 
-    if(stickyElement.offset() != null) {
+    if(stickyElement.offset() !== null) {
       makeMeSticky(stickyElement);
     }
 
-    if(window.innerWidth > 767 && stickyElementDesktop.offset() != null) {
+    if(window.innerWidth > 767 && stickyElementDesktop.offset() !== null) {
       makeMeSticky(stickyElementDesktop);
     }
 
-    if (window.innerWidth <= 767 && stickyElementDesktop.offset() != null) {
+    if (window.innerWidth <= 767 && stickyElementDesktop.offset() !== null) {
       stickyElementDesktop.css('max-width', 'none');
     }
 
@@ -88,7 +88,7 @@
 
   function styleContainer() {
     var elContainer = document.querySelector('.container-expanded');
-    if(elContainer !=null) {
+    if(elContainer !==null) {
     var style = elContainer.currentStyle || window.getComputedStyle(elContainer);
     return style
   }
