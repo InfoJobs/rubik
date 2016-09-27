@@ -65,7 +65,7 @@ Styleguide #{$sgi-notifications}
 	line-height: $base-line-height; //revisar line-height
 
   &.notification-contextual {
-    display: inline-block;
+    display: table;
     padding: $padding/2;
     color: $dark-silk;
 
