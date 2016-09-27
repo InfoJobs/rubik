@@ -16,8 +16,11 @@ Markup:
 <a href="#" class="sticker-marked">Javascript</a>
 <a href="#" class="sticker-contrast">Javascript</a>
 <a href="#" class="sticker-secondary">Javascript</a>
-<a href="#" class="sticker-label-marked">Javascript</a>
-<a href="#" class="sticker-label-opacity">Javascript</a>
+<span class="sticker-label-marked">Sticker label marked</span>
+<span class="sticker-label-warning">Sticker label marked</span>
+<span class="sticker-label-error">Sticker label marked</span>
+<br>
+<div class="panel-focus inner"><span class="sticker-label-opacity">Sticker label opacity</span></div>
 
 Styleguide #{$sgi-stickers}
 */
@@ -95,9 +98,20 @@ Styleguide #{$sgi-stickers}
 
 .sticker-label-marked {
   @include sticker-label;
-  color: $shiro;
-  background-color: $bamboo;
-  border: solid 1px rgba(0, 0, 0, 0.1);
+  color: $dark-silk;
+  background-color: tint($bamboo,80%);
+}
+
+.sticker-label-warning {
+  @include sticker-label;
+  color: $dark-silk;
+  background-color: tint($kiiro,80%);
+}
+
+.sticker-label-error {
+  @include sticker-label;
+  color: $dark-silk;
+  background-color: tint($trueblood,80%);
 }
 
 /*
