@@ -200,6 +200,22 @@ Styleguide #{$sgi-tabs}
 			}
 		}
 	}
+
+  &.tabs-icons {
+    @include display-flex;
+
+    li {
+      @include flex(1 1 auto);
+      padding: 0;
+    }
+
+    a {
+      display: block;
+      padding: 20px;
+    }
+  }
+
+
 }
 
 .tabs-scroll {
