@@ -20,186 +20,183 @@ Styleguide #{$sgi-tabs}
 */
 
 .tabs {
+  border-bottom: 1px solid $darkest-shiro;
 
-    border-bottom: 1px solid $darkest-shiro;
+  > li {
+    display: inline-block;
+    font-family: $base-font-family-bold;
+
+    & + li {
+      margin-left: 20px;
+    }
+  }
+
+  a {
+    @include font-base-line;
+    @include vendor-prefix('flex-flow', 'row wrap');
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: $dark-silk;
+
+    @include mediaquery ($bp-desktop) {
+      @include font-medium-line;
+    }
+
+    &.tab-active {
+      position: relative;
+      color: $color-primary;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: $color-primary;
+      }
+    }
+  }
+
+  &.tabs-menu {
+    border-bottom: 0 none;
+
+    @at-root .inner #{&} {
+      margin: 0 -10px;
+
+      @include mediaquery ($bp-tablet) {
+        margin: 0 -20px;
+      }
+    }
+
+    @at-root .inner-expanded #{&} {
+      margin-top: -10px;
+      margin-bottom: -20px;
+
+      @include mediaquery ($bp-tablet) {
+        margin-top: -20px;
+        margin-bottom: -40px;
+      }
+  	}
+
+    @at-root .inner#{&} {
+      a {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+
+    + h1 {
+      margin-bottom: 20px;
+    }
 
     > li {
-		display: inline-block;
-		font-family: $base-font-family-bold;
+      position: relative;
+  		display: block;
+      border-top: 1px solid $darkest-shiro;
 
-        & + li {
-            margin-left: 20px;
-        }
-    }
-
-    a {
-        @include font-base-line;
-        @include vendor-prefix('flex-flow', 'row wrap');
-        padding-top: 20px;
-        padding-bottom: 20px;
-        color: $dark-silk;
-
-        @include mediaquery ($bp-desktop) {
-            @include font-medium-line;
-        }
-
-        &.tab-active {
-            position: relative;
-            color: $color-primary;
-
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 4px;
-                background: $color-primary;
-            }
-        }
-    }
-
-    &.tabs-menu {
-        border-bottom: 0 none;
-
-        @at-root .inner #{&} {
-    		margin: 0 -10px;
-
-            @include mediaquery ($bp-tablet) {
-        		margin: 0 -20px;
-        	}
-    	}
-
-        @at-root .inner-expanded #{&} {
-    		margin-top: -10px;
-            margin-bottom: -20px;
-
-            @include mediaquery ($bp-tablet) {
-        		margin-top: -20px;
-                margin-bottom: -40px;
-        	}
-    	}
-
-        @at-root .inner#{&} {
-
-            a {
-                padding-right: 0;
-                padding-left: 0;
-            }
-        }
-
-        + h1 {
-            margin-bottom: 20px;
-        }
-
-        > li {
-    		position: relative;
-    		display: block;
-            border-top: 1px solid $darkest-shiro;
-
-            .iconfont-Arrow {
-                @include iconfont-Arrow;
+      .iconfont-Arrow {
+        @include iconfont-Arrow;
 				position: absolute;
 				top: 26px;
 				right: 0;
 				left: auto;
-            }
+      }
 
-            & + li {
-                margin-left: 0;
-            }
+      & + li {
+        margin-left: 0;
+      }
 
-    		a {
-                display: block;
-                padding-right: 10px;
-                padding-bottom: 15px;
-                padding-left: 10px;
+      a {
+        display: block;
+        padding-right: 10px;
+        padding-bottom: 15px;
+        padding-left: 10px;
 
-                @include mediaquery ($bp-tablet) {
-                    padding-right: 20px;
-                    padding-left: 20px;
-                }
+        @include mediaquery ($bp-tablet) {
+          padding-right: 20px;
+          padding-left: 20px;
+        }
 
-                &.tab-active {
+        &.tab-active {
 
-        			&::after {
-        				background: none;
-        			}
-                }
+          &::after {
+            background: none;
+          }
+        }
 
-                &.arrow-parent {
+        &.arrow-parent {
 					padding-left: 70px;
 
-					.arrow {
-					    width: 57px;
-					    height: 57px;
-					    display: block;
-					    padding-top: 22px;
-					    padding-left: 16px;
-					    top: 0px;
-					    left: 0px;
-					    position: absolute;
-					    background: $dark-shiro;
-					}
-				}
-    		}
+          .arrow {
+            width: 57px;
+            height: 57px;
+            display: block;
+            padding-top: 22px;
+            padding-left: 16px;
+            top: 0px;
+            left: 0px;
+            position: absolute;
+            background: $dark-shiro;
+          }
         }
+      }
     }
+  }
 
-    &.tabs-menu--link a { // based on .link class behaviour
-        color: $color-primary;
+  &.tabs-menu--link a { // based on .link class behaviour
+    color: $color-primary;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @at-root .tabs-hover#{&} {
+
+    @include mediaquery ($bp-desktop) {
+
+      a:hover {
+        background: #e3f5fd;
+      }
+    }
+  }
+
+  .tabs-scroll & { //con scroll horizontal en movil
+
+    @media only screen and (max-width: $mobile-start) {
+
+      @include display-flex;
+      @include flex-flow;
+      width: 110%;// para android nativo
+
+      li {
+        @include flex(0 0 auto);
+        -webkit-box-flex: 0;
+           -moz-box-flex: 0;
+                box-flex: 0;
+      }
+    }
+  }
+
+  @at-root & .tabs-content  {
+
+    li,
+    p {
+      font-family: $base-font-family;
+
+      a {
+        display: inline;
+        padding: 0;
+        @include font-base-line;
 
         &:hover {
-            text-decoration: underline;
+          background: none;
+          text-decoration: underline;
         }
+      }
     }
-
-    @at-root .tabs-hover#{&} {
-
-        @include mediaquery ($bp-desktop) {
-
-            a:hover {
-                background: #e3f5fd;
-    		}
-        }
-    }
-
-    .tabs-scroll & { //con scroll horizontal en movil
-
-        @media only screen and (max-width: $mobile-start) {
-	           @include display-flex;
-               @include flex-flow;
-               width: 110%;// para android nativo
-
-                li {
-                   @include flex(0 0 auto);
-                   -webkit-box-flex: 0;
-                	  -moz-box-flex: 0;
-                	       box-flex: 0;
-               }
-
-        }
-
-    }
-
-    @at-root & .tabs-content  {
-
-	    li,
-	    p {
-			font-family: $base-font-family;
-
-			a {
-				display: inline;
-				padding: 0;
-				@include font-base-line;
-
-				&:hover {
-                	background: none;
-                	text-decoration: underline;
-                }
-			}
-		}
-	}
+  }
 
   &.tabs-icons {
     @include display-flex;
@@ -207,11 +204,22 @@ Styleguide #{$sgi-tabs}
     li {
       @include flex(1 1 auto);
       padding: 0;
+      text-align: center;
     }
 
     a {
+      @include font-xsmall-line;
       display: block;
       padding: 20px;
+      font-family: $base-font-family;
+
+      &:hover {
+        color: $color-primary;;
+      }
+
+      &:not('.tab-active') {
+        color: $mid-script;
+      }
     }
   }
 
