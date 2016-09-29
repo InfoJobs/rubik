@@ -422,11 +422,14 @@ Styleguide #{$sgi-buttons-variants}
 .btn-justify {
   @include display-flex;
   @include flex-flow(wrap);
-  margin-left: -5px;
-  margin-right: -5px;
+  @include align-items(center);
+
   li {
     @include flex(1 1 auto);
-    padding: 5px;
+
+    & + li {
+      padding-left: 10px;
+    }
   }
 
   [class^="btn-"],

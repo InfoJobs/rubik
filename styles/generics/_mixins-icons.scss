@@ -35,6 +35,14 @@ $MIXINS ICONS
 	}
 }
 
+@mixin iconfont-Big-check {
+	@include iconfont;
+
+	&::before {
+    content: "\e62c";
+	}
+}
+
 @mixin iconfont-Arrow {
 
 	&::before {
