@@ -346,7 +346,7 @@ $icon-size: (30,50); //TODO: resolve problem when it s moved to _vars
     content: "\e62b";
 }
 .iconfont-Big-check::before {
-    content: "\e62c";
+	@include iconfont-Big-check;
 }
 .iconfont-BigArrowDown::before {
     content: "\e62d";

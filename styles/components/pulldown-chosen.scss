@@ -460,6 +460,94 @@ Styleguide 2.16
     background: none;
 }
 
+/*------------------------------------*\
+$CHOSEN TOGGLE
+\*------------------------------------*/
+
+.chosen-toggle {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+
+  .chosen-container {
+    background: none;
+    width: 24px;
+    height: 24px;
+    border: 0 none;
+  }
+
+  .chosen-single {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    span {
+      display: none;
+    }
+  }
+
+  .chosen-drop {
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    border-color: $darkest-shiro;
+    border-top-color: $darkest-shiro;
+  }
+
+  .chosen-drop,
+  .chosen-results {
+    margin: 0;
+    padding: 0;
+    max-height: none;
+    overflow: hidden;
+    width: 230px;
+
+    li {
+      @include font-base-line;
+      position: relative;
+      padding: $padding $padding*2;
+    	-webkit-font-smoothing: inherit;
+    	-moz-osx-font-smoothing: inherit;
+    }
+
+    li:last-of-type {
+      border-top: 1px solid $darkest-shiro;
+    }
+  }
+
+  .chosen-container.chosen-with-drop .chosen-drop {
+    left: auto;
+    right: 0;
+  }
+
+  .result-selected {
+    @include iconfont-Big-check;
+	  @include font-base-line;
+    font-family: $base-font-family;
+
+    &::before {
+      font-family: 'Icons';
+      color: $mid-script;
+      position: absolute;
+      left: 20px;
+      top: 18px;
+    	-webkit-font-smoothing: antialiased;
+    	-moz-osx-font-smoothing: grayscale;
+    }
+  }
+
+
+  .iconfont-Menumore::before {
+    display: block;
+    color: $soft-script;
+    text-align: center;
+    font-size: 24px;
+    line-height: 24px;
+    margin: 0;
+    top: 0;
+  }
+}
+
+
+
 /* @end */
 /* @group Retina compatibility */
 // @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {
