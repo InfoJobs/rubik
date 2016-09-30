@@ -116,9 +116,9 @@ Styleguide #{$sgi-iconsList}
 		color: $shiro;
 	}
 
-	@at-root a#{&} {
- 	  color: $color-primary;
-	}
+  @at-root a#{&} {
+    color: $color-primary;
+  }
 }
 
 /*
@@ -437,4 +437,5 @@ a[class*=" Icon--"] {
 .Icon--small svg {
     width: 20px;
     height: 20px;
+    vertical-align: middle;
 }
