@@ -134,6 +134,20 @@ module.exports = function(grunt) {
           command: './node_modules/.bin/kss-node styleguide/dist/styleguide/css styleguide/styleguide --template styleguide/templates/infojobs --helpers styleguide/templates/helpers'
         //   command: 'kss-node dist/css styleguide --helpers templates/helpers'
         }
+    },
+    // Server ------------------------------------------------------------------
+    'http-server': {
+        'dev': {
+            root: 'styleguide/styleguide/',
+            port: 8080,
+            host: '0.0.0.0',
+            cache: 60,
+            showDir : true,
+            autoIndex: true,
+            ext: 'html',
+            runInBackground: false,
+            openBrowser : true
+        }
     }
   });
 
@@ -144,8 +158,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-http-server');
 
-  grunt.registerTask('default', ['clean', 'sass', 'copy:styleguide', 'includereplace', 'less', 'shell', 'replace', 'copy:allStyles', 'copy:copyFonts', 'copy:copyMedia', 'copy:copyJS', 'copy:copyHTML']);
+  grunt.registerTask('default', ['clean', 'sass', 'copy:styleguide', 'includereplace', 'less', 'shell', 'replace', 'copy:allStyles', 'copy:copyFonts', 'copy:copyMedia', 'copy:copyJS', 'copy:copyHTML', 'http-server']);
   grunt.registerTask('public', ['copy:copyRubik']);
 
 };
