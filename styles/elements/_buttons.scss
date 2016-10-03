@@ -423,13 +423,27 @@ Styleguide #{$sgi-buttons-variants}
   @include display-flex;
   @include flex-flow(wrap);
   @include align-items(center);
+  padding: 0;
 
   li {
     @include flex(1 1 auto);
+    margin-bottom: 10px; //responsive
 
     & + li {
       padding-left: 10px;
     }
+  }
+
+  &.btn-justify-icon-end {
+
+    li {
+      @include flex(2 1 auto);
+
+      &:last-of-type {
+        @include flex(1 1 0);
+      }
+    }
+
   }
 
   [class^="btn-"],

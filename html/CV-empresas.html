@@ -310,20 +310,24 @@
                 <div class="panel-canvas shadow">
                   <div class="inner">
                     <p class="base light margin-top">Por leer</p>
-                    <ul class="btn-justify">
-                      <li><button class="btn btn-primary">En proceso</button></li>
-                      <li><button class="btn btn-default">Descartar</button></li>
-                      <li>
-                        <div class="chosen-toggle">
-  												<select id="pulldown" class="chosen-select" data-placeholder="(Seleccionar)">
-  														<option value="01">En proceso</option>
-  														<option value="02">Finalista</option>
-  														<option value="03">Descartar</option>
-  														<option value="04">Descartar siempre</option>
-  												</select>
-                        </div>
-                      </li>
-                    </ul>
+                    <div class="inner sticky-bottom-medium-device panel-canvas">
+                      <ul class="btn-justify btn-justify-icon-end ">
+                        <li><button class="btn btn-primary">En proceso</button></li>
+                        <li><button class="btn btn-default">Descartar</button></li>
+                        <li>
+                          <div class="chosen-toggle">
+                            <select id="pulldown" class="chosen-select" data-placeholder="(Seleccionar)">
+                            		<option value="0">En proceso</option>
+                            		<option value="0,11" class="result-sublevel">Evaluar</option>
+                            		<option value="0,12" class="result-sublevel">Entrevistar</option>
+                            		<option value="1">Finalista</option>
+                            		<option value="2">Descartar</option>
+                            		<option value="3">Descartar siempre</option>
+                            </select>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
                     <div class="margin-top">
                       <dl class="list-default">
                         <dt><span class="light">Inscrito tambien en:</span></dt>

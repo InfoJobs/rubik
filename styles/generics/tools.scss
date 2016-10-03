@@ -298,5 +298,32 @@ Styleguide #{$sgi-helpers}
   top: 0;
   height: auto;
   width: 100%;
-  z-index: $zindex-wrap-overlay;
+  z-index: $zindex-sticky-content;
+}
+
+@mixin sticky-bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.15);
+  z-index: $zindex-sticky-content;
+}
+
+.sticky-bottom {
+  @include sticky-bottom;
+
+  &-medium-device {
+    @include sticky-bottom;
+
+    @include mediaquery ($bp-desktop) {
+      position: static;
+      box-shadow: none;
+      .inner &{
+        padding: 0;
+      }
+    }
+  }
+
+
 }

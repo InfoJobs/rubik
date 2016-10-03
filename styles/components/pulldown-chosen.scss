@@ -501,11 +501,19 @@ $CHOSEN TOGGLE
     width: 230px;
 
     li {
-      @include font-base-line;
       position: relative;
       padding: $padding $padding*2;
+      font-size: $base-font-size;
+      line-height: $base-font-size;
     	-webkit-font-smoothing: inherit;
     	-moz-osx-font-smoothing: inherit;
+
+      &.result-sublevel {
+        color: $mid-script;
+        text-indent: $padding;
+        padding-top: $padding/2;
+        padding-bottom: $padding/2;
+      }
     }
 
     li:last-of-type {
@@ -528,12 +536,11 @@ $CHOSEN TOGGLE
       color: $mid-script;
       position: absolute;
       left: 20px;
-      top: 18px;
+      top: 50%;
     	-webkit-font-smoothing: antialiased;
     	-moz-osx-font-smoothing: grayscale;
     }
   }
-
 
   .iconfont-Menumore::before {
     display: block;
