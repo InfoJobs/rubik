@@ -6,7 +6,7 @@
   var totalViewport;
   var scrollY;
   var heightSide;
-  var elStickyBottom = $('.sticky-bottom-medium-device');
+  var elStickyBottomMediumDevice = $('.sticky-bottom-medium-device');
 
   window.onload = function() {
     stickyElement = $('.js-sticky');
@@ -96,10 +96,10 @@
   }
 
   function stickyBottom() {
-    if(elStickyBottom !==null) {
+    if(elStickyBottomMediumDevice !==null) {
 
       if(window.innerWidth <= 767 ) {
-        $('body').css('margin-bottom', elStickyBottom.innerHeight());
+        $('body').css('margin-bottom', elStickyBottomMediumDevice.innerHeight());
 
       } else {
         $('body').css('margin-bottom', 'inherit');
