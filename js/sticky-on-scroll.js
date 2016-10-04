@@ -7,7 +7,6 @@
   var scrollY;
   var heightSide;
   var elStickyBottom = $('.sticky-bottom-medium-device');
-  var heightStickyEl;
 
   window.onload = function() {
     stickyElement = $('.js-sticky');
@@ -105,7 +104,7 @@
       } else {
         $('body').css('margin-bottom', 'inherit');
       }
-      
+
     }
   }
 
