@@ -113,6 +113,7 @@ Styleguide #{$sgi-buttons-type}
       border: 1px solid shade($color-primary,40%);
       color: $shiro;
       background-color: shade($color-primary,40%);
+      box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
 
       &:hover,
       &:focus,
@@ -201,6 +202,7 @@ Styleguide #{$sgi-buttons-type}
     color: $shiro;
     border: 1px solid $late-blue;
     background-color: $late-blue;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
 }
 
 .btn-primary-contrast:hover,
