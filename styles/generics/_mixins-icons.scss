@@ -36,9 +36,9 @@ $MIXINS ICONS
 }
 
 @mixin iconfont-Big-check {
-	@include iconfont;
 
 	&::before {
+    @include iconfont;
     content: "\e62c";
 	}
 }
