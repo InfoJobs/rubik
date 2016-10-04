@@ -504,7 +504,7 @@ $CHOSEN TOGGLE
       position: relative;
       padding: $padding $padding*2;
       font-size: $base-font-size;
-      line-height: $base-font-size;
+      line-height: 1;
     	-webkit-font-smoothing: inherit;
     	-moz-osx-font-smoothing: inherit;
 

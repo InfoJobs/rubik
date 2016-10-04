@@ -439,10 +439,10 @@ Styleguide #{$sgi-buttons-variants}
   &.btn-justify-icon-end {
 
     li {
-      @include flex(2 1 auto);
+      @include flex(1 1 auto);
 
       &:last-of-type {
-        @include flex(1 1 0);
+        @include flex(0 0 0);
       }
     }
 
