@@ -6,6 +6,7 @@
   var totalViewport;
   var scrollY;
   var heightSide;
+  var elStickyBottomMediumDevice = $('.sticky-bottom-medium-device');
 
   window.onload = function() {
     stickyElement = $('.js-sticky');
@@ -94,6 +95,21 @@
   }
   }
 
+  function stickyBottom() {
+    if(elStickyBottomMediumDevice !==null) {
+
+      if(window.innerWidth <= 767 ) {
+        $('body').css('margin-bottom', elStickyBottomMediumDevice.innerHeight());
+
+      } else {
+        $('body').css('margin-bottom', 'inherit');
+      }
+
+    }
+  }
+
+
+
   window.addEventListener('load', offsetElement);
   window.addEventListener('resize', offsetElement);
 
@@ -103,6 +119,9 @@
 
   window.addEventListener('load', scrollSideBar);
   window.addEventListener('resize', scrollSideBar);
+
+  window.addEventListener('load', stickyBottom);
+  window.addEventListener('resize', stickyBottom);
 
 })();
 

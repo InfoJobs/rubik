@@ -429,10 +429,11 @@ Styleguide #{$sgi-buttons-variants}
 
   li {
     @include flex(1 1 auto);
-    margin-bottom: 10px; //responsive
+    margin-bottom: $padding/2; //responsive
+    padding-right: $padding/2;
 
-    & + li {
-      padding-left: 10px;
+    &:last-of-type {
+      padding: 0;
     }
   }
 
