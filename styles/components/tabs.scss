@@ -204,22 +204,25 @@ Styleguide #{$sgi-tabs}
     li {
       @include flex(1 1 auto);
       padding: 0;
-      text-align: center;
     }
 
     a {
+      @include display-flex;
+      @include align-items(flex-end);
       @include font-xsmall-line;
-      display: block;
-      padding: 20px;
-      font-family: $base-font-family;
+      justify-content: center;
+      font-family: $base-font-family-semi-bold;
+      height: 100px;
+      padding: $padding $padding $padding - 4;//4 es el alto del border del tab active
 
       &:hover {
         color: $color-primary;;
       }
 
-      &:not('.tab-active') {
-        color: $mid-script;
+      &.tab-active {
+        cursor: default;
       }
+
     }
   }
 

@@ -193,6 +193,45 @@ $iconfont-size: (16, 18, 22, 30, 36, 100); //TODO: resolve problem when it s mov
 		background: url("#{$path-icons}/ico-social-youtube-footer.png") no-repeat 0 0;
 }
 
+.icon-youtube {
+		background: url("#{$path-icons}/ico-social-youtube-footer.png") no-repeat 0 0;
+}
+
+/*------------------------------------*\
+	$ICONSIMAGE TABS
+\*------------------------------------*/
+
+@mixin icon-tab($icon-img, $icon-img-focus) {
+
+  background: url("#{$path-icons}/#{$icon-img}.png") no-repeat  center $padding;
+  background-size: 40px;
+
+  &:hover,
+  &:active,
+  &.tab-active {
+    background: url("#{$path-icons}/#{$icon-img-focus}.png") no-repeat  center $padding;
+    background-size: 40px;
+  }
+
+}
+
+.icon-tab-comments {
+    @include icon-tab(icon-tab-comments, icon-tab-comments-focus);
+}
+
+.icon-tab-favorites {
+    @include icon-tab(icon-tab-favorites, icon-tab-favorites-focus);
+}
+
+.icon-tab-messages {
+    @include icon-tab(icon-tab-messages, icon-tab-messages-focus);
+}
+
+.icon-tab-timeline {
+    @include icon-tab(icon-tab-timeline, icon-tab-timeline-focus);
+}
+
+
 $icon-size: (30,50); //TODO: resolve problem when it s moved to _vars
 
 @each $value in $icon-size {
