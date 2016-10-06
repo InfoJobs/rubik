@@ -136,7 +136,7 @@ Markup:
 Styleguide #{$sgi-iconsSize}
 */
 
-$iconfont-size: (16, 18, 22, 30, 36, 100); //TODO: resolve problem when it s moved to _vars
+$iconfont-size: (16, 18, 22, 24, 30, 36, 100); //TODO: resolve problem when it s moved to _vars
 
 @each $value in $iconfont-size {
 

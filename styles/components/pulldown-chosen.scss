@@ -468,6 +468,17 @@ $CHOSEN TOGGLE
   width: 24px;
   height: 24px;
   cursor: pointer;
+  position: relative;
+
+  select {
+    border: none;
+    background: none;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 
   .chosen-container {
     background: none;

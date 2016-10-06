@@ -443,7 +443,7 @@ Styleguide #{$sgi-buttons-variants}
       @include flex(1 1 auto);
 
       &:last-of-type {
-        @include flex(0 0 0);
+        @include flex(0 1 auto);
       }
     }
 
