@@ -7,8 +7,14 @@
 
     if(elChosenToggle !== null) {
       $('.chosen-toggle .chosen-single').ready(function(){
-
-        $('.chosen-toggle .chosen-single').addClass('iconfont-Menumore');
+        
+        if (window.innerWidth < 481) {
+          $('.chosen-toggle').addClass('iconfont-Menumore iconfont-24px');
+          $('.chosen-toggle').css('padding-top','5px');
+        }
+        else {
+          $('.chosen-toggle .chosen-single').addClass('iconfont-Menumore');
+        }
 
       });
     }
