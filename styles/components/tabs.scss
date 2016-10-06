@@ -198,6 +198,36 @@ Styleguide #{$sgi-tabs}
     }
   }
 
+  /*
+  Tabs Icons
+
+  Markup:
+  <ul class="tabs tabs-icons">
+  	<li><a class="icon-tab-comments tab-active" href="#">Tab 1</a></li>
+  	<li><a class="icon-tab-messages" href="#">Tab 2</a></li>
+  	<li><a class="icon-tab-timeline" href="#">Tab 3</a></li>
+  </ul>
+
+  Styleguide #{$sgi-tabsIcons}
+  */
+
+  /*
+  Vertical tabs menu with link style
+
+  Use class `.tabs-menu--link`, `.tabs-menu` and `.tabs` to create a structure of vertical tabs menu.
+
+  Markup:
+  <ul class="tabs tabs-menu tabs-menu--link inner">
+  	<li><a href="#">Lorem Ipsum Link</a></li>
+  	<li><a href="#">Lorem Ipsum Link</a></li>
+  	<li><a href="#">Lorem Ipsum Link</a></li>
+  	<li><a href="#">Lorem Ipsum Link</a></li>
+  	<li><a href="#">Lorem Ipsum Link</a></li>
+  </ul>
+
+  Styleguide #{$sgi-tabsMenuLink}
+  */
+
   &.tabs-icons {
     @include display-flex;
 
