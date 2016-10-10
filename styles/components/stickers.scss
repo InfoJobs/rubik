@@ -94,6 +94,11 @@ Styleguide #{$sgi-stickers}
   color: $shiro;
   background-color: tint(transparent,30%);
   border: transparent;
+
+  @media print {
+    color: #000000;
+    border: 0 none;
+  }
 }
 
 .sticker-label-marked {

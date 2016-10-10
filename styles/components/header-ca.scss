@@ -738,7 +738,8 @@ a.nav-bar-toggle {
 		.nav-bar-access,
 		.nav-bar-submenu,
 		.nav-bar-menu li span,
-		.nav-bar-menu li + li {
+		.nav-bar-menu li + li,
+    .nav-bar-submenu {
 
 			display: none;
 		}

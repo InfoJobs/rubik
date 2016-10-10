@@ -49,6 +49,9 @@ h3,
   		padding: 0 $padding;
   	}
   }
+  @media print {
+      color: #000000;
+  }
 }
 
 h1 {
@@ -84,6 +87,12 @@ h2,
 		font-size: $xlarge-font-size;
 		line-height: $xlarge-line-height;
 	}
+
+  @media print {
+    section & {
+      border-bottom: 1px solid #000000;
+    }
+  }
 }
 
 h3,

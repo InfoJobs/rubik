@@ -57,9 +57,10 @@
   li {
     display: inline-block;
     font-size: $small-font-size;
+    margin-right: 5px;
 
-    &.navigation-prev-next-counter {
-      padding: 0 5px;
+    &:last-of-type {
+      margin: 0;
     }
   }
 
@@ -82,4 +83,9 @@
   [class*="iconfont-"]::before  {
     margin: 0;
   }
+
+  @media print {
+    display: none;
+  }
+
 }
