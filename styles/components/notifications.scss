@@ -61,13 +61,17 @@ Styleguide #{$sgi-notifications}
 .notification {
 	color: $shiro;
 	padding: $padding;
-	font-size: 16px;
+	font-size: $base-font-size;
 	line-height: $base-line-height; //revisar line-height
 
   &.notification-contextual {
     display: table;
     padding: $padding/2;
     color: $dark-silk;
+
+    @mediq print {
+      padding: 0;
+    }
 
     &.notification-success {
       //@include iconfont-Big-check;
@@ -76,11 +80,19 @@ Styleguide #{$sgi-notifications}
       &::before {
         color: $bamboo;
       }
+
+      @media print {
+        color: $bamboo;
+      }
     }
     &.notification-error {
       background-color: tint($trueblood,80%);
 
       &::before {
+        color: $trueblood;
+      }
+
+      @media print {
         color: $trueblood;
       }
     }

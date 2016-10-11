@@ -96,8 +96,7 @@ Styleguide #{$sgi-stickers}
   border: transparent;
 
   @media print {
-    color: #000000;
-    border: 0 none;
+    color: $dark-silk;
   }
 }
 
@@ -105,18 +104,30 @@ Styleguide #{$sgi-stickers}
   @include sticker-label;
   color: $dark-silk;
   background-color: tint($bamboo,80%);
+
+  @mdia print {
+    color: $bamboo;
+  }
 }
 
 .sticker-label-warning {
   @include sticker-label;
   color: $dark-silk;
   background-color: tint($kiiro,70%);
+
+  @media print {
+    color: $kiiro;
+  }
 }
 
 .sticker-label-error {
   @include sticker-label;
   color: $dark-silk;
   background-color: tint($trueblood,80%);
+
+  @media print {
+    color: $trueblood;
+  }
 }
 
 /*

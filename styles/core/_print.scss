@@ -4,6 +4,22 @@
 
 @media print {
 
+  $xsmall-font-size: ($xsmall-font-size/$point-to-px);
+  $xsmall-line-height: ($xsmall-line-height/$point-to-px);
+  $small-font-size: ($small-font-size/$point-to-px);
+  $small-line-height: ($small-line-height/$point-to-px);
+	$base-font-size: ($base-font-size/$point-to-px);
+	$base-line-height: ($base-line-height/$point-to-px);
+	$medium-font-size: ($medium-font-size/$point-to-px);
+	$medium-line-height: ($medium-line-height/$point-to-px);
+	$large-font-size: ($large-font-size/$point-to-px);
+	$large-line-height: ($large-line-height/$point-to-px);
+  $xlarge-font-size: ($xlarge-font-size/$point-to-px);
+  $xlarge-line-height: ($xlarge-line-height/$point-to-px);
+
+  //color
+  $dark-silk: #000000;
+
     * {
         background: transparent !important;
         box-shadow: none !important;
@@ -13,10 +29,10 @@
 
     html,
     body {
-    	font-size: 12pt;
-    	line-height: 13pt;
+    	font-size: $base-font-size;
+    	line-height: $base-line-height;
     	height: auto;
-      color: #000000;
+      color: $dark-silk;
     }
 
     footer::after {
@@ -82,12 +98,17 @@
     h3 {
         page-break-after: avoid;
     }
+    section {
+      page-break-inside: avoid;
+    }
 
     p,
     ul,
     ol {
     	margin-bottom: 15px;
     }
+
+    //hidde
 
    	.no-print, //no-print es una helper class, usar cuando no podemos ocultar el elemento por defecto o en la definicion de un componente
     [class*="btn"],
@@ -97,4 +118,10 @@
     	display: none!important;
     }
 
+}
+
+@page:right{
+  @bottom-right {
+    content: counter(page);
+  }
 }

@@ -165,6 +165,10 @@ Styleguide #{$sgi-content-top}
 
 	p:only-of-type {
 		margin-bottom: 5px;
+
+    @media print {
+      margin-bottom: 0;
+    }
 	}
 }
 
