@@ -30,12 +30,29 @@ Styleguide #{$sgi-listsItemChecked}
       padding: 7px 20px 7px 40px;
       line-height: 1.1;
 
+      @media print {
+        padding: 7px 0 7px 20px;
+      }
+
     }
 
     > .checked {
       background: rgba(0,0,0,0.05) url("#{$path-icons}/ico-check-24x24.svg") no-repeat 10px center;
       border:1px solid rgba(0,0,0,0.05);
       border-radius: 2px;
+
+      @media print {
+        border: 0 none;
+        position: relative;
+
+        &::before {
+         content:  "\2713 ";
+         font-size: 14pt;
+         position: absolute;
+         left: 0;
+        }
+      }
+
     }
   }
 

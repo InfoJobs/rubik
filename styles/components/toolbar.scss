@@ -40,5 +40,10 @@ Styleguide #{$sgi-toolbar}
     img {
       vertical-align: middle;
     }
+
+    @media print {
+      display: none;
+    }
+
   }
 }

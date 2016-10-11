@@ -193,5 +193,9 @@ $query2     = width, device-width
 
   h1 {
       color: $shiro;
+
+      @media print {
+        color: #000000;
+      }
   }
 }

@@ -726,7 +726,8 @@ a.nav-bar-toggle {
 		&.global-nav-logged .nav-bar-user,
 		.nav-bar-access,
 		.nav-bar-menu li span,
-		.nav-bar-menu li + li {
+		.nav-bar-menu li + li,
+    .nav-bar-submenu {
 
 			display: none;
 		}

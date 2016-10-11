@@ -43,7 +43,7 @@ p {
 }
 
 
-$font-size: (xsmall, small, base, medium); //TODO: resolve problem when it s moved to _vars
+$font-size: (xsmall, small, base, medium, large, xlarge); //TODO: resolve problem when it s moved to _vars
 
 @each $value in $font-size {
 
@@ -87,25 +87,6 @@ Markup:
 Styleguide #{$sgi-textSize}
 */
 
-.xsmall {
-  @extend %font-xsmall-line;
-}
-
-.base { //TODO: used in whatever kind of copy text (p, a, li...). Get out of _paragraphs.scss
-	@extend %font-base-line;
-}
-
-.medium { //TODO: really necessary? this size is not defined in 'text-sizes.png' document for body copy
-	@extend %font-medium-line;
-}
-
-.large {
-	@extend %font-large-line;
-}
-
-.xlarge {
-	@extend %font-xlarge-line;
-}
 
 /*
 Text variants

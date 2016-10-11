@@ -94,24 +94,40 @@ Styleguide #{$sgi-stickers}
   color: $shiro;
   background-color: tint(transparent,30%);
   border: transparent;
+
+  @media print {
+    color: $dark-silk;
+  }
 }
 
 .sticker-label-marked {
   @include sticker-label;
   color: $dark-silk;
   background-color: tint($bamboo,80%);
+
+  @mdia print {
+    color: $bamboo;
+  }
 }
 
 .sticker-label-warning {
   @include sticker-label;
   color: $dark-silk;
   background-color: tint($kiiro,70%);
+
+  @media print {
+    color: $kiiro;
+  }
 }
 
 .sticker-label-error {
   @include sticker-label;
   color: $dark-silk;
   background-color: tint($trueblood,80%);
+
+  @media print {
+    color: $trueblood;
+  }
 }
 
 /*

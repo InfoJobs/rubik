@@ -214,7 +214,7 @@ Styleguide #{$sgi-helpers}
 	.hide-small-device,
 	div.hide-small-device,
 	.aside-wrapper .hide-small-device {
-		display: none;
+		display: none!important;
 	}
 	//div.hide-small-device is must because we have .btn-group > div {display: table-cell;} on buttons.scss
 	//.aside-wrapper .hide-small-device is must because we have .aside-wrapper .col-n {display: table-cell;} on grids.scss
