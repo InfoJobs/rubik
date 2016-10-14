@@ -71,33 +71,8 @@
 			padding: 32px;
 			margin-right: 10px;
 
-			&[class*="iconfont-"]::before {
-				position: absolute;
-				top: 32px;
-				left: 17px;
-				font-size: 30px;
-			}
 		}
 
-		.iconfont-Close::before {
-			// color: $trueblood;
-			@include alert;
-		}
-
-		.iconfont-Viewdetails::before {
-			// color: $color-primary;
-			@include focus;
-		}
-
-		.iconfont-Check::before {
-			// color: $dark-silk;
-			@include script;
-		}
-
-		.iconfont-Mail::before,
-		.iconfont-Edit::before {
-			color: $soft-script;
-		}
 	}
 
 	time {
