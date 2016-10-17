@@ -2,10 +2,12 @@
 (function(){
   var stickyElement = $('.js-sticky');
   var stickyElementDesktop = $('.js-sticky-desktop');
+  var elScrollable = $('.js-scrollable');
   var stickyElementOffset;
   var totalViewport;
   var scrollY;
   var heightSide;
+  var heightElScrollable;
   var elStickyBottomMediumDevice = $('.sticky-bottom-medium-device');
 
   window.onload = function() {
@@ -76,13 +78,14 @@
   }
 
   function scrollSideBar() {
-    stickyElementDesktop.css('height', 'auto');
+    elScrollable.css('height', 'auto');
     heightSide = stickyElementDesktop.height();
+    heightElScrollable = elScrollable.height();
     totalViewport = window.innerHeight;
 
     if (heightSide > totalViewport) {
-      stickyElementDesktop.css('height', totalViewport);
-      stickyElementDesktop.css('overflow-y', 'auto');
+      elScrollable.css('height', totalViewport - (heightSide - heightElScrollable) );
+      elScrollable.css('overflow-y', 'auto');
     }
 
   }

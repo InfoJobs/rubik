@@ -1,18 +1,23 @@
 (function(){
 
-	function slideToggle() {
-
 		var eClickItem = document.querySelectorAll('.js-slide-toggle');
 		var eDivToggle = document.querySelector('.toggle');
-		//var offsetHeight = document.getElementById('myDiv').offsetHeight;
+
+	function slideToggle() {
 
 		[].forEach.call( eClickItem, function( target ){
 
-			        target.onclick = function(){
+			        target.onclick = function(event){
 			            eDivToggle.classList.toggle('hide');
+                  event.stopPropagation();
 			        };
 
 		});
+
+    document.querySelector('html').onclick = function() {
+      eDivToggle.classList.add('hide');
+
+    }
 
 	}
 

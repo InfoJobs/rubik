@@ -35,6 +35,14 @@ $MIXINS ICONS
 	}
 }
 
+@mixin iconfont-Menumore{
+
+	&::before {
+    @include iconfont;
+    content: "\e637";
+	}
+}
+
 @mixin iconfont-Big-check {
 
 	&::before {
@@ -42,6 +50,7 @@ $MIXINS ICONS
     content: "\e62c";
 	}
 }
+
 
 @mixin iconfont-Arrow {
 

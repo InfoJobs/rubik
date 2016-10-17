@@ -418,7 +418,7 @@ $icon-size: (30,50); //TODO: resolve problem when it s moved to _vars
     content: "\e636";
 }
 .iconfont-Menumore::before {
-    content: "\e637";
+  @include iconfont-Menumore;
 }
 .iconfont-Alert-circle::before {
     content: "\e638";
