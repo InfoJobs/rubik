@@ -43,6 +43,25 @@
       background-color: $dark-shiro;
     }
 
+    button {
+      @include flex;
+      font-family: $base-font-family;
+      font-size: $base-font-size;
+      line-height: 1;
+      background: transparent;
+      border: 0 none;
+      outline: 0 none;
+      width: 100%;
+      overflow: visible;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      cursor: pointer;
+      -webkit-appearance: listitem;
+         -moz-appearance: listitem;
+              appearance: listitem;
+    }
+
     &.menu-kebab-drop-item-sublevel {
       color: $mid-script;
       padding: 10px 40px;
