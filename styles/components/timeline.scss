@@ -4,6 +4,158 @@
     $TIMELINE
 \*------------------------------------*/
 
+/*
+Timeline
+
+Markup:
+<div class="panel-canvas">
+<ul class="v-timeline">
+  <li class="timeline-item">
+    <span class="timeline-bullet alert"></span>
+    <div class="timeline-event">
+      <p class="small alert text-uppercase">Descartado</p>
+      <p class="small alternative">Yo - 16/03/89</p>
+    </div>
+  </li>
+  <li class="timeline-item">
+    <span class="timeline-bullet"></span>
+    <div class="timeline-event">
+      <p class="small-quote script">Programador Java, llamar para entrevista</p>
+      <p class="small alternative">Yo - 16/03/89</p>
+    </div>
+  </li>
+  <li class="timeline-item">
+    <span class="timeline-bullet"></span>
+    <div class="timeline-event">
+      <ul class="list-default list-inline">
+        <li><span class="sticker-skill">CSS3</span></li>
+        <li><span class="sticker-skill">CSS3</span></li>
+        <li><span class="sticker-skill">CSS3</span></li>
+        <li><span class="sticker-skill">CSS3</span></li>
+      </ul>
+      <p class="small alternative">Yo - 16/03/89</p>
+    </div>
+  </li>
+  <li class="timeline-item">
+    <span class="timeline-bullet marked"></span>
+    <div class="timeline-event">
+      <p class="small marked text-uppercase">En proceso</p>
+      <p class="small alternative">Yo - 16/03/89</p>
+    </div>
+  </li>
+  <li class="timeline-item">
+    <span class="timeline-bullet" focus></span>
+    <div class="timeline-event">
+      <p class="small focus text-uppercase">Leido</p>
+      <p class="small alternative">Yo - 16/03/89</p>
+    </div>
+  </li>
+  <li class="timeline-item">
+    <span class="timeline-bullet focus"></span>
+    <div class="timeline-event">
+      <p class="small focus text-uppercase">Inscrito</p>
+      <p class="small alternative">Yo - 16/03/89</p>
+    </div>
+  </li>
+</ul>
+</div>
+
+Styleguide #{$sgi-timeline}
+*/
+
+$size-timeline-bullet: 20px;
+$size-timeline-bullet-border:   4px;
+$size-timeline-line:   4px;
+
+.v-timeline {
+
+  .timeline-item {
+		position: relative;
+
+    &::before {
+      content: '';
+			position: absolute;
+			height: 100%;
+			width: $size-timeline-line;
+			background: $darkest-shiro;
+			left: 0;
+			top: 1px;
+			margin-left: ($size-timeline-bullet/2) - ($size-timeline-line/2);
+    }
+
+    &:last-child .timeline-event {
+      margin-bottom: 0;
+    }
+
+    &:last-child::before {
+      background: none;
+    }
+
+  }
+
+  .timeline-bullet {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: $size-timeline-bullet;
+    height: $size-timeline-bullet;
+    border-radius: 50%;
+    margin-right: 10px;
+    border-width: $size-timeline-bullet-border;
+    border-style: solid;
+    background-color: $darkest-shiro;
+
+    &.marked {
+      background-color: $bamboo;
+    }
+    &.focus {
+      background-color: $color-primary;
+    }
+    &.alert {
+      background-color: $trueblood;
+    }
+
+    .panel-canvas & {
+      border-color: $shiro;
+    }
+  }
+
+  .timeline-event {
+    display: inline-block;
+    margin-left: ($size-timeline-bullet - $size-timeline-bullet-border) + $padding;
+    margin-bottom: $size-timeline-bullet;
+    padding-top: 3px;
+    position: relative;
+  }
+
+  & + .js-timeline span:nth-child(2) {
+    display: inline-block;
+  }
+
+  & + .js-timeline span:nth-child(1) {
+    display: none;
+  }
+
+  &.timeline-hidden-items {
+
+    .timeline-item:not(:first-of-type) {
+      display: none;
+    }
+
+    + .js-timeline span:nth-child(2) {
+      display: none;
+    }
+
+    + .js-timeline span:nth-child(1) {
+      display: inline-block;
+    }
+  }
+}
+
+
+
+
+/*old timeline*/
 .timeline {
 	position: relative;
 

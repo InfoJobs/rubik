@@ -1,9 +1,8 @@
 (function(){
 
+	function slideToggle() {
 		var eClickItem = document.querySelectorAll('.js-kebab-toggle');
 		var eDivToggle = document.querySelector('.toggle');
-
-	function slideToggle() {
 
 		[].forEach.call( eClickItem, function( target ){
 
