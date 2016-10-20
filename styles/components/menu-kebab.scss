@@ -43,11 +43,13 @@
       background-color: $dark-shiro;
     }
 
-    button {
+    button,
+    a {
       @include flex;
       font-family: $base-font-family;
       font-size: $base-font-size;
       line-height: 1;
+	    color: $dark-silk;
       background: transparent;
       border: 0 none;
       outline: 0 none;
