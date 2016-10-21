@@ -38,6 +38,12 @@ Markup:
     <dt>Tipo de oferta:</dt>
     <dd>De duracion determinada, jornada completa</dd>
 </dl>
+<!-- List expanded -->
+<ul class="list-expanded">
+    <li>Salario no disponible</li>
+    <li>Experiencia minima: no requerida</li>
+    <li>Tipo de oferta: de duracion determinada, jornada completa</li>
+</ul>
 
 Styleguide #{$sgi-listsDefault}
 */
@@ -114,7 +120,20 @@ Styleguide #{$sgi-listsDefault}
         }
       }
     }
+
+    &.list-expanded {
+
+      > li {
+        margin-bottom: $padding;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+
 }
+
 
 /*
 List inline
@@ -509,14 +528,4 @@ Styleguide #{$sgi-tagGroupWithEllipsis}
 
 .tag-disabled {  //TODO: ?? se usa? Usar class alternative?
     color: $soft-script;
-}
-
-
-.list-items-expanded {
-  margin-top: -30px;
-
-  li {
-   margin-top: 30px;
-   margin-bottom: 0;
-  }
 }
