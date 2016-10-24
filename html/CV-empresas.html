@@ -93,7 +93,7 @@
                 <div class="container-expanded panel-canvas inner shadow">
                   <h2 class="medium light inner">Datos basicos <span class="pull-right base no-print"><a href="#">Ver datos completos</a></span></h2>
                   <div class="inner">
-                    <ul class="list-default list-columns-2 list-columns-1-sm list-icon list-items-expanded">
+                    <ul class="list-columns-2 list-columns-1-sm list-icon">
                       <li><img src="//media.infojobs.net/appgrade/icons/ico-mail.svg" alt="e-mail" /><span class="focus">pepe@pepe.com</span></li>
                       <li><img src="//media.infojobs.net/appgrade/icons/ico-phone.svg" alt="Phone">694 576 175</li>
                       <li><img src="//media.infojobs.net/appgrade/icons/ico-birthday.svg" alt="Age">27 aÃ±os <span class="alternative">(16/03/1989)</span></li>
@@ -175,7 +175,7 @@
                       </dl>
                     </div>
                   </div>
-                  <div class="inner content-top content-divider-expanded">
+                  <div class="inner content-top content-divider-default">
                     <div class="content-type-media">
                       <figure class="fig-thumbnail-logo">
                         <img src="http://www.design.infojobs.net/rubik/images/pictures/pic-company-logo.png" alt="Name Company" />
@@ -220,7 +220,7 @@
                       <span class="sticker-label sticker-label-top text-uppercase">Master</span>
                       <h3 class="large">UX Designer</h3>
                       <p class="alternative-action">Schibsted Spain</p>
-                      <dl class="padding-top padding-bottom">
+                      <dl>
                         <dt class="hide">Fecha de inicio - Fecha de fin</dt>
                         <dd class="alternative small print-base">Marzo 2012 - Actualmente <span>(4 aÃÂÃÂ±os y 5 meses)</span></dd>
                       </dl>
@@ -261,7 +261,7 @@
                 <div class="container-expanded panel-canvas inner shadow">
                   <h2 class="medium light inner">Otros datos</h2>
                   <div class="inner">
-                    <ul class="base list-default list-grid-columns-2">
+                    <ul class="base list-default list-grid-columns-2-medium">
                       <li>
                         <span class="dt light">Direccion</span>
                         <span class="bold break">C/ Numancia 46</span>
@@ -312,19 +312,30 @@
                     <p class="base light margin-top">Por leer</p>
                     <div class="inner sticky-bottom-medium-device panel-canvas">
                       <ul class="btn-justify btn-justify-icon-end ">
-                        <li><button class="btn btn-primary">En proceso</button></li>
-                        <li><button class="btn btn-default">Descartar</button></li>
-                        <li>
-                          <div class="chosen-toggle">
-                            <select id="pulldown" class="chosen-select" data-placeholder="(Seleccionar)">
-                          		<option value="0">En proceso</option>
-                          		<option value="0,11" class="result-sublevel">Evaluar</option>
-                          		<option value="0,12" class="result-sublevel">Entrevistar</option>
-                          		<option value="1">Finalista</option>
-                          		<option value="2">Descartar</option>
-                          		<option value="3">Descartar siempre</option>
-                            </select>
-                          </div>
+                        <li><button class="btn btn-primary" type="button">En proceso</button></li>
+                        <li><button class="btn btn-default" type="button">Descartar</button></li>
+                        <li class="menu-kebab">
+                          <button class="btn-menu-more js-kebab-toggle"></button>
+                          <ul class="menu-kebab-drop panel-canvas toggle hide">
+                            <li class="menu-kebab-drop-item menu-kebab-drop-item-selected" data-option-array-index="0">
+                              <a href="#">En proceso</a>
+                            </li>
+                            <li class="menu-kebab-drop-item menu-kebab-drop-item-sublevel" data-option-array-index="1">
+                              <a href="#">Evaluar</a>
+                            </li>
+                            <li class="menu-kebab-drop-item menu-kebab-drop-item-sublevel" data-option-array-index="2">
+                              <a href="#">Entrevistar</a>
+                            </li>
+                            <li class="menu-kebab-drop-item" data-option-array-index="3">
+                              <a href="#">Finalista</a>
+                            </li>
+                            <li class="menu-kebab-drop-item" data-option-array-index="4">
+                              <a href="#">Descartar</a>
+                            </li>
+                            <li class="menu-kebab-drop-item menu-kebab-drop-item-end" data-option-array-index="5">
+                              <a href="#">Descartar siempre</a>
+                            </li>
+                          </ul>
                         </li>
                       </ul>
                     </div>
@@ -336,56 +347,57 @@
                     </div>
 
                   </div>
-                  <!-- tabs -->
-                  <ul class="tabs tabs-icons">
-                  	<li><a class="icon-tab-comments tab-active" href="#">Comentarios</a></li>
-                  	<li><a class="icon-tab-favorites" href="#">Favoritos</a></li>
-                  </ul>
-                  <div class="inner">
-                    <form>
-                      <fieldset>
-                        <label for="comment">Comentario</label>
-                        <input id="comment" class="input-justify" type="text" placeholder="Ejem: No contesta" />
-                      </fieldset>
-                      <div class="margin-top">
-                        <button class="btn btn-default btn-medium">A&ntilde;adir</button>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="inner">
-                    <ul class="list-default list-items-expanded">
-                      <li>
-                        <div class="content-middle">
-                          <div class="content-type-text">
-                            <p>No contesta al tel&eacute;fono</p>
-                            <p class="small alternative">Maite, hace 2 semanas · Head of UX</p>
-                          </div>
-                          <div class="content-type-media no-print">
-                            <a class="Icon--small js-action-remove" href="javascript:">
-                        			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
-                        				<path class="st0" d="M145.6,53l-4.9,116H56L52.1,53 M168.4,33h-139L37,178.5c0.8,6,5.9,10.5,11.9,10.5h98.9c6,0,11.1-4.5,11.9-10.5 L168.4,33z"></path>
-                        				<g>
-                        					<path class="st0" d="M174.9,52h-152c-2.8,0-5-2.2-5-5V37c0-2.8,2.2-5,5-5h152c2.8,0,5,2.2,5,5v10C179.9,49.8,177.6,52,174.9,52z"></path>
-                        				</g>
-                        				<g>
-                        					<path class="st0" d="M113.5,154L113.5,154c-5.5,0-10-4.5-10-10V89.9c0-5.5,4.5-10,10-10h0c5.5,0,10,4.5,10,10V144 C123.5,149.5,119,154,113.5,154z"></path>
-                        				</g>
-                        				<g>
-                        					<path class="st0" d="M82.5,154L82.5,154c-5.5,0-10-4.5-10-10V89.9c0-5.5,4.5-10,10-10h0c5.5,0,10,4.5,10,10V144 C92.5,149.5,88,154,82.5,154z"></path>
-                        				</g>
-                        				<g>
-                        					<path class="st0" d="M118,32H78V17c0-2.8,2.2-5,5-5h30c2.8,0,5,2.2,5,5V32z"></path>
-                        				</g>
-                        			</svg>
-
-  					              	</a>
-                          </div>
-                        </div>
-                      </li>
+                  <div class="js-scrollable">
+                    <!-- tabs -->
+                    <ul class="tabs tabs-icons">
+                    	<li><a class="icon-tab-comments tab-active" href="#">Comentarios</a></li>
+                    	<li><a class="icon-tab-favorites" href="#">Favoritos</a></li>
                     </ul>
-                  </div>
-                  <!-- /tabs -->
+                    <div class="inner">
+                      <form>
+                        <fieldset>
+                          <label for="comment">Comentario</label>
+                          <input id="comment" class="input-justify" type="text" placeholder="Ejem: No contesta" />
+                        </fieldset>
+                        <div class="margin-top">
+                          <button class="btn btn-default btn-medium">A&ntilde;adir</button>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="inner">
+                      <ul class="list-default list-items-expande">
+                        <li>
+                          <div class="content-middle">
+                            <div class="content-type-text">
+                              <p>No contesta al tel&eacute;fono</p>
+                              <p class="small alternative">Maite, hace 2 semanas · Head of UX</p>
+                            </div>
+                            <div class="content-type-media no-print">
+                              <a class="Icon--small js-action-remove" href="javascript:">
+                          			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+                          				<path class="st0" d="M145.6,53l-4.9,116H56L52.1,53 M168.4,33h-139L37,178.5c0.8,6,5.9,10.5,11.9,10.5h98.9c6,0,11.1-4.5,11.9-10.5 L168.4,33z"></path>
+                          				<g>
+                          					<path class="st0" d="M174.9,52h-152c-2.8,0-5-2.2-5-5V37c0-2.8,2.2-5,5-5h152c2.8,0,5,2.2,5,5v10C179.9,49.8,177.6,52,174.9,52z"></path>
+                          				</g>
+                          				<g>
+                          					<path class="st0" d="M113.5,154L113.5,154c-5.5,0-10-4.5-10-10V89.9c0-5.5,4.5-10,10-10h0c5.5,0,10,4.5,10,10V144 C123.5,149.5,119,154,113.5,154z"></path>
+                          				</g>
+                          				<g>
+                          					<path class="st0" d="M82.5,154L82.5,154c-5.5,0-10-4.5-10-10V89.9c0-5.5,4.5-10,10-10h0c5.5,0,10,4.5,10,10V144 C92.5,149.5,88,154,82.5,154z"></path>
+                          				</g>
+                          				<g>
+                          					<path class="st0" d="M118,32H78V17c0-2.8,2.2-5,5-5h30c2.8,0,5,2.2,5,5V32z"></path>
+                          				</g>
+                          			</svg>
 
+    					              	</a>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- /tabs -->
+                  </div>
                 </div>
                 <!-- /panel -->
               </div>
@@ -398,17 +410,8 @@
 
     </div>
   </div>
-  <script type="text/javascript" src="../js/chosen.jquery.js" th:remove="all"></script>
   <script type="text/javascript" src="../js/sticky-on-scroll.js" th:remove="all"></script>
-  <script type="text/javascript" src="../js/chosen-toggle.js" th:remove="all"></script>
-
-	<script>
-		$(document).ready(function() {
-			$('.chosen-select').chosen({width:"100%",disable_search:true});
-		});
-
-	</script>
-
+  <script type="text/javascript" src="../js/menu-kebab.js" th:remove="all"></script>
 </body>
 
 </html>

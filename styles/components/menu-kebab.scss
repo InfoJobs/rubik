@@ -1,0 +1,92 @@
+/*------------------------------------*\
+	$MENU KEBAB
+\*------------------------------------*/
+
+.menu-kebab {
+  position: relative;
+  width: 24px;
+
+  .menu-kebab-drop {
+    position: absolute;
+    top: 24px;
+    right: 0;
+    width: 230px;
+    border: 1px solid $darkest-shiro;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    border-color: $darkest-shiro;
+    border-top-color: $darkest-shiro;
+    z-index: $zindex-menu;
+    zoom: 1;
+
+    .sticky-bottom-medium-device & {
+      top: auto;
+      bottom: 24px;
+
+      @include mediaquery ($bp-desktop) {
+        top: 24px;
+        bottom: auto;
+        right: 0;
+      }
+    }
+  }
+
+  .menu-kebab-drop-item,
+  .menu-kebab-drop-item:last-of-type {
+    position: relative;
+    padding: 15px 40px;
+    margin: 0;
+    font-size: $base-font-size;
+    line-height: 1;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $dark-shiro;
+    }
+
+    button,
+    a {
+      @include flex;
+      font-family: $base-font-family;
+      font-size: $base-font-size;
+      line-height: 1;
+	    color: $dark-silk;
+      background: transparent;
+      border: 0 none;
+      outline: 0 none;
+      width: 100%;
+      overflow: visible;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      cursor: pointer;
+      -webkit-appearance: listitem;
+         -moz-appearance: listitem;
+              appearance: listitem;
+    }
+
+    &.menu-kebab-drop-item-sublevel {
+      color: $mid-script;
+      padding: 10px 40px;
+      text-indent: 20px;
+    }
+
+    &.menu-kebab-drop-item-selected {
+      @include iconfont-Big-check;
+  	  @include font-base-line;
+
+      &::before {
+        font-family: 'Icons';
+        color: $mid-script;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+      	-webkit-font-smoothing: antialiased;
+      	-moz-osx-font-smoothing: grayscale;
+      }
+    }
+
+    &.menu-kebab-drop-item-end {
+      border-top: 1px solid $darkest-shiro;
+    }
+  }
+}

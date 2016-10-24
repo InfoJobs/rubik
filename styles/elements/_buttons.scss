@@ -29,6 +29,7 @@ button::-moz-focus-inner {
     text-shadow: none;
     text-transform: uppercase;
     -webkit-appearance: none;
+    outline: none;
     @include transition-button;
 
     img {
@@ -626,4 +627,15 @@ Styleguide #{$sgi-button-group-icon}
     border: 0 none;
     background: none repeat scroll 0 0 transparent;
     cursor: pointer;
+}
+
+.btn-menu-more {
+  @include btn;
+  @include iconfont-Menumore;
+  padding: 0;
+  font-size: 24px;
+  background: transparent;
+  border-color: transparent;
+  height: 24px;
+  width: 24px;
 }
