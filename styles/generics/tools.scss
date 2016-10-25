@@ -296,7 +296,6 @@ Styleguide #{$sgi-helpers}
 .sticky {
   position: fixed;
   top: 0;
-  height: auto;
   width: 100%;
   z-index: $zindex-sticky-content;
 }
