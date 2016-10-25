@@ -191,7 +191,8 @@ $query2     = width, device-width
   background-repeat: no-repeat;
   background-color: $dark-softened;
 
-  h1 {
+  h1,
+  a {
       color: $shiro;
 
       @media print {
