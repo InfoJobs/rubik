@@ -37,7 +37,7 @@ $overlay-opacity: (60,85);
 
 	.overlay-#{$value} {
 
-        position: relative;
+    position: relative;
 
 		&::before {
             content: "";
@@ -51,5 +51,9 @@ $overlay-opacity: (60,85);
             background-color: #000;
             opacity: $value/100;
 		}
+
+    .inner {
+        position: relative;
+    }
 	}
 }
