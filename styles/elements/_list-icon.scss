@@ -2,18 +2,16 @@
     $LIST ICON
 \*------------------------------------*/
 
-//with tag img (size 24x24)
+//size icon 20x20
 
 .list-icon {
 
-  li {
-    position: relative;
-    padding: 2px 20px 2px 34px;
+  > li {
+    padding: 0 0 0 30px;
   }
 
-  img {
-    position: absolute;
-    left: 0;
-    top: -1px;  }
+  &.list-inline:not(last-of-type) > li {
+    padding-right: 20px;
+  }
 
 }

@@ -86,7 +86,7 @@
       }
     }
 
-    &.menu-kebab-drop-item-end {
+    &:last-of-type {
       border-top: 1px solid $darkest-shiro;
     }
   }
