@@ -128,6 +128,7 @@ Markup:
 	<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
 	<cite>Lorem ipsum</cite>
 </blockquote>
+<p class="small-quote">Lorem ipsum</p>
 
 Styleguide #{$sgi-blockquotes}
 */
@@ -157,5 +158,15 @@ Styleguide #{$sgi-blockquotes}
 		font-family: $base-font-family;
 		font-size: $base-font-size;
 		line-height: $base-line-height;
+	}
+}
+
+.small-quote {
+  @include font-small-line;
+  font-style: italic;
+
+	&::after,
+	&::before {
+		content:'"';
 	}
 }
