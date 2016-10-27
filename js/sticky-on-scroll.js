@@ -108,6 +108,8 @@
         elScrollable.classList.add('sticky');
         elScrollable.style.marginTop = 'inherit';
       }
+    } else {
+      elScrollable.style.marginTop = 'inherit';
     }
   }
 
