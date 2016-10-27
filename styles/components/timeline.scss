@@ -128,28 +128,6 @@ $size-timeline-line:   4px;
     position: relative;
   }
 
-  & + .js-timeline span:nth-child(2) {
-    display: inline-block;
-  }
-
-  & + .js-timeline span:nth-child(1) {
-    display: none;
-  }
-
-  &.timeline-hidden-items {
-
-    .timeline-item:not(:first-of-type) {
-      display: none;
-    }
-
-    + .js-timeline span:nth-child(2) {
-      display: none;
-    }
-
-    + .js-timeline span:nth-child(1) {
-      display: inline-block;
-    }
-  }
 }
 
 

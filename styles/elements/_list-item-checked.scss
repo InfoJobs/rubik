@@ -27,8 +27,12 @@ Styleguide #{$sgi-listsItemChecked}
 
     > span {
       display: inline-block;
-      padding: 7px 20px 7px 40px;
-      line-height: 1.1;
+      padding: 10px 0 10px 40px;
+      line-height: 1;
+
+      + small {
+        margin-left: 10px;
+      }
 
       @media print {
         padding: 7px 0 7px 20px;
@@ -37,6 +41,7 @@ Styleguide #{$sgi-listsItemChecked}
     }
 
     > .checked {
+      padding-right: 20px;
       background: rgba(0,0,0,0.05) url("#{$path-icons}/ico-check-24x24.svg") no-repeat 10px center;
       border:1px solid rgba(0,0,0,0.05);
       border-radius: 2px;
