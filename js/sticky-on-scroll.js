@@ -7,7 +7,6 @@
   var scrollY;
   var heightSide;
   var elStickyBottomMediumDevice = document.querySelector('.sticky-bottom-medium-device');
-  // var elScrollable = $('.js-scrollable');
   var elScrollable = document.querySelectorAll('.js-scrollable');
   var heightElScrollable;
 
@@ -66,6 +65,7 @@
         el[i].style.maxWidth = widthParent + 'px';
         if (scrollY >= stickyElementOffset[0]) {
           el[i].classList.add('sticky');
+          stopSticker();
         } else {
             el[i].classList.remove('sticky');
         }
@@ -93,6 +93,24 @@
         target.style.overflowY = 'auto';
       }
     });
+  }
+
+  function stopSticker() {
+    var elScrollableParent = document.querySelector('.row-faux').getBoundingClientRect().height;
+    var elScrollable = document.querySelector('.js-sticky-desktop');
+    var elScrollableHeight = elScrollable.getBoundingClientRect().height;
+
+    if(window.innerWidth > 768) {
+      if(pageYOffset - (elScrollableParent - elScrollableHeight) >= 0) {
+        elScrollable.classList.remove('sticky');
+        elScrollable.style.marginTop = elScrollableParent - elScrollableHeight + 'px';
+      } else {
+        elScrollable.classList.add('sticky');
+        elScrollable.style.marginTop = 'inherit';
+      }
+    } else {
+      elScrollable.style.marginTop = 'inherit';
+    }
   }
 
   function styleContainer() {
