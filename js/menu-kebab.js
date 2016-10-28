@@ -1,5 +1,5 @@
 (function(){
-  function slideToggle() {
+  function kebabToggle() {
     var eClickItem = document.querySelectorAll('.js-kebab-toggle');
     var eDivToggle = document.querySelector('.toggle');
 
@@ -7,7 +7,7 @@
       eDivToggle.classList.add('hide');
       target.onclick = function(event){
         eDivToggle.classList.toggle('hide');
-        if(target.getBoundingClientRect().x < eDivToggle.getBoundingClientRect().width) {
+        if(target.getBoundingClientRect().left < eDivToggle.getBoundingClientRect().width) {
           eDivToggle.classList.remove('menu-kebab-drop');
           eDivToggle.classList.add('menu-kebab-drop-right');
         } else {
@@ -23,6 +23,6 @@
     };
   }
 
-  window.addEventListener('load', slideToggle);
-  window.addEventListener('resize', slideToggle);
+  window.addEventListener('load', kebabToggle);
+  window.addEventListener('resize', kebabToggle);
 }());
