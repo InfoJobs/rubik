@@ -13,6 +13,7 @@
   window.onload = function() {
     stickyElement = document.querySelectorAll('.js-sticky');
     stickyElementDesktop = document.querySelectorAll('.js-sticky-desktop');
+    elScrollable = document.querySelectorAll('.js-scrollable');
   };
 
   function offsetElement() {
