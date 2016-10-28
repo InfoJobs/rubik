@@ -6,6 +6,10 @@
     var eToggle;
     var eClickItemParent;
 
+    [].forEach.call(document.querySelectorAll('.js-toggle-element'), function(el) {
+      el.classList.add('hide');
+    });
+
 		[].forEach.call(eClickItem, function(target) {
 
       //primero si hay una lista hidden sibbling items, ocultamos todos los items menos el primero
@@ -16,8 +20,8 @@
         if(target.previousElementSibling === eHiddenSibblingItems[0]) {
             eToggle =  eClickItemParent.querySelectorAll('li:not(:first-of-type)');
 
-            for (var i = 0; i < eToggle.length; i++) {
-              eToggle[i].classList.add('hide');
+            for (var j = 0; j < eToggle.length; j++) {
+              eToggle[j].classList.add('hide');
 
     	      }
         }
