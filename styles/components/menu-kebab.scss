@@ -18,6 +18,11 @@
     z-index: $zindex-menu;
     zoom: 1;
 
+    &-right {
+      @extend .menu-kebab-drop;
+      right: auto;
+    }
+
     .sticky-bottom-medium-device & {
       top: auto;
       bottom: 24px;
