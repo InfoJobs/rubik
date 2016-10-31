@@ -6,13 +6,9 @@
     var eToggle;
     var eClickItemParent;
 
-    [].forEach.call(document.querySelectorAll('.js-toggle-element'), function(el) {
-      el.classList.add('hide');
-    });
-
 		[].forEach.call(eClickItem, function(target) {
 
-      //primero si hay una lista hidden sibbling items, ocultamos todos los items menos el primero
+      //si hay una lista hidden sibbling items, ocultamos todos los items menos el primero
       for(var i= 0; i < eClickItem.length; i++) {
 
          eClickItemParent = target.parentNode;
@@ -26,6 +22,12 @@
     	      }
         }
 
+        eToggle =  eClickItemParent.querySelectorAll('.js-toggle-element');
+
+        for (var l = 0; l < eToggle.length; l++) {
+          eToggle[l].classList.add('hide');
+
+	      }
       }
 
 
