@@ -166,18 +166,16 @@
                     <p class="label bold">&iquest;Cu&aacute;ntos a&ntilde;os de experiencia tienes?</p>
                     <ul class="list-default list-item-checked">
                       <li>
-                        <span class="checked">
-                      M&aacute;s de 10 a&ntilde;os <span class="break alternative small print-base">Puntuacion: 10</span>
-                        </span>
+                        <span class="checked">M&aacute;s de 10 a&ntilde;os</span>
+                        <small class="alternative small print-base">Puntuacion: 10</small>
                       </li>
-                      <li>
-                        <span>
-                      M&aacute;s de 5 a&ntilde;os <span class="break alternative small print-base">Puntuacion: 5</span></li>
-                      </span>
-                      <li>
-                        <span>
-                      No tengo experiencia <span class="break alternative small print-base">Excluido</span>
-                        </span>
+                      <li class="js-toggle-element">
+                        <span>M&aacute;s de 5 a&ntilde;os</span>
+                        <small class="alternative small print-base">Puntuacion: 5</small>
+                      </li>
+                      <li class="js-toggle-element">
+                        <span>No tengo experiencia</span>
+                        <small class="alternative small print-base">Excluido</small>
                       </li>
                     </ul>
                   </div>
@@ -185,6 +183,10 @@
                     <p class="label bold">Another question</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium hic accusantium aut, tempore sint voluptatem ab nemo eligendi dolorum libero aliquam consequatur beatae veritatis ea exercitationem expedita ipsam optio neque.</p>
                   </div>
+                  <a href="javascript:" class="js-show-hide-items margin-left link-underline" data-text-show="Ver otras opciones" data-text-hide="Ver menos opciones">Ver otras opciones</a>
+
+
+
                 </div>
               </section>
               <!-- /killer questions -->
@@ -568,6 +570,7 @@
     </div>
   </div>
   <script type="text/javascript" src="../js/sticky-on-scroll.js" th:remove="all"></script>
+  <script type="text/javascript" src="../js/show-hide-items.js" th:remove="all"></script>
   <script type="text/javascript" src="../js/menu-kebab.js" th:remove="all"></script>
 </body>
 
