@@ -40,6 +40,19 @@ $MIXIN COLUMNS
   		word-wrap: break-word;
   	}
 
+    dl + h3,
+    dl + .heading-group {
+      padding-top: 5px;
+    }
+
+    .heading-group {
+      @include display-flex;
+
+      .tag-group {
+        margin: 0 0 0 10px;
+      }
+    }
+
   	[class^="btn-"] {
   		display: table;
   		margin-top: 20px;

@@ -107,6 +107,9 @@ Styleguide #{$sgi-textVariants}
 .light {
   @include light;
 }
+.normal {
+  @include normal;
+}
 
 /*
 Blockquotes
