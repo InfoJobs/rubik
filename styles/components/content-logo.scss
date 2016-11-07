@@ -278,3 +278,57 @@ Styleguide #{$sgi-content-toolbar}
    height: 100%;
    z-index: 1;
  }
+
+
+/*
+Content media size
+
+Markup:
+<div class="content-top inner">
+	<div class="content-type-media-xsmall">
+    <figure class="fig-thumbnail-logo">
+      <img title="BROS GROUP - Ofertas de trabajo" src="./images/pictures/pic-company-logo.png" alt="Lorem ipsum dolor sit amet">
+    </figure>
+	</div>
+  <div class="content-type-text">
+    <h3 class="title">Lorem ipsum</h3>
+    <p class="small">Schibsted Classified Media Barcelona</p>
+  </div>
+</div>
+<div class="content-top inner">
+	<div class="content-type-media-small">
+    <figure class="fig-thumbnail-logo">
+      <img title="BROS GROUP - Ofertas de trabajo" src="./images/pictures/pic-company-logo.png" alt="Lorem ipsum dolor sit amet">
+    </figure>
+	</div>
+  <div class="content-type-text">
+    <h3 class="title">Lorem ipsum</h3>
+    <p class="small">Schibsted Classified Media Barcelona</p>
+  </div>
+</div>
+<div class="content-top inner">
+	<div class="content-type-media">
+    <figure class="fig-thumbnail-logo">
+      <img title="BROS GROUP - Ofertas de trabajo" src="./images/pictures/pic-company-logo.png" alt="Lorem ipsum dolor sit amet">
+    </figure>
+	</div>
+  <div class="content-type-text">
+    <h3 class="title">Lorem ipsum</h3>
+    <p class="small">Schibsted Classified Media Barcelona</p>
+  </div>
+</div>
+<div class="content-top inner">
+	<div class="content-type-media-big">
+    <figure class="fig-thumbnail-logo">
+      <img title="BROS GROUP - Ofertas de trabajo" src="./images/pictures/pic-company-logo.png" alt="Lorem ipsum dolor sit amet">
+    </figure>
+	</div>
+  <div class="content-type-text">
+    <h3 class="title">Lorem ipsum</h3>
+    <p class="small">Schibsted Classified Media Barcelona</p>
+  </div>
+</div>
+
+
+Styleguide #{$sgi-content-media-size}
+*/

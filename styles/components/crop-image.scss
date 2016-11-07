@@ -58,12 +58,18 @@ Markup:
 	&-large {
 		@include crop-circle;
     width: 100%;
-		max-width: 120px;
-		max-height: 120px;
+		max-width: 80px;
+		max-height: 80px;
 
     &.border-contrast {
       @include border-contrast(3px);
     }
+
+  	@include mediaquery ($bp-tablet) {
+  		max-width: 120px;
+  		max-height: 120px;
+  	}
+
 	}
 
 	&-small {

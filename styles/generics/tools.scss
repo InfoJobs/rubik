@@ -206,7 +206,7 @@ Styleguide #{$sgi-helpers}
 \*------------------------------------*/
 
 .hide {
-	display: none!important;
+	display: none;
 }
 
 @media only screen and (max-width: $mobile-start) {

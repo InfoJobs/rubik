@@ -97,21 +97,24 @@
   }
 
   function stopSticker() {
-    var elScrollableParent = document.querySelector('.row-faux').getBoundingClientRect().height;
-    var elScrollable = document.querySelector('.js-sticky-desktop');
-    var elScrollableHeight = elScrollable.getBoundingClientRect().height;
+	  if(stickyElementDesktop !== null) {
+	    var elScrollableParent = document.querySelector('.row-faux').getBoundingClientRect().height;
+	    var elScrollable = document.querySelector('.js-sticky-desktop');
+	    var elScrollableHeight = elScrollable.getBoundingClientRect().height;
 
-    if(window.innerWidth > 768) {
-      if(pageYOffset - (elScrollableParent - elScrollableHeight) >= 0) {
-        elScrollable.classList.remove('sticky');
-        elScrollable.style.marginTop = elScrollableParent - elScrollableHeight + 'px';
-      } else {
-        elScrollable.classList.add('sticky');
-        elScrollable.style.marginTop = 'inherit';
-      }
-    } else {
-      elScrollable.style.marginTop = 'inherit';
-    }
+	    if(window.innerWidth > 768) {
+	      if(pageYOffset - (elScrollableParent - elScrollableHeight) >= 0) {
+	        elScrollable.classList.remove('sticky');
+	        elScrollable.style.marginTop = elScrollableParent - elScrollableHeight + 'px';
+	      } else {
+	        elScrollable.classList.add('sticky');
+	        elScrollable.style.marginTop = 'inherit';
+	      }
+	    } else {
+	      elScrollable.style.marginTop = 'inherit';
+	    }
+
+	  }
   }
 
   function styleContainer() {

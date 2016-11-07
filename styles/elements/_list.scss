@@ -68,12 +68,17 @@ Styleguide #{$sgi-listsDefault}
 
         &:last-child {
 	    	margin-bottom: 0;
+
 	    }
 
         @media print {
     		font-size: ($base-font-size/$point-to-px);
     		line-height: ($base-line-height/$point-to-px);
     	}
+    }
+
+    > .hide {
+      display: none;
     }
 
     > dt {

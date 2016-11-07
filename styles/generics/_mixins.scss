@@ -181,8 +181,12 @@ $query2     = width, device-width
   font-family: $base-font-family-bold;
 }
 
- @mixin light{
+@mixin light {
 	font-family: $base-font-family-light;
+}
+
+@mixin normal {
+	font-family: $base-font-family;
 }
 
 @mixin custom-bg {
