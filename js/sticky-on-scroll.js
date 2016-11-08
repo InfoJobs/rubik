@@ -9,6 +9,7 @@
   var elStickyBottomMediumDevice = document.querySelector('.sticky-bottom-medium-device');
   var elScrollable = document.querySelectorAll('.js-scrollable');
   var heightElScrollable;
+  var aStickyElements = [];
 
   window.onload = function() {
     stickyElement = document.querySelectorAll('.js-sticky');
@@ -17,27 +18,34 @@
   };
 
   function offsetElement() {
+    aStickyElements = [];
+
     returnOffset(stickyElement);
     returnOffset(stickyElementDesktop);
 
     function returnOffset(e) {
       if(e !== null) {
         var topPos;
+
         for(var i = 0; i < e.length ; i++ ) {
           e[i].classList.remove('sticky');
-          stickyElementOffset.push(e[i]);
+          aStickyElements.push(e[i]);
+        }
+
+        for(var i = 0; i < e.length ; i++ ) {
           if (stickyElementOffset[i] <= 0) {
             stickyElementOffset[i] = window.pageYOffset + e[i].getBoundingClientRect().top;
+          } else {
+            stickyElementOffset[i] = e[i].getBoundingClientRect().top;
           }
         }
 
-        for(i = 0; i < stickyElementOffset.length-1 ; i++ ) {
-          topPos = stickyElementOffset[i].clientHeight + parseInt(styleContainer().marginTop, 10);
-          stickyElementOffset[i+1].style.top = topPos + 'px';
-          if (typeof stickyElementOffset[i] != 'number') {
-            stickyElementOffset[i] = stickyElementOffset[i].getBoundingClientRect().top;
-          }
+        for(var i = 0; i < aStickyElements.length-1 ; i++ ) {
+          topPos = aStickyElements[i].clientHeight + parseInt(styleContainer().marginTop, 10);
+          aStickyElements[i+1].style.top = topPos + 'px';
+
           return stickyElementOffset;
+
         }
       }
     }
@@ -64,13 +72,14 @@
         scrollY = window.pageYOffset;
         var widthParent = el[i].parentElement.clientWidth;
         el[i].style.maxWidth = widthParent + 'px';
-        if (scrollY >= stickyElementOffset[0]) {
+        if (aStickyElements[0] && scrollY > aStickyElements[0].offsetTop) {
           el[i].classList.add('sticky');
           stopSticker();
         } else {
             el[i].classList.remove('sticky');
         }
       }
+
     }
   }
 
@@ -83,7 +92,7 @@
       }
 
       heightElScrollable = target.clientHeight;
-      if(stickyElementDesktop !== null) {
+      if(stickyElementDesktop.length < 0) {
         totalViewport = window.innerHeight - topSide;
       } else {
         totalViewport = window.innerHeight;
@@ -97,7 +106,7 @@
   }
 
   function stopSticker() {
-	  if(stickyElementDesktop !== null) {
+	  if(stickyElementDesktop.length) {
 	    var elScrollableParent = document.querySelector('.row-faux').getBoundingClientRect().height;
 	    var elScrollable = document.querySelector('.js-sticky-desktop');
 	    var elScrollableHeight = elScrollable.getBoundingClientRect().height;
@@ -157,5 +166,3 @@
   });
 
 })();
-
-//https://github.com/InfoJobs/rubik/pull/68/files
