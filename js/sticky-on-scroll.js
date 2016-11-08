@@ -72,8 +72,7 @@
         scrollY = window.pageYOffset;
         var widthParent = el[i].parentElement.clientWidth;
         el[i].style.maxWidth = widthParent + 'px';
-
-        if (aStickyElements[0] && scrollY >= aStickyElements[0].getBoundingClientRect().top) {
+        if (aStickyElements[0] && scrollY > aStickyElements[0].offsetTop) {
           el[i].classList.add('sticky');
           stopSticker();
         } else {
@@ -167,5 +166,3 @@
   });
 
 })();
-
-//https://github.com/InfoJobs/rubik/pull/68/files
