@@ -90,6 +90,7 @@ Markup:
 <button class="btn btn-tertiary" type="button">Tertiary</button>
 <a href="#" class="btn btn-highlight">Highlight</a>
 <a href="#" class="btn btn-primary">Link</a>
+<button class="btn btn-tertiary alert" type="button">Tertiary alert</button>
 
 Styleguide #{$sgi-buttons-type}
 */
@@ -97,48 +98,62 @@ Styleguide #{$sgi-buttons-type}
 .btn-primary {
   	@include btn;
     color: $shiro;
-    border: 1px solid $color-primary;
-    background-color: $color-primary;
+    border: 1px solid $day-blue;
+    background-color: $day-blue;
     box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
 
     &:hover,
     &:focus,
     &:active {
         color: $shiro;
-        background-color: shade($color-primary,20%);
-        border-color: shade($color-primary,20%);
+        background-color: shade($day-blue,20%);
+        border-color: shade($day-blue,20%);
     }
 
     &-alternative {
     	@include btn;
-      border: 1px solid shade($color-primary,40%);
+      border: 1px solid shade($day-blue,40%);
       color: $shiro;
-      background-color: shade($color-primary,40%);
+      background-color: shade($day-blue,40%);
       box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
 
       &:hover,
       &:focus,
       &:active {
-        background-color: shade($color-primary,60%);
-        border-color: shade($color-primary,60%);
+        background-color: shade($day-blue,60%);
+        border-color: shade($day-blue,60%);
       }
     }
 }
 
 .btn-default {
   	@include btn;
-    color: $color-primary;
-    border: 1px solid $color-primary;
+    color: $day-blue;
+    border: 1px solid $day-blue;
     background-color: $button-secondary;
 
     &:hover,
     &:focus,
     &:active {
         color: $shiro;
-        background-color: shade($color-primary,20%);
+        background-color: shade($day-blue,20%);
     }
 
     &-contrast {
+      @include btn;
+      color: $shiro;
+      border: 1px solid $shiro;
+      background-color: transparent;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: shade($day-blue,20%);
+        background-color: $shiro;
+      }
+    }
+
+    &-overlay {
       @include btn;
       color: $shiro;
       border: 1px solid $shiro;
@@ -147,7 +162,7 @@ Styleguide #{$sgi-buttons-type}
       &:hover,
       &:focus,
       &:active {
-        color: shade($color-primary,20%);
+        color: shade($day-blue,20%);
         background-color: $shiro;
       }
     }
@@ -155,13 +170,13 @@ Styleguide #{$sgi-buttons-type}
     &-alternative {
     	@include btn;
       border: 0 none;
-      color: $color-primary;
+      color: $day-blue;
       background-color: $shiro;
 
       &:hover,
       &:focus,
       &:active {
-        color: shade($color-primary,20%);
+        color: shade($day-blue,20%);
         background-color: $dark-shiro;
       }
     }
@@ -170,13 +185,13 @@ Styleguide #{$sgi-buttons-type}
 .btn-tertiary {
   	@include btn;
     border: 1px solid transparent;
-    color: $color-primary;
+    color: $day-blue;
     background-color: transparent;
 
     &:hover,
     &:focus,
     &:active {
-        color: $color-primary;
+        color: $day-blue;
         background-color: $dark-shiro;
         border-color: $dark-shiro;
     }
@@ -375,6 +390,7 @@ Markup:
 <div class="panel-focus inner">
   <button class="btn btn-primary-alternative" type="button">Primary alternative</button>
   <button class="btn btn-default-contrast" type="button">Secondary contrast</button>
+  <button class="btn btn-default-overlay" type="button">Secondary contrast</button>
   <button class="btn btn-default-alternative" type="button">Secondary alternative</button>
 </div>
 
@@ -384,7 +400,7 @@ Styleguide #{$sgi-buttons-variants}
 ///*DEPRECATED: .btn-link-primary only used in 'ver_oferta.html'*/
 .btn-link-primary {
     @include btn;
-    color: $color-primary;
+    color: $day-blue;
 
     &:hover,
     &:focus {
@@ -508,7 +524,7 @@ Styleguide #{$sgi-button-group-structure}
     }
 
     [class*="btn"]  {
-        border-color: $color-primary;
+        border-color: $day-blue;
         border-width: 1px;
         border-style: solid;
     }
@@ -533,7 +549,7 @@ Styleguide #{$sgi-button-group-structure}
   	.active [class*="btn"].btn-disabled {
   	    cursor: default;
   	    color: $shiro;
-  	    background-color: shade($color-primary,20%);
+  	    background-color: shade($day-blue,20%);
   	}
 
     &.btn-group-expanded {
@@ -546,7 +562,7 @@ Styleguide #{$sgi-button-group-structure}
 				&.disabled:hover {
 					border-right-width: 1px;
 					color: $shiro;
-					background-color: $color-primary;
+					background-color: $day-blue;
 					cursor: default;
 				}
 			}
