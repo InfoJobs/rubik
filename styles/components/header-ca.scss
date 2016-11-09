@@ -271,13 +271,13 @@ a.nav-bar-toggle {
 			color: $dark-silk;
 
 			@include mediaquery ($bp-header) {
-				color: $color-primary;
+				color: $day-blue;
 			}
 
 		}
 
 		&  a:active {
-			color: $color-primary
+			color: $day-blue;
 		}
 	}
 
@@ -364,7 +364,7 @@ a.nav-bar-toggle {
 					-webkit-tap-highlight-color: transparent; /* For some Androids */
 
 					&:hover {
-						color: $color-primary;
+						color: $day-blue;
 					}
 				}
 			}
@@ -452,7 +452,7 @@ a.nav-bar-toggle {
 		background-color: $dark-shiro;
 
 		&:hover {
-			color:$color-primary;
+			color: $day-blue;
 		}
 
 		@include mediaquery ($bp-header) {
@@ -512,7 +512,7 @@ a.nav-bar-toggle {
 			color: $shiro;
 
 			@include mediaquery ($bp-header) {
-				color:$color-primary;
+				color:$day-blue;
 			}
 
 		}
@@ -623,18 +623,18 @@ a.nav-bar-toggle {
 				color: $dark-silk;
 
 				@include mediaquery ($bp-header) {
-					color:$color-primary;
+					color: $day-blue;
 				}
 			}
 
 			&:active {
-				color:$color-primary;
+				color: $day-blue;
 			}
 		}
 	}
 
 	.active {
-		color: $color-primary;
+		color: $day-blue;
 	}
 
 	.sticker {

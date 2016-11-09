@@ -11,10 +11,10 @@ $MIXINS COLORS
 }
 
 @mixin focus {
-	color: $color-primary;
+	color: $day-blue;
 
 	[class*="iconfont-"]::before {
-		color: $color-primary;
+		color: $day-blue;
 	}
 }
 

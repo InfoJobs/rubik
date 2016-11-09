@@ -76,12 +76,12 @@ button {
 a {
 	@include transition;
  	text-decoration: none;
- 	color: $color-primary;
+ 	color: $day-blue;
 }
 
 a:hover {
 	 text-decoration: none;
-	 color: $color-primary;
+	 color: $day-blue;
 }
 
 a:focus {

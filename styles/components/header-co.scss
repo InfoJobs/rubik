@@ -402,15 +402,6 @@ a.nav-bar-toggle {
 		}
 	}
 
-	.btn-default {
-		  color: $dark-silk;
-    	background-color: $sunrise-blue;
-      border-color: transparent;
-
-		&:hover {
-	    background-color: $midnight-blue;
-		}
-	}
 }
 
 .nav-bar-user {
@@ -613,18 +604,18 @@ a.nav-bar-toggle {
 				color: $dark-silk;
 
 				@include mediaquery ($bp-header) {
-					color:$color-primary;
+					color:$day-blue;
 				}
 			}
 
 			&:active {
-				color:$color-primary;
+				color:$day-blue;
 			}
 		}
 	}
 
 	.active {
-		color: $color-primary;
+		color: $day-blue;
 	}
 
 	.sticker {

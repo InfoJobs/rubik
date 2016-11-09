@@ -65,7 +65,7 @@ Styleguide #{$sgi-textColors}
 }
 
 a.alternative-action:hover {
-	color: $color-primary;
+	color: $day-blue;
 }
 
 .highlight {
@@ -108,7 +108,7 @@ a.soft-script:active,
 
 .focus,
 .focus[class*="iconfont-"]::before {
-	color: $color-primary;
+	color: $day-blue;
 }
 
 .alert,
@@ -154,7 +154,7 @@ Styleguide #{$sgi-textContrastColors}
 
 	&:hover,
 	&:focus {
-		color: $color-primary;
+		color: $day-blue;
 	}
  }
 
