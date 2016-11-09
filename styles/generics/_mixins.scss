@@ -181,12 +181,8 @@ $query2     = width, device-width
   font-family: $base-font-family-bold;
 }
 
-@mixin light {
+ @mixin light{
 	font-family: $base-font-family-light;
-}
-
-@mixin normal {
-	font-family: $base-font-family;
 }
 
 @mixin custom-bg {
@@ -197,10 +193,22 @@ $query2     = width, device-width
 
   h1,
   a {
-      color: $shiro;
+    color: $shiro;
 
-      @media print {
-        color: #000000;
-      }
+    @media print {
+      color: #000000;
+    }
+  }
+
+  & .panel-canvas {
+
+    a {
+        color: $theme-color-primary;
+
+        @media print {
+          color: #000000;
+        }
+    }
+
   }
 }
