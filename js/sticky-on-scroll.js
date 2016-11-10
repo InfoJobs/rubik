@@ -32,7 +32,7 @@
           aStickyElements.push(e[i]);
         }
 
-        for(var i = 0; i < e.length ; i++ ) {
+        for(i = 0; i < e.length ; i++ ) {
           if (stickyElementOffset[i] <= 0) {
             stickyElementOffset[i] = window.pageYOffset + e[i].getBoundingClientRect().top;
           } else {
@@ -40,7 +40,7 @@
           }
         }
 
-        for(var i = 0; i < aStickyElements.length-1 ; i++ ) {
+        for(i = 0; i < aStickyElements.length-1 ; i++ ) {
           topPos = aStickyElements[i].clientHeight + parseInt(styleContainer().marginTop, 10);
           aStickyElements[i+1].style.top = topPos + 'px';
 
@@ -88,7 +88,7 @@
       target.style.height = 'auto';
       for(var i = 0; i < stickyElementDesktop.length ; i++ ) {
         heightSide = stickyElementDesktop[i].clientHeight;
-        topSide = stickyElementDesktop[i].getBoundingClientRect().y;
+        topSide = stickyElementDesktop[i].getBoundingClientRect().top;
       }
 
       heightElScrollable = target.clientHeight;
@@ -98,8 +98,8 @@
         totalViewport = window.innerHeight;
       }
 
-      if (heightSide > totalViewport && window.innerWidth > 768) {
-        target.style.height = totalViewport - (heightSide - heightElScrollable) - parseInt(styleContainer().marginTop, 10) + 'px';
+      if (heightSide > totalViewport - topSide && window.innerWidth > 768) {
+        target.style.height = totalViewport - topSide - (heightSide - heightElScrollable) - parseInt(styleContainer().marginTop, 10) + 'px';
         target.style.overflowY = 'auto';
       }
     });
@@ -112,7 +112,7 @@
 	    var elScrollableHeight = elScrollable.getBoundingClientRect().height;
 
 	    if(window.innerWidth > 768) {
-	      if(pageYOffset - (elScrollableParent - elScrollableHeight) >= 0) {
+	      if(pageYOffset - (elScrollableParent - elScrollableHeight) - parseInt(elScrollable.style.top, 10) >= 0) {
 	        elScrollable.classList.remove('sticky');
 	        elScrollable.style.marginTop = elScrollableParent - elScrollableHeight + 'px';
 	      } else {
@@ -162,7 +162,6 @@
 
   window.addEventListener("scroll", function() {
     sticky();
-    scrollSideBar();
   });
 
 })();
