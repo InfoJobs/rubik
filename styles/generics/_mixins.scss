@@ -204,7 +204,8 @@ $query2     = width, device-width
     }
   }
 
-  & .panel-canvas {
+  & .panel-canvas,
+  & .panel-default {
 
     a {
         color: $theme-color-primary;

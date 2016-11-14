@@ -137,7 +137,7 @@ textarea {
 	}
 
 	&:focus {
-		border: 1px solid $color-primary;
+		border: 1px solid $day-blue;
 		outline: none;
 		color: #000;
 	}
@@ -689,21 +689,21 @@ input[type="radio"] + label,
 	    + label {
 			width: auto;
 			height: 34px;
-	    	line-height: 32px;
+      line-height: 32px;
 			max-width: 100%;
 			margin-bottom: 5px;
 			padding: 5px 10px;
-			color: $color-primary;
-	    	background-color: $dark-shiro;
-	    	border: 1px solid $color-primary;
-	    	border-radius: 21px;
+			color: $mid-script;
+      background-color: transparent;
+      border: 1px solid $outer-land;
+      border-radius: 21px;
 
 			@include mediaquery ($bp-desktop) {
 		  	    &:hover,
 		  	    &:active {
-		  	    	color: #2b3d4e;
-		      		background-color: #BBC9D7;
-		      		border: 1px solid $color-primary;
+		  	    	color: $day-blue;
+		      		background-color: transparent;
+		      		border: 1px solid $day-blue;
 		      	}
 		    }
 
@@ -714,13 +714,14 @@ input[type="radio"] + label,
 
     	&:checked {
     		+ label {
-    			color: $shiro;
-    			background-color: $color-primary;
+    			color: $day-blue;
+    			background-color: tint($day-blue,80%);
+		      border: 1px solid $day-blue;
 
     			.sticker-close {
             display: inline-block;
             padding: 0 0 0 6px;
-            color: $shiro;
+            color: $day-blue;
           }
     		}
 
@@ -745,10 +746,9 @@ input[type="radio"] + label,
 			@include btn;
 			font-family: $base-font-family;
 			text-transform: none;
-		    height: 44px;
-		    display: block;
-		    color: $color-primary;
-		    border: 1px solid $color-primary;
+      height: 44px;
+      display: block;
+      color: $mid-script;
 			font-size: $small-font-size;
 			text-align: left;
 
@@ -762,7 +762,7 @@ input[type="radio"] + label,
 		        width: 10px;
 		        height: 10px;
 		        margin-right: 5px;
-		        border: 1px solid $color-primary;
+		        border: 1px solid $soft-script;
 		        border-radius: 5px;
 		        background-color: $dark-shiro;
       		}
@@ -772,7 +772,7 @@ input[type="radio"] + label,
   			+ label {
   				&::before {
   					border: 1px solid $shiro;
-  					background-color: $color-primary;
+  					background-color: $day-blue;
   				}
 		  	}
 		}
@@ -792,30 +792,34 @@ input[type="radio"] + label,
 	height: 34px;
 	line-height: 32px;
 	padding: 5px 15px;
-	border: 1px solid $color-primary;
+	border: 1px solid $outer-land;
 	border-radius: 21px;
+  background-color: transparent;
 
   &[class*="iconfont-"] {
 	  padding: 5px 13px;
   }
 	&:hover,
 	&:active {
-		background-color: $dark-shiro;
+		background-color: transparent;
+    border-color: $day-blue;
 	}
 
 	@include mediaquery ($bp-desktop) {
 		&:hover {
-			background-color: #BBC9D7;
+			background-color: transparent;
 
 			&::before {
-				color: #2b3d4e;
+				color: $day-blue;
 			}
 		}
 	}
 
 	&::before {
-		color: $color-primary;
+		color: $mid-script;
 	}
+
+
 }
 
 /*
@@ -1271,9 +1275,9 @@ Styleguide #{$sgi-forms-switch-radio}
         float: right;
         width: 30px;
         height: 20px;
-        border: 1px solid #55799a;
+        border: 1px solid $day-blue;
         border-radius: 15px;
-        background-color: #99afc2;
+        background-color: tint($day-blue, 80%);
         margin: 0 5px 0 10px;
       }
 
@@ -1290,7 +1294,7 @@ Styleguide #{$sgi-forms-switch-radio}
         height: 18px;
         border-radius: 50%;
         background-color: $shiro;
-        border: 1px solid #55799a;
+        border: 1px solid $day-blue;
         margin: 1px 20px 0 -38px;
         -webkit-transition: margin 200ms linear;
            -moz-transition: margin 200ms linear;
