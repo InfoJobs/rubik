@@ -3,6 +3,7 @@
 	function showHideListItems() {
     var eClickItem = document.querySelectorAll('.js-show-hide-items');
     var eHiddenSibblingItems = document.querySelectorAll('.js-hidden-sibbling-items');//clase en el <ul> para ocultar por defecto todos los itemsmenos el primero
+    var eVisibleSibblingItems = document.querySelectorAll('.js-visible-sibbling-items');//clase en el <ul> para ocultar por defecto todos los itemsmenos el primero
     var eToggle;
     var eClickItemParent;
 
@@ -22,6 +23,7 @@
     	      }
         }
 
+
         eToggle =  eClickItemParent.querySelectorAll('.js-toggle-element');
 
         for (var l = 0; l < eToggle.length; l++) {
@@ -36,8 +38,7 @@
          eClickItemParent = target.parentNode;
 
         //comprobamos si el <ul> tiene la clase js-hidden-sibbling-items
-        if(target.previousElementSibling === eHiddenSibblingItems[0]) {
-
+        if(target.previousElementSibling === eHiddenSibblingItems[0] || target.previousElementSibling === eVisibleSibblingItems[0]) {
           eToggle =  eClickItemParent.querySelectorAll('li:not(:first-of-type)');
           toggleItems();
 
