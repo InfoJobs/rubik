@@ -137,6 +137,21 @@ Styleguide #{$sgi-listsColumns}
 
   }
 
+  @media print {
+    .list-grid-columns-#{$i},
+    .list-grid-columns-#{$i}-medium {
+      overflow: hidden;
+
+      li {
+        float: left;
+        width: 100%/$i;
+      }
+
+    }
+
+  }
+
+
 }
 
 [class^="list-grid-columns-"],
