@@ -71,10 +71,13 @@ Markup:
   	}
 
     @media print {
-      width: 120px;
-      height: 120px;
+      max-width: none;
+      max-height: none;
+  		width: 120px;
+  		height: 120px;
     }
-  }
+
+	}
 
 	&-small {
 		@include crop-circle;

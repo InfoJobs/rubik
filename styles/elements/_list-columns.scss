@@ -183,10 +183,6 @@ Styleguide #{$sgi-listsColumns}
     @include bold;
   }
 
-  .inner & {
-    margin-bottom: -#{$padding};
-  }
-
   &.list-default {
     margin-top: -#{$padding};
 
