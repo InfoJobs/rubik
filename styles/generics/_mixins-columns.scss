@@ -47,9 +47,15 @@ $MIXIN COLUMNS
 
     .heading-group {
       @include display-flex;
+      flex-wrap: wrap;
 
-      .tag-group {
-        margin: 0 0 0 10px;
+      h3 {
+        margin-right: 10px;
+      }
+
+      .tag-group,
+      p {
+        margin: 0;
       }
     }
 
