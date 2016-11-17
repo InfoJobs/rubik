@@ -70,6 +70,13 @@ Markup:
   		max-height: 120px;
   	}
 
+    @media print {
+      max-width: none;
+      max-height: none;
+  		width: 120px;
+  		height: 120px;
+    }
+
 	}
 
 	&-small {

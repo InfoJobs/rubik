@@ -298,6 +298,10 @@ Styleguide #{$sgi-helpers}
   top: 0;
   width: 100%;
   z-index: $zindex-sticky-content;
+
+  @media print {
+    position: static;
+  }
 }
 
 @mixin sticky-bottom {
@@ -307,6 +311,11 @@ Styleguide #{$sgi-helpers}
   bottom: 0;
   box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.15);
   z-index: $zindex-sticky-content;
+
+  @media print {
+    position: static;
+  }
+
 }
 
 .sticky-bottom {
