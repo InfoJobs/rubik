@@ -446,7 +446,7 @@ Markup:
 Styleguide #{$sgi-tagDivider}
 */
 
-.tag-group li.tag-divider {
+.tag-group li.tag-divider:not(:only-child) {
     @extend %divider;
     margin-right: 10px;
     padding-right: 10px;
