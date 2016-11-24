@@ -5,7 +5,8 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 	//bg logo es
-	background-image: url(#{$path-media}/portales/ij/appgrade/backgrounds/bg-logo-reduced.png);
+	background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo-default_primary.svg);
+	background-size: 98px;
 	border-bottom: 1px solid $darkest-shiro;
 
 	@include mediaquery ($bp-header) {
@@ -77,7 +78,8 @@
 		height: 50px;
 		min-height: 50px;
 		background-color: $color-primary;
-		background-image: url(#{$path-media}/appgrade/backgrounds/bg-logo-reduced-white.png);
+		background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo-default_primary-white.svg);
+
 		border: 0 none;
 
 		@include mediaquery ($bp-header) {
@@ -294,7 +296,7 @@ a.nav-bar-toggle {
 			background-repeat: no-repeat;
 			background-position: left center;
 			//bg logo es
-			background-image: url(#{$path-media}/portales/ij/appgrade/backgrounds/bg-logo.png);
+			background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo_claim_primary.svg);
 			background-size: contain;
 		}
 	}
@@ -314,7 +316,7 @@ a.nav-bar-toggle {
 			margin: 10px 0 0 0;
 			height: 19px;
 			width: 77px;
-			background-image: url(#{$path-media}/portales/ij/appgrade/backgrounds/bg-logo-reduced.png);
+			background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo-default_primary.svg);
 
 		}
 	}
@@ -756,6 +758,7 @@ a.nav-bar-toggle {
 
 		.logo img {
 			display: block;
+			width: 138px;
 		}
 
 
