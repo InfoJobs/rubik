@@ -234,6 +234,7 @@ Styleguide #{$sgi-tabs}
     li {
       @include flex(1 1 auto);
       padding: 0;
+      margin: 0;
     }
 
     a {
