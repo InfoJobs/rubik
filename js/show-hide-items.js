@@ -1,52 +1,40 @@
 (function() {
-
-	function showHideListItems() {
+  function showHideListItems() {
     var eClickItem = document.querySelectorAll('.js-show-hide-items');
     var eHiddenSibblingItems = document.querySelectorAll('.js-hidden-sibbling-items');//clase en el <ul> para ocultar por defecto todos los itemsmenos el primero
     var eVisibleSibblingItems = document.querySelectorAll('.js-visible-sibbling-items');//clase en el <ul> para ocultar por defecto todos los itemsmenos el primero
     var eToggle;
     var eClickItemParent;
 
-		[].forEach.call(eClickItem, function(target) {
-
+    [].forEach.call(eClickItem, function(target) {
       //si hay una lista hidden sibbling items, ocultamos todos los items menos el primero
-      for(var i= 0; i < eClickItem.length; i++) {
+      eClickItemParent = target.parentNode;
 
-         eClickItemParent = target.parentNode;
+      if(target.previousElementSibling.classList.contains('js-hidden-sibbling-items')) {
+        eToggle =  eClickItemParent.querySelectorAll('li:not(:first-of-type)');
 
-        if(target.previousElementSibling === eHiddenSibblingItems[0]) {
-            eToggle =  eClickItemParent.querySelectorAll('li:not(:first-of-type)');
-
-            for (var j = 0; j < eToggle.length; j++) {
-              eToggle[j].classList.add('hide');
-
-    	      }
+        for (var j = 0; j < eToggle.length; j++) {
+          eToggle[j].classList.add('hide');
         }
-
-
-        eToggle =  eClickItemParent.querySelectorAll('.js-toggle-element');
-
-        for (var l = 0; l < eToggle.length; l++) {
-          eToggle[l].classList.add('hide');
-
-	      }
       }
 
+      eToggle =  eClickItemParent.querySelectorAll('.js-toggle-element');
 
-			target.onclick = function() {
+      for (var l = 0; l < eToggle.length; l++) {
+        eToggle[l].classList.add('hide');
+      }
 
-         eClickItemParent = target.parentNode;
+      target.onclick = function() {
+
+        eClickItemParent = target.parentNode;
 
         //comprobamos si el <ul> tiene la clase js-hidden-sibbling-items
-        if(target.previousElementSibling === eHiddenSibblingItems[0] || target.previousElementSibling === eVisibleSibblingItems[0]) {
+        if(target.previousElementSibling.classList.contains('js-hidden-sibbling-items') || target.previousElementSibling.classList.contains('js-visible-sibbling-items')) {
           eToggle =  eClickItemParent.querySelectorAll('li:not(:first-of-type)');
           toggleItems();
-
         } else {
-
           eToggle =  eClickItemParent.querySelectorAll('.js-toggle-element');
           toggleItems();
-
         }
 
         function toggleItems(){
@@ -58,15 +46,11 @@
             } else {
               target.textContent = target.getAttribute('data-text-hide');
             }
-  	      }
+          }
         }
+      };
+    });
+  }
 
-			};
-
-		});
-
-	}
-
-	window.addEventListener('load', showHideListItems);
-
+  window.addEventListener('load', showHideListItems);
 }());
