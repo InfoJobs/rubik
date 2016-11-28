@@ -102,6 +102,12 @@
         target.style.height = totalViewport - topSide - (heightSide - heightElScrollable) - parseInt(styleContainer().marginTop, 10) + 'px';
         target.style.overflowY = 'auto';
       }
+
+      if(target.parentNode.querySelector('.tabs').onclick == null){
+    	  target.parentNode.querySelector('.tabs').onclick=function(){
+    		  scrollSideBar();
+    	  }
+	  }
     });
   }
 
