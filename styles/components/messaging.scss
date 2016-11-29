@@ -1,0 +1,54 @@
+/*------------------------------------*\
+    $MESSAGING
+\*------------------------------------*/
+
+/*
+Messaging
+
+Markup:
+<a href="#" class="btn-small btn-default ">Iniciar chat</a>
+
+Styleguide #{$sgi-messaging}
+*/
+
+.messaging-list {
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2);
+
+  .messaging-list-item {
+    @include display-flex;
+    @include align-items(center);
+    justify-content: space-between;
+    height: 80px;
+    padding-right: $padding;
+    margin-left: $padding;
+
+    &:not(:last-child) {
+      box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2);
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .btn-default {
+      margin-left: $padding;
+    }
+  }
+
+  .messaging-list-item-init {
+    @extend .messaging-list-item;
+    margin-left: 0;
+    padding-left: $padding;
+  }
+
+  .messaging-title {
+    font-family: $base-font-family-semi-bold;
+  }
+
+  .messaging-status-chat {
+    font-size: $small-font-size;
+    line-height: $small-line-height;
+    color: $soft-script;
+  }
+
+}

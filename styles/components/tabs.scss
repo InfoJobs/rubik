@@ -232,9 +232,10 @@ Styleguide #{$sgi-tabs}
     @include display-flex;
 
     li {
-      @include flex(1 1 auto);
+      @include flex(1 1 0);
       padding: 0;
       margin: 0;
+      overflow: hidden;
     }
 
     a {
@@ -244,7 +245,7 @@ Styleguide #{$sgi-tabs}
       justify-content: center;
       font-family: $base-font-family-semi-bold;
       height: 100px;
-      padding: $padding $padding $padding - 4;//4 es el alto del border del tab active
+      padding: $padding ($padding / 2)($padding - 4);//4 es el alto del border del tab active
 
       &:hover {
         color: $color-primary;;
