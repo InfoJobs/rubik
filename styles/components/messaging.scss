@@ -6,7 +6,81 @@
 Messaging
 
 Markup:
-<a href="#" class="btn-small btn-default ">Iniciar chat</a>
+<ul class="messaging-list">
+  <li class="messaging-list-item-init">
+    <div class="messaging-body">
+      <p class="messaging-title truncate">Desarrollador/Analista de aplicaciones web</p>
+    </div>
+    <a href="#" class="btn btn-primary">Iniciar chat <span></span></a>
+  </li>
+</ul>
+<ul class="messaging-list">
+  <li class="messaging-list-item">
+    <div class="messaging-body">
+      <div class="messaging-body-main">
+        <p class="messaging-title truncate">UX / UI Designer</p>
+      </div>
+      <div class="messaging-body-secondary">
+        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días</p>
+      </div>
+    </div>
+    <div class="messaging-icons-right">
+      <p class="iconfont-Arrow focus" title="Ir al chat"><span class="hide">Ir al chat</span></p>
+    </div>
+  </li>
+  <li class="messaging-list-item">
+    <div class="messaging-avatar">
+      <img class="crop-circle-xsmall border-default" alt="Nombre Apellidos" src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png">
+    </div>
+    <div class="messaging-body">
+      <div class="messaging-body-main">
+        <p class="messaging-title truncate">UX / UI Designer</p>
+        <time class="messaging-meta" datetime="2016-02-14 20:00">Ayer</time>
+      </div>
+      <div class="messaging-body-secondary">
+        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días</p>
+        <span class="sticker sticker-small sticker-secondary">10</span>
+      </div>
+    </div>
+    <div class="messaging-icons-right">
+      <p class="iconfont-Arrow focus" title="Ir al chat"><span class="hide">Ir al chat</span></p>
+    </div>
+  </li>
+  <li class="messaging-list-item">
+    <div class="messaging-avatar">
+      <img class="crop-image-xsmall border-default" alt="Nombre Apellidos" src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png">
+    </div>
+    <div class="messaging-body">
+      <div class="messaging-body-main">
+        <p class="messaging-title truncate">UX / UI Designer</p>
+        <time class="messaging-meta" datetime="2016-09-04 20:00">04/09/16</time>
+      </div>
+      <div class="messaging-body-secondary">
+        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días</p>
+      </div>
+    </div>
+    <div class="messaging-icons-right">
+      <p class="iconfont-Arrow focus" title="Ir al chat"><span class="hide">Ir al chat</span></p>
+    </div>
+  </li>
+  <li class="messaging-list-item">
+    <div class="messaging-icons-left hide-medium-device hide-large-device">
+      <p class="iconfont-ArrowLeft focus" title="Ir al chat"><span class="hide">Ir al chat</span></p>
+    </div>
+    <div class="messaging-avatar">
+      <img class="crop-circle-xsmall border-default" alt="Nombre Apellidos" src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png">
+    </div>
+    <div class="messaging-body">
+      <div class="messaging-body-main">
+        <p class="messaging-title truncate">Desarrollador/Analista de aplicaciones web</p>
+        <time class="messaging-meta" datetime="2016-08-14 20:35">20:35</time>
+      </div>
+      <div class="messaging-body-secondary">
+        <p class="messaging-last-text truncate">Julia: Hooola</p>
+      </div>
+    </div>
+  </li>
+</ul>
 
 Styleguide #{$sgi-messaging}
 */
@@ -16,39 +90,89 @@ Styleguide #{$sgi-messaging}
 
   .messaging-list-item {
     @include display-flex;
-    @include align-items(center);
     justify-content: space-between;
     height: 80px;
-    padding-right: $padding;
-    margin-left: $padding;
+    padding: 0 $padding;
 
-    &:not(:last-child) {
-      box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2);
+    &.messaging-list-item-active {
+      background-color: tint($day-blue, 90%);
     }
 
     p {
       margin: 0;
     }
 
-    .btn-default {
+    .btn {
       margin-left: $padding;
     }
+
+    .messaging-body {
+      flex-grow: 1;
+      min-width: 0; //for text with ellipsis inside body
+      box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2);
+      padding: ($padding/2) 0;
+    }
+
+    .messaging-body-main,
+    .messaging-body-secondary {
+      @include display-flex;
+    }
+
+    .messaging-title {
+      font-family: $base-font-family-semi-bold;
+      margin-bottom: 4px;
+      flex-grow: 1;
+    }
+
+    .messaging-last-text {
+      flex-grow: 1;
+    }
+
+    .messaging-last-text,
+    .messaging-meta {
+      font-size: $small-font-size;
+      line-height: $small-line-height;
+      color: $soft-script;
+    }
+
+    .messaging-meta,
+    .sticker {
+      margin-left: $padding/2;
+    }
+
+    .messaging-avatar {
+      padding: ($padding/2) 0;
+      margin-right: $padding/2;
+    }
+
+    .messaging-icons-left,
+    .messaging-icons-right {
+      padding: $padding 0;
+    }
+
+    .messaging-icons-left {
+      padding-right: 5px;
+    }
+
+    .messaging-icons-right {
+      padding-left: 5px;
+      box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2);
+    }
+
+    &:last-of-type .messaging-body,
+    &:last-of-type .messaging-icons-right {
+      box-shadow: none;
+    }
+
   }
 
   .messaging-list-item-init {
     @extend .messaging-list-item;
-    margin-left: 0;
-    padding-left: $padding;
+    @include align-items(center);
   }
 
-  .messaging-title {
-    font-family: $base-font-family-semi-bold;
-  }
-
-  .messaging-status-chat {
-    font-size: $small-font-size;
-    line-height: $small-line-height;
-    color: $soft-script;
+  [class*="iconfont-"]::before {
+  	margin: 0;
   }
 
 }
