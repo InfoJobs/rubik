@@ -1191,14 +1191,10 @@ Styleguide #{$sgi-forms-strength-bar}
 		@include flex;
 		margin-right: 10px;
 
-    @include mediaquery ($bp-desktop) {
-      margin-right: 20px;
-     }
-
-     input[type="text"] {
-       width: 100%;
-     }
-   }
+    input[type="text"] {
+      width: 100%;
+    }
+  }
 
   label.hide + div:last-of-type {
     border: 4px solid;
