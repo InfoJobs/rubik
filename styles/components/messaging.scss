@@ -176,3 +176,77 @@ Styleguide #{$sgi-messaging}
   }
 
 }
+
+.messaging-detail {
+  overflow: hidden;
+
+  p {
+    overflow: hidden;
+  }
+  .message {
+    overflow: hidden;
+    clear: both;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+
+    &-in {
+      @extend .message;
+      float: left;
+      margin-right: 50px;
+      border-bottom-left-radius: 0;
+      background: $shiro;
+
+      + time {
+        clear: left;
+        float: left;
+        margin-top: 5px;
+        color: $soft-script;
+        @include font-small-line;
+      }
+    }
+
+    &-out {
+      @extend .message;
+      float: right;
+      margin-left: 50px;
+      border-bottom-right-radius: 0;
+      background-color: tint($kiiro,90%);
+
+      + time {
+        clear: right;
+        float: right;
+        margin-top: 5px;
+        color: $soft-script;
+        @include font-small-line;
+      }
+    }
+  }
+  .unread {
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    @include font-small-line;
+    color: $soft-script;
+
+    &:before,
+    &:after {
+        background-color: $soft-script;
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 50%;
+    }
+    &:before {
+        right: 10px;
+        margin-left: -50%;
+    }
+    &:after {
+        left: 10px;
+        margin-right: -50%;
+    }
+  }
+}

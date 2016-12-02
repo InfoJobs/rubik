@@ -1194,6 +1194,10 @@ Styleguide #{$sgi-forms-strength-bar}
     @include mediaquery ($bp-desktop) {
       margin-right: 20px;
      }
+
+     input[type="text"] {
+       width: 100%;
+     }
    }
 
 	> div:last-of-type {
