@@ -396,59 +396,135 @@
                     </div>
 
                   </div>
-                  <div class="js-scrollable">
                     <!-- tabs -->
                     <ul class="tabs tabs-icons">
-                    	<li><a class="icon-tab-comments tab-active" href="#">Comentarios</a></li>
+                    	<li><a class="icon-tab-comments" href="#">Comentarios</a></li>
                     	<li><a class="icon-tab-favorites" href="#">Favoritos</a></li>
-                    	<li><a class="icon-tab-messages" href="#">Mensajes</a></li>
+                    	<li><a class="icon-tab-messages tab-active" href="#">Mensajes</a></li>
                     	<li><a class="icon-tab-timeline" href="#">Historial</a></li>
                     </ul>
-                    <div class="inner">
-                      <form>
-                        <fieldset>
-                          <label for="comment">Comentario</label>
-                          <input id="comment" class="input-justify" type="text" placeholder="Ejem: No contesta" />
-                        </fieldset>
-                        <div class="margin-top">
-                          <button class="btn btn-default btn-medium">A&ntilde;adir</button>
-                        </div>
-                      </form>
-                    </div>
-                    <div class="inner">
-                      <ul class="list-default list-items-expanded">
-                        <li>
-                          <div class="content-middle">
-                            <div class="content-type-text">
-                              <p>No contesta al tel&eacute;fono</p>
-                              <p class="small alternative">Maite, hace 2 semanas · Head of UX</p>
-                            </div>
-                            <div class="content-type-media-small  no-print">
-                              <a class="Icon--small js-action-remove" href="javascript:">
-                          			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
-                          				<path class="st0" d="M145.6,53l-4.9,116H56L52.1,53 M168.4,33h-139L37,178.5c0.8,6,5.9,10.5,11.9,10.5h98.9c6,0,11.1-4.5,11.9-10.5 L168.4,33z"></path>
-                          				<g>
-                          					<path class="st0" d="M174.9,52h-152c-2.8,0-5-2.2-5-5V37c0-2.8,2.2-5,5-5h152c2.8,0,5,2.2,5,5v10C179.9,49.8,177.6,52,174.9,52z"></path>
-                          				</g>
-                          				<g>
-                          					<path class="st0" d="M113.5,154L113.5,154c-5.5,0-10-4.5-10-10V89.9c0-5.5,4.5-10,10-10h0c5.5,0,10,4.5,10,10V144 C123.5,149.5,119,154,113.5,154z"></path>
-                          				</g>
-                          				<g>
-                          					<path class="st0" d="M82.5,154L82.5,154c-5.5,0-10-4.5-10-10V89.9c0-5.5,4.5-10,10-10h0c5.5,0,10,4.5,10,10V144 C92.5,149.5,88,154,82.5,154z"></path>
-                          				</g>
-                          				<g>
-                          					<path class="st0" d="M118,32H78V17c0-2.8,2.2-5,5-5h30c2.8,0,5,2.2,5,5V32z"></path>
-                          				</g>
-                          			</svg>
-
-    					              	</a>
-                            </div>
+                    <div class="js-scrollable">
+                      <!-- /messages -->
+                      <div class="row row-faux row-panel messaging-compact">
+                        <div class="col-5">
+                          <div class="col-child panel-canvas">
+                            <ul class="messaging-list">
+                              <li class="messaging-list-item messaging-list-item-active">
+                                <div class="messaging-avatar">
+                                  <img class="crop-image-xsmall border-default" alt="Nombre Apellidos" src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png">
+                                </div>
+                                <div class="messaging-body">
+                                  <div class="messaging-body-main">
+                                    <p class="messaging-title truncate">UX / UI Designer</p>
+                                    <time class="messaging-meta" datetime="2016-02-14 20:00">Ayer</time>
+                                  </div>
+                                  <div class="messaging-body-secondary">
+                                    <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días</p>
+                                    <span class="sticker sticker-small sticker-secondary">10</span>
+                                  </div>
+                                </div>
+                                <div class="messaging-icons-right">
+                                  <p class="iconfont-Arrow focus" title="Ir al chat"><span class="hide">Ir al chat</span></p>
+                                </div>
+                              </li>
+                              <li class="messaging-list-item">
+                                <div class="messaging-avatar">
+                                  <img class="crop-image-xsmall border-default" alt="Nombre Apellidos" src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png">
+                                </div>
+                                <div class="messaging-body">
+                                  <div class="messaging-body-main">
+                                    <p class="messaging-title truncate">UX / UI Designer</p>
+                                    <time class="messaging-meta" datetime="2016-09-04 20:00">04/09/16</time>
+                                  </div>
+                                  <div class="messaging-body-secondary">
+                                    <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días</p>
+                                  </div>
+                                </div>
+                                <div class="messaging-icons-right">
+                                  <p class="iconfont-Arrow focus" title="Ir al chat"><span class="hide">Ir al chat</span></p>
+                                </div>
+                              </li>
+                            </ul>
                           </div>
-                        </li>
-                      </ul>
+                        </div>
+                        <div class="col-7">
+                          <div class="col-child messaging-detail">
+                            <ul class="messaging-list">
+                              <li class="messaging-list-item">
+                                <div class="messaging-icons-left">
+                                  <p class="iconfont-ArrowLeft focus" title="Ir al chat"><span class="hide">Ir al chat</span></p>
+                                </div>
+                                <div class="messaging-avatar">
+                                  <img class="crop-image-xsmall border-default" alt="Nombre Apellidos" src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png">
+                                </div>
+                                <div class="messaging-body">
+                                  <div class="messaging-body-main">
+                                    <p class="messaging-title truncate">Desarrollador/Analista de aplicaciones web</p>
+                                    <time class="messaging-meta" datetime="2016-08-14 20:35">20:35</time>
+                                  </div>
+                                  <div class="messaging-body-secondary">
+                                    <p class="messaging-last-text truncate">Julia: Hooola</p>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                            <!-- detail -->
+                            <div class="inner">
+                              <p class="text-center">
+                                <span class="sticker-label">Ayer</span>
+                              </p>
+
+                              <p>
+                                <span class="message-out">Hola soy Maria de TickConsulting ¿Te hace una entrevista mañana Donald?</span>
+                                <time datetime="2016-12-01 12:34">12:34</time>
+                              </p>
+                              <p>
+                                <span class="message-in">Hola María, gracias pero tengo trabajo</span>
+                                <time datetime="2016-12-01 12:34">12:34</time>
+                              </p>
+                              <p>
+                                <span class="message-out">De acuerdo</span>
+                                <time datetime="2016-12-01 12:34">12:34</time>
+                              </p>
+
+                              <p class="unread">1 mensaje no leido</p>
+
+                              <p class="text-center">
+                                <span class="sticker-label">Ayer</span>
+                              </p>
+
+                              <p>
+                                <span class="message-in">Muchas gracias por contactar conmigo</span>
+                                <time datetime="2016-12-01 12:34">12:34</time>
+                              </p>
+                            </div>
+                            <div class="panel-canvas messaging-reply inner">
+                              <form method="post" action="#">
+                                <fieldset>
+                                  <legend>Lorem ipsum</legend>
+                                  <ul class="form--field-block clearfix">
+                                    <li class="field-group-grow">
+                                      <div>
+                                        <label for="send-message-out" class="hide">Escribe aquí tu mensaje</label>
+                                        <input id="send-message-out" type="text" placeholder="Escribe aquí ">
+                                      </div>
+                                      <div>
+                                        <button class="btn btn-rounded btn-primary" type="submit"><img src="//media.infojobs.net/appgrade/icons/ico-send-message.png " /></button>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </fieldset>
+                              </form>
+
+                            </div>
+                            <!-- /detail -->
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /messages -->
+
                     </div>
                     <!-- /tabs -->
-                  </div>
                 </div>
                 <!-- /panel -->
               </div>
