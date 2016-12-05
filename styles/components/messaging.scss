@@ -273,10 +273,15 @@ Styleguide #{$sgi-messaging}
   [class^="col-"],
   [class*="col-"] {
     width: 100%;
+
+    &:last-child {
+      margin-left: 10px;
+    }
   }
 
   .messaging-detail {
-    border-left: o none;
+    border-left: 0 none;
+    max-width: calc(100% - 10px);
   }
 
   .messaging-icons-left {
