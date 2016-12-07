@@ -7,15 +7,15 @@
 </head>
 <body>
 <div class="container">
-  <div class="container-expanded panel-canvas inner inner-expanded heading-addons shadow">
+  <div class="container-expanded panel-canvas inner inner-expanded heading-addons">
     <h1>Mensajes</h1>
     <p>Conversaciones que mantienes con los candidatos</p>
   </div>
-  <div class="container-expanded">
+  <div class="container-expanded panel-default">
 
-    <div class="row row-faux">
+    <div class="row row-faux row-panel">
       <div class="col-5">
-        <div class="col-child panel-canvas shadow">
+        <div class="col-child panel-canvas">
           <div class="inner border-bottom">
             <form action="#">
               <div class="field-group-grow margin-bottom">
@@ -36,7 +36,7 @@
             </div>
           </div>
           <ul class="messaging-list">
-            <li class="messaging-list-item">
+            <li class="messaging-list-item messaging-list-item-active">
               <div class="messaging-avatar">
                 <img class="crop-image-xsmall border-default" alt="Nombre Apellidos" src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png">
               </div>
@@ -74,7 +74,82 @@
           </ul>
         </div>
       </div>
-      <div class="col-7"><div class="col-child"></div></div>
+      <div class="col-7">
+        <div class="col-child messaging-detail">
+
+          <ul class="messaging-list">
+            <li class="messaging-list-item">
+              <div class="messaging-icons-left">
+                <p class="iconfont-ArrowLeft focus" title="Ir al chat"><span class="hide">Ir al chat</span></p>
+              </div>
+              <div class="messaging-avatar">
+                <img class="crop-image-xsmall border-default" alt="Nombre Apellidos" src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png">
+              </div>
+              <div class="messaging-body">
+                <div class="messaging-body-main">
+                  <p class="messaging-title truncate">Desarrollador/Analista de aplicaciones web</p>
+                  <time class="messaging-meta" datetime="2016-08-14 20:35">20:35</time>
+                </div>
+                <div class="messaging-body-secondary">
+                  <p class="messaging-last-text truncate">Julia: Hooola</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- detail -->
+          <div class="inner">
+            <p class="text-center">
+              <span class="sticker-label">Ayer</span>
+            </p>
+
+            <p>
+              <span class="message-out">Hola soy Maria de TickConsulting ¿Te hace una entrevista mañana Donald?</span>
+              <time datetime="2016-12-01 12:34">12:34</time>
+            </p>
+            <p>
+              <span class="message-in">Hola María, gracias pero tengo trabajo</span>
+              <time datetime="2016-12-01 12:34">12:34</time>
+            </p>
+            <p>
+              <span class="message-out">De acuerdo</span>
+              <time datetime="2016-12-01 12:34">12:34</time>
+            </p>
+
+            <p class="unread">1 mensaje no leido</p>
+
+            <p class="text-center">
+              <span class="sticker-label">Ayer</span>
+            </p>
+
+            <p>
+              <span class="message-in">Muchas gracias por contactar conmigo</span>
+              <time datetime="2016-12-01 12:34">12:34</time>
+            </p>
+          </div>
+          <div class="panel-canvas messaging-reply inner">
+            <form method="post" action="#">
+              <fieldset>
+                <legend>Lorem ipsum</legend>
+                <ul class="form--field-block clearfix">
+                  <li class="field-group-grow">
+                    <div>
+                      <label for="send-message-out" class="hide">Escribe aquí tu mensaje</label>
+                      <input id="send-message-out" type="text" placeholder="Escribe aquí ">
+                    </div>
+                    <div>
+                      <button class="btn btn-rounded btn-primary" type="submit"><img src="//media.infojobs.net/appgrade/icons/ico-send-message.png " /></button>
+                    </div>
+                  </li>
+                </ul>
+              </fieldset>
+            </form>
+
+          </div>
+          <!-- /detail -->
+
+
+        </div>
+      </div>
     </div>
 
   </div>

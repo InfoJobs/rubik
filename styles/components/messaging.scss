@@ -91,8 +91,8 @@ Styleguide #{$sgi-messaging}
   .messaging-list-item {
     @include display-flex;
     justify-content: space-between;
-    height: 80px;
     padding: 0 $padding;
+    background-color: $shiro;
 
     &.messaging-list-item-active {
       background-color: tint($day-blue, 90%);
@@ -145,23 +145,10 @@ Styleguide #{$sgi-messaging}
       margin-right: $padding/2;
     }
 
-    .messaging-icons-left,
-    .messaging-icons-right {
-      padding: $padding 0;
-    }
-
-    .messaging-icons-left {
-      padding-right: 5px;
-    }
-
-    .messaging-icons-right {
-      padding-left: 5px;
-      box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2);
-    }
 
     &:last-of-type .messaging-body,
     &:last-of-type .messaging-icons-right {
-      box-shadow: none;
+      border: 0 none;
     }
 
   }
@@ -177,7 +164,29 @@ Styleguide #{$sgi-messaging}
 
 }
 
+.messaging-icons-left,
+.messaging-icons-right {
+  padding: $padding 0;
+}
+
+.messaging-icons-left {
+  padding-right: 5px;
+
+  @include mediaquery ($bp-tablet) {
+    padding-right: 0;
+    display: none;
+  }
+
+}
+
+.messaging-icons-right {
+  padding-left: 5px;
+  border-bottom: 1px solid $darkest-shiro;
+}
+
+
 .messaging-detail {
+  max-width: 100%;
   overflow: hidden;
 
   p {
@@ -249,4 +258,35 @@ Styleguide #{$sgi-messaging}
         margin-right: -50%;
     }
   }
+
+  .messaging-reply {
+    border-top: 1px solid $darkest-shiro;
+  }
+
+	@include mediaquery ($bp-tablet) {
+    border-left: 1px solid $outer-fields;
+  }
+}
+
+.messaging-compact {
+
+  [class^="col-"],
+  [class*="col-"] {
+    width: 100%;
+
+    &:last-child {
+      margin-left: 10px;
+    }
+  }
+
+  .messaging-detail {
+    border-left: 0 none;
+    max-width: calc(100% - 10px);
+  }
+
+  .messaging-icons-left {
+    padding-right: 5px;
+    display: block;
+  }
+
 }
