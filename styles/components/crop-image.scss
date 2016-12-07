@@ -43,6 +43,18 @@ Markup:
 			height: 50px;
 		}
 	}
+
+	&-xsmall {
+		@include crop;
+		width: 30px;
+		height: 30px;
+
+		@include mediaquery ($bp-tablet) {
+			width: 40px;
+			height: 40px;
+		}
+	}
+
 }
 
 .crop-circle {
@@ -60,10 +72,6 @@ Markup:
     width: 100%;
 		max-width: 80px;
 		max-height: 80px;
-
-    &.border-contrast {
-      @include border-contrast(3px);
-    }
 
   	@include mediaquery ($bp-tablet) {
   		max-width: 120px;
@@ -95,4 +103,15 @@ Markup:
 			height: 40px;
 		}
 	}
+}
+
+[class^="crop-"],
+[class*="crop-"] {
+
+    &.border-contrast {
+      @include border-contrast(3px);
+    }
+    &.border-default {
+      @include border-default(3px);
+    }
 }

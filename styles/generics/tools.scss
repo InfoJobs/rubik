@@ -129,12 +129,12 @@ Styleguide #{$sgi-helpers}
 
   .border-#{$value}  { // Used to generate a border line on top, right, bottom or left position
     border-#{$value}: 1px solid $darkest-shiro;
-	margin: 0;//only border, reset margins
+    margin: 0;//only border, reset margins
 
-	@at-root .inner #{&} {
-		margin-right: -20px;
-		margin-left: -20px;
-	}
+    @at-root .inner #{&} {
+      margin-right: -20px;
+      margin-left: -20px;
+    }
   }
 
 }

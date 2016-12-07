@@ -1185,19 +1185,20 @@ Styleguide #{$sgi-forms-strength-bar}
 
 .field-group-grow { //used on edit-cv when an input + button sizes needs to be 100%
 	@include display-flex;
+  @include align-items(flex-end);
 
 	> div:first-of-type {
 		@include flex;
-		margin-right: 20px;
-	}
+		margin-right: 10px;
 
-	> div:last-of-type {
-		-webkit-align-items: flex-end;
-		align-self: flex-end;
-		//properties above don't work on safari :(
+    input[type="text"] {
+      width: 100%;
+    }
+  }
 
-		margin-top: 25px;
-	}
+  label.hide + div:last-of-type {
+    border: 4px solid;
+  }
 }
 
 .input-drop-down-wrapper {

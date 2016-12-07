@@ -655,3 +655,13 @@ Styleguide #{$sgi-button-group-icon}
   height: 24px;
   width: 24px;
 }
+
+.btn-rounded {
+  @include btn;
+  padding: 13px 11px 13px 15px;
+  border-radius: 50%;
+
+  img {
+    margin: 0;
+  }
+}
