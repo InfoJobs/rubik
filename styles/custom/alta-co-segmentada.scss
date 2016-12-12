@@ -1,0 +1,97 @@
+/*parte segmentada */
+$segmentada:(administrativos-s, camareros-s, comerciales-s, ingenieros-s, peones-s, monitores-s, profesores-s, secretarios-s, enfermeros-s, programadores-s, consultores-s, peluqueros-s, medicos-s, cocineros-s, maestros-s, chofers-s, farmaceuticos-s, camioneros-s, informaticos-s, lampistas-s, disenadores-s, doctores-s, general-s);
+$i:0;
+@each $value in $segmentada {
+  $i: $i +1;
+  .jbs-#{$value} {
+    color: #fff;
+    min-height: 240px;
+    background-color: #55799a;
+    background-size: cover;
+    background-image: url(http://busco-empleados.infojobs.net/img/#{$i}-s.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+$i:0;
+@media (max-width:768px) and (min-width:481px) {
+  @each $value in $segmentada {
+    $i: $i +1;
+    .jbs-#{$value} {
+      background-image: url(http://busco-empleados.infojobs.net/img/#{$i}-t-s.jpg);
+    }
+  }
+}
+$i:0;
+@media (max-width:480px) {
+  @each $value in $segmentada {
+  $i: $i +1;
+  .jbs-#{$value} {
+      background-image: url(http://busco-empleados.infojobs.net/img/#{$i}-m-s.jpg);
+    }
+  }
+}
+
+/*parte isla */
+/* Control de imagen resoluciones */
+@for $i from 1 through 41 {
+  .jbc-#{$i}-c {
+    min-height: 360px;
+    color: #fff;
+    background-color: #55799a;
+    background-size: cover;
+    background-image: url(http://busco-empleados.infojobs.net/img/#{$i}-c.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    .child-middle {
+      visibility:hidden;
+    }
+  }
+}
+
+@media (max-width:768px) and (min-width:481px) {
+  @for $i from 1 through 41 {
+    .jbc-#{$i}-c {
+      background-image: url(http://busco-empleados.infojobs.net/img/#{$i}-t-c.jpg);
+    }
+  }
+}
+
+@media (max-width:480px) {
+  @for $i from 1 through 41 {
+    .jbc-#{$i}-c {
+      background-image: url(http://busco-empleados.infojobs.net/img/#{$i}-m-c.jpg);
+    }
+  }
+}
+
+/* Control de altura minima */
+[class^="jbc-"],
+[class*=" jbc-"],
+[class^="jbc-"],
+[class*=" jbc-"] {
+  @media (max-width:990px) and (min-width:768px) {
+    &.panel-focus {
+      min-height:270px;
+    }
+  }
+
+  @media (max-width:767px) and (min-width:650px) {
+    &.panel-focus {
+      min-height:450px;
+    }
+  }
+
+  @media (max-width:649px) and (min-width:481px) {
+    &.panel-focus {
+      min-height:340px;
+    }
+  }
+
+  @media (max-width:480px) {
+    &.panel-focus {
+      min-height:250px;
+    }
+  }
+}
