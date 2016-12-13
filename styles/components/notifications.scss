@@ -64,18 +64,27 @@ Styleguide #{$sgi-notifications}
 	font-size: $base-font-size;
 	line-height: $base-line-height; //revisar line-height
 
-  &.notification-contextual {
-    display: table;
-    padding: $padding/2;
-    color: $dark-silk;
+  &.notification-icon {
+    padding-left: 35px;
+    position: relative;
 
-    @mediq print {
-      padding: 0;
+    &::before {
+      position: absolute;
+      top: $padding;
+      left: $padding/2;
     }
+
+  }
+
+  &-contextual {
+    display: table;
+    padding: $padding/2 0 0 0;
+    color: $dark-silk;
 
     &.notification-success {
       //@include iconfont-Big-check;
-      background-color: tint($bamboo,80%);
+      color: $bamboo;
+      background-color: transparent;
 
       &::before {
         color: $bamboo;
@@ -86,7 +95,8 @@ Styleguide #{$sgi-notifications}
       }
     }
     &.notification-error {
-      background-color: tint($trueblood,80%);
+      color: $trueblood;
+      background-color: transparent;
 
       &::before {
         color: $trueblood;
@@ -97,16 +107,12 @@ Styleguide #{$sgi-notifications}
       }
     }
 
-  }
+    &.notification-icon {
+      padding-left: 25px;
 
-  &.notification-icon {
-    padding-left: 35px;
-    position: relative;
-
-    &::before {
-      position: absolute;
-      top: $padding;
-      left: $padding/2;
+      &::before {
+        left: 0;
+      }
     }
 
   }
