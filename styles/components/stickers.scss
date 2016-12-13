@@ -86,7 +86,7 @@ Styleguide #{$sgi-stickers}
 .sticker-label {
   @include sticker-label;
   color: $sticker-color;
-  background-color: $sticker-background;
+  background-color: #d5e1e5;
 }
 
 .sticker-label-opacity {
@@ -105,7 +105,7 @@ Styleguide #{$sgi-stickers}
   color: $dark-silk;
   background-color: tint($bamboo,80%);
 
-  @mdia print {
+  @media print {
     color: $bamboo;
   }
 }

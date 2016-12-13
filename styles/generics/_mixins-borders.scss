@@ -7,3 +7,9 @@ $MIXINS BORDERS
     border-style: solid;
     border-color: $shiro;
 }
+
+@mixin border-default($size-border: 1px){
+    border-width: $size-border;
+    border-style: solid;
+    border-color: $dark-shiro;
+}

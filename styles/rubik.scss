@@ -1,18 +1,6 @@
 // generics
-
 @import "generics/docs-index";
-@import "generics/vars";
-
-@if $stylesheet == "candidates" {
-    @import "generics/vars-ca";
-}
-
-@if $stylesheet == "companies" {
-    @import "generics/vars-co";
-}
-
 @import "generics/vars-theme";
-
 @import "generics/functions";
 @import "generics/mixins";
 @import "generics/placeholders";
