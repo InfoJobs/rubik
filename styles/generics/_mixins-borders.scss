@@ -12,4 +12,12 @@ $MIXINS BORDERS
     border-width: $size-border;
     border-style: solid;
     border-color: $dark-shiro;
+
+    .panel-default & {
+      border-color: $outer-fields;
+    }
+}
+
+@mixin border-rounded ($border-radius: 2px){
+    border-radius: $border-radius;
 }
