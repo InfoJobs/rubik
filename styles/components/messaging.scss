@@ -270,6 +270,8 @@ Styleguide #{$sgi-messaging}
 
 .messaging-compact {
 
+  overflow: hidden;
+
   [class^="col-"],
   [class*="col-"] {
     width: 100%;

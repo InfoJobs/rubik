@@ -286,6 +286,41 @@
 
 //move
 
+.move-left {
+  position: relative;
+  -webkit-animation: move-left 0.5s;
+          animation: move-left 0.5s;
+}
+
+@keyframes move-left {
+
+  0% {
+    left: 100%
+  }
+  100% {
+    left: 0;
+  }
+
+}
+
+.move-right {
+  position: relative;
+  -webkit-animation: move-right 0.5s;
+          animation: move-right 0.5s;
+}
+
+@keyframes move-right {
+
+  0% {
+    left: -100%
+  }
+  100% {
+    left: 0;
+  }
+
+}
+
+
 @keyframes move-up {
 
     0% {
