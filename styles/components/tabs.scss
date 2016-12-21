@@ -233,6 +233,7 @@ Styleguide #{$sgi-tabs}
 
     li {
       @include flex(1 1 0);
+      position: relative;
       padding: 0;
       margin: 0;
       overflow: hidden;
@@ -256,6 +257,12 @@ Styleguide #{$sgi-tabs}
       }
 
     }
+  }
+
+  [class*="sticker"] {
+    position: absolute;
+    top: 20px;
+    right: calc(50% - 30px);//40px/2 del icono del tab + 20px/2 del sticker
   }
 
 

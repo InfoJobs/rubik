@@ -619,14 +619,14 @@ a.nav-bar-toggle {
 		color: $day-blue;
 	}
 
-	.sticker {
+	[class*="sticker"] {
 		position: relative;
-    	top: -2px;
+    top: -2px;
 
 		@include mediaquery ($bp-header) {
 			position: absolute;
-		    top: 26px;
-		    right: -5px;
+      top: 0;
+      right: 5px;
 		}
 	}
 

@@ -17,8 +17,9 @@ Markup:
 <a href="#" class="sticker-contrast">Javascript</a>
 <a href="#" class="sticker-secondary">Javascript</a>
 <span class="sticker-label-marked">Sticker label marked</span>
-<span class="sticker-label-warning">Sticker label marked</span>
-<span class="sticker-label-error">Sticker label marked</span>
+<span class="sticker-label-warning">Sticker label warning</span>
+<span class="sticker-label-error">Sticker label error</span>
+<span class="sticker-new">2</span>
 <br>
 <div class="panel-focus inner"><span class="sticker-label-opacity">Sticker label opacity</span></div>
 
@@ -36,6 +37,24 @@ Styleguide #{$sgi-stickers}
     	background-color: $sticker-background--hover;
     }
   }
+
+  &-new {
+    @include sticker;
+    color: $shiro;
+    background-color: $trueblood;
+    border-radius: 9px;
+    padding: 0 2px;
+    min-width: 18px;
+    height: 18px;
+    line-height: 16px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    @media print {
+      display: none;
+    }
+  }
+
 }
 
 .sticker-marked {
@@ -87,47 +106,48 @@ Styleguide #{$sgi-stickers}
   @include sticker-label;
   color: $sticker-color;
   background-color: #d5e1e5;
-}
 
-.sticker-label-opacity {
-  @include sticker-label;
-  color: $shiro;
-  background-color: tint(transparent,30%);
-  border: transparent;
+  &-opacity {
+    @include sticker-label;
+    color: $shiro;
+    background-color: tint(transparent,30%);
+    border: transparent;
 
-  @media print {
+    @media print {
+      color: $dark-silk;
+    }
+  }
+
+  &-marked {
+    @include sticker-label;
     color: $dark-silk;
+    background-color: tint($bamboo,80%);
+
+    @media print {
+      color: $bamboo;
+    }
   }
-}
 
-.sticker-label-marked {
-  @include sticker-label;
-  color: $dark-silk;
-  background-color: tint($bamboo,80%);
+  &-warning {
+    @include sticker-label;
+    color: $dark-silk;
+    background-color: tint($kiiro,70%);
 
-  @media print {
-    color: $bamboo;
+    @media print {
+      color: $kiiro;
+    }
   }
-}
 
-.sticker-label-warning {
-  @include sticker-label;
-  color: $dark-silk;
-  background-color: tint($kiiro,70%);
+  &-error {
+    @include sticker-label;
+    color: $dark-silk;
+    background-color: tint($trueblood,80%);
 
-  @media print {
-    color: $kiiro;
+    @media print {
+      color: $trueblood;
+    }
   }
-}
 
-.sticker-label-error {
-  @include sticker-label;
-  color: $dark-silk;
-  background-color: tint($trueblood,80%);
-
-  @media print {
-    color: $trueblood;
-  }
 }
 
 /*
