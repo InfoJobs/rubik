@@ -710,9 +710,11 @@ a.nav-bar-toggle {
 			position: static;
 
 		}
-		.nav-bar-menu {
-			border: 0 none;
-		}
+
+    .nav-bar-menu,
+    &.global-nav-submenu .nav-bar-menu {
+      border: 0 none;
+    }
 
 		.nav-bar-user,
 		&.global-nav-logged .nav-bar-user,
