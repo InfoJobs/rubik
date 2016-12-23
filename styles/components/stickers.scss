@@ -257,3 +257,16 @@ Styleguide #{$sgi-stickersGroup}
     }
 
 }
+
+//POSITION
+
+.sticker-bottom-center {
+  text-align: center;
+
+  [class^="sticker"],
+  [class*="sticker"] {
+    position: relative;
+    bottom: 21px;
+  }
+
+}
