@@ -39,7 +39,7 @@ Markup:
       </div>
       <div class="messaging-body-secondary">
         <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los dï¿½as, a buscar curro en InfoJobs todos los dï¿½as, a buscar curro en InfoJobs todos los dï¿½as, a buscar curro en InfoJobs todos los dï¿½as</p>
-        <span class="sticker-new">10</span>
+        <span class="badge-count">10</span>
       </div>
     </div>
     <div class="messaging-icons-right">
@@ -147,7 +147,7 @@ Styleguide #{$sgi-messaging}
     }
 
     .messaging-meta,
-    [class*="sticker"] {
+    [class*="badge"] {
       margin-left: $padding/2;
     }
 

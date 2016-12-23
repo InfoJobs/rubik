@@ -177,7 +177,7 @@ Styleguide #{$sgi-helpers}
 }
 
 .border-rounded {
-  @include border-rounded;
+  border-radius: $border-radius;
 }
 
 /*------------------------------------*\

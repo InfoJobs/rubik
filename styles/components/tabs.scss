@@ -7,7 +7,7 @@
 /*
 Tabs
 
-Use class `.tabs` to create a structure of tabs inline. You must also add the class `.ìnner` to generate the padding.<br>
+Use class `.tabs` to create a structure of tabs inline. You must also add the class `.inner` to generate the padding.<br>
 Use class `.tab-active` in active tab.
 
 Markup:
@@ -259,7 +259,7 @@ Styleguide #{$sgi-tabs}
     }
   }
 
-  [class*="sticker"] {
+  [class*="badge"] {
     position: absolute;
     top: 20px;
     right: calc(50% - 30px);//40px/2 del icono del tab + 20px/2 del sticker

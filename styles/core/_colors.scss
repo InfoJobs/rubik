@@ -73,7 +73,7 @@ a.alternative-action:hover {
 	background-color: #ffff66; //TODO: define var
 
   &:hover {
-    color: $mid-script;
+    color: inherit;
   }
 
 	h1 & {
