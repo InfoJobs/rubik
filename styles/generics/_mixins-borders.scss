@@ -6,6 +6,10 @@ $MIXINS BORDERS
     border-width: $size-border;
     border-style: solid;
     border-color: $shiro;
+
+    @media print {
+      border-color: $dark-shiro;
+    }
 }
 
 @mixin border-default($size-border: 1px){
