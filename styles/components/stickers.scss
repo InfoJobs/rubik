@@ -23,7 +23,6 @@ Markup:
 <br>
 <div class="panel-focus inner"><span class="sticker-label-opacity">Sticker label opacity</span></div>
 
-Styleguide #{$sgi-stickers}
 */
 
 .sticker {
@@ -158,7 +157,6 @@ Size for stickers.
 Markup:
 <a href="#" class="sticker-small">Javascript</a>
 
-Styleguide #{$sgi-stickerSize}
 */
 
 .sticker-small {
@@ -193,7 +191,6 @@ Markup:
     </li>
 </ul>
 
-Styleguide #{$sgi-stickerSkill}
 */
 
 .sticker-skill {
@@ -243,7 +240,6 @@ Markup:
     <li><a href="#" class="sticker sticker-skill">Java</a></li>
 </ul>
 
-Styleguide #{$sgi-stickersGroup}
 */
 
 .tag-group-sticker li {
@@ -255,18 +251,5 @@ Styleguide #{$sgi-stickersGroup}
     .tag-group li.tag-sticker {
         float: left;
     }
-
-}
-
-//POSITION
-
-.sticker-bottom-center {
-  text-align: center;
-
-  [class^="sticker"],
-  [class*="sticker"] {
-    position: relative;
-    bottom: 21px;
-  }
 
 }
