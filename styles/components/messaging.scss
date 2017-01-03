@@ -21,7 +21,7 @@ Markup:
         <p class="messaging-title truncate">UX / UI Designer</p>
       </div>
       <div class="messaging-body-secondary">
-        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días</p>
+        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as</p>
       </div>
     </div>
     <div class="messaging-icons-right">
@@ -38,8 +38,8 @@ Markup:
         <time class="messaging-meta" datetime="2016-02-14 20:00">Ayer</time>
       </div>
       <div class="messaging-body-secondary">
-        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días</p>
-        <span class="sticker-new-secondary">10</span>
+        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as</p>
+        <span class="sticker-new">10</span>
       </div>
     </div>
     <div class="messaging-icons-right">
@@ -56,7 +56,7 @@ Markup:
         <time class="messaging-meta" datetime="2016-09-04 20:00">04/09/16</time>
       </div>
       <div class="messaging-body-secondary">
-        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días</p>
+        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as</p>
       </div>
     </div>
     <div class="messaging-icons-right">
@@ -93,6 +93,10 @@ Styleguide #{$sgi-messaging}
     justify-content: space-between;
     padding: 0 $padding;
     background-color: $shiro;
+
+    a {
+    	cursor: pointer;
+    }
 
     &.messaging-list-item-active {
       background-color: tint($day-blue, 90%);
@@ -156,6 +160,7 @@ Styleguide #{$sgi-messaging}
   .messaging-list-item-init {
     @extend .messaging-list-item;
     @include align-items(center);
+    cursor: pointer;
   }
 
   [class*="iconfont-"]::before {
@@ -192,6 +197,34 @@ Styleguide #{$sgi-messaging}
   p {
     overflow: hidden;
   }
+
+  li {
+    overflow: hidden;
+    margin-bottom: 15px;
+
+    &:last-child {
+    	margin-bottom: 0;
+    }
+
+    .from {
+    	display: block;
+    }
+  }
+
+  .messaging-list {
+  	&-item {
+  	  border-bottom: 1px solid $darkest-shiro;
+
+  	  .messaging-body {
+  	    border-bottom: 0;
+  	  }
+  }
+
+	> li {
+	  margin-bottom: 0;
+	}
+  }
+
   .message {
     overflow: hidden;
     clear: both;
@@ -263,27 +296,38 @@ Styleguide #{$sgi-messaging}
     border-top: 1px solid $darkest-shiro;
   }
 
-	@include mediaquery ($bp-tablet) {
+  @include mediaquery ($bp-tablet) {
     border-left: 1px solid $outer-fields;
   }
 }
 
 .messaging-compact {
+  @include mediaquery ($bp-tablet) {
+    [class^="col-"],
+    [class*="col-"] {
+      width: 100%;
+      overflow: hidden;
 
-  overflow: hidden;
-
-  [class^="col-"],
-  [class*="col-"] {
-    width: 100%;
-
-    &:last-child {
-      margin-left: 10px;
+      &:last-child {
+        margin-left: 10px;
+      }
     }
+  }
+
+  .messaging-list {
+  	border-bottom: 0;
+
+  	.messaging-list-item {
+      border: 1px solid $darkest-shiro;
+    }
+  }
+
+  .messaging-list .messaging-list-item-init {
+  	border-bottom: 0 none;
   }
 
   .messaging-detail {
     border-left: 0 none;
-    max-width: calc(100% - 10px);
   }
 
   .messaging-icons-left {
