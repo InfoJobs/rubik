@@ -177,8 +177,23 @@ $query2     = width, device-width
    }
  }
 
+/*
+Font
+*/
+
+@mixin font-rendering {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 @mixin bold {
   font-family: $base-font-family-bold;
+  @include font-rendering;
+}
+
+@mixin semi-bold {
+  font-family: $base-font-family-semi-bold;
+  @include font-rendering;
 }
 
 @mixin light{
@@ -187,33 +202,4 @@ $query2     = width, device-width
 
 @mixin normal {
   font-family: $base-font-family;
-}
-
-@mixin custom-bg {
-  color: $shiro;
-  //the background-image is not reusable, inline in html
-  background-repeat: no-repeat;
-  background-color: $dark-softened;
-
-  h1,
-  a {
-    color: $shiro;
-
-    @media print {
-      color: #000000;
-    }
-  }
-
-  & .panel-canvas,
-  & .panel-default {
-
-    a {
-        color: $theme-color-primary;
-
-        @media print {
-          color: #000000;
-        }
-    }
-
-  }
 }

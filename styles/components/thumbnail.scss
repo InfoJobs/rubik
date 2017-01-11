@@ -137,11 +137,11 @@ Styleguide #{$sgi-thumbnail}
 		background-color: #F4F4F4; //ToDo: no existe como variable
 		transition: all 500ms ease 0s;
 
-		.title {
+    .title {
+      @include bold;
 			height: 20px;
 			overflow: hidden;
 			margin: 0 80px 0 0;
-			font-family: $base-font-family-bold;
 			font-size: 16px;
 			line-height: 18px;
 			white-space: nowrap;

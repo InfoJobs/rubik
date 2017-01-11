@@ -18,7 +18,7 @@
         padding: 20px 20px 15px 70px;
         border-bottom: 1px solid $darkest-shiro;
         margin: 0;
-        font-family: $base-font-family-bold;
+        @include bold;
 
         .arrow {
             width: 57px;

@@ -16,7 +16,7 @@ button::-moz-focus-inner {
 
 @mixin btn {
     /*@include transition;*/
-    font-family: $base-font-family-semi-bold;
+    @include semi-bold;
     display: inline-block;
     width: auto;
     border-radius: 2px;

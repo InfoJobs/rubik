@@ -160,8 +160,8 @@ Styleguide #{$sgi-notifications}
 }
 
 .notification .title {
+  @include bold;
 	margin-bottom: 5px;
-	font-family: $base-font-family-bold;
 	font-size: 20px;
 	line-height: 100%;
 	color: $shiro;

@@ -95,7 +95,7 @@ a:focus {
 }
 
 strong {
-	font-family: $base-font-family-bold;
+  @include bold;
 }
 
 /*

@@ -123,7 +123,7 @@ Styleguide #{$sgi-messaging}
     }
 
     .messaging-title {
-      font-family: $base-font-family-semi-bold;
+      @include semi-bold;
       margin-bottom: 4px;
       flex-grow: 1;
     }

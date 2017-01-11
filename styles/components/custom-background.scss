@@ -18,8 +18,38 @@ Markup:
 Styleguide #{$sgi-custom-background}
 */
 
+@mixin custom-bg {
+  color: $shiro;
+  //the background-image is not reusable, inline in html
+  background-repeat: no-repeat;
+  background-color: $dark-softened;
+
+  h1,
+  a {
+    color: $shiro;
+
+    @media print {
+      color: #000000;
+    }
+  }
+
+  & .panel-canvas,
+  & .panel-default {
+
+    a {
+        color: $theme-color-primary;
+
+        @media print {
+          color: #000000;
+        }
+    }
+
+  }
+}
+
 .custom-bg {
   @include custom-bg;
+  @include font-rendering;
   background-position: top;
 
   &-center {

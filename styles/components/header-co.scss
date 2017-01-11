@@ -30,7 +30,7 @@
 
 	a:not([class*="btn"]) {
 		font-size: $large-font-size;
-		font-family: $base-font-family-bold;
+		@include bold;
 
 		@include mediaquery ($bp-header) {
 			font-size: $base-font-size;

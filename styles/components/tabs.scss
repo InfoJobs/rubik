@@ -23,8 +23,8 @@ Styleguide #{$sgi-tabs}
   border-bottom: 1px solid $darkest-shiro;
 
   > li {
+    @include bold;
     display: inline-block;
-    font-family: $base-font-family-bold;
 
     & + li {
       margin-left: 20px;
@@ -243,8 +243,8 @@ Styleguide #{$sgi-tabs}
       @include display-flex;
       @include align-items(flex-end);
       @include font-xsmall-line;
+      @include semi-bold;
       justify-content: center;
-      font-family: $base-font-family-semi-bold;
       height: 100px;
       padding: $padding ($padding / 2)($padding - 4);//4 es el alto del border del tab active
 
