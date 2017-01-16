@@ -15,8 +15,7 @@ $MIXINS ICONS
 	color: $soft-script;
 
 	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  @include font-rendering;
 }
 
 @mixin iconfont-BurguerMenu {

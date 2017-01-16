@@ -29,10 +29,10 @@
 	}
 
 	p {
+    @include bold;
 		display: table-cell;
 		width: 100%;
 		vertical-align: middle;
-		font-family: $base-font-family-bold;
 		font-size: 20px;
 		text-decoration: none;
 		color: $dark-silk;

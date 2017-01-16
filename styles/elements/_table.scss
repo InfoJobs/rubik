@@ -46,8 +46,8 @@
 		}
 
 		thead {
-			font-family: $base-font-family-bold;
-			border-bottom: 1px solid $darkest-shiro;
+      @include bold;
+      border-bottom: 1px solid $darkest-shiro;
 		}
 
 		th,

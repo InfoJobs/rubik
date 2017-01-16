@@ -82,9 +82,8 @@ Styleguide #{$sgi-listsDefault}
     }
 
     > dt {
-        margin-bottom: 0;
-        font-family: $base-font-family-bold;
-        color: $dark-silk;
+      @include bold;
+      margin-bottom: 0;color: $dark-silk;
 
         &.hide {
             display: none;
@@ -205,12 +204,12 @@ Styleguide #{$sgi-listsOrdered}
 		counter-increment: step-counter;
 		overflow: hidden;
 
-		&::before {
-		  content: counter(step-counter, decimal-leading-zero) ".";
-		  font-family: $base-font-family-bold;
-		  float: left;
-		  min-width: 35px;
-		  padding-top: 2px;
+    &::before {
+      @include bold;
+      content: counter(step-counter, decimal-leading-zero) ".";
+      float: left;
+      min-width: 35px;
+      padding-top: 2px;
 		}
 
 		div {

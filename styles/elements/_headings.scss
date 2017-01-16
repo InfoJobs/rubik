@@ -39,8 +39,8 @@ h2,
 .h2,
 h3,
 .h3 {
-	font-family: $base-font-family-bold;
-	color: $dark-silk;
+  @include bold;
+  color: $dark-silk;
 }
 
 h1 {
