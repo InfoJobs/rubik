@@ -94,12 +94,19 @@ Styleguide #{$sgi-messaging}
     padding: 0 $padding;
     background-color: $shiro;
 
+    &:hover {
+      cursor: pointer;
+      background-color: tint($day-blue, 90%);
+    }
+
     a {
     	cursor: pointer;
     }
 
-    &.messaging-list-item-active {
+    &.messaging-list-item-active,
+    &.messaging-list-item-active:hover {
       background-color: tint($day-blue, 90%);
+      cursor: default;
     }
 
     p {
@@ -160,7 +167,19 @@ Styleguide #{$sgi-messaging}
   .messaging-list-item-init {
     @extend .messaging-list-item;
     @include align-items(center);
-    cursor: pointer;
+
+    .messaging-body {
+      padding: $padding 0;
+    }
+
+    .messaging-title {
+      margin: 0;
+    }
+
+    &:hover {
+      background-color: transparent;
+      cursor: default;
+    }
   }
 
   [class*="iconfont-"]::before {
