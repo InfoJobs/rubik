@@ -103,8 +103,8 @@ Styleguide #{$sgi-messaging}
     	cursor: pointer;
     }
 
-    &.messaging-list-item-active,
-    &.messaging-list-item-active:hover {
+    &-active,
+    &-active:hover {
       background-color: tint($day-blue, 90%);
       cursor: default;
     }
