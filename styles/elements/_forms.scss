@@ -39,6 +39,10 @@ label,
 	font-size: $base-font-size;
 	line-height: 125%;
 
+  @media print {
+    font-size: ($base-font-size/$point-to-px);
+  }
+
 	.error &:first-of-type {
 		color: $trueblood;
 	}
@@ -1191,10 +1195,14 @@ Styleguide #{$sgi-forms-strength-bar}
 		@include flex;
 		margin-right: 10px;
 
-    input[type="text"] {
-      width: 100%;
-    }
-  }
+    @include mediaquery ($bp-desktop) {
+      margin-right: 20px;
+     }
+
+     input[type="text"] {
+       width: 100%;
+     }
+   }
 
   label.hide + div:last-of-type {
     border: 4px solid;

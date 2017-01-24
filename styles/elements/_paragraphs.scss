@@ -16,7 +16,7 @@ Styleguide #{$sgi-paragraphs}
 */
 
 p {
-	@extend %font-base-line;
+	@include font-base-line;
 	margin-bottom: 15px;
 	word-wrap: break-word;
 

@@ -24,12 +24,17 @@ Styleguide #{$sgi-custom-background}
   background-repeat: no-repeat;
   background-color: $dark-softened;
 
+  @media print {
+    color: $dark;
+  }
+
+
   h1,
   a {
     color: $shiro;
 
     @media print {
-      color: #000000;
+      color: $dark;
     }
   }
 

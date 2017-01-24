@@ -15,21 +15,42 @@
 @mixin font-small-line { //p.small
 	font-size: $small-font-size;
 	line-height: $small-line-height;
+
+  @media print {
+    font-size: ($base-font-size/$point-to-px);
+    line-height: ($base-line-height/$point-to-px);
+  }
 }
 
 %font-small-line { //p.small
 	font-size: $small-font-size;
 	line-height: $small-line-height;
+
+  @media print {
+    font-size: ($base-font-size/$point-to-px);
+    line-height: ($base-line-height/$point-to-px);
+  }
 }
 
 @mixin font-base-line { //p
 	font-size: $base-font-size;
 	line-height: $base-line-height;
+
+  @media print {
+    font-size: ($base-font-size/$point-to-px);
+    line-height: ($base-line-height/$point-to-px);
+  }
 }
 
 %font-base-line { //p
 	font-size: $base-font-size;
 	line-height: $base-line-height;
+
+  @media print {
+    font-size: ($base-font-size/$point-to-px);
+    line-height: ($base-line-height/$point-to-px);
+  }
+
 }
 
 @mixin font-medium-line { //h3

@@ -175,6 +175,13 @@ $gridColumns: 12;
 			width: ((100 / $gridColumns) * $i) * 1%;
 			float: left;
 		}
+
+    @media print {
+      &.print-col {
+        width: auto;
+        float: left;
+      }
+    }
 	}
 
 	.col-#{$i}.col-6-small,
@@ -189,10 +196,12 @@ $gridColumns: 12;
 [class^="col-"],
 [class*="col-"] {
 
-	@media print {
-		width: 100%;
-		float: none;
-	}
+  &:not(.print-col) {
+  	@media print {
+  		width: 100%;
+  		float: none;
+  	}
+  }
 
 	.aside-wrapper & {
 		float: none;

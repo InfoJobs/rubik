@@ -5,4 +5,8 @@
 %divider {
 	border-right: 1px solid $darkest-shiro;
 	border-radius: 0;
+
+  @media print {
+    border-color: #c7c7c7;
+  }
 }
