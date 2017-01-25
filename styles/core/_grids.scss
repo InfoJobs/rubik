@@ -167,8 +167,6 @@ Markup:
 Styleguide #{$sgi-mediumDevices}
 */
 
-$gridColumns: 12;
-
 @for $i from 1 through $gridColumns {
 	.col-#{$i} {
 		@include mediaquery ($bp-tablet) {
