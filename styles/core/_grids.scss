@@ -177,8 +177,7 @@ $gridColumns: 12;
 		}
 
     @media print {
-      &.print-col {
-        width: auto;
+      &.print-col:not(:last-child) {
         float: left;
       }
     }

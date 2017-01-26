@@ -159,10 +159,6 @@ Styleguide #{$sgi-listsInline}
 	dd,
 	li {
 		display: inline-block;
-
-    @media print {
-      display: inline;
-    }
 	}
 
   &:not(.base) {
