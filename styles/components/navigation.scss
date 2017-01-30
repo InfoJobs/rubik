@@ -69,6 +69,12 @@
     height: 50px;
     overflow: hidden;
 
+    @media print {
+      height: auto;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
     .navigation-prev-next {
       float: right;
     }

@@ -8,6 +8,11 @@
 
   > li {
     padding: 0 0 0 30px;
+
+    @media print {
+      display: inline;
+      padding-left: 0;
+    }
   }
 
   &.list-inline:not(last-of-type) > li {
