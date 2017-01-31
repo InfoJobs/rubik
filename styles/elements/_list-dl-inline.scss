@@ -1,0 +1,59 @@
+/*
+Definition List Inline
+
+Only desktop.
+Use class `.col-n` in `dt` and `dd` to generate columns.
+
+Markup:
+    <dl class="dl-inline">
+    	<dt class="dl-col-2">Label dt</dt>
+    	<dd class="dl-col-4">Lorem ipsum</dd>
+    	<dt class="dl-col-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</dt>
+    	<dd class="dl-col-4">Lorem ipsum</dd>
+    	<dt class="dl-col-2">Label dt</dt>
+    	<dd class="dl-col-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio veritatis minus optio inventore deleniti error libero ad numquam, fugit iste architecto natus pariatur ut asperiores dolores molestias ratione? Quaerat, ratione.</dd>
+    	<dt class="dl-col-2">Label dt</dt>
+    	<dd class="dl-col-4">Lorem ipsum</dd>
+    </dl>
+
+Styleguide #{$sgi-dlInline}
+*/
+
+$dl-col-unit: $theme-container-width / $gridColumns;
+
+.dl-inline {
+  dt {
+    color: $soft-script;
+  }
+
+  dd[class*="col-"] {
+    margin: 0;
+
+    + dt {
+      margin-top: 20px;
+    }
+  }
+
+  @include mediaquery($bp-desktop){
+
+    overflow: hidden;
+
+    dt {
+      clear: left;
+      padding-right: $padding;
+
+      &[class*="col-"]:not(:first-child) + dd{
+          margin-top: 20px;
+        }
+    }
+
+    @for $i from 1 through $gridColumns {
+
+      .dl-col-#{$i} {
+        float: left;
+        width: $dl-col-unit * $i;
+      }
+    }
+  }
+
+}
