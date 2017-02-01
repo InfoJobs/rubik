@@ -60,6 +60,7 @@ Styleguide #{$sgi-thumbnail}
 }
 
 .fig-thumbnail-logo {
+  display: inline-block;
 	border: 1px solid $darkest-shiro;
 	background: $shiro;
 	padding: 3px;
@@ -70,6 +71,7 @@ Styleguide #{$sgi-thumbnail}
 
 	img {
 		width: 100%;
+    vertical-align: bottom;
 	}
 }
 

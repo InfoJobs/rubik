@@ -66,6 +66,18 @@ Styleguide #{$sgi-custom-background}
     @include custom-bg;
     background-size: cover;
   }
+
+  &-default {
+    min-height: 110px;
+
+    @include mediaquery ($bp-tablet) {
+      min-height: 130px;
+    }
+
+    @include mediaquery ($bp-desktop) {
+      min-height: 150px;
+    }
+  }
 }
 
 //Overlay in background
