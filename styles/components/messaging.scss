@@ -315,6 +315,24 @@ Styleguide #{$sgi-messaging}
     border-top: 1px solid $darkest-shiro;
   }
 
+  .appearance-input-text {
+    @include input;
+    @include font-base-line;
+    padding-top: 10px;
+    min-height: 44px;
+    max-height: 66px;//height equivalente a 3 lineas.
+    border: 1px solid  #c7c7c7;
+    word-wrap: break-word;
+    overflow-y: auto;
+
+  	&:focus {
+  		border: 1px solid $day-blue;
+  		outline: none;
+  		color: $dark;
+  	}
+
+  }
+
   @include mediaquery ($bp-tablet) {
     border-left: 1px solid $outer-fields;
   }
