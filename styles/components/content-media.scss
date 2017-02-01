@@ -40,16 +40,6 @@ Markup:
 
 		&.connection {
 			position: relative;
-
-			.sticker {
-				position: absolute;
-				top: 75%;
-				left: 5px;
-
-				@include mediaquery ($bp-tablet) {
-					left: 10px;
-				}
-			}
 		}
 	}
 

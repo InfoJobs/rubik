@@ -1,0 +1,37 @@
+/*------------------------------------*\
+    $TAGS
+\*------------------------------------*/
+
+/*
+Tags
+
+Markup:
+<ul class="list-inline">
+  <li><span class="tag">Simple Tag</span></li>
+  <li><span class="tag iconfont-Mail">Icon Tag</span></li>
+  <li class="tag"><img src="//media.infojobs.net/portales/ij//appgrade/pictures/pic-skills.svg#high" />Image Tag</li>
+  <li><span class="tag" title="Simple Tag but this time width a very long text">Simple Tag but this time width a very long text</span></li>
+  <li><span class="tag tag-dismissable">Close Tag<a class="tag-close" title="close" href="javascript:"></a></span></li>
+  <li><span class="tag tag-dismissable iconfont-Mail">Icon & Close Tag<a class="tag-close" title="close" href="javascript:"></a></span></li>
+  <li><span class="tag tag-dismissable"><img src="//media.infojobs.net/portales/ij//appgrade/pictures/pic-skills.svg#high" />Image & Close Tag<a class="tag-close" title="close" href="javascript:"></a></span></li>
+  <li><span class="tag tag-dismissable" title="Simple Tag but this time width a very long text">Close Tag  but this time width a very long text<a class="tag-close" title="close" href="javascript:"></a></span></li>
+  <li><a href="http://www.infojobs.net" class="tag">Navigation Tag</a></li>
+  <li><a href="http://www.infojobs.net" class="tag"><span class="highlight">Navigation highlighted Tag</span></a></li>
+</ul>
+
+Styleguide #{$sgi-tags}
+*/
+
+.tag {
+  @include tag;
+
+  img {
+    margin-right: 6px;
+    vertical-align: -1px;
+    width: $xsmall-font-size;
+  }
+
+  &-close {
+    @include tag-close;
+  }
+}

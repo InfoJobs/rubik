@@ -79,6 +79,15 @@ Styleguide #{$sgi-helpers}
 	}
 }
 
+.text-center-medium-device {
+	text-align: center;
+
+	@include mediaquery ($bp-desktop) {
+		text-align: left;
+	}
+}
+
+
 .text-right {
 	text-align: right;
 }
@@ -177,7 +186,7 @@ Styleguide #{$sgi-helpers}
 }
 
 .border-rounded {
-  @include border-rounded;
+  border-radius: $border-radius;
 }
 
 /*------------------------------------*\

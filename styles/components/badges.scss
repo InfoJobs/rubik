@@ -1,0 +1,184 @@
+/*------------------------------------*\
+    $BADGES
+\*------------------------------------*/
+
+/*
+Badges
+
+Markup:
+<ul class="list-inline">
+  <li><span class="badge iconfont-Suitecase">Badge with icon</span></li>
+  <li><span class="badge iconfont-Suitecase">Badge with icon</span></li>
+</ul>
+<ul class="list-inline">
+  <li><span class="badge-marked text-uppercase iconfont-Check">Badge marked uppercase with icon</span></li>
+  <li><span class="badge-alert text-uppercase iconfont-Close">Badge alert uppercase with icon</span></li>
+  <li><span class="badge-focus text-uppercase iconfont-Check">Badge focus uppercase with icon</span></li>
+</ul>
+<ul class="list-inline">
+  <li><span class="badge-sticker iconfont-Suitecase">Badge sticker</span></li>
+  <li><span class="badge-marked-sticker">Badge marked sticker</span></li>
+  <li><span class="badge-warning-sticker">Badge warning sticker</span></li>
+  <li><span class="badge-alert-sticker">Badge alert sticker</span></li>
+  <li><span class="badge-focus-sticker">Badge focus sticker</span></li>
+</ul>
+<span class="badge-marked-sticker badge-xlarge text-uppercase">Badge xlarge uppercase</span>
+<span class="badge-count">2</span>
+
+Styleguide #{$sgi-badges}
+*/
+
+@mixin badge {
+  display: inline-table;
+  font-family: $base-font-family;
+  font-size: $small-font-size;
+  line-height: 14px;
+
+  &[class^="iconfont-"]::before,
+  &[class*=" iconfont-"]::before,
+  &[class^="iconfont-"]::after,
+  &[class*=" iconfont-"]::after {
+    display: table-cell;
+    margin: 0;
+    padding-right: 5px;
+    font-size: 12px;
+    top: 1px;
+    color: inherit;
+  }
+
+  &:first-child:not(:only-child) {
+    margin-bottom: 5px;
+  }
+
+  .ellipsis & {
+    display: inline;
+  }
+}
+
+@mixin badge-sticker {
+  @include badge;
+  font-size: $xsmall-font-size;
+  height: 14px;
+  border-radius: $border-radius;
+  padding: 1px 5px;
+
+  &[class^="iconfont-"]::before,
+  &[class*=" iconfont-"]::before,
+  &[class^="iconfont-"]::after,
+  &[class*=" iconfont-"]::after {
+    vertical-align: middle;
+    font-size: 11px;
+  }
+
+  &.badge-xlarge {
+    font-size: $base-font-size;
+    height: 28px;
+    line-height: 16px;
+    padding: 7px 10px 5px;
+  }
+
+
+}
+
+.badge {
+  @include badge;
+  color: $mid-script;
+
+  &-sticker {
+    @include badge-sticker;
+    background-color: $darkest-shiro;
+    color: $mid-script;
+  }
+
+  &-marked {
+    @include badge;
+    color: $bamboo;
+
+    &-sticker {
+      @include badge-sticker;
+      background-color: $bamboo;
+      color: $shiro;
+
+      @media print {
+        background-color: transparent;
+        color: $bamboo;
+      }
+    }
+  }
+
+  &-warning {
+
+    &-sticker {
+      @include badge-sticker;
+      background-color: $kiiro;
+      color: $dark-silk;
+    }
+  }
+
+  &-alert {
+    @include badge;
+    color: $trueblood;
+
+    &-sticker {
+      @include badge-sticker;
+      background-color: $trueblood;
+      color: $shiro;
+
+      @media print {
+        background-color: transparent;
+        color: $trueblood;
+      }
+    }
+  }
+
+  &-focus {
+    @include badge;
+    color: $day-blue;
+
+    &-sticker {
+      @include badge-sticker;
+      background-color: $day-blue;
+      color: $shiro;
+
+      @media print {
+        background-color: transparent;
+        color: $day-blue;
+      }
+    }
+  }
+
+  &-count {
+    display: inline-block;
+    color: $shiro;
+    font-family: $base-font-family;
+    font-size: $small-font-size;
+    background-color: $trueblood;
+    border-radius: 9px;
+    padding: 0 2px;
+    min-width: 18px;
+    height: 18px;
+    line-height: 16px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    @media print {
+      display: none;
+    }
+  }
+
+}
+
+//POSITION Badge stickers
+
+.sticker-position {
+  position: relative;
+
+  .sticker-bottom-center {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+}

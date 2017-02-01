@@ -1,4 +1,4 @@
-@import "stickers";
+@import "tags";
 @import "../generics/mixins-forms";
 
 /*------------------------------------*\
@@ -295,23 +295,14 @@ Styleguide 2.16
         }
 
         &.search-choice {
-            @include sticker-multi;
+            @include tag;
             position: relative;
             top: 0;
             margin: 6px 0 5px 5px;
+            padding-right: 30px;
 
             .search-choice-close {
-                @include iconfont-Close;
-                position: relative;
-                top: 3px;
-                padding: 10px 6px;
-                cursor: pointer;
-                color: $soft-script;
-                font-size: $base-font-size;
-
-                &:hover {
-                    color: $dark-silk;
-                }
+            	@include tag-close;
             }
         }
 

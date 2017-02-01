@@ -76,47 +76,6 @@ Styleguide #{$sgi-notifications}
 
   }
 
-  &-contextual {
-    display: table;
-    padding: $padding/2 0 0 0;
-    color: $dark-silk;
-
-    &.notification-success {
-      //@include iconfont-Big-check;
-      color: $bamboo;
-      background-color: transparent;
-
-      &::before {
-        color: $bamboo;
-      }
-
-      @media print {
-        color: $bamboo;
-      }
-    }
-    &.notification-error {
-      color: $trueblood;
-      background-color: transparent;
-
-      &::before {
-        color: $trueblood;
-      }
-
-      @media print {
-        color: $trueblood;
-      }
-    }
-
-    &.notification-icon {
-      padding-left: 25px;
-
-      &::before {
-        left: 0;
-      }
-    }
-
-  }
-
 	a,
 	a:hover,
 	a:focus {

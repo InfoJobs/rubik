@@ -19,15 +19,16 @@ Styleguide #{$sgi-custom-background}
 */
 
 @mixin custom-bg {
+
+  @include font-rendering;
   color: $shiro;
-  //the background-image is not reusable, inline in html
   background-repeat: no-repeat;
   background-color: $dark-softened;
+  //the background-image is not reusable, inline in html
 
   @media print {
     color: $dark;
   }
-
 
   h1,
   a {
@@ -54,13 +55,28 @@ Styleguide #{$sgi-custom-background}
 
 .custom-bg {
   @include custom-bg;
-  @include font-rendering;
   background-position: top;
 
   &-center {
     @include custom-bg;
     background-position: center;
+  }
 
+  &-cover{
+    @include custom-bg;
+    background-size: cover;
+  }
+
+  &-default {
+    min-height: 110px;
+
+    @include mediaquery ($bp-tablet) {
+      min-height: 130px;
+    }
+
+    @include mediaquery ($bp-desktop) {
+      min-height: 150px;
+    }
   }
 }
 

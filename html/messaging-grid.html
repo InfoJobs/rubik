@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Messaging</title>
 <link rel="stylesheet" type="text/css" href="../public/companies.css" />
+<script src="../js/messaging.js"></script>
 </head>
 <body>
 <div class="container">
@@ -166,7 +167,8 @@
                   <li class="field-group-grow">
                     <div>
                       <label for="send-message-out" class="hide">Escribe aquí tu mensaje</label>
-                      <input id="send-message-out" type="text" placeholder="Escribe aquí ">
+                      <input id="send-message-out" class="js-input-reply" type="text" placeholder="Escribe aquí ">
+                      <div contenteditable="true" class="hide"></div>
                     </div>
                     <div>
                       <button class="btn btn-rounded btn-primary" type="submit"><img src="//media.infojobs.net/appgrade/icons/ico-send-message.png " /></button>

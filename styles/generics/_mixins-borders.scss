@@ -21,7 +21,3 @@ $MIXINS BORDERS
       border-color: $outer-fields;
     }
 }
-
-@mixin border-rounded ($border-radius: 2px){
-    border-radius: $border-radius;
-}

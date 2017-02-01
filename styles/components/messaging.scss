@@ -21,7 +21,7 @@ Markup:
         <p class="messaging-title truncate">UX / UI Designer</p>
       </div>
       <div class="messaging-body-secondary">
-        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as</p>
+        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los dï¿½as, a buscar curro en InfoJobs todos los dï¿½as, a buscar curro en InfoJobs todos los dï¿½as, a buscar curro en InfoJobs todos los dï¿½as</p>
       </div>
     </div>
     <div class="messaging-icons-right">
@@ -38,8 +38,8 @@ Markup:
         <time class="messaging-meta" datetime="2016-02-14 20:00">Ayer</time>
       </div>
       <div class="messaging-body-secondary">
-        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as</p>
-        <span class="sticker-new">10</span>
+        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los dï¿½as, a buscar curro en InfoJobs todos los dï¿½as, a buscar curro en InfoJobs todos los dï¿½as, a buscar curro en InfoJobs todos los dï¿½as</p>
+        <span class="badge-count">10</span>
       </div>
     </div>
     <div class="messaging-icons-right">
@@ -56,7 +56,7 @@ Markup:
         <time class="messaging-meta" datetime="2016-09-04 20:00">04/09/16</time>
       </div>
       <div class="messaging-body-secondary">
-        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as, a buscar curro en InfoJobs todos los d�as</p>
+        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los dï¿½as, a buscar curro en InfoJobs todos los dï¿½as, a buscar curro en InfoJobs todos los dï¿½as, a buscar curro en InfoJobs todos los dï¿½as</p>
       </div>
     </div>
     <div class="messaging-icons-right">
@@ -93,6 +93,7 @@ Styleguide #{$sgi-messaging}
     justify-content: space-between;
     padding: 0 $padding;
     background-color: $shiro;
+    overflow: visible;
 
     &:hover {
       cursor: pointer;
@@ -147,7 +148,7 @@ Styleguide #{$sgi-messaging}
     }
 
     .messaging-meta,
-    [class*="sticker"] {
+    [class*="badge"] {
       margin-left: $padding/2;
     }
 
@@ -313,6 +314,29 @@ Styleguide #{$sgi-messaging}
 
   .messaging-reply {
     border-top: 1px solid $darkest-shiro;
+  }
+
+  .appearance-input-text {
+    @include input;
+    @include font-base-line;
+    padding-top: 10px;
+    min-height: 44px;
+    max-height: 66px;//height equivalente a 3 lineas.
+    border: 1px solid  #c7c7c7;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-y: auto;
+
+  	&:focus {
+  		border: 1px solid $day-blue;
+  		outline: none;
+  		color: $dark;
+  	}
+
+  }
+
+  .menu-kebab {
+    margin-top: $padding;
   }
 
   @include mediaquery ($bp-tablet) {

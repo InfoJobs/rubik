@@ -29,8 +29,8 @@
 	}
 
 	a:not([class*="btn"]) {
-    @include bold;
-    font-size: $large-font-size;
+		@include bold;
+		font-size: $large-font-size;
 
 		@include mediaquery ($bp-header) {
 			font-size: $base-font-size;
@@ -619,7 +619,7 @@ a.nav-bar-toggle {
 		color: $day-blue;
 	}
 
-	[class*="sticker"] {
+	[class*="badge"] {
 		position: relative;
     top: -2px;
 

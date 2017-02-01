@@ -82,10 +82,10 @@ $MIXIN COLUMNS
   		img {
   			display: table;
 
-  			& + .sticker {
+  			/*& + .sticker {
   				display: table;
   				margin: -10px auto 0 auto;
-  			}
+  			}*/
   		}
   	}
 
@@ -108,10 +108,10 @@ $MIXIN COLUMNS
   			height: 62px;
   		}
 
-  		& + .sticker {
+  		/*& + .sticker {
   			display: table;
   			margin: 10px auto 0 auto;
-  		}
+  		}*/
 
   		@include mediaquery ($bp-tablet) {
   			width: 76px;
@@ -154,7 +154,7 @@ $MIXIN COLUMNS
   		}
   	}
 
-  	.sticker-skill {
+  	.tag {
   		top: 0;
   		width: 60px;
   		margin: 0;
@@ -178,16 +178,12 @@ $MIXIN COLUMNS
   .content-type-media-big {
   	flex-basis: 100%;
 
-  	@include mediaquery ($bp-tablet) {
+  	@include mediaquery ($bp-desktop) {
   		flex-basis: auto;
   	}
 
   	img {
-  		width: 140px;
-
-  		@include mediaquery ($bp-tablet) {
-  			width: 175px;
-  		}
+  		width: 100px;
 
   		@include mediaquery ($bp-desktop) {
   			width: 140px;
@@ -196,9 +192,13 @@ $MIXIN COLUMNS
 
   	+ .content-type-text {
   		text-align: center;
+      margin-top: 20px;
+      margin-left: 0;
 
-  		@include mediaquery ($bp-tablet) {
-  			text-align: left;
+  		@include mediaquery ($bp-desktop) {
+        margin-top: 0;
+        margin-left: 20px;
+        text-align: left;
   		}
   	}
   }
@@ -206,9 +206,21 @@ $MIXIN COLUMNS
   .action {
   	@include flex(none);
   	margin-left: 20px;
+
+    @at-root .text-center#{&} {
+  		flex-basis: 100%;
+      margin-top: 20px;
+      margin-left: 0;
+
+      @include mediaquery ($bp-desktop) {
+        flex-basis: auto;
+        margin-top: 0;
+        margin-left: 20px;
+  		}
+  	}
   }
 
-  	.icon {
+  .icon {
   	margin-right: 10px;
   }
 
@@ -227,4 +239,22 @@ $MIXIN COLUMNS
   	margin-left: 10px;
   }
 
+  &.text-center .content-type-text {
+    overflow: inherit;
+    margin-left: 0;
+
+    @include mediaquery ($bp-desktop) {
+      margin-left: 20px;
+    }
+  }
+
+  &.content-overlap {
+    [class*="content-type-media-"] {
+      margin-top: -70px;
+
+      @include mediaquery ($bp-desktop) {
+        margin-top: -50px;
+      }
+    }
+  }
 }
