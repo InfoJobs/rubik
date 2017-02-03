@@ -6,7 +6,6 @@ function divInputText() {
 
   inputReply = document.querySelector('.js-input-reply');
   divReply = inputReply.parentNode.querySelector('div[contenteditable]');
-  console.log(divReply);
 
   inputReply.onclick = function(event) {
       this.classList.add('hide');
@@ -28,7 +27,7 @@ function divInputText() {
   }
 
   function valueReply() {
-    var textReply = divReply.innerText;
+    var textReply = divReply.textContent;
       inputReply.value = textReply;
   }
 }
