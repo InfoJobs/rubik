@@ -323,6 +323,7 @@ Styleguide #{$sgi-messaging}
     max-height: 66px;//height equivalente a 3 lineas.
     border: 1px solid  #c7c7c7;
     word-wrap: break-word;
+    word-break: break-word;
     overflow-y: auto;
 
   	&:focus {
