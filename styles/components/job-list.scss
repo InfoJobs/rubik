@@ -27,14 +27,14 @@ Styleguide #{$sgi-job-list}
         }
     }
 
-    .sticker-marked {
+    .badge-marked-sticker {
         @extend %marked-contrast;
         margin-left: 10px;
     }
 
-    .sticker-secondary {
+    .badge-warning-sticker {
     	margin-top: 2px;
-        margin-bottom: 5px;
+      margin-bottom: 5px;
     }
 
     .tag-group-top {
@@ -46,10 +46,6 @@ Styleguide #{$sgi-job-list}
 
         li  {
             padding-right: 20px;
-        }
-
-        & + .sticker {
-        	margin-bottom: 10px;
         }
     }
 

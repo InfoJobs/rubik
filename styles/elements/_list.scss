@@ -60,6 +60,11 @@ Styleguide #{$sgi-listsDefault}
 
         @at-root .small#{&} {
             margin-bottom: 5px;
+
+            @media print {
+        		font-size: ($small-font-size/$point-to-px);
+        		line-height: ($small-line-height/$point-to-px);
+        	}
         }
 
         &:last-child {
@@ -67,7 +72,7 @@ Styleguide #{$sgi-listsDefault}
 
 	    }
 
-      @media print {
+        @media print {
     		font-size: ($base-font-size/$point-to-px);
     		line-height: ($base-line-height/$point-to-px);
     	}
