@@ -1,0 +1,60 @@
+/*------------------------------------*\
+$MIXINS TAGS
+\*------------------------------------*/
+
+@mixin tag {
+  @include truncate;
+  @include font-small-line;
+  position: relative;
+  color: $dark-silk;
+  background: $darkest-shiro;
+  border-radius: 25px;
+  padding: 5px 10px;
+  max-width: 240px;
+
+  &[class^="iconfont-"]::before,
+  &[class*=" iconfont-"]::before,
+  &[class^="iconfont-"]::after,
+  &[class*=" iconfont-"]::after {
+    font-size: 12px;
+    top: 1px;
+    color: inherit;
+  }
+
+  &-dismissable {
+    padding-right: 40px;
+  }
+
+  @at-root a#{&} {
+    background: tint($day-blue, 80%);
+
+    &:hover,
+    &:active {
+      color: $shiro;
+      background: $day-blue;
+
+      .highlight {
+      	color: $dark-silk;
+      }
+    }
+  }
+}
+
+@mixin tag-close {
+  @include iconfont-Close;
+  position: absolute;
+  top: 6px;
+  left: auto;
+  right: 10px;
+  line-height: 13px;
+  margin-left: 8px;
+  cursor: pointer;
+  color: $soft-script;
+  border-radius: 50%;
+  padding: 2px;
+
+  &:hover {
+      color: $shiro;
+      background: $dark-silk;
+  }
+}

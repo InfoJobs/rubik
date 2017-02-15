@@ -82,10 +82,10 @@ $MIXIN COLUMNS
   		img {
   			display: table;
 
-  			& + .sticker {
+  			/*& + .sticker {
   				display: table;
   				margin: -10px auto 0 auto;
-  			}
+  			}*/
   		}
   	}
 
@@ -108,10 +108,10 @@ $MIXIN COLUMNS
   			height: 62px;
   		}
 
-  		& + .sticker {
+  		/*& + .sticker {
   			display: table;
   			margin: 10px auto 0 auto;
-  		}
+  		}*/
 
   		@include mediaquery ($bp-tablet) {
   			width: 76px;
@@ -154,7 +154,7 @@ $MIXIN COLUMNS
   		}
   	}
 
-  	.sticker-skill {
+  	.tag {
   		top: 0;
   		width: 60px;
   		margin: 0;

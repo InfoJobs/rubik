@@ -72,12 +72,12 @@ a.alternative-action:hover {
 	padding: 2px 5px;
 	background-color: #ffff66; //TODO: define var
 
+  &:hover {
+    color: $mid-script;
+  }
+
 	h1 & {
 		padding: 10px 5px 0 5px;
-	}
-
-	.sticker-skill & {
-		padding: 0 3px;
 	}
 }
 
