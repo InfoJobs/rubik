@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Messaging</title>
 <link rel="stylesheet" type="text/css" href="../public/companies.css" />
+<script type="text/javascript" src="../js/sticky-on-scroll.js" th:remove="all"></script>
 <script src="../js/messaging.js"></script>
 </head>
 <body>
@@ -44,7 +45,7 @@
     <h1>Mensajes</h1>
     <p>Conversaciones que mantienes con los candidatos</p>
   </div>
-  <div class="container-expanded panel-default">
+  <div class="container-expanded panel-default js-wrapper-chat">
 
     <div class="row row-faux row-panel">
       <div class="col-5">
@@ -68,47 +69,49 @@
               </ul>
             </div>
           </div>
-          <ul class="messaging-list">
-            <li class="messaging-list-item messaging-list-item-active">
-              <div class="messaging-avatar">
-                <figure class="crop-image-xsmall fig-thumbnail-logo">
-                  <img alt="Nombre Apellidos" src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png">
-                </figure>
-              </div>
-              <div class="messaging-body">
-                <div class="messaging-body-main">
-                  <p class="messaging-title truncate">UX / UI Designer</p>
-                  <time class="messaging-meta" datetime="2016-02-14 20:00">Ayer</time>
+          <div class="">
+            <ul class="messaging-list">
+              <li class="messaging-list-item messaging-list-item-active">
+                <div class="messaging-avatar">
+                  <figure class="crop-image-xsmall fig-thumbnail-logo">
+                    <img alt="Nombre Apellidos" src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png">
+                  </figure>
                 </div>
-                <div class="messaging-body-secondary">
-                  <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días</p>
-                  <span class="sticker-new">10</span>
+                <div class="messaging-body">
+                  <div class="messaging-body-main">
+                    <p class="messaging-title truncate">UX / UI Designer</p>
+                    <time class="messaging-meta" datetime="2016-02-14 20:00">Ayer</time>
+                  </div>
+                  <div class="messaging-body-secondary">
+                    <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días</p>
+                    <span class="sticker-new">10</span>
+                  </div>
                 </div>
-              </div>
-              <div class="messaging-icons-right">
-                <p class="iconfont-Arrow focus" title="Ir al chat"><span class="hide">Ir al chat</span></p>
-              </div>
-            </li>
-            <li class="messaging-list-item">
-              <div class="messaging-avatar">
-                <figure class="crop-image-xsmall fig-thumbnail-logo">
-                  <img alt="Nombre Apellidos" src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png">
-                </figure>
-              </div>
-              <div class="messaging-body">
-                <div class="messaging-body-main">
-                  <p class="messaging-title truncate">UX / UI Designer</p>
-                  <time class="messaging-meta" datetime="2016-09-04 20:00">04/09/16</time>
+                <div class="messaging-icons-right">
+                  <p class="iconfont-Arrow focus" title="Ir al chat"><span class="hide">Ir al chat</span></p>
                 </div>
-                <div class="messaging-body-secondary">
-                  <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días</p>
+              </li>
+              <li class="messaging-list-item">
+                <div class="messaging-avatar">
+                  <figure class="crop-image-xsmall fig-thumbnail-logo">
+                    <img alt="Nombre Apellidos" src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png">
+                  </figure>
                 </div>
-              </div>
-              <div class="messaging-icons-right">
-                <p class="iconfont-Arrow focus" title="Ir al chat"><span class="hide">Ir al chat</span></p>
-              </div>
-            </li>
-          </ul>
+                <div class="messaging-body">
+                  <div class="messaging-body-main">
+                    <p class="messaging-title truncate">UX / UI Designer</p>
+                    <time class="messaging-meta" datetime="2016-09-04 20:00">04/09/16</time>
+                  </div>
+                  <div class="messaging-body-secondary">
+                    <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días, a buscar curro en InfoJobs todos los días</p>
+                  </div>
+                </div>
+                <div class="messaging-icons-right">
+                  <p class="iconfont-Arrow focus" title="Ir al chat"><span class="hide">Ir al chat</span></p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="col-7">
@@ -136,7 +139,7 @@
             </li>
           </ul>
           <!-- detail -->
-          <div class="inner">
+          <div class="inner js-scrollable">
             <p class="text-center">
               <span class="sticker-label">Ayer</span>
             </p>

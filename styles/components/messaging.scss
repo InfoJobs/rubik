@@ -187,6 +187,11 @@ Styleguide #{$sgi-messaging}
   	margin: 0;
   }
 
+  &-scroll {
+    @include display-flex;
+    @include flex-direction(column);
+  }
+
 }
 
 .messaging-icons-left,
@@ -235,17 +240,19 @@ Styleguide #{$sgi-messaging}
   }
 
   .messaging-list {
-  	&-item {
-  	  border-bottom: 1px solid $darkest-shiro;
+
+    &-item {
+      border-bottom: 1px solid $darkest-shiro;
 
   	  .messaging-body {
   	    border-bottom: 0;
   	  }
-  }
+    }
 
-	> li {
-	  margin-bottom: 0;
-	}
+    > li {
+      margin-bottom: 0;
+      overflow: visible;
+    }
   }
 
   .message {
@@ -345,6 +352,20 @@ Styleguide #{$sgi-messaging}
   @include mediaquery ($bp-tablet) {
     border-left: 1px solid $outer-fields;
   }
+
+  .messaging-web-app & {
+    @include display-flex;
+    @include flex-direction(column);
+  }
+}
+
+.messaging-scroll {
+    @include flex(1 1 auto);
+    overflow-y: auto;
+}
+
+.messaging-list-scroll {
+    overflow-y: auto;
 }
 
 .messaging-compact {
