@@ -35,14 +35,17 @@
     }
   }
 
-  .menu-kebab-drop-item,
-  .menu-kebab-drop-item:last-of-type {
+  .menu-kebab-drop-item {
     position: relative;
-    padding: 15px 40px;
+    padding: 15px 20px;
     margin: 0;
     font-size: $base-font-size;
     line-height: 1;
     cursor: pointer;
+
+    @at-root .menu-kebab-select#{&} {
+      padding: 15px 40px;
+    }
 
     &:hover {
       background-color: $dark-shiro;
@@ -92,6 +95,7 @@
     }
 
     &:last-of-type {
+    //&.menu-kebab-drop-item-divider {
       border-top: 1px solid $darkest-shiro;
     }
   }

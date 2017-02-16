@@ -93,6 +93,7 @@ Styleguide #{$sgi-messaging}
     justify-content: space-between;
     padding: 0 $padding;
     background-color: $shiro;
+    overflow: visible;
 
     &:hover {
       cursor: pointer;
@@ -332,6 +333,10 @@ Styleguide #{$sgi-messaging}
   		color: $dark;
   	}
 
+  }
+
+  .menu-kebab {
+    margin-top: $padding;
   }
 
   @include mediaquery ($bp-tablet) {
