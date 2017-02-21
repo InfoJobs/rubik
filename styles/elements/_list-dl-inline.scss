@@ -30,7 +30,7 @@ $dl-col-unit: $theme-container-width / $gridColumns;
     margin: 0;
 
     + dt {
-      margin-top: 20px;
+      margin-top: $padding/2;
     }
   }
 
@@ -43,7 +43,7 @@ $dl-col-unit: $theme-container-width / $gridColumns;
       padding-right: $padding;
 
       &[class*="col-"]:not(:first-child) + dd{
-          margin-top: 20px;
+          margin-top: $padding/2;
         }
     }
 
