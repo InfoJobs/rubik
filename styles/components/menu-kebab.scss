@@ -47,7 +47,8 @@
       padding: 15px 40px;
     }
 
-    &:hover {
+    &:hover,
+    &-focus {
       background-color: $dark-shiro;
     }
 
