@@ -10,6 +10,7 @@
   var elScrollable = document.querySelectorAll('.js-scrollable');
   var heightElScrollable;
   var aStickyElements = [];
+  var posStickyTop;
 
   window.onload = function() {
     stickyElement = document.querySelectorAll('.js-sticky');
@@ -32,6 +33,8 @@
           aStickyElements.push(e[i]);
         }
 
+        posStickyTop = aStickyElements[0].offsetTop;
+
         for(i = 0; i < e.length ; i++ ) {
           if (stickyElementOffset[i] <= 0) {
             stickyElementOffset[i] = window.pageYOffset + e[i].getBoundingClientRect().top;
@@ -43,10 +46,9 @@
         for(i = 0; i < aStickyElements.length-1 ; i++ ) {
           topPos = aStickyElements[i].clientHeight + parseInt(styleContainer().marginTop, 10);
           aStickyElements[i+1].style.top = topPos + 'px';
-
           return stickyElementOffset;
-
         }
+
       }
     }
   }
@@ -72,20 +74,28 @@
         scrollY = window.pageYOffset;
         var widthParent = el[i].parentElement.clientWidth;
         el[i].style.maxWidth = widthParent + 'px';
-        if (aStickyElements[0] && scrollY > aStickyElements[0].offsetTop) {
+        if (aStickyElements[0] && scrollY > posStickyTop) {
           el[i].classList.add('sticky');
+          document.querySelector('.wrapper').style.marginTop = (stickyElement[0].offsetHeight + parseInt(styleContainer().marginTop, 10)) + 'px';
           stopSticker();
         } else {
             el[i].classList.remove('sticky');
+            if (window.innerWidth < 481) {
+              document.querySelector('.wrapper').style.marginTop = 0;
+            } else {
+              document.querySelector('.wrapper').style.marginTop = parseInt(styleContainer().marginTop, 10) + 'px';
+            }
         }
       }
 
     }
+
   }
 
   function scrollSideBar() {
     [].forEach.call( elScrollable, function( target ){
       target.style.height = 'auto';
+      var topSide = 0;
       for(var i = 0; i < stickyElementDesktop.length ; i++ ) {
         heightSide = stickyElementDesktop[i].clientHeight;
         topSide = stickyElementDesktop[i].getBoundingClientRect().top;
@@ -102,10 +112,17 @@
         target.style.height = totalViewport - topSide - (heightSide - heightElScrollable) - parseInt(styleContainer().marginTop, 10) + 'px';
         target.style.overflowY = 'auto';
       }
+      if(target.parentNode != null && target.parentNode.onclick == null){
+    	  target.parentNode.onclick=function(){
+    		  scrollSideBar();
+    		  scrollBottom();
+    	  }
+	  }
     });
   }
 
   function stopSticker() {
+
 	  if(stickyElementDesktop.length) {
 	    var elScrollableParent = document.querySelector('.row-faux').getBoundingClientRect().height;
 	    var elScrollable = document.querySelector('.js-sticky-desktop');
@@ -144,6 +161,15 @@
       }
 
     }
+  }
+
+  function scrollBottom() {
+	  var element = document.querySelector('.js-scroll-bottom');
+
+	  if (typeof(element) != 'undefined' && element != null) {
+		  element.scrollTop = 2000;
+	  }
+
   }
 
   window.addEventListener("load", function() {
