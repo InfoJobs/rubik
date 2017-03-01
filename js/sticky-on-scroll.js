@@ -10,15 +10,12 @@
   var elScrollable = document.querySelectorAll('.js-scrollable');
   var heightElScrollable;
   var aStickyElements = [];
-  var stickyMargin;
   var posStickyTop;
 
   window.onload = function() {
     stickyElement = document.querySelectorAll('.js-sticky');
     stickyElementDesktop = document.querySelectorAll('.js-sticky-desktop');
     elScrollable = document.querySelectorAll('.js-scrollable');
-    stickyMargin = document.querySelector('.js-sticky-margin');
-
   };
 
   function offsetElement() {
