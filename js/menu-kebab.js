@@ -21,7 +21,9 @@
             eDivToggle.classList.toggle('hide');
 
             currentKebabItem = document.querySelector('.menu-kebab-drop-item-selected');
-            currentKebabItem.classList.add('menu-kebab-drop-item-focus');
+            if(currentKebabItem!==null) {
+              currentKebabItem.classList.add('menu-kebab-drop-item-focus');
+            }
 
             eDivToggle.onmouseover = function() {
               currentKebabItem.classList.remove('menu-kebab-drop-item-focus');
@@ -57,7 +59,9 @@
 
       function closeToggleKebab() {
         for(var i=0; i<eClickItem.length; i++) {
-          eClickItem[i].parentNode.querySelector('.kebab-toggle').classList.add('hide');
+          if(eClickItem[i].parentNode.querySelector('.kebab-toggle')) {
+            eClickItem[i].parentNode.querySelector('.kebab-toggle').classList.add('hide');
+          }
         }
         if(document.querySelector('.menu-kebab-drop-item-focus')!==null) {
           document.querySelector('.menu-kebab-drop-item-focus').classList.remove('menu-kebab-drop-item-focus');
