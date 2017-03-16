@@ -454,76 +454,16 @@
                     <div class="col-7">
                       <div class="col-child messaging-detail">
                         <div><!-- div hide when is visible the conversation list -->
-                          <ul class="messaging-list">
-                            <li class="messaging-list-item">
-                              <div class="messaging-icons-left">
-                                <p class="iconfont-ArrowLeft focus" title="Ir al chat"><span class="hide">Ir al chat</span></p>
-                              </div>
-                              <div class="messaging-avatar">
-                                <img class="crop-image-xsmall border-default" alt="Nombre Apellidos" src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png">
-                              </div>
-                              <div class="messaging-body">
-                                <div class="messaging-body-main">
-                                  <p class="messaging-title truncate">Desarrollador/Analista de aplicaciones web</p>
-                                  <time class="messaging-meta" datetime="2016-08-14 20:35">20:35</time>
-                                </div>
-                                <div class="messaging-body-secondary">
-                                  <p class="messaging-last-text truncate">Julia: Hooola</p>
-                                </div>
-                              </div>
-                              <!-- menu kebab -->
-                              <div class="menu-kebab">
-                                <button class="btn-menu-more js-kebab-toggle"></button>
-                                <ul class="menu-kebab-drop panel-canvas kebab-toggle hide">
-                                  <li class="menu-kebab-drop-item" data-option-array-index="0">
-                                    <a href="#">Ver candidatura</a>
-                                  </li>
-                                  <li class="menu-kebab-drop-item menu-kebab-drop-item-divider" data-option-array-index="1">
-                                    <a href="#">Eliminar conversación</a>
-                                  </li>
-                                  <li class="menu-kebab-drop-item" data-option-array-index="2">
-                                    <a href="#">Bloquear usuario</a>
-                                  </li>
-                                </ul>
-                              </div>
-                              <!-- /menu kebab -->
-                            </li>
-                          </ul>
-                          <div class="notification notification-error">
-                          	<p>No tienes conexión. Intenta conectarte y vuelve a intentarlo.</p>
-                          </div>
 
-                          <div class="inner js-scrollable">
-                            <p class="text-center">
-                              <span class="badge-sticker">Ayer</span>
-                            </p>
-
-                            <p>
-                              <span class="message-out">Hola soy Maria de TickConsulting ¿Te hace una entrevista mañana Donald?</span>
-                              <time datetime="2016-12-01 12:34">12:34</time>
-                            </p>
-                            <p>
-                              <span class="message-in">Hola María, gracias pero tengo trabajo</span>
-                              <time datetime="2016-12-01 12:34">12:34</time>
-                            </p>
-                            <p>
-                              <span class="message-out">De acuerdo</span>
-                              <time datetime="2016-12-01 12:34">12:34</time>
-                            </p>
-
-                            <p class="unread">1 mensaje no leido</p>
-
-                            <p class="text-center">
-                              <span class="badge-sticker">Ayer</span>
-                            </p>
-
-                            <p>
-                              <span class="message-in">Muchas gracias por contactar conmigo</span>
-                              <time datetime="2016-12-01 12:34">12:34</time>
-                            </p>
+                          <div class="inner panel-default js-scrollable">
+                            <div class="inner text-center">
+                              <img src="//media.infojobs.net/appgrade/pictures/pic-chat-error.png" alt="">
+                              <p class="alternative small">Hay un problema con el chat.</p>
+                              <p><a href="javascript:" class="btn-small btn-default" onClick="window.location.reload()" >Recarga la página</a></p>
+                            </div>
                           </div>
                           <!-- scrollable -->
-                          <div class="panel-canvas messaging-reply inner">
+                          <div class="panel-canvas messaging-reply inner hide">
                             <form method="post" action="#">
                               <fieldset>
                                 <legend>Lorem ipsum</legend>
