@@ -1,0 +1,19 @@
+/*------------------------------------*\
+    $VIDEO
+\*------------------------------------*/
+
+/*
+Video
+
+Styleguide #{$sgi-video}
+*/
+
+$framed-mobile:  274px;
+
+.video-framed-mobile {
+  width: $framed-mobile;
+  background: url('//media.infojobs.net/appgrade/discovery/video-background.png') no-repeat 0 0;
+  background-size: $framed-mobile;
+  padding: 47px 20px 20px;
+
+}
