@@ -3,26 +3,32 @@ $MIXIN COLUMNS
 \*------------------------------------*/
 
 @mixin columns {
-    @include display-flex;
-    flex-wrap: wrap;
-    position: relative;
-    //min-height: 60px; //related with logo on content-logo (mobile)
+  @include display-flex;
+  @include flex-wrap;
+  position: relative;
+  //min-height: 60px; //related with logo on content-logo (mobile)
+  .row-faux-card & {
+    @include flex(1 1 auto);
+  }
 
-    .row-faux-card & {
-  	  @include flex(1 1 auto);
-    }
-
-    @media print {
-    	min-height: auto;
-    }
-
+  &.content-row-medium-device {
+    display: block;
+    text-align: center;
     @include mediaquery ($bp-desktop) {
-    &:hover {
+      @include display-flex;
+      text-align: left;
+    }
+  }
 
+  @media print {
+    min-height: auto;
+  }
+
+  @include mediaquery ($bp-desktop) {
+    &:hover {
       .content-toolbar {
         display: block;
       }
-
     }
   }
 
@@ -47,7 +53,7 @@ $MIXIN COLUMNS
 
     .heading-group {
       @include display-flex;
-      flex-wrap: wrap;
+      @include flex-wrap;
 
       h3 {
         margin-right: 10px;
@@ -176,12 +182,6 @@ $MIXIN COLUMNS
   }
 
   .content-type-media-big {
-  	flex-basis: 100%;
-
-  	@include mediaquery ($bp-desktop) {
-  		flex-basis: auto;
-  	}
-
   	img {
   		width: 100px;
 
@@ -207,13 +207,11 @@ $MIXIN COLUMNS
   	@include flex(none);
   	margin-left: 20px;
 
-    @at-root .text-center#{&} {
-  		flex-basis: 100%;
+    @at-root .content-medium-small-device#{&} {
       margin-top: 20px;
       margin-left: 0;
 
       @include mediaquery ($bp-desktop) {
-        flex-basis: auto;
         margin-top: 0;
         margin-left: 20px;
   		}
@@ -239,7 +237,7 @@ $MIXIN COLUMNS
   	margin-left: 10px;
   }
 
-  &.text-center .content-type-text {
+  &.content-row-medium-device .content-type-text {
     overflow: inherit;
     margin-left: 0;
 

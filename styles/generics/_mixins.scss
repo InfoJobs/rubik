@@ -81,6 +81,11 @@ $query2     = width, device-width
        flex-flow: $value;
 }
 
+@mixin flex-wrap ( $value: wrap ) {
+	-webkit-flex-wrap: $value;
+       flex-wrap: $value;
+}
+
 @mixin flex-direction ( $value: row) {
 	-webkit-flex-direction: $value;
        flex-direction: $value;
