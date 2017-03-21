@@ -1,7 +1,7 @@
 
-var elContentLogo = document.querySelector('.js-content-logo');
-var elContentText = elContentLogo.querySelector('h1');
-var colorBackground = elContentLogo.dataset.bgcolor;
+var elContentMedia = document.querySelector('.js-content-media');
+var elContentText = elContentMedia.querySelector('h1');
+var colorBackground = elContentMedia.dataset.bgcolor;
 var nLuminance = getLuminance(colorBackground);
 var colorText;
 
@@ -12,17 +12,17 @@ function calcResolution() {
 
 		// Luminance is from 0 to 1
 		if( nLuminance < 0.6 ) {
-			colorText = elContentLogo.dataset.textlight;
+			colorText = elContentMedia.dataset.textlight;
 		} else {
-			colorText = elContentLogo.dataset.textdark;
+			colorText = elContentMedia.dataset.textdark;
 		}
 
-		elContentLogo.style.backgroundColor = colorBackground;
+		elContentMedia.style.backgroundColor = colorBackground;
 		elContentText.style.color = colorText;
 
 	} else {
 
-		elContentLogo.removeAttribute('style');
+		elContentMedia.removeAttribute('style');
 		elContentText.removeAttribute('style');
 
 	}

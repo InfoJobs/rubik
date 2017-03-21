@@ -3,36 +3,49 @@ $MIXIN COLUMNS
 \*------------------------------------*/
 
 @mixin columns {
-    @include display-flex;
-    flex-wrap: wrap;
-    position: relative;
-    //min-height: 60px; //related with logo on content-logo (mobile)
+  @include display-flex;
+  @include flex-wrap;
+  position: relative;
 
-    .row-faux-card & {
-  	  @include flex(1 1 auto);
-    }
+  .row-faux-card & {
+    @include flex(1 1 auto);
+  }
 
-    @media print {
-    	min-height: auto;
-    }
+  &.content-row-medium-device {
+    display: block;
+    text-align: center;
 
     @include mediaquery ($bp-desktop) {
-    &:hover {
-
-      .content-toolbar {
-        display: block;
-      }
-
+      @include display-flex;
+      text-align: left;
     }
   }
 
-  .content-logo-text,
+  @media print {
+    min-height: auto;
+  }
+
+  @include mediaquery ($bp-desktop) {
+    &:hover {
+      .content-toolbar {
+        display: block;
+      }
+    }
+  }
+
   .content-type-text { // col with text inside content-top or content-middle
   	@include display-flex;
   	@include flex(1);
   	@include flex-direction(column);
-
   	overflow: hidden;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
 
   	h1,h2,h3 {
   		margin: 0;
@@ -47,7 +60,7 @@ $MIXIN COLUMNS
 
     .heading-group {
       @include display-flex;
-      flex-wrap: wrap;
+      @include flex-wrap;
 
       h3 {
         margin-right: 10px;
@@ -76,85 +89,10 @@ $MIXIN COLUMNS
   	}
   }
 
-  .content-type {
-  	&-media,
-  	&-media-small {
-  		img {
-  			display: table;
+  .content-type-media { // col with img, tag inside content-top or content-middle
+  	@include flex(none)
 
-  			/*& + .sticker {
-  				display: table;
-  				margin: -10px auto 0 auto;
-  			}*/
-  		}
-  	}
-
-  }
-
-  .content-logo-media,
-  .content-type-media { // col with img, sticker inside content-top or content-middle
-  	@include flex(none);
-
-  	a {
-  	    width: 100px;
-  	    height: 100px;
-  	}
-
-  	img {
-  		display: block;
-  		width: 62px;
-
-  		&.crop-circle {
-  			height: 62px;
-  		}
-
-  		/*& + .sticker {
-  			display: table;
-  			margin: 10px auto 0 auto;
-  		}*/
-
-  		@include mediaquery ($bp-tablet) {
-  			width: 76px;
-
-  			&.crop-circle {
-  				height: 76px;
-  			}
-  		}
-
-  		@include mediaquery ($bp-desktop) {
-  			width: 76px;
-
-  			&.crop-circle {
-  				height: 76px;
-  			}
-  		}
-  	}
-
-    .fig-thumbnail-logo img {
-      width: 72px;//include padding and border, total size: 76
-    }
-
-  }
-
-  .content-type-media-small {
-
-  	.fig-thumbnail-logo {
-  		padding: 2px;
-
-  		@include mediaquery ($bp-desktop) {
-  			padding: 4px;
-  		}
-
-  		img {
-  			width: 34px;
-
-  			@include mediaquery ($bp-desktop) {
-  				width: 50px;
-  			}
-  		}
-  	}
-
-  	.tag {
+    .tag {
   		top: 0;
   		width: 60px;
   		margin: 0;
@@ -163,93 +101,32 @@ $MIXIN COLUMNS
   	}
   }
 
-  .content-type-media-xsmall {
-  	.fig-thumbnail-logo {
-  		img {
-  			width: 30px;
-
-  			@include mediaquery ($bp-desktop) {
-  				width: 40px;
-  			}
-  		}
-  	}
-  }
-
-  .content-type-media-big {
-  	flex-basis: 100%;
-
-  	@include mediaquery ($bp-desktop) {
-  		flex-basis: auto;
-  	}
-
-  	img {
-  		width: 100px;
-
-  		@include mediaquery ($bp-desktop) {
-  			width: 140px;
-  		}
-  	}
-
-  	+ .content-type-text {
-  		text-align: center;
-      margin-top: 20px;
-      margin-left: 0;
-
-  		@include mediaquery ($bp-desktop) {
-        margin-top: 0;
-        margin-left: 20px;
-        text-align: left;
-  		}
-  	}
-  }
-
-  .action {
-  	@include flex(none);
-  	margin-left: 20px;
-
-    @at-root .text-center#{&} {
-  		flex-basis: 100%;
-      margin-top: 20px;
-      margin-left: 0;
-
-      @include mediaquery ($bp-desktop) {
-        flex-basis: auto;
-        margin-top: 0;
-        margin-left: 20px;
-  		}
-  	}
-  }
-
   .icon {
   	margin-right: 10px;
   }
 
-  .content-logo-text + .content-logo-media,
-  .content-type-text + .content-type-media,
-  .content-logo-media + .content-logo-text,
-  .content-type-media + .content-type-text,
-  .content-type-media-big + .content-type-text {
-  	margin-left: 20px;
-  }
+  &.content-row-medium-device {
+    .content-type-text {
+      overflow: inherit;
+      margin: 20px 0;
 
-  .content-type-text + .content-type-media-xsmall,
-  .content-type-media-xsmall + .content-type-text,
-  .content-type-text + .content-type-media-small,
-  .content-type-media-small + .content-type-text {
-  	margin-left: 10px;
-  }
+      @include mediaquery ($bp-desktop) {
+        margin-top: 0;
+        margin-bottom: 0;
 
-  &.text-center .content-type-text {
-    overflow: inherit;
-    margin-left: 0;
+        &:not(:first-child) {
+          margin-left: 20px;
+        }
 
-    @include mediaquery ($bp-desktop) {
-      margin-left: 20px;
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+      }
     }
   }
 
   &.content-overlap {
-    [class*="content-type-media-"] {
+    [class*="content-type-media"] {
       margin-top: -70px;
 
       @include mediaquery ($bp-desktop) {
