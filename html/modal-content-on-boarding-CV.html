@@ -6,14 +6,14 @@
     <link rel="stylesheet" type="text/css" href="../public/companies.css" />
   </head>
   <body>
-      <div class="modal-layer modal-fade-in">
+      <div class="modal-layer modal-fade-in" style="position; fixed; z-index; 99999;">
         <div class="modal-inner" style="width: 640px; top: 20px; margin: auto;">
           <div class="modal-header" id="header-send_email">
             <a href="javascript:" class="close-modal hit-area" id="closeModalCV" title="Close"></a>
           </div>
           <div class="modal-content" style="height: 640px; max-height: 570px; overflow-x: hidden;">
             <div class="text-center panel-contrast">
-              <img src="//media.infojobs.net/appgrade/pictures/pic-modal-cv-on-boarding.gif" alt="" style="max-height: 100%;">
+              <img src="//media.infojobs.net/appgrade/pictures/pic-modal-cv-on-boarding.gif" alt="" style="max-height: 100%; max-width: 95%;">
             </div>
             <div class="inner inner-expanded text-center">
               <h1 class="h2">Mejora la gestión de tus candidatos</h1>
@@ -28,7 +28,7 @@
     <script type="text/javascript">
       var eDivModal;
       document.getElementById('closeBtnModalCV').onclick = function() {
-        eDivModal = this.closest('.modal-layer');
+        eDivModal = document.querySelector('.modal-layer');
         eDivModal.classList.add('modal-fade-out');
         eDivModal.classList.remove('modal-fade-in');
         setTimeout(function(){
@@ -36,7 +36,7 @@
         }, 2000);
       }
       document.getElementById('closeModalCV').onclick = function() {
-        eDivModal = this.closest('.modal-layer');
+        eDivModal = document.querySelector('.modal-layer');
         eDivModal.classList.add('modal-fade-out');
         eDivModal.classList.remove('modal-fade-in');
         setTimeout(function(){
