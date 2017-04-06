@@ -26,7 +26,7 @@ $dl-col-unit: $theme-container-width / $gridColumns;
     color: $soft-script;
   }
 
-  dd[class*="col-"] {
+  dd {
     margin: 0;
 
     + dt {
@@ -49,9 +49,14 @@ $dl-col-unit: $theme-container-width / $gridColumns;
 
     @for $i from 1 through $gridColumns {
 
-      .dl-col-#{$i} {
+      .dt-col-#{$i} {
         float: left;
         width: $dl-col-unit * $i;
+
+        + dd {
+          float: left;
+          width: calc(100% - (#{$dl-col-unit} * #{$i}) )
+        }
       }
     }
   }
