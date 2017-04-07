@@ -155,34 +155,55 @@ Markup:
 Styleguide #{$sgi-listsInline}
 */
 .list-inline {
-	font-size: 0;
+  overflow: hidden;
+  font-size: 0;
 
   li:not(:last-of-type) {
     margin-right: 10px;
   }
 
-	dt,
-	dd,
-	li {
-		display: inline-block;
-	}
+  li {
+    display: inline-block;
 
-  &:not(.base) {
-  	dt,
-  	dd,
-  	li {
-  		font-size: $small-font-size;
-      font-family: $base-font-family;
-  	}
+    @include mediaquery($bp-desktop) {
+      float: left;
+    }
+
   }
 
-  dt {
-		margin-right: 10px;
-	}
+  &:not(.base) {
+    li {
+      font-size: $small-font-size;
+      font-family: $base-font-family;
+    }
+  }
 
   .dt {
     margin-right: 5px;
   }
+
+  &-center {
+    @extend .list-inline;
+    display: inline-block;
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &-center-small-device {
+    @extend .list-inline;
+    display: inline-block;
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+
+    @include mediaquery($bp-desktop) {
+      display: block;
+      text-align: left;
+    }
+  }
+
+
 }
 
 /*
