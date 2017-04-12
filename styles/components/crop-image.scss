@@ -8,75 +8,47 @@ Crop image
 */
 
 /*
-crop-image
+Crop image
 
 Markup:
-<div class="crop-image" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg')"></div>
+<img class="crop-image" src="http://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png" alt="" />
 
-Styleguide
+Styleguide #{$sgi-crop-image}
 */
 
 /*
-crop-circle #casper#
+Crop circle
 
 Markup:
-<div class="crop-circle" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bheader-grid-01.jpg')"></div>
+<img class="crop-circle" src="http://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png" alt="" />
 
+Styleguide #{$sgi-crop-circle}
 */
+
+@mixin crop {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	margin: auto;
+	object-fit: cover;
+	object-position: center;
+}
 
 .crop-image {
 	@include crop;
-	width: 50px;
-	height: 50px;
+	width: 72px;
+	height: 72px;
 
-	@include mediaquery ($bp-tablet) {
-		width: 60px;
-		height: 60px;
-	}
+  &-large {
+    @include crop;
+  	width: 100px;
+  	height: 100px;
 
-	&-small {
-		@include crop;
-		width: 40px;
-		height: 40px;
-
-		@include mediaquery ($bp-tablet) {
-			height: 50px;
+    @include mediaquery ($bp-tablet) {
+			width: 140px;
+    	height: 140px;
 		}
-	}
-
-	&-xsmall {
-		@include crop;
-		width: 30px;
-		height: 30px;
-
-		@include mediaquery ($bp-tablet) {
-			width: 40px;
-			height: 40px;
-		}
-	}
-
-}
-
-.crop-circle {
-	@include crop-circle;
-	width: 50px;
-	height: 50px;
-
-	@include mediaquery ($bp-tablet) {
-		width: 60px;
-		height: 60px;
-	}
-
-	&-large {
-		@include crop-circle;
-    width: 100%;
-		max-width: 80px;
-		max-height: 80px;
-
-  	@include mediaquery ($bp-tablet) {
-  		max-width: 120px;
-  		max-height: 120px;
-  	}
 
     @media print {
       max-width: none;
@@ -84,17 +56,21 @@ Markup:
   		width: 120px;
   		height: 120px;
     }
-
-	}
+  }
 
 	&-small {
-		@include crop-circle;
-		width: 40px;
-		height: 40px;
+		@include crop;
+		width: 34px;
+		height: 34px;
+
+		@include mediaquery ($bp-tablet) {
+			width: 50px;
+      height: 50px;
+		}
 	}
 
 	&-xsmall {
-		@include crop-circle;
+		@include crop;
 		width: 30px;
 		height: 30px;
 
@@ -105,13 +81,10 @@ Markup:
 	}
 }
 
-[class^="crop-"],
-[class*="crop-"] {
+.crop-circle {
+	border-radius: 50%;
 
-    &.border-contrast {
-      @include border-contrast(3px);
-    }
-    &.border-default {
-      @include border-default(3px);
-    }
+  img {
+    border-radius: 50%;
+  }
 }

@@ -2,7 +2,6 @@
 @import "mixins-colors";
 @import "mixins-stickers";
 @import "mixins-tags";
-@import "mixins-crop";
 @import "mixins-columns";
 @import "mixins-forms";
 @import "mixins-borders";
@@ -79,6 +78,11 @@ $query2     = width, device-width
 @mixin flex-flow ( $value: row nowrap ) {
 	-webkit-flex-flow: $value;
        flex-flow: $value;
+}
+
+@mixin flex-wrap ( $value: wrap ) {
+	-webkit-flex-wrap: $value;
+       flex-wrap: $value;
 }
 
 @mixin flex-direction ( $value: row) {
