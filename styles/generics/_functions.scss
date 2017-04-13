@@ -64,3 +64,11 @@
 @function shade($color, $percentage) {
   @return mix(black, $color, $percentage);
 }
+
+@function set-notification-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return $dark-silk; // Lighter backgorund, return dark color
+  } @else {
+    @return $shiro; // Darker background, return light color
+  }
+}

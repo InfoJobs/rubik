@@ -13,7 +13,6 @@ Text colors
 * Use class `.disabled` to mark a text option as disabled
 * Use class `.marked` to focus attention in it
 * Use class `.highlight` to highlight words as a result of a search
-* Use class `.highlight` to highlight words as a result of a search
 * Use class `.focus` to mark a text as neutral informative change or action
 * Use class `.alert` to mark a text as potentially negative action
 
@@ -70,11 +69,8 @@ a.alternative-action:hover {
 
 .highlight {
 	padding: 2px 5px;
-	background-color: #ffff66; //TODO: define var
-
-  &:hover {
-    color: inherit;
-  }
+	background-color:$stabilo;
+	color: set-notification-text-color($stabilo);
 
 	h1 & {
 		padding: 10px 5px 0 5px;
