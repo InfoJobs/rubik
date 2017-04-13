@@ -219,7 +219,6 @@ Styleguide #{$sgi-messaging}
   }
 
   li {
-    overflow: hidden;
     margin-bottom: 15px;
 
     &:last-child {
@@ -229,6 +228,10 @@ Styleguide #{$sgi-messaging}
     .from {
     	display: block;
     }
+  }
+
+  li:not(.field-group-grow) {
+    overflow: hidden;
   }
 
   .messaging-list {
