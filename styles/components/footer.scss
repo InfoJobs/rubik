@@ -217,6 +217,9 @@
 		color: $outer-pawn;
 
 		&-sites {
+			overflow: visible;
+			display: block;
+
 			&::before {
 				display: block;
 				content: "";
@@ -228,6 +231,7 @@
 			li {
 				position: relative;
 				margin-left: 20px;
+				float: none;
 
 				&:first-child,
 				&:only-child {
