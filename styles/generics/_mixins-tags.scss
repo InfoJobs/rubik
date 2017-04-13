@@ -32,10 +32,6 @@ $MIXINS TAGS
     &:active {
       color: $shiro;
       background: $day-blue;
-
-      .highlight {
-      	color: $dark-silk;
-      }
     }
   }
 }
