@@ -1,11 +1,11 @@
 var inputReply;
 var divReply;
 var textReply;
-
 function divInputText() {
-
   inputReply = document.querySelector('.js-input-reply');
-  divReply = inputReply.parentNode.querySelector('div[contenteditable]');
+  if(inputReply !== null) {
+    divReply = inputReply.parentNode.querySelector('div[contenteditable]');
+  }
 
   inputReply.onclick = function(event) {
       this.classList.add('hide');
@@ -42,3 +42,4 @@ document.querySelector('html').onclick = function() {
 };
 
 window.addEventListener('load', divInputText);
+window.addEventListener('ajax-success', divInputText);
