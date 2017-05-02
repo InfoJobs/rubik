@@ -1,7 +1,7 @@
 // Brand colors
 // -------------------------------------------
 
-$day-blue:							#2088c2;
+$day-blue:							#167db7;
 $dark-silk:							#2d3133; // grey text mobile menu
 $resting-katana:					#d5e1e5; // gray default button
 $katana-slash:						#bac7cc;
@@ -18,6 +18,9 @@ $theme-button-secondary:     		         transparent;
 $theme-button-secondary--hover:          $katana-slash;
 $theme-button-secondary-contrast:        $resting-katana;
 $theme-button-secondary-contrast--hover: $katana-slash;
+
+$theme-button-cta:     		            $orange-soda;
+$theme-button-cta--hover: 	            $orange-soda;
 
 //
 // Sticker colors
@@ -41,4 +44,5 @@ $theme-color-header:				$day-blue;
 $theme-row-centered-width:			645px;
 $theme-row-centered-width-form:		446px;
 $theme-container-width:				970px;
+
 $theme-input-tel-width:				230px;

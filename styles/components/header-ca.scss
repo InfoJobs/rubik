@@ -288,15 +288,15 @@ a.nav-bar-toggle {
 		padding-top: 20px;
 
 		@include mediaquery ($bp-header) {
-			margin: 20px 0 0 0;
+			margin: 20px 35px 0 0;
 			padding: 0;
 			display: block;
 			height: 41px;
-			width: 138px;
+			width: 100px;
 			background-repeat: no-repeat;
 			background-position: left center;
 			//bg logo es
-			background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo_claim_primary.svg);
+			background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo-default_primary.svg);
 			background-size: contain;
 		}
 	}

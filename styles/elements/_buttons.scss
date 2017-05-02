@@ -83,6 +83,7 @@ Also add one of the following classes to give it format:
 `.btn-default` for a secondary action style<br>
 `.btn-tertiary` for a tertiary action style<br>
 `.btn-highlight` for a highlight action style
+`.btn-cta` for a CTA style
 
 Markup:
 <button class="btn btn-primary" type="button">Primary</button>
@@ -91,6 +92,7 @@ Markup:
 <a href="#" class="btn btn-highlight">Highlight</a>
 <a href="#" class="btn btn-primary">Link</a>
 <button class="btn btn-tertiary alert" type="button">Tertiary alert</button>
+<button class="btn btn-cta" type="button">CTA</button>
 
 Styleguide #{$sgi-buttons-type}
 */
@@ -209,6 +211,22 @@ Styleguide #{$sgi-buttons-type}
         color: $dark-silk;
         background-color: darken( $sun, 10% );
         border-color: darken( $sun, 10% );
+    }
+}
+
+.btn-cta {
+  	@include btn;
+    color: $shiro;
+    border: 1px solid $button-cta;
+    background-color: $button-cta;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
+
+    &:hover,
+    &:focus,
+    &:active {
+    	color: $shiro;
+        background-color: darken( $button-cta, 5% );
+        border-color: darken( $button-cta, 5% );
     }
 }
 
