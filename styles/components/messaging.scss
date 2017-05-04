@@ -130,9 +130,13 @@ Styleguide #{$sgi-messaging}
       @include display-flex;
     }
 
+    .messaging-body-secondary {
+      @include flex-direction(column);
+    }
+
     .messaging-title {
       @include semi-bold;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       flex-grow: 1;
     }
 
@@ -141,10 +145,17 @@ Styleguide #{$sgi-messaging}
     }
 
     .messaging-last-text,
-    .messaging-meta {
+    .messaging-meta,
+    .messaging-user-name {
       font-size: $small-font-size;
       line-height: $small-line-height;
       color: $soft-script;
+    }
+
+    .messaging-user-name {
+      font-size: $small-font-size;
+      line-height: $small-line-height;
+      color: $mid-script;
     }
 
     .messaging-meta,
