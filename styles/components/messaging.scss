@@ -360,7 +360,7 @@ Styleguide #{$sgi-messaging}
 }
 
 .messaging-scroll {
-    @include flex(1 1 auto);
+    @include flex(1 1 100%);
     overflow-y: auto;
 }
 
@@ -402,4 +402,8 @@ Styleguide #{$sgi-messaging}
     display: block;
   }
 
+}
+
+.messaging-web-app [class*="col-"] {
+  height: 100%;
 }
