@@ -11,7 +11,8 @@ function messagingWebApp() {
 
         divReply = inputReply.parentNode.querySelector('div[contenteditable]');
         btnReply = document.querySelector('.js-btn-reply');
-        inputReply.onclick = function(event) {
+
+        inputReply.onfocus = function(event) {
 
         	this.classList.add('hide');
         	this.parentNode.querySelector('div[contenteditable]').classList.add('appearance-input-text');
