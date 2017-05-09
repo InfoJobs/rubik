@@ -286,41 +286,6 @@
 
 //move
 
-.move-left {
-  position: relative;
-  -webkit-animation: move-left 0.5s;
-          animation: move-left 0.5s;
-}
-
-@keyframes move-left {
-
-  0% {
-    left: 100%
-  }
-  100% {
-    left: 0;
-  }
-
-}
-
-.move-right {
-  position: relative;
-  -webkit-animation: move-right 0.5s;
-          animation: move-right 0.5s;
-}
-
-@keyframes move-right {
-
-  0% {
-    left: -100%
-  }
-  100% {
-    left: 0;
-  }
-
-}
-
-
 @keyframes move-up {
 
     0% {
@@ -361,17 +326,68 @@
 }
 
 @-webkit-keyframes move-down {
+  0% {
+    top: 0;
+  		display: block;
+    visibility: visible;
+  }
+  100% {
+    top: 100%;
+    display: block;
+    visibility: visible;
+  }
+}
 
-    0% {
-        top: 0;
-   		display: block;
-		visibility: visible;
-    }
-    100% {
-        top: 100%;
-   		display: block;
-		visibility: visible;
-    }
+.show-move-left {
+	-webkit-animation: show-move-left .4s;
+	animation: show-move-left .4s;
+	position: absolute;
+  height: 100%;
+	width: 100%;
+}
+
+@keyframes show-move-left {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes show-move-left {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+.hide-move-right {
+	-webkit-animation: hide-move-right .4s;
+	animation: hide-move-right .4s;
+	position: absolute;
+  height: 100%;
+	width: 100%;
+}
+
+@keyframes hide-move-right {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes hide-move-right {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 //move layer only for mobile
@@ -379,9 +395,9 @@
 .move-up-layer--mobile,
 .move-down-layer--mobile {
 	width: 100%;
-    position: absolute;
-    left: 0;
-    z-index: 1;
+	position: absolute;
+	left: 0;
+	z-index: 1;
 
 	@include mediaquery ($bp-tablet) {
     	width: auto;
@@ -422,16 +438,16 @@
 
 	.move-up-layer,
 	.move-down-layer {
-		width: 100%;
-	    position: absolute;
-	    left: 0;
-	    z-index: 1;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 1;
 	}
 	.move-up-layer {
-		visibility: visible;
-	    top:0;
-	    -webkit-animation: move-up 1s;
-	    	animation: move-up 1s;
+    visibility: visible;
+    top:0;
+    -webkit-animation: move-up 1s;
+    animation: move-up 1s;
 	}
 	.move-down-layer {
 		visibility: hidden;

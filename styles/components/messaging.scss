@@ -227,6 +227,7 @@ Styleguide #{$sgi-messaging}
 
 
 .messaging-detail {
+  height: 100%;
   max-width: 100%;
   overflow: hidden;
 
@@ -258,6 +259,11 @@ Styleguide #{$sgi-messaging}
   	  .messaging-body {
   	    border-bottom: 0;
   	  }
+
+      &:hover {
+        cursor: default;
+        background-color: $shiro;
+      }
     }
 
     > li {
@@ -416,5 +422,5 @@ Styleguide #{$sgi-messaging}
 }
 
 .messaging-web-app [class*="col-"] {
-  height: 100%;
+    height: 100%;
 }
