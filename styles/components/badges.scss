@@ -9,6 +9,7 @@ Markup:
 <ul class="list-inline">
   <li><span class="badge iconfont-Suitecase">Badge with icon</span></li>
   <li><span class="badge iconfont-Suitecase">Badge with icon</span></li>
+  <li><span class="badge badge-small text-uppercase">Badge small uppercase</span></li>
 </ul>
 <ul class="list-inline">
   <li><span class="badge-marked text-uppercase iconfont-Check">Badge marked uppercase with icon</span></li>
@@ -71,13 +72,8 @@ Styleguide #{$sgi-badges}
   }
 
   &.badge-xlarge {
-    font-size: $base-font-size;
     height: 28px;
-    line-height: 16px;
-    padding: 7px 10px 5px;
   }
-
-
 }
 
 .badge {
@@ -166,6 +162,15 @@ Styleguide #{$sgi-badges}
     }
   }
 
+  &-small {
+    font-size: $xsmall-font-size;
+    line-height: 12px;
+  }
+
+  &-xlarge {
+    font-size: $base-font-size;
+    line-height: 16px;
+  }
 }
 
 //POSITION Badge stickers

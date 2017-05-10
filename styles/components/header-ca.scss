@@ -639,16 +639,24 @@ a.nav-bar-toggle {
 		color: $day-blue;
 	}
 
-	[class*="badge"] {
-		position: relative;
+  [class*="badge"] {
+    @include mediaquery ($bp-header) {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+  }
+
+  .badge-count {
+    position: relative;
     top: -2px;
 
-		@include mediaquery ($bp-header) {
-			position: absolute;
-      top: 5px;
-      right: 5px;
-		}
-	}
+    @include mediaquery ($bp-header) {
+      position: absolute;
+      top: 10px;
+      right: -5px;
+    }
+  }
 
 	.global-nav-submenu & {
 		@include flex(0 0 auto);
