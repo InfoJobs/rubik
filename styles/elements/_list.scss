@@ -164,11 +164,6 @@ Styleguide #{$sgi-listsInline}
 
   li {
     display: inline-block;
-
-    @include mediaquery($bp-desktop) {
-      float: left;
-    }
-
   }
 
   &:not(.base) {
