@@ -126,12 +126,17 @@ Styleguide #{$sgi-messaging}
     }
 
     .messaging-body-main,
-    .messaging-body-secondary {
+    .messaging-body-secondary,
+    .messaging-body-secondary-text {
       @include display-flex;
     }
 
     .messaging-body-secondary {
       @include flex-direction(column);
+
+      br {
+        display: none;
+      }
     }
 
     .messaging-title {
