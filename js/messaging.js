@@ -1,69 +1,34 @@
 function messagingWebApp() {
-  var inputReply = document.querySelector('.js-input-reply');
   var textReply;
-  var btnReply;
 
-  divInputText();
+  var textareaReply = document.querySelector('.js-reply');
 
-  function divInputText() {
+  if(textareaReply  !== null) {
+	textareaReply.style.height = 44 + 'px';
+	textareaReply.style.paddingTop = 10 + 'px';
+    textareaReply.addEventListener('keydown', autosize);
 
-    if(inputReply !==null) {
-
-        divReply = inputReply.parentNode.querySelector('div[contenteditable]');
-        btnReply = document.querySelector('.js-btn-reply');
-        inputReply.onfocus = function(event) {
-
-        	this.classList.add('hide');
-        	this.parentNode.querySelector('div[contenteditable]').classList.add('appearance-input-text');
-        	this.parentNode.querySelector('div[contenteditable]').classList.remove('hide');
-        	this.parentNode.querySelector('div[contenteditable]').focus();
-        	event.stopPropagation();
-
-        	this.parentNode.querySelector('div[contenteditable]').onclick = function(event) {
-        		event.stopPropagation();
-        	}
-
-      	  divReply.addEventListener('keydown', function(event) {
-  		    if (event.keyCode === 9) {
-  		    	btnReply.focus();
-  		    	event.preventDefault();
-  		    }
-
-  		  });
-
-        }
-
-        divReply.onkeypress = function() {
-        	valueReply();
-        }
-        divReply.onkeyup = function() {
-        	valueReply();
-        }
-
-        function valueReply() {
-        	var textReply = divReply.textContent;
-        	inputReply.value = textReply;
-        }
-
+    function autosize(){
+      var el = this;
+      setTimeout(function(){
+    	  el.style.height = el.scrollHeight + 'px';
+    	  if (el.getBoundingClientRect().height > 44) {
+    		  el.style.paddingTop = 4 + 'px';
+    	  } else {
+    		  el.style.paddingTop = 10 + 'px';
+    	  }
+      },0);
     }
 
+    textareaReply.addEventListener('keydown', function(event) {
+      if (event.keyCode === 9) {
+        document.querySelector('.js-btn-reply').focus();
+        event.preventDefault();
+      }
+    });
   }
-
-  document.querySelector('html').onclick = function() {
-
-	  if(inputReply != null && inputReply.value.length === 0) {
-      inputReply.classList.remove('hide');
-      divReply.classList.remove('appearance-input-text');
-      divReply.classList.add('hide');
-    }
-
-  };
 
   scrollChat();
-
-  if(inputReply !==null) {
-	  inputReply.focus();
-  }
 
   //MOBILE VIEW
   var listChats = document.querySelectorAll('.js-list-chats li');
@@ -127,6 +92,10 @@ function messagingWebApp() {
 
   }
   window.addEventListener('resize', scrollChat);
+
+  if(textareaReply  !== null) {
+    textareaReply.focus();
+  }
 
 }
 
