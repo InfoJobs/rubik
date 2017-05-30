@@ -47,6 +47,11 @@
     &.fixed {
         position: fixed;
         top: 0;
+
+        .sg-menu {
+          height: 100%;
+          overflow-y: auto;
+        }
     }
 
     @media (max-width: $max-size) {
@@ -69,6 +74,8 @@
   }
 
   nav.nav-float {
+
+      overflow-y: auto;
 
       ul {
 

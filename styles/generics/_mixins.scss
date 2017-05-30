@@ -7,6 +7,7 @@
 @import "mixins-borders";
 @import "mixins-crop-image";
 @import "mixins-size";
+@import "mixins-transitions";
 
 
 /*------------------------------------*\
@@ -27,10 +28,6 @@ $query2     = width, device-width
 	@media only screen and (#{$query1}-#{$query2}: $breakpoint) {
 		@content;
 	}
-}
-
-@mixin transition {
-	transition: all 0.3s ease 0s;
 }
 
 @mixin transition-button {
@@ -209,4 +206,17 @@ Font
 
 @mixin normal {
   font-family: $base-font-family;
+}
+
+@mixin hit-area {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    content: "";
+  }
 }

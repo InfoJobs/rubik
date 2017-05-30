@@ -651,18 +651,6 @@ Styleguide #{$sgi-button-group-icon}
     border-right:  1px solid $mid-script;
 }
 
-///*DEPRECATED: .btn-close only used on .toast, .notifications and red_de_contactos*/
-.btn-close {
-    padding: 0;
-    font-size: 33px;
-    font-weight: bold;
-    line-height: 1;
-    opacity: 0.5;
-    border: 0 none;
-    background: none repeat scroll 0 0 transparent;
-    cursor: pointer;
-}
-
 .btn-menu-more {
   @include btn;
   @include iconfont-Menumore;

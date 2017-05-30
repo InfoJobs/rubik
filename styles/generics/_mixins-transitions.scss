@@ -1,0 +1,15 @@
+@mixin transition {
+	transition: all 0.3s ease 0s;
+}
+
+@mixin close-fixed-bottom {
+  bottom: -100%;
+}
+
+@mixin close-animate {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height .6s ease-in-out;
+  -o-transition: height .6s ease-in-out;
+  transition: height .6s ease-in-out;
+}

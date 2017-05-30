@@ -106,16 +106,7 @@ Styleguide #{$sgi-helpers}
 
 //Use to add clickable area
 .hit-area {
-	position: relative;
-
-	&::after {
-		position: absolute;
-		top: -5px;
-		right: -5px;
-		bottom: -5px;
-		left: -5px;
-		content: "";
-	}
+  @include hit-area;
 }
 
 .pull-end {

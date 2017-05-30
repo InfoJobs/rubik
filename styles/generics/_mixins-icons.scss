@@ -57,3 +57,23 @@ $MIXINS ICONS
 		content: "\e603";
 	}
 }
+
+//
+// HTML tags icon
+// -------------------------------------------
+
+//button icon close
+@mixin btn-close {
+  @include iconfont-Close;
+  @include hit-area;
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  font-size: $large-font-size;
+  border: 0 none;
+  background: none repeat scroll 0 0 transparent;
+  cursor: pointer;
+}

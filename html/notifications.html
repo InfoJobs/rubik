@@ -1,47 +1,99 @@
 <!DOCTYPE html>
+
 <head>
-<meta charset="ISO-8859-15">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Notifications</title>
-<link rel="stylesheet" type="text/css" href="../public/rubik.css" />
+  <meta charset="ISO-8859-15">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notifications</title>
+  <link rel="stylesheet" type="text/css" href="../public/rubik.css" />
+  <script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+  <script type="text/javascript" src="../js/notifications.js"></script>
+  <script type="text/javascript" src="../js/sticky-on-scroll.js" th:remove="all"></script>
 </head>
+
 <body>
-<div class="wrapper">
-    <div class="container">
-
-		<!-- Alerta de exito que se puede cerrar -->
-		<div class="container-expanded">
-            <div class="notification-toast-fixed">
-    		    <div class="notification notification-dismissable notification-success">
-    		    	<button type="button" class="btn-close">&times;</button>
-    				<p class="contrast">Has guardado tu búsqueda con éxito. No has configurado ninguna alerta <a class="contrast link-underline" href="#">puedes hacerlo aquí</a></p>
-    			</div>
+  <div class="wrapper">
+    <div class="slotbanner">
+<img src="https://s.dcdn.es/live/Infojobs_appnexus_2017/alegrias_17/980x90_if_alegrias_definitivo_mar17.gif" style="border:0px black solid;" width="980" height="90" alt="">    <div class="container">
+          <div class="notification-toast js-notification-toast js-sticky">
+            <div class="notification-success" role="alert">
+              <div class="notification-body">
+                <span class="notification-icon iconfont-Big-check"></span>
+                <p>Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
+                <button class="notification-close js-notification-close" type="button" aria-label="Close"><span aria-hidden="true" hidden>Close</span></button>
+              </div>
             </div>
-
-            <div class="inner panel-canvas">
-                <h1>Heading</h1>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
+          </div>
+      <!-- Alerta de exito que se puede cerrar -->
+      <div class="container-expanded">
+        <div class="inner panel-canvas">
+          <h1>Notifications</h1>
+          <div class="notification-advice js-notification-advice">
+              <div class="notification-warning is-closed is-fixed" role="alert">
+                <div class="notification-body">
+                  <span class="notification-icon iconfont-Info"></span>
+                  <p>Click the icon close</p>
+                  <button class="notification-close js-notification-close" type="button" aria-label="Close"><span aria-hidden="true" hidden>Close</span></button>
+                </div>
+              </div>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h2>Toast</h2>
+          <!-- Notification succes-->
+          <div class="notification-success" role="alert">
+            <div class="notification-body">
+              <span class="notification-icon iconfont-Big-check"></span>
+              <p>Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
+              <button class="notification-close js-notification-close" type="button" aria-label="Close"><span aria-hidden="true" hidden>Close</span></button>
             </div>
+          </div>
+          <!-- /Notification success-->
+          <div class="container-expanded">
+            <!-- Notification error -->
+            <div class="notification-error" role="alert">
+              <div class="notification-body">
+                <span class="notification-icon iconfont-Alert"></span>
+                <p>Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.</p>
+                <button class="notification-close js-notification-close" type="button" aria-label="Close"><span aria-hidden="true" hidden>Close</span></button>
+              </div>
+            </div>
+            <!-- /Notification error -->
+          </div>
+          <div class="container-expanded">
+          <h2>Advice</h2>
+            <!-- Notification system -->
+            <div class="notification-system" role="alert">
+              <div class="notification-body">
+                <p>Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
+                <button class="notification-close js-notification-close" type="button" aria-label="Close"><span aria-hidden="true" hidden>Close</span></button>
+              </div>
+            </div>
+            <!-- /Notification info -->
+          </div>
+          <div class="container-expanded">
+            <!-- Notification warning -->
+            <div class="notification-warning" role="alert">
+              <div class="notification-body">
+                <span class="notification-icon iconfont-Info"></span>
+                <p>Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
+                <button class="notification-close js-notification-close" type="button" aria-label="Close"><span aria-hidden="true" hidden>Close</span></button>
+              </div>
+              <div class="notification-footer">
+                <button class="btn-small btn-default-alternative" type="button">Secondary alternative</button>
+              </div>
+            </div>
+            <!-- /Notification warning -->
+          </div>
 
-		</div>
+        </div>
+
+      </div>
 
     </div>
- </div>
-<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript" src="../js/jquery.toast.js"></script>
+    </div>
+  </div>
 </body>
