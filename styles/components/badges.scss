@@ -75,6 +75,10 @@ Styleguide #{$sgi-badges}
     height: 28px;
     padding: 7px 10px 5px;
   }
+
+  @media print {
+    border: 1px solid $dark-silk;
+  }
 }
 
 .badge {
@@ -90,6 +94,10 @@ Styleguide #{$sgi-badges}
   &-marked {
     @include badge;
     color: $bamboo;
+
+    @media print {
+      color: $print-bamboo;
+    }
 
     &-sticker {
       @include badge-sticker;

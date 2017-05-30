@@ -21,6 +21,31 @@ Styleguide #{$sgi-dlInline}
 
 $dl-col-unit: $theme-container-width / $gridColumns;
 
+@mixin dl-inline {
+  overflow: hidden;
+
+  dt {
+    clear: left;
+    padding-right: $padding;
+
+    &[class*="col-"]:not(:first-child) + dd{
+      margin-top: $padding/2;
+    }
+  }
+
+  @for $i from 1 through $gridColumns {
+    .dt-col-#{$i} {
+      float: left;
+      width: $dl-col-unit * $i;
+
+      + dd {
+        float: left;
+        width: calc(100% - (#{$dl-col-unit} * #{$i}) )
+      }
+    }
+  }
+}
+
 .dl-inline {
   dt {
     color: $soft-script;
@@ -34,31 +59,11 @@ $dl-col-unit: $theme-container-width / $gridColumns;
     }
   }
 
-  @include mediaquery($bp-desktop){
-
-    overflow: hidden;
-
-    dt {
-      clear: left;
-      padding-right: $padding;
-
-      &[class*="col-"]:not(:first-child) + dd{
-          margin-top: $padding/2;
-        }
-    }
-
-    @for $i from 1 through $gridColumns {
-
-      .dt-col-#{$i} {
-        float: left;
-        width: $dl-col-unit * $i;
-
-        + dd {
-          float: left;
-          width: calc(100% - (#{$dl-col-unit} * #{$i}) )
-        }
-      }
-    }
+  @include mediaquery($bp-desktop) {
+    @include dl-inline;
   }
 
+  @media print {
+    @include dl-inline;
+  }
 }
