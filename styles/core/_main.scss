@@ -372,28 +372,34 @@ hr {
 }
 
 @mixin truncate {
-	display: block;
- 	max-width: 99%;
-  	white-space: nowrap;
-  	overflow: hidden;
-  	text-overflow: ellipsis;
-    padding-left: 1px;
+  display: block;
+  max-width: 99%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 1px;
+
+  @media print {
+    max-width: auto;
+    white-space: unset;
+    text-overflow: unset;
+    padding-left: 0;
+  }
 }
 
 .truncate {
-	@include truncate;
+  @include truncate;
 }
 
 .truncate-small-device {
-	@include truncate;
-
-	@include mediaquery ($bp-desktop) {
-		display: inline;
-	 	max-width: auto;
-	  	white-space: unset;
-	  	overflow: hidden;
-	  	text-overflow: unset;
-	    padding-left: 0;
+  @include truncate;
+  @include mediaquery ($bp-desktop) {
+    display: inline;
+    max-width: auto;
+    white-space: unset;
+    overflow: hidden;
+    text-overflow: unset;
+    padding-left: 0;
 	}
 
 }

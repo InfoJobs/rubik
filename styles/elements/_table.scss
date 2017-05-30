@@ -4,6 +4,7 @@
 
 .table-default {
 	text-align: left;
+	width: 100%;
 
 	thead, tfoot, tbody, th, td, tr {
 		text-align: left;
@@ -15,24 +16,39 @@
 
 		@at-root & [class^="panel-"] {
 			padding: 10px;
-			margin: 10px 0 0 0;
+
+			@media print {
+				padding-top: 0;
+				padding-left: 0;
+			}
 		}
 	}
 
 	th {
-		color: $dark-silk;
+		margin-bottom: 10px;
+		color: $mid-script;
 	}
 
 	td {
-		color: $mid-script;
+		margin-bottom: 5px;
+		color: $dark-silk;
 	}
 
 	> tbody > tr {
 		position: relative;
 	}
 
-	> tbody > tr + tr {
+	> tbody  th {
+		@include bold;
+		color: $dark-silk;
+	}
+
+	tr:not(:first-child) table {
 		border-top: 1px solid $darkest-shiro;
+
+		th {
+			margin-top: 10px;
+		}
 	}
 
 	@include mediaquery ($bp-tablet) {
@@ -46,7 +62,6 @@
 		}
 
 		thead {
-      @include bold;
       border-bottom: 1px solid $darkest-shiro;
 		}
 
@@ -60,6 +75,7 @@
 			}
 
 			@at-root & [class^="panel-"] {
+				margin-top: -10px;
 				margin-right: -10px;
 
 	      	}
@@ -75,8 +91,8 @@
 		}
 
 		> tbody > tr {
-		    margin-top: 10px;
-			padding-top: 10px;
+		    //margin-top: 10px;
+			//padding-top: 10px;
 		}
 
 		thead tr {
@@ -86,10 +102,22 @@
 		}
 
 		td:before {
+			color: $mid-script;
 			content: attr(data-th)" ";
 			white-space: nowrap;
 		}
 
+	}
+
+	@media print {
+		th,
+		td {
+			width: 25%;
+		}
+
+		td {
+			padding-top: 5pt;
+		}
 	}
 
 }
@@ -141,4 +169,9 @@
 		}
 	}
 
+  @media print {
+    thead {
+      border-bottom: 1px solid $darkest-shiro;
+    }
+  }
 }
