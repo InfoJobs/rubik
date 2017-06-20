@@ -69,10 +69,12 @@ Styleguide #{$sgi-thumbnail}
 		display: none;
 	}
 
-	img {
-		width: 100%;
+  img {
+    @include crop;
+    height: 100%;
     vertical-align: bottom;
-	}
+    width: 100%;
+  }
 }
 
 .fig-thumbnail-caption {

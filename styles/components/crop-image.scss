@@ -25,16 +25,6 @@ Markup:
 Styleguide #{$sgi-crop-circle}
 */
 
-@mixin crop {
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	overflow: hidden;
-	margin: auto;
-	object-fit: cover;
-	object-position: center;
-}
-
 .crop-image {
 	@include crop;
 	width: 72px;
