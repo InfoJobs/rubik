@@ -43,7 +43,7 @@ p {
 }
 
 
-$font-size: (xsmall, small, base, medium, large, xlarge); //TODO: resolve problem when it s moved to _vars
+$font-size: (xsmall, small, base, medium, large, xlarge, xxlarge, xxxlarge); //TODO: resolve problem when it s moved to _vars
 
 @each $value in $font-size {
 
