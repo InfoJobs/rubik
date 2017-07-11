@@ -75,6 +75,7 @@ Styleguide #{$sgi-custom-background}
 
   &-default {
     min-height: 110px;
+    background-size: cover;
 
     @include mediaquery ($bp-tablet) {
       min-height: 130px;
@@ -82,6 +83,21 @@ Styleguide #{$sgi-custom-background}
 
     @include mediaquery ($bp-desktop) {
       min-height: 150px;
+        }
+  }
+
+  &-plus {
+    background-position: center;
+	min-height: 140px;
+	border-bottom: 1px solid $darkest-shiro;
+	background-size: cover;
+
+    @include mediaquery ($bp-tablet) {
+      min-height: 190px;
+    }
+
+    @include mediaquery ($bp-desktop) {
+      min-height: 300px;
     }
   }
 }
