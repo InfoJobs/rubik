@@ -40,7 +40,7 @@ $dl-col-unit: $theme-container-width / $gridColumns;
 
       + dd {
         float: left;
-        width: calc(100% - (#{$dl-col-unit} * #{$i}) )
+        width: calc(100% - #{$dl-col-unit} * #{$i})
       }
     }
   }
