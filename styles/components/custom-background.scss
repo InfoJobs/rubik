@@ -64,7 +64,13 @@ Styleguide #{$sgi-custom-background}
 
   &-cover{
     @include custom-bg;
+    background-repeat: no-repeat;
     background-size: cover;
+    color: $dark-silk;
+
+    h1 {
+      color: $dark-silk;
+    }
   }
 
   &-default {
@@ -82,7 +88,7 @@ Styleguide #{$sgi-custom-background}
 
 //Overlay in background
 
-$overlay-opacity: (60,85);
+$overlay-opacity: (40, 60,85);
 
 @each $value in $overlay-opacity {
 
@@ -101,6 +107,7 @@ $overlay-opacity: (60,85);
             height: 100%;
             background-color: #000;
             opacity: $value/100;
+            border-radius: inherit;
 		}
 
     .inner {
