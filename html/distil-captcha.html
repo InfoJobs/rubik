@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="ISO-8859-15">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unable To Identify Your Browser</title>
+  <link rel="stylesheet" type="text/css" href="../public/candidates.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container container-expanded">
+      <div class="panel-focus inner inner-expanded">
+        <header class="global-nav-brand text-center inner-expanded">
+          <nav>
+            <ul>
+              <li>
+                <a class="active logo" id="hdrLinkToHome" href="/">
+                    <img ij:id="logo" src="//media.infojobs.net/appgrade/emails/logo-ij-white.png" />
+                  </a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <div class="row-centered empty-state text-center">
+          <img class="margin-top empty-state-image" src="//media.infojobs.net/appgrade/pictures/pic-robot.png" alt="" />
+
+          <div class="heading-addons inner-expanded">
+            <h1 class="contrast xlarge" th:text="#{distil.eres_humano}">¿Eres humano o un robot?</h1>
+            <p th:text="#{distil.hemos_detectado_una_actividad}">Hemos detectado una actividad poco habitual y necesitamos comprobar que no eres una máquina. Disculpa las molestias.</p>
+          </div>
+
+          <div ij:id="captcha-div" id="captcha-div" class="captcha-frame">
+            <!-- DISTIL CAPTCHA FORM -->
+          </div>
+
+          <!-- <button class="btn btn-primary btn-primary-contrast margin-top margin-bottom" type="submit">COMPLETAR CAPTCHA</button> -->
+        </div>
+      </div>
+      <div ij:c="footer-ij"></div>
+    </div>
+  </div>
+</body>
+
+</html>
