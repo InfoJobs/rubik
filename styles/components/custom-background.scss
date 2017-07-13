@@ -21,36 +21,9 @@ Styleguide #{$sgi-custom-background}
 @mixin custom-bg {
 
   @include font-rendering;
-  color: $shiro;
   background-repeat: no-repeat;
   background-color: $dark-softened;
   //the background-image is not reusable, inline in html
-
-  @media print {
-    color: $dark;
-  }
-
-  h1,
-  a {
-    color: $shiro;
-
-    @media print {
-      color: $dark;
-    }
-  }
-
-  & .panel-canvas,
-  & .panel-default {
-
-    a {
-        color: $theme-color-primary;
-
-        @media print {
-          color: #000000;
-        }
-    }
-
-  }
 }
 
 .custom-bg {
@@ -66,11 +39,6 @@ Styleguide #{$sgi-custom-background}
     @include custom-bg;
     background-repeat: no-repeat;
     background-size: cover;
-    color: $dark-silk;
-
-    h1 {
-      color: $dark-silk;
-    }
   }
 
   &-default {
