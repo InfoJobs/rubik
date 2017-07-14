@@ -56,7 +56,8 @@ Styleguide #{$sgi-thumbnail}
 
 .fig-thumbnail-details {
 	color:$bamboo;
-	font-size: 14px;
+	font-size: $xsmall-font-size;
+	margin-bottom: 0;
 }
 
 .fig-thumbnail-logo {
@@ -69,10 +70,12 @@ Styleguide #{$sgi-thumbnail}
 		display: none;
 	}
 
-	img {
-		width: 100%;
+  img {
+    @include crop;
+    height: 100%;
     vertical-align: bottom;
-	}
+    width: 100%;
+  }
 }
 
 .fig-thumbnail-caption {
@@ -89,6 +92,7 @@ Styleguide #{$sgi-thumbnail}
 	border: 1px solid $darkest-shiro;
 	height: 190px;
 	overflow: hidden;
+	cursor: pointer;
 
 	.brand {
 		position: relative;
@@ -190,8 +194,9 @@ Styleguide #{$sgi-thumbnail}
 
 			img {
 				display: block;
-				width: 100%;
-				height: auto;
+			    height: 179px;
+			    object-fit: contain;
+			    width: 294px;
 			}
 		}
 
@@ -258,7 +263,7 @@ Styleguide #{$sgi-thumbnail}
 	}
 
 	.fig-thumbnail-logo .fig-thumbnail-caption p {
-		padding: 5px;
+		padding: 4px;
 	}
 }
 
