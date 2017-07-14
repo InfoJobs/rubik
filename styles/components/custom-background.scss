@@ -56,18 +56,12 @@ Styleguide #{$sgi-custom-background}
 
   &-plus {
     background-position: center;
-	min-height: 140px;
-	border-bottom: 1px solid $darkest-shiro;
-	background-size: cover;
-
-    @include mediaquery ($bp-tablet) {
-      min-height: 190px;
-    }
-
-    @include mediaquery ($bp-desktop) {
-      min-height: 300px;
-    }
+    padding-bottom: 40%;
+    border-bottom: 1px solid $darkest-shiro;
+    background-size: cover;
+    margin-top: 10px;
   }
+
 }
 
 //Overlay in background
