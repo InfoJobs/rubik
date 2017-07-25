@@ -11,6 +11,16 @@ $MIXIN COLUMNS
     @include flex(1 1 auto);
   }
 
+  &.content-row-small-device {
+    display: block;
+    text-align: center;
+
+    @include mediaquery ($bp-tablet) {
+      @include display-flex;
+      text-align: left;
+    }
+  }
+
   &.content-row-medium-device {
     display: block;
     text-align: center;
@@ -90,7 +100,7 @@ $MIXIN COLUMNS
   }
 
   .content-type-media { // col with img, tag inside content-top or content-middle
-  	@include flex(none)
+  	@include flex(none);
 
     .tag {
   		top: 0;
