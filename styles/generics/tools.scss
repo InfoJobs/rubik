@@ -300,6 +300,11 @@ Styleguide #{$sgi-helpers}
 			display: inline;
 		}
 	}
+
+	&-after::after {
+		content: '';
+		display: block;
+	}
 }
 
 .user-select {
