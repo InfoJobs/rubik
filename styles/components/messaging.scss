@@ -43,7 +43,7 @@ Styleguide #{$sgi-messaging}
 
     .messaging-body {
       flex-grow: 1;
-      min-width: 0; //for text with ellipsis inside body
+      min-width: 0%; //for text with ellipsis inside body
       border-bottom: 1px solid $darkest-shiro;
       padding: ($padding/2) 0;
     }
