@@ -22,7 +22,7 @@ $size-loading: 15px;
   position: fixed;
   top: 50%;
   left: 50%;
-  box-shadow: -#{$size-loading} $size-loading $bamboo, 0 30px $color-primary;
+  box-shadow: -#{$size-loading} $size-loading $orange-soda, 0 30px $color-primary;
   animation: Spinner 1.5s ease-in-out infinite;
   -webkit-animation: Spinner 1.5s ease-in-out infinite;
 
@@ -39,35 +39,35 @@ $size-loading: 15px;
 
 @keyframes Spinner {
   0% {
-    box-shadow: -#{$size-loading} $size-loading $bamboo, 0 $size-loading * 2 $color-primary;
+    box-shadow: -#{$size-loading} $size-loading $orange-soda, 0 $size-loading * 2 $color-primary;
   }
   25% {
-    box-shadow: 0 $size-loading $bamboo, -#{$size-loading} $size-loading * 2 $color-primary;
+    box-shadow: 0 $size-loading $orange-soda, -#{$size-loading} $size-loading * 2 $color-primary;
   }
   50% {
-    box-shadow: 0 $size-loading * 2 $bamboo, -#{$size-loading} $size-loading $color-primary;
+    box-shadow: 0 $size-loading * 2 $orange-soda, -#{$size-loading} $size-loading $color-primary;
   }
   75% {
-    box-shadow: -#{$size-loading} $size-loading * 2 $bamboo, 0 $size-loading $color-primary;
+    box-shadow: -#{$size-loading} $size-loading * 2 $orange-soda, 0 $size-loading $color-primary;
   }
   100% {
-    box-shadow: -#{$size-loading} $size-loading $bamboo, 0 $size-loading * 2 $color-primary;
+    box-shadow: -#{$size-loading} $size-loading $orange-soda, 0 $size-loading * 2 $color-primary;
   }
 }
 @-webkit-keyframes Spinner {
   0% {
-    box-shadow: -#{$size-loading} $size-loading $bamboo, 0 $size-loading * 2 $color-primary;
+    box-shadow: -#{$size-loading} $size-loading $orange-soda, 0 $size-loading * 2 $color-primary;
   }
   25% {
-    box-shadow: 0 $size-loading $bamboo, -#{$size-loading} $size-loading * 2 $color-primary;
+    box-shadow: 0 $size-loading $orange-soda, -#{$size-loading} $size-loading * 2 $color-primary;
   }
   50% {
-    box-shadow: 0 $size-loading * 2 $bamboo, -#{$size-loading} $size-loading $color-primary;
+    box-shadow: 0 $size-loading * 2 $orange-soda, -#{$size-loading} $size-loading $color-primary;
   }
   75% {
-    box-shadow: -#{$size-loading} $size-loading * 2 $bamboo, 0 $size-loading $color-primary;
+    box-shadow: -#{$size-loading} $size-loading * 2 $orange-soda, 0 $size-loading $color-primary;
   }
   100% {
-    box-shadow: -#{$size-loading} $size-loading $bamboo, 0 $size-loading * 2 $color-primary;
+    box-shadow: -#{$size-loading} $size-loading $orange-soda, 0 $size-loading * 2 $color-primary;
   }
 }
