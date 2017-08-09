@@ -2,6 +2,37 @@
 $MIXIN COLUMNS
 \*------------------------------------*/
 
+@mixin content-row-device($bp) {
+  display: block;
+  text-align: center;
+
+  .content-type-text {
+    overflow: inherit;
+    margin: 20px 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include mediaquery ($bp) {
+      margin-top: 0;
+      margin-bottom: 0;
+
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  @include mediaquery ($bp) {
+    @include display-flex;
+    text-align: left;
+  }
+}
+
 @mixin columns {
   @include display-flex;
   @include flex-wrap;
@@ -11,14 +42,12 @@ $MIXIN COLUMNS
     @include flex(1 1 auto);
   }
 
-  &.content-row-medium-device {
-    display: block;
-    text-align: center;
+  &.content-row-small-device {
+    @include content-row-device($bp-tablet);
+  }
 
-    @include mediaquery ($bp-desktop) {
-      @include display-flex;
-      text-align: left;
-    }
+  &.content-row-medium-device {
+    @include content-row-device($bp-desktop);
   }
 
   @media print {
@@ -90,7 +119,7 @@ $MIXIN COLUMNS
   }
 
   .content-type-media { // col with img, tag inside content-top or content-middle
-  	@include flex(none)
+  	@include flex(none);
 
     .tag {
   		top: 0;
@@ -105,25 +134,6 @@ $MIXIN COLUMNS
   	margin-right: 10px;
   }
 
-  &.content-row-medium-device {
-    .content-type-text {
-      overflow: inherit;
-      margin: 20px 0;
-
-      @include mediaquery ($bp-desktop) {
-        margin-top: 0;
-        margin-bottom: 0;
-
-        &:not(:first-child) {
-          margin-left: 20px;
-        }
-
-        &:not(:last-child) {
-          margin-right: 20px;
-        }
-      }
-    }
-  }
 
   &.content-overlap {
     [class*="content-type-media"] {
