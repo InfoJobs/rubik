@@ -21,36 +21,9 @@ Styleguide #{$sgi-custom-background}
 @mixin custom-bg {
 
   @include font-rendering;
-  color: $shiro;
   background-repeat: no-repeat;
   background-color: $dark-softened;
   //the background-image is not reusable, inline in html
-
-  @media print {
-    color: $dark;
-  }
-
-  h1,
-  a {
-    color: $shiro;
-
-    @media print {
-      color: $dark;
-    }
-  }
-
-  & .panel-canvas,
-  & .panel-default {
-
-    a {
-        color: $theme-color-primary;
-
-        @media print {
-          color: #000000;
-        }
-    }
-
-  }
 }
 
 .custom-bg {
@@ -64,11 +37,13 @@ Styleguide #{$sgi-custom-background}
 
   &-cover{
     @include custom-bg;
+    background-repeat: no-repeat;
     background-size: cover;
   }
 
   &-default {
     min-height: 110px;
+    background-size: cover;
 
     @include mediaquery ($bp-tablet) {
       min-height: 130px;
@@ -76,13 +51,22 @@ Styleguide #{$sgi-custom-background}
 
     @include mediaquery ($bp-desktop) {
       min-height: 150px;
-    }
+        }
   }
+
+  &-plus {
+    background-position: center;
+    padding-bottom: 40%;
+    border-bottom: 1px solid $darkest-shiro;
+    background-size: cover;
+    margin-top: 10px;
+  }
+
 }
 
 //Overlay in background
 
-$overlay-opacity: (60,85);
+$overlay-opacity: (40, 60,85);
 
 @each $value in $overlay-opacity {
 
@@ -101,6 +85,7 @@ $overlay-opacity: (60,85);
             height: 100%;
             background-color: #000;
             opacity: $value/100;
+            border-radius: inherit;
 		}
 
     .inner {

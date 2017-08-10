@@ -8,109 +8,184 @@
 <body class="panel-canvas">
 <div class="wrapper">
   <div class="container">
+    <section class="inner custom-bg-cover" style="background-image: url('http://media.infojobs.net/appgrade/backgrounds/bg-home.png');">
+      <div id="searchBox" class="search-bar-main search-bar overlay-40 border-rounded">
+      	<form action="/jobsearch/search-results/list.xhtml" class="form" role="form" id="offersSearch" name="offersSearch" method="post">
+      		<fieldset>
+      			<legend>Opciones de búxsqueda</legend>
+      		    	<ul class="clearfix input-drop-down-wrapper">
+      		        	<li class="search-field search-keyword-field">
+      		            	<label for="palabra">Busco ofertas de...</label>
+      		                <div>
+      		                	<input type="text" placeholder="Puesto, empresa o palabra clave" name="palabra" id="palabra" maxlength="200">
+      		                </div>
+      		                <div class="input-drop-down">
 
 
 
-    <div id="searchBox" class="search-bar-main search-bar panel-focus">
+      		                </div>
+      		            </li>
+      		            <li class="search-field search-country-field js-show-field">
+      		            	<ul class="radio-group clearfix">
+      		                	<li>
+      		                    	<input type="radio" id="local" value="local" name="region" checked="checked" onclick="actualizaZonaBusqueda();">
+      		                    	<label for="local">en España</label>
+      		                    </li>
+      		                    <li>
+      		                    	<input type="radio" id="foreign" value="foreign" name="region" onclick="actualizaZonaBusqueda();">
+      		                    	<label for="foreign">en el extranjero</label>
+      		                    </li>
+      		                </ul>
 
-	<form action="/jobsearch/search-results/list.xhtml" class="form" role="form" id="offersSearch" name="offersSearch" method="post">
-		<fieldset>
-			<legend>Opciones de búxsqueda</legend>
-		    	<ul class="clearfix input-drop-down-wrapper">
-		        	<li class="search-field search-keyword-field">
-		            	<label for="palabra">Busco ofertas de...</label>
-		                <div>
-		                	<input type="text" placeholder="Puesto, empresa o palabra clave" name="palabra" id="palabra" maxlength="200">
-		                </div>
-		                <div class="input-drop-down">
+      		                <div class="form-select" id="provinciasDiv">
 
+      		   	<select class="chosen-select" data-placeholder="Toda España" id="of_provincia" name="of_provincia" style="display: none;">
+      		   	 	 <option value="0" selected="true">Toda España</option>
+      		   	 	 <optgroup label="Más comunes">
+      		   	 	 	<option value="33">Madrid</option><option value="9">Barcelona</option><option value="49">Valencia/València</option><option value="43">Sevilla</option>
+      		   		 </optgroup>
+      		   		 <optgroup label="Todas">
+      		   		 	<option value="28">A Coruña</option><option value="2">Álava/Araba</option><option value="3">Albacete</option><option value="4">Alicante/Alacant</option><option value="5">Almería</option><option value="6">Asturias</option><option value="7">Ávila</option><option value="8">Badajoz</option><option value="9">Barcelona</option><option value="10">Burgos</option><option value="11">Cáceres</option><option value="12">Cádiz</option><option value="13">Cantabria</option><option value="14">Castellón/Castelló</option><option value="15">Ceuta</option><option value="16">Ciudad Real</option><option value="17">Córdoba</option><option value="18">Cuenca</option><option value="19">Girona</option><option value="21">Granada</option><option value="22">Guadalajara</option><option value="23">Guipúzcoa/Gipuzkoa</option><option value="24">Huelva</option><option value="25">Huesca</option><option value="26">Illes Balears</option><option value="27">Jaén</option><option value="29">La Rioja</option><option value="20">Las Palmas</option><option value="30">León</option><option value="31">Lleida</option><option value="32">Lugo</option><option value="33">Madrid</option><option value="34">Málaga</option><option value="35">Melilla</option><option value="36">Murcia</option><option value="37">Navarra</option><option value="38">Ourense</option><option value="39">Palencia</option><option value="40">Pontevedra</option><option value="41">Salamanca</option><option value="46">Santa Cruz de Tenerife</option><option value="42">Segovia</option><option value="43">Sevilla</option><option value="44">Soria</option><option value="45">Tarragona</option><option value="47">Teruel</option><option value="48">Toledo</option><option value="49">Valencia/València</option><option value="50">Valladolid</option><option value="51">Vizcaya/Bizkaia</option><option value="52">Zamora</option><option value="53">Zaragoza</option>
+      				</optgroup>
+      			</select><div class="chosen-container chosen-container-single" style="width: 100%;" title="" id="of_provincia_chosen"><a class="chosen-single chosen-default" tabindex="-1"><span>Toda España</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off"></div><ul class="chosen-results"></ul></div></div>
+      		</div>
 
+         <div class="form-select form-select-disabled" style="display:none;" id="paisesDiv">
+        	<select disabled="disabled" name="of_pais" id="of_pais" tabindex="-1" data-placeholder="En todo el extranjero">
+        		<option value="0" selected="selected">En todo el extranjero</option>
+      							</select>
+      		                 </div>
 
-		                </div>
-		            </li>
-		            <li class="search-field search-country-field js-show-field">
-		            	<ul class="radio-group clearfix">
-		                	<li>
-		                    	<input type="radio" id="local" value="local" name="region" checked="checked" onclick="actualizaZonaBusqueda();">
-		                    	<label for="local">en España</label>
-		                    </li>
-		                    <li>
-		                    	<input type="radio" id="foreign" value="foreign" name="region" onclick="actualizaZonaBusqueda();">
-		                    	<label for="foreign">en el extranjero</label>
-		                    </li>
-		                </ul>
+      		             </li>
 
-		                <div class="form-select" id="provinciasDiv">
-
-		   	<select class="chosen-select" data-placeholder="Toda España" id="of_provincia" name="of_provincia" style="display: none;">
-		   	 	 <option value="0" selected="true">Toda España</option>
-		   	 	 <optgroup label="Más comunes">
-		   	 	 	<option value="33">Madrid</option><option value="9">Barcelona</option><option value="49">Valencia/València</option><option value="43">Sevilla</option>
-		   		 </optgroup>
-		   		 <optgroup label="Todas">
-		   		 	<option value="28">A Coruña</option><option value="2">Álava/Araba</option><option value="3">Albacete</option><option value="4">Alicante/Alacant</option><option value="5">Almería</option><option value="6">Asturias</option><option value="7">Ávila</option><option value="8">Badajoz</option><option value="9">Barcelona</option><option value="10">Burgos</option><option value="11">Cáceres</option><option value="12">Cádiz</option><option value="13">Cantabria</option><option value="14">Castellón/Castelló</option><option value="15">Ceuta</option><option value="16">Ciudad Real</option><option value="17">Córdoba</option><option value="18">Cuenca</option><option value="19">Girona</option><option value="21">Granada</option><option value="22">Guadalajara</option><option value="23">Guipúzcoa/Gipuzkoa</option><option value="24">Huelva</option><option value="25">Huesca</option><option value="26">Illes Balears</option><option value="27">Jaén</option><option value="29">La Rioja</option><option value="20">Las Palmas</option><option value="30">León</option><option value="31">Lleida</option><option value="32">Lugo</option><option value="33">Madrid</option><option value="34">Málaga</option><option value="35">Melilla</option><option value="36">Murcia</option><option value="37">Navarra</option><option value="38">Ourense</option><option value="39">Palencia</option><option value="40">Pontevedra</option><option value="41">Salamanca</option><option value="46">Santa Cruz de Tenerife</option><option value="42">Segovia</option><option value="43">Sevilla</option><option value="44">Soria</option><option value="45">Tarragona</option><option value="47">Teruel</option><option value="48">Toledo</option><option value="49">Valencia/València</option><option value="50">Valladolid</option><option value="51">Vizcaya/Bizkaia</option><option value="52">Zamora</option><option value="53">Zaragoza</option>
-				</optgroup>
-			</select><div class="chosen-container chosen-container-single" style="width: 100%;" title="" id="of_provincia_chosen"><a class="chosen-single chosen-default" tabindex="-1"><span>Toda España</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off"></div><ul class="chosen-results"></ul></div></div>
-		</div>
-
-		                 <div class="form-select form-select-disabled" style="display:none;" id="paisesDiv">
-		                	<select disabled="disabled" name="of_pais" id="of_pais" tabindex="-1" data-placeholder="En todo el extranjero">
-		                		<option value="0" selected="selected">En todo el extranjero</option>
-							</select>
-		                 </div>
-
-		             </li>
-
-		             <li class="search-field search-submit-field js-show-field">
-		             	<button type="submit" id="searchOffers" class="btn btn-primary-alternative btn-form-inline" onclick="javascript:prepareSearch(); return true;" title="Buscar trabajo con mis preferencias">Buscar</button>
-		             </li>
-		       </ul>
-		       <input type="hidden" value="0" name="canal" id="canal">
-		       <input type="hidden" value="0" name="origen_busqueda" id="origen_busqueda">
-	           <input type="hidden" value="0" name="origen_accion" id="origen_accion">
-	           <input type="hidden" value="false" name="vieneUrlExecutive">
-		 </fieldset>
-	</form>
-
-	<script type="text/javascript">
-		/* <![CDATA[*/
-			var canal_codigo_ext = '124';
-			initSearchBox();
-		/*]]>*/
-	</script>
-</div>
-
-
-
-
-    <section class="panel-focus custom-bg-cover inner" style="background-image: url('https://media.infojobs.net/appgrade/discovery/test-download-app/bg-appdownload.png');">
+      		             <li class="search-field search-submit-field js-show-field">
+      		             	<button type="submit" id="searchOffers" class="btn btn-cta btn-form-inline" onclick="javascript:prepareSearch(); return true;" title="Buscar trabajo con mis preferencias">Buscar</button>
+      		             </li>
+      		       </ul>
+      		       <input type="hidden" value="0" name="canal" id="canal">
+      		       <input type="hidden" value="0" name="origen_busqueda" id="origen_busqueda">
+      	           <input type="hidden" value="0" name="origen_accion" id="origen_accion">
+      	           <input type="hidden" value="false" name="vieneUrlExecutive">
+      		 </fieldset>
+      	</form>
+      </div>
       <div class="row row-faux inner">
-        <div class="col-7 col-12-medium">
-          <div class="col-child text-center-medium-device">
-            <h1 class="heading-mega">Más de 35.000 ofertas en tu bolsillo</h1>
-            <p class="large bold">Te acercamos las mejores oportunidades allí donde estés. ¡Descárgate la app!</p>
+        <div class="col-7">
+          <div class="col-child inner">
+            <h1 class="heading-mega margin-bottom">Feliz próximo primer día</h1>
+            <p class="medium bold margin-bottom">Estamos a tu lado ofreciéndote nuevas oportunidades. Siempre contigo, en cada paso profesional que des.</p>
             <ul class="list-inline">
               <li> <a href='javascript:trackHomeApp(expCodeHomeApp, contentCodeClicAndroid, null, redirect("https://infojobs.onelink.me/2882600328?pid=Home&amp;c=Descargar"),redirect("https://infojobs.onelink.me/2882600328?pid=Home&amp;c=Descargar"));'> <img id="android-link" src="//media.infojobs.net/appgrade/pictures/pic-google-play.png"> </a> </li>
               <li> <a href='javascript:trackHomeApp(expCodeHomeApp, contentCodeClicIos, null, redirect("https://infojobs.onelink.me/2882600328?pid=Home&amp;c=Descargar"),redirect("https://infojobs.onelink.me/2882600328?pid=Home&amp;c=Descargar"));'> <img id="iphone-link" src="//media.infojobs.net/appgrade/pictures/pic-app-store.png"> </a> </li>
             </ul>
           </div>
         </div>
-        <div class="col-5 col-12-medium">
-          <div class="col-child text-center">
-            <div class="hide-small-device hide-medium-device">
-              <video class="video-framed-mobile pull-right text-center" autoplay loop muted poster="//media.infojobs.net/appgrade/discovery/app-video/app-video.png">
-                <source src="//media.infojobs.net/appgrade/discovery/app-video/app-video.mp4">
-                <source src="//media.infojobs.net/appgrade/discovery/app-video/app-video.webm">
-                <img src="//media.infojobs.net/appgrade/discovery/app-video/mobile-device-desk.png" alt="">
-              </video>
-            </div>
-            <div class="hide-large-device">
-              <img width ="265" src="https://media.infojobs.net/appgrade/discovery/test-download-app/device-appdownload.png" alt="">
-            </div>
-          </div>
-        </div>
       </div>
     </section>
+  </div>
+
+
+  <!-- home IT -->
+
+  <div class="container container-expanded">
+    <div id="searchBox" class="search-bar-main search-bar panel-focus">
+    	<form action="/jobsearch/search-results/list.xhtml" class="form" role="form" id="offersSearch" name="offersSearch" method="post">
+    		<fieldset>
+    			<legend>Opciones de búxsqueda</legend>
+    		    	<ul class="clearfix input-drop-down-wrapper">
+    		        	<li class="search-field search-keyword-field">
+    		            	<label for="palabra">Busco ofertas de...</label>
+    		                <div>
+    		                	<input type="text" placeholder="Puesto, empresa o palabra clave" name="palabra" id="palabra" maxlength="200">
+    		                </div>
+    		                <div class="input-drop-down">
+
+
+
+    		                </div>
+    		            </li>
+    		            <li class="search-field search-country-field js-show-field">
+    		            	<ul class="radio-group clearfix">
+    		                	<li>
+    		                    	<input type="radio" id="local" value="local" name="region" checked="checked" onclick="actualizaZonaBusqueda();">
+    		                    	<label for="local">en España</label>
+    		                    </li>
+    		                    <li>
+    		                    	<input type="radio" id="foreign" value="foreign" name="region" onclick="actualizaZonaBusqueda();">
+    		                    	<label for="foreign">en el extranjero</label>
+    		                    </li>
+    		                </ul>
+
+    		                <div class="form-select" id="provinciasDiv">
+
+    		   	<select class="chosen-select" data-placeholder="Toda España" id="of_provincia" name="of_provincia" style="display: none;">
+    		   	 	 <option value="0" selected="true">Toda España</option>
+    		   	 	 <optgroup label="Más comunes">
+    		   	 	 	<option value="33">Madrid</option><option value="9">Barcelona</option><option value="49">Valencia/València</option><option value="43">Sevilla</option>
+    		   		 </optgroup>
+    		   		 <optgroup label="Todas">
+    		   		 	<option value="28">A Coruña</option><option value="2">Álava/Araba</option><option value="3">Albacete</option><option value="4">Alicante/Alacant</option><option value="5">Almería</option><option value="6">Asturias</option><option value="7">Ávila</option><option value="8">Badajoz</option><option value="9">Barcelona</option><option value="10">Burgos</option><option value="11">Cáceres</option><option value="12">Cádiz</option><option value="13">Cantabria</option><option value="14">Castellón/Castelló</option><option value="15">Ceuta</option><option value="16">Ciudad Real</option><option value="17">Córdoba</option><option value="18">Cuenca</option><option value="19">Girona</option><option value="21">Granada</option><option value="22">Guadalajara</option><option value="23">Guipúzcoa/Gipuzkoa</option><option value="24">Huelva</option><option value="25">Huesca</option><option value="26">Illes Balears</option><option value="27">Jaén</option><option value="29">La Rioja</option><option value="20">Las Palmas</option><option value="30">León</option><option value="31">Lleida</option><option value="32">Lugo</option><option value="33">Madrid</option><option value="34">Málaga</option><option value="35">Melilla</option><option value="36">Murcia</option><option value="37">Navarra</option><option value="38">Ourense</option><option value="39">Palencia</option><option value="40">Pontevedra</option><option value="41">Salamanca</option><option value="46">Santa Cruz de Tenerife</option><option value="42">Segovia</option><option value="43">Sevilla</option><option value="44">Soria</option><option value="45">Tarragona</option><option value="47">Teruel</option><option value="48">Toledo</option><option value="49">Valencia/València</option><option value="50">Valladolid</option><option value="51">Vizcaya/Bizkaia</option><option value="52">Zamora</option><option value="53">Zaragoza</option>
+    				</optgroup>
+    			</select><div class="chosen-container chosen-container-single" style="width: 100%;" title="" id="of_provincia_chosen"><a class="chosen-single chosen-default" tabindex="-1"><span>Toda España</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off"></div><ul class="chosen-results"></ul></div></div>
+    		</div>
+
+       <div class="form-select form-select-disabled" style="display:none;" id="paisesDiv">
+      	<select disabled="disabled" name="of_pais" id="of_pais" tabindex="-1" data-placeholder="En todo el extranjero">
+      		<option value="0" selected="selected">En todo el extranjero</option>
+    							</select>
+    		                 </div>
+
+    		             </li>
+
+    		             <li class="search-field search-submit-field js-show-field">
+    		             	<button type="submit" id="searchOffers" class="btn btn-primary-alternative btn-form-inline" onclick="javascript:prepareSearch(); return true;" title="Buscar trabajo con mis preferencias">Buscar</button>
+    		             </li>
+    		       </ul>
+    		       <input type="hidden" value="0" name="canal" id="canal">
+    		       <input type="hidden" value="0" name="origen_busqueda" id="origen_busqueda">
+    	           <input type="hidden" value="0" name="origen_accion" id="origen_accion">
+    	           <input type="hidden" value="false" name="vieneUrlExecutive">
+    		 </fieldset>
+    	</form>
+    </div>
+
+
+
+
+    <section class="media-board panel-canvas">
+			<div class="item item1 effect-image js-media-board-item" style="background-image: url('//media.infojobs.net/appgrade/backgrounds/bg-header-grid-01-it.jpg');">
+				<a href="/candidate/registration/registration-index.xhtml?dgv=2261937097655688910" id="header-grid-anchor-item1" onclick="xt_click(this,'C', infojobs.pageConfig.getXitiPortalLevelTwo(), 'hnl_carousel_go_to_registration','N');">
+					<div class="gradient">
+						<div class="caption">
+							<h1 class="title">Trova il tuo nuovo <strong>lavoro su InfoJobs</strong></h1>
+							<p class="description link-underline">Registrati gratis</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="item-group clearfix">
+
+				<div class="item item2 effect-image js-media-board-item" style="background-image: url('//media.infojobs.net/appgrade/backgrounds/bg-header-grid-02-2-it.jpg');">
+
+
+
+					<a href="https://www.infojobs.it/lavoro/vinciconinfojobs/home" id="header-grid-anchor-item2" onclick="xt_click(this,'C', infojobs.pageConfig.getXitiPortalLevelTwo(), 'hnl_carousel_go_to_executive','N');">
+						<div class="caption">
+							<h2 class="title">Vinci con InfoJobs</h2>
+							<p class="description link-underline">Partecipa al concorso, 5.000€ in Buoni Shopping Unieuro in palio!</p>
+						</div>
+					</a>
+				</div>
+				<div class="item item3 effect-color">
+					<a href="http://app.infojobs.it
+" id="header-grid-anchor-item3" onclick="xt_click(this,'C', infojobs.pageConfig.getXitiPortalLevelTwo(), 'hnl_carousel_go_to_freelance','N');">
+						<div class="caption">
+							<h3 class="title">Scarica ora l'app di InfoJobs</h3>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
   </div>
 </div>
 
