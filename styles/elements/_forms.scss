@@ -1,3 +1,5 @@
+@import "forms-autocomplete";
+
 /*------------------------------------*\
     $FORMS
 \*------------------------------------*/
@@ -1221,19 +1223,6 @@ Styleguide #{$sgi-forms-strength-bar}
 
 	@at-root .search-bar #{&} ul {
 		display: block;
-	}
-}
-
-// autocomplete email
-$icons: gmail, hotmail, yahoo, outlook, libero;
-
-@each $mail-icon in $icons {
-	.autocompleteEmail-#{$mail-icon} a {
-  	padding-left: 30px;
-  	background-position: 0 center;
-  	background-repeat: no-repeat;
-  	background-size: 18px 18px;
-    background-image: url('#{$path-icons}/ico-#{$mail-icon}.png');
 	}
 }
 
