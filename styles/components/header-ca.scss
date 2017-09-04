@@ -13,11 +13,6 @@
 
 		background-image: none;
 		margin-top: 10px;
-
-		.logo span {
-			display: none;
-		}
-
 	}
 
 	h1 {
@@ -93,6 +88,7 @@
 			width: 130px;
 			margin: 0 auto;
 			padding: 10px 20px;
+			color: $shiro;
 			border: 0 none;
 
 			@include mediaquery ($bp-header) {
