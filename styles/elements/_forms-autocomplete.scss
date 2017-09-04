@@ -1,0 +1,13 @@
+// autocomplete email
+
+$icons: gmail, hotmail, yahoo, outlook, libero;
+
+@each $mail-icon in $icons {
+  .autocompleteEmail-#{$mail-icon} .autocomplete-icon {
+    background-image: url('#{$path-icons}/ico-#{$mail-icon}.png');
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    padding-left: 30px;
+	}
+}

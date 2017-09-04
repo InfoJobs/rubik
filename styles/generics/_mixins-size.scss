@@ -1,0 +1,68 @@
+@mixin font-xsmall-line { //p.xsmall
+  font-size: $xsmall-font-size;
+  line-height: $xsmall-line-height;
+}
+
+@mixin font-small-line { //p.small
+  font-size: $small-font-size;
+  line-height: $small-line-height;
+
+  @media print {
+    font-size: ($base-font-size / $point-to-px);
+    line-height: ($base-line-height / $point-to-px);
+  }
+}
+
+@mixin font-base-line { //p
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+
+  @media print {
+    font-size: ($base-font-size / $point-to-px);
+    line-height: ($base-line-height / $point-to-px);
+  }
+}
+
+@mixin font-medium-line { //h3
+  font-size: $medium-font-size;
+  line-height: $medium-line-height;
+}
+
+@mixin font-large-line {
+  font-size: $medium-font-size;
+  line-height: $medium-line-height;
+
+  @include mediaquery ($bp-desktop) {
+    font-size: $large-font-size;
+    line-height: $large-line-height;
+	}
+}
+
+@mixin font-xlarge-line {
+  line-height: $large-line-height;
+
+  @include mediaquery ($bp-desktop) {
+    font-size: $xlarge-font-size;
+    line-height: $xlarge-line-height;
+  }
+}
+
+@mixin font-xxlarge-line {
+  font-size: $xxlarge-font-size;
+  line-height: $xxlarge-line-height;
+
+  @media print {
+    font-size: 22.5pt;
+    line-height: 23.5pt;
+	}
+}
+
+@mixin font-xxxlarge-line {
+  font-size: $xxxlarge-font-size;
+  line-height: $xxxlarge-line-height;
+
+  @media print {
+    font-size: 27pt;
+    line-height: 28pt;
+  }
+}
