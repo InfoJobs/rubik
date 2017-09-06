@@ -10,7 +10,7 @@
       elNotificationAdvice = document.querySelectorAll('.js-notification-advice');
       if (elNotificationAdvice.length > 0) {
         [].forEach.call( elNotificationAdvice, function( target ){
-          target.firstElementChild.classList.remove('is-closed');
+            target.firstElementChild.classList.remove('is-closed');
           notificationClose = target.querySelector('.js-notification-close');
 
           notificationClose.addEventListener('click', function() {
@@ -38,21 +38,49 @@
           notificationClose = target.querySelector('.js-notification-close');
 
           notificationClose.addEventListener('click', function() {
-            target.firstElementChild.style.height = '0';
-            target.firstElementChild.style.borderBottom = '0 none';
-            }
-          );
+              hideNotification(target);
+          });
+
+          window.addEventListener('hideToast', function() {
+              hideNotification(target);
+          });
 
         });
       }
     }
 
+    function hideNotification(target) {
+        target.firstElementChild.style.height = '0';
+        target.firstElementChild.style.borderBottom = '0 none';
+    }
+
+    function isFixed() {
+    	var notificationFixed = document.querySelectorAll('.js-notification-toast');
+    	var scrollY = window.pageYOffset;
+
+		[].forEach.call( notificationFixed, function( target ){
+			if(scrollY > 10) {
+				target.firstElementChild.classList.add('is-fixed');
+			} else {
+				target.firstElementChild.classList.remove('is-fixed');
+			}
+		});
+    }
+
+    window.addEventListener('showToast', function() {
+      adviceNotification();
+      toastNotification();
+      isFixed();
+    });
+
     window.addEventListener('load', function() {
       adviceNotification();
       toastNotification();
+      isFixed();
     });
-    window.addEventListener('resize', function() {
-      toastNotification();
+
+    window.addEventListener('scroll', function() {
+    	isFixed();
     });
 
 })();

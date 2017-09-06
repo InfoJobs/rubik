@@ -66,6 +66,10 @@ Styleguide #{$sgi-helpers}
 .text-center {
 	text-align: center;
 
+  svg {
+    margin: 0 auto;
+  }
+
 	.centered {
 		display: inline-block;
 	}
@@ -314,6 +318,7 @@ Styleguide #{$sgi-helpers}
   top: 0;
   width: 100%;
   z-index: $zindex-sticky-content;
+  margin-top: 0;
 
   @media print {
     position: static;

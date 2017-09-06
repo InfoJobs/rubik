@@ -131,10 +131,6 @@ Styleguide #{$sgi-textContrastColors}
 .contrast,
 .contrast[class*="iconfont-"]::before {
 	color: $shiro;
-
-  @media print {
-    color: $dark;
-  }
 }
 .contrast {
 
