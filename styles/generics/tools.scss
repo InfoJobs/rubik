@@ -66,6 +66,10 @@ Styleguide #{$sgi-helpers}
 .text-center {
 	text-align: center;
 
+  svg {
+    margin: 0 auto;
+  }
+
 	.centered {
 		display: inline-block;
 	}
@@ -106,16 +110,7 @@ Styleguide #{$sgi-helpers}
 
 //Use to add clickable area
 .hit-area {
-	position: relative;
-
-	&::after {
-		position: absolute;
-		top: -5px;
-		right: -5px;
-		bottom: -5px;
-		left: -5px;
-		content: "";
-	}
+  @include hit-area;
 }
 
 .pull-end {
@@ -323,6 +318,7 @@ Styleguide #{$sgi-helpers}
   top: 0;
   width: 100%;
   z-index: $zindex-sticky-content;
+  margin-top: 0;
 
   @media print {
     position: static;

@@ -5,16 +5,18 @@ var floatMenu = document.querySelector('.js-menu-float');
 var eFloatMenuItem = document.querySelectorAll('.js-nav-float > li');
 var eMainMenuItem = document.querySelectorAll('.js-main-menu li');
 var eSubMenu = document.querySelectorAll('.js-submenu');
+var scrollMenuFloat = document.querySelector('.js-menu-float .nav-float');
 
 //scroll float menu fixed
 function floatMenuFixed() {
 
     if ($(this).scrollTop() > offset) {
          floatMenu.classList.add('fixed');
+         scrollMenuFloat.style.height = window.innerHeight + 'px';
      } else {
          floatMenu.classList.remove('fixed');
+         scrollMenuFloat.style.height = 'auto';
      }
-
 };
 
 // If url active menu

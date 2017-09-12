@@ -522,11 +522,9 @@
 
 //close-animate, need the height in px at element that will have the transition
 .close-animate {
-		height: 0;
-		overflow: hidden;
+  @include close-animate;
+}
 
-	  -webkit-transition: height .6s ease-in-out;
-	       -o-transition: height .6s ease-in-out;
-	          transition: height .6s ease-in-out;
-
+.close-fixed-bottom {
+  @include close-fixed-bottom;
 }

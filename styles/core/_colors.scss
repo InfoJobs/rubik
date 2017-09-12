@@ -70,7 +70,7 @@ a.alternative-action:hover {
 .highlight {
 	padding: 2px 5px;
 	background-color:$stabilo;
-	color: set-notification-text-color($stabilo);
+	color: set-color-contrast($stabilo);
 
 	h1 & {
 		padding: 10px 5px 0 5px;
@@ -131,10 +131,6 @@ Styleguide #{$sgi-textContrastColors}
 .contrast,
 .contrast[class*="iconfont-"]::before {
 	color: $shiro;
-
-  @media print {
-    color: $dark;
-  }
 }
 .contrast {
 

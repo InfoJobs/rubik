@@ -7,50 +7,52 @@ Notifications
 
 Contextual notifications for messages.
 
-The modifier classes are `.notification-error` for errors, `.notification-success` for success,  `.notification-info` for information and `.notification-warning` for warnings.<br>
+The modifier classes are `.notification-error` for errors, `.notification-success` for success,  `.notification-system for information and `.notification-warning` for warnings.<br>
 Use class `.notification-dismissable` for notifications with close button.<br>
 Wrap in div with class `.notification-toast-fixed` to fix at top of the page, <a href="#{$sgp-notificationToast}" target="blank">#{$sgp-openPage}</a>
 
 Markup:
-<!-- Notification-->
-<div class="notification notification-info">
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
-</div>
-<!-- /Notification-->
+<!-- Notification succes-->
+  <div class="notification-success" role="alert">
+    <div class="notification-body">
+      <span class="notification-icon iconfont-Big-check"></span>
+      <p>Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
+      <button class="notification-close js-notification-close" type="button" aria-label="Close"><span aria-hidden="true" hidden>Close</span></button>
+    </div>
+  </div>
+<!-- /Notification success-->
 <div class="container-expanded">
 <!-- Notification error -->
-<div class="notification notification-error notification-dismissable">
-	<button class="btn-close" type="button">x</button>
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
+<div class="notification-error" role="alert">
+  <div class="notification-body">
+    <span class="notification-icon iconfont-Alert"></span>
+    <p>Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.</p>
+    <button class="notification-close js-notification-close" type="button" aria-label="Close"><span aria-hidden="true" hidden>Close</span></button>
+  </div>
 </div>
 <!-- /Notification error -->
 </div>
 <div class="container-expanded">
-<!-- Notification success -->
-<div class="notification notification-success notification-dismissable">
-	<button class="btn-close" type="button">x</button>
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
-</div>
-<!-- /Notification success -->
-</div>
-<div class="container-expanded">
-<!-- Notification info -->
-<div class="notification notification-info notification-dismissable">
-	<button class="btn-close" type="button">x</button>
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
+<!-- Notification system -->
+<div class="notification-system" role="alert">
+  <div class="notification-body">
+    <p>Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
+    <button class="notification-close js-notification-close" type="button" aria-label="Close"><span aria-hidden="true" hidden>Close</span></button>
+  </div>
 </div>
 <!-- /Notification info -->
 </div>
 <div class="container-expanded">
 <!-- Notification warning -->
-<div class="notification notification-warning notification-dismissable">
-	<button class="btn-close" type="button">x</button>
-	<p class="title">Lorem ipsum dolor sit</p>
-	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
+<div class="notification-warning" role="alert">
+  <div class="notification-body">
+    <span class="notification-icon iconfont-Info"></span>
+    <p>Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget. <a href="#" class="link-underline">Link underline</a></p>
+    <button class="notification-close js-notification-close" type="button" aria-label="Close"><span aria-hidden="true" hidden>Close</span></button>
+  </div>
+  <div class="notification-footer">
+    <button class="btn-small btn-default-alternative" type="button">Secondary alternative</button>
+  </div>
 </div>
 <!-- /Notification warning -->
 </div>
@@ -58,104 +60,136 @@ Markup:
 Styleguide #{$sgi-notifications}
 */
 
-.notification {
-	color: $shiro;
-	padding: $padding;
-	font-size: $base-font-size;
-	line-height: $base-line-height; //revisar line-height
+$notifications: success $bamboo , system $outer-king, error $trueblood, warning $kiiro;
 
-  &.notification-icon {
-    padding-left: 35px;
-    position: relative;
+@mixin notification-fixed {
+  position: fixed;
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
 
-    &::before {
-      position: absolute;
-      top: $padding;
-      left: $padding/2;
+  .inner & {
+    margin-left: -10px;
+    @include mediaquery ($bp-tablet) {
+      margin-left: -20px;
     }
+  }
+}
+
+@mixin notification {
+  @include font-rendering;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  width: 100%;
+  z-index: $zindex-sticky-content;
+  overflow: hidden;
+}
+
+.notification {
+
+  &-body {
+    @include display-flex;
+    @include align-items(flex-start);
+    padding: $padding $padding 0 $padding;
+
+    &:only-child {
+      padding-bottom: $padding;
+    }
+
+    p {
+      @include flex(1 1 100%);
+      margin: 0;
+    }
+
+    a {
+      white-space: nowrap;
+    }
+  }
+
+  &-close {
+    @include btn-close;
+    @include flex(1 0 auto);
+    color: inherit;
+    margin-left: $padding/2;
+  }
+
+  &-icon {
+    display: none;
+
+    @include mediaquery($bp-tablet) {
+      @include flex(1 0 auto);
+      display: block;
+      margin-right: 5px;
+      color: inherit;
+      &::before {
+        color: inherit;
+      }
+    }
+  }
+
+  &-footer {
+    padding: $padding/2 $padding $padding $padding;
+    text-align: right;
 
   }
 
-	a,
-	a:hover,
-	a:focus {
-		color: $shiro;
-	}
+  @each $notification-type in $notifications {
+    $key: nth($notification-type, 1);
+    $value: nth($notification-type, 2);
 
-	.notification-toast & {
-		opacity: .9;
-	}
+    &-#{$key} {
+      @include notification;
+      background: $value;
+      color: set-color-contrast($value);
 
-  .notification-toast-fixed & {
-    position: fixed;
-    width: 100%;
-    max-width: $container-width;
-    top: 0;
+      a,
+      a:hover,
+      a:focus {
+        color: set-color-contrast($value);
+      }
+    }
+  }
 
-		@include mediaquery ($bp-tablet) {
+  &-toast,
+  &-advise {
+    position: relative;
+    z-index: $zindex-notification;
+    margin-top: -$padding/2;
 
-			margin: 0 10px;
+    @include mediaquery ($bp-tablet) {
+      margin-top: $padding/2;
+    }
+  }
 
-		}
+  @at-root .notification-toast > [class*="notification-"] {
+    @include close-animate;
+    position: absolute;
+    transition: height .5s;
 
-		@include mediaquery ($bp-tablet) {
+    &.is-fixed {
+      @include notification-fixed;
+      opacity: .9;
+      top: 0;
+    }
+  }
 
-			margin: 0 auto;
+  @at-root .notification-advice > [class*="notification-"] {
+    opacity: .9;
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
 
-		}
-	}
-}
+    &.is-fixed {
+      @include notification-fixed;
+      opacity: .9;
+      bottom: 0;
+      transition: bottom .5s;
+    }
 
-.notification-toast {
-  position: relative;
-  z-index: $zindex-notification;
-}
+    &.is-closed {
+      @include close-fixed-bottom;
+    }
+  }
 
-.notification .btn-close { //TODO: update for font-icons
-	color: inherit;
-	position: absolute;
-	right: 15px;
-	top: 10px;
-}
-
-.notification .title {
-  @include bold;
-	margin-bottom: 5px;
-	font-size: 20px;
-	line-height: 100%;
-	color: $shiro;
-}
-
-.notification-error {
-	background: $trueblood;
-}
-
-.notification-success {
-	background: $bamboo;
-
-}
-
-.notification-info {
-	background: $outer-king;
-}
-
-/*TODO: var to be defined*/
-.notification-warning {
-	color: $dark-silk;
-	background: #e1a900;
-
-	a,
-	a:hover,
-	a:focus {
-		color: $dark-silk;
-	}
-
-	.title {
-		color: $dark-silk;
-	}
-}
-
-.notification-dismissable {
-	position: relative;
-	padding-right: 70px;
+  @media print {
+    display: none;
+  }
 }

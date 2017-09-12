@@ -28,7 +28,7 @@
     returnOffset(stickyElementDesktop);
 
     function returnOffset(e) {
-      if(e !== null) {
+      if(isValidElement(e)) {
         var topPos;
 
         for(var i = 0; i < e.length ; i++ ) {
@@ -58,11 +58,11 @@
 
   function sticky() {
 
-    if(stickyElement !== null) {
+    if(stickyElement !== null && typeof stickyElement !== 'undefined') {
       makeMeSticky(stickyElement);
     }
 
-    if(window.innerWidth > 768 && stickyElementDesktop !== null) {
+    if(window.innerWidth > 768 && stickyElementDesktop !== null && typeof stickyElementDesktop !== 'undefined') {
       makeMeSticky(stickyElementDesktop);
     }
 
@@ -73,6 +73,10 @@
     }
 
     function makeMeSticky(el) {
+    	if (el == undefined) {
+    		return;
+    	}
+
         for(var i = 0; i < el.length ; i++ ) {
         	scrollY = window.pageYOffset;
         	var widthParent = el[i].parentElement.clientWidth;
@@ -95,21 +99,18 @@
   }
 
   function scrollSideBar() {
+	  	if (typeof elScrollable === 'undefined') {
+	  		return;
+	  	}
 	    [].forEach.call( elScrollable, function( target ){
-	    	target.style.height = 'auto';
-	        var topSide = 0;
+          target.style.height = 'auto';
 	        for(var i = 0; i < stickyElementDesktop.length ; i++ ) {
 	          heightSide = stickyElementDesktop[i].clientHeight;
-	          topSide = stickyElementDesktop[i].getBoundingClientRect().top;
 	        }
 	        heightElScrollable = target.clientHeight;
-	        if(stickyElementDesktop.length < 0) {
-	          totalViewport = window.innerHeight - topSide;
-	        } else {
-	          totalViewport = window.innerHeight;
-	        }
-	        if (heightSide > totalViewport - topSide && window.innerWidth > 768) {
-	          target.style.height = totalViewport - topSide - (heightSide - heightElScrollable) - parseInt(styleContainer().marginTop, 10) + 'px';
+	        totalViewport = window.innerHeight;
+	        if (heightSide > totalViewport && window.innerWidth > 768){
+            target.style.height = totalViewport - (heightSide - heightElScrollable) - parseInt(styleContainer().marginTop, 10) + 'px';
 	          target.style.overflowY = 'auto';
 	        }
 	        if(target.parentNode != null && target.parentNode.onclick == null){
@@ -129,9 +130,10 @@
 	    var elScrollableHeight = elScrollable.getBoundingClientRect().height;
 
 	    if(window.innerWidth > 768) {
-	      if(pageYOffset - (elScrollableParent - elScrollableHeight) - parseInt(elScrollable.style.top, 10) >= 0) {
+        var marginTop = (elScrollableParent - elScrollableHeight);
+	      if(pageYOffset - marginTop - parseInt(elScrollable.style.top, 10) >= 0) {
 	        elScrollable.classList.remove('sticky');
-	        elScrollable.style.marginTop = elScrollableParent - elScrollableHeight + 'px';
+	        elScrollable.style.marginTop = marginTop + 'px';
 	      } else {
 	        elScrollable.classList.add('sticky');
 	        elScrollable.style.marginTop = 'inherit';
@@ -167,11 +169,14 @@
 	  var element = document.querySelector('.js-scroll-bottom');
 
 	  if (typeof(element) != 'undefined' && element != null) {
-		  var elementTop = document.querySelector('#conversation-detail-element-ul');
-		  element.scrollTop = elementTop.offsetHeight;
-
+		  var elementTop = document.querySelector('.js-conversation-panel');
+      element.scrollTop = elementTop.offsetHeight;
 	  }
 
+  }
+
+  function isValidElement(element) {
+	  return element != null && typeof(element) != 'undefined' && element.length > 0
   }
 
   window.addEventListener("load", function() {
