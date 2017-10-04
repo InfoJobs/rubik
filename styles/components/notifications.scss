@@ -168,18 +168,15 @@ $notifications: success $bamboo , system $outer-king, error $trueblood, warning 
 
     &.is-fixed {
       @include notification-fixed;
-      opacity: .9;
       top: 0;
     }
   }
 
   @at-root .notification-advice > [class*="notification-"] {
-    opacity: .9;
     border-top: 1px solid rgba(0, 0, 0, 0.4);
 
     &.is-fixed {
       @include notification-fixed;
-      opacity: .9;
       bottom: 0;
       transition: bottom .5s;
     }
