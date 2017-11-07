@@ -14,7 +14,6 @@
 	}
 
 	&-details {
-		color: $mid-script;
 		text-align: center;
 
 		&.list-default > li {
@@ -141,12 +140,11 @@
 
 	a {
 		display: inline-block;
-		color: $outer-pawn;
+		color: $dark-silk;
 	}
 
 	a:hover {
 		text-decoration: underline;
-		color: $outer-king;
 	}
 
 	&::after {
@@ -214,7 +212,6 @@
 		@include inner;
 		display: block;
 		text-align: center;
-		color: $outer-pawn;
 
 		&-sites {
 			overflow: visible;
@@ -264,11 +261,10 @@
 		}
 
 		a {
-			color: $outer-pawn;
+			color: $dark-silk;
 
 			&:hover {
 				text-decoration: underline;
-				color: $outer-king;
 			}
 		}
 	}
