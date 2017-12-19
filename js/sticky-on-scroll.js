@@ -73,9 +73,9 @@
     }
 
     function makeMeSticky(el) {
-    	if (el == undefined) {
-    		return;
-    	}
+        if (el == undefined) {
+      		return;
+      	}
 
         for(var i = 0; i < el.length ; i++ ) {
         	scrollY = window.pageYOffset;
@@ -102,12 +102,13 @@
 	  	if (typeof elScrollable === 'undefined') {
 	  		return;
 	  	}
-	    [].forEach.call( elScrollable, function( target ){
+
+    [].forEach.call( elScrollable, function( target ){
           target.style.height = 'auto';
 	        for(var i = 0; i < stickyElementDesktop.length ; i++ ) {
 	          heightSide = stickyElementDesktop[i].clientHeight;
 	        }
-	        heightElScrollable = target.clientHeight;
+	        heightElScrollable = document.getElementById('conversation-detail-element-ul').clientHeight - posStickyTop;
 	        totalViewport = window.innerHeight;
 	        if (heightSide > totalViewport && window.innerWidth > 768){
             target.style.height = totalViewport - (heightSide - heightElScrollable) - parseInt(styleContainer().marginTop, 10) + 'px';
@@ -120,6 +121,7 @@
 	      	 }
 	        }
 		  });
+
   }
 
   function stopSticker() {
