@@ -108,7 +108,7 @@
 	        for(var i = 0; i < stickyElementDesktop.length ; i++ ) {
 	          heightSide = stickyElementDesktop[i].clientHeight;
 	        }
-	        heightElScrollable = document.querySelector('#conversation-detail-element-ul').clientHeight - posStickyTop;
+	        heightElScrollable = document.getElementById('conversation-detail-element-ul').clientHeight - posStickyTop;
 	        totalViewport = window.innerHeight;
 	        if (heightSide > totalViewport && window.innerWidth > 768){
             target.style.height = totalViewport - (heightSide - heightElScrollable) - parseInt(styleContainer().marginTop, 10) + 'px';
