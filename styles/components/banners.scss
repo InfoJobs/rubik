@@ -12,7 +12,7 @@ Styleguide 2
 /*
 Banners's containers
 
-Add class `.wrapper-slotbanner` and `half-page-ad` to the wrapper container, to specify that the page contain banners positions.
+Add class `.wrapper-slotbanner` and `wrapper-l` to the wrapper container, to specify that the page contain banners positions.
 
 Wrap the container with `.slotbanner` to include the banner top position. Include `.slotbanner-top` inside it and add `.container-slotbanner` class to the container, to position the page to the left.
 <br><br>
@@ -24,7 +24,7 @@ In case of Brand Bay campaign add `.slotbanner-top-brandday` to `.slotbanner-top
 <br><br>
 
 Markup:
-<div class="wrapper wrapper-slotbanner half-page-ad casper">
+<div class="wrapper wrapper-slotbanner wrapper-l casper">
 	<div class="slotbanner">
 		<div class="slotbanner-top">
 			<!-- banner code -->
@@ -100,13 +100,13 @@ Styleguide #{$sgi-bannersContainers}
 	max-width: 970px;
 }
 
-.half-page-ad .slotbanner {
+.wrapper-l .slotbanner {
 	max-width: 1280px;
 }
 
 @media only screen and (max-width: 1255px) {
 
-.wrapper-slotbanner.half-page-ad {
+.wrapper-slotbanner.wrapper-l {
 
 		.slotbanner-aside {
 			display: none;
