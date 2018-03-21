@@ -344,23 +344,3 @@ Styleguide #{$sgi-modal-content}
 		position: fixed;
 	}
 }
-
-.modal-pagination {
-	li {
-		display: inline-block;
-
-		&::before {
-			content: " ";
-			display: inline-block;
-			width: 10px;
-			height: 10px;
-			margin-right: 5px;
-			border: 1px solid #55799A;
-			border-radius: 5px;
-		}
-
-		&.active::before {
-			background-color: #55799A;
-		}
-	}
-}

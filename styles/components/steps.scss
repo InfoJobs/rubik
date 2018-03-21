@@ -11,6 +11,7 @@ Markup:
 	<li>2. Step Two</li>
 </ol>
 
+Styleguide #{$sgi-steps}
 */
 
 .steps {
@@ -47,4 +48,45 @@ Markup:
 	            justify-content: center;
 	}
 
+  &--bullet {
+    text-align: center;
+
+    li {
+      display: inline-block;
+
+      &::before {
+        border: 1px solid $theme-color-primary;
+        border-radius: 5px;
+        content: ' ';
+        display: inline-block;
+        height: 10px;
+        margin-right: 5px;
+        width: 10px;
+      }
+
+      &.active::before {
+        background-color: $theme-color-primary;
+  		}
+  	}
+
+    span {
+      display: none;
+    }
+  }
+
+
 }
+
+/*
+Steps bullet
+
+Markup:
+<ol class="steps--bullet">
+  <li><span>1</span></li>
+  <li class="active"><span>2</span></li>
+  <li><span>3</span></li>
+  <li><span>4</span></li>
+</ol>
+
+Styleguide #{$sgi-steps-bullet}
+*/
