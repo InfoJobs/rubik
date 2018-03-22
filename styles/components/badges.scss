@@ -30,6 +30,7 @@ Styleguide #{$sgi-badges}
 */
 
 @mixin badge {
+  align-self: flex-start;
   display: inline-table;
   font-family: $base-font-family;
   font-size: $small-font-size;
