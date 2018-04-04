@@ -38,7 +38,6 @@ Styleguide #{$sgi-iconsList}
 [class*=" iconfont-"]::before,
 [class^="iconfont-"]::after,
 [class*=" iconfont-"]::after {
-	@include iconfont;
 	top: 3px; // font-size base medium
 }
 
