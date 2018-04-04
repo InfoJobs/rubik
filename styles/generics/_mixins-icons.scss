@@ -2,60 +2,294 @@
 $MIXINS ICONS
 \*------------------------------------*/
 
-@mixin iconfont {
-	position: relative;
-	font-family: 'Icons';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 0;
-	left: 0;
-	color: $soft-script;
+@mixin iconfont($icon: "") {
+  &:before {
+    @include font-rendering;
+  	color: $soft-script;
+  	content: $icon;
+  	font-family: 'Icons';
+  	font-style: normal;
+  	font-variant: normal;
+  	font-weight: normal;
+    left: 0;
+  	line-height: 0;
+  	position: relative;
+  	speak: none;
+	  text-transform: none;
+  }
 
-	/* Better Font Rendering =========== */
-  @include font-rendering;
+}
+
+@mixin iconfont-ArrowDown {
+  @include iconfont("\e600");
+}
+
+@mixin iconfont-ArrowLeft {
+  @include iconfont("\e601");
+}
+
+@mixin iconfont-ArrowUp {
+  @include iconfont("\e602");
+}
+
+@mixin iconfont-Calendar {
+  @include iconfont("\e605");
+}
+
+@mixin iconfont-Candidaturas {
+  @include iconfont("\e606");
+}
+
+@mixin iconfont-Category {
+  @include iconfont("\e607");
+}
+
+@mixin iconfont-Check {
+  @include iconfont("\e608");
+}
+
+@mixin iconfont-Clock {
+  @include iconfont("\e609");
+}
+
+@mixin iconfont-Company {
+  @include iconfont("\e60b");
+}
+
+@mixin iconfont-Config {
+  @include iconfont("\e60c");
+}
+
+@mixin iconfont-CV {
+  @include iconfont("\e60d");
+}
+
+@mixin iconfont-Euro {
+  @include iconfont("\e60e");
+}
+
+@mixin iconfont-Facebook {
+  @include iconfont("\e60f");
+}
+
+@mixin iconfont-GooglePlus {
+  @include iconfont("\e610");
+}
+
+@mixin iconfont-Location {
+  @include iconfont("\e611");
+}
+
+@mixin iconfont-Mail {
+  @include iconfont("\e612");
+}
+
+@mixin iconfont-Reload {
+  @include iconfont("\e613");
+}
+
+@mixin iconfont-Search {
+  @include iconfont("\e614");
+}
+
+@mixin iconfont-State {
+  @include iconfont("\e615");
+}
+
+@mixin iconfont-Suitecase {
+  @include iconfont("\e616");
+}
+
+@mixin iconfont-Twitter {
+  @include iconfont("\e617");
+}
+
+@mixin iconfont-User {
+  @include iconfont("\e618");
+}
+
+@mixin iconfont-LinkedIn {
+  @include iconfont("\e619");
+}
+
+@mixin iconfont-Viewdetails {
+  @include iconfont("\e61a");
+}
+
+@mixin iconfont-EditCv {
+  @include iconfont("\e61b");
+}
+
+@mixin iconfont-Home {
+  @include iconfont("\e61c");
+}
+
+@mixin iconfont-QR {
+  @include iconfont("\e61d");
+}
+
+@mixin iconfont-Config-alt {
+  @include iconfont("\e61e");
+}
+
+@mixin iconfont-Edit {
+  @include iconfont("\e61f");
+}
+
+@mixin iconfont-Help {
+  @include iconfont("\e620");
+}
+
+@mixin iconfont-Info {
+  @include iconfont("\e621");
+}
+
+@mixin iconfont-Plus {
+  @include iconfont("\e622");
+}
+
+@mixin iconfont-Smile {
+  @include iconfont("\e623");
+}
+
+@mixin iconfont-Wifi {
+  @include iconfont("\e624");
+}
+
+@mixin iconfont-Alert {
+  @include iconfont("\e625");
+}
+
+@mixin iconfont-Connect {
+  @include iconfont("\e626");
+}
+
+@mixin iconfont-AlertProfile {
+  @include iconfont("\e627");
+}
+
+@mixin iconfont-Hide {
+  @include iconfont("\e628");
+}
+
+@mixin iconfont-News {
+  @include iconfont("\e629");
+}
+
+@mixin iconfont-Flag {
+  @include iconfont("\e62a");
+}
+
+@mixin iconfont-Offers {
+  @include iconfont("\e62b");
+}
+
+@mixin iconfont-BigArrowDown {
+  @include iconfont("\e62d");
+}
+
+@mixin iconfont-BigArrowLeft {
+  @include iconfont("\e62e");
+}
+
+@mixin iconfont-BigArrowUp {
+  @include iconfont("\e62f");
+}
+
+@mixin iconfont-BigArrowRight {
+  @include iconfont("\e630");
+}
+
+@mixin iconfont-BigArrowObliqueLeftDown {
+  @include iconfont("\e631");
+}
+
+@mixin iconfont-BigArrowObliqueRightDown {
+  @include iconfont("\e632");
+}
+
+@mixin iconfont-BigArrowObliqueLeftUp {
+  @include iconfont("\e633");
+}
+
+@mixin iconfont-BigArrowObliqueRightUp {
+  @include iconfont("\e634");
+}
+
+@mixin iconfont-Star {
+  @include iconfont("\e635");
+}
+
+@mixin iconfont-Lock  {
+  @include iconfont("\e636");
+}
+
+@mixin iconfont-Alert-circle  {
+  @include iconfont("\e638");
+}
+
+@mixin iconfont-Save  {
+  @include iconfont("\e639");
 }
 
 @mixin iconfont-BurguerMenu {
-	@include iconfont;
-
-	&::before {
-		content: "\e604";
-	}
+  @include iconfont("\e604");
 }
 
 @mixin iconfont-Close {
-	@include iconfont;
-
-	&::before {
-		content: "\e60a";
-	}
+  @include iconfont("\e60a");
 }
 
-@mixin iconfont-Menumore{
-
-	&::before {
-    @include iconfont;
-    content: "\e637";
-	}
+@mixin iconfont-Menumore {
+  @include iconfont("\e637");
 }
 
 @mixin iconfont-Big-check {
-
-	&::before {
-    @include iconfont;
-    content: "\e62c";
-	}
+  @include iconfont("\e62c");
 }
 
-
 @mixin iconfont-Arrow {
+  @include iconfont("\e603");
+}
 
-	&::before {
-		content: "\e603";
-	}
+@mixin iconfont-SaveAs {
+  @include iconfont("\e63a");
+}
+
+@mixin iconfont-OneTime {
+  @include iconfont("\e63b");
+}
+
+@mixin iconfont-Applications {
+  @include iconfont("\e63c");
+}
+
+@mixin iconfont-Attach {
+  @include iconfont("\e63d");
+}
+
+@mixin iconfont-Phone {
+  @include iconfont("\e63e");
+}
+
+@mixin iconfont-Website {
+  @include iconfont("\e63f");
+}
+
+@mixin iconfont-Camera {
+  @include iconfont("\e640");
+}
+
+@mixin iconfont-Image {
+  @include iconfont("\e641");
+}
+
+@mixin iconfont-PinReset {
+  @include iconfont("\e642");
+}
+
+@mixin iconfont-CallCenter {
+  @include iconfont("\e900");
 }
 
 //
