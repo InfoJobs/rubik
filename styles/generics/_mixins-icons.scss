@@ -5,17 +5,17 @@ $MIXINS ICONS
 @mixin iconfont($icon: "") {
   &:before {
     @include font-rendering;
-  	color: $soft-script;
-  	content: $icon;
-  	font-family: 'Icons';
-  	font-style: normal;
-  	font-variant: normal;
-  	font-weight: normal;
+    color: $soft-script;
+    content: $icon;
+    font-family: 'Icons';
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
     left: 0;
-  	line-height: 0;
-  	position: relative;
-  	speak: none;
-	  text-transform: none;
+    line-height: 0;
+    position: relative;
+    speak: none;
+    text-transform: none;
   }
 
 }
