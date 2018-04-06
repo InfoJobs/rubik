@@ -38,7 +38,6 @@ Styleguide #{$sgi-iconsList}
 [class*=" iconfont-"]::before,
 [class^="iconfont-"]::after,
 [class*=" iconfont-"]::after {
-	@include iconfont;
 	top: 3px; // font-size base medium
 }
 
@@ -257,209 +256,280 @@ $icon-size: (30,50); //TODO: resolve problem when it s moved to _vars
 
 //Icon types
 
-.iconfont-ArrowDown::before {
-    content: "\e600";
-}
-.iconfont-ArrowLeft::before {
-    content: "\e601";
-}
-.iconfont-ArrowUp::before {
-    content: "\e602";
-}
-.iconfont-Arrow {
-	@include iconfont-Arrow;
-}
-.iconfont-BurguerMenu {
-	@include iconfont-BurguerMenu;
-}
-.iconfont-Calendar::before {
-    content: "\e605";
-}
-.iconfont-Candidaturas::before {
-    content: "\e606";
-}
-.iconfont-Category::before {
-    content: "\e607";
-}
-.iconfont-Check::before {
-    content: "\e608";
-}
-.iconfont-Clock::before {
-    content: "\e609";
-}
-.iconfont-Close::before {
-    content: "\e60a";
-}
-.iconfont-Company::before {
-    content: "\e60b";
-}
-.iconfont-Config::before {
-    content: "\e60c";
-}
-.iconfont-CV::before {
-    content: "\e60d";
-}
-.iconfont-Euro::before {
-    content: "\e60e";
-}
-.iconfont-Facebook::before {
-    content: "\e60f";
-}
-.iconfont-GooglePlus::before {
-    content: "\e610";
-}
-.iconfont-Location::before {
-    content: "\e611";
-}
-.iconfont-Mail::before {
-    content: "\e612";
-}
-.iconfont-Reload::before {
-    content: "\e613";
-}
-.iconfont-Search::before {
-    content: "\e614";
-}
-.iconfont-State::before {
-    content: "\e615";
-}
-.iconfont-Suitecase::before {
-    content: "\e616";
-}
-.iconfont-Twitter::before {
-    content: "\e617";
-}
-.iconfont-User::before {
-    content: "\e618";
-}
-.iconfont-LinkedIn::before {
-    content: "\e619";
-}
-.iconfont-Viewdetails::before {
-    content: "\e61a";
-}
-.iconfont-EditCv::before {
-    content: "\e61b";
-}
-.iconfont-Home::before {
-    content: "\e61c";
-}
-.iconfont-QR::before {
-    content: "\e61d";
-}
-.iconfont-Config-alt::before {
-    content: "\e61e";
-}
-.iconfont-Edit::before {
-    content: "\e61f";
-}
-.iconfont-Help::before {
-    content: "\e620";
-}
-.iconfont-Info::before {
-    content: "\e621";
-}
-.iconfont-Plus::before {
-    content: "\e622";
-}
-.iconfont-Smile::before {
-    content: "\e623";
-}
-.iconfont-Wifi::before {
-    content: "\e624";
-}
-.iconfont-Alert::before {
-    content: "\e625";
-}
-.iconfont-Connect::before {
-    content: "\e626";
-}
-.iconfont-AlertProfile::before {
-    content: "\e627";
-}
-.iconfont-Hide::before {
-    content: "\e628";
-}
-.iconfont-News::before {
-    content: "\e629";
-}
-.iconfont-Flag::before {
-    content: "\e62a";
-}
-.iconfont-Offers::before {
-    content: "\e62b";
-}
-.iconfont-Big-check {
-	@include iconfont-Big-check;
-}
-.iconfont-BigArrowDown::before {
-    content: "\e62d";
-}
-.iconfont-BigArrowLeft::before {
-    content: "\e62e";
-}
-.iconfont-BigArrowUp::before {
-    content: "\e62f";
-}
-.iconfont-BigArrowRight::before {
-    content: "\e630";
-}
-.iconfont-BigArrowObliqueLeftDown::before {
-    content: "\e631";
-}
-.iconfont-BigArrowObliqueRightDown::before {
-    content: "\e632";
-}
-.iconfont-BigArrowObliqueLeftUp::before {
-    content: "\e633";
-}
-.iconfont-BigArrowObliqueRightUp::before {
-    content: "\e634";
-}
-.iconfont-Star::before {
-    content: "\e635";
-}
-.iconfont-Lock::before {
-    content: "\e636";
-}
-.iconfont-Menumore::before {
-  @include iconfont-Menumore;
-}
-.iconfont-Alert-circle::before {
-    content: "\e638";
-}
-.iconfont-Save::before {
-    content: "\e639";
-}
-.iconfont-SaveAs::before {
-    content: "\e63a";
-}
-.iconfont-OneTime::before {
-    content: "\e63b";
-}
-.iconfont-Applications::before {
-    content: "\e63c";
-}
-.iconfont-Attach::before {
-    content: "\e63d";
-}
-.iconfont-Phone::before {
-    content: "\e63e";
-}
-.iconfont-Website::before {
-    content: "\e63f";
-}
-.iconfont-Camera::before {
-    content: "\e640";
-}
-.iconfont-Image::before {
-    content: "\e641";
-}
-.iconfont-PinReset::before {
-    content: "\e642";
-}
-.iconfont-CallCenter::before {
-    content: "\e900";
+.iconfont {
+
+  &-ArrowDown {
+    @include iconfont-ArrowDown;
+  }
+
+  &-ArrowLeft {
+    @include iconfont-ArrowLeft;
+  }
+
+  &-ArrowUp {
+    @include iconfont-ArrowUp;
+  }
+
+  &-Arrow {
+	  @include iconfont-Arrow;
+  }
+
+  &-BurguerMenu {
+  	@include iconfont-BurguerMenu;
+  }
+
+  &-Calendar {
+    @include iconfont-Calendar;
+  }
+
+  &-Candidaturas {
+    @include iconfont-Candidaturas;
+  }
+
+  &-Category {
+    @include iconfont-Category;
+  }
+
+  &-Check {
+    @include iconfont-Check;
+  }
+
+  &-Clock {
+    @include iconfont-Clock;
+  }
+
+  &-Close {
+    @include iconfont-Close;
+  }
+
+  &-Company {
+    @include iconfont-Company;
+  }
+
+  &-Config {
+    @include iconfont-Config;
+  }
+
+  &-CV {
+    @include iconfont-CV;
+  }
+
+  &-Euro {
+    @include iconfont-Euro;
+  }
+
+  &-Facebook {
+    @include iconfont-Facebook;
+  }
+
+  &-GooglePlus {
+    @include iconfont-GooglePlus;
+  }
+
+  &-Location {
+    @include iconfont-Location;
+  }
+
+  &-Mail {
+    @include iconfont-Mail;
+  }
+
+  &-Reload {
+    @include iconfont-Reload;
+  }
+
+  &-Search {
+    @include iconfont-Search;
+  }
+
+  &-State {
+    @include iconfont-State;
+  }
+
+  &-Suitecase {
+    @include iconfont-Suitecase;
+  }
+
+  &-Twitter {
+    @include iconfont-Twitter;
+  }
+
+  &-User {
+    @include iconfont-User;
+  }
+
+  &-LinkedIn {
+    @include iconfont-LinkedIn;
+  }
+
+  &-Viewdetails {
+    @include iconfont-Viewdetails;
+  }
+
+  &-EditCv {
+    @include iconfont-EditCv;
+  }
+
+  &-Home {
+    @include iconfont-Home;
+  }
+
+  &-QR {
+    @include iconfont-QR;
+  }
+
+  &-Config-alt {
+    @include iconfont-Config-alt;
+  }
+
+  &-Edit {
+    @include iconfont-Edit;
+  }
+
+  &-Help {
+    @include iconfont-Help;
+  }
+
+  &-Info {
+    @include iconfont-Info;
+  }
+
+  &-Plus {
+    @include iconfont-Plus;
+  }
+
+  &-Smile {
+    @include iconfont-Smile;
+  }
+
+  &-Wifi {
+    @include iconfont-Wifi;
+  }
+
+  &-Alert {
+    @include iconfont-Alert;
+  }
+
+  &-Connect {
+    @include iconfont-Connect;
+  }
+
+  &-AlertProfile {
+    @include iconfont-AlertProfile;
+  }
+
+  &-Hide {
+    @include iconfont-Hide;
+  }
+
+  &-News {
+    @include iconfont-News;
+  }
+
+  &-Flag {
+    @include iconfont-Flag;
+  }
+
+  &-Offers {
+    @include iconfont-Offers;
+  }
+
+  &-Big-check {
+  	@include iconfont-Big-check;
+  }
+
+  &-BigArrowDown {
+    @include iconfont-BigArrowDown;
+  }
+
+  &-BigArrowLeft {
+    @include iconfont-BigArrowLeft;
+  }
+
+  &-BigArrowUp {
+    @include iconfont-BigArrowUp;
+  }
+
+  &-BigArrowRight {
+    @include iconfont-BigArrowRight;
+  }
+
+  &-BigArrowObliqueLeftDown {
+    @include iconfont-BigArrowObliqueLeftDown;
+  }
+
+  &-BigArrowObliqueRightDown {
+    @include iconfont-BigArrowObliqueRightDown;
+  }
+
+  &-BigArrowObliqueLeftUp {
+    @include iconfont-BigArrowObliqueLeftUp;
+  }
+
+  &-BigArrowObliqueRightUp {
+    @include iconfont-BigArrowObliqueRightUp;
+  }
+
+  &-Star {
+    @include iconfont-Star;
+  }
+
+  &-Lock {
+    @include iconfont-Lock;
+  }
+
+  &-Menumore {
+    @include iconfont-Menumore;
+  }
+
+  &-Alert-circle {
+    @include iconfont-Alert-circle;
+  }
+
+  &-Save {
+    @include iconfont-Save;
+  }
+
+  &-SaveAs {
+    @include iconfont-SaveAs;
+  }
+
+  &-OneTime {
+    @include iconfont-OneTime;
+  }
+
+  &-Applications {
+    @include iconfont-Applications;
+  }
+
+  &-Attach {
+    @include iconfont-Attach;
+  }
+
+  &-Phone {
+    @include iconfont-Phone;
+  }
+
+  &-Website {
+    @include iconfont-Website;
+  }
+
+  &-Camera {
+    @include iconfont-Camera;
+  }
+
+  &-Image {
+    @include iconfont-Image;
+  }
+
+  &-PinReset {
+    @include iconfont-PinReset;
+  }
+
+  &-CallCenter {
+    @include iconfont-CallCenter;
+  }
+
 }
 
 //icons svg
