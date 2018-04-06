@@ -97,7 +97,7 @@ Styleguide #{$sgi-iconsList}
 		color: $shiro;
 	}
 
-	@at-root .btn-group ^="btn-"]#{&} {
+	@at-root .btn-group [class^="btn-"]#{&} {
 		margin-right: 0;
 	}
 
@@ -530,13 +530,16 @@ $icon-size: (30,50); //TODO: resolve problem when it s moved to _vars
     @include iconfont-CallCenter;
   }
 
+  &-Whatsapp {
+    @include iconfont-Whatsapp;
+  }
 }
 
 //icons svg
 
 a[class^="Icon--"],
-a[class*=" Icon--"],
-a[class^="Icon--"],
+a[class^=" Icon--"],
+a[class*="Icon--"],
 a[class*=" Icon--"] {
 
     fill: #d1d8dc;
@@ -548,8 +551,24 @@ a[class*=" Icon--"] {
         display: none;
     }
 }
+
 .Icon--small svg {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+$svg-hover: (fill, stroke);
+
+svg {
+
+  @each $value in $svg-hover {
+    .Icon--#{$value} & {
+      #{$value}: $mid-script;
+    }
+
+    .Icon--#{$value}:hover & {
+      #{$value}: $day-blue;
+    }
+  }
 }

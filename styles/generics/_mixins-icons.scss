@@ -292,6 +292,10 @@ $MIXINS ICONS
   @include iconfont("\e900");
 }
 
+@mixin iconfont-Whatsapp {
+  @include iconfont("\e901");
+}
+
 //
 // HTML tags icon
 // -------------------------------------------
