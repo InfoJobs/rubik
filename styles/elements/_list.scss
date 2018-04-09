@@ -195,6 +195,7 @@ Styleguide #{$sgi-listsInline}
     @include mediaquery($bp-desktop) {
       display: block;
       text-align: left;
+      margin: 0;
     }
   }
 
@@ -296,8 +297,8 @@ Styleguide #{$sgi-listsWithIcons}
 
 .list-bullet-icon {
 
-    [class^="iconfont-"],
-    [class*="iconfont-"] {
+    > [class^="iconfont-"],
+    > [class*="iconfont-"] {
         position: relative;
         padding-left: 20px;
 
@@ -342,76 +343,48 @@ Lists with nested structure
     margin: 0;
 }
 
+/*
+list-divider
 
-.list-divider > li {//DEPRECATED: mirar donde se usa.
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid $darkest-shiro;
+Use class `.list-divider` to apply a border-top to each list items.
 
-    &:first-child {
-        padding-top: 0;
-    }
+Markup:
+<ul class="list-divider">
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Lorem ipsum</li>
+    <li>Lorem ipsum dolor</li>
+</ul>
 
-    &:last-child {
-        border: none;
-    }
+Styleguide #{$sgi-listDivider}
+*/
 
-    @at-root .small#{&} {
-        margin-bottom: 5px;
-        padding: 0 0 5px 0;
-    }
+%list-divider {
+	li {
+		border-bottom: 1px solid $darkest-shiro;
+		margin-bottom: 10px;
+		padding-bottom: 10px;
 
-    @at-root .list-divider-bleed#{&} { // fix .inner default padding
-        margin: 0 -10px;
-        padding-right: 10px;
-        padding-left: 10px;
+		@include mediaquery ($bp-tablet) {
+			margin-bottom: $padding;
+			padding-bottom: $padding;
+		}
 
-        @include mediaquery ($bp-tablet) {
-            margin: 0 -20px;
-            padding-right: 20px;
-            padding-left: 20px;
-        }
-
-        &:last-child {
-            padding-bottom: 0;
-        }
-    }
-
-    h2,
-    p {
-    	margin-bottom: 0;
-	}
-
-	.btn {
-		margin-top: 20px;
+		&:last-child {
+			border-bottom: 0 none;
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
 	}
 }
 
-/*
-list-item-divider
+.list-divider {
+	@extend %list-divider;
 
-Use class `.list-item-divider` to apply a border-top to each list items.
-
-Markup:
-<ul>
-    <li class="list-item-divider">Lorem ipsum dolor sit amet</li>
-    <li class="list-item-divider">Lorem ipsum</li>
-    <li class="list-item-divider">Lorem ipsum dolor</li>
-</ul>
-
-*/
-
-.list-item-divider {
-    padding: 10px 0;
-    border-bottom: 1px solid $darkest-shiro;
-
-    @include mediaquery ($bp-tablet) {
-        padding: 20px 0;
-    }
-
-    &:last-child {
-        border-bottom: 0;
-    }
+	&--small {
+		@extend %list-divider;
+		margin-bottom: 5px;
+		padding-bottom: 5px;
+	}
 }
 
 /*
