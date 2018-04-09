@@ -365,8 +365,8 @@ Styleguide #{$sgi-listDivider}
 		padding-bottom: 10px;
 
 		@include mediaquery ($bp-tablet) {
-			margin-bottom: 20px;
-			padding-bottom: 20px;
+			margin-bottom: $padding;
+			padding-bottom: $padding;
 		}
 
 		&:last-child {
