@@ -2,294 +2,570 @@
 $MIXINS ICONS
 \*------------------------------------*/
 
-@mixin iconfont($icon: "") {
-  &:before {
-    @include font-rendering;
-    color: $soft-script;
-    content: $icon;
-    font-family: 'Icons';
-    font-style: normal;
-    font-variant: normal;
-    font-weight: normal;
-    left: 0;
-    line-height: 0;
-    position: relative;
-    speak: none;
-    text-transform: none;
-  }
-
+@mixin iconfont {
+  @include font-rendering;
+  color: $soft-script;
+  font-family: 'Icons';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  left: 0;
+  line-height: 0;
+  position: relative;
+  speak: none;
+  text-transform: none;
 }
 
 @mixin iconfont-ArrowDown {
-  @include iconfont("\e600");
+
+  &::before {
+    @include iconfont;
+    content: "\e600";
+  }
 }
 
 @mixin iconfont-ArrowLeft {
-  @include iconfont("\e601");
+
+  &::before {
+    @include iconfont;
+    content: "\e601";
+  }
 }
 
 @mixin iconfont-ArrowUp {
-  @include iconfont("\e602");
+
+  &::before {
+    @include iconfont;
+    content: "\e602";
+  }
 }
 
 @mixin iconfont-Calendar {
-  @include iconfont("\e605");
+
+  &::before {
+    @include iconfont;
+    content: "\e605";
+  }
 }
 
 @mixin iconfont-Candidaturas {
-  @include iconfont("\e606");
+
+  &::before {
+    @include iconfont;
+    content: "\e606";
+  }
 }
 
 @mixin iconfont-Category {
-  @include iconfont("\e607");
+
+  &::before {
+    @include iconfont;
+    content: "\e607";
+  }
 }
 
 @mixin iconfont-Check {
-  @include iconfont("\e608");
+
+  &::before {
+    @include iconfont;
+    content: "\e608";
+  }
 }
 
 @mixin iconfont-Clock {
-  @include iconfont("\e609");
+
+  &::before {
+    @include iconfont;
+    content: "\e609";
+  }
 }
 
 @mixin iconfont-Company {
-  @include iconfont("\e60b");
+
+  &::before {
+    @include iconfont;
+    content: "\e60b";
+  }
 }
 
 @mixin iconfont-Config {
-  @include iconfont("\e60c");
+
+  &::before {
+    @include iconfont;
+    content: "\e60c";
+  }
 }
 
 @mixin iconfont-CV {
-  @include iconfont("\e60d");
+
+  &::before {
+    @include iconfont;
+    content: "\e60d";
+  }
 }
 
 @mixin iconfont-Euro {
-  @include iconfont("\e60e");
+
+  &::before {
+    @include iconfont;
+    content: "\e60e";
+  }
 }
 
 @mixin iconfont-Facebook {
-  @include iconfont("\e60f");
+
+  &::before {
+    @include iconfont;
+    content: "\e60f";
+  }
 }
 
 @mixin iconfont-GooglePlus {
-  @include iconfont("\e610");
+
+  &::before {
+    @include iconfont;
+    content: "\e610";
+  }
 }
 
 @mixin iconfont-Location {
-  @include iconfont("\e611");
+
+  &::before {
+    @include iconfont;
+    content: "\e611";
+  }
 }
 
 @mixin iconfont-Mail {
-  @include iconfont("\e612");
+
+  &::before {
+    @include iconfont;
+    content: "\e612";
+  }
 }
 
 @mixin iconfont-Reload {
-  @include iconfont("\e613");
+
+  &::before {
+    @include iconfont;
+    content: "\e613";
+  }
 }
 
 @mixin iconfont-Search {
-  @include iconfont("\e614");
+
+  &::before {
+    @include iconfont;
+    content: "\e614";
+  }
 }
 
 @mixin iconfont-State {
-  @include iconfont("\e615");
+
+  &::before {
+    @include iconfont;
+    content: "\e615";
+  }
 }
 
 @mixin iconfont-Suitecase {
-  @include iconfont("\e616");
+
+    &::before {
+      @include iconfont;
+      content: "\e616";
+    }
 }
 
 @mixin iconfont-Twitter {
-  @include iconfont("\e617");
+
+  &::before {
+    @include iconfont;
+    content: "\e617";
+  }
 }
 
 @mixin iconfont-User {
-  @include iconfont("\e618");
+
+  &::before {
+    @include iconfont;
+    content: "\e618";
+  }
 }
 
 @mixin iconfont-LinkedIn {
-  @include iconfont("\e619");
+
+  &::before {
+    @include iconfont;
+    content: "\e619";
+  }
 }
 
 @mixin iconfont-Viewdetails {
-  @include iconfont("\e61a");
+
+  &::before {
+    @include iconfont;
+    content: "\e61a";
+  }
 }
 
 @mixin iconfont-EditCv {
-  @include iconfont("\e61b");
+
+  &::before {
+    @include iconfont;
+    content: "\e61b";
+  }
 }
 
 @mixin iconfont-Home {
-  @include iconfont("\e61c");
+
+  &::before {
+    @include iconfont;
+    content: "\e61c";
+  }
 }
 
 @mixin iconfont-QR {
-  @include iconfont("\e61d");
+
+  &::before {
+    @include iconfont;
+    content: "\e61d";
+  }
 }
 
 @mixin iconfont-Config-alt {
-  @include iconfont("\e61e");
+
+  &::before {
+    @include iconfont;
+    content: "\e61e";
+  }
 }
 
 @mixin iconfont-Edit {
-  @include iconfont("\e61f");
+
+  &::before {
+    @include iconfont;
+    content: "\e61f";
+  }
 }
 
 @mixin iconfont-Help {
-  @include iconfont("\e620");
+
+  &::before {
+    @include iconfont;
+    content: "\e620";
+  }
 }
 
 @mixin iconfont-Info {
-  @include iconfont("\e621");
+
+  &::before {
+    @include iconfont;
+    content: "\e621";
+  }
 }
 
 @mixin iconfont-Plus {
-  @include iconfont("\e622");
+
+  &::before {
+    @include iconfont;
+    content: "\e622";
+  }
 }
 
 @mixin iconfont-Smile {
-  @include iconfont("\e623");
+
+  &::before {
+    @include iconfont;
+    content: "\e623";
+  }
 }
 
 @mixin iconfont-Wifi {
-  @include iconfont("\e624");
+
+  &::before {
+    @include iconfont;
+    content: "\e624";
+  }
 }
 
 @mixin iconfont-Alert {
-  @include iconfont("\e625");
+
+  &::before {
+    @include iconfont;
+    content: "\e625";
+  }
 }
 
 @mixin iconfont-Connect {
-  @include iconfont("\e626");
+
+  &::before {
+    @include iconfont;
+    content: "\e626";
+  }
 }
 
 @mixin iconfont-AlertProfile {
-  @include iconfont("\e627");
+
+  &::before {
+    @include iconfont;
+    content: "\e627";
+  }
 }
 
 @mixin iconfont-Hide {
-  @include iconfont("\e628");
+
+  &::before {
+    @include iconfont;
+    content: "\e628";
+  }
 }
 
 @mixin iconfont-News {
-  @include iconfont("\e629");
+
+  &::before {
+    @include iconfont;
+    content: "\e629";
+  }
 }
 
 @mixin iconfont-Flag {
-  @include iconfont("\e62a");
+
+  &::before {
+    @include iconfont;
+    content: "\e62a";
+  }
 }
 
 @mixin iconfont-Offers {
-  @include iconfont("\e62b");
+
+  &::before {
+    @include iconfont;
+    content: "\e62b";
+  }
 }
 
 @mixin iconfont-BigArrowDown {
-  @include iconfont("\e62d");
+
+  &::before {
+    @include iconfont;
+    content: "\e62d";
+  }
 }
 
 @mixin iconfont-BigArrowLeft {
-  @include iconfont("\e62e");
+
+  &::before {
+    @include iconfont;
+    content: "\e62e";
+  }
 }
 
 @mixin iconfont-BigArrowUp {
-  @include iconfont("\e62f");
+
+  &::before {
+    @include iconfont;
+    content: "\e62f";
+  }
 }
 
 @mixin iconfont-BigArrowRight {
-  @include iconfont("\e630");
+
+  &::before {
+    @include iconfont;
+    content: "\e630";
+  }
 }
 
 @mixin iconfont-BigArrowObliqueLeftDown {
-  @include iconfont("\e631");
+
+  &::before {
+    @include iconfont;
+    content: "\e631";
+  }
 }
 
 @mixin iconfont-BigArrowObliqueRightDown {
-  @include iconfont("\e632");
+
+  &::before {
+    @include iconfont;
+    content: "\e632";
+  }
 }
 
 @mixin iconfont-BigArrowObliqueLeftUp {
-  @include iconfont("\e633");
+
+  &::before {
+    @include iconfont;
+    content: "\e633";
+  }
 }
 
 @mixin iconfont-BigArrowObliqueRightUp {
-  @include iconfont("\e634");
+
+  &::before {
+    @include iconfont;
+    content: "\e634";
+  }
 }
 
 @mixin iconfont-Star {
-  @include iconfont("\e635");
+
+  &::before {
+    @include iconfont;
+    content: "\e635";
+  }
 }
 
 @mixin iconfont-Lock  {
-  @include iconfont("\e636");
+
+  &::before {
+    @include iconfont;
+    content: "\e636";
+  }
 }
 
-@mixin iconfont-Alert-circle  {
-  @include iconfont("\e638");
+@mixin iconfont-Alert-circle {
+
+  &::before {
+    @include iconfont;
+    content: "\e638";
+  }
 }
 
-@mixin iconfont-Save  {
-  @include iconfont("\e639");
+@mixin iconfont-Save {
+
+  &::before {
+    @include iconfont;
+    content: "\e639";
+  }
 }
 
 @mixin iconfont-BurguerMenu {
-  @include iconfont("\e604");
+
+  &::before {
+    @include iconfont;
+    content: "\e604";
+  }
 }
 
 @mixin iconfont-Close {
-  @include iconfont("\e60a");
+
+  &::before {
+    @include iconfont;
+    content: "\e60a";
+  }
 }
 
 @mixin iconfont-Menumore {
-  @include iconfont("\e637");
+
+  &::before {
+    @include iconfont;
+    content: "\e637";
+  }
 }
 
 @mixin iconfont-Big-check {
-  @include iconfont("\e62c");
+
+  &::before {
+    @include iconfont;
+    content: "\e62c";
+  }
 }
 
 @mixin iconfont-Arrow {
-  @include iconfont("\e603");
+
+  &::before {
+    @include iconfont;
+    content: "\e603";
+  }
 }
 
 @mixin iconfont-SaveAs {
-  @include iconfont("\e63a");
+
+  &::before {
+    @include iconfont;
+    content: "\e63a";
+  }
 }
 
 @mixin iconfont-OneTime {
-  @include iconfont("\e63b");
+
+  &::before {
+    @include iconfont;
+    content: "\e63b";
+  }
 }
 
 @mixin iconfont-Applications {
-  @include iconfont("\e63c");
+
+  &::before {
+    @include iconfont;
+    content: "\e63c";
+  }
 }
 
 @mixin iconfont-Attach {
-  @include iconfont("\e63d");
+
+  &::before {
+    @include iconfont;
+    content: "\e63d";
+  }
 }
 
 @mixin iconfont-Phone {
-  @include iconfont("\e63e");
+
+  &::before {
+    @include iconfont;
+    content: "\e63e";
+  }
 }
 
 @mixin iconfont-Website {
-  @include iconfont("\e63f");
+
+  &::before {
+    @include iconfont;
+    content: "\e63f";
+  }
 }
 
 @mixin iconfont-Camera {
-  @include iconfont("\e640");
+
+  &::before {
+    @include iconfont;
+    content: "\e640";
+  }
 }
 
 @mixin iconfont-Image {
-  @include iconfont("\e641");
+
+  &::before {
+    @include iconfont;
+    content: "\e641";
+  }
 }
 
 @mixin iconfont-PinReset {
-  @include iconfont("\e642");
+
+  &::before {
+    @include iconfont;
+    content: "\e642";
+  }
 }
 
 @mixin iconfont-CallCenter {
-  @include iconfont("\e900");
+
+  &::before {
+    @include iconfont;
+    content: "\e900";
+  }
+}
+
+@mixin iconfont-Whatsapp {
+
+  &::before {
+    @include iconfont;
+    content: "\e901";
+  }
 }
 
 //
@@ -310,4 +586,8 @@ $MIXINS ICONS
   border: 0 none;
   background: none repeat scroll 0 0 transparent;
   cursor: pointer;
+
+  &::before {
+    color: $shiro;
+  }
 }
