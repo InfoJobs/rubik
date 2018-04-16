@@ -1,0 +1,38 @@
+/*------------------------------------*\
+	$ROW STICKY BOTTOM
+\*------------------------------------*/
+
+
+.row-sticky-bottom--medium-device {
+
+  @include display-flex;
+  @include flex-flow(column nowrap);
+  height: 100%;
+  max-height: 100vh;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &-content {
+    @include flex(1 1 auto);
+    overflow: auto;
+  }
+
+  &-footer {
+    @include flex(0 0 auto);
+    box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.15);
+
+    @include mediaquery ($bp-desktop) {
+      box-shadow: none;
+    }
+
+  }
+
+  @include mediaquery ($bp-desktop) {
+
+    display: block;
+    height: auto;
+    max-height: none;
+    overflow: initial;
+  }
+}

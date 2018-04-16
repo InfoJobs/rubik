@@ -147,6 +147,7 @@ Styleguide #{$sgi-content-top}
 		margin-bottom: 5px;
 
     @media print {
+      page-break-inside: avoid;
       margin-bottom: 0;
     }
 	}
