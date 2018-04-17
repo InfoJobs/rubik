@@ -1,73 +1,86 @@
 /*------------------------------------*\
-    $LOADING
+    $SPINNER
 \*------------------------------------*/
 
-$size-loading: 15px;
+$spinner-sizes: small 15px, big 40px;
 
-.loading-layer {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 999999;
-	background-color: rgba(255, 255 , 255, 0.8);
+@each $type, $size in $spinner-sizes {
+  @keyframes Spinner--#{$type} {
+    0% {
+      box-shadow: -#{$size} $size $orange-soda, 0 $size * 2 $color-primary;
+    }
+    25% {
+      box-shadow: 0 $size $orange-soda, -#{$size} $size * 2 $color-primary;
+    }
+    50% {
+      box-shadow: 0 $size * 2 $orange-soda, -#{$size} $size $color-primary;
+    }
+    75% {
+      box-shadow: -#{$size} $size * 2 $orange-soda, 0 $size $color-primary;
+    }
+    100% {
+      box-shadow: -#{$size} $size $orange-soda, 0 $size * 2 $color-primary;
+    }
+  }
+  @-webkit-keyframes Spinner--#{$type} {
+    0% {
+      box-shadow: -#{$size} $size $orange-soda, 0 $size * 2 $color-primary;
+    }
+    25% {
+      box-shadow: 0 $size $orange-soda, -#{$size} $size * 2 $color-primary;
+    }
+    50% {
+      box-shadow: 0 $size * 2 $orange-soda, -#{$size} $size $color-primary;
+    }
+    75% {
+      box-shadow: -#{$size} $size * 2 $orange-soda, 0 $size $color-primary;
+    }
+    100% {
+      box-shadow: -#{$size} $size $orange-soda, 0 $size * 2 $color-primary;
+    }
+  }
 }
 
-.loading {
-  background-color: transparent;
-  border-radius: 50%;
-  width: $size-loading;
-  height: $size-loading;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  box-shadow: -#{$size-loading} $size-loading $orange-soda, 0 30px $color-primary;
-  animation: Spinner 1.5s ease-in-out infinite;
-  -webkit-animation: Spinner 1.5s ease-in-out infinite;
-
-  &-text {
-    bottom: 0;
-    left: 0;
-    margin-top: $padding * 2;
-    position: fixed;
-    right: 0;
-    text-align: center;
-    top: calc(50% + #{$size-loading * 2});
-  }
+%spinner-layer {
+  background-color: rgba(255, 255 , 255, 0.8);
+  bottom: 0;
+  content: '';
+  left: 0;
+  right: 0;
+  top: 0;
 }
 
-@keyframes Spinner {
-  0% {
-    box-shadow: -#{$size-loading} $size-loading $orange-soda, 0 $size-loading * 2 $color-primary;
+.spinner {
+  &--container {
+    position: relative;
+    z-index: 1;
+
+    &:before {
+      @extend %spinner-layer;
+      position: absolute;
+    }
   }
-  25% {
-    box-shadow: 0 $size-loading $orange-soda, -#{$size-loading} $size-loading * 2 $color-primary;
+
+  &--fullPage {
+    &::before {
+      @extend %spinner-layer;
+      position: fixed;
+    }
   }
-  50% {
-    box-shadow: 0 $size-loading * 2 $orange-soda, -#{$size-loading} $size-loading $color-primary;
-  }
-  75% {
-    box-shadow: -#{$size-loading} $size-loading * 2 $orange-soda, 0 $size-loading $color-primary;
-  }
-  100% {
-    box-shadow: -#{$size-loading} $size-loading $orange-soda, 0 $size-loading * 2 $color-primary;
-  }
-}
-@-webkit-keyframes Spinner {
-  0% {
-    box-shadow: -#{$size-loading} $size-loading $orange-soda, 0 $size-loading * 2 $color-primary;
-  }
-  25% {
-    box-shadow: 0 $size-loading $orange-soda, -#{$size-loading} $size-loading * 2 $color-primary;
-  }
-  50% {
-    box-shadow: 0 $size-loading * 2 $orange-soda, -#{$size-loading} $size-loading $color-primary;
-  }
-  75% {
-    box-shadow: -#{$size-loading} $size-loading * 2 $orange-soda, 0 $size-loading $color-primary;
-  }
-  100% {
-    box-shadow: -#{$size-loading} $size-loading $orange-soda, 0 $size-loading * 2 $color-primary;
+
+  @each $type, $size in $spinner-sizes {
+    &-file--#{$type} {
+      //@include spinner;
+      box-shadow: -#{$size} $size $orange-soda, 0 #{$size}*2px $color-primary;
+      animation: Spinner--#{$type} 1.5s ease-in-out infinite;
+      -webkit-animation: Spinner--#{$type} 1.5s ease-in-out infinite;
+      bottom: calc(50% + #{$size}/2);
+      height: $size;
+      left: calc(50% - #{$size}/2);
+      overflow: hidden;
+      text-indent: 100%;
+      position: absolute;
+      width: $size;
+    }
   }
 }
