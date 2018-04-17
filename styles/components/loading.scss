@@ -1,10 +1,10 @@
 /*------------------------------------*\
-    $SPINNER
+    $LOADING
 \*------------------------------------*/
 
-$spinner-sizes: small 15px, big 40px;
+$loading-sizes: small 15px, big 40px;
 
-@each $type, $size in $spinner-sizes {
+@each $type, $size in $loading-sizes {
   @keyframes Spinner--#{$type} {
     0% {
       box-shadow: -#{$size} $size $orange-soda, 0 $size * 2 $color-primary;
@@ -41,7 +41,7 @@ $spinner-sizes: small 15px, big 40px;
   }
 }
 
-%spinner-layer {
+%loading-layer {
   background-color: rgba(255, 255 , 255, 0.8);
   bottom: 0;
   content: '';
@@ -50,27 +50,26 @@ $spinner-sizes: small 15px, big 40px;
   top: 0;
 }
 
-.spinner {
+.loading {
   &--container {
     position: relative;
     z-index: 1;
 
     &:before {
-      @extend %spinner-layer;
+      @extend %loading-layer;
       position: absolute;
     }
   }
 
   &--fullPage {
     &::before {
-      @extend %spinner-layer;
+      @extend %loading-layer;
       position: fixed;
     }
   }
 
-  @each $type, $size in $spinner-sizes {
+  @each $type, $size in $loading-sizes {
     &-file--#{$type} {
-      //@include spinner;
       box-shadow: -#{$size} $size $orange-soda, 0 #{$size}*2px $color-primary;
       animation: Spinner--#{$type} 1.5s ease-in-out infinite;
       -webkit-animation: Spinner--#{$type} 1.5s ease-in-out infinite;
