@@ -73,6 +73,7 @@ $loading-sizes: small 15px, big 40px;
       box-shadow: -#{$size} $size $orange-soda, 0 #{$size}*2px $color-primary;
       animation: Spinner--#{$type} 1.5s ease-in-out infinite;
       -webkit-animation: Spinner--#{$type} 1.5s ease-in-out infinite;
+      border-radius: 50%;
       bottom: calc(50% + #{$size}/2);
       height: $size;
       left: calc(50% - #{$size}/2);
