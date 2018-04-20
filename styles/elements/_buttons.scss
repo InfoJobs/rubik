@@ -53,15 +53,10 @@ button::-moz-focus-inner {
         }
     }
 
-    + [class*="btn"]:not(.btn-group-justified) {
+    + [class*="btn"]:not(.btn-group-justified):not(.btn-full-width--mobile) {
         margin-left: 5px;
     }
-    + [class*="btn"]:not(.btn-group-justified) {
-        margin-left: 5px;
-    }
-    + [class*="btn"]:not(.btn-group-justified) {
-        margin-left: 5px;
-    }
+
     + .btn-group-justified {
         margin-top: 10px;
 
@@ -351,17 +346,26 @@ Styleguide #{$sgi-buttons-display}
 
 .btn-full-width {
   width: 100%;
+
+  &--mobile {
+    margin-top: 10px;
+    width: 100%;
+
+    @include mediaquery ($bp-desktop) {
+      margin-top: 0;
+      width: auto;
+    }
+  }
 }
-//deprecated with btn-full-width?
 
 .btn-form-inline { //used on search-bar, filters and edit-cv(datos-personales)
     width: 100%;
 
     @at-root button#{&} {
-    	width: 100%;
-      	height: auto;
-      	padding-top: 15px;
-		padding-bottom: 13px;
+      width: 100%;
+      height: auto;
+      padding-top: 15px;
+      padding-bottom: 13px;
     }
 
     &.text-left { //already defined in tools.scss, but overwritten by btn{...text-align: center;...}
