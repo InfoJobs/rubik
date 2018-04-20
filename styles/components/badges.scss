@@ -159,7 +159,7 @@ Styleguide #{$sgi-badges}
     font-family: $base-font-family;
     font-size: $small-font-size;
     background-color: $trueblood;
-    border-radius: 9px;
+    border-radius: 50%;
     padding: 0 2px;
     min-width: 18px;
     height: 18px;
@@ -172,6 +172,20 @@ Styleguide #{$sgi-badges}
     }
   }
 
+  &-cta {
+    @extend .badge-count;
+    background: $orange-soda;
+    border: 3px solid shade($orange-soda,10%);
+  }
+
+  &-content {
+    left: 50%;
+    position: absolute;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+
   &-small {
     font-size: $xsmall-font-size;
     line-height: 12px;
@@ -180,6 +194,11 @@ Styleguide #{$sgi-badges}
   &-xlarge {
     font-size: $base-font-size;
     line-height: 16px;
+  }
+
+  &-xxlarge {
+    min-height: 82px;
+    min-width: 82px;
   }
 }
 
@@ -196,4 +215,9 @@ Styleguide #{$sgi-badges}
     text-align: center;
   }
 
+  &--top-right {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+  }
 }
