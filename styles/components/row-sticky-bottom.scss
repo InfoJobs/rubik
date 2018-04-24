@@ -13,6 +13,10 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
+  &-header {
+    @include flex(0 0 auto);
+  }
+
   &-content {
     @include flex(1 1 auto);
     overflow: auto;
