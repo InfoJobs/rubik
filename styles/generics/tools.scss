@@ -117,6 +117,20 @@ Styleguide #{$sgi-helpers}
 	align-items: flex-end;
 }
 
+@include mediaquery ($bp-desktop) {
+  .pull-center {
+    position: relative;
+
+    &--content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+  }
+}
+
 /*------------------------------------*\
     $FONT
 \*------------------------------------*/
