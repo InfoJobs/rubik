@@ -30,6 +30,11 @@ Styleguide #{$sgi-crop-circle}
 	width: 72px;
 	height: 72px;
 
+  &-xlarge {
+    width: 230px;
+    height: 230px;
+  }
+
   &-large {
     @include crop;
   	width: 100px;
