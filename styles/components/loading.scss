@@ -58,6 +58,7 @@ $loading-sizes: small 15px, big 40px;
     &:before {
       @extend %loading-layer;
       position: absolute;
+      z-index: $zindex-wrap-overlay;
     }
   }
 
@@ -65,6 +66,7 @@ $loading-sizes: small 15px, big 40px;
     &::before {
       @extend %loading-layer;
       position: fixed;
+      z-index: $zindex-wrap-overlay;
     }
   }
 
@@ -75,12 +77,24 @@ $loading-sizes: small 15px, big 40px;
       -webkit-animation: Spinner--#{$type} 1.5s ease-in-out infinite;
       border-radius: 50%;
       bottom: calc(50% + #{$size}/2);
+      display: none;
       height: $size;
       left: calc(50% - #{$size}/2);
       overflow: hidden;
       text-indent: 100%;
+      transform: translateY(-50%);
       position: absolute;
       width: $size;
+      z-index: $zindex-wrap-overlay;
+
+      .loading--fullPage & {
+        position: fixed;
+        display: block;
+      }
+
+      .loading--container & {
+        display: block;
+      }
     }
   }
 }
