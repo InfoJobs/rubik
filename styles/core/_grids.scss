@@ -84,15 +84,26 @@ Styleguide #{$sgi-gridSystem}
 	clear: both;
 	position: relative;
 
-	&:after {
+	&::after {
 		content: " ";
 		display: table;
 		clear: both;
 	}
 
+  &-justify {
+    @include display-flex;
+    justify-content: space-around;
+
+    &::after {
+      content: none;
+    }
+
+  }
+
 	@media print {
 		margin: 0;
 	}
+
 }
 
 .row {
