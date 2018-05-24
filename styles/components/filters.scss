@@ -1,6 +1,4 @@
 //refactor
-@import "../core/fonts";
-
 /*------------------------------------*\
     $FILTERS
 \*------------------------------------*/
@@ -59,7 +57,7 @@ Styleguide #{$sgi-filters}
 	}
 
 	p {
-		@extend %font-small-line;
+		@include font(small);
 	}
 
 	hr {

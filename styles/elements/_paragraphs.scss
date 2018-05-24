@@ -16,7 +16,7 @@ Styleguide #{$sgi-paragraphs}
 */
 
 p {
-	@include font-base-line;
+	@include font(base);
 	margin-bottom: 15px;
 	word-wrap: break-word;
 
@@ -43,13 +43,13 @@ p {
 }
 
 
-$font-size: (xsmall, small, base, medium, large, xlarge); //TODO: resolve problem when it s moved to _vars
+$font-size: (xsmall, small, base, medium, large, xlarge, xxlarge, xxxlarge);
 
 @each $value in $font-size {
 
-	.#{$value} {
-		@extend %font-#{$value}-line;
-	}
+  .#{$value} {
+    @include font($value);
+  }
 
 	@if ($value == small) {
 
@@ -61,9 +61,7 @@ $font-size: (xsmall, small, base, medium, large, xlarge); //TODO: resolve proble
 				margin-bottom: 0;
 			}
 		}
-
 	}
-
 }
 /*
 Text Style
@@ -137,7 +135,7 @@ Styleguide #{$sgi-blockquotes}
 */
 //TODO: move a blockquote.css
 .quote {
-	@extend %font-base-line;
+	@include font(base);
 	display: block;
 	padding-top: 40px;
 	font-style: italic;
@@ -165,7 +163,7 @@ Styleguide #{$sgi-blockquotes}
 }
 
 .small-quote {
-  @include font-small-line;
+  @include font(small);
   font-style: italic;
 
 	&::after,

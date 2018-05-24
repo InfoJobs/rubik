@@ -44,14 +44,8 @@ h3,
 }
 
 h1 {
-	margin-bottom: 35px;
-	font-size: $xxlarge-font-size-mobile;
-	line-height: $xxlarge-line-height-mobile;
-
-	@include mediaquery ($bp-desktop) {
-		font-size: $xxlarge-font-size;
-		line-height: $xxlarge-line-height;
-	}
+  @include font(xxlarge);
+  margin-bottom: 35px;
 
 	.section & {
 		margin: 20px 0;
@@ -68,14 +62,8 @@ h1 {
 
 h2,
 .h2 {
-	margin: 0 0 15px 0;
-	font-size: $large-font-size;
-	line-height: $large-line-height;
-
-	@include mediaquery ($bp-desktop) {
-		font-size: $xlarge-font-size;
-		line-height: $xlarge-line-height;
-	}
+  @include font(xlarge);
+  margin: 0 0 15px 0;
 
   @media print {
     section & {
@@ -87,7 +75,7 @@ h2,
 
 h3,
 .h3 {
-	@extend %font-medium-line;
+	@include font(medium);
 	margin-bottom: 15px;
 }
 /*

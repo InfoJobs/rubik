@@ -5,6 +5,85 @@
 /*
 Messaging
 
+Markup:
+<ul class="messaging-list">
+  <li class="messaging-list-item-init">
+    <div class="messaging-body">
+      <p class="messaging-title truncate">Desarrollador/Analista de aplicaciones web</p>
+    </div>
+    <a href="#" class="btn btn-primary">Iniciar chat <span></span></a>
+  </li>
+</ul>
+<ul class="messaging-list">
+  <li class="messaging-list-item">
+    <div class="messaging-body">
+      <div class="messaging-body-main">
+        <p class="messaging-title truncate">UX / UI Designer</p>
+      </div>
+      <div class="messaging-body-secondary">
+        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los dias, a buscar curro en InfoJobs todos los dias, a buscar curro en InfoJobs todos los dias, a buscar curro en InfoJobs todos los dias</p>
+      </div>
+    </div>
+    <div class="messaging-icons-right">
+      <p class="iconfont-Arrow focus" title="Ir al chat"><span class="hide">Ir al chat</span></p>
+    </div>
+  </li>
+  <li class="messaging-list-item">
+    <div class="messaging-avatar">
+      <img class="crop-circle-xsmall border-default" alt="Nombre Apellidos" src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png">
+    </div>
+    <div class="messaging-body">
+      <div class="messaging-body-main">
+        <p class="messaging-title truncate">UX / UI Designer</p>
+        <time class="messaging-meta" datetime="2016-02-14 20:00">Ayer</time>
+      </div>
+      <div class="messaging-body-secondary">
+        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los dias, a buscar curro en InfoJobs todos los dias, a buscar curro en InfoJobs todos los dias, a buscar curro en InfoJobs todos los dias</p>
+        <span class="badge-count">10</span>
+      </div>
+    </div>
+    <div class="messaging-icons-right">
+      <p class="iconfont-Arrow focus" title="Ir al chat"><span class="hide">Ir al chat</span></p>
+    </div>
+  </li>
+  <li class="messaging-list-item">
+    <div class="messaging-avatar">
+		<figure class="crop-image-xsmall crop-circle fig-thumbnail-logo">
+			<img alt="Nombre Apellidos" src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png">
+		</figure>
+	</div>
+    <div class="messaging-body">
+      <div class="messaging-body-main">
+        <p class="messaging-title truncate">UX / UI Designer</p>
+        <time class="messaging-meta" datetime="2016-09-04 20:00">04/09/16</time>
+      </div>
+      <div class="messaging-body-secondary">
+        <p class="messaging-last-text truncate">Julia: a buscar curro en InfoJobs todos los dias, a buscar curro en InfoJobs todos los dias, a buscar curro en InfoJobs todos los dias, a buscar curro en InfoJobs todos los dias</p>
+      </div>
+    </div>
+    <div class="messaging-icons-right">
+      <p class="iconfont-Arrow focus" title="Ir al chat"><span class="hide">Ir al chat</span></p>
+    </div>
+  </li>
+  <li class="messaging-list-item">
+    <div class="messaging-icons-left hide-medium-device hide-large-device">
+      <p class="iconfont-ArrowLeft focus" title="Ir al chat"><span class="hide">Ir al chat</span></p>
+    </div>
+    <div class="messaging-avatar">
+      <img class="crop-circle-xsmall border-default" alt="Nombre Apellidos" src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png">
+    </div>
+    <div class="messaging-body">
+      <div class="messaging-body-main">
+        <p class="messaging-title truncate">Desarrollador/Analista de aplicaciones web</p>
+        <time class="messaging-meta" datetime="2016-08-14 20:35">20:35</time>
+      </div>
+      <div class="messaging-body-secondary">
+        <p class="messaging-last-text truncate">Julia: Hooola</p>
+      </div>
+    </div>
+  </li>
+</ul>
+
 Styleguide #{$sgi-messaging}
 */
 
@@ -220,7 +299,7 @@ Styleguide #{$sgi-messaging}
         float: left;
         margin-top: 5px;
         color: $soft-script;
-        @include font-small-line;
+        @include font(small);
       }
     }
 
@@ -233,20 +312,20 @@ Styleguide #{$sgi-messaging}
       white-space: pre-line;
 
       + time {
+        @include font(small);
         clear: right;
         float: right;
         margin-top: 5px;
         color: $soft-script;
-        @include font-small-line;
       }
     }
   }
   .unread {
+    @include font(small);
     margin-right: 20px;
     margin-left: 20px;
     text-align: center;
     text-transform: uppercase;
-    @include font-small-line;
     color: $soft-script;
 
     &:before,
@@ -275,7 +354,7 @@ Styleguide #{$sgi-messaging}
 
   .appearance-input-text-reply {
     @include input;
-    @include font-base-line;
+    @include font(base);
     padding-top: 10px;
     min-height: 44px;
     max-height: 66px;//height equivalente a 3 lineas.

@@ -1,5 +1,3 @@
-@import "../core/fonts";
-
 /*------------------------------------*\
     $COLLAPSIBLE ACCORDION
 \*------------------------------------*/
@@ -7,11 +5,11 @@
 .collapsible-accordion {
 
     &-header {
-        @include font-base-line;
+        @include font(base);
         @include bold;
 
         @include mediaquery ($bp-desktop) {
-            @include font-medium-line;
+            @include font(medium);
         }
 
         display: block;

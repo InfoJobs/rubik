@@ -1,5 +1,3 @@
-@import "../core/fonts";
-
 /*------------------------------------*\
     $TABS
 \*------------------------------------*/
@@ -32,14 +30,14 @@ Styleguide #{$sgi-tabs}
   }
 
   a {
-    @include font-base-line;
+    @include font(base);
     @include vendor-prefix('flex-flow', 'row wrap');
     padding-top: 20px;
     padding-bottom: 20px;
     color: $dark-silk;
 
     @include mediaquery ($bp-desktop) {
-      @include font-medium-line;
+      @include font(medium);
     }
 
     &.tab-active {
@@ -186,9 +184,9 @@ Styleguide #{$sgi-tabs}
       font-family: $base-font-family;
 
       a {
+        @include font(base);
         display: inline;
         padding: 0;
-        @include font-base-line;
 
         &:hover {
           background: none;
@@ -242,7 +240,7 @@ Styleguide #{$sgi-tabs}
     a {
       @include display-flex;
       @include align-items(flex-end);
-      @include font-xsmall-line;
+      @include font(xsmall);
       @include semi-bold;
       justify-content: center;
       height: 100px;

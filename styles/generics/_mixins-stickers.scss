@@ -1,10 +1,9 @@
 /*------------------------------------*\
 $MIXINS STICKERS
 \*------------------------------------*/
-//@import "../core/fonts";
 
 @mixin sticker {
-  @include font-small-line;
+  @include font(small);
   position: relative;
   top: -2px;
   display: inline-table;
@@ -35,7 +34,7 @@ $MIXINS STICKERS
 }
 
 @mixin sticker-label {
-  @include font-xsmall-line;
+  @include font(xsmall);
   display: inline-table;
   padding: 3px 6px;
   border-radius: 2px;

@@ -343,30 +343,74 @@ Lists with nested structure
     margin: 0;
 }
 
-/*
-list-divider
 
-Use class `.list-divider` to apply a border-top to each list items.
+.list-divider > li {//DEPRECATED: mirar donde se usa.
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $darkest-shiro;
+
+    &:first-child {
+        padding-top: 0;
+    }
+
+    &:last-child {
+        border: none;
+    }
+
+    @at-root .small#{&} {
+        margin-bottom: 5px;
+        padding: 0 0 5px 0;
+    }
+
+    @at-root .list-divider-bleed#{&} { // fix .inner default padding
+        margin: 0 -10px;
+        padding-right: 10px;
+        padding-left: 10px;
+
+        @include mediaquery ($bp-tablet) {
+            margin: 0 -20px;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+
+    h2,
+    p {
+    	margin-bottom: 0;
+	}
+
+	.btn {
+		margin-top: 20px;
+	}
+}
+
+/*
+list-item-divider
+
+Use class `.list-item-divider` to apply a border-top to each list items.
 
 Markup:
-<ul class="list-divider">
-    <li>Lorem ipsum dolor sit amet</li>
-    <li>Lorem ipsum</li>
-    <li>Lorem ipsum dolor</li>
+<ul>
+    <li class="list-item-divider">Lorem ipsum dolor sit amet</li>
+    <li class="list-item-divider">Lorem ipsum</li>
+    <li class="list-item-divider">Lorem ipsum dolor</li>
 </ul>
 
-Styleguide #{$sgi-listDivider}
 */
 
-%list-divider {
+%list-item-divider {
 	li {
 		border-bottom: 1px solid $darkest-shiro;
 		margin-bottom: 10px;
 		padding-bottom: 10px;
 
 		@include mediaquery ($bp-tablet) {
-			margin-bottom: $padding;
-			padding-bottom: $padding;
+			margin-bottom: 20px;
+			padding-bottom: 20px;
 		}
 
 		&:last-child {
@@ -377,11 +421,11 @@ Styleguide #{$sgi-listDivider}
 	}
 }
 
-.list-divider {
-	@extend %list-divider;
+.list-item-divider {
+	@extend %list-item-divider;
 
 	&--small {
-		@extend %list-divider;
+		@extend %list-item-divider;
 		margin-bottom: 5px;
 		padding-bottom: 5px;
 	}
@@ -403,7 +447,7 @@ Styleguide #{$sgi-tagGroup}
 */
 
 .tag-group {
-    @extend %font-small-line;
+    @include font(small);
     overflow: hidden;
 
     &:last-child {
