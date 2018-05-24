@@ -4,7 +4,7 @@ $MIXINS TAGS
 
 @mixin tag {
   @include truncate;
-  @include font-small-line;
+  @include font(small);
   position: relative;
   color: $dark-silk;
   background: $darkest-shiro;

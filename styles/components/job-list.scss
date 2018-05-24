@@ -1,5 +1,3 @@
-//refactor
-@import "../core/fonts";
 @import "../core/colors";
 
 /*------------------------------------*\
@@ -50,7 +48,7 @@ Styleguide #{$sgi-job-list}
     }
 
     > li {
-        @extend %font-small-line;
+        @include font(small);
         position: relative;
         overflow: hidden;
         border-top: 1px solid $darkest-shiro;
@@ -93,10 +91,6 @@ Styleguide #{$sgi-job-list}
 			margin-top: -1px;
 		}
 
-        p:last-child {
-            margin-bottom: 5px;
-        }
-
         .active {
             background: $dark-shiro;
             cursor: pointer;
@@ -124,7 +118,7 @@ Styleguide #{$sgi-job-list}
 }
 
 .job-list-title {
-    @include font-medium-line;
+    @include font(medium);
     line-height: $medium-line-height + 6; // fix overflow: hidden; defined inline to hide breaking lines
     clear: left;
     margin-top: 0;
@@ -145,7 +139,7 @@ Styleguide #{$sgi-job-list}
 }
 
 .job-list-subtitle {
-    @include font-small-line;
+    @include font(small);
     margin-top: 0;
     margin-bottom: 5px;
     font-family: $base-font-family;

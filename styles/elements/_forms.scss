@@ -85,11 +85,6 @@ label,
 	}
 }
 
-form ul .indent { // Used in cartas presentacion and company registration
-	margin-left: 24px;
-	margin-top: 5px;
-}
-
 //TODO: Nest .form-field-inline in .search-bar.scss component, because is not possible to apply this layout independently
 .form-field-inline { // Used in search box + filters job search
 	display: table;
@@ -971,7 +966,7 @@ Styleguide #{$sgi-forms-radio}
 
 	select {
 		width: 100%;
-		padding:6px;
+		padding: 6px 30px 6px 6px;
 		text-indent: 0.01px;
 		text-overflow: "";
 		top: 0;
@@ -1262,10 +1257,10 @@ Styleguide #{$sgi-forms-switch-radio}
     }
 
     .switch-radio-label {
+      @include font(small);
       width: auto;
       color: $mid-script;
       margin: 0;
-      @include font-small-line;
       line-height: 150%;
 
       &:first-of-type::after {

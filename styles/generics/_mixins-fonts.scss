@@ -1,0 +1,78 @@
+@mixin font($size) 		{
+
+  @if ($size == xsmall) {
+    font-size: $xsmall-font-size;
+    line-height: $xsmall-line-height;
+	}
+
+  @if ($size == small) {
+    font-size: $small-font-size;
+    line-height: $small-line-height;
+
+    @media print {
+      font-size: ($base-font-size / $point-to-px);
+      line-height: ($base-line-height / $point-to-px);
+    }
+  }
+
+  @if ($size == base) {
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+
+    @media print {
+      font-size: ($base-font-size / $point-to-px);
+      line-height: ($base-line-height / $point-to-px);
+    }
+  }
+
+  @if ($size == medium) {
+    font-size: $medium-font-size;
+    line-height: $medium-line-height;
+  }
+
+  @if ($size == large) {
+    font-size: $medium-font-size;
+    line-height: $medium-line-height;
+
+    @include mediaquery ($bp-desktop) {
+      font-size: $large-font-size;
+      line-height: $large-line-height;
+    }
+  }
+
+  @if ($size == xlarge) {
+    font-size: $large-font-size;
+    line-height: $large-line-height;
+
+    @include mediaquery ($bp-desktop) {
+      font-size: $xlarge-font-size;
+      line-height: $xlarge-line-height;
+    }
+  }
+
+  @if ($size == xxlarge) {
+    font-size: $xlarge-font-size;
+    line-height: $xlarge-line-height;
+
+    @include mediaquery ($bp-desktop) {
+      font-size: $xxlarge-font-size;
+      line-height: $xxlarge-line-height;
+    }
+
+    @media print {
+      font-size: 22.5pt;
+      line-height: 23.5pt;
+    }
+  }
+
+  @if ($size == xxxlarge) {
+    font-size: $xxxlarge-font-size;
+    line-height: $xxxlarge-line-height;
+
+    @media print {
+      font-size: 27pt;
+      line-height: 28pt;
+    }
+  }
+
+}
