@@ -5,7 +5,7 @@ $MIXINS ICONS
 @mixin iconfont {
   @include font-rendering;
   color: $soft-script;
-  font-family: 'Icons';
+  font-family: $base-font-icons;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
@@ -14,6 +14,10 @@ $MIXINS ICONS
   position: relative;
   speak: none;
   text-transform: none;
+
+  @at-root .iconfont-filled#{&} {
+    font-family: $base-font-icons-filled;
+  }
 }
 
 @mixin iconfont-ArrowDown {
@@ -567,6 +571,227 @@ $MIXINS ICONS
     content: "\e901";
   }
 }
+
+@mixin iconfont-Android {
+
+  &::before {
+    @include iconfont;
+    content: "\e902";
+  }
+}
+
+@mixin iconfont-Apple {
+
+  &::before {
+    @include iconfont;
+    content: "\e903";
+  }
+}
+
+@mixin iconfont-Book {
+
+  &::before {
+    @include iconfont;
+    content: "\e904";
+  }
+}
+
+@mixin iconfont-CloseCircle {
+
+  &::before {
+    @include iconfont;
+    content: "\e905";
+  }
+}
+
+@mixin iconfont-Comments {
+
+  &::before {
+    @include iconfont;
+    content: "\e906";
+  }
+}
+
+@mixin iconfont-Company2 {
+
+  &::before {
+    @include iconfont;
+    content: "\e907";
+  }
+}
+
+@mixin iconfont-Delete {
+
+  &::before {
+    @include iconfont;
+    content: "\e908";
+  }
+}
+
+@mixin iconfont-Duplicate {
+
+  &::before {
+    @include iconfont;
+    content: "\e909";
+  }
+}
+
+@mixin iconfont-Export {
+
+  &::before {
+    @include iconfont;
+    content: "\e90a";
+  }
+}
+
+@mixin iconfont-Filter2 {
+
+  &::before {
+    @include iconfont;
+    content: "\e90b";
+  }
+}
+
+@mixin iconfont-FolderStar {
+
+  &::before {
+    @include iconfont;
+    content: "\e90c";
+  }
+}
+
+@mixin iconfont-HeartFirst {
+
+  &::before {
+    @include iconfont;
+    content: "\e90d";
+  }
+}
+
+@mixin iconfont-Heart {
+
+  &::before {
+    @include iconfont;
+    content: "\e90e";
+  }
+}
+
+@mixin iconfont-Mobile {
+
+  &::before {
+    @include iconfont;
+    content: "\e90f";
+  }
+}
+
+@mixin iconfont-Mouse {
+
+  &::before {
+    @include iconfont;
+    content: "\e910";
+  }
+}
+
+@mixin iconfont-NoPhoto {
+
+  &::before {
+    @include iconfont;
+    content: "\e911";
+  }
+}
+
+@mixin iconfont-Pharma {
+
+  &::before {
+    @include iconfont;
+    content: "\e912";
+  }
+}
+
+@mixin iconfont-Present {
+  &::before {
+    @include iconfont;
+    content: "\e913";
+  }
+}
+
+@mixin iconfont-Print {
+  &::before {
+    @include iconfont;
+    content: "\e914";
+  }
+}
+
+@mixin iconfont-Sad {
+  &::before {
+    @include iconfont;
+    content: "\e915";
+  }
+}
+
+@mixin iconfont-Share2 {
+  &::before {
+    @include iconfont;
+    content: "\e916";
+  }
+}
+
+@mixin iconfont-Share {
+  &::before {
+    @include iconfont;
+    content: "\e917";
+  }
+}
+
+@mixin iconfont-Shop {
+  &::before {
+    @include iconfont;
+    content: "\e918";
+  }
+}
+
+@mixin iconfont-StarFirst {
+  &::before {
+    @include iconfont;
+    content: "\e919";
+  }
+}
+
+@mixin iconfont-TagFirst {
+  &::before {
+    @include iconfont;
+    content: "\e91a";
+  }
+}
+
+@mixin iconfont-Tag {
+  &::before {
+    @include iconfont;
+    content: "\e918";
+  }
+}
+
+@mixin iconfont-Timeline {
+  &::before {
+    @include iconfont;
+    content: "\e91c";
+  }
+}
+
+@mixin iconfont-Users {
+  &::before {
+    @include iconfont;
+    content: "\e91d";
+  }
+}
+
+@mixin iconfont-Youtube {
+  &::before {
+    @include iconfont;
+    content: "\e91e";
+  }
+}
+
 
 //
 // HTML tags icon

@@ -43,12 +43,21 @@
 }
 
 @font-face {
-	font-family: 'Icons';
-	src:url('#{$path-font}infojobs.eot?') format('eot'),
+  font-family: 'Icons';
+  src:url('#{$path-font}infojobs.eot?') format('eot'),
 		url('#{$path-font}infojobs.woff') format('woff'),
 		url('#{$path-font}infojobs.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Icons-filled';
+  src:url('#{$path-font}infojobs-filled.eot?') format('eot'),
+		url('#{$path-font}infojobs-filled.woff') format('woff'),
+		url('#{$path-font}infojobs-filled.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 *,

@@ -20,7 +20,12 @@ Icons
 
 Icons are generated as fonts.<br>
 Use the following classes to apply an icon on a tag.<br>
-You can force the [icon size](#rubik-#{$sgi-iconsSize}) when there isn't text with icon.
+You can force the [icon size](#rubik-#{$sgi-iconsSize}) when there isn't text with icon.<br><br>
+Add `.iconfont-filled` class for filling inside the outline of the shape. `iconfont-filled` example:
+  <ul class="list-default">
+    <li class="iconfont-Check iconfont-filled">iconfont-Check iconfont-filled</li>
+    <li class="iconfont-Clock iconfont-filled">iconfont-ArrowLeft iconfont-filled</li>
+  </ul>
 
 Styleguide #{$sgi-icons}
 */
@@ -532,6 +537,123 @@ $icon-size: (30,50); //TODO: resolve problem when it s moved to _vars
 
   &-Whatsapp {
     @include iconfont-Whatsapp;
+  }
+
+  &-Android {
+    @include iconfont-Android;
+  }
+
+  &-Apple {
+    @include iconfont-Apple;
+  }
+
+  &-Book {
+    @include iconfont-Book;
+  }
+
+  &-CloseCircle {
+    @include iconfont-CloseCircle;
+  }
+
+  &-Comments {
+    @include iconfont-Comments;
+  }
+
+  &-Company2 {
+    @include iconfont-Company2;
+  }
+
+  &-Delete {
+    @include iconfont-Delete;
+  }
+
+  &-Duplicate {
+    @include iconfont-Duplicate;
+  }
+
+  &-Export {
+    @include iconfont-Export;
+  }
+
+  &-Filter2 {
+    @include iconfont-Filter2;
+  }
+
+  &-FolderStar {
+    @include iconfont-FolderStar;
+  }
+
+  &-HeartFirst {
+    @include iconfont-HeartFirst;
+  }
+
+  &-Heart {
+    @include iconfont-Heart;
+  }
+
+  &-Mobile {
+    @include iconfont-Mobile;
+  }
+
+  &-Mouse {
+    @include iconfont-Mouse;
+  }
+
+  &-NoPhoto {
+    @include iconfont-NoPhoto;
+  }
+
+  &-Pharma {
+    @include iconfont-Pharma;
+  }
+
+  &-Present {
+    @include iconfont-Present;
+  }
+
+  &-Print {
+    @include iconfont-Print;
+  }
+
+  &-Sad {
+    @include iconfont-Sad;
+  }
+
+
+  &-Share2 {
+    @include iconfont-Share2;
+  }
+
+  &-Share {
+    @include iconfont-Share;
+  }
+
+  &-Shop {
+    @include iconfont-Shop;
+  }
+
+  &-StarFirst {
+    @include iconfont-StarFirst;
+  }
+
+  &-TagFirst {
+    @include iconfont-TagFirst;
+  }
+
+  &-Tag {
+    @include iconfont-Tag;
+  }
+
+  &-Timeline {
+    @include iconfont-Timeline;
+  }
+
+  &-Users {
+    @include iconfont-Users;
+  }
+
+  &-Youtube {
+    @include iconfont-Youtube;
   }
 }
 
