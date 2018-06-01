@@ -43,12 +43,21 @@
 }
 
 @font-face {
-	font-family: 'Icons';
-	src:url('#{$path-font}infojobs.eot?') format('eot'),
+  font-family: 'Icons';
+  src:url('#{$path-font}infojobs.eot?') format('eot'),
 		url('#{$path-font}infojobs.woff') format('woff'),
 		url('#{$path-font}infojobs.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Icons-filled';
+  src:url('#{$path-font}infojobs-filled.eot?') format('eot'),
+		url('#{$path-font}infojobs-filled.woff') format('woff'),
+		url('#{$path-font}infojobs-filled.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 *,
@@ -130,6 +139,10 @@ Styleguide  #{$sgi-containers}
 	//overflow: hidden; it's removed because it creates a bug with anchors and footer structure
 	min-height: 100%;
     position: relative;
+
+    @include mediaquery ($bp-desktop) {
+    	margin-bottom: $padding/2;
+    }
 }
 
 .container {
