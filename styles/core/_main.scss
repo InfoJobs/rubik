@@ -139,6 +139,10 @@ Styleguide  #{$sgi-containers}
 	//overflow: hidden; it's removed because it creates a bug with anchors and footer structure
 	min-height: 100%;
     position: relative;
+
+    @include mediaquery ($bp-desktop) {
+    	margin-bottom: $padding/2;
+    }
 }
 
 .container {
