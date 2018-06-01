@@ -575,8 +575,8 @@ $icon-size: (30,50); //TODO: resolve problem when it s moved to _vars
     @include iconfont-Export;
   }
 
-  &-Filter2 {
-    @include iconfont-Filter2;
+  &-Filter {
+    @include iconfont-Filter;
   }
 
   &-FolderStar {
