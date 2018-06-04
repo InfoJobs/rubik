@@ -39,18 +39,18 @@ $MIXINS TAGS
 @mixin tag-close {
   @include iconfont-Close;
   position: absolute;
-  top: 6px;
+  top: 9px;
   left: auto;
   right: 10px;
   line-height: 13px;
   margin-left: 8px;
   cursor: pointer;
   color: $soft-script;
-  border-radius: 50%;
   padding: 2px;
 
-  &:hover {
+  &:hover::before {
       color: $shiro;
+      border-radius: 50%;
       background: $dark-silk;
   }
 }
