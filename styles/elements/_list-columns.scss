@@ -52,15 +52,6 @@ Styleguide #{$sgi-listsColumns}
        padding-right: $padding/2;
      }
 
-     &.list-icon {
-       margin-top: -20px;
-
-       li {
-         margin-top: 20px;
-       }
-
-     }
-
      @media only screen and (max-width: $tablet-start) {
        &.list-columns-1-md {
          @include list-columns-1

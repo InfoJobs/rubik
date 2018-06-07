@@ -239,31 +239,48 @@ Styleguide #{$sgi-tabs}
 
     a {
       @include display-flex;
-      @include align-items(flex-end);
+      @include align-items(center);
       @include font(xsmall);
+      @include flex-direction(column);
       @include semi-bold;
       justify-content: center;
-      height: 100px;
       padding: $padding ($padding / 2)($padding - 4);//4 es el alto del border del tab active
 
       &:hover {
-        color: $color-primary;;
+        color: $color-primary;
+
+        &::before {
+          color: $color-primary;
+        }
       }
 
       &.tab-active {
         cursor: default;
+
+        &::before {
+          color: $color-primary;
+        }      }
+
+      &::before {
+        color: $soft-script;
       }
 
     }
   }
-
-  [class*="badge"] {
+  .sticker-bottom-center {
+    font-size: $xsmall-font-size;
     position: absolute;
-    top: 20px;
-    right: calc(50% - 30px);//40px/2 del icono del tab + 20px/2 del sticker
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
   }
 
-
+  .badge-count {
+    position: absolute;
+    top: 20px;
+    right: calc(50% - 25px);
+  }
 }
 
 .tabs-scroll {

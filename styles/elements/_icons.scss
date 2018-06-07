@@ -39,17 +39,10 @@ Styleguide #{$sgi-iconsList}
 
 */
 
-[class^="iconfont-"]::before,
-[class*=" iconfont-"]::before,
-[class^="iconfont-"]::after,
-[class*=" iconfont-"]::after {
-	top: 3px; // font-size base medium
-}
 
 //needs sass version 3.4.7 or later
 [class*="iconfont-"]::before {
-	margin-right: 6px;
-	font-size: $medium-font-size;
+  font-size: $medium-font-size;
 
 	@at-root .sticker#{&} {
 		margin-right: 0;
@@ -79,7 +72,7 @@ Styleguide #{$sgi-iconsList}
 		margin-right: 6px;
 	}
 
-	@at-root .tabs #{&} {
+	@at-root .tabs-menu #{&} {
 		font-size: ($medium-font-size + 2);
 		margin-right: 9px;
 	}
@@ -149,108 +142,11 @@ $iconfont-size: (16, 18, 22, 24, 30, 36, 100); //TODO: resolve problem when it s
 			font-size: #{$value}px;
 		}
 	}
-
-	.ico-width-#{$value}px {
-		width: #{$value}px;
-		margin-right: 5px;
-		vertical-align: middle;
-	}
 }
 
 .iconfont-soft-script::before,
 .iconfont-soft-script::after {
 	color: $soft-script;
-}
-
-/*------------------------------------*\
-	$ICONSIMAGE
-\*------------------------------------*/
-.icon-candidaturas {
-		background: url("#{$path-backgrounds}/icon-candidaturas.png") no-repeat 0 0;
-}
-.icon-CV {
-		background: url("#{$path-backgrounds}/icon-CV.png") no-repeat 0 0;
-}
-.icon-contactos {
-		background: url("#{$path-backgrounds}/icon-contacts.png") no-repeat 0 0;
-}
-.icon-alerts {
-		background: url("#{$path-backgrounds}/icon-alert.png") no-repeat 0 0;
-}
-.icon-email-banned {
-		background: url("#{$path-backgrounds}/icon-email-banned.png") no-repeat 0 0;
-}
-.icon-android {
-		background: url("#{$path-backgrounds}/icon-android-app.png") no-repeat 0 0;
-}
-.icon-gplus {
-		background: url("#{$path-icons}/ico-social-gplus-footer.png") no-repeat 0 0;
-}
-.icon-facebook {
-		background: url("#{$path-icons}/ico-social-face-footer.png") no-repeat 0 0;
-}
-.icon-twitter {
-		background: url("#{$path-icons}/ico-social-twitter-footer.png") no-repeat 0 0;
-}
-.icon-youtube {
-		background: url("#{$path-icons}/ico-social-youtube-footer.png") no-repeat 0 0;
-}
-
-.icon-email-contrast {
-		background: url("#{$path-icons}/ico-email-white.png") no-repeat 0 0;
-}
-.icon-phone-mobile-contrast {
-		background: url("#{$path-icons}/ico-mobile-white.png") no-repeat 0 0;
-}
-.icon-phone-contrast {
-		background: url("#{$path-icons}/ico-cell-white.png") no-repeat 0 0;
-}
-
-/*------------------------------------*\
-	$ICONSIMAGE TABS
-\*------------------------------------*/
-
-@mixin icon-tab($icon-img, $icon-img-focus) {
-
-  background: url("#{$path-icons}/#{$icon-img}.png") no-repeat  center $padding;
-  background-size: 40px;
-
-  &:hover,
-  &:active,
-  &.tab-active {
-    background: url("#{$path-icons}/#{$icon-img-focus}.png") no-repeat  center $padding;
-    background-size: 40px;
-  }
-
-}
-
-.icon-tab-comments {
-    @include icon-tab(icon-tab-comments, icon-tab-comments-focus);
-}
-
-.icon-tab-favorites {
-    @include icon-tab(icon-tab-favorites, icon-tab-favorites-focus);
-}
-
-.icon-tab-messages {
-    @include icon-tab(icon-tab-messages, icon-tab-messages-focus);
-}
-
-.icon-tab-timeline {
-    @include icon-tab(icon-tab-timeline, icon-tab-timeline-focus);
-}
-
-
-$icon-size: (30,50); //TODO: resolve problem when it s moved to _vars
-
-@each $value in $icon-size {
-
-	.icon-#{$value}px {
-		display: block;
-		width: #{$value}px;
-		height: #{$value}px;
-		background-size: 100% auto;
-	}
 }
 
 //Icon function
@@ -262,6 +158,10 @@ $icon-size: (30,50); //TODO: resolve problem when it s moved to _vars
 //Icon types
 
 .iconfont {
+
+  &-block {
+    text-align: center;
+  }
 
   &-ArrowDown {
     @include iconfont-ArrowDown;

@@ -11,12 +11,22 @@ $MIXINS ICONS
   font-weight: normal;
   left: 0;
   line-height: 0;
+  margin-right: 6px;
   position: relative;
   speak: none;
   text-transform: none;
+  top: 3px;
 
   @at-root .iconfont-filled#{&} {
     font-family: $base-font-icons-filled;
+  }
+
+ @at-root .iconfont-block#{&} {
+    display: block;
+    line-height: 1;
+    margin: 0 0 $padding/2 0;
+    text-align: center;
+    top: 0;
   }
 }
 

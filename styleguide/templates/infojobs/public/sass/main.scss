@@ -1,102 +1,445 @@
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
+
+@font-face {
+  font-family: 'Proximanova';
+  src: url('#{$path-font}proximanova-regular.eot?') format('eot'),
+	  url('#{$path-font}proximanova-regular.woff') format('woff'),
+	  url('#{$path-font}proximanova-regular.otf') format('opentype'),
+	  url('#{$path-font}proximanova-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Proximanovalight';
+  src: url('#{$path-font}proximanova-light.eot?') format('eot'),
+	  url('#{$path-font}proximanova-light.woff') format('woff'),
+	  url('#{$path-font}proximanova-light.otf') format('opentype'),
+	  url('#{$path-font}proximanova-light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Proximanovabold';
+  src: url('#{$path-font}proximanova-bold.eot?') format('eot'),
+	  url('#{$path-font}proximanova-bold.woff') format('woff'),
+	  url('#{$path-font}proximanova-bold.otf') format('opentype'),
+	  url('#{$path-font}proximanova-bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Proximanovasemibold';
+  src: url('#{$path-font}proximanova-semibold.eot?') format('eot'),
+	  url('#{$path-font}proximanova-semibold.woff') format('woff'),
+	  url('#{$path-font}proximanova-semibold.otf') format('opentype'),
+	  url('#{$path-font}proximanova-semibold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Slabo-regular';
+  src: url('#{$path-font}slabo-regular.eot?') format('eot'),
+	  url('#{$path-font}slabo-regular.woff') format('woff'),
+	  url('#{$path-font}slabo-regular.otf') format('opentype'),
+	  url('#{$path-font}slabo-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Icons';
+  src:url('#{$path-font}infojobs.eot?') format('eot'),
+		url('#{$path-font}infojobs.woff') format('woff'),
+		url('#{$path-font}infojobs.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Icons-filled';
+  src:url('#{$path-font}infojobs-filled.eot?') format('eot'),
+		url('#{$path-font}infojobs-filled.woff') format('woff'),
+		url('#{$path-font}infojobs-filled.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  @include box-sizing($box-model);
+}
+
+body {
+	height: 100%;
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	color: $dark-silk;
+    background: $outer-fields;
+}
+
+input,
+select,
+textarea,
+button {
+	font-family: inherit;
+}
+
+a {
+	@include transition;
+ 	text-decoration: none;
+ 	color: $day-blue;
+}
+
+a:hover {
+	 text-decoration: none;
+	 color: $day-blue;
+}
+
+a:focus {
+	outline:none;
+}
+
+.link-underline,
+.link-underline:hover,
+.link:hover {
+ 	text-decoration: underline;
+}
+
+strong {
+  @include bold;
+}
+
 /*
-Zeus Project
-Version: 1.0
+Layouts
+
+Styleguide #{$sgi-layouts}
 */
 
-@import 'includes/_reset';
-@import 'includes/_variables';
-@import 'includes/_header';
-//@import 'includes/_buttons';
-@import 'includes/_code';
-@import 'includes/_messages';
-@import 'includes/_tables';
-@import 'includes/_menus';
-@import 'includes/_sections';
-@import 'includes/_footer';
-@import 'includes/_helpers';
+/*
+Containers
 
-/* General */
-.sg-body {
-  background: $global-background-color;
-  padding: 0 0 50px 0;
+To wrap all page content in a responsive container use class `.wrapper`. Use class `.container` to create blocks of content and add class `.container-expanded` to create a top gap between blocks of content.
+<br>
+<br>
 
-  &.home{
-    background-color: $color-blue;
-    min-height: 100%;
-  }
+Markup:
+<div class="wrapper casper">
+    <div class="container container-expanded">
+        <!-- Container is centered on page. The inner is
+         fluid between small and middle viewports,
+         and fixed width for larger dimensions:
+            * 970px < 769px
+            * 768px < 481px
+            * > 480px -->
+    </div>
+</div>
 
-  h1.sg-block-title {
-      margin-bottom:10px;
-  }
+Styleguide  #{$sgi-containers}
+*/
 
-  h2.sg-block-title  {
-      margin-bottom:10px;
-  }
-
-}
-
-.version {
-    font-size: $global-font-size;
-    line-height:$global-line-height;
-    color: $color-gray;
-    font-weight: $font-regular;
-    font-family: $global-font-family;
-    background-color: $color-light-gray;
-    padding:10px 20px;
-    border-radius:20px;
-    vertical-align:middle;
+.wrapper {
+	//overflow: hidden; it's removed because it creates a bug with anchors and footer structure
+	min-height: 100%;
     position: relative;
-    top: -4px;
+
+    @include mediaquery ($bp-desktop) {
+    	margin-bottom: $padding/2;
+    }
 }
 
-.sg-row {
+.container {
+	max-width: $container-width;
 	margin: 0 auto;
 }
 
-.divider {
-    border-bottom:1px solid $color-light-gray;
-    padding-bottom:20px;
-    margin-bottom:40px;
+.container-expanded {
+    margin-top: 10px;
+
+	@media print {
+		margin: 0;
+	}
 }
 
-.img-content-example {
-    margin: 50px 0px 10px 0px;
-    max-width: 100%;
+.row-centered {
+	width: 100%;
+
+	@include mediaquery ($bp-desktop) {
+		width: $row-centered-width;
+		margin: 0 auto 10px auto;
+	}
+
+	form {
+		@include mediaquery ($bp-desktop) {
+			width: $row-centered-width-form;
+			margin: 0 auto 10px auto;
+		}
+	}
+
+
+	input,
+	textarea {
+		width: 100%;
+	}
 }
 
-/*---*/
-.sg-container-center {
-    width: 990px;
-    float: left
+.modal-content .row-centered {
+	@include mediaquery ($bp-desktop) {
+		width: 450px;
+		margin-bottom: 0;
+	}
 }
 
-.sg-center,
-.version {
-    position: relative
+.row-flex {
+	@include display-flex;
+	@include align-items(center);
+
+	.col-flex-1 {
+		@include flex(1);
+
+		&:not(:only-child) {
+			margin-right: 20px;
+		}
+	}
+
+	.col-flex-min {
+		min-width: 75px;
+		text-align: right;
+	}
 }
 
-.sg-center {
-    width: 1230px;
-    margin: 0 auto
+/*
+Inner containers
+
+- Use class `.inner` to create 20px's inner space.
+- Add class `.inner-expanded` to create 40px's inner on the top and bottom.
+
+<br>
+<br>
+
+Markup:
+<div class="inner casper">
+    ...
+    <div class="inner">
+        ...
+    </div>
+</div>
+<div class="inner inner-expanded casper">
+    ...
+</div>
+
+Styleguide #{$sgi-innerContainers}
+*/
+
+.content-wrapper,
+.inner {
+    @include inner;
 }
 
-@media (max-width:1260px) {
-    .sg-center {
-        width: 1175px;
-        -webkit-transition: width .5s;
-        transition: width .5s;
-        margin: 0 0 0 7px
+.inner-expanded {
+	@include inner-expanded;
+
+    & > .inner:first-child,
+    & > .inner:only-child {
+		padding-top: 0;
+	}
+
+    & > .inner:last-child,
+    & > .inner:only-child {
+		padding-bottom: 0;
+	}
+
+    & + .inner-expanded {
+        padding-top: 0;
+
+        @include mediaquery ($bp-desktop) {
+            padding-top: 40px;
+        }
+    }
+
+}
+
+.img-responsive {
+	max-width: 100%;
+	height: auto;
+}
+
+img[alt] {
+    background: none;
+    border: 0;
+    word-wrap: break-word;
+}
+
+.section { //TODO: only used at home and red_de_contactos.html
+    background-color: $shiro;
+	padding: 10px;
+
+    @include mediaquery ($bp-desktop) {
+
+        padding: 20px;
+
     }
 }
 
-@media (max-width:1199px) {
-    .menu-float {
-        right: -160px
+.container-editable {
+    .content-middle {
+        min-height: 30px;
     }
-    .menu-float:hover {
-        right: 0
+
+    @include mediaquery ($bp-desktop) {
+        &:hover {
+            background: #f5fcff;
+            border-top: 1px solid #dae8ee;
+            border-bottom: 1px solid #dae8ee;
+            margin-top: -1px;
+            margin-bottom: -1px;
+            cursor: pointer;
+
+            .action {
+                display: block;
+            }
+
+        }
+
+        &.border-all:hover {
+            border: 1px solid #dae8ee;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        abbr {
+        	cursor: pointer;
+        }
+
     }
-    .sg-center {
-        width: auto
+
+    .action {
+        display: none;
     }
+
+    &.opacity {
+        opacity: 1;
+
+        .content-type-text,
+        .panel-default {
+            opacity: .5;
+        }
+    }
+
+    p {
+    	color: $dark-silk;
+    }
+}
+
+.opacity {
+    opacity: .5;
+}
+
+.list-default > li.container-editable {
+	margin-bottom: 0;
+
+	@include mediaquery ($bp-desktop) {
+		&:hover {
+			margin-bottom: -1px;
+		}
+	}
+}
+
+.inner-expanded > a:first-child > .inner.container-editable {
+    margin-top: -20px;
+
+    &:hover {
+        margin-top: -21px;
+    }
+}
+
+.section-centered {
+	text-align: center;
+}
+
+hr {
+	margin: 0;
+	border: none;
+	border-top: 1px solid $outer-wall;
+}
+
+.aside-wrapper {//TODO: only used in 'search-results-list' replace for grid system
+    background-color: $dark-shiro;
+
+    @include mediaquery ($bp-desktop) {
+
+      .aside-content {
+        width: 240px;
+      }
+
+    }
+
+    .main-content {
+		background-color: $shiro;
+
+        @include mediaquery ($bp-desktop) {
+
+          position: relative;
+          margin-left: 240px;
+          padding: 0 0 70px 0;
+
+        }
+    }
+}
+
+@mixin truncate {
+  display: block;
+  max-width: 99%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 1px;
+
+  @media print {
+    max-width: auto;
+    white-space: unset;
+    text-overflow: unset;
+    padding-left: 0;
+  }
+}
+
+.truncate {
+  @include truncate;
+}
+
+.truncate-small-device {
+  @include truncate;
+  @include mediaquery ($bp-desktop) {
+    display: inline;
+    max-width: auto;
+    white-space: unset;
+    overflow: hidden;
+    text-overflow: unset;
+    padding-left: 0;
+	}
+
+}
+
+//.truncate-comma:after {
+//	content: (" ,");
+//	position: absolute;
+//    right: 0;
+//}
+
+
+// to apply on container needs min-height
+.inner-freak {
+	min-height: 250px;
+
+	&:only-of-type {
+		min-height: 400px;
+	}
+}
+
+.divider:after {
+	content: "|";
+	padding-left: 5px;
+	color: $darkest-shiro;
+}
+
+abbr {
+    text-decoration: none;
+    cursor: help;
 }

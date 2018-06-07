@@ -52,6 +52,11 @@
 	.social-icons {
 		display: table;
 		margin: 0 auto;
+
+    [class^="iconfont-"]::before,
+    [class*=" iconfont-"]::before {
+      top: 11px;
+    }
 	}
 
 	.col-child .social-icons {
