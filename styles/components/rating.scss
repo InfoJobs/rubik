@@ -1,0 +1,87 @@
+/*------------------------------------*\
+    $rating
+\*------------------------------------*/
+
+/*
+Rating Stars
+
+  <div class="list-default list-inline rating">
+      <input type="radio" id="rating-4" name="rating" value="4" />
+      <label for="rating-4">4</label>
+
+      <input type="radio" id="rating-3" name="rating" value="3" />
+      <label for="rating-3">3</label>
+
+      <input type="radio" id="rating-2" name="rating" value="1" />
+      <label for="rating-2">2</label>
+
+      <input type="radio" id="rating-1" name="rating" value="1" />
+      <label for="rating-1">1</label>
+
+      <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" />
+      <label for="rating-0">0</label>
+  </div>
+
+Styleguide #{$sgi-rating}
+*/
+
+$rating-star-size: 40px;
+
+
+.rating {
+  @include display-inline-flex;
+  @include flex-direction(row-reverse);
+  justify-content: flex-end;
+
+  &:hover {
+    input:checked ~ label::before {
+      font-family: $base-font-icons;
+    }
+
+    label:hover ~ label::before {
+      font-family: $base-font-icons-filled;
+    }
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  input:checked {
+
+    ~ label::before {
+        font-family: $base-font-icons-filled;
+      }
+
+    ~ label:hover {
+        &::before {
+          font-family: $base-font-icons-filled;
+        }
+      }
+  }
+
+  label {
+    @include iconfont-Star;
+    color: transparent;
+    font-size: $rating-star-size;
+    height: $rating-star-size;
+    line-height: $rating-star-size;
+    overflow: hidden;
+    width: $rating-star-size;
+    white-space: nowrap;
+    margin: 0 $padding/4 0 0;
+
+    &::before {
+      color: $kiiro;
+      line-height: $rating-star-size;
+    }
+
+    &:hover {
+
+      &:before {
+        font-family: $base-font-icons-filled;
+      }
+    }
+  }
+
+}
