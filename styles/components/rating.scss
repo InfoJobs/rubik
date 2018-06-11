@@ -67,9 +67,8 @@ $rating-star-size: 40px;
     height: $rating-star-size;
     line-height: $rating-star-size;
     overflow: hidden;
-    width: $rating-star-size;
+    width: $rating-star-size + ($padding/4);
     white-space: nowrap;
-    margin: 0 $padding/4 0 0;
 
     &::before {
       color: $kiiro;
