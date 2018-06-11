@@ -66,6 +66,7 @@ $rating-star-size: 40px;
     font-size: $rating-star-size;
     height: $rating-star-size;
     line-height: $rating-star-size;
+    margin: 0;
     overflow: hidden;
     width: $rating-star-size + ($padding/4);
     white-space: nowrap;
