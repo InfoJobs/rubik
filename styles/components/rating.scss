@@ -41,7 +41,10 @@ $rating-star-size: 40px;
   }
 
   input[type="radio"] {
-    display: none;
+    direction: rtl;
+    left: -100%;
+    opacity: 0;
+    position: absolute;
   }
 
   input:checked {
