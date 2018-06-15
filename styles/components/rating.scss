@@ -29,6 +29,8 @@ $rating-star-size: 40px;
   @include display-inline-flex;
   @include flex-direction(row-reverse);
   justify-content: flex-end;
+  font-family: $base-font-icons-filled;
+
 
   &:hover {
     input:checked ~ label::before {
@@ -70,10 +72,13 @@ $rating-star-size: 40px;
     overflow: hidden;
     width: $rating-star-size + ($padding/4);
     white-space: nowrap;
+    -webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
+    -webkit-tap-highlight-color: transparent; /* For some Androids */
 
     &::before {
       color: $kiiro;
       line-height: $rating-star-size;
+      font-family: $base-font-icons;
     }
 
     &:hover {
