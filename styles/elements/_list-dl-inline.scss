@@ -6,14 +6,20 @@ Use class `.col-n` in `dt` and `dd` to generate columns.
 
 Markup:
     <dl class="dl-inline">
-    	<dt class="dl-col-2">Label dt</dt>
-    	<dd class="dl-col-4">Lorem ipsum</dd>
-    	<dt class="dl-col-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</dt>
-    	<dd class="dl-col-4">Lorem ipsum</dd>
-    	<dt class="dl-col-2">Label dt</dt>
-    	<dd class="dl-col-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio veritatis minus optio inventore deleniti error libero ad numquam, fugit iste architecto natus pariatur ut asperiores dolores molestias ratione? Quaerat, ratione.</dd>
-    	<dt class="dl-col-2">Label dt</dt>
-    	<dd class="dl-col-4">Lorem ipsum</dd>
+    	<dt class="dt-col-2">Label dt col-2</dt>
+    	<dd>Lorem ipsum</dd>
+    	<dt class="dt-col-2">Label dt col-2</dt>
+    	<dd>Lorem ipsum</dd>
+    	<dt class="dt-col-2">Label dt col-2</dt>
+    	<dd>Lorem ipsum</dd>
+    </dl>
+    <p class="margin-top">Example with 2 definitions list:</p>
+    <dl class="dl-inline list-expanded">
+    	<dt class="dt-col-4">Label dt col-3 and list-expanded</dt>
+    	<dd>Lorem ipsum</dd>
+    	<dd>Lorem ipsum</dd>
+    	<dt class="dt-col-4">Label dt col-3 and list-expanded</dt>
+    	<dd>Lorem ipsum</dd>
     </dl>
 
 Styleguide #{$sgi-dlInline}
@@ -40,7 +46,30 @@ $dl-col-unit: $theme-container-width / $gridColumns;
 
       + dd {
         float: left;
-        width: calc(100% - #{$dl-col-unit} * #{$i})
+        width: calc(100% - #{$dl-col-unit} * #{$i});
+
+        + dd {
+          clear: left;
+          padding-left: $dl-col-unit * $i;
+          padding-top: $padding/2;
+        }
+      }
+    }
+  }
+
+  &.list-expanded {
+
+    dt {
+
+      &[class*="col-"]:not(:first-child) + dd{
+        margin-top: $padding;
+      }
+    }
+
+    dd {
+
+      + dt {
+        margin-top: $padding;
       }
     }
   }
@@ -57,6 +86,7 @@ $dl-col-unit: $theme-container-width / $gridColumns;
     + dt {
       margin-top: $padding/2;
     }
+
   }
 
   @include mediaquery($bp-desktop) {

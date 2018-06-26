@@ -2,6 +2,44 @@
     $TABLE
 \*------------------------------------*/
 
+/*
+Table
+
+Markup:
+<table class="table-align-right">
+  <tbody>
+    <tr>
+      <td>Lorem ipsum</td>
+      <td>123455</td>
+    </tr>
+    <tr>
+      <td>Lorem</td>
+      <td>123</td>
+    </tr>
+  </tbody>
+</table>
+
+Styleguide #{$sgi-table}
+*/
+
+
+.table {
+
+  &-align-right {
+    margin: 0 0 0 auto;
+    tr:not(:first-child) {
+      td {
+        padding-top: $padding/2;
+      }
+    }
+
+    td {
+      padding-right: $padding;
+      text-align: right;
+    }
+  }
+}
+
 .table-default {
 	text-align: left;
 	width: 100%;
