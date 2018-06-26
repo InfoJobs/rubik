@@ -100,6 +100,28 @@ Styleguide #{$sgi-gridSystem}
 
   }
 
+  &-order-small-device {
+    display: -ms-grid;
+    display: grid;
+
+    .col-order-top {
+      order: -1;
+
+      @include mediaquery ($bp-tablet) {
+        order: 0;
+
+        &.col-12-medium {
+          order: -1;
+
+          @include mediaquery ($bp-desktop) {
+            order: 0;
+          }
+
+        }
+      }
+    }
+  }
+
 	@media print {
 		margin: 0;
 	}
@@ -180,6 +202,7 @@ Styleguide #{$sgi-mediumDevices}
 
 @for $i from 1 through $gridColumns {
 	.col-#{$i} {
+
 		@include mediaquery ($bp-tablet) {
 			width: ((100 / $gridColumns) * $i) * 1%;
 			float: left;
