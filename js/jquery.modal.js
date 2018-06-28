@@ -7,6 +7,7 @@
 
 	var width,
         innerHeight,
+        emptyHeader,
         $modalInner,
         $modalLayer,
         $modalWrapper,
@@ -40,17 +41,20 @@
 				openElement	= $this.data().openelement,
 				contentWrapper = $this.data().contentwrapper,
 				content = $('#'+contentWrapper).html(),
-				headerModal = '<div class="modal-header" id="header-'+openElement+'"><a href="#" class="close-modal hit-area" title=""></a><h1 class="title">' + headermodal +
-                              '</h1> </div>',
-                structure = '<div id="layer-'+openElement+'" class="modal-hidden modal-layer"><div id="inner-'+openElement+'" class="modal-inner"><div id="content-'+openElement+'" class="modal-content"></div></div></div>';
-		        width = $this.data().width || settings.width;
-
+				closeModal = '<a href="#" class="close-modal hit-area ' + $this.data().closecolor + '" title=""></a>',
+				headerModal = '<div class="modal-header" id="header-'+openElement+'">' + closeModal + '<h1 class="title">' + headermodal + '</h1> </div>',
+				structure = '<div id="layer-'+openElement+'" class="modal-hidden modal-layer"><div id="inner-'+openElement+'" class="modal-inner"><div id="content-'+openElement+'" class="modal-content"></div></div></div>';
+				width = $this.data().width || settings.width;
+				headerModalEmpty = closeModal
+				headerModal = $this.data().hasheader === false ? headerModalEmpty : headerModal;
 
 			$('#'+contentWrapper).remove();
 
 			$('#'+openElement).click( function() {
+
 				$('#notification-toast').css('position','static');
 				$("body").css({ overflow: 'hidden' });
+				$(".sticky").css({ zIndex: 0 });
 				$('.wrapper').append(structure);
 				$('#inner-'+openElement).prepend(headerModal);
 				$('#content-'+openElement).append(content);
@@ -92,7 +96,7 @@
 					'width': width+'px'
 				});
 			}
-			var elementInner = document.querySelector(".modal-content .inner");
+			var elementInner = document.querySelector(".modal-content");
 			if(window.innerHeight < (elementInner.offsetHeight + headerHeight + minTopMargin)) {
 				if($( window ).width() > $modalInner.width()) {
 					innerHeight = window.innerHeight - headerHeight - minTopMargin;
@@ -173,6 +177,7 @@
         $modalLayer.remove();
         $('body').css({ overflow: 'inherit' })
         $('#notification-toast').css('position','relative');
+        $(".sticky").css({ zIndex: 8996 });
 	};
 
 	// Estos son los valores por defecto.
