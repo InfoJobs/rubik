@@ -115,7 +115,14 @@ Styleguide #{$sgi-modal-content}
 	padding: 5px;
 	font-size: ($large-font-size + 2);
 	line-height: $large-line-height;
-	color: $shiro;
+
+	&::before {
+		color: $shiro;
+	}
+
+	&.focus::before {
+		color: $day-blue;
+	}
 
 	&:hover {
 		color: $shiro;
@@ -326,7 +333,6 @@ Styleguide #{$sgi-modal-content}
 	top: 0;
 	right: 10px;
 	margin-top: 10px;
-	background-color: #1a6d9b; //ToDo: add to _vars.scss
 }
 .btn-cancel {
 	z-index: 2;

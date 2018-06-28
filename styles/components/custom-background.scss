@@ -18,12 +18,20 @@ Markup:
 Styleguide #{$sgi-custom-background}
 */
 
+$height-bg: 206px;
+
 @mixin custom-bg {
 
   @include font-rendering;
   background-repeat: no-repeat;
   background-color: $dark-softened;
   //the background-image is not reusable, inline in html
+}
+
+@mixin custom-bg-empty {
+  &:empty {
+    height: $height-bg;
+  }
 }
 
 .custom-bg {
@@ -39,6 +47,12 @@ Styleguide #{$sgi-custom-background}
     @include custom-bg;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  &-cover--center {
+    @extend .custom-bg-cover;
+    @include custom-bg-empty;
+    background-position: center;
   }
 
   &-default {

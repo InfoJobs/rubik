@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Content logo</title>
+    <link rel="stylesheet" type="text/css" href="../public/candidates.css" />
+  </head>
+  <body>
+      <div class="modal-layer modal-fade-in" style="position; fixed; z-index; 99999;">
+        <div class="modal-inner" style="width: 640px; top: 20px; margin: auto;">
+          <a href="javascript:" class="close-modal hit-area focus" id="closeModalCV" title="Close"></a>
+          <div class="modal-content" style="height: 640px; max-height: 570px; overflow-x: hidden;">
+            <div class="custom-bg-cover--center" style="background-image: url(//media.infojobs.net/appgrade/pictures/pic-modal-applications.png);"></div>
+            <div class="inner">
+              <h1 class="h2">&#xBF;Seguro que quieres dejar de recibir alertas de tus candidaturas?</h1>
+              <p>Si desactivas esta opci&#xF3;n, no podremos enviarte ning&#xFA;n email o notificaci&#xF3;n en la app relacionada al estado de tus candidaturas.</p>
+              <div class="margin-top">
+                <a href="javascript:" class="btn btn-cta" type="button" id="closeBtnModalCV">cancelar</a>
+                <a href="javascript:" class="btn btn-default" type="button" id="closeBtnModalCV">Desactivar</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var eDivModal;
+      document.getElementById('closeBtnModalCV').onclick = function() {
+        eDivModal = document.querySelector('.modal-layer');
+        eDivModal.classList.add('modal-fade-out');
+        eDivModal.classList.remove('modal-fade-in');
+        setTimeout(function(){
+          eDivModal.remove();
+        }, 2000);
+      }
+      document.getElementById('closeModalCV').onclick = function() {
+        eDivModal = document.querySelector('.modal-layer');
+        eDivModal.classList.add('modal-fade-out');
+        eDivModal.classList.remove('modal-fade-in');
+        setTimeout(function(){
+          eDivModal.remove();
+        }, 2000);
+      }
+
+    </script>
+  </body>
+</html>
