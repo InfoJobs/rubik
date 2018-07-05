@@ -121,7 +121,7 @@ select {
   border-radius: 0;
 }
 
-input,
+input:not(.btn*),
 textarea {
 	@include input;
 	color: $dark-silk;
