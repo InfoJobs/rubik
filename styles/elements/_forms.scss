@@ -121,7 +121,7 @@ select {
   border-radius: 0;
 }
 
-input:not(.btn*),
+input:not([class*="btn"]),
 textarea {
 	@include input;
 	color: $dark-silk;
@@ -139,9 +139,7 @@ textarea {
 	}
 
 	&:focus {
-		border: 1px solid $day-blue;
-		outline: none;
-		color: $dark;
+    @include focus;
 	}
 
   &.input-justify{

@@ -24,6 +24,7 @@ Markup:
 <p class="highlight">Lorem ipsum dolor sit amet.</p>
 <p class="focus">Lorem ipsum dolor sit amet.</p>
 <p class="alert">Lorem ipsum dolor sit amet.</p>
+<p class="cta">Lorem ipsum dolor sit amet.</p>
 
 Styleguide #{$sgi-textColors}
 */
@@ -111,6 +112,12 @@ a.soft-script:active,
 	color: $trueblood;
 }
 
+.cta,
+.cta[class*="iconfont-"]::before {
+	color: $orange-soda;
+}
+
+
 /*
 Contrasted text color
 
@@ -129,6 +136,10 @@ Styleguide #{$sgi-textContrastColors}
 .contrast,
 .contrast[class*="iconfont-"]::before {
 	color: $shiro;
+
+	@media print {
+		color: $print-dark;
+	}
 }
 .contrast {
 
