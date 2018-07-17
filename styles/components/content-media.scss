@@ -145,12 +145,12 @@ Styleguide #{$sgi-content-top}
 
 	p:only-of-type {
 		margin-bottom: 5px;
+	}
 
-    @media print {
+	@media print {
       page-break-inside: avoid;
       margin-bottom: 0;
     }
-	}
 }
 
 .content-top,

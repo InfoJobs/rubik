@@ -179,6 +179,9 @@ Styleguide 2.16
 
 .ui-autocomplete {
 	width: 333px;
+	max-height: 160px;
+	overflow-y: auto;
+	overflow-x: hidden;
 
 	li {
 		display: list-item;
@@ -187,6 +190,7 @@ Styleguide 2.16
 		a {
 			display: block;
 			color: $dark-silk;
+			@include truncate;
 		}
 
 		&:hover,
@@ -467,3 +471,7 @@ Styleguide 2.16
 //   }
 // }
 /* @end */
+
+.ui-helper-hidden-accessible {
+	display: none;
+}

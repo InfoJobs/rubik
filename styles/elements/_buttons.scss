@@ -53,7 +53,7 @@ button::-moz-focus-inner {
         }
     }
 
-    + [class*="btn"]:not(.btn-group-justified):not(.btn-full-width--mobile) {
+    + [class*="btn"]:not(.btn-group-justified):not(.btn-full-width--small-device) {
         margin-left: 5px;
     }
 
@@ -82,7 +82,7 @@ Also add one of the following classes to give it format:
 
 Markup:
 <button class="btn btn-primary" type="button">Primary</button>
-<input class="btn btn-default" type="submit" value="Secondary" />
+<input class="btn btn-default" type="button" value="Secondary" />
 <button class="btn btn-tertiary" type="button">Tertiary</button>
 <a href="#" class="btn btn-highlight">Highlight</a>
 <a href="#" class="btn btn-primary">Link</a>
@@ -345,17 +345,15 @@ Styleguide #{$sgi-buttons-display}
 */
 
 .btn-full-width {
-  width: 100%;
+ width: 100%;
 
-  &--mobile {
-    margin-top: 10px;
-    width: 100%;
+    &--small-device {
+        width: 100%;
 
-    @include mediaquery ($bp-desktop) {
-      margin-top: 0;
-      width: auto;
+        @include mediaquery ($bp-desktop) {
+            width: auto;
+        }
     }
-  }
 }
 
 .btn-form-inline { //used on search-bar, filters and edit-cv(datos-personales)

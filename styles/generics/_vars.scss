@@ -34,8 +34,8 @@ $xlarge-line-height: 		28px;
 $xxlarge-font-size: 		  30px;
 $xxlarge-line-height: 		33px;
 
-$xxxlarge-font-size: 		  36px;
-$xxxlarge-line-height: 		39px;
+$xxxlarge-font-size: 		  42px;
+$xxxlarge-line-height: 		50px;
 
 //convertion pt to px
 
@@ -61,6 +61,8 @@ $bamboo:					#00a550;
 $mid-script:				#666;
 $soft-script:				#999;
 $dark:              #000;
+
+$print-dark:		$dark;
 
 //
 // Background and border colors

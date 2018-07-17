@@ -64,6 +64,8 @@ Styleguide #{$sgi-helpers}
 }
 
 .text-center {
+	margin-left: auto;
+	margin-right: auto;
 	text-align: center;
 
   svg {
@@ -126,10 +128,21 @@ Styleguide #{$sgi-helpers}
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 100%;
     }
   }
 }
+
+.flow-items {
+	@include mediaquery ($bp-desktop) {
+		@include display-inline-flex;
+		margin-top: inherit;
+
+		&--center {
+			@include align-items(center);
+		}
+	}
+}
+
 
 /*------------------------------------*\
     $FONT
@@ -223,6 +236,11 @@ Styleguide #{$sgi-helpers}
 	margin-right: 20px;
 }
 
+.indent {
+	margin-left: 24px;
+	margin-top: 5px;
+}
+
 /*------------------------------------*\
     $HIDE
 \*------------------------------------*/
@@ -284,6 +302,9 @@ Styleguide #{$sgi-helpers}
    visibility: hidden;
 }
 
+.default-cursor {
+	cursor: default;
+}
 
 /*------------------------------------*\
     $IMG
