@@ -809,6 +809,12 @@ $MIXINS ICONS
   }
 }
 
+@mixin iconfont-Transfer {
+  &::before {
+    @include iconfont;
+    content: "\e920";
+  }
+}
 
 //
 // HTML tags icon

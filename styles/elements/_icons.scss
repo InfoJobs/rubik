@@ -24,7 +24,7 @@ You can force the [icon size](#rubik-#{$sgi-iconsSize}) when there isn't text wi
 Add `.iconfont-filled` class for filling inside the outline of the shape. `iconfont-filled` example:
   <ul class="list-default">
     <li class="iconfont-Check iconfont-filled">iconfont-Check iconfont-filled</li>
-    <li class="iconfont-Clock iconfont-filled">iconfont-ArrowLeft iconfont-filled</li>
+    <li class="iconfont-Clock iconfont-filled">iconfont-Clock iconfont-filled</li>
   </ul>
 
 Styleguide #{$sgi-icons}
@@ -558,6 +558,10 @@ $iconfont-size: (16, 18, 22, 24, 30, 36, 100); //TODO: resolve problem when it s
 
   &-Plus-circle {
     @include iconfont-Plus-circle;
+  }
+
+	&-Transfer {
+    @include iconfont-Transfer;
   }
 }
 
