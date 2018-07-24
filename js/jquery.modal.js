@@ -7,7 +7,6 @@
 
 	var width,
         innerHeight,
-        emptyHeader,
         $modalInner,
         $modalLayer,
         $modalWrapper,
@@ -34,6 +33,8 @@
         return this.each(function() {
 			var $this = $( this ),
 				headermodal = $this.data().headermodal || settings.headermodal,
+				hasheader = $this.data().hasheader || settings.hasheader,
+				closecolor = $this.data().closecolor || settings.closecolor,
 				close = $this.data().close || settings.close,
 				closeBackground	= $this.data().closeBackground || settings.closeBackground,
 				autoclose = $this.data().autoclose || settings.autoclose,
@@ -41,12 +42,11 @@
 				openElement	= $this.data().openelement,
 				contentWrapper = $this.data().contentwrapper,
 				content = $('#'+contentWrapper).html(),
-				closeModal = '<a href="#" class="close-modal hit-area ' + $this.data().closecolor + '" title=""></a>',
+				closeModal = '<a href="#" class="close-modal hit-area ' + closecolor + '" title=""></a>',
 				headerModal = '<div class="modal-header" id="header-'+openElement+'">' + closeModal + '<h1 class="title">' + headermodal + '</h1> </div>',
 				structure = '<div id="layer-'+openElement+'" class="modal-hidden modal-layer"><div id="inner-'+openElement+'" class="modal-inner"><div id="content-'+openElement+'" class="modal-content"></div></div></div>';
 				width = $this.data().width || settings.width;
-				headerModalEmpty = closeModal
-				headerModal = $this.data().hasheader === false ? headerModalEmpty : headerModal;
+				headerModal = hasheader === false ? closeModal : headerModal;
 
 			$('#'+contentWrapper).remove();
 
@@ -178,6 +178,7 @@
         $('body').css({ overflow: 'inherit' })
         $('#notification-toast').css('position','relative');
         $(".sticky").css({ zIndex: 8996 });
+        window.dispatchEvent(new window.CustomEvent('close-modal'));
 	};
 
 	// Estos son los valores por defecto.
