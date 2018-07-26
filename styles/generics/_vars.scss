@@ -42,6 +42,18 @@ $xxxlarge-line-height: 		50px;
 $point-to-px:				1.3333;
 
 //
+// Forms
+// -------------------------------------------
+
+$small-input-height:     30px;
+$medium-input-height:    40px;
+$input-width:            330px;
+$textarea-height:        150px;
+$textarea-width:         100%;
+
+
+
+//
 // Grid
 // -------------------------------------------
 
@@ -156,6 +168,7 @@ $path-pictures: 		  '//media.infojobs.net/appgrade/pictures' !default;
 $zindex-menu:           9000;
 $zindex-pulldown:       8999;
 $zindex-wrap-overlay:   8998;
+$zindex-modal-layer:    9999;
 $zindex-notification:   8997;
 $zindex-sticky-content: 8996;
 
