@@ -582,12 +582,6 @@ a[class*=" Icon--"] {
     }
 }
 
-.Icon--small svg {
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-}
-
 $svg-hover: (fill, stroke);
 
 svg {

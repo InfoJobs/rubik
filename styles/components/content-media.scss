@@ -188,32 +188,13 @@ Markup:
     <div class="content-toolbar">
         <ul>
             <li>
-                <a href="#" class="Icon--small">
-                    <svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 157.81 170.84"><title>ico-edit-card</title><path class="cls-1" d="M53.51,178.75l22-19a12,12,0,0,0,3.22-4.47L120.61,54l-18.48-7.65L60.94,145.83l-8.45,7.33L51.7,142,92.89,42.56,74.41,34.91,32.5,136.1a12,12,0,0,0-.88,5.44l2.06,29A12,12,0,0,0,53.51,178.75Z" transform="translate(-31.59 -10.87)"/><path class="cls-1" d="M78.24,25.67L124.44,44.8l3.06-7.39A12,12,0,0,0,121,21.73L97,11.78A12,12,0,0,0,81.3,18.28Z" transform="translate(-31.59 -10.87)"/><path class="cls-1" d="M179.4,181.7H109.82a10,10,0,1,1,0-20H179.4A10,10,0,1,1,179.4,181.7Z" transform="translate(-31.59 -10.87)"/></svg>
-                    <span>Editar</span>
+                <a href="#" class="iconfont-Edit alternative iconfont-hover iconfont-24px">
+                    <span class="hide">Editar</span>
                 </a>
             </li>
             <li>
-                <a href="#" class="Icon--small">
-                    <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
-                        <path class="st0" d="M145.6,53l-4.9,116H56L52.1,53 M168.4,33h-139L37,178.5c0.8,6,5.9,10.5,11.9,10.5h98.9c6,0,11.1-4.5,11.9-10.5
-                        	L168.4,33z"/>
-                        <g>
-                        	<path class="st0" d="M174.9,52h-152c-2.8,0-5-2.2-5-5V37c0-2.8,2.2-5,5-5h152c2.8,0,5,2.2,5,5v10C179.9,49.8,177.6,52,174.9,52z"/>
-                        </g>
-                        <g>
-                        	<path class="st0" d="M113.5,154L113.5,154c-5.5,0-10-4.5-10-10V89.9c0-5.5,4.5-10,10-10h0c5.5,0,10,4.5,10,10V144
-                        		C123.5,149.5,119,154,113.5,154z"/>
-                        </g>
-                        <g>
-                        	<path class="st0" d="M82.5,154L82.5,154c-5.5,0-10-4.5-10-10V89.9c0-5.5,4.5-10,10-10h0c5.5,0,10,4.5,10,10V144
-                        		C92.5,149.5,88,154,82.5,154z"/>
-                        </g>
-                        <g>
-                        	<path class="st0" d="M118,32H78V17c0-2.8,2.2-5,5-5h30c2.8,0,5,2.2,5,5V32z"/>
-                        </g>
-                    </svg>
-                    <span>Borrar</span>
+                <a href="#" class="iconfont-Delete alternative iconfont-hover iconfont-24px">
+                    <span class="hide">Borrar</span>
                 </a>
             </li>
         </ul>
