@@ -158,6 +158,8 @@ Styleguide #{$sgi-modal-content}
 }
 
 .modal-layer {
+  position: fixed;
+  z-index: $zindex-modal-layer;
 
   &::before {
     content: "";
@@ -167,7 +169,7 @@ Styleguide #{$sgi-modal-content}
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 9999;
+    z-index: $zindex-modal-layer;
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);
   }
 
@@ -189,7 +191,7 @@ Styleguide #{$sgi-modal-content}
 	//min-height: 100%;
 	background-color: $shiro;
  	box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
- 	z-index: 9999;
+ 	z-index: $zindex-modal-layer;
 
 	//problems with iOS & safari
     -webkit-animation: modal-flipinX .3s both;
@@ -244,12 +246,12 @@ Styleguide #{$sgi-modal-content}
 
 .modal-flipinX {
   -webkit-animation: modal-flipinX .6s both;
-  animation: flipInX .6s both;
+  animation: modal-flipinX .6s both;
 }
 
 @keyframes modal-flipinX {
   from {
-    transform: perspective(800px) translateY(-60%);
+    transform: perspective(800px) translateY(-50%);
     transition-timing-function: ease-in;
     opacity: 0;
   }
@@ -257,12 +259,6 @@ Styleguide #{$sgi-modal-content}
   to {
     transform: perspective(800px);
     opacity: 1;
-
-	@include mediaquery ($bp-desktop) {
-
-      transform: perspective(800px) translateY(-50%);
-
-    }
   }
 }
 
@@ -276,12 +272,6 @@ Styleguide #{$sgi-modal-content}
   to {
     -webkit-transform: perspective(800px);
     opacity: 1;
-
-	@include mediaquery ($bp-desktop) {
-
-      -webkit-transform: perspective(800px) translateY(-50%);
-
-    }
   }
 }
 
@@ -295,12 +285,12 @@ Styleguide #{$sgi-modal-content}
 
 @keyframes modal-fade-in {
   0% { opacity: 0; }
-  100% { modal-fade-in: 1; }
+  100% { opacity: 1; }
 }
 
 @-webkit-keyframes modal-fade-in {
   0% { opacity: 0; }
-  100% { modal-fade-in: 1; }
+  100% { opacity: 1; }
 }
 
 .mobile-header {
