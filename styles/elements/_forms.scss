@@ -135,7 +135,7 @@ input {
   }
 }
 
-input:not([class*="btn"]),
+input,
 textarea {
 	@include form-field;
 	color: $dark-silk;
