@@ -66,13 +66,18 @@ Styleguide 2.16
 /* @end */
 /* @group Single Chosen */
 .chosen-container-single .chosen-single {
-  @include input;
+  @include form-field;
   position: relative;
   overflow: hidden;
-  padding: 11px;
+  padding: 9px;
   border:0 none;
   text-decoration: none;
   white-space: nowrap;
+
+  .select-small + & {
+    line-height: $small-line-height;
+    padding: 5px 9px;
+  }
 
 }
 
@@ -184,6 +189,7 @@ Styleguide 2.16
 	overflow-x: hidden;
 
 	li {
+		//@include truncate;
 		display: list-item;
 		cursor: pointer;
 

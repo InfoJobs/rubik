@@ -102,13 +102,13 @@ label,
 	}
 }
 
-@mixin input {
+@mixin form-field {
 	display: block;
-	height: 44px;
 	padding: 4px 10px;
 	font-size: $base-font-size;
 	line-height: $base-line-height;
 }
+
 
 textarea,
 input[type="text"],
@@ -121,11 +121,24 @@ select {
   border-radius: 0;
 }
 
-input:not([class*="btn"]),
+input {
+  height: $medium-input-height;
+  width: $input-width;
+
+  &.#{&}-small {
+    height: $small-input-height;
+  }
+
+  &[class*="btn"] {
+    height: auto;
+    width: auto;
+  }
+}
+
+input,
 textarea {
-	@include input;
+	@include form-field;
 	color: $dark-silk;
-	width: 330px;
 	margin: 0;
 	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
 
@@ -380,6 +393,27 @@ Styleguide #{$sgi-forms-basic-fields}
 */
 
 /*
+Input fields size
+
+Use `<input class="input-small"`
+
+Markup:
+<form method="post" action="#">
+    <fieldset>
+        <legend>Lorem ipsum</legend>
+        <ul class="form--field-block clearfix">
+            <li>
+                <label for="input">Basic field <span class="alternative">(opcional)</span></label>
+                <input class="input-small" id="input" type="text" placeholder="Lorem ipsum..." />
+            </li>
+        </ul>
+    </fieldset>
+</form>
+
+Styleguide #{$sgi-forms-basic-fields-size}
+*/
+
+/*
 Input group date
 
 Markup:
@@ -472,9 +506,9 @@ Styleguide #{$sgi-forms-group-date}
 */
 
 textarea {
-	min-height: 150px;
+	min-height: $textarea-height;
 	resize: vertical;
-	width: 100%;
+	width:  $textarea-width;
 }
 
 .textarea {
@@ -521,9 +555,9 @@ Styleguide #{$sgi-forms-textarea}
 
 select {
 	padding: 13px 10px;
-	height: 44px;
+	height: $medium-input-height;
 	background: transparent;
-	font-size: 16px;
+	font-size: $base-font-size;
 	color: $dark-silk;
 	border: 0 none;
 	background: url(#{$path-backgrounds}/bg-select-arrow.png) right 15px no-repeat $shiro;
@@ -591,6 +625,33 @@ Markup:
 </form>
 
 Styleguide #{$sgi-forms-select}
+*/
+
+
+/*
+Select size
+
+Markup:
+<form method="post" action="#">
+    <fieldset>
+        <legend>Lorem ipsum</legend>
+        <ul class="form--field-block clearfix">
+            <li>
+                <label for="pulldown">Pulldown</label>
+                <select id="pulldown" class="chosen-select select-small" data-placeholder="(Seleccionar)">
+                        <option value="01">Option01</option>
+                        <option value="02">Option02</option>
+                        <option value="03">Option03</option>
+                        <option value="04">Option04</option>
+                        <option value="05">Option05</option>
+                </select>
+                <p class="info alternative small clearfix">Puedes seleccionar varios permisos de conducir</p>
+            </li>
+        </ul>
+    </fieldset>
+</form>
+
+Styleguide #{$sgi-forms-select-size}
 */
 
 /*

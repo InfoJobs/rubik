@@ -82,7 +82,7 @@ Also add one of the following classes to give it format:
 
 Markup:
 <button class="btn btn-primary" type="button">Primary</button>
-<input class="btn btn-default" type="button" value="Secondary" />
+<button class="btn btn-default" type="button">Secondary</button>
 <button class="btn btn-tertiary" type="button">Tertiary</button>
 <a href="#" class="btn btn-highlight">Highlight</a>
 <a href="#" class="btn btn-primary">Link</a>
@@ -362,8 +362,6 @@ Styleguide #{$sgi-buttons-display}
     @at-root button#{&} {
       width: 100%;
       height: auto;
-      padding-top: 15px;
-      padding-bottom: 13px;
     }
 
     &.text-left { //already defined in tools.scss, but overwritten by btn{...text-align: center;...}
