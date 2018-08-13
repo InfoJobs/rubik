@@ -177,7 +177,7 @@ textarea {
 }
 
 .input-group {
-  display: table;
+	display: table;
 	width: 100%;
 
 	& > div {
@@ -198,43 +198,51 @@ textarea {
 	}
 
 	.active input {
-    background-color: $shiro;
-    cursor: default;
+	    background-color: $shiro;
+	    cursor: default;
 	}
 
 	&-date {
-    width: auto;
-    border: 1px solid #c7c7c7;
+	    width: auto;
+	    border: 1px solid #c7c7c7;
 
 		> div {
-      position: relative;
+      		position: relative;
 
 			&::before {
-        content: "|";
-        position: absolute;
-        top: 12px;
-        left: -5px;
+		        content: "|";
+		        position: absolute;
+		        top: 12px;
+		        left: -5px;
 				color: #c7c7c7;
+
+				@at-root .input-small#{&} {
+		      		top: 6px;
+		      	}
 			}
 
 			&:first-of-type::before {
-        content: "";
+        		content: "";
 			}
 
-      input {
-      	width: 50px;
-      	margin-left: -4px;
-      	text-align: center;
-      	border: none;
-		  }
+			input {
+		      	width: 50px;
+		      	margin-left: -4px;
+		      	text-align: center;
+		      	border: none;
+
+		      	@at-root .input-small#{&} {
+		      		height: $small-input-height;
+		      	}
+			}
 
 			&:last-child input  {
-        width: 66px;
-		  }
-	  }
+	        	width: 66px;
+			}
+		}
 
 		> div:first-of-type input {
-      margin-left: 0;
+			margin-left: 0;
 		}
 
 		.error & {
