@@ -1,4 +1,3 @@
-//generics
 @import "../core/print";
 
 /*------------------------------------*\
@@ -246,7 +245,7 @@ Styleguide #{$sgi-helpers}
 \*------------------------------------*/
 
 .hide {
-	display: none;
+	display: none !important; //we need important because .break class has display: block
 }
 
 @media only screen and (max-width: $mobile-start) {
@@ -329,11 +328,6 @@ Styleguide #{$sgi-helpers}
 		@include mediaquery ($bp-desktop) {
 			display: inline;
 		}
-	}
-
-	&-after::after {
-		content: '';
-		display: block;
 	}
 }
 
