@@ -111,6 +111,10 @@ $notifications: success $bamboo , system $outer-king, error $trueblood, warning 
     @include flex(1 0 auto);
     color: inherit;
     margin-left: $padding/2;
+
+    &::before {
+      color: inherit;
+    }
   }
 
   &-icon {
