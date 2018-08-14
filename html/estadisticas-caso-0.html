@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+<meta charset="ISO-8859-15">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../public/rubik.css" />
+<script type="text/javascript" src="../js/toggle-side-filters.js"></script>
+
+</head>
+<body>
+<div class="container container-expanded inner">
+    <div class="row row-faux">
+      <div class="col-4 js-filters-layer filters-layer layer-hidden">
+        <div class="col-child panel-default">
+          <div class="form inner">
+            <a href="javascript:;" class="js-close-filters iconfont-Close iconfont-24px hide-large-device pull-right"><span class="hide">Close</span></a>
+
+            <fieldset>
+              <legend class="fieldset-title">Filtrar</legend>
+              <div class="field-date-group margin-top">
+                <ul class="list-default clearfix">
+                  <li class="start-date-group">
+                    <label for="day">Fecha de inicio</label>
+                    <div class="input-group input-group-date">
+                      <div>
+                        <input placeholder="MM" type="number" id="month" name="month" maxlength="2">
+                      </div>
+                      <div>
+                        <input placeholder="AAAA" type="number" id="year" name="year" maxlength="4">
+                      </div>
+                    </div>
+                  </li>
+                  <li class="end-date-group">
+                    <ul class="list-default">
+                      <li class="end-date">
+                        <label for="day">Fecha de fin</label>
+                        <div class="input-group input-group-date">
+                          <div>
+                            <input placeholder="MM" type="number" id="month" name="month" maxlength="2">
+                          </div>
+                          <div>
+                            <input placeholder="AAAA" type="number" id="year" name="year" maxlength="4">
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </fieldset>
+            <div class="margin-top">
+              <button class="btn btn-default btn-full-width" type="button">Aplicar filros</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-8 col-12-medium">
+        <div class="col-child inner panel-canvas">
+          <a class="js-show-filters hide-large-device link pull-right" href="javascript:;">Filtrar</a>
+
+            <div class="row ror-faux message-page">
+              <div class="col-4">
+                <div class="col-child pull-center inner">
+                  <div class="message-page-image">
+                    <img src="//media.infojobs.net/appgrade/pictures/pic-stats-empty-state.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-8 message-page-content">
+                <div class="col-child inner">
+                  <h2>Ning&#xFA;n resultado a la vista</h2>
+                  <p>&#xA1;No pasa nada! Modifica o restablece los filtros para encontrar resultados</p>
+                  <div class="action margin-top">
+                    <a class="btn-small btn-cta btn-full-width--small-device" href="javascript:;" title="Restablecer filtros">Restablecer filtros</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+</div>
+
+</body>
+</html>
