@@ -21,12 +21,18 @@ $MIXINS ICONS
     font-family: $base-font-icons-filled;
   }
 
- @at-root .iconfont-block#{&} {
+  @at-root .iconfont-block#{&} {
     display: block;
     line-height: 1;
     margin: 0 0 $padding/2 0;
     text-align: center;
     top: 0;
+  }
+
+  @at-root .iconfont-hover {
+    &:hover::before {
+      color: $color-primary;
+    }
   }
 }
 
