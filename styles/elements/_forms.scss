@@ -217,8 +217,8 @@ textarea {
         color: $light-silk;
 
 				@at-root .input-small#{&} {
-		      		top: 6px;
-		      	}
+					top: 6px;
+				}
 			}
 
 			&:first-of-type::before {
@@ -227,12 +227,13 @@ textarea {
 
 			input {
 		      	width: 50px;
+						height: $medium-input-height - 2;
 		      	margin-left: -4px;
 		      	text-align: center;
 		      	border: none;
 
 		      	@at-root .input-small#{&} {
-		      		height: $small-input-height;
+		      		height: calc(#{$small-input-height} - 2px);
 		      	}
 			}
 
@@ -321,11 +322,7 @@ input[type="tel"],
 
 	.start-date-group {
 		float: left;
-		padding-right: 10px;
-
-		@include mediaquery ($bp-tablet) {
-			padding-right: 20px;
-		}
+		padding-right: $padding / 2;
 	}
 
 	.end-date-group {
@@ -355,12 +352,6 @@ input[type="tel"],
 			}
 		}
 
-	}
-
-	.error-info {
-		@include mediaquery ($bp-tablet) {
-			max-width: 116px;
-		}
 	}
 }
 
@@ -744,7 +735,7 @@ input[type="checkbox"] + label,
 input[type="radio"] + label,
 .label-checkbox { //class ".label-checkbox" deprecated. actualy used in filters only
 	cursor: pointer;
-	max-width: 85%;
+	max-width: calc(100% - 25px);
 }
 
 .appearance-btn,
@@ -1251,6 +1242,25 @@ Markup:
 
 Styleguide #{$sgi-forms-strength-bar}
 */
+
+
+/*
+SForm group inline
+
+*/
+
+.form-group-inline {
+
+	@include mediaquery ($bp-tablet) {
+    .field-date-group {
+      .start-date-group,
+      .end-date {
+        margin: 0;
+      }
+    }
+  }
+
+}
 
 .field-group-grow { //used on edit-cv when an input + button sizes needs to be 100%
 	@include display-flex;
