@@ -1,6 +1,11 @@
 @import "forms-autocomplete";
 @import "forms-g-recaptcha";
 
+$input-date: 50px;
+$input-date-year: 66px;
+$label-margin: 5px;
+
+
 /*------------------------------------*\
     $FORMS
 \*------------------------------------*/
@@ -38,7 +43,7 @@ label,
 .label {
   display: inline-block;
 	vertical-align: top;
-	margin-bottom: 5px;
+	margin-bottom: $label-margin;
 	font-size: $base-font-size;
 	line-height: 125%;
 
@@ -226,7 +231,7 @@ textarea {
 			}
 
 			input {
-		      	width: 50px;
+		      	width: $input-date;
 						height: $medium-input-height - 2;
 		      	margin-left: -4px;
 		      	text-align: center;
@@ -238,7 +243,7 @@ textarea {
 			}
 
 			&:last-child input  {
-	        	width: 66px;
+				width: $input-date-year;
 			}
 		}
 
@@ -319,6 +324,13 @@ input[type="tel"],
 }
 
 .field-date-group { // group of date fields
+
+	.full-date {
+		max-width: ($input-date*2)+$input-date-year - 6px;
+	}
+	.full-date:first-of-type {
+		max-width: ($input-date*2)+$input-date-year + 4px;
+	}
 
 	.start-date-group {
 		float: left;
@@ -1250,6 +1262,11 @@ SForm group inline
 */
 
 .form-group-inline {
+	button {
+		@include mediaquery ($bp-tablet) {
+			margin-top: $label-margin + 20px;//20ps is the label height
+		}
+	}
 
 	@include mediaquery ($bp-tablet) {
     .field-date-group {
