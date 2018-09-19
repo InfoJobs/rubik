@@ -8,19 +8,29 @@
 
 		[].forEach.call( eClickItem, function( target ){
 
+			var contentToggle = target.parentNode.querySelector('.toggle');
+
+			function setTextToggle() {
+	    		var attribute = contentToggle.classList.contains('hide') ? "data-text-show" : "data-text-hide"
+		    	target.textContent = target.getAttribute(attribute) || target.textContent ;
+			}
+
 	        target.onclick = function(e){
 	        	e.preventDefault();
-	        	contentToggle = target.parentNode.querySelector('.toggle').classList.toggle('hide');
+	        	contentToggle.classList.toggle('hide');
 	        	arrowToggle = target.querySelector('.arrow');
 	        	if(arrowToggle) {
 	        		arrowToggle.classList.toggle('script');
 	        		arrowToggle.classList.toggle('iconfont-ArrowDown');
 	        		arrowToggle.classList.toggle('iconfont-ArrowUp');
 	        	}
-
-	    		var attribute = contentToggle ? "data-text-show" : "data-text-hide"
-	    		target.textContent = target.getAttribute(attribute) || target.textContent ;
+	        	setTextToggle();
 	        };
+
+	        target.onload = function(){
+	        	setTextToggle()
+	        }();
+
 		});
 	}
 
