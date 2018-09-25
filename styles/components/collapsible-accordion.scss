@@ -30,9 +30,9 @@
         }
 
         @include mediaquery ($bp-desktop) {
-            &:hover {
-                background: #e3f5fd;
-    		}
+          &:hover {
+            background-color: tint($day-blue , 80%);
+          }
         }
     }
 

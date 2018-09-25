@@ -155,7 +155,7 @@ Styleguide #{$sgi-tabs}
     @include mediaquery ($bp-desktop) {
 
       a:hover {
-        background: #e3f5fd;
+        background-color: tint($day-blue , 80%);
       }
     }
   }

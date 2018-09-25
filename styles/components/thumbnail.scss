@@ -140,7 +140,7 @@ Styleguide #{$sgi-thumbnail}
 		height: 100%;
 		z-index: 2;
 		border-top: 2px solid $color-primary;
-		background-color: #F4F4F4; //ToDo: no existe como variable
+		background-color: $dark-shiro;
 		transition: all 500ms ease 0s;
 
     .title {

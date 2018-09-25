@@ -93,7 +93,7 @@ Markup:
 .sticker-input {
   @include sticker;
   color: $mid-script;
-  border: 1px solid #c7c7c7;
+  border: 1px solid $light-silk;
   background-color: $dark-shiro;
 }
 

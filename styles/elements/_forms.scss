@@ -140,7 +140,7 @@ textarea {
 	@include form-field;
 	color: $dark-silk;
 	margin: 0;
-	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
+	border: 1px solid $light-silk;
 
 	.error & {
 		border-color: $trueblood;
@@ -203,18 +203,18 @@ textarea {
 	}
 
 	&-date {
-	    width: auto;
-	    border: 1px solid #c7c7c7;
+    width: auto;
+    border: 1px solid $light-silk;
 
 		> div {
       		position: relative;
 
 			&::before {
-		        content: "|";
-		        position: absolute;
-		        top: 12px;
-		        left: -5px;
-				color: #c7c7c7;
+        content: "|";
+        position: absolute;
+        top: 12px;
+        left: -5px;
+        color: $light-silk;
 
 				@at-root .input-small#{&} {
 		      		top: 6px;
@@ -569,13 +569,13 @@ select {
 	color: $dark-silk;
 	border: 0 none;
 	background: url(#{$path-backgrounds}/bg-select-arrow.png) right 15px no-repeat $shiro;
-	border: 1px solid #c7c7c7; //TODO: var to be defined on _vars.scss
+	border: 1px solid $light-silk;
 	cursor: pointer;
 
 	&:focus {
 		border: 1px solid $color-primary;
 		outline: none;
-		color: #000;
+		color: $dark;
 	}
 
 	.error & {

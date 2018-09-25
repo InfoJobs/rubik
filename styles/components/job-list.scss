@@ -72,15 +72,15 @@ Styleguide #{$sgi-job-list}
         }
 
 	    &:hover {
-	        @include mediaquery($bp-desktop) {
-	            background: #e3f5fd;
-	            cursor: pointer;
+         @include mediaquery($bp-desktop) {
+           background-color: tint($day-blue , 80%);
+           cursor: pointer;
 
-	            .action-global {
-	                visibility: visible;
-	            }
-	        }
-	    }
+           .action-global {
+             visibility: visible;
+           }
+         }
+       }
 
         &.vhpt {
 			height: 1px;
@@ -253,7 +253,6 @@ li.list-logos {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        color: #333;
 
         @include mediaquery ($bp-desktop) {
         	white-space: normal;
