@@ -99,6 +99,7 @@ Styleguide #{$sgi-thumbnail}
 		top: -50px;
 		transition: all 500ms ease 0s;
 		width: 100%;
+		background: $dark-shiro;
 
 		&::before {
 			display: block;
@@ -125,7 +126,7 @@ Styleguide #{$sgi-thumbnail}
 		height: 70px;
 		padding: 4px;
 		border: 1px solid $darkest-shiro;
-		background: $shiro;
+		background: $darkest-shiro;
 
 		img {
 			width: 100%;
@@ -140,7 +141,7 @@ Styleguide #{$sgi-thumbnail}
 		height: 100%;
 		z-index: 2;
 		border-top: 2px solid $color-primary;
-		background-color: #F4F4F4; //ToDo: no existe como variable
+		background-color: $dark-shiro;
 		transition: all 500ms ease 0s;
 
     .title {

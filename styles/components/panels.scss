@@ -96,6 +96,13 @@ Styleguide #{$sgi-panels}
 		background-color: $dark-silk;
 	}
 
+  &-hover {
+    cursor: pointer;
+
+    &:hover {
+      background-color: tint($day-blue , 80%);
+    }
+  }
 }
 
 [class^="col-"].panel .col-child,

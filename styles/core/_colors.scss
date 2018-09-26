@@ -155,7 +155,7 @@ Styleguide #{$sgi-textContrastColors}
 //underlined text
 .contrast-link,
 .contrast-link:visited {
-	color: #41a4db;
+	color: $light-blue;
 
 	&:hover,
 	&:focus {

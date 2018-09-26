@@ -155,7 +155,7 @@ Styleguide #{$sgi-tabs}
     @include mediaquery ($bp-desktop) {
 
       a:hover {
-        background: #e3f5fd;
+        background-color: tint($day-blue , 80%);
       }
     }
   }
@@ -239,31 +239,40 @@ Styleguide #{$sgi-tabs}
 
     a {
       @include display-flex;
-      @include align-items(flex-end);
+      @include align-items(center);
       @include font(xsmall);
+      @include flex-direction(column);
       @include semi-bold;
       justify-content: center;
-      height: 100px;
       padding: $padding ($padding / 2)($padding - 4);//4 es el alto del border del tab active
 
+      &::before {
+        color: $soft-script;
+      }
+
       &:hover {
-        color: $color-primary;;
+        color: $color-primary;
+
+        &::before {
+          color: $color-primary;
+        }
       }
 
       &.tab-active {
         cursor: default;
-      }
 
+        &::before {
+          color: $color-primary;
+        }
+      }
     }
   }
 
-  [class*="badge"] {
+  .badge-count {
     position: absolute;
     top: 20px;
-    right: calc(50% - 30px);//40px/2 del icono del tab + 20px/2 del sticker
+    right: calc(50% - 25px);
   }
-
-
 }
 
 .tabs-scroll {
