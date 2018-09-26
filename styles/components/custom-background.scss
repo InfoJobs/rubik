@@ -26,6 +26,23 @@ $height-bg: 206px;
   background-repeat: no-repeat;
   background-color: $dark-softened;
   //the background-image is not reusable, inline in html
+
+  @media print {
+    color: $dark;
+  }
+
+  & .panel-canvas,
+  & .panel-default {
+
+    a {
+        color: $theme-color-primary;
+
+        @media print {
+          color: $dark;
+        }
+    }
+
+  }
 }
 
 @mixin custom-bg-empty {
@@ -47,6 +64,11 @@ $height-bg: 206px;
     @include custom-bg;
     background-repeat: no-repeat;
     background-size: cover;
+    color: $dark-silk;
+
+    h1 {
+      color: $dark-silk;
+    }
   }
 
   &-cover--center {
@@ -75,7 +97,6 @@ $height-bg: 206px;
     background-size: cover;
     margin-top: 10px;
   }
-
 }
 
 //Overlay in background

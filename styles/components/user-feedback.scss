@@ -21,23 +21,35 @@ Styleguide #{$sgi-user-feedback}
 */
 
 .user-feedback {
-	position: fixed;
-	overflow: hidden;
-	display: inline-block;
-	top: 25%;
-	right: 0;
-	padding: 10px;
-	font-size: 14px;
-    font-weight: bold;
+	position: relative;
+	height: 0;
 
-	-webkit-transform-origin: right bottom 0;
-		-ms-transform-origin: right bottom 0;
-			transform-origin: right bottom 0;
+	a:hover {
+		color: $shiro;
+	}
+
+	@media print {
+		display: none;
+	}
+}
+
+.link-user-feedback {
+    display: inline-block;
+    position: fixed;
+    padding: 10px;
+    background: $bamboo;
+    color: $shiro;
+    font-size: 14px;
+    font-weight: bold;
+	left:100%;
+   	top: 60%;
+	-webkit-transform-origin: -40px 0 0;
+		-ms-transform-origin: -40px 0 0;
+			transform-origin: -40px 0 0;
 	-webkit-transform: rotate(-90deg);
     	 -o-transform: rotate(-90deg);
 	        transform: rotate(-90deg);
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-    background: $bamboo;
     z-index: 9999;
 
 	@include mediaquery ($bp-tablet) {
@@ -52,15 +64,4 @@ Styleguide #{$sgi-user-feedback}
 	    filter: none;
 	}
 
-	a:hover {
-		color: $shiro;
-	}
-
-	@media print {
-		display: none;
-	}
-}
-
-.link-user-feedback {
-	color: $shiro;
 }
