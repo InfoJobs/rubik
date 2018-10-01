@@ -111,7 +111,7 @@ Styleguide #{$sgi-table}
 		position: relative;
 
 		@at-root & [class^="panel-"] {
-			padding: 10px;
+			padding: $padding / 2;
 
 			@media print {
 				padding-top: 0;

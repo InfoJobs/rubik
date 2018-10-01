@@ -118,7 +118,7 @@ $query2     = width, device-width
 
 
 @mixin inner {
-	padding: $padding 10px;
+	padding: $padding $padding / 2;
 
 	@include mediaquery ($bp-tablet) {
 		padding: $padding;
@@ -126,13 +126,13 @@ $query2     = width, device-width
 }
 
 @mixin inner-expanded {
-	padding-top: 20px;
-    padding-bottom: 20px;
+	padding-bottom: $padding;
+	padding-top: $padding;
 
-    @include mediaquery ($bp-tablet) {
-	    padding-top: 40px;
-	    padding-bottom: 40px;
-    }
+	@include mediaquery ($bp-tablet) {
+		padding-bottom: $padding * 2;
+		padding-top: $padding * 2;
+	}
 }
 
 @mixin panel-default {
@@ -225,4 +225,10 @@ Font
     left: -5px;
     content: "";
   }
+}
+
+@mixin focus {
+  border: 1px solid $day-blue;
+  outline: none;
+  color: $dark;
 }

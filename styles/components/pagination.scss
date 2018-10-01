@@ -47,21 +47,12 @@ Styleguide #{$sgi-pagination}
 		}
 
 	}
-
-  [class*="btn"] {
-		width: 100%;
-
-		@include mediaquery ($bp-desktop) {
-			width: auto;
-		}
-	}
-
 }
 
 .pagination-top-microsite {
 
 	@include mediaquery ($bp-tablet) {
-		padding: 20px;
+		padding: $padding;
 
 	 	+ .inner {
 			padding-top: 0;
