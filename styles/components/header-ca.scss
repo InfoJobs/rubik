@@ -1,5 +1,4 @@
 .global-nav {
-	margin-top: -10px; // delete margin from container-expanded on navigation menu (only mobile)
 	overflow: hidden;
 	background-color: $shiro;
 	background-repeat: no-repeat;
@@ -10,9 +9,9 @@
 	border-bottom: 1px solid $darkest-shiro;
 
 	@include mediaquery ($bp-header) {
-
 		background-image: none;
-		margin-top: 10px;
+		margin: 0 auto;
+		max-width: $container-extended-width;
 	}
 
 	h1 {
@@ -35,6 +34,7 @@
 	}
 
 	&.global-nav-submenu {
+    max-width: 100%;
 		a {
 			font-size: $medium-font-size;
 
@@ -335,6 +335,11 @@ a.nav-bar-toggle {
 
 .global-nav-logged.global-nav-submenu {
 
+  .nav-bar-wrapper {
+    max-width: $container-extended-width;
+    margin: 0 auto;
+  }
+
 	.nav-bar-menu {
 		background: $dark-shiro;
 		border-top: 1px solid $darkest-shiro;
@@ -592,17 +597,16 @@ a.nav-bar-toggle {
 }
 
 .nav-bar-submenu {
-	padding-top: 145px;
 	background: $shiro;
 	@include order(1);
 
-	@include mediaquery ($bp-header) {
-		clear: both;
-		float: left;
-		width: 100%;
-		padding-top:0;
-		background: $darkest-shiro;
-	}
+  @include mediaquery ($bp-header) {
+    clear: both;
+    padding-top:0;
+    background: $darkest-shiro;
+    margin: 0 auto;
+    max-width: $container-extended-width;
+  }
 
 	> li  {
 		@include mediaquery ($bp-header) {
