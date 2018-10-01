@@ -10,13 +10,13 @@ Styleguide #{$sgi-filters}
 */
 
 .filters {
-	padding: 25px 20px 20px 20px;
+	padding: $padding;
 	min-width: 240px;
 	max-width: 482px;
 
 	fieldset {
 		position: relative;
-		margin-bottom: 40px;
+		margin-bottom: $padding * 2;
 	}
 	.label-checkbox {
 		width: 85%;
@@ -290,7 +290,7 @@ Styleguide #{$sgi-filter-slider-group}
 @include mediaquery ($bp-desktop) {
 
 	.filters {
-		padding: 20px;
+		padding: $padding;
 	}
 
 	.filter {

@@ -158,7 +158,7 @@ Styleguide #{$sgi-modal-content}
 }
 
 .modal-layer {
-  position: fixed;
+  position: relative;
   z-index: $zindex-modal-layer;
 
   &::before {

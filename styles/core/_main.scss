@@ -100,6 +100,7 @@ a:focus {
 .link-underline,
 .link-underline:hover,
 .link:hover {
+	cursor: pointer;
  	text-decoration: underline;
 }
 
@@ -246,11 +247,11 @@ Styleguide #{$sgi-innerContainers}
 		padding-bottom: 0;
 	}
 
-    & + .inner-expanded {
+    & + .inner-expanded:not(.container-expanded) {
         padding-top: 0;
 
         @include mediaquery ($bp-desktop) {
-            padding-top: 40px;
+            padding-top: $padding * 2;
         }
     }
 
@@ -267,15 +268,13 @@ img[alt] {
     word-wrap: break-word;
 }
 
-.section { //TODO: only used at home and red_de_contactos.html
-    background-color: $shiro;
-	padding: 10px;
+.section { //TODO: only used at home
+  background-color: $shiro;
+	padding: $padding / 2;
 
-    @include mediaquery ($bp-desktop) {
-
-        padding: 20px;
-
-    }
+  @include mediaquery ($bp-desktop) {
+    padding: $padding;
+  }
 }
 
 .container-editable {

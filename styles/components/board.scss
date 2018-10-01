@@ -52,7 +52,7 @@ Styleguide #{$sgi-board-variants}
 	width: 100%;
 
 	@include mediaquery ($bp-tablet) {
-		padding: 80px;
+		padding: $padding * 4;
 	}
 
 	.child {
@@ -65,14 +65,14 @@ Styleguide #{$sgi-board-variants}
 			display: table-cell;
 			vertical-align: middle;
 			margin-top: 0;
-			margin-bottom: 20px;
+			margin-bottom: $padding;
 		}
 	}
 
 	.claim {
 		font-size: $xlarge-font-size;
 		line-height: $xlarge-line-height;
-		margin-bottom: 10px;
+		margin-bottom: $padding / 2;
 		color: $shiro;
 
 		@include mediaquery ($bp-tablet) {
@@ -94,11 +94,11 @@ Styleguide #{$sgi-board-variants}
 	}
 
 	.break {
-		margin-top: 20px;
+		margin-top: $padding;
 	}
 
 	.description + [class*="btn"] {
-		margin-top: 20px;
+		margin-top: $padding;
 	}
 
 	[class*="btn"] {
@@ -106,24 +106,24 @@ Styleguide #{$sgi-board-variants}
 	}
 
   [class*="btn"] + p {
-		margin-top: 10px;
+		margin-top: $padding / 2;
 	}
 
 	p {
-		margin-bottom: 10px;
+		margin-bottom: $padding / 2;
 	}
 
 	&-large {
 		@include mediaquery ($bp-tablet) {
-			padding: 140px 80px;
+			padding: $padding * 7  $padding * 4;
 		}
 	}
 
 	&-half {
-	 	padding: 40px 20px;
+	 	padding: $padding * 2 $padding;
 
 		@include mediaquery ($bp-tablet) {
-			padding: 80px 20px;
+			padding: $padding * 4 $padding;
 		}
 
 		.child {
@@ -138,10 +138,10 @@ Styleguide #{$sgi-board-variants}
 	}
 
 	.slideup {
-		margin: 20px -10px -20px -10px;
+		margin: $padding -#{$padding / 2} -#{$padding} -#{$padding / 2};
 
 		@include mediaquery ($bp-tablet) {
-			margin: 40px -20px -40px -20px;
+			margin: $padding * 2 -#{$padding} -#{$padding * 2} -#{$padding};
 		}
 
 	}
