@@ -104,6 +104,10 @@ Styleguide #{$sgi-gridSystem}
     display: -ms-grid;
     display: grid;
 
+    @include mediaquery ($bp-tablet) {
+    	display: block;
+    }
+
     .col-order-top {
       order: -1;
 
@@ -526,6 +530,9 @@ Styleguide #{$sgi-equalHeightColumns}
 			@include display-flex;
 			float: none;
 			//overflow: hidden; Si hay tooltip se corta por el overflow
+		}
+		.col-auto {
+			width: auto;
 		}
 
 		.col-12-medium,

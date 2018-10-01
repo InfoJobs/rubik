@@ -21,7 +21,52 @@ Markup:
 
 Styleguide #{$sgi-table}
 */
+@mixin table-default {
+  max-width: 100%;
+  table-layout: fixed;
+  text-align: left;
+  overflow: hidden;
+  width: 100%;
+}
 
+@mixin reset-table {
+  display: block;
+
+  table,thead, tfoot, tbody, th, td, tr {
+    display: block;
+    text-align: left;
+  }
+
+  @at-root &.table-inner {
+    > tbody {
+      padding: $padding;
+    }
+
+    th,
+    td {
+      padding: 0;
+    }
+
+    td[data-th]:before {
+      color: $mid-script;
+      content: attr(data-th);
+      display: block;
+      font-size: $xsmall-font-size;
+      white-space: nowrap;
+    }
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+}
+
+@mixin td-child-group {
+  display: inline-table;
+  vertical-align: text-top;
+}
 
 .table {
 
@@ -33,20 +78,33 @@ Styleguide #{$sgi-table}
       }
     }
 
-    td {
+    td,
+    th {
       padding-right: $padding;
       text-align: right;
+
+      &.text-left {
+        text-align: left;
+      }
+    }
+
+    td:first-child {
+      padding: 0;
     }
   }
 }
 
 .table-default {
-	text-align: left;
-	width: 100%;
+  text-align: left;
 
-	thead, tfoot, tbody, th, td, tr {
-		text-align: left;
-	}
+  @for $i from 1 through $gridColumns {
+  	& .td-col-#{$i},
+    & .th-col-#{$i} {
+  		@include mediaquery ($bp-desktop) {
+  			width: ((100 / $gridColumns) * $i) * 1%;
+  		}
+  	}
+  }
 
 	th,
 	td {
@@ -69,7 +127,6 @@ Styleguide #{$sgi-table}
 
 	td {
 		margin-bottom: 5px;
-		color: $dark-silk;
 	}
 
 	> tbody > tr {
@@ -77,27 +134,29 @@ Styleguide #{$sgi-table}
 	}
 
 	> tbody  th {
-		@include bold;
+    @include bold;
 		color: $dark-silk;
 	}
 
 	tr:not(:first-child) table {
 		border-top: 1px solid $darkest-shiro;
+    width: 100%;
 
 		th {
-			margin-top: 10px;
+			margin-top: $padding;
 		}
 	}
 
-	@include mediaquery ($bp-tablet) {
+  td[colspan]:not(.td-footer) {
+    padding: 0;
+  }
 
-		width: 100%;
-		max-width: 100%;
+	@include mediaquery ($bp-tablet) {
+    @include table-default;
 
 		table {
-			width: 100%;
-			max-width: 100%;
-		}
+      @include table-default;
+	  }
 
 		thead {
       border-bottom: 1px solid $darkest-shiro;
@@ -105,8 +164,7 @@ Styleguide #{$sgi-table}
 
 		th,
 		td {
-			width: 25%;
-			padding: 10px 10px 10px 0;
+			padding: $padding/2 $padding/2 $padding/2 0;
 
 			@at-root &.cell-parent {
 				padding: 0;
@@ -115,36 +173,61 @@ Styleguide #{$sgi-table}
 			@at-root & [class^="panel-"] {
 				margin-top: -10px;
 				margin-right: -10px;
-
-	      	}
-
+      }
 		}
+
+    @at-root &.table-inner {
+      th,
+      td {
+        padding: $padding;
+      }
+
+    }
+
+    &-large-device {
+      @media only screen and (max-width: $tablet-start) {
+        @include reset-table;
+
+        .td-child-group-medium-device {
+          @include td-child-group;
+
+          &.td-child-margin {
+            margin-right: $padding*2;
+          }
+
+          &[data-th]:before {
+            color: $mid-script;
+            content: attr(data-th);
+            display: block;
+            font-size: $xsmall-font-size;
+            white-space: nowrap;
+          }
+
+        }
+
+      }
+    }
 
 	}
 
 	@media only screen and (max-width: $mobile-start) {
+    @include reset-table;
 
-		thead, tfoot, tbody, th, td, tr {
-			display: block;
-		}
+    .td-child-group-small-device {
+      @include td-child-group;
 
-		> tbody > tr {
-		    //margin-top: 10px;
-			//padding-top: 10px;
-		}
+      &.td-child-margin {
+        margin-right: $padding*2;
+      }
 
-		thead tr {
-			position: absolute;
-			top: -9999px;
-			left: -9999px;
-		}
-
-		td[data-th]:before {
-			color: $mid-script;
-			content: attr(data-th)": ";
-			white-space: nowrap;
-		}
-
+      &[data-th]:before {
+        color: $mid-script;
+        content: attr(data-th);
+        display: block;
+        font-size: $xsmall-font-size;
+        white-space: nowrap;
+      }
+    }
 	}
 
 	@media print {
@@ -157,7 +240,9 @@ Styleguide #{$sgi-table}
 			padding-top: 5pt;
 		}
 	}
-
+  @at-root & [class^="table-right"] {
+    text-align: right;
+  }
 }
 
 .table-editable {
@@ -212,4 +297,8 @@ Styleguide #{$sgi-table}
       border-bottom: 1px solid $darkest-shiro;
     }
   }
+}
+
+.td-child-group {
+  @include td-child-group;
 }
