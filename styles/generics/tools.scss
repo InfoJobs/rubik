@@ -213,22 +213,29 @@ Styleguide #{$sgi-helpers}
 /*------------------------------------*\
     $MARGINS and PADDINGS
 
-    var $orientations in _vars.scss
+    var $orientations and $spaceamounts in _vars.scss
 \*------------------------------------*/
 
-@each $value in $orientations {
+@each $side in $orientations {
+  @each $size, $space in $spaceamounts {
+    @if ($size == base) {
+      .margin-#{$side}  {
+        margin-#{$side}: $space/2;
 
-	.margin-#{$value}  {
-	   margin-#{$value}: 10px;
-
-	   @include mediaquery ($bp-tablet) {
-	   		margin-#{$value}: $padding;
-	   	}
-	}
-	.padding-#{$value}  {
-	   padding-#{$value}: $padding;
-	}
-
+        @include mediaquery ($bp-tablet) {
+          margin-#{$side}: $space;
+        }
+	    }
+    }
+    @else {
+      .margin-#{$side}-#{$size} {
+        margin-#{$side}: $space;
+      }
+    }
+  }
+  .padding-#{$side}  {
+    padding-#{$side}: $padding;
+  }
 }
 
 .link-annex {
