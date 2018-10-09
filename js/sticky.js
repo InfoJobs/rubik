@@ -5,7 +5,7 @@
   var scrollY;
 
   function stickyOnscroll() {
-    stickyContent = document.querySelector('.js-sticky')
+    stickyContent = document.querySelector('.js-sticky');
     scrollY = window.pageYOffset;
     if(stickyContent) {
       posStickyContent = stickyContent.getBoundingClientRect().top + scrollY;
