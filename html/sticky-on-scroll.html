@@ -16,13 +16,16 @@
         <h1>Header</h1>
       </div>
       <div class="container-expanded">
-        <div class="inner js-sticky panel-canvas shadow">
-          <p>Sticky container</p>
-          <p>Sticky container</p>
-          <p>Sticky container</p>
+        <div class="js-sticky-content">
+          <div class="inner panel-canvas shadow">
+            <p>Sticky container</p>
+            <p>Sticky container</p>
+            <p>Sticky container</p>
+
+          </div>
         </div>
         <div class="container-expanded">
-          <div class="row row-faux row-panel">
+          <div class="row row-faux">
             <div class="col-9 col-12-medium">
               <!-- cold-child -->
                 <div class="col-child inner panel-canvas inner-expanded">
@@ -50,9 +53,13 @@
               <div class="col-3 col-12-medium">
                 <!-- cold-child -->
 
-                  <div class="col-child inner inner-expanded panel-default">
-                    <h2>Right Sidebar sticky</h2>
-                    <p>Lorem ipsum dolor sit amet</p>
+                  <div class="col-child ">
+                    <div class="js-sticky-sidebar">
+                      <div class="inner panel-default">
+                        <h2>Right Sidebar sticky</h2>
+                        <p>Lorem ipsum dolor sit amet</p>
+                      </div>
+                    </div>
                   </div>
 
                 <!-- /cold-child -->
