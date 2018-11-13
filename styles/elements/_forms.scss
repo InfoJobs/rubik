@@ -4,6 +4,7 @@
 $input-date: 50px;
 $input-date-year: 66px;
 $label-margin: 5px;
+$check-inline-margin: 30px;
 
 
 /*------------------------------------*\
@@ -91,7 +92,7 @@ label,
 }
 
 //TODO: Nest .form-field-inline in .search-bar.scss component, because is not possible to apply this layout independently
-.form-field-inline { // Used in search box + filters job search
+.form-field-inline {
 	display: table;
 
 	> label {
@@ -208,18 +209,18 @@ textarea {
 	}
 
 	&-date {
-    width: auto;
-    border: 1px solid $light-silk;
+	    width: auto;
+			border: 1px solid $light-silk;
 
 		> div {
       		position: relative;
 
 			&::before {
-        content: "|";
-        position: absolute;
-        top: 12px;
-        left: -5px;
-        color: $light-silk;
+				content: "|";
+				position: absolute;
+				top: 12px;
+				left: -5px;
+				color: $light-silk;
 
 				@at-root .input-small#{&} {
 					top: 6px;
@@ -1262,21 +1263,23 @@ SForm group inline
 */
 
 .form-group-inline {
-	button {
-		@include mediaquery ($bp-tablet) {
-			margin-top: $label-margin + 20px;//20ps is the label height
-		}
-	}
 
 	@include mediaquery ($bp-tablet) {
-    .field-date-group {
-      .start-date-group,
-      .end-date {
-        margin: 0;
-      }
+		.field-date-group {
+			.start-date-group,
+			.end-date {
+				margin: 0;
+			}
+		}
+
+		.label-checkbox {
+				max-width: none;
+		}
+
+    .checkbox-inline {
+			margin-top: $label-margin + $checkbox-inline-margin;
     }
   }
-
 }
 
 .field-group-grow { //used on edit-cv when an input + button sizes needs to be 100%
