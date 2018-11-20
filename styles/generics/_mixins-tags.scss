@@ -22,7 +22,7 @@ $MIXINS TAGS
   }
 
   &-dismissable {
-    padding-right: 40px;
+    padding-right: 30px;
   }
 
   @at-root a#{&} {
@@ -36,12 +36,12 @@ $MIXINS TAGS
   }
 }
 
-@mixin tag-close {
+@mixin tag-close { 
   @include iconfont-Close;
   position: absolute;
-  top: 9px;
+  top: 6px;
   left: auto;
-  right: 10px;
+  right: 5px;
   line-height: 13px;
   margin-left: 8px;
   cursor: pointer;
