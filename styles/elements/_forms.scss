@@ -595,6 +595,8 @@ select:-moz-focusring {
 /*
 Select
 
+To allow the placeholder in the `Select` element, we must add `data-placeholder = "Text for placeholder"` and add an additional option with no value and without text: `<option value=""></option>`.
+
 Markup:
 <form method="post" action="#">
     <fieldset>
@@ -603,6 +605,7 @@ Markup:
             <li>
                 <label for="pulldown">Pulldown</label>
                 <select id="pulldown" class="chosen-select" data-placeholder="(Seleccionar)">
+                        <option value=""></option>
                         <option value="01">Option01</option>
                         <option value="02">Option02</option>
                         <option value="03">Option03</option>
@@ -614,6 +617,7 @@ Markup:
             <li class="error">
                 <label for="pulldown">Pulldown error</label>
                 <select id="pulldown" class="chosen-select" data-placeholder="(Seleccionar)">
+                        <option value=""></option>
                         <option value="01">Option01</option>
                         <option value="02">Option02</option>
                         <option value="03">Option03</option>
@@ -625,6 +629,7 @@ Markup:
             <li class="disabled">
                 <label for="pulldown">Pulldown disabled</label>
                 <select id="pulldown" class="chosen-select" data-placeholder="(Seleccionar)" disabled>
+                        <option value=""></option>
                         <option value="01">Option01</option>
                         <option value="02">Option02</option>
                         <option value="03">Option03</option>
@@ -651,6 +656,7 @@ Markup:
             <li>
                 <label for="pulldown">Pulldown</label>
                 <select id="pulldown" class="chosen-select select-small" data-placeholder="(Seleccionar)">
+                        <option value=""></option>
                         <option value="01">Option01</option>
                         <option value="02">Option02</option>
                         <option value="03">Option03</option>
@@ -677,6 +683,7 @@ Markup:
             <label for="name">Pulldown inline:</label>
             <div class="form-select">
                 <select id="pulldown" class="chosen-select" data-placeholder="(Seleccionar)">
+                        <option value=""></option>
                         <option value="01">Option01</option>
                         <option value="02">Option02</option>
                 </select>
