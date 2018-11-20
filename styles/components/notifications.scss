@@ -64,9 +64,7 @@ $notifications: success $bamboo , system $outer-king, error $trueblood, warning 
 
 @mixin notification-fixed {
   position: fixed;
-  width: 100%;
   max-width: $container-width;
-  margin: 0 auto;
 
   .inner & {
     margin-left: -10px;
@@ -176,21 +174,29 @@ $notifications: success $bamboo , system $outer-king, error $trueblood, warning 
     }
   }
 
-  @at-root .notification-advice > [class*="notification-"] {
-    border-top: 1px solid rgba(0, 0, 0, 0.4);
+  @at-root .notification-advice {
+    max-width: $container-extended-width;
+    margin: 0 auto;
 
-    &.is-fixed {
-      @include notification-fixed;
-      bottom: 0;
-      transition: bottom .5s;
+    @media only screen and (max-width: $theme-container-width) {
+      max-width: $container-width;
     }
 
-    &.is-closed {
-      @include close-fixed-bottom;
+    & > [class*="notification-"] {
+      border-top: 1px solid rgba(0, 0, 0, 0.4);
+
+      &.is-fixed {
+        @include notification-fixed;
+        bottom: 0;
+        transition: bottom .5s;
+      }
+      &.is-closed {
+          @include close-fixed-bottom;
+        }
+      }
+    }
+
+    @media print {
+      display: none;
     }
   }
-
-  @media print {
-    display: none;
-  }
-}
