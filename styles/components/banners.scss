@@ -104,7 +104,7 @@ Styleguide #{$sgi-bannersContainers}
 	max-width: 1280px;
 }
 
-@media only screen and (max-width: $theme-container-extended-width) {
+@media only screen and (max-width: $theme-container-extended-width - 1) {
 
 .wrapper-slotbanner.wrapper-l {
 
