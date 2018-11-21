@@ -111,11 +111,11 @@ Styleguide #{$sgi-table}
 		position: relative;
 
 		@at-root & [class^="panel-"] {
-			padding: $padding / 2;
+      padding: $padding / 2;
 
 			@media print {
 				padding-top: 0;
-				padding-left: 0;
+				padding-left: 0;  
 			}
 		}
 	}
@@ -154,9 +154,27 @@ Styleguide #{$sgi-table}
 	@include mediaquery ($bp-tablet) {
     @include table-default;
 
-		table {
+    @at-root &.table-shrink {
+      width: auto;
+    }
+
+    table {
       @include table-default;
-	  }
+      
+      th,
+      td {
+        padding-top: $padding/2;
+
+        @at-root &.cell-parent {
+          padding: 0;
+        }
+        
+        @at-root & [class^="panel-"] {
+          margin-top: -10px;
+          margin-right: -10px;
+        }
+      }
+    }
 
 		thead {
       border-bottom: 1px solid $darkest-shiro;
@@ -164,7 +182,7 @@ Styleguide #{$sgi-table}
 
 		th,
 		td {
-			padding: $padding/2 $padding/2 $padding/2 0;
+			padding: 0 $padding/2 $padding/2 0;
 
 			@at-root &.cell-parent {
 				padding: 0;
