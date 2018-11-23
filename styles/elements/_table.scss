@@ -126,8 +126,15 @@ Styleguide #{$sgi-table}
 	}
 
 	td {
-		margin-bottom: 5px;
-	}
+    margin-bottom: 5px;
+  }
+  
+  @at-root &.table-shrink {
+    td {
+      margin-bottom: 0;
+    }
+  }
+
 
 	> tbody > tr {
 		position: relative;
@@ -220,12 +227,9 @@ Styleguide #{$sgi-table}
             font-size: $xsmall-font-size;
             white-space: nowrap;
           }
-
         }
-
       }
     }
-
 	}
 
 	@media only screen and (max-width: $mobile-start) {
@@ -237,14 +241,14 @@ Styleguide #{$sgi-table}
       &.td-child-margin {
         margin-right: $padding*2;
       }
+    }
 
-      &[data-th]:before {
-        color: $mid-script;
-        content: attr(data-th);
-        display: block;
-        font-size: $xsmall-font-size;
-        white-space: nowrap;
-      }
+    td[data-th]:before {
+      color: $mid-script;
+      content: attr(data-th);
+      display: block;
+      font-size: $xsmall-font-size;
+      white-space: nowrap;
     }
 	}
 
