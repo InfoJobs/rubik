@@ -29,6 +29,14 @@ Styleguide #{$sgi-table}
   width: 100%;
 }
 
+@mixin data-th {
+  color: $mid-script;
+  content: attr(data-th);
+  display: block;
+  font-size: $xsmall-font-size;
+  white-space: nowrap;
+}
+
 @mixin reset-table {
   display: block;
 
@@ -48,11 +56,7 @@ Styleguide #{$sgi-table}
     }
 
     td[data-th]:before {
-      color: $mid-script;
-      content: attr(data-th);
-      display: block;
-      font-size: $xsmall-font-size;
-      white-space: nowrap;
+      @include data-th;
     }
   }
 
@@ -221,11 +225,7 @@ Styleguide #{$sgi-table}
           }
 
           &[data-th]:before {
-            color: $mid-script;
-            content: attr(data-th);
-            display: block;
-            font-size: $xsmall-font-size;
-            white-space: nowrap;
+            @include data-th;
           }
         }
       }
@@ -244,11 +244,7 @@ Styleguide #{$sgi-table}
     }
 
     td[data-th]:before {
-      color: $mid-script;
-      content: attr(data-th);
-      display: block;
-      font-size: $xsmall-font-size;
-      white-space: nowrap;
+      @include data-th;
     }
 	}
 
