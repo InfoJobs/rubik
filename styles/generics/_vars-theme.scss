@@ -4,7 +4,7 @@
 $color-primary:        $theme-color-primary;
 $color-secondary:      $theme-color-secondary;
 $color-contrast:       $theme-color-contrast;
-$color-header:         $theme-color-header;
+$color-header:         $theme-color-focus;
 
 
 //
@@ -42,6 +42,7 @@ $input-tel-width:       	$theme-input-tel-width;
 //
 // Layout
 // -------------------------------------------
-$row-centered-width-form:	$theme-row-centered-width-form;
-$row-centered-width: 		  $theme-row-centered-width;
-$container-width:		      $theme-container-width;
+$row-centered-width-form:   $theme-row-centered-width-form;
+$row-centered-width:        $theme-row-centered-width;
+$container-width:           $theme-container-width;
+$container-extended-width:  $theme-container-extended-width;
