@@ -29,6 +29,14 @@ Styleguide #{$sgi-table}
   width: 100%;
 }
 
+@mixin data-th {
+  color: $mid-script;
+  content: attr(data-th);
+  display: block;
+  font-size: $xsmall-font-size;
+  white-space: nowrap;
+}
+
 @mixin reset-table {
   display: block;
 
@@ -48,11 +56,7 @@ Styleguide #{$sgi-table}
     }
 
     td[data-th]:before {
-      color: $mid-script;
-      content: attr(data-th);
-      display: block;
-      font-size: $xsmall-font-size;
-      white-space: nowrap;
+      @include data-th;
     }
   }
 
@@ -111,11 +115,11 @@ Styleguide #{$sgi-table}
 		position: relative;
 
 		@at-root & [class^="panel-"] {
-			padding: $padding / 2;
+      padding: $padding / 2;
 
 			@media print {
 				padding-top: 0;
-				padding-left: 0;
+				padding-left: 0;  
 			}
 		}
 	}
@@ -126,8 +130,15 @@ Styleguide #{$sgi-table}
 	}
 
 	td {
-		margin-bottom: 5px;
-	}
+    margin-bottom: 5px;
+  }
+  
+  @at-root &.table-shrink {
+    td {
+      margin-bottom: 0;
+    }
+  }
+
 
 	> tbody > tr {
 		position: relative;
@@ -154,9 +165,27 @@ Styleguide #{$sgi-table}
 	@include mediaquery ($bp-tablet) {
     @include table-default;
 
-		table {
+    @at-root &.table-shrink {
+      width: auto;
+    }
+
+    table {
       @include table-default;
-	  }
+      
+      th,
+      td {
+        padding-top: $padding/2;
+
+        @at-root &.cell-parent {
+          padding: 0;
+        }
+        
+        @at-root & [class^="panel-"] {
+          margin-top: -10px;
+          margin-right: -10px;
+        }
+      }
+    }
 
 		thead {
       border-bottom: 1px solid $darkest-shiro;
@@ -164,7 +193,7 @@ Styleguide #{$sgi-table}
 
 		th,
 		td {
-			padding: $padding/2 $padding/2 $padding/2 0;
+			padding: 0 $padding/2 $padding/2 0;
 
 			@at-root &.cell-parent {
 				padding: 0;
@@ -196,18 +225,11 @@ Styleguide #{$sgi-table}
           }
 
           &[data-th]:before {
-            color: $mid-script;
-            content: attr(data-th);
-            display: block;
-            font-size: $xsmall-font-size;
-            white-space: nowrap;
+            @include data-th;
           }
-
         }
-
       }
     }
-
 	}
 
 	@media only screen and (max-width: $mobile-start) {
@@ -219,14 +241,10 @@ Styleguide #{$sgi-table}
       &.td-child-margin {
         margin-right: $padding*2;
       }
+    }
 
-      &[data-th]:before {
-        color: $mid-script;
-        content: attr(data-th);
-        display: block;
-        font-size: $xsmall-font-size;
-        white-space: nowrap;
-      }
+    td[data-th]:before {
+      @include data-th;
     }
 	}
 
