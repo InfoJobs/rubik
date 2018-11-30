@@ -2,6 +2,59 @@
     $TOOLTIP
 \*------------------------------------*/
 
+@mixin tooltip($bgcolor){
+  @include font-rendering;
+  position: relative;
+  background-color: $bgcolor;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 0 4px #ccc;
+  z-index: 9999;
+
+  &:before {
+    content:"";
+    position: absolute;
+    bottom: 100%;
+    left: 40px;
+    margin-left: -12px;
+    width: 0;
+    height: 0;
+    border-bottom: 12px solid #ccc;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+  }
+
+  &:after {
+    content:"";
+    position: absolute;
+    bottom: 100%;
+    left: 40px;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid $bgcolor;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+	}
+}
+
+@mixin tooltip-layer($bgcolor) {
+	position: fixed;
+	overflow: auto;
+	top: 0;
+	bottom: 0;
+	background-color: $bgcolor;
+
+	@include mediaquery ($bp-tablet) {
+		position: absolute;
+		overflow: visible;
+		top: 34px;
+		left: -31px;
+		bottom: auto;
+		background-color: transparent;
+	}
+}
+
 .tooltip-hidden {/*por defecto oculto*/
 	display: none;
 }
@@ -20,26 +73,48 @@
 	a:visited {
 		color: $day-blue;
 	}
+
+  &#{&}-contrast {
+    color: $shiro;
+
+    h3,
+    p,
+    ul,
+    a,
+    a:hover,
+    a:visited  {
+      color: $shiro;
+    }
+
+    .close-tooltip::before {
+      color: $shiro;
+    }
+
+  }
+
 }
 
 .close-tooltip {
-	display: inline-block;
+	@include iconfont-Close;
+	position: absolute;
+	top: 12px;
+	right: 5px;
+	left: auto;
+	width: 30px;
+	display: block;
 	overflow: hidden;
-	width: 0;
-	float: right;
-}
+	padding: 5px;
+	font-size: ($large-font-size + 2);
+	line-height: $large-line-height;
 
-.close-tooltip:before {
-    content: "";
-    display: block;
-    height: 14px;
-    margin-right: 20px;
-    overflow: hidden;
-    position: absolute;
-    right: 0;
-    text-align: right;
-    width: 14px;
-	background: url(#{$path-backgrounds}/bg-close.png) no-repeat 0 0;
+	&::before {
+		color: $soft-script;
+    font-weight: bold;
+	}
+
+	@include mediaquery ($bp-tablet) {
+		right: 10px;
+	}
 }
 
 //move tooltip only for mobile
@@ -85,19 +160,10 @@
 }
 
 .tooltip-layer {
-	position: fixed;
-	overflow: auto;
-	top: 0;
-	bottom: 0;
-	background-color: $shiro;
+	@include tooltip-layer($shiro);
 
-	@include mediaquery ($bp-tablet) {
-			position: absolute;
-			overflow: visible;
-			top: 34px;
-			left: -31px;
-			bottom: auto;
-			background-color: transparent;
+  &#{&}-contrast {
+    @include tooltip-layer($dark-silk);
 	}
 }
 
@@ -123,36 +189,12 @@
 @include mediaquery ($bp-tablet) {
 
 	.tooltip {
-		position: relative;
-		background-color: $shiro;
-	  	border: 1px solid #ccc;
-	  	border-radius: 4px;
-	 	box-shadow: 0 0 4px #ccc;
-	 	z-index: 9999;
-	}
-	.tooltip:before {
-		content:"";
-	  	position: absolute;
-	  	bottom: 100%;
-	  	left: 40px;
-	  	margin-left: -12px;
-	  	width: 0;
-	  	height: 0;
-	    border-bottom: 12px solid #ccc;
-	    border-left: 12px solid transparent;
-	    border-right: 12px solid transparent;;
-	}
-	.tooltip:after {
-	  	content:"";
-	  	position: absolute;
-	  	bottom: 100%;
-	  	left: 40px;
-	  	margin-left: -10px;
-	  	width: 0;
-	  	height: 0;
-	  	border-bottom: 10px solid #fff;
-	  	border-right: 10px solid transparent;
-	  	border-left: 10px solid transparent;
+    @include tooltip($shiro);
+
+    &#{&}-contrast {
+      @include tooltip($dark-silk);
+    }
+
 	}
 
 	.tooltip-fade-out {
