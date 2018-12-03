@@ -4,54 +4,54 @@
 
 @mixin tooltip($bgcolor){
   @include font-rendering;
-  position: relative;
   background-color: $bgcolor;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 0 4px #ccc;
+  position: relative;
   z-index: 9999;
 
   &:before {
-    content:"";
-    position: absolute;
-    bottom: 100%;
-    left: 40px;
-    margin-left: -12px;
-    width: 0;
-    height: 0;
     border-bottom: 12px solid #ccc;
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
+    bottom: 100%;
+    content:"";
+    height: 0;
+    left: 40px;
+    margin-left: -12px;
+    position: absolute;
+    width: 0;
   }
 
   &:after {
-    content:"";
-    position: absolute;
     bottom: 100%;
-    left: 40px;
-    margin-left: -10px;
-    width: 0;
-    height: 0;
     border-bottom: 10px solid $bgcolor;
     border-right: 10px solid transparent;
     border-left: 10px solid transparent;
+    content:"";
+    position: absolute;
+    height: 0;
+    left: 40px;
+    margin-left: -10px;
+    width: 0;
 	}
 }
 
 @mixin tooltip-layer($bgcolor) {
-	position: fixed;
-	overflow: auto;
-	top: 0;
-	bottom: 0;
 	background-color: $bgcolor;
+	bottom: 0;
+	overflow: auto;
+	position: fixed;
+	top: 0;
 
 	@include mediaquery ($bp-tablet) {
-		position: absolute;
-		overflow: visible;
-		top: 34px;
-		left: -31px;
-		bottom: auto;
 		background-color: transparent;
+		bottom: auto;
+		left: -31px;
+		overflow: visible;
+		position: absolute;
+		top: 34px;
 	}
 }
 
@@ -95,17 +95,17 @@
 }
 
 .close-tooltip {
-	@include iconfont-Close;
-	position: absolute;
-	top: 12px;
-	right: 5px;
-	left: auto;
-	width: 30px;
-	display: block;
-	overflow: hidden;
-	padding: 5px;
-	font-size: ($large-font-size + 2);
-	line-height: $large-line-height;
+  @include iconfont-Close;
+  display: block;
+  font-size: ($large-font-size + 2);
+  left: auto;
+  line-height: $large-line-height;
+  overflow: hidden;
+  padding: 5px;
+  position: absolute;
+  right: 5px;
+  top: 12px;
+  width: 30px;
 
 	&::before {
 		color: $soft-script;
