@@ -2,17 +2,17 @@
     $TOOLTIP
 \*------------------------------------*/
 
-@mixin tooltip($bgcolor){
+@mixin tooltip($bgcolor,$border){
   @include font-rendering;
   background-color: $bgcolor;
-  border: 1px solid #ccc;
+  border: 1px solid $border;
   border-radius: 4px;
-  box-shadow: 0 0 4px #ccc;
+  box-shadow: 0 0 4px $light-silk;
   position: relative;
   z-index: 9999;
 
   &:before {
-    border-bottom: 12px solid #ccc;
+    border-bottom: 12px solid $border;
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
     bottom: 100%;
@@ -189,10 +189,10 @@
 @include mediaquery ($bp-tablet) {
 
 	.tooltip {
-    @include tooltip($shiro);
+    @include tooltip($shiro,$light-silk);
 
     &#{&}-contrast {
-      @include tooltip($dark-silk);
+      @include tooltip($dark-silk,$dark-silk);
     }
 
 	}
