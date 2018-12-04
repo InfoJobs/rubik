@@ -55,7 +55,7 @@ Styleguide #{$sgi-table}
       padding: 0;
     }
 
-    td[data-th]:before {
+    td[data-th]::before {
       @include data-th;
     }
   }
@@ -131,6 +131,11 @@ Styleguide #{$sgi-table}
 
 	td {
     margin-bottom: 5px;
+
+    &.data-th-hidden::before {
+      visibility: hidden;
+    }
+
   }
 
   @at-root &.table-shrink {
@@ -226,7 +231,7 @@ Styleguide #{$sgi-table}
           width: 100%;
           padding: 20px;
 
-        + tr {
+        ~ tr {
           display: table;
           table-layout: fixed;
           width: 100%;
@@ -260,7 +265,7 @@ Styleguide #{$sgi-table}
             margin-right: $padding;
           }
 
-          &[data-th]:before {
+          &[data-th]::before {
             @include data-th;
           }
         }
@@ -283,9 +288,6 @@ Styleguide #{$sgi-table}
       @include data-th;
     }
 
-    td.data-th-hidden:before {
-      visibility: hidden;
-    }
 	}
 
 	@media print {
