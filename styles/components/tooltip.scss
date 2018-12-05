@@ -36,6 +36,7 @@
     margin-left: -10px;
     width: 0;
 	}
+
 }
 
 @mixin tooltip-layer($bgcolor) {
@@ -52,6 +53,21 @@
 		overflow: visible;
 		position: absolute;
 		top: 34px;
+
+    &.tooltip-right {
+      left: unset;
+      right: -38px;
+
+      .tooltip:after {
+        left: unset;
+        right: 40px;
+      }
+
+      .tooltip:before {
+        left: unset;
+        right: 40px;
+      }
+    }
 	}
 }
 
