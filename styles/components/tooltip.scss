@@ -8,7 +8,9 @@
   border: 1px solid $border;
   border-radius: 4px;
   box-shadow: 0 0 4px $light-silk;
+  padding: $padding $padding*2 $padding $padding;
   position: relative;
+  text-align: left;
   z-index: 9999;
 
   &:before {
