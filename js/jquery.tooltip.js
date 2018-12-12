@@ -36,7 +36,7 @@
 				}
 
 
-				if(position != settings.position) {
+				if(position !== settings.position) {
 
 					$this.find('.tooltip-layer').addClass( "tooltip-right" );
         }
