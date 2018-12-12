@@ -20,12 +20,13 @@
 
 			return this.each(function() {
 
-				var $this 		= $( this ),
-					width 		= $this.data().width || settings.width,
-					position 	= $this.data().position || settings.position,
-					close 		= $this.data().close || settings.close,
-					autoclose 	= $this.data().autoclose || settings.autoclose,
-					closeButton = '<a href="#" class="close-tooltip" title="'+close+'">'+close+'</a>';
+				var $this      = $( this ),
+        	dark         = $this.data().dark || settings.dark,
+					width        = $this.data().width || settings.width,
+					position     = $this.data().position || settings.position,
+					close        = $this.data().close || settings.close,
+					autoclose    = $this.data().autoclose || settings.autoclose,
+					closeButton  = '<a href="#" class="close-tooltip" title="'+close+'">'+close+'</a>';
 
 
 				if( $( window ).width() > width) {
@@ -35,7 +36,15 @@
 				}
 
 
-				if(position != settings.position) {}
+				if(position !== settings.position) {
+
+					$this.find('.tooltip-layer').addClass( "tooltip-right" );
+        }
+
+        if(dark) {
+					$this.find('.tooltip-layer').addClass( "tooltip-layer-contrast");
+					$this.find('.tooltip').addClass( "tooltip-contrast");
+        }
 
 				$this.find('.js-tooltip-open').click( function() {
 
@@ -60,8 +69,6 @@
 
 				$this.find('.tooltip').prepend(closeButton);
 
-
-
 				$this.find('.close-tooltip').click(function(event) {
 					event.preventDefault();
 					$this.find('.tooltip-layer')
@@ -81,9 +88,10 @@
 		// Estos son los valores por defecto.
 		$.fn.toolTip.defaults = {
 			width: "480",
-			position: "bottom",
+			position: "left",
 			close: "Cerrar",
-			autoclose: true
+			autoclose: true,
+			dark: false
 		};
 
 
