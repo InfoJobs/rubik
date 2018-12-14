@@ -8,7 +8,7 @@
   border: 1px solid $border;
   border-radius: 4px;
   box-shadow: 0 0 4px $light-silk;
-  padding: $padding $padding*2 $padding $padding;
+  padding: $padding;
   position: relative;
   text-align: left;
   z-index: 9999;
@@ -79,6 +79,18 @@
 
 .tooltip {
 	color: $dark-silk;
+
+  h3 {
+    margin: 0;
+
+    & + p:first-of-type {
+      margin-top: $padding/2;
+    }
+  }
+
+  p:first-of-type {
+    margin-top: $padding;
+  }
 
 	h3,
 	p,
