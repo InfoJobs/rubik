@@ -303,9 +303,22 @@ img[alt] {
         display: none;
     }
 
+    &.opacity {
+      opacity: 1;
+
+      .content-type-text,
+      .panel-default {
+        opacity: .5;
+      }
+    }
+
     p {
     	color: $dark-silk;
     }
+}
+
+.opacity {
+    opacity: .5;
 }
 
 .list-default > li.container-editable {
