@@ -160,32 +160,31 @@ Styleguide  #{$sgi-containers}
 }
 
 .row-centered {
-	width: 100%;
+  width: 100%;
 
 	@include mediaquery ($bp-desktop) {
-		width: $row-centered-width;
-		margin: 0 auto 10px auto;
+    margin: 0 auto 10px auto;
+    width: $row-centered-width;
 	}
 
 	form {
 		@include mediaquery ($bp-desktop) {
-			width: $row-centered-width-form;
-			margin: 0 auto 10px auto;
+      margin: 0 auto 10px auto;
+      width: $row-centered-width-form;
 		}
 	}
 
+  input,
+  textarea {
+    width: 100%;
+  }
 
-	input,
-	textarea {
-		width: 100%;
-	}
-}
-
-.modal-content .row-centered {
-	@include mediaquery ($bp-desktop) {
-		width: 450px;
-		margin-bottom: 0;
-	}
+  .modal-content & { //modal-content is in modal.scss
+    @include mediaquery ($bp-desktop) {
+      margin-bottom: 0;
+      width: 450px;
+    }
+  }
 }
 
 .row-flex {
@@ -258,29 +257,20 @@ Styleguide #{$sgi-innerContainers}
 }
 
 .img-responsive {
-	max-width: 100%;
-	height: auto;
+  height: auto;
+  max-width: 100%;
 }
 
 img[alt] {
-    background: none;
-    border: 0;
-    word-wrap: break-word;
-}
-
-.section { //TODO: only used at home
-  background-color: $shiro;
-	padding: $padding / 2;
-
-  @include mediaquery ($bp-desktop) {
-    padding: $padding;
-  }
+  background: none;
+  border: 0;
+  word-wrap: break-word;
 }
 
 .container-editable {
-    .content-middle {
-        min-height: 30px;
-    }
+  .content-middle {
+    min-height: 30px;
+  }
 
     @include mediaquery ($bp-desktop) {
         &:hover {
@@ -313,22 +303,9 @@ img[alt] {
         display: none;
     }
 
-    &.opacity {
-        opacity: 1;
-
-        .content-type-text,
-        .panel-default {
-            opacity: .5;
-        }
-    }
-
     p {
     	color: $dark-silk;
     }
-}
-
-.opacity {
-    opacity: .5;
 }
 
 .list-default > li.container-editable {
