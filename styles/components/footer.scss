@@ -52,6 +52,11 @@
 	.social-icons {
 		display: table;
 		margin: 0 auto;
+
+    [class^="iconfont-"]::before,
+    [class*=" iconfont-"]::before {
+      top: 11px;
+    }
 	}
 
 	.col-child .social-icons {
@@ -213,17 +218,15 @@
 		display: block;
 		text-align: center;
 
-		&-sites {
-			overflow: visible;
+		&::before {
+			border-bottom: 1px solid $outer-wall;
+			content: "";
 			display: block;
+			position: relative;
+			top: -#{$padding};
+		}
 
-			&::before {
-				display: block;
-				content: "";
-				position: relative;
-				top: -20px;
-				border-bottom: 1px solid $outer-wall;
-			}
+		&-sites {
 
 			li {
 				position: relative;
@@ -267,17 +270,6 @@
 				text-decoration: underline;
 			}
 		}
-	}
-}
-
-//banners
-.footer-slotbanner {
-	@include mediaquery (1256px) {
-		left: -287px;
-	}
-
-	@include mediaquery (1278px) {
-		left: -310px;
 	}
 }
 
