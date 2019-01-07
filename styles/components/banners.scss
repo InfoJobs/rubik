@@ -43,6 +43,9 @@ Markup:
 Styleguide #{$sgi-bannersContainers}
 */
 
+$width-banner-aside: 300px;
+$margin-banner-aside: 10px;
+
 .wrapper-slotbanner {
 
 	.slotbanner { //padre centra el contenido pagina y banners sin footer
@@ -82,9 +85,11 @@ Styleguide #{$sgi-bannersContainers}
 		text-align: center;
 	}
 	.slotbanner-fixed {
+    margin: $margin-banner-aside;
+    overflow: hidden;
 		position: fixed;
 		top: 0;
-		margin: 10px;
+    width: $width-banner-aside;
 
 		> div {
 			margin-bottom: 10px;
@@ -92,19 +97,25 @@ Styleguide #{$sgi-bannersContainers}
 			//border:5px solid coral;
 		}
 	}
+
+  .footer-slotbanner {
+  	@include mediaquery ($bp-banner-aside) {
+  		left: - ($width-banner-aside + $margin-banner-aside);
+  	}
+  }
 }
 
 //formatos banner
 
 .slotbanner {
-	max-width: 970px;
+	max-width: $container-width;
 }
 
 .wrapper-l .slotbanner {
-	max-width: 1280px;
+	max-width: $container-extended-width;
 }
 
-@media only screen and (max-width: $theme-container-extended-width - 1) {
+@media only screen and (max-width: $bp-banner-aside - 1) {
 
 .wrapper-slotbanner.wrapper-l {
 
@@ -116,24 +127,21 @@ Styleguide #{$sgi-bannersContainers}
 	    	max-width: $container-width;
 		}
 
-	    .slotbanner-top {
-	    	overflow: hidden;
-		}
-	}
-
+    .slotbanner-top {
+      overflow: hidden;
+    }
+  }
 }
 
-@media only screen and (max-width: 945px) {
+@media only screen and (max-width: $header-start) {
+  .wrapper-slotbanner {
 
-.wrapper-slotbanner {
-
-		.slotbanner-top,
-		.slotbanner-aside {
-			display:none;
-		}
-
-		.container-slotbanner {
-			float:none;
-		}
-	}
+    .slotbanner-top,
+    .slotbanner-aside {
+      display:none;
+    }
+    .container-slotbanner {
+      float:none;
+    }
+  }
 }
