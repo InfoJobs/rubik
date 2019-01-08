@@ -82,12 +82,26 @@ Styleguide #{$sgi-listsDefault}
     }
 
     > dt {
-      @include bold;
       margin-bottom: 0;color: $dark-silk;
 
-        &.hide {
-            display: none;
-        }
+      &:not(.semi-bold) {
+        @include bold;
+      }
+
+      &.dt-details {
+        @include display-flex;
+      }
+
+      & .dt-right {
+        @include normal;
+        flex: 1 0 auto;
+        line-height: 1.1;
+        text-align: right;
+      }
+
+      &.hide {
+        display: none;
+      }
     }
 
     > dd {
@@ -154,22 +168,11 @@ Markup:
 Styleguide #{$sgi-listsInline}
 */
 .list-inline {
-  overflow: hidden;
-  font-size: 0;
+  @include  display-flex;
+  flex-wrap: wrap;
 
   li:not(:last-of-type) {
     margin-right: 10px;
-  }
-
-  li {
-    display: inline-block;
-  }
-
-  &:not(.base) {
-    li {
-      font-size: $small-font-size;
-      font-family: $base-font-family;
-    }
   }
 
   .dt {
@@ -178,26 +181,17 @@ Styleguide #{$sgi-listsInline}
 
   &-center {
     @extend .list-inline;
-    display: inline-block;
-    width: auto;
-    margin: 0 auto;
-    text-align: center;
+    justify-content: center;
   }
 
   &-center-small-device {
     @extend .list-inline;
-    display: inline-block;
-    width: auto;
-    margin: 0 auto;
-    text-align: center;
+    justify-content: center;
 
     @include mediaquery($bp-desktop) {
-      display: block;
-      text-align: left;
-      margin: 0;
+      justify-content: flex-start;
     }
   }
-
 
 }
 
