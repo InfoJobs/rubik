@@ -4,7 +4,6 @@
 
 //Applies to elements containing a class that begin with icon-
 
-[class^="icon-"],
 [class*="icon-"] {
 	position: relative;
 	padding-left: 17px;
@@ -25,7 +24,6 @@ Add `.iconfont-filled` class for filling inside the outline of the shape. `iconf
   <ul class="list-default">
     <li class="iconfont-Check iconfont-filled">iconfont-Check iconfont-filled</li>
     <li class="iconfont-Clock iconfont-filled">iconfont-Clock iconfont-filled</li>
-    <li class="iconfont-Label iconfont-filled">iconfont-Label iconfont-filled</li>
   </ul>
 
 Styleguide #{$sgi-icons}
@@ -96,7 +94,7 @@ Styleguide #{$sgi-iconsList}
 		color: $shiro;
 	}
 
-	@at-root .btn-group [class^="btn-"]#{&} {
+	@at-root .btn-group [class*="btn-"]#{&} {
 		margin-right: 0;
 	}
 
@@ -572,10 +570,7 @@ $iconfont-size: (16, 18, 22, 24, 30, 36, 100); //TODO: resolve problem when it s
 
 //icons svg
 
-a[class^="Icon--"],
-a[class^=" Icon--"],
-a[class*="Icon--"],
-a[class*=" Icon--"] {
+a[class*="Icon--"] {
 
     fill: #d1d8dc;
 
@@ -585,6 +580,12 @@ a[class*=" Icon--"] {
     span {
         display: none;
     }
+}
+
+.Icon--small svg {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
 }
 
 $svg-hover: (fill, stroke);
