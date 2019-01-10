@@ -201,8 +201,7 @@ $size-timeline-line:   4px;
 
 		}
 
-    [class^="iconfont-"]::before,
-    [class*=" iconfont-"]::before {
+    [class*="iconfont-"]::before {
       margin: 0;
     }
 

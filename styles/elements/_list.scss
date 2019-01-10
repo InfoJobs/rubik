@@ -290,16 +290,15 @@ Styleguide #{$sgi-listsWithIcons}
 
 .list-bullet-icon {
 
-    > [class^="iconfont-"],
-    > [class*="iconfont-"] {
-        position: relative;
-        padding-left: 20px;
+  > [class*="iconfont-"] {
+    padding-left: 20px;
+    position: relative;
 
-        &::before {
-            position: absolute;
-            top: 10px;
-        }
+    &::before {
+      position: absolute;
+      top: 10px;
     }
+  }
 
     @each $val in $iconfont-size {
       .iconfont-#{$val}px,

@@ -8,7 +8,7 @@
 
 		width: 100%;
 		overflow: hidden;
-		border-bottom: 1px solid $katana-slash;
+		border-bottom: 1px solid $katana-slash; //TODO: idem .list-divider except paddings and margins
 
 		&:last-child {
 			border: none;
@@ -92,30 +92,6 @@
 			}
 
 		}
-
-	}
-
-	.cell-1 [class^="icon-"],
-	.cell-1 [class*=" icon-"] {
-			display: block;
-			margin: 0 auto;
-			margin-bottom: 5px;
-	}
-
-	.cell-1 [class^="iconfont-"],
-	.cell-1 [class*=" iconfont-"] {
-		position: relative; //needed to position .iconfont-Flag applied by .main class
-
-		@include mediaquery ($bp-desktop) {
-			padding-bottom: 10px;
-		}
-	}
-
-	.cell-1 [class^="iconfont-"]::before,
-	.cell-1 [class*=" iconfont-"]::before {
-			display: block;
-			top: 0;
-			color: $soft-script;
 
 	}
 
