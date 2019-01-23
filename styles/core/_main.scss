@@ -424,7 +424,7 @@ hr {
 
 .divider:after {
 	content: "|";
-	padding-left: 5px;
+	padding-left: $padding/2;
 	color: $darkest-shiro;
 }
 

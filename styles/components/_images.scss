@@ -22,4 +22,20 @@
       bg-home-full
     );
   }
+
+  &-home-em {
+    @include bg-device (
+      bg-header-em-mobile,
+      bg-header-em-tablet,
+      bg-header-em-desktop
+    );
+  }
+
+  &-cv-search-em {
+    @include bg-device (
+      bg-search-cvs-short-mobile,
+      bg-search-cvs-short-tablet,
+      bg-search-cvs-short-desktop
+    );
+  }
 }
