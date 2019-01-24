@@ -58,8 +58,11 @@ $margin-banner-aside: 10px;
 	.slotbanner-top,
 	.slotbanner-top-brandday {
 		max-width: 980px;
-		margin-top: 10px;
-		min-height: 90px;
+		
+		&--space {
+			margin-top: 10px;
+			min-height: 90px;
+		}
 
 		@media print {
 			display: none;
