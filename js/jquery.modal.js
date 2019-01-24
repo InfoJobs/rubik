@@ -18,10 +18,12 @@
 	$.fn.modalWindow = function( options ) {
 		// Defaul options
 		var settings    = $.extend({}, $.fn.modalWindow.defaults, options);
-
+		
+		var dismissible = $( this ).data().dismissible || settings.dismissible;
+		
         // Close on ESC key
         $(document).on('keyup', function(event) {
-            if(event.keyCode === 27) {
+            if(dismissible && event.keyCode === 27) {
                 $.fn.modalWindow.closeModalWindow();
             }
         });
@@ -42,14 +44,14 @@
 				openElement	= $this.data().openelement,
 				contentWrapper = $this.data().contentwrapper,
 				content = $('#'+contentWrapper).html(),
-				closeModal = '<a href="#" class="close-modal hit-area ' + closecolor + '" title=""></a>',
-				headerModal = '<div class="modal-header" id="header-'+openElement+'">' + closeModal + '<h1 class="title">' + headermodal + '</h1> </div>',
+				closeModal = dismissible === true ? '<a href="#" class="close-modal hit-area ' + closecolor + '" title=""></a>' : '',
+				headerModal = '<div class="modal-header" id="header-'+openElement+'">' + closeModal + '<h1 class="title truncate">' + headermodal + '</h1> </div>',
 				structure = '<div id="layer-'+openElement+'" class="modal-hidden modal-layer"><div id="inner-'+openElement+'" class="modal-inner"><div id="content-'+openElement+'" class="modal-content"></div></div></div>';
 				width = $this.data().width || settings.width;
 				headerModal = hasheader === false ? closeModal : headerModal;
 
 			$('#'+contentWrapper).remove();
-
+			
 			$('#'+openElement).click( function() {
 
 				$('#notification-toast').css('position','static');
@@ -69,7 +71,7 @@
                     .addClass('modal-fade-in')
                     .removeClass('modal-hidden modal-fade-out')
                     .click(function(event) {
-                        if((closeBackground && $(event.target).is('.modal-layer')) || $(event.target).is('.close-modal')) {
+                        if((dismissible && closeBackground && $(event.target).is('.modal-layer')) || $(event.target).is('.close-modal')) {
                             event.preventDefault();
                             $.fn.modalWindow.closeModalWindow();
                             return false;
@@ -187,7 +189,8 @@
 		close: 'Cerrar',
 		headermodal: '',
 		closeBackground : true,
-		callback: null
+		callback: null,
+		dismissible: true
 	};
 
 })( jQuery, window, document );
