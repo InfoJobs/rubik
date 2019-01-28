@@ -193,6 +193,18 @@ Styleguide #{$sgi-listsInline}
     }
   }
 
+  .truncate-cols2 {
+    display: inline-flex;
+    max-width: 50%;
+    min-width: 0;
+  }
+
+  .truncate-cols3 {
+    display: inline-flex;
+    max-width: 33%;
+    min-width: 0;
+  }
+
 }
 
 /*
@@ -290,15 +302,15 @@ Styleguide #{$sgi-listsWithIcons}
 
 .list-bullet-icon {
 
-  > [class*="iconfont-"] {
-    padding-left: 20px;
-    position: relative;
+    > [class*="iconfont-"] {
+        position: relative;
+        padding-left: 20px;
 
-    &::before {
-      position: absolute;
-      top: 10px;
+        &::before {
+            position: absolute;
+            top: 10px;
+        }
     }
-  }
 
     @each $val in $iconfont-size {
       .iconfont-#{$val}px,
@@ -397,12 +409,12 @@ Markup:
 %list-item-divider {
 	li {
 		border-bottom: 1px solid $darkest-shiro;
-		margin-bottom: 10px;
-		padding-bottom: 10px;
+		margin-bottom: $padding/2;
+		padding-bottom: $padding/2;
 
 		@include mediaquery ($bp-tablet) {
-			margin-bottom: 20px;
-			padding-bottom: 20px;
+			margin-bottom: $padding;
+			padding-bottom: $padding;
 		}
 
 		&:last-child {
@@ -421,141 +433,4 @@ Markup:
 		margin-bottom: 5px;
 		padding-bottom: 5px;
 	}
-}
-
-/*
-Tag group
-
-Use class `.tag-group` to display list items in the same line with gutter between this items.
-
-Markup:
-<ul class="tag-group">
-    <li>Lorem ipsum dolor sit amet</li>
-    <li>Lorem ipsum</li>
-    <li>Lorem ipsum dolor</li>
-</ul>
-
-Styleguide #{$sgi-tagGroup}
-*/
-
-.tag-group {
-    @include font(small);
-    overflow: hidden;
-
-    &:last-child {
-        margin-top: 10px;
-    }
-
-    li {
-        float: left;
-        margin-bottom: 5px;
-        padding-right: 20px;
-
-        @media print {
-            margin: 0;
-        }
-    }
-}
-
-/*
-Tag divider
-
-Use class `.tag-divider` to divide tag group items, showing them in the same line with a divider in between.
-
-Markup:
-<ul class="tag-group">
-    <li class="tag-divider">Lorem ipsum dolor</li>
-    <li class>Lorem ipsum</li>
-</ul>
-
-Styleguide #{$sgi-tagDivider}
-*/
-
-.tag-group li.tag-divider:not(:only-child) {
-    @extend %divider;
-    margin-right: 10px;
-    padding-right: 10px;
-}
-
-.tag-group li.tag-sticker {
-    float: none;
-
-    @media print {
-        float: left;
-    }
-}
-
-
-/*
-Tag group top
-
-Use class `.tag-group-top` to add a gap between this tag and the following.
-
-Markup:
-<ul class="tag-group tag-group-top">
-    <li>Lorem ipsum</li>
-    <li>Lorem ipsum</li>
-    <li>Lorem ipsum</li>
-</ul>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-Styleguide #{$sgi-tagGroupTop}
-*/
-
-.tag-group-top {
-    margin-bottom: 10px;
-
-    @media print {
-        margin: 0;
-    }
-}
-
-.tag-group .alternative { //TODO: nest with '& .tag-group'
-    margin-right: 0;
-}
-
-/*
-Tag group with ellipsis
-
-Use class `.ellipsis` in `<span>` to generate ellipsis in the text of an item of the tag group.
-Add also the `.tag-ellipsis-col2` or `.tag-ellipsis-col3` in `<li>` when the tag group contains two or three items.
-
-Markup:
-<ul class="tag-group">
-    <li class="tag-divider tag-ellipsis-cols2">
-        <span class="ellipsis">Consectetur Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
-    </li>
-    <li>Lorem ipsum</li>
-</ul>
-<ul class="tag-group">
-    <li class="tag-divider tag-ellipsis-cols3">
-        <span class="ellipsis">Consectetur Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
-    </li>
-    <li class="tag-divider">Lorem ipsum</li>
-    <li>Lorem ipsum</li>
-</ul>
-
-Styleguide #{$sgi-tagGroupWithEllipsis}
-*/
-.tag-group .ellipsis { //TODO: nest with '& tag-group'. Use truncate class?
-    display: block;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.tag-group  .tag-ellipsis-cols2 { //TODO: nest with '& tag-group'
-    max-width: 50%;
-}
-
-.tag-group  .tag-ellipsis-cols3 { //TODO: nest with '& tag-group'
-    max-width: 33%;
-}
-
-// Es redefineix el color a gris perque, tot i tenir default, els anchors
-// es continuen pintant en blau i el tag-primary en verd
-
-.tag-disabled {  //TODO: ?? se usa? Usar class alternative?
-    color: $soft-script;
 }

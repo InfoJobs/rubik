@@ -65,11 +65,10 @@ $height-bg: 206px;
     @include custom-bg;
     background-repeat: no-repeat;
     background-size: cover;
-    color: $dark-silk;
+  }
 
-    h1 {
-      color: $dark-silk;
-    }
+  &-contain {
+    background-size: contain;
   }
 
   &-contain {

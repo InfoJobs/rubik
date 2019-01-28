@@ -35,18 +35,6 @@ Styleguide #{$sgi-job-list}
       margin-bottom: 5px;
     }
 
-    .tag-group-top {
-        height: 20px;
-
-        @include mediaquery ($bp-desktop) {
-            height: auto;
-        }
-
-        li  {
-            padding-right: 20px;
-        }
-    }
-
     > li {
         @include font(small);
         position: relative;
@@ -151,7 +139,7 @@ Styleguide #{$sgi-job-list}
 }
 
 .job-list-description {
-    margin-top: 12px;
+    margin-top: 5px;
     margin-bottom: 10px;
     color: $mid-script;
 
