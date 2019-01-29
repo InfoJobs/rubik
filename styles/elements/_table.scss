@@ -25,8 +25,15 @@ Styleguide #{$sgi-table}
   max-width: 100%;
   table-layout: fixed;
   text-align: left;
-  overflow: hidden;
   width: 100%;
+}
+
+@mixin data-th {
+  color: $mid-script;
+  content: attr(data-th);
+  display: block;
+  font-size: $xsmall-font-size;
+  white-space: nowrap;
 }
 
 @mixin reset-table {
@@ -47,12 +54,8 @@ Styleguide #{$sgi-table}
       padding: 0;
     }
 
-    td[data-th]:before {
-      color: $mid-script;
-      content: attr(data-th);
-      display: block;
-      font-size: $xsmall-font-size;
-      white-space: nowrap;
+    td[data-th]::before {
+      @include data-th;
     }
   }
 
@@ -111,7 +114,7 @@ Styleguide #{$sgi-table}
 		position: relative;
 
 		@at-root & [class^="panel-"] {
-			padding: $padding / 2;
+      padding: $padding / 2;
 
 			@media print {
 				padding-top: 0;
@@ -126,8 +129,20 @@ Styleguide #{$sgi-table}
 	}
 
 	td {
-		margin-bottom: 5px;
-	}
+    margin-bottom: 5px;
+
+    &.data-th-hidden::before {
+      visibility: hidden;
+    }
+
+  }
+
+  @at-root &.table-shrink {
+    td {
+      margin-bottom: 0;
+    }
+  }
+
 
 	> tbody > tr {
 		position: relative;
@@ -147,16 +162,40 @@ Styleguide #{$sgi-table}
 		}
 	}
 
-  td[colspan]:not(.td-footer) {
+  td.colspan {
     padding: 0;
+  }
+
+  .tr-footer {
+    td {
+      padding: 10px 10px 10px 0;
+    }
   }
 
 	@include mediaquery ($bp-tablet) {
     @include table-default;
 
-		table {
+    @at-root &.table-shrink {
+      width: auto;
+    }
+
+    table {
       @include table-default;
-	  }
+
+      th,
+      td {
+        padding-top: $padding/2;
+
+        @at-root &.cell-parent {
+          padding: 0;
+        }
+
+        @at-root & [class^="panel-"] {
+          margin-top: -10px;
+          margin-right: -10px;
+        }
+      }
+    }
 
 		thead {
       border-bottom: 1px solid $darkest-shiro;
@@ -164,7 +203,7 @@ Styleguide #{$sgi-table}
 
 		th,
 		td {
-			padding: $padding/2 $padding/2 $padding/2 0;
+			padding: 0 $padding/2 $padding/2 0;
 
 			@at-root &.cell-parent {
 				padding: 0;
@@ -182,6 +221,36 @@ Styleguide #{$sgi-table}
         padding: $padding;
       }
 
+      td.colspan {
+        padding: 0;
+      }
+
+      .tr-header-list {
+          display: table;
+          width: 100%;
+          padding: 20px;
+
+        ~ tr {
+          display: table;
+          table-layout: fixed;
+          width: 100%;
+
+          td,
+          th {
+            padding-top: 0;
+          }
+        }
+
+        td {
+          padding-bottom: 0;
+        }
+      }
+
+      .tr-footer {
+        td {
+          padding: 10px 20px 20px;
+        }
+      }
     }
 
     &-large-device {
@@ -192,22 +261,15 @@ Styleguide #{$sgi-table}
           @include td-child-group;
 
           &.td-child-margin {
-            margin-right: $padding*2;
+            margin-right: $padding;
           }
 
-          &[data-th]:before {
-            color: $mid-script;
-            content: attr(data-th);
-            display: block;
-            font-size: $xsmall-font-size;
-            white-space: nowrap;
+          &[data-th]::before {
+            @include data-th;
           }
-
         }
-
       }
     }
-
 	}
 
 	@media only screen and (max-width: $mobile-start) {
@@ -217,17 +279,14 @@ Styleguide #{$sgi-table}
       @include td-child-group;
 
       &.td-child-margin {
-        margin-right: $padding*2;
-      }
-
-      &[data-th]:before {
-        color: $mid-script;
-        content: attr(data-th);
-        display: block;
-        font-size: $xsmall-font-size;
-        white-space: nowrap;
+        margin-right: $padding;
       }
     }
+
+    td[data-th]:before {
+      @include data-th;
+    }
+
 	}
 
 	@media print {

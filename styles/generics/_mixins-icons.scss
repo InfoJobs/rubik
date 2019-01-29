@@ -822,6 +822,13 @@ $MIXINS ICONS
   }
 }
 
+@mixin iconfont-Label {
+  &::before {
+    @include iconfont;
+    content: "\e922";
+  }
+}
+
 //
 // HTML tags icon
 // -------------------------------------------

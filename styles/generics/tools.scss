@@ -24,9 +24,7 @@ Styleguide #{$sgi-helpers}
 	&--tablet {
 
 		@include mediaquery ($bp-tablet) {
-
-			float:left;
-
+			float: left;
 		}
 	}
 }
@@ -44,7 +42,7 @@ Styleguide #{$sgi-helpers}
 
 	&--tablet {
 		@include mediaquery ($bp-tablet) {
-			float:right;
+			float: right;
 		}
 	}
 
@@ -74,24 +72,23 @@ Styleguide #{$sgi-helpers}
 	.centered {
 		display: inline-block;
 	}
-}
 
-.text-center-small-device {
-	text-align: center;
+	&-small-device {
+		text-align: center;
 
-	@include mediaquery ($bp-tablet) {
-		text-align: left;
+		@include mediaquery ($bp-tablet) {
+			text-align: left;
+		}
+	}
+
+	&-medium-device {
+		text-align: center;
+
+		@include mediaquery ($bp-desktop) {
+			text-align: left;
+		}
 	}
 }
-
-.text-center-medium-device {
-	text-align: center;
-
-	@include mediaquery ($bp-desktop) {
-		text-align: left;
-	}
-}
-
 
 .text-right {
 	text-align: right;
@@ -162,8 +159,8 @@ Styleguide #{$sgi-helpers}
     margin: 0;//only border, reset margins
 
     @at-root .inner #{&} {
-      margin-right: -20px;
-      margin-left: -20px;
+      margin-left: -#{$padding};
+      margin-right: -#{$padding};
     }
   }
 
@@ -174,21 +171,21 @@ Styleguide #{$sgi-helpers}
 }
 
 .border-divider { // Used to generate a gap with a top border
-	padding-top: 20px;
-	padding-bottom: 20px;
-	border-top: 1px solid $darkest-shiro;
+  border-top: 1px solid $darkest-shiro;
+  padding-bottom: $padding;
+  padding-top: $padding;
 
 	.inner & {
-	   	margin-left: -10px;
-	   	margin-right: -10px;
-		padding-right: 10px;
-	   	padding-left: 10px;
+    margin-left: -#{$padding/2};
+    margin-right:-#{$padding/2};
+    padding-left: $padding/2;
+    padding-right: $padding/2;
 
-	   @include mediaquery ($bp-tablet) {
-	       	margin-left: -20px;
-	   		margin-right: -20px;
-			padding-right: 20px;
-			padding-left: 20px;
+    @include mediaquery ($bp-tablet) {
+      margin-left: -#{$padding};
+      margin-right: -#{$padding};
+      padding-left: $padding;
+      padding-right: $padding;
 	   }
 	}
 
@@ -202,8 +199,8 @@ Styleguide #{$sgi-helpers}
 }
 
 .shadow {
-	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
-  border-radius: 2px;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
 .border-rounded {
@@ -243,8 +240,13 @@ Styleguide #{$sgi-helpers}
 }
 
 .indent {
+  margin-top: 5px;
 	margin-left: 24px;
-	margin-top: 5px;
+
+	&--small {
+    margin-top: 5px;
+		margin-left: 10px;
+	}
 }
 
 /*------------------------------------*\
@@ -285,7 +287,7 @@ Styleguide #{$sgi-helpers}
 
 }
 
-@media only screen and (min-width: 481px) and (max-width: 768px) { //TODO: convert to a mixin
+@media only screen and (min-width: $bp-tablet) and (max-width: $tablet-start) { //TODO: convert to a mixin
 
 	.hide-medium-device,
 	div.hide-medium-device,
@@ -334,6 +336,10 @@ Styleguide #{$sgi-helpers}
 
 		@include mediaquery ($bp-desktop) {
 			display: inline;
+		}
+
+		@media print {
+		    display: inline;
 		}
 	}
 }

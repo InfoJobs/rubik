@@ -36,15 +36,13 @@ Styleguide #{$sgi-badges}
   font-size: $small-font-size;
   line-height: 14px;
 
-  &[class^="iconfont-"]::before,
-  &[class*=" iconfont-"]::before,
-  &[class^="iconfont-"]::after,
-  &[class*=" iconfont-"]::after {
+  &[class*="iconfont-"]::before,
+  &[class*="iconfont-"]::after {
     display: table-cell;
     margin: 0;
     padding-right: 5px;
     font-size: 12px;
-    top: 1px;
+    top: -1px;
     color: inherit;
   }
 
@@ -64,10 +62,8 @@ Styleguide #{$sgi-badges}
   border-radius: $border-radius;
   padding: 1px 5px;
 
-  &[class^="iconfont-"]::before,
-  &[class*=" iconfont-"]::before,
-  &[class^="iconfont-"]::after,
-  &[class*=" iconfont-"]::after {
+  &[class*="iconfont-"]::before,
+  &[class*="iconfont-"]::after {
     vertical-align: middle;
     font-size: 11px;
   }
@@ -229,7 +225,7 @@ Styleguide #{$sgi-badges}
 
   .sticker-bottom-center {
     position: absolute;
-    bottom: -3px;
+    bottom: 0;
     left: 0;
     right: 0;
     text-align: center;

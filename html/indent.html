@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="ISO-8859-15">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Indent content</title>
+  <link rel="stylesheet" type="text/css" href="../public/companies.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="panel-canvas inner">
+        <h1>Contenido indentado en formulario</h1>
+        <ul class="form--field-block clearfix">
+          <li>
+            <input id="tipoEmpresa" name="tipoEmpresa" type="checkbox">
+            <label for="tipoEmpresa">Lorem ipsum dolor sit amet</label>
+
+            <ul class="indent">
+              <li>
+                <input type="radio" name="tipoEmpresaRadio" id="tipoEmpresaRadio1" value="2">
+                <label class="radio" for="tipoEmpresaRadio1">Item indented 01</label>
+              </li>
+
+              <li>
+                <input type="radio" name="tipoEmpresaRadio" id="tipoEmpresaRadio2" value="5">
+                <label class="radio" for="tipoEmpresaRadio2">Item indented 02</label>
+              </li>
+
+              <li>
+                <input type="radio" name="tipoEmpresaRadio" id="tipoEmpresaRadio3" value="3">
+                <label class="radio" for="tipoEmpresaRadio3">Item indented 03</label>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="container-expanded panel-canvas inner">
+        <h1>Contenido indentado en texto</h1>
+
+        <ul class="list-default">
+          <li>Lorem ipsum dolor</li>
+          <li>
+            <ul class="list-default indent--small">
+              <li>Item indented 01 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, itaque. Vel quasi similique ratione aperiam, repellendus incidunt corporis, non dolorem iure amet optio voluptatum libero. Incidunt corporis, ipsam aut quos.</li>
+              <li>Item indented 02</li>
+              <li>Item indented 03</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>

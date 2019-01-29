@@ -7,6 +7,7 @@ $dark-blue:                   #135174;
 $soft-blue:                   #D1D8DC;
 $sunrise-blue:                #a7adb0; //grey
 $midnight-blue:               #7e8284;
+$theme-color-focus:				$dark-blue;
 
 $theme-color-primary:       		$light-blue;
 $theme-color-secondary:     		$soft-blue;
@@ -33,10 +34,7 @@ $theme-sticker-border:            1px solid $light-silk;
 $theme-sticker-background:        $dark-shiro;
 $theme-sticker-background--hover:	#bbc9d7;
 
-//
-// Header
-// -------------------------------------------
-$theme-color-header:				$dark-blue;
+
 
 
 //
@@ -44,7 +42,7 @@ $theme-color-header:				$dark-blue;
 // -------------------------------------------
 $theme-row-centered-width:        728px;
 $theme-row-centered-width-form:   505px;
-$theme-container-width:           1140px;
+$theme-container-width:           1200px;
 $theme-container-extended-width:  $theme-container-width;
 
 $theme-input-tel-width:           247px;

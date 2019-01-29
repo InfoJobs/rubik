@@ -17,6 +17,7 @@ Markup:
 
 Styleguide #{$sgi-custom-background}
 */
+@import "images";
 
 $height-bg: 206px;
 
@@ -64,17 +65,26 @@ $height-bg: 206px;
     @include custom-bg;
     background-repeat: no-repeat;
     background-size: cover;
-    color: $dark-silk;
+  }
 
-    h1 {
-      color: $dark-silk;
-    }
+  &-contain {
+    background-size: contain;
+  }
+
+  &-contain {
+    background-size: contain;
   }
 
   &-cover--center {
     @extend .custom-bg-cover;
     @include custom-bg-empty;
     background-position: center;
+  }
+
+  &-cover--bottom {
+    @extend .custom-bg-cover;
+    @include custom-bg-empty;
+    background-position: left bottom;
   }
 
   &-default {

@@ -12,17 +12,15 @@ $MIXINS TAGS
   padding: 5px 10px;
   max-width: 240px;
 
-  &[class^="iconfont-"]::before,
-  &[class*=" iconfont-"]::before,
-  &[class^="iconfont-"]::after,
-  &[class*=" iconfont-"]::after {
+  &[class*="iconfont-"]::before,
+  &[class*="iconfont-"]::after {
     font-size: 12px;
     top: 1px;
     color: inherit;
   }
 
   &-dismissable {
-    padding-right: 40px;
+    padding-right: 30px;
   }
 
   @at-root a#{&} {
@@ -39,9 +37,9 @@ $MIXINS TAGS
 @mixin tag-close {
   @include iconfont-Close;
   position: absolute;
-  top: 9px;
+  top: 6px;
   left: auto;
-  right: 10px;
+  right: 5px;
   line-height: 13px;
   margin-left: 8px;
   cursor: pointer;
