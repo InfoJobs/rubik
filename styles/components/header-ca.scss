@@ -6,7 +6,6 @@
 	//bg logo es
 	background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo-default_primary.svg);
 	background-size: 98px;
-	border-bottom: 1px solid $darkest-shiro;
 
 	@include mediaquery ($bp-header) {
 		background-image: none;
@@ -336,9 +335,24 @@ a.nav-bar-toggle {
 .global-nav-logged.global-nav-submenu {
 
   .nav-bar-wrapper {
-    max-width: $container-extended-width;
-    margin: 0 auto;
-  }
+    @include flex(0 0 auto);
+    @include order(2);
+    overflow: visible;
+
+    @include mediaquery ($bp-header) {
+      max-width: $container-extended-width;
+      margin: 0 auto;
+    }
+
+    &-submenu {
+      padding-top: 145px;
+
+      @include mediaquery ($bp-header) {
+        padding-top: 0;
+      }
+
+    }
+}
 
 	.nav-bar-menu {
 		background: $dark-shiro;
@@ -374,6 +388,26 @@ a.nav-bar-toggle {
 
 	}
 
+}
+
+.nav-bar-wrapper {
+  @include display-flex;
+  @include flex-flow(column nowrap);
+  height: 100%;
+  max-height: 100vh;
+
+  @media only screen and (max-width: $header-start) {
+    		//android 4.3
+    		-webkit-box-orient: block-axis;
+    		   -moz-box-orient: block-axis;
+    		        box-orient: block-axis;
+    		//
+  }
+  @include mediaquery ($bp-header) {
+    display: block;
+    height: auto;
+    max-height: none;
+  }
 }
 
 .nav-bar-access,
@@ -533,11 +567,11 @@ a.nav-bar-toggle {
 		}
 
 		.picture {
-			width: 60px;
-			height: 60px;
-			border: 3px solid $shiro;
-			margin-bottom: 10px;
-			overflow: hidden;
+      border: 3px solid $shiro;
+      height: 60px;
+      margin: 0 auto $padding/2 auto;
+      overflow: hidden;
+      width: 60px;
 
 			img {
 				width: 57px;
@@ -556,7 +590,7 @@ a.nav-bar-toggle {
 				display: table-cell;
 				width: 33px;
 				height: 33px;
-				margin-bottom: 0;
+				margin: 0;
 
 			}
 		}
@@ -696,27 +730,13 @@ a.nav-bar-toggle {
 	background: rgba(0,0,0,0.6);
 }
 
-@media only screen and (max-width: 945px) {
-
-	// mantenemos a 10px el padding a partir de esta resolucion por coherencia con el punto de corte del menu (distitos -> 945 vs $tablet-start)
-	.wrapper {
-		padding: 0 10px;
-	}
-
+@media only screen and (max-width: $header-start) {
 	.nav-mobile {
 		//android 4.3
 		-webkit-box-orient: block-axis;
 		   -moz-box-orient: block-axis;
 		        box-orient: block-axis;
 		//
-	}
-
-}
-
-@media only screen and (max-width: $mobile-start) {
-
-	.wrapper {
-		padding: 0;
 	}
 
 }
