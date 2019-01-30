@@ -6,7 +6,6 @@
 	//bg logo es
 	background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo-default_primary.svg);
 	background-size: 98px;
-	border-bottom: 1px solid $darkest-shiro;
 
 	@include mediaquery ($bp-header) {
 		background-image: none;
