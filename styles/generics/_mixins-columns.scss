@@ -33,7 +33,7 @@ $MIXIN COLUMNS
   }
 }
 
-@mixin columns {
+@mixin columns($gap: $padding) {
   @include display-flex;
   @include flex-wrap;
   position: relative;
@@ -69,11 +69,11 @@ $MIXIN COLUMNS
   	overflow: hidden;
 
     &:not(:first-child) {
-      margin-left: 20px;
+      margin-left: $gap;
     }
 
     &:not(:last-child) {
-      margin-right: 20px;
+      margin-right: $gap;
     }
 
   	h1,h2,h3 {

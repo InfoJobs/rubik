@@ -196,6 +196,14 @@ Styleguide #{$sgi-helpers}
 
 .border-top-expanded {
 	@include border-top-expanded;
+}or
+
+.border-rounded {
+  border-radius: $border-radius;
+}
+
+.border-top-focus {
+  border-top: 5px solid $day-blue;
 }
 
 .shadow {
@@ -203,9 +211,6 @@ Styleguide #{$sgi-helpers}
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
-.border-rounded {
-  border-radius: $border-radius;
-}
 
 /*------------------------------------*\
     $MARGINS and PADDINGS

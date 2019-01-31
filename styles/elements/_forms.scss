@@ -1123,9 +1123,9 @@ Styleguide #{$sgi-forms-special-files}
 	width: 350px;
 }
 
-.fieldset-title { /* DEPRECATED: used in registration-index + KQ + filters job search */
-	display: block;
-	padding-bottom:10px;
+.fieldset-title {
+  display: block;
+  padding-bottom: $padding/2;
 
 	.error & {
 		color: $trueblood;
