@@ -296,3 +296,19 @@ Content media size
 
 Styleguide #{$sgi-content-media-size}
 */
+
+.content-avatar {
+  @include columns($padding/2);
+  align-items: center;
+  -webkit-align-items: center;
+  flex-grow: 1;
+  max-width: 100%;
+
+  p {
+    margin: 0;
+    -moz-hyphens: auto;
+    word-wrap: break-word;
+  }
+
+
+}
