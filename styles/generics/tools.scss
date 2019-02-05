@@ -157,11 +157,6 @@ Styleguide #{$sgi-helpers}
   .border-#{$value}  { // Used to generate a border line on top, right, bottom or left position
     border-#{$value}: 1px solid $darkest-shiro;
     margin: 0;//only border, reset margins
-
-    @at-root .inner #{&} {
-      margin-left: -#{$padding};
-      margin-right: -#{$padding};
-    }
   }
 
 }
@@ -223,20 +218,26 @@ Styleguide #{$sgi-helpers}
     @if ($size == base) {
       .margin-#{$side}  {
         margin-#{$side}: $space/2;
-
+        
         @include mediaquery ($bp-tablet) {
           margin-#{$side}: $space;
         }
-	    }
+      }
+      
+      .padding-#{$side}  {
+        padding-#{$side}: $space;
+      }
     }
+    
     @else {
       .margin-#{$side}-#{$size} {
         margin-#{$side}: $space;
       }
+      
+      .padding-#{$side}-#{$size}  {
+        padding-#{$side}: $space;
+      }
     }
-  }
-  .padding-#{$side}  {
-    padding-#{$side}: $padding;
   }
 }
 
