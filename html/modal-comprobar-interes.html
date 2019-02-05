@@ -1,130 +1,124 @@
 <!DOCTYPE html>
 
-<head>
-  <meta charset="ISO-8859-1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Modal Compartir por e-mail</title>
-  <link rel="stylesheet" type="text/css" href="../public/rubik.css" />
-  <script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.modal.js"></script>
-  <script type="text/javascript" src="../js/chosen.jquery.js" th:remove="all"></script>
-</head>
+  <head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Modal Compartir por e-mail</title>
+    <link rel="stylesheet" type="text/css" href="../public/companies.css" />
+    <script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.modal.js"></script>
+    <script type="text/javascript" src="../js/chosen.jquery.js" th:remove="all"></script>
+  </head>
 
-<body>
-  <div class="wrapper">
-    <div class="container panel-canvas" style="min-height: 100vh;">
-      <div class="modal-layer modal-fade-in">
-        <div class="modal-inner" style="width: 680px; top: 20px;">
-          <div class="modal-header">
-            <a title="" class="close-modal" href="#"></a>
-            <h1 class="title">Comprueba gratis el inter&#xE9;s de este candidato</h1>
-          </div>
-          <!-- Contenido -->
-          <div class="panel-default inner" style="max-height: 550px; overflow-x: hidden;">
-            <p>Env&#xED;a un email al candidato con una de tus ofertas.</p>
-
-            <form action="#" class="margin-top">
-              <fieldset>
-                <legend class="fieldset-title bold base">Mensaje al candidato</legend>
-                <div class="panel-canvas inner border-top-focus">
-
-                  <div class="row row-faux container-expanded">
-                    <div class="col-6">
-                      <div class="col-child">
-                        <div class="content-avatar">
-                          <div class="content-type-media">
-                            <figure class="crop-image-small crop-circle fig-thumbnail-logo">
-                              <img title="" src="http://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png" alt="Lorem ipsum dolor sit amet" />
-                            </figure>
-                          </div>
-                          <div class="content-type-text">
-                            <p class="small"><strong>Nombre Apellido</strong></p>
-                            <p class="small alternative">HR en Schibsted</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="col-child">
-                      <p class="xsmall margin-top-s"><a href="#" class="iconfont-Edit iconfont-16px iconfont-filled">Edita tu perfil</a> para que aparezca tu nombre y cargo</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="container-expanded">
-                  <p class="padding-top medium bold">%NAME%, en Schibsted queremos proponerte una oportunidad laboral</p>
-                  <ul class="form--field-block clearfix">
-                    <li>
-                      <label for="email">Tu mensaje</label>
-                      <div class="textarea">
-                        <textarea></textarea>
-                        <div class="info">
-                          <p class="alternative xsmall pull-right">0/150</p>
-                          <p class="alternative xsmall">Utiliza %NAME% para que el candidato reciba el mensaje con su nombre. Ejemplo: Hola %NAME%</p>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <label for="oferta">Selecciona la oferta</label>
-                      <select id="oferta" class="chosen-select" data-placeholder="Seleccionar">
-                        <option value="00">Seleccionar</option>
-                        <option value="01">Option01</option>
-                        <option value="02">Option02</option>
-                      </select>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="container-expanded panel-default">
-                  <div class="content-top inner">
-                    <div class="content-type-media">
-                      <figure class="crop-image-small fig-thumbnail-logo">
-                        <img title="BROS GROUP - Ofertas de trabajo" src="http://media.infojobs.net/appgrade/pictures/pic-company-logo.png" alt="Lorem ipsum dolor sit amet">
-                      </figure>
-                    </div>
-                    <div class="content-type-text">
-                      <p class="title focus">Oferta</p>
-                      <p class="small alternative">Empresa</p>
-                      <ul class="list-inline list-default small">
-                        <li class="divider">Barcelona</li>
-                        <li>Publicada hace 2d</li>
-                      </ul>
-                      <p class="small">El candidato reportará directamente a gerencia, se responsabilizará fundamentalemente de Elaborar presupuestos con previsión detallada de ventas y definir…</p>
-                      <ul class="list-inline list-default small">
-                        <li class="divider">texto 1</li>
-                        <li class="divider">texto 2</li>
-                        <li>texto 3</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <p class="xsmall margin-top-s">Te quedan [X] comprobaciones de iner&#xE9;s para esta oferta</p>
-
+  <body>
+    <div class="wrapper">
+      <div class="container panel-canvas" style="min-height: 100vh;">
+        <div class="modal-layer modal-fade-in">
+          <div class="modal-inner" style="width: 600px; top: 20px;">
+            <div class="modal-header">
+              <a title="" class="close-modal" href="#"></a>
+              <h1 class="title">Comprueba gratis el inter&#xE9;s de este candidato</h1>
             </div>
-          </fieldset>
-          <div class="margin-top">
-            <p>Recibir&#xE1;s la respuesta del candidato en <a href="">Comprobaci&#xF3;n de inter&#xE9;s</a> y en el siguiente email</p>
-            <input maxlength="200" id="name" name="name" type="email" value="daniela.ramirez@schibsted.com" />
+            <!-- Contenido -->
+            <div class="panel-default inner" style="max-height: 550px; overflow-x: hidden;">
+              <p>Env&#xED;a un email al candidato con una de tus ofertas.</p>
+              
+              <form action="#" class="margin-top">
+                <fieldset>
+                  <legend class="fieldset-title bold base">Mensaje al candidato</legend>
+                  <div class="panel-canvas inner border-top-focus">
+                    <div class="row row-faux container-expanded">
+                      <div class="col-6">
+                        <div class="col-child">
+                          <div class="content-avatar">
+                            <div class="content-type-media">
+                              <figure class="crop-image-small crop-circle fig-thumbnail-logo">
+                                <img title="" src="http://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png" alt="Lorem ipsum dolor sit amet" />
+                              </figure>
+                            </div>
+                            <div class="content-type-text">
+                              <p class="small"><strong>Nombre Apellido</strong></p>
+                              <p class="small alternative">HR en Schibsted</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="col-child">
+                          <p class="xsmall margin-top-s"><a href="#" class="iconfont-Edit iconfont-16px iconfont-filled">Edita tu perfil</a> para que aparezca tu nombre y cargo</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="container-expanded">
+                      <p class="padding-top medium bold">%NAME%, en Schibsted queremos proponerte una oportunidad laboral</p>
+                      <ul class="form--field-block clearfix">
+                        <li>
+                          <label for="email">Tu mensaje</label>
+                          <div class="textarea">
+                            <textarea></textarea>
+                            <div class="info">
+                              <p class="alternative xsmall pull-right">0/150</p>
+                              <p class="alternative xsmall">Utiliza %NAME% para que el candidato reciba el mensaje con su nombre. Ejemplo: Hola %NAME%</p>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <label for="oferta">Selecciona la oferta</label>
+                          <select id="oferta" class="chosen-select" data-placeholder="Seleccionar">
+                            <option value="00">Seleccionar</option>
+                            <option value="01">Option01</option>
+                            <option value="02">Option02</option>
+                          </select>
+                        </li>
+                      </ul>
+                    </div>
+  
+                    <div class="container-expanded panel-default">
+                      <div class="content-top inner">
+                        <div class="content-type-media">
+                          <figure class="crop-image-small fig-thumbnail-logo">
+                            <img title="BROS GROUP - Ofertas de trabajo" src="http://media.infojobs.net/appgrade/pictures/pic-company-logo.png" alt="Lorem ipsum dolor sit amet">
+                          </figure>
+                        </div>
+                        <div class="content-type-text">
+                          <p class="title focus">Oferta</p>
+                          <p class="small alternative">Empresa</p>
+                          <ul class="list-inline list-default small">
+                            <li class="divider">Barcelona</li>
+                            <li>Publicada hace 2d</li>
+                          </ul>
+                          <p class="small">El candidato reportará directamente a gerencia, se responsabilizará fundamentalemente de Elaborar presupuestos con previsión detallada de ventas y definir…</p>
+                          <ul class="list-inline list-default small">
+                            <li class="divider">texto 1</li>
+                            <li class="divider">texto 2</li>
+                            <li>texto 3</li>
+                          </ul>
+                        </div>
+                    </div>
+                  </div>
+                  <p class="xsmall margin-top-s">Te quedan [X] comprobaciones de iner&#xE9;s para esta oferta</p>    
+                </fieldset>
+                <div class="margin-top">
+                  <p>Recibir&#xE1;s la respuesta del candidato en <a href="">Comprobaci&#xF3;n de inter&#xE9;s</a> y en el siguiente email</p>
+                  <input maxlength="200" id="name" name="name" type="email" value="daniela.ramirez@schibsted.com" />
+                </div>
+                <div class="margin-top">
+                  <button class="btn btn-primary margin-bottom" type="submit">Comprobar inter&#xE9;s</button>
+                </div>
+              </form>
+            </div>
+            <!-- /Contenido -->
           </div>
-          <div class="margin-top">
-            <button class="btn btn-primary" type="submit">Comprobar inter&#xE9;s</button>
-          </div>
-          </form>
         </div>
-        <!-- /Contenido -->
       </div>
     </div>
-  </div>
-  </div>
-  <script>
+    <script>
     $(document).ready(function() {
       $('.chosen-select').chosen({
-        width: "100%",
-        disable_search: true
+      width: "100%",
+      disable_search: true
       });
-    });
-  </script>
-
-</body>
-
+      });
+    </script>
+  </body>
 </html>
