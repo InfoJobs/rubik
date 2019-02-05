@@ -181,6 +181,7 @@ Styleguide #{$sgi-listsInline}
 
   &-center {
     @extend .list-inline;
+    align-items: center;
     justify-content: center;
   }
 
