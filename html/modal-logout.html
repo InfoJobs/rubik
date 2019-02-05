@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Modal logout</title>
+    <link rel="stylesheet" type="text/css" href="../public/candidates.css" />
+    <script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.modal.js"></script>
+    <script type="text/javascript" src="../js/chosen.jquery.js" th:remove="all"></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="container panel-canvas" style="min-height: 100vh;">
+        <div class="modal-layer modal-fade-in">
+          <div class="modal-inner" style="width: 600px; top: 20px;">
+            <div class="modal-header">
+              <a title="" class="close-modal" href="#"></a>
+              <h1 class="title">Ya tienes una cuenta de usuario activa</h1>
+            </div>
+            <!-- Contenido -->
+            <div class="panel-default inner" style="max-height: 520px; overflow-x: hidden;">
+              <div class="text-center margin-top">
+                <h3>Estás en el alta de empresas pero tienes activada la cuenta:</h3>
+              </div>  
+          
+              <ul class="list-inline-center margin-bottom padding-bottom">
+                <li>Candidato</li>
+                <li class="border-left padding-left-s">
+                  <div class="content-avatar">
+                    <div class="content-type-media">
+                      <figure class="crop-image-xsmall crop-circle fig-thumbnail-logo">
+                        <img src="https://www.infojobs.net/candidato.foto?id_candidato=a61fba8e-2039-48c3-a109-21ecd9d55608" alt="" />
+                      </figure>
+                    </div>
+                    <div class="content-type-text">
+                      <p>daniel.pardo@infojobs.net</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              
+              <div class="text-center margin-top padding-top">
+                <span>¿Qué quieres hacer? </span>
+              </div>
+
+              <ul class="btn-justify margin-top-s margin-bottom">
+                <li><a class="js-btn-cancel btn-small btn-default">DARME DE ALTA COMO EMPRESA</a></li>
+                <li><a class="btn-small btn-primary">IR A MI ZONA PRIVADA</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -463,7 +463,7 @@ Styleguide #{$sgi-buttons-variants}
   padding: 0;
 
   li {
-    @include flex(1 1 auto);
+    @include flex(1 1 0);
     padding-right: $padding/2;
 
     &:last-of-type {

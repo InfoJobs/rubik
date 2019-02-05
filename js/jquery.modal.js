@@ -22,7 +22,7 @@
 		var dismissible = $( this ).data().dismissible || settings.dismissible;
 		
         // Close on ESC key
-        $(document).on('keyup', function(event) {
+        $(this).on('keyup', function(event) {
             if(dismissible && event.keyCode === 27) {
                 $.fn.modalWindow.closeModalWindow();
             }
