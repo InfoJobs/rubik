@@ -71,10 +71,6 @@ $height-bg: 206px;
     background-size: contain;
   }
 
-  &-contain {
-    background-size: contain;
-  }
-
   &-cover--center {
     @extend .custom-bg-cover;
     @include custom-bg-empty;
