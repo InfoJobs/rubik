@@ -21,6 +21,14 @@
       bg-home-full-tablet,
       bg-home-full
     );
+
+    &--it {
+      @include bg-device (
+        bg-home-full-it-mobile,
+        bg-home-full-it-tablet,
+        bg-home-full-it-desktop
+      );
+    }
   }
 
   &-home-em {
@@ -36,6 +44,14 @@
       bg-search-cvs-short-mobile,
       bg-search-cvs-short-tablet,
       bg-search-cvs-short-desktop
+    );
+  }
+
+  &-home-executive {
+    @include bg-device (
+      bg-crsl-executive-mobile,
+      bg-crsl-executive-big,
+      bg-crsl-executive-big
     );
   }
 }
