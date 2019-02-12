@@ -4,8 +4,9 @@
 
 //BACKGROUNDS
 
-@mixin bg-device($mobile,$tablet,$desktop) {
+@mixin bg-device($mobile,$tablet,$desktop,$bgcolor:$dark-shiro) {
   background-image: url(#{$path-backgrounds}/#{$mobile}.jpg);
+  background-color: $bgcolor;
   @include mediaquery ($bp-tablet) {
     background-image: url(#{$path-backgrounds}/#{$tablet}.jpg);
   }
@@ -35,7 +36,8 @@
     @include bg-device (
       bg-header-em-mobile,
       bg-header-em-tablet,
-      bg-header-em-desktop
+      bg-header-em-desktop,
+      $dark-softened
     );
   }
 
@@ -43,7 +45,8 @@
     @include bg-device (
       bg-search-cvs-short-mobile,
       bg-search-cvs-short-tablet,
-      bg-search-cvs-short-desktop
+      bg-search-cvs-short-desktop,
+      $dark-softened
     );
   }
 

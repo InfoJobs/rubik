@@ -25,7 +25,6 @@ $height-bg: 206px;
 
   @include font-rendering;
   background-repeat: no-repeat;
-  background-color: $dark-softened;
   //the background-image is not reusable, inline in html
 
   @media print {
