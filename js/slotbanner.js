@@ -3,10 +3,8 @@ function sticky() {
   var headerHeight = document.querySelector('.global-nav').getBoundingClientRect().height;
   var slotBanner = document.querySelector('.wrapper-slotbanner .slotbanner-fixed');
 
-  if(scrollY < headerHeight) {
-      slotBanner.style.top = (headerHeight - scrollY) + 'px';
-  } else {
-    slotBanner.style.top = 0;
+  if(slotBanner) {
+    slotBanner.style.top = scrollY < headerHeight ? (headerHeight - scrollY) + 'px' : 0
   }
 }
 

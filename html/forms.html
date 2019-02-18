@@ -306,7 +306,10 @@
 										<label for="comment">Textarea</label>
 										<div class="textarea">
 											<textarea value="" class="val_textarea1000" onchange="updateCount(event,this,'contador_comment',maxChars)" onkeyup="updateCount(event,this,'contador_comment',maxChars)" onkeypress="updateCount(event,this,'contador_comment',maxChars)" name="comment" id="comment">Lorem ipsum</textarea>
-											<p class="info alternative small"><span id="contador_comment">114</span>/<span>250</span></p>
+											<div class="info">
+												<p class="textarea-counter pull-right"><span id="contador_comment">114</span>/<span>250</span></p>
+                        <p class="alternative xsmall">Utiliza %NAME% para que el candidato reciba el mensaje con su nombre. Ejemplo: Hola %NAME%</p>
+                    	</div>
 										</div>
 									</li>
 								</ul>
