@@ -525,7 +525,18 @@ textarea {
 
 .textarea {
 	.info {
-		margin-top: 5px;
+		margin-top: $padding/4;
+	}
+
+	&-counter {
+    @include font(xsmall);
+    color: $soft-script;
+
+    span {
+      .error & {
+        color: inherit;
+      }
+    }
 	}
 }
 
