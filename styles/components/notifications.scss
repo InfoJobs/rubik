@@ -67,9 +67,9 @@ $notifications: success $bamboo , system $outer-king, error $trueblood, warning 
   max-width: $container-width;
 
   .inner & {
-    margin-left: -10px;
+    margin-left: -$gap;
     @include mediaquery ($bp-tablet) {
-      margin-left: -20px;
+      margin-left: -$gap * 2;
     }
   }
 }
@@ -88,10 +88,10 @@ $notifications: success $bamboo , system $outer-king, error $trueblood, warning 
   &-body {
     @include display-flex;
     @include align-items(flex-start);
-    padding: $padding $padding 0 $padding;
+    padding: $gap * 2 $gap * 2 0 $gap * 2;
 
     &:only-child {
-      padding-bottom: $padding;
+      padding-bottom: $gap * 2;
     }
 
     p {
@@ -108,7 +108,7 @@ $notifications: success $bamboo , system $outer-king, error $trueblood, warning 
     @include btn-close;
     @include flex(1 0 auto);
     color: inherit;
-    margin-left: $padding/2;
+    margin-left: $gap;
 
     &::before {
       color: inherit;
@@ -121,7 +121,7 @@ $notifications: success $bamboo , system $outer-king, error $trueblood, warning 
     @include mediaquery($bp-tablet) {
       @include flex(1 0 auto);
       display: block;
-      margin-right: 5px;
+      margin-right: $gap / 2;
       color: inherit;
       &::before {
         color: inherit;
@@ -130,7 +130,7 @@ $notifications: success $bamboo , system $outer-king, error $trueblood, warning 
   }
 
   &-footer {
-    padding: $padding/2 $padding $padding $padding;
+    padding: $gap $gap * 2 $gap * 2 $gap * 2;
     text-align: right;
 
   }
@@ -156,10 +156,10 @@ $notifications: success $bamboo , system $outer-king, error $trueblood, warning 
   &-advise {
     position: relative;
     z-index: $zindex-notification;
-    margin-top: -$padding/2;
+    margin-top: -$gap;
 
     @include mediaquery ($bp-tablet) {
-      margin-top: $padding/2;
+      margin-top: $gap;
     }
   }
 
