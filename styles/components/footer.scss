@@ -26,7 +26,7 @@
 	a,
 	strong {
 		@include mediaquery ($bp-desktop) {
-			padding-right: 20px;
+			padding-right: $gap * 2;
 		}
 	}
 }
@@ -41,7 +41,7 @@
 		width: 100%;
 
 		.col-child {
-			margin-bottom: 20px;
+			margin-bottom: $gap * 2;
 
 			@include mediaquery ($bp-desktop) {
 				margin-bottom: 0;
@@ -87,11 +87,11 @@
 
 		li {
 			display: block;
-			padding: 20px 0 0 0;
+			padding: $gap * 2 0 0 0;
 
 			@include mediaquery ($bp-desktop) {
 				display: table-cell;
-				padding: 0 0 0 20px;
+				padding: 0 0 0 $gap * 2;
 				vertical-align: middle;
 			}
 
@@ -164,7 +164,7 @@
 		margin: 0;
 
 		& ~ .nav-item-visible {
-			padding-left: 20px;
+			padding-left: $gap * 2;
 
 			@include mediaquery ($bp-desktop) {
 				padding-left: 0;
@@ -198,7 +198,7 @@
 		@include mediaquery ($bp-desktop) {
 			display: block;
 			padding: 0;
-			margin-bottom: 10px;
+			margin-bottom: $gap;
 		}
 	}
 
@@ -222,14 +222,14 @@
 			content: "";
 			display: block;
 			position: relative;
-			top: -#{$padding};
+			top: -#{$gap * 2};
 		}
 
 		&-sites {
 
 			li {
 				position: relative;
-				margin-left: 20px;
+				margin-left: $gap * 2;
 				float: none;
 
 				&:first-child,
@@ -253,7 +253,7 @@
 
 		&-badges {
 			li {
-				margin-left: 20px;
+				margin-left: $gap * 2;
 
 				&:first-child,
 				&:only-child {
