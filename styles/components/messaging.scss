@@ -93,7 +93,7 @@ Styleguide #{$sgi-messaging}
   .messaging-list-item {
     @include display-flex;
     justify-content: space-between;
-    padding: 0 $padding;
+    padding: 0 $gap * 2;
     background-color: $shiro;
     overflow: visible;
 
@@ -117,14 +117,14 @@ Styleguide #{$sgi-messaging}
     }
 
     .btn {
-      margin-left: $padding;
+      margin-left: $gap * 2;
     }
 
     .messaging-body {
       flex-grow: 1;
       min-width: 0%; //for text with ellipsis inside body
       border-bottom: 1px solid $darkest-shiro;
-      padding: ($padding/2) 0;
+      padding: $gap 0;
     }
 
     .messaging-body-main,
@@ -167,12 +167,12 @@ Styleguide #{$sgi-messaging}
 
     .messaging-meta,
     [class*="badge"] {
-      margin-left: $padding/2;
+      margin-left: $gap;
     }
 
     .messaging-avatar {
-      padding: ($padding/2) 0;
-      margin-right: $padding/2;
+      padding: $gap 0;
+      margin-right: $gap;
     }
 
 
@@ -188,7 +188,7 @@ Styleguide #{$sgi-messaging}
     @include align-items(center);
 
     .messaging-body {
-      padding: $padding 0;
+      padding: $gap * 2 0;
     }
 
     .messaging-title {
@@ -214,11 +214,11 @@ Styleguide #{$sgi-messaging}
 
 .messaging-icons-left,
 .messaging-icons-right {
-  padding: $padding 0;
+  padding: $gap * 2 0;
 }
 
 .messaging-icons-left {
-  padding-right: 5px;
+  padding-right: $gap / 2;
 
   @include mediaquery ($bp-tablet) {
     padding-right: 0;
@@ -228,7 +228,7 @@ Styleguide #{$sgi-messaging}
 }
 
 .messaging-icons-right {
-  padding-left: 5px;
+  padding-left: $gap / 2;
   border-bottom: 1px solid $darkest-shiro;
 }
 
@@ -282,7 +282,7 @@ Styleguide #{$sgi-messaging}
   .message {
     overflow: hidden;
     clear: both;
-    padding: 10px;
+    padding: $gap;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 15px;
 
@@ -297,7 +297,7 @@ Styleguide #{$sgi-messaging}
       + time {
         clear: left;
         float: left;
-        margin-top: 5px;
+        margin-top: $gap / 2;
         color: $soft-script;
         @include font(small);
       }
@@ -315,15 +315,15 @@ Styleguide #{$sgi-messaging}
         @include font(small);
         clear: right;
         float: right;
-        margin-top: 5px;
+        margin-top: $gap / 2;
         color: $soft-script;
       }
     }
   }
   .unread {
     @include font(small);
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: $gap * 2;
+    margin-left: $gap * 2;
     text-align: center;
     text-transform: uppercase;
     color: $soft-script;
@@ -355,7 +355,7 @@ Styleguide #{$sgi-messaging}
   .appearance-input-text-reply {
     @include form-field;
     @include font(base);
-    padding-top: 10px;
+    padding-top: $gap;
     height: $medium-input-height;
     min-height: 44px;
     max-height: 66px;//height equivalente a 3 lineas.
@@ -366,7 +366,7 @@ Styleguide #{$sgi-messaging}
   }
 
   .menu-kebab {
-    margin-top: $padding;
+    margin-top: $gap * 2;
   }
 
   @include mediaquery ($bp-tablet) {
@@ -396,7 +396,7 @@ Styleguide #{$sgi-messaging}
       overflow: hidden;
 
       &:last-child {
-        margin-left: 10px;
+        margin-left: $gap;
       }
     }
   }
@@ -418,7 +418,7 @@ Styleguide #{$sgi-messaging}
   }
 
   .messaging-icons-left {
-    padding-right: 5px;
+    padding-right: $gap / 2;
     display: block;
   }
 
