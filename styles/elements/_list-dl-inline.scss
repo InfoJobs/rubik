@@ -32,10 +32,10 @@ $dl-col-unit: $theme-container-width / $gridColumns;
 
   dt {
     clear: left;
-    padding-right: $padding;
+    padding-right: $gap * 2;
 
     &[class*="col-"]:not(:first-child) + dd{
-      margin-top: $padding/2;
+      margin-top: $gap;
     }
   }
 
@@ -51,7 +51,7 @@ $dl-col-unit: $theme-container-width / $gridColumns;
         + dd {
           clear: left;
           padding-left: $dl-col-unit * $i;
-          padding-top: $padding/2;
+          padding-top: $gap;
         }
       }
     }
@@ -62,14 +62,14 @@ $dl-col-unit: $theme-container-width / $gridColumns;
     dt {
 
       &[class*="col-"]:not(:first-child) + dd{
-        margin-top: $padding;
+        margin-top: $gap * 2;
       }
     }
 
     dd {
 
       + dt {
-        margin-top: $padding;
+        margin-top: $gap * 2;
       }
     }
   }
@@ -80,7 +80,7 @@ $dl-col-unit: $theme-container-width / $gridColumns;
     margin: 0;
 
     + dt {
-      margin-top: $padding/2;
+      margin-top: $gap;
     }
 
   }
