@@ -23,127 +23,132 @@ Styleguide #{$sgi-listsColumns}
      }
    }*/
 
-@mixin list-columns-1 {
+   @mixin list-columns-1 {
 
-  margin: 0;
-
-  li {
-   width: 100%;
-   margin: 0 0 20px 0;
-  }
-  li:last-of-type {
-   margin: 0;
-  }
-
-}
-
-@for $i from 1 through 4{
-  $column-unit: 100 / $i;
-
-  .list-columns-#{$i} {
-     @include display-flex;
-     @include flex-flow(row wrap);
-     margin-top: -10px;
-
-     li {
-       margin-top: 10px;
-       margin-bottom: 0;
-       width: calc(1% * #{$column-unit});
-       padding-right: $padding/2;
-     }
-
-     &.list-icon {
-       margin-top: -20px;
-
-       li {
-         margin-top: 20px;
-       }
-
-     }
-
-     @media only screen and (max-width: $tablet-start) {
-       &.list-columns-1-md {
-         @include list-columns-1
-       }
-      }
-
-     @media only screen and (max-width: $mobile-start) {
-       &.list-columns-1-sm {
-         @include list-columns-1
-       }
-      }
-   }
-}
-
-
-@for $i from 1 through 4 {
-
-  $grid-column-unit:  $i;
-
-  .list-grid-columns-#{$i} {
-    -webkit-column-count: $i;
-       -moz-column-count: $i;
-            column-count: $i;
-  }
-
-	@include mediaquery ($bp-tablet) {
-
-    .list-grid-columns-#{$i}-medium {
-      -webkit-column-count: $i;
-         -moz-column-count: $i;
-              column-count: $i;
-    }
-
-  }
-
-  @media print {
-
-    .list-grid-columns-#{$i}-medium {
-      -webkit-column-count: $i;
-         -moz-column-count: $i;
-              column-count: $i;
-    }
-
-  }
-
-}
-
-[class^="list-grid-columns-"],
-[class*="list-grid-columns-"] {
-
-  dd {
-    display: none;
-  }
-
-  dt,
-  li {
-    -webkit-column-break-inside: avoid;
-              page-break-inside: avoid;
-                   break-inside: avoid;
-  }
-
-  dt::after {
-    content: attr(data-text);
-    display: block;
-    margin:3px 0 0 0;
-  }
-
-  .dt {
-    display: block;
-    margin:0 0 3px 0;
-  }
-
-  dt.light::after {
-    @include bold;
-  }
-
-  &.list-default {
-    margin-top: -#{$padding};
-
+    margin: 0;
+  
     li {
-      margin: 0;
-      padding-top: $padding;
+     width: 100%;
+     margin: 0 0 $gap * 2 0;
+    }
+    li:last-of-type {
+     margin: 0;
+    }
+  
+  }
+  
+  @for $i from 1 through 4{
+    $column-unit: 100 / $i;
+  
+    .list-columns-#{$i} {
+       @include display-flex;
+       @include flex-flow(row wrap);
+       margin-top: -$gap;
+  
+       li {
+         margin-top: $gap;
+         margin-bottom: 0;
+         width: calc(1% * #{$column-unit});
+         padding-right: $gap;
+       }
+  
+       @media only screen and (max-width: $tablet-start) {
+         &.list-columns-1-md {
+           @include list-columns-1
+         }
+        }
+  
+       @media only screen and (max-width: $mobile-start) {
+         &.list-columns-1-sm {
+           @include list-columns-1
+         }
+        }
+     }
+  }
+  
+  .list-columns--fixed {
+    display: flex;
+    width: 100%;
+    
+    .flexible {
+      width: 100%;
+    }
+    
+    .fixed {
+      flex-shrink: 0;
     }
   }
-
-}
+  
+  
+  @for $i from 1 through 4 {
+  
+    $grid-column-unit:  $i;
+  
+    .list-grid-columns-#{$i} {
+      -webkit-column-count: $i;
+         -moz-column-count: $i;
+              column-count: $i;
+    }
+  
+    @include mediaquery ($bp-tablet) {
+  
+      .list-grid-columns-#{$i}-medium {
+        -webkit-column-count: $i;
+           -moz-column-count: $i;
+                column-count: $i;
+      }
+  
+    }
+  
+    @media print {
+  
+      .list-grid-columns-#{$i}-medium {
+        -webkit-column-count: $i;
+           -moz-column-count: $i;
+                column-count: $i;
+      }
+  
+    }
+  
+  }
+  
+  [class^="list-grid-columns-"],
+  [class*="list-grid-columns-"] {
+  
+    dd {
+      display: none;
+    }
+  
+    dt,
+    li {
+      -webkit-column-break-inside: avoid;
+                page-break-inside: avoid;
+                     break-inside: avoid;
+    }
+  
+    dt::after {
+      content: attr(data-text);
+      display: block;
+      margin:3px 0 0 0;
+    }
+  
+    .dt {
+      display: block;
+      margin:0 0 3px 0;
+    }
+  
+    dt.light::after {
+      @include bold;
+    }
+  
+    &.list-default {
+      margin-top: -$gap * 2;
+  
+      li {
+        margin: 0;
+        padding-top: $gap * 2;
+      }
+    }
+  
+  }
+  
