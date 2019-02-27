@@ -424,7 +424,7 @@ hr {
 
 .divider:after {
 	content: "|";
-	padding-left: $padding/2;
+	padding-left: $gap;
 	color: $light-silk;
 }
 
