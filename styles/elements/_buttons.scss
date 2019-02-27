@@ -45,20 +45,20 @@ button::-moz-focus-inner {
       }
   
       p > & {
-          margin-left: 10px;
+          margin-left: $gap;
   
           @media only screen and (max-width: $mobile-start) {
               display: block;
-              margin: 10px 0 0;
+              margin: $gap 0 0;
           }
       }
   
       + [class*="btn"]:not(.btn-group-justified):not(.btn-full-width--small-device) {
-          margin-left: 5px;
+          margin-left: $gap / 2;
       }
   
       + .btn-group-justified {
-          margin-top: 10px;
+          margin-top: $gap;
   
           &:first-of-type {
               margin-bottom: 0;
@@ -263,19 +263,19 @@ button::-moz-focus-inner {
   
   .btn-small {
       font-size: $xsmall-font-size;
-      padding: 9px 10px 7px 10px;
+      padding: 9px $gap 7px $gap;
       line-height: 1;
   
       img {
         width: 12px;
         height: 12px;
-        margin-right: 5px;
+        margin-right: $gap / 2;
       }
   }
   
   .btn {
       font-size: $small-font-size;
-      padding: 13px 20px 11px 20px;
+      padding: 13px $gap * 2 11px $gap * 2;
       line-height: 1;
   
       @at-root #{&}[class*="iconfont-"]::before { ////DEPRECATED
@@ -285,7 +285,7 @@ button::-moz-focus-inner {
   
   .btn-large {
       font-size: $base-font-size;
-      padding: 17px 30px 15px 30px;
+      padding: 17px $gap * 3 15px $gap * 3;
       line-height: 1;
   
       @at-root #{&}[class*="iconfont-"]::before { //DEPRECATED
@@ -460,15 +460,18 @@ button::-moz-focus-inner {
     @include display-flex;
     @include flex-flow(wrap);
     @include align-items(center);
-    margin-right: -$padding/2;
     padding: 0;
   
     li {
       @include flex(1 1 0);
-      margin-right: $padding/2;
+      padding-right: $gap;
           
       &:not(:only-of-type) {
-          margin-bottom: $padding/2;
+          margin-bottom: $gap;
+      }
+  
+      &:last-of-type {
+        padding: 0;
       }
     }
   
@@ -487,7 +490,17 @@ button::-moz-focus-inner {
     [class^="btn-"],
     [class*="btn-"] {
       width: 100%;
-    }  	
+    }
+    
+    &--tablet li {
+        
+        padding-right: 0;
+        
+        @include mediaquery ($bp-tablet) {
+          padding-right: $gap;
+      }
+    }
+        
   }
   
   /*
@@ -572,7 +585,7 @@ button::-moz-focus-inner {
   
       &.btn-group-expanded {
           div {
-              padding-left: 10px;
+              padding-left: $gap;
   
               [class*="btn"] {
                   border-right-width: 1px;
@@ -671,3 +684,4 @@ button::-moz-focus-inner {
       margin: 0;
     }
   }
+  
