@@ -8,7 +8,7 @@ $MIXIN COLUMNS
 
   .content-type-text {
     overflow: inherit;
-    margin: 20px 0;
+    margin: $gap*2 0;
 
     &:last-child {
       margin-bottom: 0;
@@ -19,10 +19,10 @@ $MIXIN COLUMNS
       margin-bottom: 0;
 
       &:not(:first-child) {
-        margin-left: 20px;
+        margin-left: $gap*2;
       }
       &:not(:last-child) {
-        margin-right: 20px;
+        margin-right: $gap*2;
       }
     }
   }
@@ -33,7 +33,7 @@ $MIXIN COLUMNS
   }
 }
 
-@mixin columns($gap: $padding) {
+@mixin columns($space: $gap) {
   @include display-flex;
   @include flex-wrap;
   position: relative;
@@ -69,11 +69,11 @@ $MIXIN COLUMNS
   	overflow: hidden;
 
     &:not(:first-child) {
-      margin-left: $gap;
+      margin-left: $space;
     }
 
     &:not(:last-child) {
-      margin-right: $gap;
+      margin-right: $space;
     }
 
   	h1,h2,h3 {
@@ -84,7 +84,7 @@ $MIXIN COLUMNS
 
     dl + h3,
     dl + .heading-group {
-      padding-top: 5px;
+      padding-top: $gap/2;
     }
 
     .heading-group {
@@ -92,7 +92,7 @@ $MIXIN COLUMNS
       @include flex-wrap;
 
       h3 {
-        margin-right: 10px;
+        margin-right: $gap;
       }
 
       .tag-group,
@@ -102,8 +102,7 @@ $MIXIN COLUMNS
     }
 
   	[class^="btn-"] {
-  		display: table;
-  		margin-top: 20px;
+  		margin-top: $gap*2;
   	}
 
   	.content-end {
@@ -131,7 +130,7 @@ $MIXIN COLUMNS
   }
 
   .icon {
-  	margin-right: 10px;
+  	margin-right: $gap;
   }
 
 
