@@ -210,11 +210,11 @@ Styleguide #{$sgi-helpers}
 /*------------------------------------*\
     $MARGINS and PADDINGS
 
-    var $orientations and $spaceamounts in _vars.scss
+    var $orientations and $gapamounts in _vars.scss
 \*------------------------------------*/
 
 @each $side in $orientations {
-  @each $size, $space in $spaceamounts {
+  @each $size, $space in $gapamounts {
     @if ($size == base) {
       .margin-#{$side}  {
         margin-#{$side}: $space/2;
