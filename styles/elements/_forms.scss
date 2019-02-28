@@ -24,7 +24,7 @@ Styleguide #{$sgi-forms}
 fieldset {
 
 	& + fieldset {
-		margin-top: 40px;
+		margin-top: $gap * 4;
 	}
 
 	&:first-child {
@@ -32,7 +32,7 @@ fieldset {
 	}
 
 	& > button {
-		margin-top: 20px;
+		margin-top: $gap * 2;
 	}
 }
 
@@ -62,7 +62,7 @@ label,
 
 .form--field-block {
 	> li { //TODO: Could be possible to apply only a class in <form> to avoid do it in every <ul>?
-		margin-bottom: 20px;
+		margin-bottom: $gap * 2;
 		vertical-align: middle;
 
 		&:last-child {
@@ -73,12 +73,12 @@ label,
 			margin-bottom: 0;
 
 			&:first-of-type:only-child {
-				margin-top: 5px;
+				margin-top: $gap / 2;
 			}
 		}
 
 		label + .info {
-			margin-top: -5px;
+			margin-top: -$gap / 2;
 		}
 	}
 
@@ -96,7 +96,7 @@ label,
 	display: table;
 
 	> label {
-		margin-right: 10px;
+		margin-right: $gap;
 		margin-bottom: 0;
     vertical-align: middle;
 	}
@@ -110,7 +110,7 @@ label,
 
 @mixin form-field {
 	display: block;
-	padding: 4px 10px;
+	padding: 4px $gap;
 	font-size: $base-font-size;
 	line-height: $base-line-height;
 }
@@ -296,7 +296,7 @@ input[type="number"] {
 
 input[type="tel"],
 .row-centered .input-cif {
-  margin-right: 20px;
+  margin-right: $gap * 2;
 
 	@include mediaquery ($bp-desktop) {
 		width: $input-tel-width;
@@ -305,7 +305,7 @@ input[type="tel"],
 
 	~ label {
 		width: auto;
-		margin: 10px 0 0 0;
+		margin: $gap 0 0 0;
 	}
 
 	~ input {
@@ -315,7 +315,7 @@ input[type="tel"],
 	~ .error-info {
     clear: both;
 	  display: block;
-	  padding-top: 5px;
+	  padding-top: $gap / 2;
 	}
 }
 
@@ -335,7 +335,7 @@ input[type="tel"],
 
 	.start-date-group {
 		float: left;
-		padding-right: $padding / 2;
+		padding-right: $gap;
 	}
 
 	.end-date-group {
@@ -361,7 +361,7 @@ input[type="tel"],
 			@include mediaquery ($bp-tablet) {
 				float: left;//Fallback
 				@include flex(1 0 100%);
-				margin: 30px 0 0 20px;
+				margin: $gap * 3 0 0 $gap * 2;
 			}
 		}
 
@@ -525,21 +525,20 @@ textarea {
 
 .textarea {
 	.info {
-		margin-top: $padding/4;
+		margin-top: $gap / 2;
 	}
 
 	&-counter {
-    @include font(xsmall);
-    color: $soft-script;
+		@include font(xsmall);
+		color: $soft-script;
 
-    span {
-      .error & {
-        color: inherit;
-      }
-    }
+		span {
+			.error & {
+				color: inherit;
+			}
+		}
 	}
 }
-
 /*
 Textarea
 
@@ -577,7 +576,7 @@ Styleguide #{$sgi-forms-textarea}
 */
 
 select {
-	padding: 13px 10px;
+	padding: 13px $gap;
 	height: $medium-input-height;
 	background: transparent;
 	font-size: $base-font-size;
@@ -606,8 +605,6 @@ select:-moz-focusring {
 /*
 Select
 
-To allow the placeholder in the `Select` element, we must add `data-placeholder = "Text for placeholder"` and add an additional option with no value and without text: `<option value=""></option>`.
-
 Markup:
 <form method="post" action="#">
     <fieldset>
@@ -616,7 +613,6 @@ Markup:
             <li>
                 <label for="pulldown">Pulldown</label>
                 <select id="pulldown" class="chosen-select" data-placeholder="(Seleccionar)">
-                        <option value=""></option>
                         <option value="01">Option01</option>
                         <option value="02">Option02</option>
                         <option value="03">Option03</option>
@@ -628,7 +624,6 @@ Markup:
             <li class="error">
                 <label for="pulldown">Pulldown error</label>
                 <select id="pulldown" class="chosen-select" data-placeholder="(Seleccionar)">
-                        <option value=""></option>
                         <option value="01">Option01</option>
                         <option value="02">Option02</option>
                         <option value="03">Option03</option>
@@ -640,7 +635,6 @@ Markup:
             <li class="disabled">
                 <label for="pulldown">Pulldown disabled</label>
                 <select id="pulldown" class="chosen-select" data-placeholder="(Seleccionar)" disabled>
-                        <option value=""></option>
                         <option value="01">Option01</option>
                         <option value="02">Option02</option>
                         <option value="03">Option03</option>
@@ -667,7 +661,6 @@ Markup:
             <li>
                 <label for="pulldown">Pulldown</label>
                 <select id="pulldown" class="chosen-select select-small" data-placeholder="(Seleccionar)">
-                        <option value=""></option>
                         <option value="01">Option01</option>
                         <option value="02">Option02</option>
                         <option value="03">Option03</option>
@@ -694,7 +687,6 @@ Markup:
             <label for="name">Pulldown inline:</label>
             <div class="form-select">
                 <select id="pulldown" class="chosen-select" data-placeholder="(Seleccionar)">
-                        <option value=""></option>
                         <option value="01">Option01</option>
                         <option value="02">Option02</option>
                 </select>
@@ -766,13 +758,13 @@ input[type="checkbox"] + label,
 input[type="radio"] + label,
 .label-checkbox { //class ".label-checkbox" deprecated. actualy used in filters only
 	cursor: pointer;
-  width: auto;
+	width: auto;
 	max-width: calc(100% - 30px);
 }
 
 .appearance-btn,
 .appearance-sticker {
-	margin-right: 10px;
+	margin-right: $gap;
 
 	input[type="radio"],
 	input[type="checkbox"] {
@@ -783,8 +775,8 @@ input[type="radio"] + label,
 			height: 34px;
       line-height: 32px;
 			max-width: 100%;
-			margin-bottom: 5px;
-			padding: 5px 10px;
+			margin-bottom: $gap / 2;
+			padding: $gap / 2 $gap;
 			color: $mid-script;
       background-color: transparent;
       border: 1px solid $outer-land;
@@ -853,7 +845,7 @@ input[type="radio"] + label,
 		        display: inline-block;
 		        width: 10px;
 		        height: 10px;
-		        margin-right: 5px;
+		        margin-right: $gap / 2;
 		        border: 1px solid $soft-script;
 		        border-radius: 5px;
 		        background-color: $dark-shiro;
@@ -874,7 +866,7 @@ input[type="radio"] + label,
 		padding-right: 0;
 
 		@include mediaquery ($bp-tablet) {
-			padding-right: 10px;
+			padding-right: $gap;
 		}
 	}
 }
@@ -883,13 +875,13 @@ input[type="radio"] + label,
 .sticker.appearance-sticker {
 	height: 34px;
 	line-height: 32px;
-	padding: 5px 15px;
+	padding: $gap / 2 15px;
 	border: 1px solid $outer-land;
 	border-radius: 21px;
   background-color: transparent;
 
   &[class*="iconfont-"] {
-	  padding: 5px 13px;
+	  padding: $gap / 2 13px;
   }
 	&:hover,
 	&:active {
@@ -1021,13 +1013,13 @@ Styleguide #{$sgi-forms-radio}
 }
 
 .radio-group li + li {
-	margin-left: 10px;
+	margin-left: $gap;
 }
 
 .radio-group label {
   position: relative;
   width: 100%;
-  margin-bottom: 5px;
+  margin-bottom: $gap / 2;
 
 	//TODO: Fix line-height
 
@@ -1041,7 +1033,7 @@ Styleguide #{$sgi-forms-radio}
   }
 
 	&:before {
-		top: -10px;
+		top: -$gap;
 	}
 
 	&:after {
@@ -1077,12 +1069,12 @@ Styleguide #{$sgi-forms-radio}
 		display: block;
 		height: 1px;
 		border-bottom: 1px solid $darkest-shiro;
-		margin-bottom: 5px;
+		margin-bottom: $gap / 2;
 	}
 
 	optgroup {
 		padding: 0;
-		margin: 10px 0;
+		margin: $gap 0;
 
 		option {
 			background: transparent;
@@ -1134,9 +1126,9 @@ Styleguide #{$sgi-forms-special-files}
 	width: 350px;
 }
 
-.fieldset-title {
-  display: block;
-  padding-bottom: $padding/2;
+.fieldset-title { /* DEPRECATED: used in registration-index + KQ + filters job search */
+	display: block;
+  padding-bottom: $gap;
 
 	.error & {
 		color: $trueblood;
@@ -1145,7 +1137,7 @@ Styleguide #{$sgi-forms-special-files}
 
 .error-info,
 .success-info {
-	margin-top: 5px;
+	margin-top: $gap / 2;
 	color: $trueblood;
 	font-size: 12px;
 	line-height: 110%;
@@ -1158,7 +1150,7 @@ Styleguide #{$sgi-forms-special-files}
 
 //helpers for form
 .input-link-annex {
-	margin: 10px 0 0 0;
+	margin: $gap 0 0 0;
 }
 
 .label-annex {
@@ -1172,11 +1164,11 @@ Styleguide #{$sgi-forms-special-files}
 	}
 
 	.radio-group {
-		margin-bottom: 10px;
+		margin-bottom: $gap;
 
 		li {
 			float: left;
-			padding: 6px 10px;
+			padding: 6px $gap;
 			box-sizing: border-box;
 		}
 
@@ -1192,13 +1184,13 @@ Styleguide #{$sgi-forms-special-files}
 	.form-select select {
 		height: auto;
 		margin-top: 2px;
-		padding: 10px;
+		padding: $gap;
 	}
 
 	/*already defined (and modified) at pulldown-chosen.scss */
 	.chosen-container-single .chosen-single {
 		margin-top: 2px;
-		padding: 10px;
+		padding: $gap;
 	}
 }
 
@@ -1211,12 +1203,12 @@ Styleguide #{$sgi-forms-special-files}
 		right: 1px;
 		font-size: $small-font-size;
 		line-height: $xsmall-line-height;
-		padding: 15px 10px;
+		padding: 15px $gap;
 	}
 
 	input,
 	textarea {
-		margin-bottom: 10px;
+		margin-bottom: $gap;
 	}
 
 	.meter,
@@ -1307,10 +1299,10 @@ SForm group inline
 
 	> div:first-of-type {
 		@include flex;
-		margin-right: 10px;
+		margin-right: $gap;
 
     @include mediaquery ($bp-desktop) {
-      margin-right: 20px;
+      margin-right: $gap * 2;
      }
 
      input[type="text"] {
@@ -1331,7 +1323,7 @@ SForm group inline
 	position: absolute;
 	z-index: $zindex-notification;
 	width: 100%;
-	margin-top: 5px;
+	margin-top: $gap / 2;
 
 	@at-root .search-bar #{&} ul {
 		display: block;
@@ -1367,7 +1359,7 @@ Styleguide #{$sgi-forms-switch-radio}
       color: $mid-script;
 
       &:last-of-type::before {
-        margin: 1px 10px 0 -28px;
+        margin: 1px $gap 0 -28px;
       }
 
     }
@@ -1388,12 +1380,12 @@ Styleguide #{$sgi-forms-switch-radio}
         border: 1px solid $day-blue;
         border-radius: 15px;
         background-color: tint($day-blue, 80%);
-        margin: 0 5px 0 10px;
+        margin: 0 $gap / 2 0 $gap;
       }
 
       &:last-of-type {
-        margin-left: -30px;
-        padding-left: 30px;
+        margin-left: -$gap * 3;
+        padding-left: $gap * 3;
       }
 
       &:last-of-type::before {
@@ -1405,7 +1397,7 @@ Styleguide #{$sgi-forms-switch-radio}
         border-radius: 50%;
         background-color: $shiro;
         border: 1px solid $day-blue;
-        margin: 1px 20px 0 -38px;
+        margin: 1px $gap * 2 0 -38px;
         -webkit-transition: margin 200ms linear;
            -moz-transition: margin 200ms linear;
              -o-transition: margin 200ms linear;

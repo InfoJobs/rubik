@@ -8,7 +8,7 @@
   border: 1px solid $border;
   border-radius: 4px;
   box-shadow: 0 0 4px $light-silk;
-  padding: $padding;
+  padding: $gap * 2;
   position: relative;
   text-align: left;
   z-index: 9999;
@@ -26,7 +26,7 @@
     width: 0;
   }
 
-  &:after { 
+  &:after {
     bottom: 100%;
     border-bottom: 10px solid $bgcolor;
     border-right: 10px solid transparent;
@@ -35,7 +35,7 @@
     position: absolute;
     height: 0;
     left: 40px;
-    margin-left: -10px;
+    margin-left: -$gap;
     width: 0;
 	}
 
@@ -55,34 +55,51 @@
 		overflow: visible;
 		position: absolute;
 		top: 34px;
-
-	    &.tooltip-right {
-	      left: unset;
-	      right: -38px;
-	
-	      .tooltip:after {
-	        left: unset;
-	        right: 40px;
-	      }
-	
-	      .tooltip:before {
-	        left: unset;
-	        right: 40px;
-	      }
-	    }
 	    
 	    &.tooltip-center {
 	      left: 50%;
 	      transform: translateX(-50%);
 	
 	      .tooltip:after {
-	        left: 220px;
+	        left: 50%;
 	      }
 	
 	      .tooltip:before {
-	        left: 220px;
+	        left: 50%;
 	      }
 	    }  	
+	}
+	
+	
+	&.tooltip-right {
+		@include mediaquery ($bp-tablet) {
+			left: 50%;
+			transform: translateX(-50%);
+	
+			.tooltip:after {
+				left: 230px;
+			}
+	
+			.tooltip:before {
+	        	left: 230px;
+			}
+		}
+		
+		@include mediaquery ($bp-desktop) {
+			left: unset;
+			right: -38px;
+			transform: unset;
+		
+			.tooltip:after {
+				left: unset;
+				right: 40px;
+		  	}
+
+		  .tooltip:before {
+			left: unset;
+			right: 40px;
+		  }
+		}	
 	}
 }
 
@@ -92,17 +109,19 @@
 
 .tooltip {
 	color: $dark-silk;
+	margin-left: auto;
+	margin-right: auto;
 
   h3 {
     margin: 0;
 
     & + p:first-of-type {
-      margin-top: $padding/2;
+      margin-top: $gap;
     }
   }
 
   p:first-of-type {
-    margin-top: $padding;
+    margin-top: $gap * 2;
   }
 
 	h3,
@@ -145,7 +164,7 @@
   left: auto;
   line-height: $large-line-height;
   overflow: hidden;
-  padding: 5px;
+  padding: $gap / 2;
   position: absolute;
   right: 5px;
   top: 12px;
@@ -225,7 +244,7 @@
     display: inline-block;
     font-weight: bold;
     line-height: 50%;
-    padding: 5px;
+    padding: $gap / 2;
     -webkit-border-radius: 50px;
 	-moz-border-radius: 50px;
 	border-radius: 50px;

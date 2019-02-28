@@ -98,7 +98,7 @@ $size-timeline-line:   4px;
     width: $size-timeline-bullet;
     height: $size-timeline-bullet;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: $gap;
     border-width: $size-timeline-bullet-border;
     border-style: solid;
     background-color: $darkest-shiro;
@@ -120,7 +120,7 @@ $size-timeline-line:   4px;
 
   .timeline-event {
     display: inline-block;
-    margin-left: ($size-timeline-bullet - $size-timeline-bullet-border) + $padding;
+    margin-left: ($size-timeline-bullet - $size-timeline-bullet-border) + $gap * 2;
     margin-bottom: $size-timeline-bullet;
     padding-top: 3px;
     position: relative;
@@ -150,7 +150,7 @@ $size-timeline-line:   4px;
 			background: $soft-script;
 			left: 0;
 			top: 1px;
-			margin-left: 30px;
+			margin-left: $gap * 3;
 		}
 
 		&:last-child::before,
@@ -162,9 +162,9 @@ $size-timeline-line:   4px;
 			@include inner;
 			display: inline-block;
 			background: $shiro;
-		    margin-left: 88px;
-			margin-bottom: 40px;
-		    position: relative;
+		  margin-left: 88px;
+			margin-bottom: $gap * 4;
+		  position: relative;
 
 			&::before {
 				content: '';
@@ -197,7 +197,7 @@ $size-timeline-line:   4px;
 			background: $shiro;
 			border-radius: 50%;
 			padding: 22px 23px;//circle of 64px
-			margin-right: 10px;
+			margin-right: $gap;
 
 		}
 

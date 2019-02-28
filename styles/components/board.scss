@@ -29,10 +29,9 @@ Board Variants
 
 Add class `.board-half` to display content in the left side.<br>
 Add class `.board-large` to increse the hight of the board.<br>
-Add class `.board-executive`, `.board-welcome`, `.board-hiring` or `.board-help` to apply a background image.<br>
 
 Markup:
-<section class="board board-half board-large board-executive">
+<section class="board board-half board-large bg-home-executive">
 	<div class="child">
 		<div class="child-middle">
 			<h1 class="claim">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed felis porta.</h1>
@@ -52,7 +51,7 @@ Styleguide #{$sgi-board-variants}
 	width: 100%;
 
 	@include mediaquery ($bp-tablet) {
-		padding: $padding * 4;
+		padding: $gap * 8;
 	}
 
 	.child {
@@ -65,14 +64,14 @@ Styleguide #{$sgi-board-variants}
 			display: table-cell;
 			vertical-align: middle;
 			margin-top: 0;
-			margin-bottom: $padding;
+			margin-bottom: $gap * 2;
 		}
 	}
 
 	.claim {
 		font-size: $xlarge-font-size;
 		line-height: $xlarge-line-height;
-		margin-bottom: $padding / 2;
+		margin-bottom: $gap;
 		color: $shiro;
 
 		@include mediaquery ($bp-tablet) {
@@ -94,36 +93,36 @@ Styleguide #{$sgi-board-variants}
 	}
 
 	.break {
-		margin-top: $padding;
+		margin-top: $gap * 2;
 	}
 
 	.description + [class*="btn"] {
-		margin-top: $padding;
+		margin-top: $gap * 2;
 	}
 
 	[class*="btn"] {
-		left: $padding;
+		left: $gap * 2;
 	}
 
   [class*="btn"] + p {
-		margin-top: $padding / 2;
+		margin-top: $gap;
 	}
 
 	p {
-		margin-bottom: $padding / 2;
+		margin-bottom: $gap;
 	}
 
 	&-large {
 		@include mediaquery ($bp-tablet) {
-			padding: $padding * 7  $padding * 4;
+			padding: $gap * 14  $gap * 8;
 		}
 	}
 
 	&-half {
-	 	padding: $padding * 2 $padding;
+	 	padding: $gap * 4 $gap * 2;
 
 		@include mediaquery ($bp-tablet) {
-			padding: $padding * 4 $padding;
+			padding: $gap * 8 $gap * 2;
 		}
 
 		.child {
@@ -138,10 +137,10 @@ Styleguide #{$sgi-board-variants}
 	}
 
 	.slideup {
-		margin: $padding -#{$padding / 2} -#{$padding} -#{$padding / 2};
+		margin: #{$gap * 2} -#{$gap} -#{$gap * 2} -#{$gap};
 
 		@include mediaquery ($bp-tablet) {
-			margin: $padding * 2 -#{$padding} -#{$padding * 2} -#{$padding};
+			margin: $gap * 4 -#{$gap * 2} -#{$gap * 4} -#{$gap * 2};
 		}
 
 	}
@@ -158,25 +157,9 @@ Styleguide #{$sgi-board-variants}
 		@include board-image;
 	}
 
-	&-executive {
-		@include board-image;
-		background-color: $dark-softened;
-		background-image: url(#{$path-media}/appgrade/pictures/pic-crsl-executive-mobile.jpg);
-
-		@include mediaquery ($bp-tablet) {
-			background-color: $dark-silk;
-			background-image: url(#{$path-media}/appgrade/pictures/pic-crsl-executive-big.jpg);
-		}
-	}
-
 	&-welcome {
 		@include board-image;
 		background-image: url(#{$path-media}/appgrade/backgrounds/bg-hr-welcome.gif);
-	}
-
-	&-hiring {
-		@include board-image;
-		background-image: url(#{$path-media}/appgrade/backgrounds/bg-header.png);
 	}
 
 	&-help {

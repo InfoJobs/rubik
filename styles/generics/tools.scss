@@ -167,20 +167,20 @@ Styleguide #{$sgi-helpers}
 
 .border-divider { // Used to generate a gap with a top border
   border-top: 1px solid $darkest-shiro;
-  padding-bottom: $padding;
-  padding-top: $padding;
+  padding-bottom: $gap * 2;
+  padding-top: $gap * 2;
 
 	.inner & {
-    margin-left: -#{$padding/2};
-    margin-right:-#{$padding/2};
-    padding-left: $padding/2;
-    padding-right: $padding/2;
+    margin-left: -$gap;
+    margin-right:-$gap;
+    padding-left: $gap;
+    padding-right: $gap;
 
     @include mediaquery ($bp-tablet) {
-      margin-left: -#{$padding};
-      margin-right: -#{$padding};
-      padding-left: $padding;
-      padding-right: $padding;
+      margin-left: -$gap * 2;
+      margin-right: -$gap * 2;
+      padding-left: $gap * 2;
+      padding-right: $gap * 2;
 	   }
 	}
 
@@ -210,11 +210,11 @@ Styleguide #{$sgi-helpers}
 /*------------------------------------*\
     $MARGINS and PADDINGS
 
-    var $orientations and $spaceamounts in _vars.scss
+    var $orientations and $gapamounts in _vars.scss
 \*------------------------------------*/
 
 @each $side in $orientations {
-  @each $size, $space in $spaceamounts {
+  @each $size, $space in $gapamounts {
     @if ($size == base) {
       .margin-#{$side}  {
         margin-#{$side}: $space/2;
@@ -242,16 +242,16 @@ Styleguide #{$sgi-helpers}
 }
 
 .link-annex {
-	margin-right: 20px;
+	margin-right: $gap * 2;
 }
 
 .indent {
-  margin-top: 5px;
+  margin-top: $gap / 2;
 	margin-left: 24px;
 
 	&--small {
-    margin-top: 5px;
-		margin-left: 10px;
+    margin-top: $gap / 2;
+		margin-left: $gap;
 	}
 }
 

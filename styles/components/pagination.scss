@@ -52,7 +52,7 @@ Styleguide #{$sgi-pagination}
 .pagination-top-microsite {
 
 	@include mediaquery ($bp-tablet) {
-		padding: $padding;
+		padding: $gap * 2;
 
 	 	+ .inner {
 			padding-top: 0;

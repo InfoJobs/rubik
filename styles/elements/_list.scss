@@ -54,11 +54,11 @@ Styleguide #{$sgi-listsDefault}
     > dt {
         display: block;
         position: relative;
-        margin-bottom: 10px;
+        margin-bottom: $gap;
         word-break: break-word;
 
         @at-root .small#{&} {
-            margin-bottom: 5px;
+            margin-bottom: $gap / 2;
 
             @media print {
         		font-size: ($small-font-size/$point-to-px);
@@ -105,8 +105,6 @@ Styleguide #{$sgi-listsDefault}
     }
 
     > dd {
-        //margin-bottom: 20px;
-
         @media print {
     		font-size: ($base-font-size/$point-to-px);
     		line-height: ($base-line-height/$point-to-px);
@@ -114,7 +112,7 @@ Styleguide #{$sgi-listsDefault}
     }
 
     & dd + dt {
-        margin-top: $padding;
+        margin-top: $gap * 2;
     }
 
     @at-root .list-inline-description#{&} {
@@ -124,7 +122,7 @@ Styleguide #{$sgi-listsDefault}
         }
 
         > dd + dd {
-            margin: 1px 0 0 10px;
+            margin: 1px 0 0 $gap;
         }
     }
 
@@ -134,7 +132,7 @@ Styleguide #{$sgi-listsDefault}
         margin: 0;
 
         &::after {
-          padding-bottom: 20px;
+          padding-bottom: $gap * 2;
         }
       }
     }
@@ -142,7 +140,7 @@ Styleguide #{$sgi-listsDefault}
     &.list-expanded {
 
       > li {
-        margin-bottom: $padding;
+        margin-bottom: $gap * 2;
 
         &:last-of-type {
           margin-bottom: 0;
@@ -172,11 +170,11 @@ Styleguide #{$sgi-listsInline}
   flex-wrap: wrap;
 
   li:not(:last-of-type) {
-    margin-right: 10px;
+    margin-right: $gap;
   }
 
   .dt {
-    margin-right: 5px;
+    margin-right: $gap / 2;
   }
 
   &-center {
@@ -305,7 +303,7 @@ Styleguide #{$sgi-listsWithIcons}
 
     > [class*="iconfont-"] {
         position: relative;
-        padding-left: 20px;
+        padding-left: $gap * 2;
 
         &::before {
             position: absolute;
@@ -316,22 +314,10 @@ Styleguide #{$sgi-listsWithIcons}
     @each $val in $iconfont-size {
       .iconfont-#{$val}px,
       .iconfont-#{$val}px + dd {
-        padding-left: #{$val + 10}px;
+        padding-left: #{$val + $gap};
       }
     }
 }
-
-//@each $val in $iconfont-size {
-//	.iconfont-#{$val}px {
-//    @if ($val < 50) {
-//		padding-left: #{$val + 10}px;
-//	}
-//	@else {
-//		padding-left: #{$val + 20}px;
-//		}
-//	}
-//}
-
 
 /*
 Lists with nested structure
@@ -363,19 +349,19 @@ Lists with nested structure
     }
 
     @at-root .small#{&} {
-        margin-bottom: 5px;
-        padding: 0 0 5px 0;
+        margin-bottom: $gap / 2;
+        padding: 0 0 $gap / 2 0;
     }
 
     @at-root .list-divider-bleed#{&} { // fix .inner default padding
-        margin: 0 -10px;
-        padding-right: 10px;
-        padding-left: 10px;
+        margin: 0 -$gap;
+        padding-right: $gap;
+        padding-left: $gap;
 
         @include mediaquery ($bp-tablet) {
-            margin: 0 -20px;
-            padding-right: 20px;
-            padding-left: 20px;
+            margin: 0 -$gap * 2;
+            padding-right: $gap * 2;
+            padding-left: $gap * 2;
         }
 
         &:last-child {
@@ -389,7 +375,7 @@ Lists with nested structure
 	}
 
 	.btn {
-		margin-top: 20px;
+		margin-top: $gap * 2;
 	}
 }
 
@@ -410,12 +396,12 @@ Markup:
 %list-item-divider {
 	li {
 		border-bottom: 1px solid $darkest-shiro;
-		margin-bottom: $padding/2;
-		padding-bottom: $padding/2;
+		margin-bottom: $gap;
+		padding-bottom: $gap;
 
 		@include mediaquery ($bp-tablet) {
-			margin-bottom: $padding;
-			padding-bottom: $padding;
+			margin-bottom: $gap * 2;
+			padding-bottom: $gap * 2;
 		}
 
 		&:last-child {
@@ -431,7 +417,7 @@ Markup:
 
 	&--small {
 		@extend %list-item-divider;
-		margin-bottom: 5px;
-		padding-bottom: 5px;
+		margin-bottom: $gap / 2;
+		padding-bottom: $gap / 2;
 	}
 }

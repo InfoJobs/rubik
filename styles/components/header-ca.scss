@@ -86,7 +86,7 @@
 			height: 50px;
 			width: 130px;
 			margin: 0 auto;
-			padding: 10px 20px;
+			padding: $gap $gap * 2;
 			color: $shiro;
 			border: 0 none;
 
@@ -103,7 +103,7 @@
 
 .nav-bar-user li a,
 .nav-bar-submenu li a {
-	padding: 15px 10px;
+	padding: 15px $gap;
 
 	@include mediaquery ($bp-header) {
 		padding: 15px;
@@ -111,7 +111,7 @@
 }
 
 .nav-bar-submenu li:first-child a {
-	padding-top: 20px;
+	padding-top: $gap * 2;
 
 	@include mediaquery ($bp-header) {
 		padding: 0;
@@ -119,7 +119,7 @@
 }
 
 .nav-bar-user li:first-child a.avatar {
-	padding-top: 30px;
+	padding-top: $gap * 3;
 
 	@include mediaquery ($bp-header) {
 		padding: 0;
@@ -129,14 +129,14 @@
 .nav-bar-submenu li:first-child {
 	a {
 		@include mediaquery ($bp-header) {
-			padding: 15px 10px 15px 20px;
+			padding: 15px $gap 15px $gap * 2;
 		}
 	}
 }
 
 .nav-bar-submenu li:last-child {
 	a {
-		padding-bottom: 20px;
+		padding-bottom: $gap * 2;
 
 		@include mediaquery ($bp-header) {
 			padding-bottom: 15px;
@@ -145,8 +145,8 @@
 }
 
 .nav-bar-user li:last-child {
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: $gap;
+	padding-right: $gap;
 	background: $dark-shiro;
 
 	@include mediaquery ($bp-header) {
@@ -251,14 +251,14 @@ a.nav-bar-toggle {
 		&  a {
 			display:block;
 			position: relative;
-			padding: 17px 10px 13px 10px;
+			padding: 17px $gap 13px $gap;
 			margin: 0;
 			color: $dark-silk;
 			-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
 			-webkit-tap-highlight-color: transparent; /* For some Androids */
 
 			@include mediaquery ($bp-header) {
-				padding: 30px 14px;
+				padding: $gap * 3 14px;
 				color: $mid-script;
 			}
 		}
@@ -279,10 +279,10 @@ a.nav-bar-toggle {
 
 	.logo,
 	.logo:hover {
-		padding-top: 20px;
+		padding-top: $gap * 2;
 
 		@include mediaquery ($bp-header) {
-			margin: 20px 35px 0 0;
+			margin: $gap * 2 35px 0 0;
 			padding: 0;
 			display: block;
 			height: 41px;
@@ -319,10 +319,10 @@ a.nav-bar-toggle {
 
 		float: left;
 		overflow: visible;
-		padding: 0 20px;
+		padding: 0 $gap * 2;
 
 		.global-nav-submenu & > li > a {
-			padding: 10px 15px;
+			padding: $gap 15px;
 		}
 
 		.global-nav-submenu & {
@@ -422,18 +422,18 @@ a.nav-bar-toggle {
 }
 
 .nav-bar-access {
-	padding: 10px;
+	padding: $gap;
 	@include order(2);
 	border-top: 1px solid $darkest-shiro;
 
 	@include mediaquery ($bp-header) {
-		padding: 25.5px 20px;
+		padding: 25.5px $gap * 2;
 		border-top: 0;
 	}
 
 	li {
 		@include flex(1 1 50%);
-		margin-left: 10px;
+		margin-left: $gap;
 
 		&:first-child {
 			margin-left: 0;
@@ -458,7 +458,7 @@ a.nav-bar-toggle {
 	@include flex(0 0 auto);
 
 	@include mediaquery ($bp-header) {
-		padding: 3.5px 20px;
+		padding: 3.5px $gap * 2;
 	}
 
 	li {
@@ -483,7 +483,7 @@ a.nav-bar-toggle {
 
 	.logout {
 		display: block;
-		padding: 15px 10px;
+		padding: 15px $gap;
 		color: $soft-script;
 		background-color: $dark-shiro;
 
@@ -510,7 +510,7 @@ a.nav-bar-toggle {
 	.global-nav-company & {
 
 		@include mediaquery ($bp-header) {
-			padding: 30px 20px 30px 0;
+			padding: $gap * 3 $gap * 2 $gap * 3 0;
 		}
 
 		.avatar {
@@ -526,7 +526,7 @@ a.nav-bar-toggle {
 		position: absolute;
 		left: 0;
 	    top: 0;
-		padding: 30px 20px;
+		padding: $gap * 3 $gap * 2;
 	    width: 100%;
 		height: 145px;
 		text-align: center;
@@ -561,7 +561,7 @@ a.nav-bar-toggle {
 				display: table-cell;
 				vertical-align: middle;
 				max-width: 180px;
-				padding-right: 10px;
+				padding-right: $gap;
 				padding-left: 7px;
 			}
 		}
@@ -569,7 +569,7 @@ a.nav-bar-toggle {
 		.picture {
       border: 3px solid $shiro;
       height: 60px;
-      margin: 0 auto $padding/2 auto;
+      margin: 0 auto $gap auto;
       overflow: hidden;
       width: 60px;
 
@@ -599,7 +599,7 @@ a.nav-bar-toggle {
 			position: absolute;
 			left: 0;
 			right: 0;
-			padding: 0 10px;
+			padding: 0 $gap;
 
 			@include mediaquery ($bp-header) {
 				display: table;
@@ -721,9 +721,9 @@ a.nav-bar-toggle {
 
 .wrap-transition .open-menu:nth-of-type(1) {
 	left: 0;
-    -webkit-box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.4);
-      -moz-box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.4);
-	       box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 6px 0 6px 0 rgba(0,0,0,0.4);
+      -moz-box-shadow: 6px 0 6px 0 rgba(0,0,0,0.4);
+	       box-shadow: 6px 0 6px 0 rgba(0,0,0,0.4);
 }
 
 .wrap-transition::before {
@@ -748,7 +748,7 @@ a.nav-bar-toggle {
 	.global-nav {
 		overflow: visible;
 		padding: 0;
-		margin: 0 0 20px 0;
+		margin: 0 0 $gap * 2 0;
 		background: none;
 		border: 0 none;
 

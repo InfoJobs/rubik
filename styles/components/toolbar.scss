@@ -29,7 +29,7 @@ Styleguide #{$sgi-toolbar}
 
   li {
     display: inline-block;
-    margin-right: 20px;
+    margin-right: $gap / 2;
   }
 
   li:last-child {

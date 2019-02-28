@@ -18,21 +18,21 @@ Styleguide #{$sgi-job-list}
 .job-list {
 
     .inner & {
-        margin: 0 -10px;
+        margin: 0 -$gap;
 
         @include mediaquery ($bp-tablet) {
-            margin: 0 -20px;
+            margin: 0 -$gap * 2;
         }
     }
 
     .badge-marked-sticker {
         @extend %marked-contrast;
-        margin-left: 10px;
+        margin-left: $gap;
     }
 
     .badge-warning-sticker {
     	margin-top: 2px;
-      margin-bottom: 5px;
+      margin-bottom: $gap / 2;
     }
 
     > li {
@@ -90,7 +90,7 @@ Styleguide #{$sgi-job-list}
 
         .action-global {
             float: right;
-            margin-left: 10px;
+            margin-left: $gap;
             transition: none;
 
             @include mediaquery ($bp-desktop) {
@@ -129,7 +129,7 @@ Styleguide #{$sgi-job-list}
 .job-list-subtitle {
     @include font(small);
     margin-top: 0;
-    margin-bottom: 5px;
+    margin-bottom: $gap / 2;
     font-family: $base-font-family;
 
     a {
@@ -139,8 +139,8 @@ Styleguide #{$sgi-job-list}
 }
 
 .job-list-description {
-    margin-top: 5px;
-    margin-bottom: 10px;
+    margin-top: $gap / 2;
+    margin-bottom: $gap;
     color: $mid-script;
 
     @include mediaquery ($bp-tablet) {
@@ -166,13 +166,13 @@ Styleguide #{$sgi-job-list}
 
 li.list-logos {
     padding-right: 0;
-    padding: 10px;
+    padding: $gap;
     max-height: 198px;
     overflow: hidden;
     background-color: $shiro;
 
     @include mediaquery ($bp-tablet) {
-        padding: 20px;
+        padding: $gap * 2;
     }
 
     .item {
@@ -205,7 +205,7 @@ li.list-logos {
     @include mediaquery ($bp-desktop) {
     	@include display-flex;
     	flex-direction: row; //TODO: make a mixin with vendors
-    	padding-bottom: 20px;
+    	padding-bottom: $gap * 2;
     }
 
     .box {
@@ -219,10 +219,10 @@ li.list-logos {
     }
 
     .header-filters {
-        padding: 10px;
+        padding: $gap;
 
         @include mediaquery ($bp-tablet) {
-            padding-left: 20px;
+            padding-left: $gap * 2;
         }
     }
 
@@ -249,7 +249,7 @@ li.list-logos {
     }
 
     .action {
-    	margin-top: 10px;
+    	margin-top: $gap;
 
     	@include mediaquery ($bp-desktop) {
         	align-self: center;
@@ -263,7 +263,7 @@ li.list-logos {
 
 .job-list-footer {
     border-top: 1px solid $darkest-shiro;
-    padding: 20px 10px;
+    padding: $gap * 2 $gap;
     text-align: center;
 
     @include mediaquery ($bp-desktop) {
@@ -299,14 +299,14 @@ li.list-logos {
             }
 
             &:first-child {
-                margin-bottom: 20px;
+                margin-bottom: $gap * 2;
 
                 @include mediaquery ($bp-tablet) {
                     float: left;
                     margin-bottom: 0;
 
                     > .item {
-                        margin-right: 10px;
+                        margin-right: $gap;
                     }
 
                 }
@@ -316,7 +316,7 @@ li.list-logos {
             + li > .item {
 
                 @include mediaquery ($bp-tablet) {
-                    margin-left: 10px;
+                    margin-left: $gap;
                 }
             }
 

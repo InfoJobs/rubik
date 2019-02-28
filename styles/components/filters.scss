@@ -10,13 +10,13 @@ Styleguide #{$sgi-filters}
 */
 
 .filters {
-	padding: $padding;
+	padding: $gap * 2;
 	min-width: 240px;
 	max-width: 482px;
 
 	fieldset {
 		position: relative;
-		margin-bottom: $padding * 2;
+		margin-bottom: $gap * 4;
 	}
 	.label-checkbox {
 		margin:0;
@@ -30,7 +30,7 @@ Styleguide #{$sgi-filters}
 		}
 
 		.number {
-			margin-left: 5px;
+			margin-left: $gap / 2;
 		}
 	}
 
@@ -43,7 +43,7 @@ Styleguide #{$sgi-filters}
 
 	li,
 	.salary .btn-group {
-		margin-bottom: 10px;
+		margin-bottom: $gap;
 	}
 
 	li:last-child {
@@ -51,7 +51,7 @@ Styleguide #{$sgi-filters}
 	}
 
 	.experience .noUi-target {
-		margin-top: 5px;
+		margin-top: $gap / 2;
 		margin-bottom: 26px;
 	}
 
@@ -76,7 +76,7 @@ Styleguide #{$sgi-filters}
 	.opened-list,
 	.closed-list {
 		display: inline-block;
-		margin-top: 10px;
+		margin-top: $gap;
 	}
 
 	.end-list {
@@ -85,7 +85,7 @@ Styleguide #{$sgi-filters}
 
 	.end-list a {
 		margin-top: 0;
-		padding: 10px 0;
+		padding: $gap 0;
 	}
 }
 
@@ -119,7 +119,7 @@ Styleguide #{$sgi-filter-keyword}
 		display: table-cell;
 		float: none;
 		vertical-align: top;
-		padding-right: 10px;
+		padding-right: $gap;
 
 		&:last-child {
 			margin-right: 0;
@@ -143,7 +143,7 @@ Styleguide #{$sgi-filter-keyword}
 }
 
 .filters .filters-selected {
-	margin-bottom: 10px;
+	margin-bottom: $gap;
 }
 
 a.opened-list:after {
@@ -186,7 +186,7 @@ a.closed-list:after {
 }
 
 .filters-back {
-	padding: 10px 20px;
+	padding: $gap $gap * 2;
 	border-bottom: 1px solid $darkest-shiro;
 	background: $dark-shiro;
 	width: 100%;
@@ -194,7 +194,7 @@ a.closed-list:after {
 }
 
 .filters-back-bottom {
-	padding: 10px 0px;
+	padding: $gap 0;
 	background: $dark-shiro;
 	width: 100%;
 	height: 50px;
@@ -251,7 +251,7 @@ Styleguide #{$sgi-filter-slider-group}
 
 .range {
 	display: inline-block;
-    margin-top: 5px;
+    margin-top: $gap / 2;
     font-size: 14px;
     color: $soft-script;
 }
@@ -263,7 +263,7 @@ Styleguide #{$sgi-filter-slider-group}
 .slider-value {
 	display: block;
   font-size: $small-font-size;
-	margin-bottom: 5px;
+	margin-bottom: $gap / 2;
 }
 
 .js-ui-slider-pips {
@@ -277,11 +277,11 @@ Styleguide #{$sgi-filter-slider-group}
 @include mediaquery ($bp-tablet) {
 
 	.filters {
-		padding: 10px 10px 10px 30px;
+		padding: $gap $gap $gap $gap * 3;
 	}
 
 	.filters-back {
-		padding-left: 30px;
+		padding-left: $gap * 3;
 	}
 
 }
@@ -289,7 +289,7 @@ Styleguide #{$sgi-filter-slider-group}
 @include mediaquery ($bp-desktop) {
 
 	.filters {
-		padding: $padding;
+		padding: $gap * 2;
 	}
 
 	.filter {
