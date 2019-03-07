@@ -218,22 +218,22 @@ Styleguide #{$sgi-helpers}
     @if ($size == base) {
       .margin-#{$side}  {
         margin-#{$side}: $space/2;
-        
+
         @include mediaquery ($bp-tablet) {
           margin-#{$side}: $space;
         }
       }
-      
+
       .padding-#{$side}  {
         padding-#{$side}: $space;
       }
     }
-    
+
     @else {
       .margin-#{$side}-#{$size} {
         margin-#{$side}: $space;
       }
-      
+
       .padding-#{$side}-#{$size}  {
         padding-#{$side}: $space;
       }
@@ -314,6 +314,14 @@ Styleguide #{$sgi-helpers}
 
 .invisible {
    visibility: hidden;
+
+   &-large-device {
+     visibility: visible;
+
+     @include mediaquery ($bp-desktop) {
+       visibility: hidden;
+     }
+  }
 }
 
 .default-cursor {

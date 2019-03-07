@@ -18,9 +18,9 @@
 .bg {
   &-home-search {
     @include bg-device (
-      bg-home-full-mobile,
-      bg-home-full-tablet,
-      bg-home-full
+      bg-home-full-mobile-tv,
+      bg-home-full-tablet-tv,
+      bg-home-full-tv
     );
 
     &--it {

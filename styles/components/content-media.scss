@@ -310,3 +310,14 @@ Styleguide #{$sgi-content-media-size}
     word-wrap: break-word;
   }
 }
+
+//PULL CONTENT
+
+.wrap-pull {
+
+  &--center {
+    @include display-flex;
+    margin: 0 auto;
+    max-width: $container-width;
+  }
+}

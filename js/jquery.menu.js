@@ -87,15 +87,21 @@ $(function() {
 		if (window.innerWidth <= eBpHeader) {
 	      if(buttonAccess.length) {
 	          buttonAccess.removeClass('btn-small');
+	          buttonAccess.removeClass('btn-default-alternative');
 	          buttonAccess.addClass('btn');
+	          buttonAccess.addClass('btn-default');
 	      } else {
 	        buttonAccess.removeClass('btn');
+	        buttonAccess.removeClass('btn-default');
 	        buttonAccess.addClass('btn-small');
+	        buttonAccess.addClass('btn-default-alternative');
 	  		}
 
 		} else {
 	    	buttonAccess.removeClass('btn');
+	    	buttonAccess.removeClass('btn-default');
 	    	buttonAccess.addClass('btn-small');
+	    	buttonAccess.addClass('btn-default-alternative');
 	    }
 
 		if(eWrapper.hasClass('wrap-overlay') && window.innerWidth > eBpHeader) {
