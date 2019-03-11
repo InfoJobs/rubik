@@ -80,11 +80,16 @@ Styleguide #{$sgi-panels}
 
 	&-focus {
 		color: $shiro;
-		background-color: $color-primary;
-	}
+		background-color: $theme-color-focus;
 
-	&-focus--light {
-    background-color: tint($day-blue , 80%);
+		&-opacity {
+		  	background-color: rgba($theme-color-focus, .1);
+			color: $theme-color-focus;
+		}
+
+		&--light {
+			background-color: tint($day-blue , 80%);
+		}
 	}
 
 	&-overlay {
