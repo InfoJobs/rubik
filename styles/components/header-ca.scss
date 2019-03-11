@@ -116,6 +116,15 @@
     .nav-mobile {
       background-color: transparent;
     }
+
+    .nav-bar-menu > li a {
+      color: $dark-silk;
+
+      &:hover {
+        color: $day-blue;
+      }
+    }
+
   }
 }
 

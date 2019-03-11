@@ -23,6 +23,10 @@
       bg-home-full-tv
     );
 
+    @include mediaquery ($bp-desktop) {
+      min-height: 496px;
+    }
+
     &--it {
       @include bg-device (
         bg-home-full-it-mobile,
