@@ -101,6 +101,33 @@
 	}
 }
 
+.global-nav-transparent {
+  @at-root .global-nav#{&} {
+    background-color: transparent;
+
+    .nav-bar-wrapper {
+      background-color: $shiro;
+
+      @include mediaquery ($bp-header) {
+        background-color: transparent;
+      }
+    }
+
+    .nav-mobile {
+      background-color: transparent;
+    }
+
+    .nav-bar-menu > li a {
+      color: $dark-silk;
+
+      &:hover {
+        color: $day-blue;
+      }
+    }
+
+  }
+}
+
 .nav-bar-user li a,
 .nav-bar-submenu li a {
 	padding: 15px $gap;
