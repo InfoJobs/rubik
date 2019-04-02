@@ -2,18 +2,6 @@
 	$ICONS
 \*------------------------------------*/
 
-//Applies to elements containing a class that begin with icon-
-
-[class*="icon-"] {
-	position: relative;
-	padding-left: 17px;
-
-	@media print {
-		padding: 0;
-	}
-}
-
-
 /*
 Icons
 
@@ -128,11 +116,6 @@ $iconfont-size: (16, 18, 22, 24, 30, 36, 100); //TODO: resolve problem when it s
 			font-size: #{$value}px;
 		}
 	}
-}
-
-.iconfont-soft-script::before,
-.iconfont-soft-script::after {
-	color: $soft-script;
 }
 
 //Icon function
@@ -606,4 +589,15 @@ svg {
         padding-left: #{$val + 10}px;
       }
     }
+}
+
+
+.iconfont-soft-script::before,
+.iconfont-soft-script::after {
+	color: $soft-script;
+}
+
+.iconfont-focus[class*="iconfont-"]::before,
+.iconfont-focus[class*="iconfont-"]::after {
+  color: $day-blue;
 }
