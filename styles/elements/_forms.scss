@@ -1275,7 +1275,7 @@ SForm group inline
 
 .form-group-inline {
 
-	@include mediaquery ($bp-tablet)
+	@include mediaquery ($bp-tablet) {
 		&-button {
 			margin-top: ($gap*2) + $label-margin;
 		}
