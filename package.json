@@ -4,6 +4,7 @@
   "description": "Frontend Framework for InfoJobs",
   "scripts": {
     "deploy": "npx surge ./styleguide/styleguide --domain http://rubik.surge.sh",
+    "release": "grunt && echo '*' > ./styleguide/styleguide/CORS && npm run deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
