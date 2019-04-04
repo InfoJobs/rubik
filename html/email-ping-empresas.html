@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>InfoJobs.net</title>
+</head>
+
+<body style="margin:0; padding:0; border:0; background-color: #E1E1E3;">
+  <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" style="background-color: #E1E1E3;">
+    <tr>
+      <td align="center">
+        <table width="600" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td height="6"></td>
+          </tr>
+          <tr>
+            <td align="center" style="font: normal 9px Arial, Helvetica, sans-serif; color: ; text-align: center;">
+
+            </td>
+          </tr>
+          <tr>
+            <td height="4"></td>
+          </tr>
+        </table>
+
+        <table width="600" border="0" cellpadding="0" cellspacing="0" style="background-color: #FFFFFF;">
+          <tr>
+
+            <td width="598">
+
+
+              <table width="600" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td height="12" colspan="3" style="background-color:#2088C2;"></td>
+                </tr>
+                <tr>
+                  <td width="20" style="background-color:#2088C2;"></td>
+                  <td width="583" height="28" colspan="2" style="text-align:left; background-color:#2088C2;">
+                    <a href="${portal.site}" title="${portal.nombrePortalCOM}" target="_blank" style="color: #fff;">
+                      <img src="http://media.infojobs.net/portales/ij/app/emails/pic-email-logo-top.gif" alt="${portal.nombrePortalCOM}" border="0" style="border: 0; display:block;" title="${portal.nombrePortalCOM}">
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+
+                  <td width="20"></td>
+                  <td width="574" style="background-color:#FFFFFF;" height="1"></td>
+
+
+                  <td width="12"></td>
+                </tr>
+
+              </table>
+              <table width="598" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td height="14"></td>
+                  <!--fila superior vacia-->
+                </tr>
+                <tr>
+                  <td>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" align="left">
+                      <tr>
+                        <td width="20"></td>
+
+                        <td width="558" align="left" valign="top" style="font: normal 12px Arial, Helvetica, sans-serif; color: #231F20; text-align:left;">
+                          <table width="558" border="0" cellspacing="0" cellpadding="0">
+                            <!--TÃ­tulo principal-->
+                            <tr>
+                              <td width="558" style="font-family: Arial, Helvetica, sans-serif; font-size:24px; font-weight:bold; color: #33335D; text-align: left;">
+                                <#if tipoMail==1>Un candidato ha confirmado su interés</#if>
+                                <#if tipoMail==2>Un candidato que te interesa se ha inscrito en una de tus ofertas</#if>
+                                <#if tipoMail==3>Un candidato ha actualizado su CV tras tu petición</#if>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td height="10"></td>
+                            </tr>
+                            <tr>
+                              <td width="558" align="left" valign="top" style="font: normal 12px Arial, Helvetica, sans-serif; color: #231F20; text-align:left; vertical-align: top;">
+                            <tr>
+                              <td width="558" align="left" valign="top" style="font: normal 12px Arial, Helvetica, sans-serif; color: #231F20; text-align:left; vertical-align: top;">
+                            <tr>
+                              <td height="5"></td>
+                            </tr>
+                            <#if keyword !="">
+                              <tr>
+                                <td align="left" valign="top" style="font: normal 12px Arial, Helvetica, sans-serif; color: #231F20; text-align:left; vertical-align: top;">
+                                  <p>
+                                    <font size="3">Hab&iacute;as buscado: ${keyword}.
+                                  </p>
+                              </tr>
+                              <tr>
+                                <td height="5"></td>
+                              </tr>
+                            </#if>
+                            <tr>
+                              <td align="left" valign="top" style="font: normal 12px Arial, Helvetica, sans-serif; color: #231F20; text-align:left; vertical-align: top;">
+                                <p style="padding-bottom:5px;">
+                                  <font size="3">
+                                    <#if tipoMail==1>Este candidato ha confirmado su interés en tu proceso de selección de ${puestoOferta} </#if>
+                                    <#if tipoMail==2>Este candidato se ha inscrito en tu proceso de selección de ${puestoOferta} </#if>
+                                    <#if tipoMail==3>Este candidato ha actualizado su CV </#if>tras tu solicitud del ${pingDate}.
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                  <table cellspacing="0" border="0" style="width: 100%">
+                                    <tbody>
+                                      <tr>
+                                        <th style="border-bottom: 2px solid #8CC6EC; font-family: Arial; font-style: normal; font-weight: normal; font-size: 12px; text-align: left; color: #808184; font-weight: bold; padding: 4px 10px 6px;">&Uacute;lt.
+                                          conexi&oacute;n</th>
+                                        <th style="border-bottom: 2px solid #8CC6EC; font-family: Arial; font-style: normal; font-weight: normal; font-size: 12px; text-align: left; color: #808184; font-weight: bold; padding: 4px 10px 6px;">Edad</th>
+                                        <th style="border-bottom: 2px solid #8CC6EC; font-family: Arial; font-style: normal; font-weight: normal; font-size: 12px; text-align: left; color: #808184; font-weight: bold; padding: 4px 10px 6px;">T&iacute;tulo</th>
+                                        <th style="border-bottom: 2px solid #8CC6EC; font-family: Arial; font-style: normal; font-weight: normal; font-size: 12px; text-align: left; color: #808184; font-weight: bold; padding: 4px 10px 6px;">Poblaci&oacute;n</th>
+                                        <th style="border-bottom: 2px solid #8CC6EC; font-family: Arial; font-style: normal; font-weight: normal; font-size: 12px; text-align: left; color: #808184; font-weight: bold; padding: 4px 10px 6px;">
+                                          &Uacute;ltimo puesto</th>
+                                      </tr>
+                                      <tr>
+                                        <td style="font-family: Arial; font-style: normal; font-size: 12px; vertical-align: top; border-bottom: 1px solid rgb(227, 229, 242); padding: 4px 10px 6px; text-align: left;">${lastConnection}</td>
+                                        <td style="font-family: Arial; font-style: normal; font-size: 12px; vertical-align: top; border-bottom: 1px solid rgb(227, 229, 242); padding: 4px 10px 6px; text-align: left;">${age}</td>
+                                        <td style="font-family: Arial; font-style: normal; font-size: 12px; vertical-align: top; border-bottom: 1px solid rgb(227, 229, 242); padding: 4px 10px 6px; text-align: left;">${studies}</td>
+                                        <td style="font-family: Arial; font-style: normal; font-size: 12px; vertical-align: top; border-bottom: 1px solid rgb(227, 229, 242); padding: 4px 10px 6px; text-align: left;">${province}</td>
+                                        <td style="font-family: Arial; font-style: normal; font-size: 12px; vertical-align: top; border-bottom: 1px solid rgb(227, 229, 242); padding: 4px 10px 6px; text-align: left;">${lastJob}</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td height="20"></td>
+                            </tr>
+
+
+                            <tr>
+                              <td style="text-align: left;">
+                                <table cellspacing="0" cellpadding="0" border="0" align="left" style="text-align: left;">
+                                  <tbody>
+                                    <tr>
+                                      <td>
+                                        <a id="Test_campaign_actualiza_empresa" target="_blank" href="${urlButton}" style="text-aling: center; font-size: 14px; font-family: Arial, sans-serif; font-weight: bold; color: #ffffff; text-decoration: none; background-color: #ff6340; border-top: 11px solid #ff6340; border-bottom: 12px solid #ff6340; border-left: 20px solid #ff6340; border-right: 20px solid #ff6340; display: inline-block; -moz-box-shadow: 0 8px 6px -6px #666666; -webkit-box-shadow: 0 8px 6px -6px #666666; box-shadow:0 2px 4px rgba(0,0,0,0.15); text-transform: uppercase"
+                                          target="_blank" href="http://www.infojobs.net">Ver CV del candidato</a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+
+                            </tr>
+                            <tr>
+                              <td height="20"></td>
+                            </tr>
+
+                            <tr>
+                              <td align="left" valign="top" style="font: normal 12px Arial, Helvetica, sans-serif; color: #231F20; text-align:left; font-size: 16px;">
+                                Sigue las respuestas de los candidatos en <a href="https://www.infojobs.net/employer/ping/list.xhtml?dgv=6780122151264391503" target="_blank" style="font: normal 12px Arial, Helvetica, sans-serif; color: #167db7; text-align:left; text-decoration: underline; font-size: 16px;">Comprobaci&#xF3;n de inter&#xE9;s</a>
+                              </td>
+                            </tr>
+
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td height="20"></td>
+                      </tr>
+
+                    </table>
+                  </td>
+                  <td width="20"></td>
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+
+
+    <tr>
+      <td width="600" height="45">
+
+        <table width="600" align="center" height="30" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="600" height="1" colspan="4" style="background-color: #E1E1E3;"> </td>
+          </tr>
+          <tr>
+            <td width="41" height="29" style="background-color: #FFFFFF;"><img src="http://media.infojobs.net/portales/ij/app/emails/pic-email-ft-help.png" width="40" height="29" border="0" style="display:block;">
+            </td>
+            <td width="544" height="29" style="background-color: #FFFFFF; text-align:left;">
+              <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="5"></td>
+                </tr>
+                <tr>
+                  <td height="14" valign="bottom" style="font:bold 12px Arial, Helvetica, sans-serif; color: #444444; text-align:left;">
+                    <a href="${portal.site}/questions.xhtml?user=empresa" style="font: 12px Arial,Helvetica,sans-serif; text-decoration: underline; color:#0058A5;" title="Ayuda empresas">Ayuda empresas</a>
+
+
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+
+
+
+
+
+
+  </table>
+
+
+  <table width="600" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td rowspan="7" width="12"></td>
+      <td height="10"></td>
+      <td rowspan="7" width="12"></td>
+    </tr>
+
+
+    <tr>
+      <td align="left" style="font: normal 9px Verdana, Arial, Helvetica, sans-serif; line-height: 12px; color: #999999;">
+        Este mensaje ha sido enviado a
+        <span style="font: bold 9px Verdana, Arial, Helvetica, sans-serif; line-height: 12px; color: #999999;">${email_to}</span>
+        por un sistema autom&aacute;tico. Por favor no respondas a este e-mail directamente.
+        <#if portal.esAyudaCandidato>
+          Para contactar con ${portal.nombrePortalCOM} puedes
+          hacerlo en <a href="${portal.site}/candidate/help/top-faqs.xhtml?user=empresa" style="font-weight: bold; text-decoration: underline; color: #999999;" title="Ayuda empresas">Ayuda empresas</a>.
+          <#else>
+            <#if !portal.portalASP>Para contactar con ${portal.nombrePortalCOM} puedes
+              hacerlo en <a href="${portal.site}/questions.xhtml?user=empresa" style="font-  weight: bold; text-decoration: underline; color: #999999;" title="Ayuda empresas">Ayuda empresas</a>.</#if>
+        </#if>
+        <br>
+        <br>
+        ${portal.razonSocialEmpresa} CIF: ${portal.cifEmpresa}. Domicilio social en ${portal.direccionEmpresa}, ${portal.provinciaEmpresa}.
+      </td>
+    </tr>
+    <tr>
+      <td height="10"></td>
+    </tr>
+  </table>
+  </td>
+  </tr>
+  </table>
+
+  <img width="1" height="1" alt="" src="https://logs11.xiti.com/hit.xiti?s=463787&xto=-20190304&type=email&" />
+
+</body>
+
+</html>
