@@ -1,0 +1,13 @@
+/*------------------------------------*\
+$MIXINS PANELS
+\*------------------------------------*/
+
+@mixin panel-opacity($panelcolor)  {
+
+  @for $i from 1 through 9 {
+
+  	&-opacitty-#{$i}0 {
+      background-color: rgba($panelcolor, $i/10);
+  	}
+  }
+}
