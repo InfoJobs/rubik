@@ -84,19 +84,9 @@ Styleguide #{$sgi-panels}
 
 		@include panel-opacity( $theme-color-focus);
 
-		&-opacity { //src/main/java/ij/presentacion/components/template/order/PurchaseSummaryComponent.html
-		  background-color: rgba($theme-color-focus, .1);
-			color: $theme-color-focus;
-		}
-
 		&--light {
 			background-color: tint($day-blue , 80%);
 		}
-	}
-
-	&-overlay {
-		color: $shiro;
-		background-color: rgba(0, 0, 0, 0.5);
 	}
 
 	&-highlight {
