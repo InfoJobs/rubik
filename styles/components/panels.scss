@@ -82,7 +82,7 @@ Styleguide #{$sgi-panels}
 		color: $shiro;
 		background-color: $theme-color-focus;
 
-		@include panel-opacity( $theme-color-focus);
+		@include panel-opacity( $theme-color-focus, 70);
 
 		&--light {
 			background-color: tint($day-blue , 80%);
