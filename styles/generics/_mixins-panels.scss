@@ -6,7 +6,7 @@ $MIXINS PANELS
 
   @for $i from 1 through 9 {
 
-  	&-opacitty-#{$i}0 {
+  	&-opacity-#{$i}0 {
       background-color: rgba($panelcolor, $i/10);
   	}
   }
