@@ -82,19 +82,11 @@ Styleguide #{$sgi-panels}
 		color: $shiro;
 		background-color: $theme-color-focus;
 
-		&-opacity {
-		  	background-color: rgba($theme-color-focus, .1);
-			color: $theme-color-focus;
-		}
+		@include panel-opacity( $theme-color-focus, 70);
 
 		&--light {
 			background-color: tint($day-blue , 80%);
 		}
-	}
-
-	&-overlay {
-		color: $shiro;
-		background-color: rgba(0, 0, 0, 0.5);
 	}
 
 	&-highlight {

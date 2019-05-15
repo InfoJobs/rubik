@@ -1,0 +1,9 @@
+/*------------------------------------*\
+$MIXINS PANELS
+\*------------------------------------*/
+
+@mixin panel-opacity($panelcolor, $alpha)  {
+  &-opacity-#{$alpha} {
+    background-color: rgba($panelcolor, $alpha/100);
+  }
+}
