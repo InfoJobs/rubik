@@ -411,6 +411,18 @@ Styleguide #{$sgi-expandGutterColumns}
 		}
 	}
 
+	@include mediaquery ($bp-desktop) {
+
+		.col-12-medium {
+
+			.col-child {
+				margin-left: 20px;
+				max-width: calc(100% - 20px);
+			}
+
+		}
+	}
+
 	> .col-2.col-6-small {
 		&:nth-child(1n+3) {
 			margin-top: 10px;
