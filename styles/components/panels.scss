@@ -93,6 +93,10 @@ Styleguide #{$sgi-panels}
 		background-color: tint($kiiro, 90%);
 	}
 
+	&-highlighter {
+		background-color: tint($kiiro, 70%);
+	}
+
 	&-user { // hasta tener efecto background de foto de perfil
 		background-color: $dark-silk;
 	}

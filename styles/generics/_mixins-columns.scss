@@ -36,6 +36,7 @@ $MIXIN COLUMNS
 @mixin columns($space: $gap) {
   @include display-flex;
   @include flex-wrap;
+  height: 100%;
   position: relative;
 
   .row-faux-card & {
@@ -127,6 +128,15 @@ $MIXIN COLUMNS
   		text-align: center;
   		white-space: pre;
   	}
+
+    &-cover {
+      @include display-flex;
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+    }
   }
 
   .icon {
