@@ -1,66 +1,69 @@
 .global-nav {
-	overflow: hidden;
-	background-color: $shiro;
-	background-repeat: no-repeat;
-	background-position: center center;
-	//bg logo es
-	background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo-default_primary.svg);
-	background-size: 98px;
+  background-color: $shiro;
+  background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo-default_primary.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 98px;
+  overflow: hidden;
 
-	@include mediaquery ($bp-header) {
-		background-image: none;
-		margin: 0 auto;
-		max-width: $container-extended-width;
+  @include mediaquery ($bp-header) {
+    background-image: none;
+    margin: 0 auto;
+    max-width: $container-extended-width;
 	}
 
-	h1 {
-		margin: 0;
-	}
+  h1 {
+    margin: 0;
+  }
 
-	.logo img {
-		display: none;
+  .logo img {
+    display: none;
+  }
 
-	}
+  a:not([class*="btn"]) {
+    font-family: 'Proximanovabold';
+    font-size: $large-font-size;
 
-	a:not([class*="btn"]) {
-		font-size: $large-font-size;
-		font-family: 'Proximanovabold';
+    @include mediaquery ($bp-header) {
+      font-family: 'Proximanova';
+      font-size: $base-font-size;
+    }
+  }
 
-		@include mediaquery ($bp-header) {
-			font-size: $base-font-size;
-			font-family: 'Proximanova';
-		}
-	}
+  &.global-nav-logged {
+    @include mediaquery ($bp-header) {
+      overflow: visible;
+    }
+  }
 }
 
 .global-nav-brand {
-	@at-root .global-nav#{&} {
-		height: 50px;
-		min-height: 50px;
-		background-color: $color-primary;
-		background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo-default_primary-white.svg);
+  @at-root .global-nav#{&} {
+    background-color: $color-primary;
+    background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo-default_primary-white.svg);
+    border: 0 none;
+    height: 50px;
+    min-height: 50px;
 
-		border: 0 none;
+    @include mediaquery ($bp-header) {
+      background-position: $gap * 2 center;
+    }
 
-		@include mediaquery ($bp-header) {
-			background-position: $gap * 2 center;
-		}
+    .logo,
+    .logo:hover {
+      border: 0 none;
+      color: $shiro;
+      display: block;
+      height: 50px;
+      margin: 0 auto;
+      padding: $gap $gap * 2;
+      width: 130px;
 
-		.logo,
-		.logo:hover {
-			display: block;
-			height: 50px;
-			width: 130px;
-			margin: 0 auto;
-			padding: $gap $gap * 2;
-			color: $shiro;
-			border: 0 none;
-
-			@include mediaquery ($bp-header) {
+      @include mediaquery ($bp-header) {
         margin: 0;
       }
     }
-	}
+  }
 }
 
 .global-nav-transparent {
@@ -89,113 +92,119 @@
   }
 }
 
-.nav-bar-user li a {
-	padding: 15px $gap;
+.nav-bar-user > li a {
+  padding: 15px $gap;
 
-	@include mediaquery ($bp-header) {
-		padding: 15px;
-	}
+  @include mediaquery ($bp-header) {
+    padding: 15px;
+  }
 }
 
-.nav-bar-user li:first-child a.avatar {
-	padding-top: 30px;
+.nav-bar-toggle {
+  display: block;
+  height: 50px;
+  margin: 0;
+  -webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
+  -webkit-tap-highlight-color: transparent; /* For some Androids */
+  width: 50px;
 
-	@include mediaquery ($bp-header) {
-		padding: 0;
-	}
-}
-
-.nav-bar-user li:last-child {
-	padding-left: $gap;
-	padding-right: $gap;
-	background: $dark-shiro;
-
-	@include mediaquery ($bp-header) {
-		padding: 0;
-		background: $shiro;
+  &::before {
+    color: $day-blue;
+    font-size: $xlarge-font-size;
+    left: $gap;
+    position: relative;
+    top: 25px;
 	}
 
-	a {
-		padding-right: 0;
-		padding-bottom: 15px;
-		padding-left: 0;
-		border-top: 1px solid $darkest-shiro;
+  &:hover {
+    color: $dark-shiro;
+  }
 
-		@include mediaquery ($bp-header) {
-			padding-bottom: 0;
-			border-top: 0;
-		}
-	}
-}
+  span {
+    display: none;
+  }
 
-a.nav-bar-toggle {
-	display: block;
-	margin: 0;
-	width: 50px;
-	height: 50px;
-	-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
-	-webkit-tap-highlight-color: transparent; /* For some Androids */
-
-	&::before {
-		position: relative;
-		top: 25px;
-		left: $gap;
-		color: $day-blue;
-		font-size: $xlarge-font-size;
-	}
-
-	&:hover {
-		color: $dark-shiro;
-	}
-
-	span {
-		display: none;
-	}
-
-	@include mediaquery ($bp-header) {
-		display: none;
-	}
+  @include mediaquery ($bp-header) {
+    display: none;
+  }
 
 }
 
 .nav-mobile {
-	@include display-flex;
-	@include flex-flow(column nowrap);
-	position: absolute;
-	top: 0;
-	left: -100%;
-	height: 100%;
-	max-height: 100vh;
+  @include display-flex;
+  @include flex-flow(column nowrap);
+  background: $shiro;
+  height: 100%;
+  left: -100%;
+  max-height: 100vh;
+  overflow: hidden;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s ease;
 	width: 260px;
-	background:$shiro;
-    overflow: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-
-	z-index: $zindex-menu;
+  -webkit-overflow-scrolling: touch;
 	-webkit-transition: all 0.3s ease;
-			transition: all 0.3s ease;
+  z-index: $zindex-menu;
 
 	@include mediaquery ($bp-header) {
-		display: block;// en desktop quitamos el flexbox por compatibilidad con android 4.3
-        -webkit-transition: none 0s ease 0s;
-		        transition: none 0s ease 0s;
-		position: static;
+    display: block;// en desktop quitamos el flexbox por compatibilidad con android 4.3
 		height: auto;
-		width: auto;
-		overflow: hidden;
+		position: static;
+    transition: none 0s ease 0s;
+    overflow: hidden;
+    -webkit-transition: none 0s ease 0s;
+    width: auto;
 
+    .global-nav-logged & {
+      overflow: visible;
+    }
 	}
 
-	.global-nav-company & {
-		padding-top: 80px;
+  .global-nav-company & {
+    padding-top: 80px;
 
-		@include mediaquery ($bp-header) {
-			padding-top: 0;
-		}
-	}
-
+    @include mediaquery ($bp-header) {
+      padding-top: 0;
+    }
+  }
 }
+
+.nav-bar-menu,
+.nav-bar-user {
+
+  > li a {
+    color: $dark-silk;
+    display: block;
+    margin: 0;
+    padding: 17px $gap 13px;
+    position: relative;
+    -webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
+    -webkit-tap-highlight-color: transparent; /* For some Androids */
+
+    @include mediaquery ($bp-header) {
+      color: $mid-script;
+      padding: 30px 14px;
+    }
+  }
+
+  > li a:hover {
+    color: $dark-silk;
+
+    @include mediaquery ($bp-header) {
+      color: $day-blue;
+    }
+  }
+
+  > li  a:active {
+    color: $day-blue;
+  }
+
+  .active {
+    color: $day-blue;
+  }
+}
+
 
 .nav-bar-menu {
   @include flex(1 1 auto);
@@ -207,38 +216,6 @@ a.nav-bar-toggle {
     @include mediaquery ($bp-header) {
       float: left;
     }
-    &  a {
-      display:block;
-      position: relative;
-			padding: 17px $gap 13px $gap;
-			margin: 0;
-			color: $dark-silk;
-			-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
-			-webkit-tap-highlight-color: transparent; /* For some Androids */
-
-			@include mediaquery ($bp-header) {
-				padding: 30px 14px;
-				color: $mid-script;
-			}
-    }
-
-		& a:hover {
-			color: $dark-silk;
-
-			@include mediaquery ($bp-header) {
-				color: $day-blue;
-			}
-
-		}
-
-		&  a:active {
-			color: $day-blue;
-		}
-
-    .active {
-      color: $day-blue;
-    }
-
 	}
 
 	.logo,
@@ -294,7 +271,14 @@ a.nav-bar-toggle {
     		        box-orient: block-axis;
     		//
   }
+
   @include mediaquery ($bp-header) {
+    display: block;
+    height: auto;
+    max-height: none;
+  }
+
+  .global-nav-logged & {
     display: block;
     height: auto;
     max-height: none;
@@ -302,7 +286,7 @@ a.nav-bar-toggle {
 }
 
 .nav-bar-access,
-.nav-bar-user {
+.nav-bar-avatar {
 	@include display-flex;
 	@include align-items(center);
 
@@ -343,47 +327,11 @@ a.nav-bar-toggle {
 	}
 }
 
-.nav-bar-user {
-	@include flex(0 0 auto);
+.nav-bar-avatar {
+  li {
 
-	@include mediaquery ($bp-header) {
-		padding: 3.5px ($gap * 2);
-	}
-
-	li {
-		@include flex(1 0 auto);
-
-		@include mediaquery ($bp-header) {
+    @include mediaquery ($bp-header) {
 			position: relative;
-
-			&:first-child {
-				margin-right: 15px;
-			}
-
-			&:first-child::after {
-				content: "|";
-				position: absolute;
-				right: -5px;
-				top: calc(45% - 0.5em);
-				color: $darkest-shiro;
-			}
-		}
-	}
-
-	.logout {
-		display: block;
-		padding: 15px $gap;
-		color: $soft-script;
-		background-color: $dark-shiro;
-
-		&:hover {
-			color: $day-blue;
-		}
-
-		@include mediaquery ($bp-header) {
-			display: inline;
-			padding: 0;
-			background-color: $shiro;
 		}
 	}
 
@@ -447,11 +395,7 @@ a.nav-bar-toggle {
 			max-width: 100%;
 
 			@include mediaquery ($bp-header) {
-				display: table-cell;
-				vertical-align: middle;
-				max-width: 180px;
-				padding-right: $gap;
-				padding-left: 7px;
+				display: none;
 			}
 		}
 
@@ -518,6 +462,20 @@ a.nav-bar-toggle {
 	}
 }
 
+.nav-bar-drop-down {
+
+  @include mediaquery ($bp-header) {
+    position: relative;
+
+    .nav-bar-user {
+      border: 1px solid;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
 .wrap-overlay {
 	position: fixed;
 	width: 100%;
@@ -580,8 +538,8 @@ a.nav-bar-toggle {
 			border: 0 none;
 		}
 
-		.nav-bar-user,
-		&.global-nav-logged .nav-bar-user,
+		.nav-bar-avatar,
+		&.global-nav-logged .nav-bar-avatar,
 		.nav-bar-access,
 		.nav-bar-menu li span,
 		.nav-bar-menu li + li {
