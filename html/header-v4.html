@@ -9,77 +9,6 @@
 </head>
 <body>
 <div class="wrapper">
-  <div class="panel-focus hide">
-  		<header class="global-nav global-nav-brand">
-  	         <a href="#" class="logo">
-  				<img alt="InfoJobs" src="http://media.infojobs.net/appgrade/svgs/ij-logo_claim_primary.svg">
-  	         </a>
-  		</header>
-  </div>
-
-  <div class="container-expanded"></div>
-
-  <!-- Header sin submenu transparente-->
-  <header class="global-nav global-nav-transparent hide">
-  	<a href="#" class="js-open-menu nav-bar-toggle iconfont-BurguerMenu"><span>Menu</span></a>
-
-      <nav id="nav-mobile" class="nav-mobile">
-
-          <ul class="nav-bar-menu clearfix">
-              <li>
-              <!--  el logo se muestra como H1 solo en la cabecera de la home -->
-                  <h1><a id="home-nologged-inicio" class="active logo" href="#">
-                  	<img alt="InfoJobs" src="http://media.infojobs.net/appgrade/svgs/ij-logo_claim_primary.svg">
-                  </a></h1>
-              </li>
-              <li><a id="1" href="#">Empleo</a></li>
-              <li><a id="2" href="#">Freelance</a></li>
-              <li><a id="3" href="#">Executive</a></li>
-              <li><a id="4" href="#">Consejos</a></li>
-              <li><a id="5" href="#" title="Publica una oferta de empleo y encuentra tu candidato">Zona Empresas</a></li>
-          </ul>
-          <ul class="nav-bar-access">
-            <li><a title="Accede a tu área de candidato" class="js-access-button btn-small btn-default-alternative" href="#">Accede <span id="userReconizedName"></span></a></li>
-            <li><a title="Tu CV en InfoJobs" class="js-access-button btn-small btn-primary" href="#">Date de alta</a></li>
-	        </ul>
-      </nav>
-  </header>
-  <!-- / Header sin submenu transparente -->
-
-
-  <div class="container-expanded"></div>
-
-	<div class="panel-canvas border-bottom hide">
-        <!-- Header sin submenu no logado -->
-        <header class="global-nav">
-        	<a href="#" class="js-open-menu nav-bar-toggle iconfont-BurguerMenu"><span>Menu</span></a>
-
-            <nav id="nav-mobile" class="nav-mobile">
-
-                <ul class="nav-bar-menu clearfix">
-                    <li>
-                    <!--  el logo se muestra como H1 solo en la cabecera de la home -->
-                        <h1><a id="home-nologged-inicio" class="active logo" href="#">
-                        	<img alt="InfoJobs" src="http://media.infojobs.net/appgrade/svgs/ij-logo_claim_primary.svg">
-                        </a></h1>
-                    </li>
-                    <li><a id="1" href="#">Empleo</a></li>
-                    <li><a id="2" href="#">Freelance</a></li>
-                    <li><a id="3" href="#">Executive</a></li>
-                    <li><a id="4" href="#">Consejos</a></li>
-                    <li><a id="5" href="#" title="Publica una oferta de empleo y encuentra tu candidato">Zona Empresas</a></li>
-                </ul>
-                <ul class="nav-bar-access">
-					<li><a title="Accede a tu área de candidato" class="btn-small btn-default" href="#">Accede <span id="userReconizedName"></span></a></li>
-					<li><a title="Tu CV en InfoJobs" class="btn-small btn-primary" href="#">Date de alta</a></li>
-				</ul>
-            </nav>
-        </header>
-        <!-- / Header sin submenu no logado -->
-    </div>
-
-    <div class="container-expanded"></div>
-
     <!-- Header logado -->
     <div class="panel-canvas border-bottom">
   		<header class="global-nav global-nav-logged">
@@ -99,22 +28,25 @@
               <div class="nav-bar-drop-down">
     		        <ul class="nav-bar-avatar clearfix">
                   <li>
-                    <a href="#" class="avatar">
+                    <a href="#" class="avatar js-menu-avatar">
                       <div class="child-avatar">
                         <div class="picture crop-circle">
                           <img class="crop-circle" src="https://media.infojobs.net/app/pictures/pic-view-cv-default-photo.png" alt="[nombre_candidato]">
                         </div>
-                        <span class="name truncate">Pedro</span>
+                        <span class="name truncate">Nombre Apellidos</span>
                       </div>
                     </a>
                   </li>
                 </ul>
-                <ul class="nav-bar-user">
-                  <li><a href="#">Ajustes</a></li>
-                  <li><a href="#">Ayuda</a></li>
-                  <li><a href="#">Consejos</a></li>
-                  <li><a href="#" class="logout">Cerrar sesión</a></li>
-                </ul>
+                <div class="nav-bar-drop-down-layer js-dropdown-layer">
+                    <ul class="nav-bar-user">
+                      <li><a href="#">Ajustes</a></li>
+                      <li><a href="#">Ayuda</a></li>
+                      <li><a href="#">Consejos</a></li>
+                      <li><a href="#" class="logout">Cerrar sesión</a></li>
+                    </ul>
+                </div>
+
               </div>
             </div>
   		    </nav>
@@ -125,8 +57,8 @@
 
  </div>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="../js/background-blur.js"></script>
 <script src="../js/jquery.menu.js"></script>
+<script src="../js/menu-avatar.js"></script>
 
 
 </body>

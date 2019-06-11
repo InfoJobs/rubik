@@ -194,7 +194,18 @@ Styleguide #{$sgi-helpers}
 }
 
 .border-rounded {
-  border-radius: $border-radius;
+
+	&-s {
+		border-radius: $border-radius-s;
+	}
+
+	&-m {
+		border-radius: $border-radius-m;
+	}
+
+	&-l {
+		border-radius: $border-radius-l;
+	}
 }
 
 .border-top-focus {
@@ -202,7 +213,6 @@ Styleguide #{$sgi-helpers}
 }
 
 .shadow {
-  border-radius: $border-radius;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
 }
 

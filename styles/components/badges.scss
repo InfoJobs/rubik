@@ -59,7 +59,7 @@ Styleguide #{$sgi-badges}
   @include badge;
   font-size: $xsmall-font-size;
   height: 14px;
-  border-radius: $border-radius;
+  border-radius: $border-radius-s;
   padding: 1px 5px;
 
   &[class*="iconfont-"]::before,
