@@ -7,23 +7,27 @@
 
     if (eClickItem !== null && 	window.innerWidth > eBpHeader) {
       [].forEach.call( eClickItem, function(target){
-        if (!eDivToggle.classList.contains('hide')) {
-          eDivToggle.classList.add('hide');
-        }
-
         target.onclick = toggleMenu;
       });
 
       document.querySelector('html').onclick = function() {
-        if (!eDivToggle.classList.contains('hide')) {
+        if (eDivToggle.classList.contains('open-menu')) {
           toggleMenu();
         }
       };
 
+      document.onkeydown = function(evt) {
+          evt = evt || window.event;
+          if (evt.keyCode == 27 && eDivToggle.classList.contains('open-menu')) {
+            toggleMenu();
+          }
+      };
+
       function toggleMenu() {
-        eDivToggle.classList.toggle('hide');
+        eDivToggle.classList.toggle('open-menu');
         event.stopPropagation();
       };
+
     }
   }
 

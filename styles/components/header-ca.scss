@@ -526,14 +526,6 @@
     position: relative;
     margin-top: 0;
 
-    .nav-bar-drop-down-layer {
-      overflow: visible;
-      position: absolute;
-      right: $gap * 2;
-      top: 72px;
-      width: 188px;
-    }
-
     .nav-bar-user {
       background-color: $shiro;
       border: 1px solid $light-silk;
@@ -571,6 +563,23 @@
     	}
     }
   }
+
+  .nav-bar-drop-down-layer {
+
+    @include mediaquery ($bp-header) {
+      display: none;
+      overflow: visible;
+      position: absolute;
+      right: $gap * 2;
+      top: 72px;
+      width: 188px;
+
+      &.open-menu {
+        display: block;
+      }
+    }
+  }
+
 }
 
 .wrap-overlay {
