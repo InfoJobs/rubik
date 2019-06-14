@@ -1,104 +1,61 @@
+
 .global-nav {
-	overflow: hidden;
-	background-color: $shiro;
-	background-repeat: no-repeat;
-	background-position: center center;
-	//bg logo es
-	background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo-default_primary.svg);
-	background-size: 98px;
+  background-color: $shiro;
+  background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo-default_primary.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 98px;
+  overflow: hidden;
 
-	@include mediaquery ($bp-header) {
-		background-image: none;
-		margin: 0 auto;
-		max-width: $container-extended-width;
+  @include mediaquery ($bp-header) {
+    background-image: none;
+    margin: 0 auto;
+    max-width: $container-extended-width;
 	}
 
-	h1 {
-		margin: 0;
-	}
+  h1 {
+    margin: 0;
+  }
 
-	.logo img {
-		display: none;
+  .logo img {
+    display: none;
+  }
 
-	}
+  &.global-nav-logged {
 
-	a:not([class*="btn"]) {
-		font-size: $large-font-size;
-		font-family: 'Proximanovabold';
-
-		@include mediaquery ($bp-header) {
-			font-size: $base-font-size;
-			font-family: 'Proximanova';
-		}
-	}
-
-	&.global-nav-submenu {
-    max-width: 100%;
-		a {
-			font-size: $medium-font-size;
-
-			@include mediaquery ($bp-header) {
-				font-size: $small-font-size;
-			}
-		}
-
-		.nav-bar-submenu a {
-			font-size: $large-font-size;
-
-			@include mediaquery ($bp-header) {
-				font-size: $base-font-size;
-			}
-		}
-
-		//ocultamos Inicio en movil cuando hay submenu
-		.logo {
-			display: none;
-
-			@include mediaquery ($bp-header) {
-				display: block;
-			}
-
-		}
-	}
-
-	.nav-bar-submenu a {
-		font-size: $base-font-size;
-	}
-
+    @include mediaquery ($bp-header) {
+      overflow: visible;
+    }
+  }
 }
 
 .global-nav-brand {
-	@at-root .global-nav#{&} {
-		height: 50px;
-		min-height: 50px;
-		background-color: $color-primary;
-		background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo-default_primary-white.svg);
+  @at-root .global-nav#{&} {
+    background-color: $color-primary;
+    background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo-default_primary-white.svg);
+    border: 0 none;
+    height: 50px;
+    min-height: 50px;
 
-		border: 0 none;
+    @include mediaquery ($bp-header) {
+      background-position: $gap * 2 center;
+    }
 
-		@include mediaquery ($bp-header) {
-			background-position: 20px center;
-		}
+    .logo,
+    .logo:hover {
+      border: 0 none;
+      color: $shiro;
+      display: block;
+      height: 50px;
+      margin: 0 auto;
+      padding: $gap $gap * 2;
+      width: 130px;
 
-		.logo,
-		.logo:hover {
-			display: block;
-			height: 50px;
-			width: 130px;
-			margin: 0 auto;
-			padding: $gap $gap * 2;
-			color: $shiro;
-			border: 0 none;
-
-			@include mediaquery ($bp-header) {
-
-				margin: 0;
-
-			}
-
-		}
-
-	}
+      @include mediaquery ($bp-header) {
+        margin: 0;
+      }
+    }
+  }
 }
 
 .global-nav-transparent {
@@ -124,185 +81,211 @@
         color: $day-blue;
       }
     }
-
   }
 }
 
-.nav-bar-user li a,
-.nav-bar-submenu li a {
-	padding: 15px $gap;
+.nav-bar-toggle {
+  display: block;
+  height: 50px;
+  margin: 0;
+  -webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
+  -webkit-tap-highlight-color: transparent; /* For some Androids */
+  width: 50px;
 
-	@include mediaquery ($bp-header) {
-		padding: 15px;
-	}
-}
-
-.nav-bar-submenu li:first-child a {
-	padding-top: $gap * 2;
-
-	@include mediaquery ($bp-header) {
-		padding: 0;
-	}
-}
-
-.nav-bar-user li:first-child a.avatar {
-	padding-top: $gap * 3;
-
-	@include mediaquery ($bp-header) {
-		padding: 0;
-	}
-}
-
-.nav-bar-submenu li:first-child {
-	a {
-		@include mediaquery ($bp-header) {
-			padding: 15px $gap 15px $gap * 2;
-		}
-	}
-}
-
-.nav-bar-submenu li:last-child {
-	a {
-		padding-bottom: $gap * 2;
-
-		@include mediaquery ($bp-header) {
-			padding-bottom: 15px;
-		}
-	}
-}
-
-.nav-bar-user li:last-child {
-	padding-left: $gap;
-	padding-right: $gap;
-	background: $dark-shiro;
-
-	@include mediaquery ($bp-header) {
-		padding: 0;
-		background: $shiro;
+  &::before {
+    color: $day-blue;
+    font-size: $xlarge-font-size;
+    left: $gap;
+    position: relative;
+    top: 25px;
 	}
 
-	a {
-		padding-right: 0;
-		padding-bottom: 15px;
-		padding-left: 0;
-		border-top: 1px solid $darkest-shiro;
+  &:hover {
+    color: $dark-shiro;
+  }
 
-		@include mediaquery ($bp-header) {
-			padding-bottom: 0;
-			border-top: 0;
-		}
-	}
-}
+  span {
+    display: none;
+  }
 
-a.nav-bar-toggle {
-	display: block;
-	margin: 0;
-	width: 50px;
-	height: 50px;
-	-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
-	-webkit-tap-highlight-color: transparent; /* For some Androids */
-
-	&::before {
-		position: relative;
-		top: 25px;
-		left: 10px;
-		color: $day-blue;
-		font-size: $xlarge-font-size;
-	}
-
-	&:hover {
-		color: $dark-shiro;
-	}
-
-	span {
-		display: none;
-	}
-
-	@include mediaquery ($bp-header) {
-		display: none;
-	}
+  @include mediaquery ($bp-header) {
+    display: none;
+  }
 
 }
 
 .nav-mobile {
-	@include display-flex;
-	@include flex-flow(column nowrap);
-	position: absolute;
-	top: 0;
-	left: -100%;
-	height: 100%;
-	max-height: 100vh;
+  @include display-flex;
+  @include flex-flow(column nowrap);
+  background: $shiro;
+  height: 100%;
+  left: -100%;
+  max-height: 100vh;
+  overflow: hidden;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s ease;
 	width: 260px;
-	background:$shiro;
-    overflow: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-
-	z-index: $zindex-menu;
+  -webkit-overflow-scrolling: touch;
 	-webkit-transition: all 0.3s ease;
-			transition: all 0.3s ease;
+  z-index: $zindex-menu;
 
 	@include mediaquery ($bp-header) {
-		display: block;// en desktop quitamos el flexbox por compatibilidad con android 4.3
-        -webkit-transition: none 0s ease 0s;
-		        transition: none 0s ease 0s;
-		position: static;
+    display: block;// en desktop quitamos el flexbox por compatibilidad con android 4.3
 		height: auto;
-		width: auto;
-		overflow: hidden;
+		position: static;
+    transition: none 0s ease 0s;
+    overflow: hidden;
+    -webkit-transition: none 0s ease 0s;
+    width: auto;
 
+    .global-nav-logged & {
+      overflow: visible;
+    }
 	}
 
-	.global-nav-company & {
-		padding-top: 80px;
+  .global-nav-company & {
+    padding-top: 80px;
 
-		@include mediaquery ($bp-header) {
-			padding-top: 0;
-		}
-	}
+    @include mediaquery ($bp-header) {
+      padding-top: 0;
+    }
+  }
+}
 
+.nav-bar-menu,
+.nav-bar-user {
+
+  > li a {
+    display: block;
+    margin: 0;
+    padding: 17px $gap 13px;
+    position: relative;
+    -webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
+    -webkit-tap-highlight-color: transparent; /* For some Androids */
+
+    @include mediaquery ($bp-header) {
+      padding: 30px 14px;
+    }
+
+    &:hover {
+      color: $dark-silk;
+
+      @include mediaquery ($bp-header) {
+        color: $day-blue;
+      }
+    }
+
+    &:active {
+      color: $day-blue;
+    }
+  }
+
+  .active {
+    color: $day-blue;
+  }
+}
+
+.nav-bar-user {
+
+  > li {
+    padding-left: $gap;
+    padding-right: $gap;
+  }
+
+  > li a {
+    border-radius: $border-radius-m;
+    color: $mid-script;
+    font-family: $base-font-family;
+    font-size: $large-font-size;
+
+    &:active {
+      background-color: tint($day-blue , 90%);
+    }
+
+    @include mediaquery ($bp-header) {
+      font-size: $base-font-size;
+      padding-top: 8px;
+      padding-bottom: 8px;
+
+      &:active {
+        background-color: transparent;
+      }
+
+      &:hover {
+        background-color: tint($day-blue , 90%);
+      }
+
+    }
+
+  }
 }
 
 .nav-bar-menu {
-	@include flex(1 1 auto);
-	@include order(1);
-	overflow: auto;
+  @include flex(1 1 auto);
+  overflow: auto;
 
-	> li {
-		float: none;
+  > li {
+    float: none;
 
-		@include mediaquery ($bp-header) {
-			float: left;
-		}
+    .global-nav-logged & {
+      padding-left: $gap;
+      padding-right: $gap;
 
-		&  a {
-			display:block;
-			position: relative;
-			padding: 17px $gap 13px $gap;
-			margin: 0;
-			color: $dark-silk;
-			-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
-			-webkit-tap-highlight-color: transparent; /* For some Androids */
+      @include mediaquery ($bp-header) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
 
-			@include mediaquery ($bp-header) {
-				padding: $gap * 3 14px;
-				color: $mid-script;
-			}
-		}
-
-		&  a:hover {
-			color: $dark-silk;
-
-			@include mediaquery ($bp-header) {
-				color: $day-blue;
-			}
-
-		}
-
-		&  a:active {
-			color: $day-blue;
-		}
+    @include mediaquery ($bp-header) {
+      float: left;
+    }
 	}
+
+  > li a {
+    color: $dark-silk;
+    font-family: 'Proximanovabold';
+    font-size: $large-font-size;
+
+    @include mediaquery ($bp-header) {
+      color: $mid-script;
+      font-family: 'Proximanova';
+      font-size: $base-font-size;
+    }
+
+    &.active {
+      color: $day-blue;
+    }
+
+    .global-nav-logged & {
+      border-radius: $border-radius-m;
+      color: $mid-script;
+      font-family: $base-font-family;
+
+      &:hover {
+        color: $day-blue;
+      }
+
+      &:active {
+        background-color: tint($day-blue , 90%);
+        color: $day-blue;
+
+        @include mediaquery ($bp-header) {
+          background-color: transparent;
+        }
+      }
+
+      &.active {
+        color: $day-blue;
+      }
+
+      @include mediaquery ($bp-header) {
+        color: $outer-wall;
+      }
+    }
+  }
 
 	.logo,
 	.logo:hover {
@@ -322,99 +305,33 @@ a.nav-bar-toggle {
 		}
 	}
 
-	.global-nav-submenu & {
-		background: $dark-shiro;
-		@include order(2);
-		@include flex(0 0 auto);
-		overflow: visible;
-	}
-
-	.global-nav-submenu & .logo,
-	.global-nav-submenu & .logo:hover {
-
-		@include mediaquery ($bp-header) {
-			padding: 0;
-			margin: 10px 0 0 0;
-			height: 19px;
-			width: 77px;
-			background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo-default_primary.svg);
-
-		}
-	}
-
 	@include mediaquery ($bp-header) {
-
 		float: left;
 		overflow: visible;
 		padding: 0 $gap * 2;
-
-		.global-nav-submenu & > li > a {
-			padding: $gap 15px;
-		}
-
-		.global-nav-submenu & {
-			background: $shiro;
-		}
 	}
 
-}
+  .global-nav-logged & {
+    padding-top: 145px;
+    margin-top: $gap * 2;
 
-.global-nav-logged.global-nav-submenu {
-
-  .nav-bar-wrapper {
-    @include flex(0 0 auto);
-    @include order(2);
-    overflow: visible;
-
-    @include mediaquery ($bp-header) {
-      max-width: $container-extended-width;
-      margin: 0 auto;
-    }
-
-    &-submenu {
-      padding-top: 145px;
+    .logo {
+      display: none;
 
       @include mediaquery ($bp-header) {
-        padding-top: 0;
+        background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo_reduced.svg);
+        display: block;
+        height: 40px;
+        margin-right: 18px;
+        width: 40px;
       }
-
     }
-}
 
-	.nav-bar-menu {
-		background: $dark-shiro;
-		border-top: 1px solid $darkest-shiro;
-
-		@include mediaquery ($bp-header) {
-			background: $shiro;
-			border-top: 0;
-		}
-
-		li {
-			border-bottom: 1px solid $darkest-shiro;
-
-			&:first-child,
-			&:last-child {
-				border: 0;
-			}
-
-			@include mediaquery ($bp-header) {
-				border-bottom: 0;
-
-				& > a {
-					color: $soft-script;
-					-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
-					-webkit-tap-highlight-color: transparent; /* For some Androids */
-
-					&:hover {
-						color: $day-blue;
-					}
-				}
-			}
-		}
-
-	}
-
+    @include mediaquery ($bp-header) {
+      padding-top: 0;
+      margin-top: 0;
+    }
+  }
 }
 
 .nav-bar-wrapper {
@@ -430,7 +347,14 @@ a.nav-bar-toggle {
     		        box-orient: block-axis;
     		//
   }
+
   @include mediaquery ($bp-header) {
+    display: block;
+    height: auto;
+    max-height: none;
+  }
+
+  .global-nav-logged & {
     display: block;
     height: auto;
     max-height: none;
@@ -438,7 +362,7 @@ a.nav-bar-toggle {
 }
 
 .nav-bar-access,
-.nav-bar-user {
+.nav-bar-avatar {
 	@include display-flex;
 	@include align-items(center);
 
@@ -450,12 +374,11 @@ a.nav-bar-toggle {
 
 .nav-bar-access {
 	padding: $gap;
-	@include order(2);
 	border-top: 1px solid $darkest-shiro;
 
 	@include mediaquery ($bp-header) {
-		padding: 25.5px $gap * 2;
-		border-top: 0;
+    border-top: 0;
+    padding: 25.5px $gap * 2;
 	}
 
 	li {
@@ -480,48 +403,12 @@ a.nav-bar-toggle {
 	}
 }
 
-.nav-bar-user {
-	@include order(3);
-	@include flex(0 0 auto);
+.nav-bar-avatar {
+  li {
 
-	@include mediaquery ($bp-header) {
-		padding: 3.5px $gap * 2;
-	}
-
-	li {
-		@include flex(1 0 auto);
-
-		@include mediaquery ($bp-header) {
+    @include mediaquery ($bp-header) {
+      padding-right: $gap * 3;
 			position: relative;
-
-			&:first-child {
-				margin-right: 15px;
-			}
-
-			&:first-child::after {
-				content: "|";
-				position: absolute;
-				right: -5px;
-				top: calc(45% - 0.5em);
-				color: $darkest-shiro;
-			}
-		}
-	}
-
-	.logout {
-		display: block;
-		padding: 15px $gap;
-		color: $soft-script;
-		background-color: $dark-shiro;
-
-		&:hover {
-			color: $day-blue;
-		}
-
-		@include mediaquery ($bp-header) {
-			display: inline;
-			padding: 0;
-			background-color: $shiro;
 		}
 	}
 
@@ -537,7 +424,7 @@ a.nav-bar-toggle {
 	.global-nav-company & {
 
 		@include mediaquery ($bp-header) {
-			padding: $gap * 3 $gap * 2 $gap * 3 0;
+			padding: 30px $gap * 2 30px 0;
 		}
 
 		.avatar {
@@ -550,181 +437,148 @@ a.nav-bar-toggle {
 	}
 
 	.avatar {
+    background: $shiro;
+    height: 145px;
+    left: 0;
 		position: absolute;
-		left: 0;
-	    top: 0;
-		padding: $gap * 3 $gap * 2;
-	    width: 100%;
-		height: 145px;
-		text-align: center;
-		color: $shiro;
-		background: $dark-silk;
+    text-align: center;
+    top: 0;
+    width: 100%;
 
 		@include mediaquery ($bp-header) {
+      background: transparent;
+      display: block;
+      height: auto;
+      text-align: left;
+      padding: 0;
 			position: relative;
-			padding: 0;
-			width: auto;
-			height: auto;
-			text-align: left;
-			color: $soft-script;
-			background: none;
 			white-space: nowrap;
-		}
-
-		&:hover {
-			color: $shiro;
-
-			@include mediaquery ($bp-header) {
-				color:$day-blue;
-			}
+      width: auto;
 
 		}
 
 		.name {
+      @include bold;
+      display: block;
+      color: $dark-silk;
+      font-size: $large-font-size;
+      padding-top: $gap * 2;
+      max-width: 100%;
 			white-space: nowrap;
-			max-width: 100%;
 
 			@include mediaquery ($bp-header) {
-				display: table-cell;
-				vertical-align: middle;
-				max-width: 180px;
-				padding-right: $gap;
-				padding-left: 7px;
+				display: none;
 			}
 		}
 
 		.picture {
-      border: 3px solid $shiro;
-      height: 60px;
-      margin: 0 auto $gap auto;
+      height: 56px;
+      margin: 0 auto;
       overflow: hidden;
-      width: 60px;
+      width: 56px;
 
 			img {
-				width: 57px;
-				height: 57px;
-			    object-fit: cover;
-			    object-position: 0 center;
-			    vertical-align: middle;
+				height: 56px;
+        object-fit: cover;
+        object-position: 0 center;
+        vertical-align: middle;
+        width: 56px;
 
 				@include mediaquery ($bp-header) {
-					width: 27px;
-					height: 27px;
+					height: 40px;
+          width: 40px;
 				}
 			}
 
 			@include mediaquery ($bp-header) {
 				display: table-cell;
-				width: 33px;
-				height: 33px;
+				width: 40px;
+				height: 40px;
 				margin: 0;
 
 			}
 		}
 
 		.child-avatar {
+      border-bottom: 1px solid $darkest-shiro;
+      padding: $gap * 4 $gap $gap * 2;
 			position: absolute;
 			left: 0;
 			right: 0;
-			padding: 0 $gap;
 
 			@include mediaquery ($bp-header) {
+        border-bottom: 0;
 				display: table;
 				position: static;
 				padding: 0;
 			}
 
 		}
-
-		.bg-blur {
-			display: block;
-		    position: absolute;
-		    left: 0;
-		    top: 0;
-		    height: 100%;
-		    width: 100%;
-		   background-size: 100%;
-		   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(46%, rgba(0, 0, 0, 0.08)), color-stop(59%, rgba(0, 0, 0, 0.08)), color-stop(100%, rgba(0, 0, 0, 0.9)));
-		   background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.08) 59%, rgba(0, 0, 0, 0.9) 100%);
-		   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.08) 59%, rgba(0, 0, 0, 0.9) 100%);
-		   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.08) 59%, rgba(0, 0, 0, 0.9) 100%);
-
-			@include mediaquery ($bp-header) {
-				display: none;
-			}
-
-		}
 	}
 }
 
-.nav-bar-submenu {
-	background: $shiro;
-	@include order(1);
+.nav-bar-drop-down {
+  border-top: 1px solid $darkest-shiro;
+  padding-top: $gap * 2;
+  margin-top: $gap * 2;
 
   @include mediaquery ($bp-header) {
-    clear: both;
-    padding-top:0;
-    background: $darkest-shiro;
-    margin: 0 auto;
-    max-width: $container-extended-width;
-  }
-
-	> li  {
-		@include mediaquery ($bp-header) {
-			float: left;
-			position: relative; // for position of sticker
-		}
-
-		& > a {
-			display: block;
-			color: $dark-silk;
-			-webkit-tap-highlight-color: rgba(227, 245, 253, 0.5); // Not visualized
-			-webkit-tap-highlight-color: transparent; /* For some Androids */
-
-			&:hover {
-				color: $dark-silk;
-
-				@include mediaquery ($bp-header) {
-					color: $day-blue;
-				}
-			}
-
-			&:active {
-				color: $day-blue;
-			}
-		}
-	}
-
-	.active {
-		color: $day-blue;
-	}
-
-  [class*="badge"] {
     position: relative;
-    top: -2px;
+    margin-top: 0;
 
-    @include mediaquery ($bp-header) {
-      position: absolute;
-      top: 5px;
-      right: 15px;
+    .nav-bar-user {
+      background-color: $shiro;
+      border: 1px solid $light-silk;
+      border-radius: $border-radius-m;
+      box-shadow: 0 0 4px $light-silk;
+      padding: $gap * 2 $gap;
+      position: relative;
+      text-align: left;
+      z-index: $zindex-modal-layer;
+
+      &:before {
+        border-bottom: 12px solid $light-silk;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        bottom: 100%;
+        content:"";
+        height: 0;
+        right: 17px;
+        margin-left: -12px;
+        position: absolute;
+        width: 0;
+      }
+
+      &:after {
+        bottom: 100%;
+        border-bottom: 10px solid $shiro;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+        content:"";
+        position: absolute;
+        height: 0;
+        right: 19px;
+        margin-left: -$gap;
+        width: 0;
+    	}
     }
   }
 
-  .badge-count {
-    position: relative;
-    top: -2px;
+  .nav-bar-drop-down-layer {
 
     @include mediaquery ($bp-header) {
+      display: none;
+      overflow: visible;
       position: absolute;
-      top: 10px;
-      right: -7px;
+      right: $gap * 2;
+      top: 72px;
+      width: 188px;
+
+      &.open-menu {
+        display: block;
+      }
     }
   }
-
-	.global-nav-submenu & {
-		@include flex(0 0 auto);
-
-	}
 
 }
 
@@ -748,9 +602,9 @@ a.nav-bar-toggle {
 
 .wrap-transition .open-menu:nth-of-type(1) {
 	left: 0;
-    -webkit-box-shadow: 6px 0 6px 0 rgba(0,0,0,0.4);
-      -moz-box-shadow: 6px 0 6px 0 rgba(0,0,0,0.4);
-	       box-shadow: 6px 0 6px 0 rgba(0,0,0,0.4);
+    -webkit-box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.4);
+      -moz-box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.4);
+	       box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.4);
 }
 
 .wrap-transition::before {
@@ -771,11 +625,10 @@ a.nav-bar-toggle {
 //print header
 
 @media print {
-
-	.global-nav {
+  .global-nav {
 		overflow: visible;
 		padding: 0;
-		margin: 0 0 $gap * 2 0;
+		margin: 0 0 $gap * 2;
 		background: none;
 		border: 0 none;
 
@@ -787,24 +640,20 @@ a.nav-bar-toggle {
 			position: static;
 
 		}
-		.nav-bar-menu,
-		&.global-nav-submenu .nav-bar-menu {
+		.nav-bar-menu {
 			border: 0 none;
 		}
 
-		.nav-bar-user,
-		&.global-nav-logged .nav-bar-user,
+		.nav-bar-avatar,
+		&.global-nav-logged .nav-bar-avatar,
 		.nav-bar-access,
-		.nav-bar-submenu,
 		.nav-bar-menu li span,
-		.nav-bar-menu li + li,
-    .nav-bar-submenu {
+		.nav-bar-menu li + li {
 
 			display: none;
 		}
 
 		.nav-bar-menu .logo,
-		&.global-nav-submenu .logo,
 		&.global-nav-brand .logo {
 			height: auto;
 			width: auto;
@@ -817,7 +666,5 @@ a.nav-bar-toggle {
 			display: block;
 			width: 138px;
 		}
-
-
 	}
 }
