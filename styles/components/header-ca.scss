@@ -528,16 +528,18 @@
 
     .nav-bar-user {
       background-color: $shiro;
-      border: 1px solid $light-silk;
+      border: 1px solid $dark-shiro;
       border-radius: $border-radius-m;
-      box-shadow: 0 0 4px $light-silk;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.04),
+      0 1px 16px 0 rgba(0, 0, 0, 0.16),
+      0 2px 4px 0 rgba(0, 0, 0, 0.08);
       padding: $gap * 2 $gap;
       position: relative;
       text-align: left;
       z-index: $zindex-modal-layer;
 
       &:before {
-        border-bottom: 12px solid $light-silk;
+        border-bottom: 12px solid $dark-shiro;
         border-left: 12px solid transparent;
         border-right: 12px solid transparent;
         bottom: 100%;
