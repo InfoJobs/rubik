@@ -62,7 +62,8 @@ Styleguide #{$sgi-thumbnail}
 .fig-thumbnail-logo {
 	background: $shiro;
 	border: 1px solid $dark-shiro;
-  display: inline-block;
+	display: inline-block;
+	overflow: hidden;
 
 	&:not(.crop-circle) {
 		border-radius: $border-radius-l;
