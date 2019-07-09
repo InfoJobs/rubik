@@ -39,7 +39,6 @@ Styleguide #{$sgi-thumbnail}
 
 	img {
 		display:block;
-		// width: 82px;
 	}
 }
 
@@ -55,16 +54,20 @@ Styleguide #{$sgi-thumbnail}
 }
 
 .fig-thumbnail-details {
-	color:$bamboo;
+	color:$shiro;
 	font-size: $xsmall-font-size;
 	margin-bottom: 0;
 }
 
 .fig-thumbnail-logo {
-  display: inline-block;
-	border: 1px solid $darkest-shiro;
 	background: $shiro;
-	padding: 3px;
+	border: 1px solid $dark-shiro;
+	display: inline-block;
+	overflow: hidden;
+
+	&:not(.crop-circle) {
+		border-radius: $border-radius-l;
+	}
 
 	.fig-thumbnail-caption {
 		display: none;
@@ -80,7 +83,7 @@ Styleguide #{$sgi-thumbnail}
 
 .fig-thumbnail-caption {
 	background: $dark-silk;
-	opacity: .9;
+	opacity: .95;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -88,99 +91,82 @@ Styleguide #{$sgi-thumbnail}
 }
 
 .fig-logos-home {
+	border-radius: $border-radius-l;
 	position: relative;
-	border: 1px solid $darkest-shiro;
-	height: 190px;
+	border: 1px solid $dark-shiro;
 	overflow: hidden;
 	cursor: pointer;
 
 	.brand {
 		position: relative;
-		top: -50px;
-		transition: all 500ms ease 0s;
 		width: 100%;
-		background: $dark-shiro;
 
-		&::before {
-			display: block;
-			content: '';
-			background-color: rgba(40, 110, 143, .8);
-			height: 100%;
-			position: absolute;
+		img {
+			object-fit: contain;
 			width: 100%;
-			top: 0;
-			left: 0;
-			z-index: 1;
 		}
 	}
 
-	figcaption {
-		padding: 10px;
-	}
-
 	.logo {
-		position: absolute;
-		top: -37px;
-		right: 10px;
-		width: 70px;
-		height: 70px;
-		padding: 4px;
-		border: 1px solid $darkest-shiro;
-		background: $darkest-shiro;
+		@include display-flex;
+		padding: $gap;
+		background-color: $dark-shiro;
 
 		img {
-			width: 100%;
+			border-radius: $border-radius-l;
+			width: 40px;
+			height: 40px;
 		}
 	}
 
 	&--caption {
+		border-radius: $border-radius-l;
 		position: absolute;
-		top: 55px;
-		bottom: 0;
-		width: 100%;
-		height: 100%;
+		bottom: $gap;
+		left: $gap;
+		right: $gap;
+		width: calc(100% - #{$gap*2});
 		z-index: 2;
-		border-top: 2px solid $color-primary;
-		background-color: $dark-shiro;
 		transition: all 500ms ease 0s;
+		opacity: 0.95;
+		overflow: hidden;
 
     .title {
-      @include bold;
-			height: 20px;
-			overflow: hidden;
-			margin: 0 80px 0 0;
-			font-size: 16px;
-			line-height: 18px;
-			white-space: nowrap;
-			color: $dark-silk;
-			transition: all 300ms ease 0s;
-		}
+      	@include bold;
+		height: 20px;
+		overflow: hidden;
+		font-size: 16px;
+		line-height: 18px;
+		white-space: nowrap;
+		color: $dark-silk;
+		transition: all 300ms ease 0s;
+	}
 
-		.details {
-			color: $color-primary;
-			margin-bottom: 10px;
-		}
+	.details {
+		color: $color-primary;
+		margin-bottom: $gap;
+	}
+
+	figcaption {
+		padding: $gap $gap $gap $gap;
+		background-color: $dark-shiro;
 
 		.description {
 			opacity: 1;
 			transition: all 800ms ease 0s;
 			color: $dark-silk;
 		}
+	}
 
 	}
-	@include mediaquery ($bp-tablet) {
-		height: 225px;
 
-	}
 
 	@include mediaquery ($bp-desktop) {
-
-		height: auto;
+		width: 100%;
 
 		&::after {
 			content:"";
 			display: block;
-			height: 58px;
 		}
 
 		.brand {
@@ -195,88 +181,34 @@ Styleguide #{$sgi-thumbnail}
 
 			img {
 				display: block;
-			    height: 179px;
 			    object-fit: contain;
-			    width: 294px;
+			    width: 100%;
 			}
 		}
 
 		&--caption {
 			top: auto;
-			bottom: -133px;
-			height: 192px;
+			bottom: $gap*2;
+			max-height: 60px;
+			overflow: hidden;
+			background: $dark-shiro;
+			left: $gap*2;
+			right: $gap*2;
+			width: calc(100% - #{$gap*4});
+
 
 			.description {
-				opacity: 0;
+				padding: 0 $gap/2 $gap  $gap;
 			}
 		}
 
 		&:hover {
-			position: relative;
-
-			.brand {
-				top: -50px;
-				transition: all 300ms ease 0s;
-
-				&::before {
-					display: block;
-					content: '';
-					background-color: rgba(40, 110, 143, .8);
-					height: 100%;
-					position: absolute;
-					transition: all 400ms ease 0s;
-					width: 100%;
-					top: 0;
-					left: 0;
-					z-index: 1;
-				}
-
-			}
-
 			.fig-logos-home--caption {
-				bottom: 0;
-				transition: all 250ms ease 0s;
-			}
+				max-height: 230px;
 
-			.logo {
-				top: -35px;
-				transition: all 300ms ease 0s;
-			}
-
-			.title {
-				transition: all 300ms ease 0s;
-			}
-
-			.description {
-				opacity: 1;
-				transition: all 400ms ease 0s, opacity 800ms ease 0s;
 			}
 		}
 	}
 
 
-}
-
-@include mediaquery ($bp-desktop) {
-	.fig-thumbnail-logo .fig-thumbnail-caption {
-		display: block;
-		text-align: center;
-	}
-
-	.fig-thumbnail-logo .fig-thumbnail-caption p {
-		padding: 4px;
-	}
-}
-
-@media only screen and (max-width: $tablet-start) {
-	.fig-thumbnail-description  {
-		display: none;
-	}
-
-}
-
-@media only screen and (max-width: $mobile-start) {
-	.fig-thumbnail {
-		max-height: none;
-	}
 }
