@@ -124,7 +124,7 @@ input[type="button"],
 input[type="submit"],
 select {
   -webkit-appearance: none;
-  border-radius: 0;
+	border-radius: $border-radius-m;
 }
 
 input {
@@ -143,10 +143,10 @@ input {
 
 input,
 textarea {
-	@include form-field;
+	border: 1px solid $light-silk;
+	border-radius: $border-radius-m;
 	color: $dark-silk;
 	margin: 0;
-	border: 1px solid $light-silk;
 
 	.error & {
 		border-color: $trueblood;
@@ -209,8 +209,9 @@ textarea {
 	}
 
 	&-date {
-	    width: auto;
-			border: 1px solid $light-silk;
+		width: auto;
+		border: 1px solid $light-silk;
+		border-radius: $border-radius-m;
 
 		> div {
       		position: relative;
