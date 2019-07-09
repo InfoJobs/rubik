@@ -81,8 +81,12 @@ Styleguide #{$sgi-panels}
 		@include panel-opacity( $theme-color-focus, 10);
 		@include panel-opacity( $theme-color-focus, 70);
 
-		&--light {
-			background-color: tint($day-blue , 80%);
+		&--light-80 {
+			background-color: tint($theme-color-focus , 80%);
+		}
+
+		&--light-30 {
+			background-color: tint($theme-color-focus , 30%);
 		}
 	}
 

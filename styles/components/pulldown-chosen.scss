@@ -12,6 +12,7 @@ Styleguide 2.16
 
 /* @group Base */
 .chosen-container {
+  border-radius: $border-radius-m;
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -189,7 +190,6 @@ Styleguide 2.16
 	overflow-x: hidden;
 
 	li {
-		//@include truncate;
 		display: list-item;
 		cursor: pointer;
 
@@ -208,14 +208,7 @@ Styleguide 2.16
 }
 
 .autocomplete-multivalue {
-	border: 1px solid $katana-slash;
 
-	&.autocomplete-multivalue-focus {
-		border: 1px solid $theme-color-primary;
-	}
-	.ui-autocomplete-input {
-		border: 0 none;
-	}
 	ul {
 		margin: 10px;
 	}
