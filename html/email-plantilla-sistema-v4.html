@@ -18,8 +18,8 @@
 		}
 
 		body {
-      -webkit-font-smoothing: antialiased !important;
-      -moz-osx-font-smoothing: grayscale !important;
+      		-webkit-font-smoothing: antialiased !important;
+      		-moz-osx-font-smoothing: grayscale !important;
 			-webkit-text-size-adjust: none !important;
 			height: 100% !important;
 			background-color: #f5f5f5 !important;
@@ -42,43 +42,48 @@
 			left: 0;
 		}
 
-		@media screen and (max-width: 630px) {
+		@media screen and (min-width: 631px) {
 			.logo,
 			.content {
-				padding-left: 24px !important;
-				padding-right: 24px !important;
-      }
+				padding-left: 80px !important;
+				padding-right: 80px !important;
+      		}
 
-      .legal {
-        padding: 0 24px;
-        width: 100% !important;
+			.legal {
+				padding: 0 !important;
+				width: 440px !important;
 			}
 
 			.content-card {
-				padding-left: 8px !important;
-				padding-right: 8px !important;
+				padding-left: 24px !important;
+				padding-right: 24px !important;
 			}
 
 			.card {
-				font-size: 14px !important;
-				padding-left: 16px !important;
-				padding-right: 16px !important;
-				border-top-right-radius:4px;
-				border-bottom-right-radius:4px;
+				font-size: 16px !important;
+				padding-left: 56px !important;
+				padding-right: 56px !important;
+				border-top-right-radius: 0 !important;
+				border-bottom-right-radius: 0 !important;
 			}
 
 			.title {
-				font-size: 24px !important;
-				line-height: 1.33!important;
+				font-size:28px !important;
+				line-height:1.14 !important;
 			}
 
 			.text {
-				font-size: 14px !important;
-				line-height: 1.29!important;
+				font-size: 16px !important;
+				line-height: 1.25!important;
 			}
 
-			.hide-mobile {
-				display: none !important;
+			.subtext {
+				font-size: 12px !important;
+				line-height: 1.17 !important;
+			}
+
+			.show-desktop {
+				display: revert !important;
 			}
 
     }
@@ -110,7 +115,7 @@
 								<table width="100%" border="0" cellspacing="0" cellpadding="0">
 									<tbody>
 										<tr>
-											<td class="logo" style="padding: 32px 0 40px 80px;">
+											<td class="logo" style="padding: 32px 0 40px 24px;">
 												<a href="http://www.infojobs.net" title="InfoJobs" target="_blank" style="display: block;">
 													<img src="http://media.infojobs.net/appgrade/emails/ij-logo-claim-primary-reduced.png" alt="InfoJobs" style="width:40px;">
 												</a>
@@ -129,13 +134,13 @@
 
 									<!--your content starts here -->
 							<tr>
-								<td class="content" style="padding: 0 80px;">
+								<td class="content" style="padding: 0 24px;">
 									<table width="100%" cellspacing="0" cellpadding="0" border="0">
 										<tbody>
 
 											<!-- title -->
 											<tr>
-												<td class="title" style="font-family:Helvetica,sans-serif;font-size:28px;color:#167db7;line-height:1.14; font-weight: 300;">
+												<td class="title" style="font-family:Helvetica,sans-serif;font-size:24px;color:#167db7;line-height:1.33; font-weight: 300;">
 													Titular de primer nivel
 												</td>
 											</tr>
@@ -157,7 +162,7 @@
 																</td>
 															</tr>
 															<tr>
-																<td class="text" style="padding-top: 4px; font-family:Helvetica,sans-serif;font-size:12px;color:#999999;line-height:1.17; ">
+																<td class="subtext" style="padding-top: 4px; font-family:Helvetica,sans-serif;font-size:14px;color:#999999;line-height:1.29; ">
 																	HR en Global Talent Managers
 																</td>
 															</tr>
@@ -175,7 +180,7 @@
 
 											<!-- text -->
 											<tr>
-												<td class="text" style="font-family:Helvetica,sans-serif;font-size:16px;color:#2d3133;line-height:1.25;">
+												<td class="text" style="font-family:Helvetica,sans-serif;font-size:14px;color:#2d3133;line-height:1.29;">
 														Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pharetra neque eget lectus porta, ac euismod odio lobortis. Sed quis auctor tellus. Donec in libero nec massa varius luctus. Quisque quis lorem ligula. Suspendisse ultrice.
 												</td>
 											</tr>
@@ -185,7 +190,7 @@
 											</tr>
 											<!-- /margin -->
 											<tr>
-												<td class="text" style="font-family:Helvetica,sans-serif;font-size:16px;color:#2d3133;line-height:1.25; font-weight: bold;">
+												<td class="text" style="font-family:Helvetica,sans-serif;font-size:14px;color:#2d3133;line-height:1.29; font-weight: bold;">
 													name@infojobs.net
 												</td>
 											</tr>
@@ -232,7 +237,7 @@
 																	</td>
 																</tr>
 																<tr>
-																	<td class="text" style="padding-top: 9px; padding-bottom:22px; padding-left:14px; padding-right: 22px; font-family:Helvetica,sans-serif;font-size:16px;color:#2d3133;line-height:1.25; ">
+																	<td class="text" style="padding-top: 9px; padding-bottom:22px; padding-left:14px; padding-right: 22px; font-family:Helvetica,sans-serif;font-size:14px;color:#2d3133;line-height:1.29; ">
 																			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pharetra neque eget lectus porta, ac euismod odio lobortis. Sed quis auctor tellus.
 																	</td>
 																</tr>
@@ -374,11 +379,11 @@
 
 							<!-- color block text -->
 							<tr>
-								<td class="content-card" style="padding: 0 24px;">
+								<td class="content-card" style="padding: 0 8px;">
 									<table width="100%" cellspacing="0" cellpadding="0" border="0" style="height: 100%;">
 										<tbody>
 											<tr>
-												<td class="card" style="font-family:Helvetica,sans-serif;font-size:16px;color:#0c5077;background-color: #c0d8e8; padding: 40px 56px 0 56px; border-top-left-radius:4px;border-bottom-left-radius:4px; vertical-align: top;">
+												<td class="card" style="font-family:Helvetica,sans-serif;font-size:14px;color:#0c5077;background-color: #c0d8e8; padding: 40px 16px 0 16px; border-top-left-radius:4px;border-bottom-left-radius:4px; vertical-align: top; border-top-right-radius:4px; border-bottom-right-radius:4px;">
 													<table width="100%" cellspacing="0" cellpadding="0" border="0">
 														<tbody>
 															<tr>
@@ -400,7 +405,7 @@
 														</tbody>
 													</table>
 												</td>
-												<td class="hide-mobile" style="width:155px;background-color:#c0d8e8; vertical-align: top; height: 100%; border-top-right-radius: 4px; border-bottom-right-radius: 4px;">
+												<td class="show-desktop" style="display: none; width:155px;background-color:#c0d8e8; vertical-align: top; height: 100%; border-top-right-radius: 4px; border-bottom-right-radius: 4px;">
 													<table width="100%" cellspacing="0" cellpadding="0" border="0" style="height: 100%;">
 														<tbody>
 															<tr>
@@ -427,11 +432,11 @@
 
 							<!-- highlight color block text -->
 							<tr>
-								<td class="content-card" style="padding: 0 24px;">
+								<td class="content-card" style="padding: 0 8px;">
 									<table width="100%" cellspacing="0" cellpadding="0" border="0" style="height: 100%;">
 										<tbody>
 											<tr>
-												<td class="card" style="font-family:Helvetica,sans-serif;font-size:16px;color:#0c5077;background-color: #ffea95; padding: 40px 56px 0 56px; border-top-left-radius:4px;border-bottom-left-radius:4px; vertical-align: top;">
+												<td class="card" style="font-family:Helvetica,sans-serif;font-size:14px;color:#0c5077;background-color: #ffea95; padding: 40px 16px 0 16px; border-top-left-radius:4px;border-bottom-left-radius:4px; vertical-align: top;border-top-right-radius:4px; border-bottom-right-radius:4px;">
 													<table width="100%" cellspacing="0" cellpadding="0" border="0">
 														<tbody>
 															<tr>
@@ -452,7 +457,7 @@
 														</tbody>
 													</table>
 												</td>
-												<td class="hide-mobile" style="width:150px;background-color:#ffea95; vertical-align: top; height: 100%; border-top-right-radius: 4px; border-bottom-right-radius: 4px;">
+												<td class="show-desktop" style="display: none; width:150px;background-color:#ffea95; vertical-align: top; height: 100%; border-top-right-radius: 4px; border-bottom-right-radius: 4px;">
 													<table width="100%" cellspacing="0" cellpadding="0" border="0" style="height: 100%;">
 														<tbody>
 															<tr>
@@ -480,7 +485,7 @@
 
 							<!-- card offer -->
 							<tr>
-								<td class="hit-area" style="padding: 0 80px;">
+								<td class="hit-area" style="padding: 0 24px;">
 									<table width="100%" cellspacing="0" cellpadding="0" border="0" style="border:1px solid #f4f4f4;border-radius:4px;box-shadow:0 0 16px 0 rgba(0, 0, 0, 0.1); padding: 0 24px;">
 										<tbody>
 											<!-- Offer -->
@@ -546,7 +551,7 @@
 
 							<!-- button with link -->
 							<tr>
-		            <td class="content" style="padding: 0 80px;">
+		            <td class="content" style="padding: 0 24px;">
 			            <table border="0" cellspacing="0" cellpadding="0">
 			              <tbody>
 			                <tr>
@@ -614,7 +619,7 @@
 										<!-- /container expanded -->
 
 										<!-- legal section -->
-										<table class="legal" width="440px" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
+										<table class="legal" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto; padding: 0 24px;">
 											<tbody>
 													<tr>
 															<td style="font-family: Helvetica,sans-serif;font-weight:normal;font-size:12px;color:#999999;text-align:center;line-height:16px;">
