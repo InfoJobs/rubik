@@ -27,8 +27,8 @@ Styleguide #{$sgi-crop-circle}
 
 .crop-image {
 	@include crop;
-	width: 72px;
-	height: 72px;
+	width: 80px;
+	height: 80px;
 
   &-large {
     @include crop;
@@ -36,9 +36,9 @@ Styleguide #{$sgi-crop-circle}
   	height: 100px;
 
     @include mediaquery ($bp-tablet) {
-			width: 140px;
+		width: 140px;
     	height: 140px;
-		}
+	}
 
     @media print {
       max-width: none;
@@ -50,12 +50,12 @@ Styleguide #{$sgi-crop-circle}
 
 	&-small {
 		@include crop;
-		width: 34px;
-		height: 34px;
+		width: 60px;
+		height: 60px;
 
 		@include mediaquery ($bp-tablet) {
-			width: 50px;
-      height: 50px;
+			width: 72px;
+			height: 72px;
 		}
 	}
 
