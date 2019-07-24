@@ -68,12 +68,12 @@ Styleguide #{$sgi-tabs}
     }
 
     @at-root .inner-expanded #{&} {
-      margin-top: -$gap;
-      margin-bottom: -$gap * 2;
+      margin-top: -#{$gap};
+      margin-bottom: -#{$gap};
 
       @include mediaquery ($bp-tablet) {
-        margin-top: -$gap * 2;
-        margin-bottom: -$gap * 4;
+        margin-top: -#{$gap*2};
+        margin-bottom: -#{$gap*2};
       }
   	}
 
