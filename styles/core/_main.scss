@@ -233,6 +233,10 @@ Styleguide #{$sgi-innerContainers}
     @include inner;
 }
 
+.inner-s {
+  @include inner-s;
+}
+
 .inner-expanded {
 	@include inner-expanded;
 
