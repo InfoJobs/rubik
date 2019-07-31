@@ -1,0 +1,27 @@
+$meterbar-progess: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Ctext font-size="100" y="0.9em" stroke-linejoin="round" fill="#{convert($kiiro)}" stroke="#{convert($kiiro)}" stroke-width="4"%3E★%3C/text%3E%3C/svg%3E')
+		0 / auto 100%;
+$meterbar: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Ctext font-size="100" y="0.9em" stroke-linejoin="round" fill="#{convert($shiro)}" stroke="#{convert($kiiro)}" stroke-width="4"%3E★%3C/text%3E%3C/svg%3E')
+		0 / auto 100%;
+
+.meter-rating {
+	background: $meterbar;
+	height: 14px;
+  overflow: hidden;
+	width: 70px;
+
+  &::-webkit-meter-bar {
+		background: $meterbar;
+  }
+
+  &:-moz-meter-optimum::-moz-meter-bar,
+  &:-moz-meter-sub-optimum::-moz-meter-bar,
+  &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+    background: $meterbar-progess;
+  }
+
+  &::-webkit-meter-optimum-value,
+  &::-webkit-meter-suboptimum-value,
+  &::-webkit-meter-even-less-good-value {
+  	background: $meterbar-progess;
+  }
+}
