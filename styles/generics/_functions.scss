@@ -72,3 +72,11 @@
     @return $shiro; // Darker background, return light color
   }
 }
+
+/**
+ * Escape hexadecimal color in SVG as data url
+ */
+
+@function convert($colour) {
+    @return '%23' + str-slice('#{$colour}', 2, -1)
+}
