@@ -7,681 +7,680 @@ Styleguide #{$sgi-buttons}
 */
 
 /*------------------------------------*\
-    $BUTTONS
+$BUTTONS
 \*------------------------------------*/
 button::-moz-focus-inner {
-    border: 0;
-    padding: 0;
+  border: 0;
+  padding: 0;
+}
+
+@mixin btn {
+  /*@include transition;*/
+  @include semi-bold;
+  display: inline-block;
+  width: auto;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: normal;
+  overflow: visible;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow: none;
+  text-transform: uppercase;
+  -webkit-appearance: none;
+  outline: none;
+  @include transition-button;
+  
+  img {
+    width: 16px;
+    height: 16px;
+    margin-top: -4px;
+    margin-right: 12px;
+    vertical-align: middle;
   }
   
-  @mixin btn {
-      /*@include transition;*/
-      @include semi-bold;
-      display: inline-block;
+  @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
+    font-size: $medium-font-size;
+  }
+  
+  p > & {
+    margin-left: $gap;
+    
+    @media only screen and (max-width: $mobile-start) {
+      display: block;
+      margin: $gap 0 0;
+    }
+  }
+  
+  + [class*="btn"]:not(.btn-group-justified):not(.btn-full-width--small-device) {
+    margin-left: $gap / 2;
+  }
+  
+  + .btn-group-justified {
+    margin-top: $gap;
+    
+    &:first-of-type {
+      margin-bottom: 0;
+    }
+  }
+  
+}
+
+/*
+Buttons type
+
+Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms).
+<br>
+Also add one of the following classes to give it format:
+
+`.btn-primary` for a primary action style<br>
+`.btn-default` for a secondary action style<br>
+`.btn-tertiary` for a tertiary action style<br>
+`.btn-highlight` for a highlight action style<br>
+`.btn-cta` for a CTA style
+
+Markup:
+<button class="btn btn-primary" type="button">Primary</button>
+<button class="btn btn-default" type="button">Secondary</button>
+<button class="btn btn-tertiary" type="button">Tertiary</button>
+<a href="#" class="btn btn-highlight">Highlight</a>
+<a href="#" class="btn btn-primary">Link</a>
+<button class="btn btn-tertiary alert" type="button">Tertiary alert</button>
+<button class="btn btn-cta" type="button">CTA</button>
+
+Styleguide #{$sgi-buttons-type}
+*/
+
+.btn-primary {
+  @include btn;
+  color: $shiro;
+  border: 1px solid $day-blue;
+  background-color: $day-blue;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
+  
+  &:hover,
+  &:focus,
+  &:active {
+    color: $shiro;
+    background-color: shade($day-blue,20%);
+    border-color: shade($day-blue,20%);
+  }
+  
+  &-alternative {
+    @include btn;
+    border: 1px solid shade($day-blue,40%);
+    color: $shiro;
+    background-color: shade($day-blue,40%);
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
+    
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: shade($day-blue,60%);
+      border-color: shade($day-blue,60%);
+    }
+  }
+}
+
+.btn-default {
+  @include btn;
+  color: $day-blue;
+  border: 1px solid $day-blue;
+  background-color: $button-secondary;
+  
+  &:hover,
+  &:focus,
+  &:active {
+    color: $shiro;
+    background-color: shade($day-blue,20%);
+  }
+  
+  &-contrast {
+    @include btn;
+    color: $shiro;
+    border: 1px solid $shiro;
+    background-color: transparent;
+    
+    &:hover,
+    &:focus,
+    &:active {
+      color: shade($day-blue,20%);
+      background-color: $shiro;
+    }
+  }
+  
+  &-overlay {
+    @include btn;
+    color: $shiro;
+    border: 1px solid $shiro;
+    background-color: rgba($shiro, 0.2);
+    
+    &:hover,
+    &:focus,
+    &:active {
+      color: shade($day-blue,20%);
+      background-color: $shiro;
+    }
+  }
+  
+  &-alternative {
+    @include btn;
+    border: 0 none;
+    color: $day-blue;
+    background-color: $shiro;
+    
+    &:hover,
+    &:focus,
+    &:active {
+      color: shade($day-blue,20%);
+      background-color: $dark-shiro;
+    }
+  }
+}
+
+.btn-tertiary {
+  @include btn;
+  border: 1px solid transparent;
+  color: $day-blue;
+  background-color: transparent;
+  
+  &:hover,
+  &:focus,
+  &:active {
+    color: $day-blue;
+    background-color: $dark-shiro;
+    border-color: $dark-shiro;
+  }
+}
+
+.btn-highlight {
+  @include btn;
+  color: $dark-silk;
+  border: 1px solid $sun;
+  background-color: $sun;
+  
+  &:hover,
+  &:focus,
+  &:active {
+    color: $dark-silk;
+    background-color: darken( $sun, 10% );
+    border-color: darken( $sun, 10% );
+  }
+}
+
+.btn-cta {
+  @include btn;
+  color: $shiro;
+  border: 1px solid $button-cta;
+  background-color: $button-cta;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
+  
+  &:hover,
+  &:focus,
+  &:active {
+    color: $shiro;
+    background-color: darken( $button-cta, 5% );
+    border-color: darken( $button-cta, 5% );
+  }
+}
+
+//new design: idem that btn-primary -> to be deleted and refactor on "empleo"
+.btn-primary-contrast {
+  @include btn;
+  color: $shiro;
+  border: 1px solid $late-blue;
+  background-color: $late-blue;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
+}
+
+.btn-primary-contrast:hover,
+.btn-primary-contrast:focus {
+  color: $shiro;
+  background-color: $night-blue;
+  border-color: $night-blue;
+}
+
+.btn-primary-contrast:active {
+  background-color: $midnight-blue;
+  border-color: $midnight-blue;
+}
+
+
+/*
+Buttons size
+
+Use class `.btn-small` or `.btn-large` to change buttons size.<br>
+The base button size is class `.btn`
+
+Markup:
+<a href="#" class="btn-small btn-default ">Small size Button</a>
+<a href="#" class="btn btn-default">Base size Button</a>
+<a href="#" class="btn-large btn-default">Large size Button</a>
+
+Styleguide #{$sgi-buttons-size}
+*/
+
+.btn-small {
+  font-size: $xsmall-font-size;
+  padding: 9px $gap 7px $gap;
+  line-height: 1;
+  
+  img {
+    width: 12px;
+    height: 12px;
+    margin-right: $gap / 2;
+  }
+}
+
+.btn {
+  font-size: $small-font-size;
+  padding: 13px $gap * 2 11px $gap * 2;
+  line-height: 1;
+  
+  @at-root #{&}[class*="iconfont-"]::before { ////DEPRECATED
+    font-size: $medium-font-size;
+  }
+}
+
+.btn-large {
+  font-size: $base-font-size;
+  padding: 17px $gap * 3 15px $gap * 3;
+  line-height: 1;
+  
+  @at-root #{&}[class*="iconfont-"]::before { //DEPRECATED
+    font-size: 22px;
+  }
+}
+
+/*
+Buttons with text and icon
+
+Use class `.iconfont-[name]` to display an icon inside the button.
+
+Markup:
+<a href="#" class="btn-small btn-primary"><img src="http://media.infojobs.net/appgrade/svgs/bell.svg" />Crear alerta</a>
+<a href="#" class="btn btn-primary"><img src="http://media.infojobs.net/appgrade/svgs/bell.svg" />Crear alerta</a>
+<a href="#" class="btn-large btn-primary"><img src="http://media.infojobs.net/appgrade/svgs/bell.svg" />Crear alerta</a>
+
+Styleguide #{$sgi-buttons-text-icon}
+*/
+
+/*
+Buttons status
+
+Use class `.btn-disabled` to show button as disabled.
+
+Markup:
+<button class="btn btn-primary btn-disabled" type="button" disabled>Disabled</button>
+
+Styleguide #{$sgi-buttons-status}
+*/
+
+button[disabled],
+button:hover[disabled],
+button:active[disabled],
+button:focus[disabled],
+.btn-disabled,
+.btn-disabled:hover,
+.btn-disabled:active,
+.btn-disabled:focus {
+  text-decoration: none;
+  color: $shiro;
+  border: 1px solid #dcdcdc;
+  box-shadow: none;
+  background: #dfdfdf; //add to vars (pending to be defined for companies)
+  cursor: default;
+}
+
+/*
+Buttons display
+
+Add class `.btn-full-width` to display a full width button.
+
+Markup:
+<button class="btn btn-primary btn-full-width" type="button">Button</button>
+
+Styleguide #{$sgi-buttons-display}
+*/
+
+.btn-full-width {
+  width: 100%;
+  
+  &--small-device {
+    width: 100%;
+    
+    @include mediaquery ($bp-desktop) {
       width: auto;
-      border-radius: 2px;
-      cursor: pointer;
-      font-weight: normal;
-      overflow: visible;
-      text-decoration: none;
-      text-align: center;
-      white-space: nowrap;
-      text-shadow: none;
-      text-transform: uppercase;
-      -webkit-appearance: none;
-      outline: none;
-      @include transition-button;
-  
-      img {
-        width: 16px;
-        height: 16px;
-        margin-top: -4px;
-        margin-right: 12px;
-        vertical-align: middle;
-      }
-  
-      @at-root #{&}[class*="iconfont-"]::before { //TODO: fix top position and margin-right to text
-          font-size: $medium-font-size;
-      }
-  
-      p > & {
-          margin-left: $gap;
-  
-          @media only screen and (max-width: $mobile-start) {
-              display: block;
-              margin: $gap 0 0;
-          }
-      }
-  
-      + [class*="btn"]:not(.btn-group-justified):not(.btn-full-width--small-device) {
-          margin-left: $gap / 2;
-      }
-  
-      + .btn-group-justified {
-          margin-top: $gap;
-  
-          &:first-of-type {
-              margin-bottom: 0;
-          }
-      }
-  
-  }
-  
-  /*
-  Buttons type
-  
-  Use class `.btn` to create a button using `<a>` (outside forms) or `<button>` (only inside forms).
-  <br>
-  Also add one of the following classes to give it format:
-  
-  `.btn-primary` for a primary action style<br>
-  `.btn-default` for a secondary action style<br>
-  `.btn-tertiary` for a tertiary action style<br>
-  `.btn-highlight` for a highlight action style<br>
-  `.btn-cta` for a CTA style
-  
-  Markup:
-  <button class="btn btn-primary" type="button">Primary</button>
-  <button class="btn btn-default" type="button">Secondary</button>
-  <button class="btn btn-tertiary" type="button">Tertiary</button>
-  <a href="#" class="btn btn-highlight">Highlight</a>
-  <a href="#" class="btn btn-primary">Link</a>
-  <button class="btn btn-tertiary alert" type="button">Tertiary alert</button>
-  <button class="btn btn-cta" type="button">CTA</button>
-  
-  Styleguide #{$sgi-buttons-type}
-  */
-  
-  .btn-primary {
-        @include btn;
-      color: $shiro;
-      border: 1px solid $day-blue;
-      background-color: $day-blue;
-      box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
-  
-      &:hover,
-      &:focus,
-      &:active {
-          color: $shiro;
-          background-color: shade($day-blue,20%);
-          border-color: shade($day-blue,20%);
-      }
-  
-      &-alternative {
-          @include btn;
-        border: 1px solid shade($day-blue,40%);
-        color: $shiro;
-        background-color: shade($day-blue,40%);
-        box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
-  
-        &:hover,
-        &:focus,
-        &:active {
-          background-color: shade($day-blue,60%);
-          border-color: shade($day-blue,60%);
-        }
-      }
-  }
-  
-  .btn-default {
-        @include btn;
-      color: $day-blue;
-      border: 1px solid $day-blue;
-      background-color: $button-secondary;
-  
-      &:hover,
-      &:focus,
-      &:active {
-          color: $shiro;
-          background-color: shade($day-blue,20%);
-      }
-  
-      &-contrast {
-        @include btn;
-        color: $shiro;
-        border: 1px solid $shiro;
-        background-color: transparent;
-  
-        &:hover,
-        &:focus,
-        &:active {
-          color: shade($day-blue,20%);
-          background-color: $shiro;
-        }
-      }
-  
-      &-overlay {
-        @include btn;
-        color: $shiro;
-        border: 1px solid $shiro;
-        background-color: rgba($shiro, 0.2);
-  
-        &:hover,
-        &:focus,
-        &:active {
-          color: shade($day-blue,20%);
-          background-color: $shiro;
-        }
-      }
-  
-      &-alternative {
-          @include btn;
-        border: 0 none;
-        color: $day-blue;
-        background-color: $shiro;
-  
-        &:hover,
-        &:focus,
-        &:active {
-          color: shade($day-blue,20%);
-          background-color: $dark-shiro;
-        }
-      }
-  }
-  
-  .btn-tertiary {
-        @include btn;
-      border: 1px solid transparent;
-      color: $day-blue;
-      background-color: transparent;
-  
-      &:hover,
-      &:focus,
-      &:active {
-          color: $day-blue;
-          background-color: $dark-shiro;
-          border-color: $dark-shiro;
-      }
-  }
-  
-  .btn-highlight {
-        @include btn;
-      color: $dark-silk;
-      border: 1px solid $sun;
-      background-color: $sun;
-  
-      &:hover,
-      &:focus,
-      &:active {
-          color: $dark-silk;
-          background-color: darken( $sun, 10% );
-          border-color: darken( $sun, 10% );
-      }
-  }
-  
-  .btn-cta {
-        @include btn;
-      color: $shiro;
-      border: 1px solid $button-cta;
-      background-color: $button-cta;
-      box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
-  
-      &:hover,
-      &:focus,
-      &:active {
-          color: $shiro;
-          background-color: darken( $button-cta, 5% );
-          border-color: darken( $button-cta, 5% );
-      }
-  }
-  
-  //new design: idem that btn-primary -> to be deleted and refactor on "empleo"
-  .btn-primary-contrast {
-        @include btn;
-      color: $shiro;
-      border: 1px solid $late-blue;
-      background-color: $late-blue;
-      box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
-  }
-  
-  .btn-primary-contrast:hover,
-  .btn-primary-contrast:focus {
-      color: $shiro;
-      background-color: $night-blue;
-      border-color: $night-blue;
-  }
-  
-  .btn-primary-contrast:active {
-      background-color: $midnight-blue;
-      border-color: $midnight-blue;
-  }
-  
-  
-  /*
-  Buttons size
-  
-  Use class `.btn-small` or `.btn-large` to change buttons size.<br>
-  The base button size is class `.btn`
-  
-  Markup:
-  <a href="#" class="btn-small btn-default ">Small size Button</a>
-  <a href="#" class="btn btn-default">Base size Button</a>
-  <a href="#" class="btn-large btn-default">Large size Button</a>
-  
-  Styleguide #{$sgi-buttons-size}
-  */
-  
-  .btn-small {
-      font-size: $xsmall-font-size;
-      padding: 9px $gap 7px $gap;
-      line-height: 1;
-  
-      img {
-        width: 12px;
-        height: 12px;
-        margin-right: $gap / 2;
-      }
-  }
-  
-  .btn {
-      font-size: $small-font-size;
-      padding: 13px $gap * 2 11px $gap * 2;
-      line-height: 1;
-  
-      @at-root #{&}[class*="iconfont-"]::before { ////DEPRECATED
-          font-size: $medium-font-size;
-      }
     }
+  }
+}
+
+.btn-form-inline { //used on search-bar, filters and edit-cv(datos-personales)
+  width: 100%;
   
-  .btn-large {
-      font-size: $base-font-size;
-      padding: 17px $gap * 3 15px $gap * 3;
-      line-height: 1;
-  
-      @at-root #{&}[class*="iconfont-"]::before { //DEPRECATED
-          font-size: 22px;
-      }
+  @at-root button#{&} {
+    width: 100%;
+    height: auto;
   }
   
-  /*
-  Buttons with text and icon
+  &.text-left { //already defined in tools.scss, but overwritten by btn{...text-align: center;...}
+  text-align: left;
+}
+}
+
+/*
+Button file
+
+Use class `.btn-file` to display an input type file.
+
+Markup:
+<div class="btn btn-default btn-file">
+<span>Subir foto</span>
+<input type="file" value="Subir foto" />
+</div>
+
+Styleguide #{$sgi-buttons-file}
+*/
+
+.btn-file {
+  position: relative;
   
-  Use class `.iconfont-[name]` to display an icon inside the button.
-  
-  Markup:
-  <a href="#" class="btn-small btn-primary"><img src="http://media.infojobs.net/appgrade/svgs/bell.svg" />Crear alerta</a>
-  <a href="#" class="btn btn-primary"><img src="http://media.infojobs.net/appgrade/svgs/bell.svg" />Crear alerta</a>
-  <a href="#" class="btn-large btn-primary"><img src="http://media.infojobs.net/appgrade/svgs/bell.svg" />Crear alerta</a>
-  
-  Styleguide #{$sgi-buttons-text-icon}
-  */
-  
-  /*
-  Buttons status
-  
-  Use class `.btn-disabled` to show button as disabled.
-  
-  Markup:
-  <button class="btn btn-primary btn-disabled" type="button" disabled>Disabled</button>
-  
-  Styleguide #{$sgi-buttons-status}
-  */
-  
-  button[disabled],
-  button:hover[disabled],
-  button:active[disabled],
-  button:focus[disabled],
-  .btn-disabled,
-  .btn-disabled:hover,
-  .btn-disabled:active,
-  .btn-disabled:focus {
-      text-decoration: none;
-      color: $shiro;
-      border: 1px solid #dcdcdc;
-      box-shadow: none;
-      background: #dfdfdf; //add to vars (pending to be defined for companies)
-      cursor: default;
+  span {
+    position: absolute;
+    left: 0;
+    width: 100%;
   }
   
-  /*
-  Buttons display
-  
-  Add class `.btn-full-width` to display a full width button.
-  
-  Markup:
-  <button class="btn btn-primary btn-full-width" type="button">Button</button>
-  
-  Styleguide #{$sgi-buttons-display}
-  */
-  
-  .btn-full-width {
-   width: 100%;
-  
-      &--small-device {
-          width: 100%;
-  
-          @include mediaquery ($bp-desktop) {
-              width: auto;
-          }
-      }
+  input {
+    height: $small-font-size;
+    opacity: 0;
+    cursor: pointer;
   }
+}
+
+/*
+Buttons variants
+
+Lorem ipsum...
+
+Markup:
+<div class="panel-focus inner">
+<button class="btn btn-primary-alternative" type="button">Primary alternative</button>
+<button class="btn btn-default-contrast" type="button">Secondary contrast</button>
+<button class="btn btn-default-overlay" type="button">Secondary overlay</button>
+<button class="btn btn-default-alternative" type="button">Secondary alternative</button>
+</div>
+
+Styleguide #{$sgi-buttons-variants}
+*/
+
+///*DEPRECATED: .btn-link-primary only used in 'ver_oferta.html'*/
+.btn-link-primary {
+  @include btn;
+  color: $day-blue;
   
-  .btn-form-inline { //used on search-bar, filters and edit-cv(datos-personales)
-      width: 100%;
-  
-      @at-root button#{&} {
-        width: 100%;
-        height: auto;
-      }
-  
-      &.text-left { //already defined in tools.scss, but overwritten by btn{...text-align: center;...}
-          text-align: left;
-      }
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    color: $late-blue;
   }
+}
+
+
+.btn-link-primary + .btn-link-primary,
+.btn-link-secondary + .btn-link-secondary {
+  padding-left: 0;
+}
+
+///*DEPRECATED: .btn-link-secondary only used in header*/
+.btn-link-secondary {
+  @include btn;
+  color: $mid-script;
   
-  /*
-  Button file
-  
-  Use class `.btn-file` to display an input type file.
-  
-  Markup:
-  <div class="btn btn-default btn-file">
-      <span>Subir foto</span>
-      <input type="file" value="Subir foto" />
-  </div>
-  
-  Styleguide #{$sgi-buttons-file}
-  */
-  
-  .btn-file {
-      position: relative;
-  
-      span {
-          position: absolute;
-          left: 0;
-          width: 100%;
-      }
-  
-      input {
-          height: $small-font-size;
-          opacity: 0;
-          cursor: pointer;
-      }
+  &:hover {
+    text-decoration: underline;
+    color: $dark-silk;
   }
+}
+
+
+///*DEPRECATED: .btn-link-company only used in header*/
+.btn-link-company {
+  @include btn;
+  color: $soft-script;
   
-  /*
-  Buttons variants
-  
-  Lorem ipsum...
-  
-  Markup:
-  <div class="panel-focus inner">
-    <button class="btn btn-primary-alternative" type="button">Primary alternative</button>
-    <button class="btn btn-default-contrast" type="button">Secondary contrast</button>
-    <button class="btn btn-default-overlay" type="button">Secondary overlay</button>
-    <button class="btn btn-default-alternative" type="button">Secondary alternative</button>
-  </div>
-  
-  Styleguide #{$sgi-buttons-variants}
-  */
-  
-  ///*DEPRECATED: .btn-link-primary only used in 'ver_oferta.html'*/
-  .btn-link-primary {
-      @include btn;
-      color: $day-blue;
-  
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-        color: $late-blue;
-      }
+  &:hover {
+    @extend .btn-link-secondary:hover;
+    color: $shiro;
   }
+}
+
+.btn-justify {
+  @include display-flex;
+  @include flex-flow(wrap);
+  @include align-items(center);
+  padding: 0;
   
-  
-  .btn-link-primary + .btn-link-primary,
-  .btn-link-secondary + .btn-link-secondary {
-      padding-left: 0;
-  }
-  
-  ///*DEPRECATED: .btn-link-secondary only used in header*/
-  .btn-link-secondary {
-      @include btn;
-      color: $mid-script;
-  
-      &:hover {
-          text-decoration: underline;
-          color: $dark-silk;
-      }
-  }
-  
-  
-  ///*DEPRECATED: .btn-link-company only used in header*/
-  .btn-link-company {
-      @include btn;
-      color: $soft-script;
-  
-      &:hover {
-          @extend .btn-link-secondary:hover;
-          color: $shiro;
-      }
-  }
-  
-  .btn-justify {
-    @include display-flex;
-    @include flex-flow(wrap);
-    @include align-items(center);
-    padding: 0;
-  
-    li {
-      @include flex(1 1 0);
-      padding-right: $gap;
-          
-      &:not(:only-of-type) {
-          margin-bottom: $gap;
-      }
-  
-      &:last-of-type {
-        padding: 0;
-      }
-    }
-  
-    &.btn-justify-icon-end {
-  
-      li {
-        @include flex(1 1 auto);
-  
-        &:last-of-type {
-          @include flex(0 1 auto);
-        }
-      }
-  
-    }
-  
-    [class^="btn-"],
-    [class*="btn-"] {
-      width: 100%;
+  li {
+    @include flex(1 1 0);
+    padding-right: $gap;
+    
+    &:not(:only-of-type) {
+      margin-bottom: $gap;
     }
     
-    &--tablet li {
-        
-        padding-right: 0;
-        
-        @include mediaquery ($bp-tablet) {
-          padding-right: $gap;
-      }
-    }
-        
-  }
-  
-  /*
-  Button group
-  
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
-  
-  Styleguide #{$sgi-button-group}
-  
-  */
-  
-  /*
-  Button group structure
-  
-  Use class `.btn-group` to create a button group structure.<br>
-  Use class `.btn-default` for buttons inside buttons group.<br>
-  Use class `.active` to highlight the selected button.<br>
-  
-  Markup:
-  <div class="btn-group">
-      <div class="active">
-          <button class="btn btn-default" type="button">year</button>
-      </div>
-      <div>
-          <button class="btn btn-default" type="button">month</button>
-      </div>
-      <div>
-          <button class="btn btn-default" type="button">hour</button>
-      </div>
-  </div>
-  
-  Styleguide #{$sgi-button-group-structure}
-  */
-  
-  .btn-group { //TODO: Add hide text for empty buttons
-      display: table;
-  
-      & > div {
-          display: table-cell;
-  
-          &:first-child > [class*="btn"]  {
-              border-radius: 3px 0 0 3px;
-          }
-  
-          &:last-child > [class*="btn"] {
-              border-radius: 0 3px 3px 0;
-          }
-  
-          & > [class*="btn"]  {
-              border-radius: 0;
-          }
-      }
-  
-      [class*="btn"]  {
-          border-color: $day-blue;
-          border-width: 1px;
-          border-style: solid;
-      }
-  
-        button { /* fix iOS buttons separation */
-            margin: 0;
-        }
-  
-        [class*="btn"] ,
-        [class*="btn"] :hover {
-            border-right-width: 0;
-            width: 100%;
-        }
-  
-        div:last-of-type [class*="btn"] {
-            border-right-width: 1px;
-            border-top-right-radius: 2px;
-            border-bottom-right-radius: 2px;
-        }
-  
-        .active [class*="btn"],
-        .active [class*="btn"].btn-disabled {
-            cursor: default;
-            color: $shiro;
-            background-color: shade($day-blue,20%);
-        }
-  
-      &.btn-group-expanded {
-          div {
-              padding-left: $gap;
-  
-              [class*="btn"] {
-                  border-right-width: 1px;
-  
-                  &.disabled:hover {
-                      border-right-width: 1px;
-                      color: $shiro;
-                      background-color: $day-blue;
-                      cursor: default;
-                  }
-              }
-          }
-      }
-  }
-  
-  /*
-  Button group justified
-  
-  Use class `.btn-group-justified` to display `.btn-group` full width buttons.
-  
-  
-  Markup:
-  <div class="btn-group btn-group-justified">
-      <div class="active">
-          <button class="btn btn-default" type="button">year</button>
-      </div>
-      <div>
-          <button class="btn btn-default" type="button">month</button>
-      </div>
-      <div>
-          <button class="btn btn-default" type="button">hour</button>
-      </div>
-  </div>
-  
-  Styleguide #{$sgi-button-group-justified}
-  */
-  
-  /*
-  Button group with icon
-  
-  Use class `.iconfont-[name]` to display an icon inside the button.
-  
-  Markup:
-  <div class="btn-group">
-      <div>
-          <a class="btn btn-default iconfont-Facebook" href="#" title="Comparte esta oferta en Facebook"><span class="hide">Comparte esta oferta en Facebook</span></a>
-      </div>
-      <div>
-          <a class="btn btn-default iconfont-Twitter" href="#" title="Tweetea esta oferta"><span class="hide">Tweetea esta oferta</span></a>
-      </div>
-  </div>
-  
-  Styleguide #{$sgi-button-group-icon}
-  */
-  
-  .btn-group-justified { //TODO: same properties than .btn-form-inline class
-       width: 100%;
-  
-      [class*="btn"]  {
-          width: 100%;
-      }
-  }
-  
-  .btn-group-centered {
-      margin-left: auto;
-      margin-right: auto;
-  }
-  
-  ///*DEPRECATED: .btn-divider and .btn-divider-company only used on header*/
-  .btn-divider {
-      border-right: 1px solid $darkest-shiro;
-  }
-  
-  ///*DEPRECATED: .btn-divider and .btn-divider-company only used on header*/
-  .btn-divider-company {
-      border-right:  1px solid $mid-script;
-  }
-  
-  .btn-menu-more {
-    @include btn;
-    @include iconfont-Menumore;
-    padding: 0;
-    font-size: 24px;
-    background: transparent;
-    border-color: transparent;
-    height: 24px;
-    width: 24px;
-  }
-  
-  .btn-rounded {
-    @include btn;
-    padding: 13px 11px 13px 15px;
-    border-radius: 50%;
-  
-    img {
-      margin: 0;
+    &:last-of-type {
+      padding: 0;
     }
   }
   
+  &.btn-justify-icon-end {
+    
+    li {
+      @include flex(1 1 auto);
+      
+      &:last-of-type {
+        @include flex(0 1 auto);
+      }
+    }
+    
+  }
+  
+  [class^="btn-"],
+  [class*="btn-"] {
+    width: 100%;
+  }
+  
+  &--tablet li {
+    
+    padding-right: 0;
+    
+    @include mediaquery ($bp-tablet) {
+      padding-right: $gap;
+    }
+  }
+  
+}
+
+/*
+Button group
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra ante enim, cursus fringilla metus hendrerit non.
+
+Styleguide #{$sgi-button-group}
+
+*/
+
+/*
+Button group structure
+
+Use class `.btn-group` to create a button group structure.<br>
+Use class `.btn-default` for buttons inside buttons group.<br>
+Use class `.active` to highlight the selected button.<br>
+
+Markup:
+<div class="btn-group">
+<div class="active">
+<button class="btn btn-default" type="button">year</button>
+</div>
+<div>
+<button class="btn btn-default" type="button">month</button>
+</div>
+<div>
+<button class="btn btn-default" type="button">hour</button>
+</div>
+</div>
+
+Styleguide #{$sgi-button-group-structure}
+*/
+
+.btn-group { //TODO: Add hide text for empty buttons
+  display: table;
+  
+  & > div {
+    display: table-cell;
+    
+    &:first-child > [class*="btn"]  {
+      border-radius: 3px 0 0 3px;
+    }
+    
+    &:last-child > [class*="btn"] {
+      border-radius: 0 3px 3px 0;
+    }
+    
+    & > [class*="btn"]  {
+      border-radius: 0;
+    }
+  }
+  
+  [class*="btn"]  {
+    border-color: $day-blue;
+    border-width: 1px;
+    border-style: solid;
+  }
+  
+  button { /* fix iOS buttons separation */
+    margin: 0;
+  }
+  
+  [class*="btn"] ,
+  [class*="btn"] :hover {
+    border-right-width: 0;
+    width: 100%;
+  }
+  
+  div:last-of-type [class*="btn"] {
+    border-right-width: 1px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+  
+  .active [class*="btn"],
+  .active [class*="btn"].btn-disabled {
+    cursor: default;
+    color: $shiro;
+    background-color: shade($day-blue,20%);
+  }
+  
+  &.btn-group-expanded {
+    div {
+      padding-left: $gap;
+      
+      [class*="btn"] {
+        border-right-width: 1px;
+        
+        &.disabled:hover {
+          border-right-width: 1px;
+          color: $shiro;
+          background-color: $day-blue;
+          cursor: default;
+        }
+      }
+    }
+  }
+}
+
+/*
+Button group justified
+
+Use class `.btn-group-justified` to display `.btn-group` full width buttons.
+
+
+Markup:
+<div class="btn-group btn-group-justified">
+<div class="active">
+<button class="btn btn-default" type="button">year</button>
+</div>
+<div>
+<button class="btn btn-default" type="button">month</button>
+</div>
+<div>
+<button class="btn btn-default" type="button">hour</button>
+</div>
+</div>
+
+Styleguide #{$sgi-button-group-justified}
+*/
+
+/*
+Button group with icon
+
+Use class `.iconfont-[name]` to display an icon inside the button.
+
+Markup:
+<div class="btn-group">
+<div>
+<a class="btn btn-default iconfont-Facebook" href="#" title="Comparte esta oferta en Facebook"><span class="hide">Comparte esta oferta en Facebook</span></a>
+</div>
+<div>
+<a class="btn btn-default iconfont-Twitter" href="#" title="Tweetea esta oferta"><span class="hide">Tweetea esta oferta</span></a>
+</div>
+</div>
+
+Styleguide #{$sgi-button-group-icon}
+*/
+
+.btn-group-justified { //TODO: same properties than .btn-form-inline class
+  width: 100%;
+  
+  [class*="btn"]  {
+    width: 100%;
+  }
+}
+
+.btn-group-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+///*DEPRECATED: .btn-divider and .btn-divider-company only used on header*/
+.btn-divider {
+  border-right: 1px solid $darkest-shiro;
+}
+
+///*DEPRECATED: .btn-divider and .btn-divider-company only used on header*/
+.btn-divider-company {
+  border-right:  1px solid $mid-script;
+}
+
+.btn-menu-more {
+  @include btn;
+  @include iconfont-Menumore;
+  padding: 0;
+  font-size: 24px;
+  background: transparent;
+  border-color: transparent;
+  height: 24px;
+  width: 24px;
+}
+
+.btn-rounded {
+  @include btn;
+  padding: 13px 11px 13px 15px;
+  border-radius: 50%;
+  
+  img {
+    margin: 0;
+  }
+}
