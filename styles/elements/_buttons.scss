@@ -100,7 +100,6 @@ Styleguide #{$sgi-buttons-type}
   box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
   
   &:hover,
-  &:focus,
   &:active {
     color: $shiro;
     background-color: shade($day-blue,20%);
@@ -115,7 +114,6 @@ Styleguide #{$sgi-buttons-type}
     box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
     
     &:hover,
-    &:focus,
     &:active {
       background-color: shade($day-blue,60%);
       border-color: shade($day-blue,60%);
@@ -130,7 +128,6 @@ Styleguide #{$sgi-buttons-type}
   background-color: $button-secondary;
   
   &:hover,
-  &:focus,
   &:active {
     color: $shiro;
     background-color: shade($day-blue,20%);
@@ -143,7 +140,6 @@ Styleguide #{$sgi-buttons-type}
     background-color: transparent;
     
     &:hover,
-    &:focus,
     &:active {
       color: shade($day-blue,20%);
       background-color: $shiro;
@@ -157,7 +153,6 @@ Styleguide #{$sgi-buttons-type}
     background-color: rgba($shiro, 0.2);
     
     &:hover,
-    &:focus,
     &:active {
       color: shade($day-blue,20%);
       background-color: $shiro;
@@ -171,7 +166,6 @@ Styleguide #{$sgi-buttons-type}
     background-color: $shiro;
     
     &:hover,
-    &:focus,
     &:active {
       color: shade($day-blue,20%);
       background-color: $dark-shiro;
@@ -186,7 +180,6 @@ Styleguide #{$sgi-buttons-type}
   background-color: transparent;
   
   &:hover,
-  &:focus,
   &:active {
     color: $day-blue;
     background-color: $dark-shiro;
@@ -201,7 +194,6 @@ Styleguide #{$sgi-buttons-type}
   background-color: $sun;
   
   &:hover,
-  &:focus,
   &:active {
     color: $dark-silk;
     background-color: darken( $sun, 10% );
@@ -217,7 +209,6 @@ Styleguide #{$sgi-buttons-type}
   box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
   
   &:hover,
-  &:focus,
   &:active {
     color: $shiro;
     background-color: darken( $button-cta, 5% );
@@ -234,8 +225,7 @@ Styleguide #{$sgi-buttons-type}
   box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
 }
 
-.btn-primary-contrast:hover,
-.btn-primary-contrast:focus {
+.btn-primary-contrast:hover {
   color: $shiro;
   background-color: $night-blue;
   border-color: $night-blue;
@@ -320,11 +310,9 @@ Styleguide #{$sgi-buttons-status}
 button[disabled],
 button:hover[disabled],
 button:active[disabled],
-button:focus[disabled],
 .btn-disabled,
 .btn-disabled:hover,
-.btn-disabled:active,
-.btn-disabled:focus {
+.btn-disabled:active {
   text-decoration: none;
   color: $shiro;
   border: 1px solid #dcdcdc;
@@ -420,8 +408,7 @@ Styleguide #{$sgi-buttons-variants}
   @include btn;
   color: $day-blue;
   
-  &:hover,
-  &:focus {
+  &:hover {
     text-decoration: underline;
     color: $late-blue;
   }
