@@ -23,96 +23,96 @@ Styleguide #{$sgi-forms}
 
 fieldset {
 
-	& + fieldset {
-		margin-top: $gap * 4;
-	}
+  & + fieldset {
+    margin-top: $gap * 4;
+  }
 
-	&:first-child {
-		margin-top: 0;
-	}
+  &:first-child {
+    margin-top: 0;
+  }
 
-	& > button {
-		margin-top: $gap * 2;
-	}
+  & > button {
+    margin-top: $gap * 2;
+  }
 }
 
 legend {
-	display: none;
+  display: none;
 }
 
 label,
 .label {
   display: inline-block;
-	vertical-align: top;
-	margin-bottom: $label-margin;
-	font-size: $base-font-size;
-	line-height: 125%;
+  vertical-align: top;
+  margin-bottom: $label-margin;
+  font-size: $base-font-size;
+  line-height: 125%;
 
   @media print {
     font-size: ($base-font-size/$point-to-px);
   }
 
-	.error &:first-of-type {
-		color: $trueblood;
-	}
-	.success &:first-of-type {
-		color: $bamboo;
-	}
+  .error &:first-of-type {
+    color: $trueblood;
+  }
+  .success &:first-of-type {
+    color: $bamboo;
+  }
 }
 
 .form--field-block {
-	> li { //TODO: Could be possible to apply only a class in <form> to avoid do it in every <ul>?
-		margin-bottom: $gap * 2;
-		vertical-align: middle;
+  > li { //TODO: Could be possible to apply only a class in <form> to avoid do it in every <ul>?
+    margin-bottom: $gap * 2;
+    vertical-align: middle;
 
-		&:last-child {
-			margin-bottom: 0;
-		}
+    &:last-child {
+      margin-bottom: 0;
+    }
 
-		.info {
-			margin-bottom: 0;
+    .info {
+      margin-bottom: 0;
 
-			&:first-of-type:only-child {
-				margin-top: $gap / 2;
-			}
-		}
+      &:first-of-type {
+        margin-top: $gap / 2;
+      }
+    }
 
-		label + .info {
-			margin-top: -$gap / 2;
-		}
-	}
+    label + .info {
+      margin-top: -$gap / 2;
+    }
+  }
 
-	> li:last-child {
-			margin-bottom: 0;
-	}
+  > li:last-child {
+      margin-bottom: 0;
+  }
 
-	label {
-		width: 100%;
-	}
+  label {
+    width: 100%;
+  }
 }
 
 //TODO: Nest .form-field-inline in .search-bar.scss component, because is not possible to apply this layout independently
 .form-field-inline {
-	display: table;
+  display: table;
 
-	> label {
-		margin-right: $gap;
-		margin-bottom: 0;
+  > label {
+    margin-right: $gap;
+    margin-bottom: 0;
     vertical-align: middle;
-	}
+  }
 
-	> input,
-	> .form-select  {
-  		display: inline-block;
-  		width: 220px!important;
-	}
+  > input,
+  > .form-select  {
+      display: inline-block;
+      width: 220px!important;
+  }
 }
 
 @mixin form-field {
-	display: block;
-	padding: 4px $gap;
-	font-size: $base-font-size;
-	line-height: $base-line-height;
+  display: block;
+  padding: 4px $gap;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
 }
 
 
@@ -124,7 +124,7 @@ input[type="button"],
 input[type="submit"],
 select {
   -webkit-appearance: none;
-	border-radius: $border-radius-m;
+  border-radius: $border-radius-m;
 }
 
 input {
@@ -143,23 +143,24 @@ input {
 
 input,
 textarea {
-	border: 1px solid $light-silk;
-	border-radius: $border-radius-m;
-	color: $dark-silk;
-	margin: 0;
+  @include form-field;
+  border: 1px solid $light-silk;
+  border-radius: $border-radius-m;
+  color: $dark-silk;
+  margin: 0;
 
-	.error & {
-		border-color: $trueblood;
-	}
+  .error & {
+    border-color: $trueblood;
+  }
 
-	.success & {
-		border-color: $bamboo;
-		background: $light-bamboo;
-	}
+  .success & {
+    border-color: $bamboo;
+    background: $light-bamboo;
+  }
 
-	&:focus {
+  &:focus {
     @include focus;
-	}
+  }
 
   &.input-justify{
     width: 100%;
@@ -167,206 +168,206 @@ textarea {
 }
 
 ::-webkit-input-placeholder {
-	font-size: $base-font-size;
+  font-size: $base-font-size;
 }
 
 ::-moz-placeholder { // firefox 19+
-	font-size: $base-font-size;
+  font-size: $base-font-size;
 }
 
 :-ms-input-placeholder {
-	font-size: $base-font-size;
+  font-size: $base-font-size;
 }
 
 ::placeholder {
-	font-size: $base-font-size;
+  font-size: $base-font-size;
 }
 
 .input-group {
-	display: table;
-	width: 100%;
+  display: table;
+  width: 100%;
 
-	& > div {
-		display: table-cell;
-	}
+  & > div {
+    display: table-cell;
+  }
 
-	input { /* fix iOS buttons separation */
-		margin: 0;
-	}
+  input { /* fix iOS buttons separation */
+    margin: 0;
+  }
 
-	input {
-		border-right-width: 0;
-		width: 100%;
-	}
+  input {
+    border-right-width: 0;
+    width: 100%;
+  }
 
-	div:last-child input {
-		border-right-width: 1px;
-	}
+  div:last-child input {
+    border-right-width: 1px;
+  }
 
-	.active input {
-	    background-color: $shiro;
-	    cursor: default;
-	}
+  .active input {
+      background-color: $shiro;
+      cursor: default;
+  }
 
-	&-date {
-		width: auto;
-		border: 1px solid $light-silk;
-		border-radius: $border-radius-m;
+  &-date {
+    width: auto;
+    border: 1px solid $light-silk;
+    border-radius: $border-radius-m;
 
-		> div {
-      		position: relative;
+    > div {
+          position: relative;
 
-			&::before {
-				content: "|";
-				position: absolute;
-				top: 12px;
-				left: -5px;
-				color: $light-silk;
+      &::before {
+        content: "|";
+        position: absolute;
+        top: 12px;
+        left: -5px;
+        color: $light-silk;
 
-				@at-root .input-small#{&} {
-					top: 6px;
-				}
-			}
+        @at-root .input-small#{&} {
+          top: 6px;
+        }
+      }
 
-			&:first-of-type::before {
-        		content: "";
-			}
+      &:first-of-type::before {
+            content: "";
+      }
 
-			input {
-		      	width: $input-date;
-						height: $medium-input-height - 2;
-		      	margin-left: -4px;
-		      	text-align: center;
-		      	border: none;
+      input {
+            width: $input-date;
+            height: $medium-input-height - 2;
+            margin-left: -4px;
+            text-align: center;
+            border: none;
 
-		      	@at-root .input-small#{&} {
-		      		height: calc(#{$small-input-height} - 2px);
-		      	}
-			}
+            @at-root .input-small#{&} {
+              height: calc(#{$small-input-height} - 2px);
+            }
+      }
 
-			&:last-child input  {
-				width: $input-date-year;
-			}
-		}
+      &:last-child input  {
+        width: $input-date-year;
+      }
+    }
 
-		> div:first-of-type input {
-			margin-left: 0;
-		}
+    > div:first-of-type input {
+      margin-left: 0;
+    }
 
-		.error & {
-			border: 1px solid $trueblood;
-		}
-	}
+    .error & {
+      border: 1px solid $trueblood;
+    }
+  }
 
-	&-disabled {
+  &-disabled {
 
-		label {
-			color: $darkest-shiro;
-		}
+    label {
+      color: $darkest-shiro;
+    }
 
-		input[disabled],
-		input[placeholder] {
-			background: transparent;
-			color: $darkest-shiro;
-		}
+    input[disabled],
+    input[placeholder] {
+      background: transparent;
+      color: $darkest-shiro;
+    }
 
-		input::-webkit-input-placeholder {// no agrupar, el browser invalida la regla si no interpreta todas las lineas
-			background: transparent;
-			color: $darkest-shiro;
-		}
+    input::-webkit-input-placeholder {// no agrupar, el browser invalida la regla si no interpreta todas las lineas
+      background: transparent;
+      color: $darkest-shiro;
+    }
 
-		.input-group-date {
-			border-color: $darkest-shiro;
+    .input-group-date {
+      border-color: $darkest-shiro;
 
-			 > div::before {
-				 color: $darkest-shiro;
-			 }
-		}
-	}
+       > div::before {
+         color: $darkest-shiro;
+       }
+    }
+  }
 
 }
 
 input[type="number"] {
-	-moz-appearance:textfield;
+  -moz-appearance:textfield;
 
-	&::-webkit-inner-spin-button {
-		-webkit-appearance: none;
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
     margin: 0;
-	}
+  }
 }
 
 input[type="tel"],
 .row-centered .input-cif {
   margin-right: $gap * 2;
 
-	@include mediaquery ($bp-desktop) {
-		width: $input-tel-width;
-		float: left;
-	}
+  @include mediaquery ($bp-desktop) {
+    width: $input-tel-width;
+    float: left;
+  }
 
-	~ label {
-		width: auto;
-		margin: $gap 0 0 0;
-	}
+  ~ label {
+    width: auto;
+    margin: $gap 0 0 0;
+  }
 
-	~ input {
-		margin: 12px 0 0 0;
-	}
+  ~ input {
+    margin: 12px 0 0 0;
+  }
 
-	~ .error-info {
+  ~ .error-info {
     clear: both;
-	  display: block;
-	  padding-top: $gap / 2;
-	}
+    display: block;
+    padding-top: $gap / 2;
+  }
 }
 
 .row-centered .input-PostalCode,
 .input-PostalCode {
-	width: 70px; // 5 digits format (ES, IT)
+  width: 70px; // 5 digits format (ES, IT)
 }
 
 .field-date-group { // group of date fields
 
-	.full-date {
-		max-width: ($input-date*2)+$input-date-year - 6px;
-	}
-	.full-date:first-of-type {
-		max-width: ($input-date*2)+$input-date-year + 4px;
-	}
+  .full-date {
+    max-width: ($input-date*2)+$input-date-year - 6px;
+  }
+  .full-date:first-of-type {
+    max-width: ($input-date*2)+$input-date-year + 4px;
+  }
 
-	.start-date-group {
-		float: left;
-		padding-right: $gap;
-	}
+  .start-date-group {
+    float: left;
+    padding-right: $gap;
+  }
 
-	.end-date-group {
-		float: left;
+  .end-date-group {
+    float: left;
 
-		.list-default {
-			@include display-flex;
-			@include flex-direction(column);
+    .list-default {
+      @include display-flex;
+      @include flex-direction(column);
 
-			@include mediaquery ($bp-tablet) {
-				@include flex-direction(row);
-			}
+      @include mediaquery ($bp-tablet) {
+        @include flex-direction(row);
+      }
 
-		}
+    }
 
-		.end-date {
-			float: left;//Fallback
-			@include flex(1 0 auto);
-		}
+    .end-date {
+      float: left;//Fallback
+      @include flex(1 0 auto);
+    }
 
-		.field-date-group-currently {
+    .field-date-group-currently {
 
-			@include mediaquery ($bp-tablet) {
-				float: left;//Fallback
-				@include flex(1 0 100%);
-				margin: $gap * 3 0 0 $gap * 2;
-			}
-		}
+      @include mediaquery ($bp-tablet) {
+        float: left;//Fallback
+        @include flex(1 0 100%);
+        margin: $gap * 3 0 0 $gap * 2;
+      }
+    }
 
-	}
+  }
 }
 
 /*
@@ -519,26 +520,26 @@ Styleguide #{$sgi-forms-group-date}
 */
 
 textarea {
-	min-height: $textarea-height;
-	resize: vertical;
-	width:  $textarea-width;
+  min-height: $textarea-height;
+  resize: vertical;
+  width:  $textarea-width;
 }
 
 .textarea {
-	.info {
-		margin-top: $gap / 2;
-	}
+  .info {
+    margin-top: $gap / 2;
+  }
 
-	&-counter {
-		@include font(xsmall);
-		color: $soft-script;
+  &-counter {
+    @include font(xsmall);
+    color: $soft-script;
 
-		span {
-			.error & {
-				color: inherit;
-			}
-		}
-	}
+    span {
+      .error & {
+        color: inherit;
+      }
+    }
+  }
 }
 /*
 Textarea
@@ -577,25 +578,25 @@ Styleguide #{$sgi-forms-textarea}
 */
 
 select {
-	padding: 13px $gap;
-	height: $medium-input-height;
-	background: transparent;
-	font-size: $base-font-size;
-	color: $dark-silk;
-	border: 0 none;
-	background: url(#{$path-backgrounds}/bg-select-arrow.png) right 15px no-repeat $shiro;
-	border: 1px solid $light-silk;
-	cursor: pointer;
+  padding: 13px $gap;
+  height: $medium-input-height;
+  background: transparent;
+  font-size: $base-font-size;
+  color: $dark-silk;
+  border: 0 none;
+  background: url(#{$path-backgrounds}/bg-select-arrow.png) right 15px no-repeat $shiro;
+  border: 1px solid $light-silk;
+  cursor: pointer;
 
-	&:focus {
-		border: 1px solid $color-primary;
-		outline: none;
-		color: $dark;
-	}
+  &:focus {
+    border: 1px solid $color-primary;
+    outline: none;
+    color: $dark;
+  }
 
-	.error & {
-		border: 1px solid $trueblood;
-	}
+  .error & {
+    border: 1px solid $trueblood;
+  }
 }
 
 select:-moz-focusring {
@@ -726,183 +727,183 @@ Styleguide #{$sgi-forms-multiple-select}
 
 input[type="radio"],
 input[type="checkbox"]{
-	display: inline-block;
-	cursor: pointer;
+  display: inline-block;
+  cursor: pointer;
   padding: 0;
   margin: 3px 6px 0 0;
-	width: auto;
+  width: auto;
   border: 0 none;
   vertical-align: top;
   height: auto;
-	font-size: 15px;
+  font-size: 15px;
 }
 
 //disabled styles
 input[disabled="disabled"],
 select[disabled="disabled"],
 .disabled {
-	color: $darkest-shiro;
-	cursor: default;
+  color: $darkest-shiro;
+  cursor: default;
 }
 
 input[type="text"]:disabled {
-	background: transparent;
-	border-color: $darkest-shiro;
+  background: transparent;
+  border-color: $darkest-shiro;
 }
 
 input[type="checkbox"]:disabled + label,
 input[type="radio"]:disabled + label {
-	color: $soft-script;
+  color: $soft-script;
 }
 
 input[type="checkbox"] + label,
 input[type="radio"] + label,
 .label-checkbox { //class ".label-checkbox" deprecated. actualy used in filters only
-	cursor: pointer;
-	width: auto;
-	max-width: calc(100% - 30px);
+  cursor: pointer;
+  width: auto;
+  max-width: calc(100% - 30px);
 }
 
 .appearance-btn,
 .appearance-sticker {
-	margin-right: $gap;
+  margin-right: $gap;
 
-	input[type="radio"],
-	input[type="checkbox"] {
-	    display: none;
+  input[type="radio"],
+  input[type="checkbox"] {
+      display: none;
 
-	    + label {
-			width: auto;
-			height: 34px;
+      + label {
+      width: auto;
+      height: 34px;
       line-height: 32px;
-			max-width: 100%;
-			margin-bottom: $gap / 2;
-			padding: $gap / 2 $gap;
-			color: $mid-script;
+      max-width: 100%;
+      margin-bottom: $gap / 2;
+      padding: $gap / 2 $gap;
+      color: $mid-script;
       background-color: transparent;
       border: 1px solid $outer-land;
       border-radius: 21px;
 
-			@include mediaquery ($bp-desktop) {
-		  	    &:hover,
-		  	    &:active {
-		  	    	color: $day-blue;
-		      		background-color: transparent;
-		      		border: 1px solid $day-blue;
-		      	}
-		    }
+      @include mediaquery ($bp-desktop) {
+            &:hover,
+            &:active {
+              color: $day-blue;
+              background-color: transparent;
+              border: 1px solid $day-blue;
+            }
+        }
 
-	    	.sticker-close {
-	            display: none;
-	        }
-    	}
+        .sticker-close {
+              display: none;
+          }
+      }
 
-    	&:checked {
-    		+ label {
-    			color: $day-blue;
-    			background-color: tint($day-blue,80%);
-		      border: 1px solid $day-blue;
+      &:checked {
+        + label {
+          color: $day-blue;
+          background-color: tint($day-blue,80%);
+          border: 1px solid $day-blue;
 
-    			.sticker-close {
+          .sticker-close {
             display: inline-block;
             padding: 0 0 0 6px;
             color: $day-blue;
           }
-    		}
+        }
 
-    	}
+      }
     }
 }
 
 .appearance-btn {
-	min-width: 50%;
-	margin-right: 0;
+  min-width: 50%;
+  margin-right: 0;
 
-	@at-root .layer-stickers #{&} {
-    	width: auto;
-  	}
+  @at-root .layer-stickers #{&} {
+      width: auto;
+    }
 
-	@include mediaquery ($bp-tablet) {
-		min-width: auto;
-	}
+  @include mediaquery ($bp-tablet) {
+    min-width: auto;
+  }
 
-	input[type="radio"] {
-		+ label {
-			@include btn;
-			font-family: $base-font-family;
-			text-transform: none;
+  input[type="radio"] {
+    + label {
+      @include btn;
+      font-family: $base-font-family;
+      text-transform: none;
       height: 44px;
       display: block;
       color: $mid-script;
-			font-size: $small-font-size;
-			text-align: left;
+      font-size: $small-font-size;
+      text-align: left;
 
-      		@at-root button#{&} {
-        		font-size: $base-font-size;
-			}
+          @at-root button#{&} {
+            font-size: $base-font-size;
+      }
 
-	    	&::before {
-		        content: " ";
-		        display: inline-block;
-		        width: 10px;
-		        height: 10px;
-		        margin-right: $gap / 2;
-		        border: 1px solid $soft-script;
-		        border-radius: 5px;
-		        background-color: $dark-shiro;
-      		}
-    	}
+        &::before {
+            content: " ";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: $gap / 2;
+            border: 1px solid $soft-script;
+            border-radius: 5px;
+            background-color: $dark-shiro;
+          }
+      }
 
-    	&:checked {
-  			+ label {
-  				&::before {
-  					border: 1px solid $shiro;
-  					background-color: $day-blue;
-  				}
-		  	}
-		}
-	}
+      &:checked {
+        + label {
+          &::before {
+            border: 1px solid $shiro;
+            background-color: $day-blue;
+          }
+        }
+    }
+  }
 
-	@at-root .list-inline li#{&}:nth-child(2) {
-		padding-right: 0;
+  @at-root .list-inline li#{&}:nth-child(2) {
+    padding-right: 0;
 
-		@include mediaquery ($bp-tablet) {
-			padding-right: $gap;
-		}
-	}
+    @include mediaquery ($bp-tablet) {
+      padding-right: $gap;
+    }
+  }
 }
 
 
 .sticker.appearance-sticker {
-	height: 34px;
-	line-height: 32px;
-	padding: $gap / 2 15px;
-	border: 1px solid $outer-land;
-	border-radius: 21px;
+  height: 34px;
+  line-height: 32px;
+  padding: $gap / 2 15px;
+  border: 1px solid $outer-land;
+  border-radius: 21px;
   background-color: transparent;
 
   &[class*="iconfont-"] {
-	  padding: $gap / 2 13px;
+    padding: $gap / 2 13px;
   }
-	&:hover,
-	&:active {
-		background-color: transparent;
+  &:hover,
+  &:active {
+    background-color: transparent;
     border-color: $day-blue;
-	}
+  }
 
-	@include mediaquery ($bp-desktop) {
-		&:hover {
-			background-color: transparent;
+  @include mediaquery ($bp-desktop) {
+    &:hover {
+      background-color: transparent;
 
-			&::before {
-				color: $day-blue;
-			}
-		}
-	}
+      &::before {
+        color: $day-blue;
+      }
+    }
+  }
 
-	&::before {
-		color: $mid-script;
-	}
+  &::before {
+    color: $mid-script;
+  }
 
 
 }
@@ -1004,17 +1005,17 @@ Styleguide #{$sgi-forms-radio}
 
 
 .radio-group {
-	width: 100%;
+  width: 100%;
 }
 
 .radio-group li {
-	float: left;
-	white-space: nowrap;
-	overflow: hidden;
+  float: left;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .radio-group li + li {
-	margin-left: $gap;
+  margin-left: $gap;
 }
 
 .radio-group label {
@@ -1022,77 +1023,77 @@ Styleguide #{$sgi-forms-radio}
   width: 100%;
   margin-bottom: $gap / 2;
 
-	//TODO: Fix line-height
+  //TODO: Fix line-height
 
   &:before,
   &:after {
-  	content: "";
+    content: "";
     position: absolute;
     right: 0;
     left: 0;
     height: 10px;
   }
 
-	&:before {
-		top: -$gap;
-	}
+  &:before {
+    top: -$gap;
+  }
 
-	&:after {
+  &:after {
     top: 100%;
-	}
+  }
 }
 
 .form-select {
-	position: relative;
-	line-height: 14px;
-	-webkit-appearance: none;
+  position: relative;
+  line-height: 14px;
+  -webkit-appearance: none;
 
-	select {
-		width: 100%;
-		padding: 6px 30px 6px 6px;
-		text-indent: 0.01px;
-		text-overflow: "";
-		top: 0;
-		left: 0;
-		margin: 0;
-		-webkit-appearance: none;
-		   -moz-appearance: none;
-				    appearance: none;
-	}
+  select {
+    width: 100%;
+    padding: 6px 30px 6px 6px;
+    text-indent: 0.01px;
+    text-overflow: "";
+    top: 0;
+    left: 0;
+    margin: 0;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+  }
 
-	&-disabled {
-		overflow: hidden;
-		background-color: $dark-shiro;
-	}
+  &-disabled {
+    overflow: hidden;
+    background-color: $dark-shiro;
+  }
 
-	optgroup:before {
-		content: "";
-		display: block;
-		height: 1px;
-		border-bottom: 1px solid $darkest-shiro;
-		margin-bottom: $gap / 2;
-	}
+  optgroup:before {
+    content: "";
+    display: block;
+    height: 1px;
+    border-bottom: 1px solid $darkest-shiro;
+    margin-bottom: $gap / 2;
+  }
 
-	optgroup {
-		padding: 0;
-		margin: $gap 0;
+  optgroup {
+    padding: 0;
+    margin: $gap 0;
 
-		option {
-			background: transparent;
-		}
+    option {
+      background: transparent;
+    }
 
-		option:after {
-			content: "";
-			display: block;
-			padding: 2px;
-		}
+    option:after {
+      content: "";
+      display: block;
+      padding: 2px;
+    }
 
-		option:before {
-			content: "";
-			display: block;
-			padding: 2px;
-		}
-	}
+    option:before {
+      content: "";
+      display: block;
+      padding: 2px;
+    }
+  }
 }
 
 /*
@@ -1124,133 +1125,133 @@ Styleguide #{$sgi-forms-special-files}
 */
 
 .form-select-medium { /* Used in SectionCvComponent*/
-	width: 350px;
+  width: 350px;
 }
 
 .fieldset-title { /* DEPRECATED: used in registration-index + KQ + filters job search */
-	display: block;
+  display: block;
   padding-bottom: $gap;
 
-	.error & {
-		color: $trueblood;
-	}
+  .error & {
+    color: $trueblood;
+  }
 }
 
 .error-info,
 .success-info {
-	margin-top: $gap / 2;
-	color: $trueblood;
-	font-size: 12px;
-	line-height: 110%;
+  margin-top: $gap / 2;
+  color: $trueblood;
+  font-size: 12px;
+  line-height: 110%;
 }
 
 .success-info {
-	color: $bamboo;
+  color: $bamboo;
 }
 
 
 //helpers for form
 .input-link-annex {
-	margin: $gap 0 0 0;
+  margin: $gap 0 0 0;
 }
 
 .label-annex {
-	display: inline;
+  display: inline;
 }
 
 @media only screen and (max-width: $tablet-start) {
 
-	input {
-		width: 100%;
-	}
+  input {
+    width: 100%;
+  }
 
-	.radio-group {
-		margin-bottom: $gap;
+  .radio-group {
+    margin-bottom: $gap;
 
-		li {
-			float: left;
-			padding: 6px $gap;
-			box-sizing: border-box;
-		}
+    li {
+      float: left;
+      padding: 6px $gap;
+      box-sizing: border-box;
+    }
 
-		li + li {
-			margin-left: 0;
-		}
+    li + li {
+      margin-left: 0;
+    }
 
-		label {
-	    margin-bottom: 0;
-		}
-	}
+    label {
+      margin-bottom: 0;
+    }
+  }
 
-	.form-select select {
-		height: auto;
-		margin-top: 2px;
-		padding: $gap;
-	}
+  .form-select select {
+    height: auto;
+    margin-top: 2px;
+    padding: $gap;
+  }
 
-	/*already defined (and modified) at pulldown-chosen.scss */
-	.chosen-container-single .chosen-single {
-		margin-top: 2px;
-		padding: $gap;
-	}
+  /*already defined (and modified) at pulldown-chosen.scss */
+  .chosen-container-single .chosen-single {
+    margin-top: 2px;
+    padding: $gap;
+  }
 }
 
 .strength-bar {
-	position: relative;
+  position: relative;
 
-	a {
-		position: absolute;
-		top: 26px;
-		right: 1px;
-		font-size: $small-font-size;
-		line-height: $xsmall-line-height;
-		padding: 15px $gap;
-	}
+  a {
+    position: absolute;
+    top: 26px;
+    right: 1px;
+    font-size: $small-font-size;
+    line-height: $xsmall-line-height;
+    padding: 15px $gap;
+  }
 
-	input,
-	textarea {
-		margin-bottom: $gap;
-	}
+  input,
+  textarea {
+    margin-bottom: $gap;
+  }
 
-	.meter,
-	meter {
-		height: 7px;
-	}
+  .meter,
+  meter {
+    height: 7px;
+  }
 
-	meter {
-		width: 100%;
-		vertical-align: top;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		background: $dark-shiro;
+  meter {
+    width: 100%;
+    vertical-align: top;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: $dark-shiro;
 
-		/* WebKit */
-		&::-webkit-meter-bar {
-			background: $dark-shiro;
-		}
+    /* WebKit */
+    &::-webkit-meter-bar {
+      background: $dark-shiro;
+    }
 
-		&::-webkit-meter-optimum-value,
-		&::-webkit-meter-suboptimum-value {
-			background: $bamboo;
-		}
+    &::-webkit-meter-optimum-value,
+    &::-webkit-meter-suboptimum-value {
+      background: $bamboo;
+    }
 
-		&::-webkit-meter-even-less-good-value  {
-			background: $trueblood;
-		}
+    &::-webkit-meter-even-less-good-value  {
+      background: $trueblood;
+    }
 
-		/* Firefox */
-		&:-moz-meter-optimum::-moz-meter-bar,
-		&:-moz-meter-sub-optimum::-moz-meter-bar {
-		  background: $bamboo;
-		}
+    /* Firefox */
+    &:-moz-meter-optimum::-moz-meter-bar,
+    &:-moz-meter-sub-optimum::-moz-meter-bar {
+      background: $bamboo;
+    }
 
-		&:-moz-meter-sub-sub-optimum::-moz-meter-bar {
-		  background: $trueblood;
+    &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+      background: $trueblood;
 
-		}
+    }
 
-	}
+  }
 
 }
 
@@ -1276,35 +1277,35 @@ SForm group inline
 
 .form-group-inline {
 
-	@include mediaquery ($bp-tablet) {
-		&-button {
-			margin-top: ($gap*2) + $label-margin;
-		}
+  @include mediaquery ($bp-tablet) {
+    &-button {
+      margin-top: ($gap*2) + $label-margin;
+    }
 
-		.field-date-group {
-			.start-date-group,
-			.end-date {
-				margin: 0;
-			}
-		}
+    .field-date-group {
+      .start-date-group,
+      .end-date {
+        margin: 0;
+      }
+    }
 
-		.label-checkbox {
-				max-width: none;
-		}
+    .label-checkbox {
+        max-width: none;
+    }
 
     .checkbox-inline {
-			margin-top: $label-margin + $checkbox-inline-margin;
+      margin-top: $label-margin + $checkbox-inline-margin;
     }
   }
 }
 
 .field-group-grow { //used on edit-cv when an input + button sizes needs to be 100%
-	@include display-flex;
+  @include display-flex;
   @include align-items(flex-end);
 
-	> div:first-of-type {
-		@include flex;
-		margin-right: $gap;
+  > div:first-of-type {
+    @include flex;
+    margin-right: $gap;
 
     @include mediaquery ($bp-desktop) {
       margin-right: $gap * 2;
@@ -1321,18 +1322,18 @@ SForm group inline
 }
 
 .input-drop-down-wrapper {
-	position: relative;
+  position: relative;
 }
 
 .input-drop-down {
-	position: absolute;
-	z-index: $zindex-notification;
-	width: 100%;
-	margin-top: $gap / 2;
+  position: absolute;
+  z-index: $zindex-notification;
+  width: 100%;
+  margin-top: $gap / 2;
 
-	@at-root .search-bar #{&} ul {
-		display: block;
-	}
+  @at-root .search-bar #{&} ul {
+    display: block;
+  }
 }
 
 /*
