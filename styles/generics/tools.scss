@@ -137,7 +137,13 @@ Styleguide #{$sgi-helpers}
 			@include align-items(center);
 		}
 	}
+
+	&--baseline {
+		@include align-items(baseline);
+	}
+
 }
+
 
 
 /*------------------------------------*\
@@ -246,6 +252,27 @@ Styleguide #{$sgi-helpers}
 
       .padding-#{$side}-#{$size}  {
         padding-#{$side}: $space;
+      }
+    }
+  }
+}
+
+
+@each $side in $orientations {
+  @each $size, $space in $gapamounts {
+    @if ($size == base) {
+      .margin-#{$side}-small-device  {
+        margin-#{$side}: $space/2;
+
+        @include mediaquery ($bp-tablet) {
+          margin-#{$side}: 0;
+        }
+      }
+    }
+
+    @else {
+      .margin-#{$side}-#{$size} {
+        margin-#{$side}: $space;
       }
     }
   }
@@ -420,5 +447,17 @@ Styleguide #{$sgi-helpers}
     }
   }
 
+	&-small-device {
+    @include sticky-bottom;
 
+    @include mediaquery ($bp-tablet) {
+      position: static;
+      box-shadow: none;
+
+      .inner &,
+			.inner-s & {
+        padding: 0;
+      }
+    }
+  }
 }

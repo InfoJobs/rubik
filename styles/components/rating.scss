@@ -98,4 +98,12 @@ $rating-star-size: 40px;
     }
   }
 
+  &-star {
+    @include iconfont-Star;
+    &::before {
+      color: $kiiro;
+
+    }
+  }
+
 }
