@@ -92,7 +92,7 @@ $height-bg: 206px;
 
     @include mediaquery ($bp-desktop) {
       min-height: 150px;
-        }
+    }
   }
 
   &-plus {
@@ -100,7 +100,18 @@ $height-bg: 206px;
     padding-bottom: 40%;
     border-bottom: 1px solid $darkest-shiro;
     background-size: cover;
-    margin-top: 10px;
+  }
+
+  &-medium {
+    background-position: center;
+    padding-bottom: 160px;
+    background-size: cover;
+    
+
+    @include mediaquery ($bp-desktop) {
+      margin-top: 10px;
+      min-height: 200px;
+    }
   }
 }
 

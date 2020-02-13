@@ -102,13 +102,33 @@ Styleguide #{$sgi-panels}
 		background-color: $dark-silk;
 	}
 
-  &-hover {
-    cursor: pointer;
+  	&-hover {
+    	cursor: pointer;
 
-    &:hover {
-      background-color: tint($day-blue , 80%);
-    }
-  }
+    	&:hover {
+      		background-color: tint($day-blue , 80%);
+    	}
+  	}
+
+  	&-rounded {
+  		@include mediaquery ($bp-desktop) {
+			border-radius: $border-radius-l;
+		}
+
+		&-top {
+			@include mediaquery ($bp-desktop) {
+				border-top-left-radius: $border-radius-l;
+				border-top-right-radius: $border-radius-l;
+			}
+		}
+
+		&-bottom {
+			@include mediaquery ($bp-desktop) {
+				border-bottom-left-radius: $border-radius-l;
+				border-bottom-right-radius: $border-radius-l;
+			}
+		}
+	}
 }
 
 [class^="col-"].panel .col-child,

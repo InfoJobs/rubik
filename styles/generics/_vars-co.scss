@@ -13,6 +13,15 @@ $theme-color-primary:       		$light-blue;
 $theme-color-secondary:     		$soft-blue;
 $theme-color-contrast:      		$dark-blue;
 
+//
+// Background and border colors
+// -------------------------------------------
+$theme-bg-body:						$outer-fields;
+$theme-bgc-footer:					$darkest-shiro;
+$theme-bdtw-footer:					0;
+$theme-bdts-footer:					none;
+$theme-bdtc-footer:					transparent;
+
 
 //
 // Buttons
@@ -35,14 +44,20 @@ $theme-sticker-background:        $dark-shiro;
 $theme-sticker-background--hover:	#bbc9d7;
 
 
+//
+// Form elements
+// -------------------------------------------
+$theme-input-tel-width:           247px;
+
 
 
 //
-// Breakpoints
+// Layout
 // -------------------------------------------
 $theme-row-centered-width:        728px;
 $theme-row-centered-width-form:   505px;
 $theme-container-width:           1200px;
 $theme-container-extended-width:  $theme-container-width;
-
-$theme-input-tel-width:           247px;
+$theme-mt-footer:				  10px;
+$theme-pt-footer:				  10px;
+$theme-mt-container:			  0;

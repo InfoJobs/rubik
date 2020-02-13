@@ -67,12 +67,15 @@
 }
 
 body {
-	height: 100%;
-	font-family: $base-font-family;
-	font-size: $base-font-size;
-	line-height: $base-line-height;
-	color: $dark-silk;
-    background: $outer-fields;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  background: $bg-body;
+  color: $dark-silk;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  height: 100%;
+  line-height: $base-line-height;
 }
 
 input,
@@ -95,13 +98,6 @@ a:hover {
 
 a:focus {
 	outline:none;
-}
-
-.link-underline,
-.link-underline:hover,
-.link:hover {
-	cursor: pointer;
- 	text-decoration: underline;
 }
 
 strong {
@@ -139,20 +135,30 @@ Styleguide  #{$sgi-containers}
 .wrapper {
 	//overflow: hidden; it's removed because it creates a bug with anchors and footer structure
 	min-height: 100%;
-    position: relative;
+    //position: relative;
 
     @include mediaquery ($bp-desktop) {
-    	margin-bottom: $gap;
+    	margin-bottom: $padding/2;
+    	padding: 0 $gap;
     }
 }
 
 .container {
 	max-width: $container-width;
 	margin: 0 auto;
+
+	@include mediaquery ($bp-desktop) {
+    	margin-top: $mt-container;
+    }
+
+	&--home {
+		max-width: $container-home-with;
+		margin: 0 auto;
+	}
 }
 
 .container-expanded {
-    margin-top: $gap;
+    margin-top: 10px;
 
 	@media print {
 		margin: 0;
@@ -163,13 +169,13 @@ Styleguide  #{$sgi-containers}
   width: 100%;
 
 	@include mediaquery ($bp-desktop) {
-    margin: 0 auto $gap auto;
+    margin: 0 auto 10px auto;
     width: $row-centered-width;
 	}
 
 	form {
 		@include mediaquery ($bp-desktop) {
-      margin: 0 auto $gap auto;
+      margin: 0 auto 10px auto;
       width: $row-centered-width-form;
 		}
 	}
@@ -195,7 +201,7 @@ Styleguide  #{$sgi-containers}
 		@include flex(1);
 
 		&:not(:only-child) {
-			margin-right: $gap * 2;
+			margin-right: 20px;
 		}
 	}
 
@@ -254,7 +260,7 @@ Styleguide #{$sgi-innerContainers}
         padding-top: 0;
 
         @include mediaquery ($bp-desktop) {
-            padding-top: $gap * 4;
+            padding-top: $padding * 2;
         }
     }
 
@@ -279,10 +285,6 @@ img[alt] {
     @include mediaquery ($bp-desktop) {
         &:hover {
             background: #f5fcff;
-            border-top: 1px solid #dae8ee;
-            border-bottom: 1px solid #dae8ee;
-            margin-top: -1px;
-            margin-bottom: -1px;
             cursor: pointer;
 
             .action {
@@ -327,16 +329,10 @@ img[alt] {
 
 .list-default > li.container-editable {
 	margin-bottom: 0;
-
-	@include mediaquery ($bp-desktop) {
-		&:hover {
-			margin-bottom: -1px;
-		}
-	}
 }
 
 .inner-expanded > a:first-child > .inner.container-editable {
-    margin-top: -$gap * 2;
+    margin-top: -20px;
 
     &:hover {
         margin-top: -21px;
@@ -365,14 +361,10 @@ hr {
     }
 
     .main-content {
-		background-color: $shiro;
-
-        @include mediaquery ($bp-desktop) {
-
-          position: relative;
-          margin-left: 240px;
-          padding: 0 0 70px 0;
-
+		@include mediaquery ($bp-desktop) {
+	        position: relative;
+	        margin-left: 260px;
+	        padding: 0 0 70px 0;
         }
     }
 }
@@ -428,7 +420,7 @@ hr {
 
 .divider:after {
 	content: "|";
-	padding-left: $gap;
+	padding-left: $padding/2;
 	color: $light-silk;
 }
 

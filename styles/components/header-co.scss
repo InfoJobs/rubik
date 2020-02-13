@@ -753,3 +753,784 @@ a.nav-bar-toggle {
 
 	}
 }
+
+.global-nav-transparent {
+  @at-root .global-nav#{&} {
+	background-color: transparent;
+	background-image: url(//media.infojobs.net/portales/ij/appgrade/svgs/ij-logo-default_primary.svg);
+	background-position: center 20px;
+	
+	@include mediaquery ($bp-header) {
+		background-image: none;
+		margin: 0 auto;
+		max-width: $container-extended-width;
+	}
+
+    .nav-bar-wrapper {
+      	background-color: $shiro;
+		height: 100%;
+		display: flex;
+		flex-flow: column nowrap;
+
+      @include mediaquery ($bp-header) {
+        background-color: transparent;
+		display: block;
+      }
+    }
+
+    .nav-mobile {
+      background-color: transparent;
+    }
+
+	.nav-bar-menu .logo, 
+	.nav-bar-menu .logo:hover {
+		@include mediaquery ($bp-header) {
+			margin: $gap * 2 35px 0 0;
+			padding: 0;
+			display: block;
+			height: 41px;
+			width: 100px;
+			background-repeat: no-repeat;
+			background-position: left center;
+			//bg logo es
+			background-image: url(#{$path-media}/portales/ij/appgrade/svgs/ij-logo-default_primary.svg);
+			background-size: contain;
+		}
+	}
+
+    .nav-bar-menu > li a {
+      color: $dark-silk;
+
+      &:hover {
+        color: $day-blue;
+      }
+    }
+  }
+}
+
+a.nav-bar-toggle::before {
+	color: #167db7;
+	padding-top: 30px;
+}
+
+.experiment {
+  background: #fff;
+  overflow: hidden;
+
+  .container {
+    max-width: 100%;
+
+    @include mediaquery ($bp-tablet) {
+      width: 1100px;
+    }
+  }
+
+  h2 {
+    font-family: Proximanovalight;
+    margin: 40px auto 0 auto;
+    text-align: center;
+    padding: 0 20px;
+    margin-left: -10px;
+    margin-bottom: 40px;
+    width: 100%;
+    font-size: 24px;
+    line-height: 1.21;
+
+    @include mediaquery ($bp-desktop) {
+      font-size: 42px;
+      line-height: 50px;
+      margin-left: 0;
+      margin-top: 100px;
+      padding: 0 6px;
+    }
+      
+    span { 
+      background-color:#fff; 
+      padding: 6px 10px;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+
+      @include mediaquery ($bp-tablet) {
+        padding: 6px 40px;
+      }
+    }
+  }
+  
+
+  .xlarge span {
+    display: none;
+
+    @include mediaquery ($bp-desktop) {
+      background: url(//media.infojobs.net/appgrade/discovery/home-empresas/img_list_offer.png) no-repeat center;
+      color: #89bddb;
+      font-size: 40px;
+      display: inline-block;
+      padding: 16px 35px;
+
+      &.bbdd {
+        background: url(//media.infojobs.net/appgrade/discovery/home-empresas/img_list_bbdd.png) no-repeat center;
+        color: #f1c40f;
+      }
+    }
+  }
+
+  .xlarge {
+    font-size: 18px;
+
+    @include mediaquery ($bp-desktop) {
+      font-size: 25px;
+    }
+  }
+
+  .xxlarge {
+    font-size: 22px;
+    margin-top: 60px;
+    margin-bottom: 0;
+    padding: 0 40px;
+
+    @include mediaquery ($bp-desktop) {
+      font-size: 36px;
+      margin-top: 300px;
+      margin-bottom: 70px;
+      padding: 0;
+    }
+
+    &.publish {
+      @include mediaquery ($bp-desktop) {
+        margin-top: 160px;
+      }
+    } 
+    
+  }
+
+  .bg-home-empresas {
+    background-image: url(//media.infojobs.net/appgrade/discovery/home-empresas/bg_header2.jpg);
+  }
+
+  .content-middle {
+    flex-direction: column;
+    
+    @include mediaquery ($bp-desktop) {
+      flex-direction: row;
+    }
+  }
+
+  .content-type-text {
+    margin-left: 0;
+    order: 1;
+    text-align: center;
+    margin-top: 10px;
+
+    @include mediaquery ($bp-desktop) {
+      margin-left: -50px;
+      order: 0;
+      text-align: left;
+    }
+    
+    p {
+      margin-top: 8px;
+      margin-left: 0;
+
+      @include mediaquery ($bp-desktop) {
+        margin-left: 85px;
+      }     
+    }
+  }
+
+  .content-type-media { 
+    img {
+      width: 150px;
+
+      @include mediaquery ($bp-desktop) {
+        width: auto;
+      }
+    }
+  }
+
+  .offer {
+    background: #e7f1f7;
+    padding: 20px 0;
+    
+
+    @include mediaquery ($bp-desktop) {
+      height: 476px;
+      margin-top: 250px;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      @include mediaquery ($bp-desktop) {
+        width: row;
+      }
+    }
+
+    .claim {
+      
+      background-repeat: no-repeat;
+      color: #0B5077;
+      order: 1;
+      text-align: center;
+
+      .xxxlarge {
+        font-size: 24px;
+        line-height: 28px;
+        padding: 0 20px;
+        width: 80%;
+          margin: 20px auto 33px auto;
+
+        @include mediaquery ($bp-desktop) {
+          font-size: 42px;
+          line-height: 50px;
+          padding: 0;
+          width: 510px;
+        }
+      }
+
+      @include mediaquery ($bp-desktop) {
+        background-image: url(//media.infojobs.net/appgrade/discovery/home-empresas/bg_of_standard.png);
+        margin-left: -150px;
+        position: absolute;
+        padding: 280px 110px;
+        top: -100px;
+        
+      }
+
+      .alert {
+        color: #E25D5C;
+      }
+
+      .btn-large {
+        margin-bottom: 40px;
+      }
+    }
+
+    img {
+      width: 100%;
+
+      @include mediaquery ($bp-tablet) {
+        
+        display: flex;
+        width: auto;
+        margin: 0 auto;
+      }
+
+      @include mediaquery ($bp-desktop) {
+        position: absolute;
+        top: -70px;
+        right: 0;
+        width: auto;
+      }
+    }
+
+    span img {
+      width: 30%;
+      position: absolute;
+      left: calc(50% - 15%);
+      top: calc(28% - 74px);
+
+      @include mediaquery ($bp-tablet) {
+        width: auto;
+        right: calc(50% - 70px);
+      }
+
+      @include mediaquery ($bp-desktop) {
+        top: 80px;
+        left: auto;
+        right: -60px;
+        width: auto;
+      }
+    }
+  }
+
+  .title-logos {
+    margin-bottom: 20px;
+
+    @include mediaquery ($bp-desktop) {
+      margin-top: 160px;
+    }
+  }
+
+  .subtitle-logos {
+    margin-bottom: 80px;
+  }
+}
+
+.experiment,
+.experiment-mkt {
+  .semibold {
+    @include semi-bold;
+  }
+
+  .logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 10px;
+    padding-bottom: 80px;
+    
+
+    @include mediaquery ($bp-desktop) {
+      width: 1200px;
+    }
+
+    li {
+      flex-grow: 1;
+      margin-bottom: 10px;
+      text-align: center;
+      width: 50%;
+
+      @include mediaquery ($bp-tablet) {
+        width: 33%;
+      }
+
+      @include mediaquery ($bp-desktop) {
+        width: 180px;
+      }
+
+      img {
+        border-radius: 6px;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.04), 
+              0 1px 16px 0 rgba(0, 0, 0, 0.16),
+              0 2px 4px 0 rgba(0, 0, 0, 0.08);
+        width: 90%;
+        margin-bottom: 16px;
+        
+        @include mediaquery ($bp-desktop) {
+          width: 180px;
+        }
+      }
+    }
+  } 
+  
+  .help {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.04), 
+          0 1px 16px 0 rgba(0, 0, 0, 0.16),
+          0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    color: #083752;
+    display: flex;
+    
+    @include mediaquery ($bp-desktop) {
+      height: 318px;
+      margin: 0 auto 230px auto;
+      width: 1200px;
+    }
+
+    .text {
+      padding: 40px;
+
+      @include mediaquery ($bp-desktop) {
+        padding: 80px 66px 80px 80px;
+        width: 70%;
+
+        .medium {
+          margin-bottom: 40px;
+        }
+
+        span {
+          color: #167db7;
+        }
+      }
+    }
+    
+    .callcenter {
+      display: none;
+
+      @include mediaquery ($bp-desktop) {
+        display: block;
+        margin: 0;
+
+        &:before {
+          background: #fff;
+          content: "";
+          height: 318px;
+          margin: 0px 0 0 -44px;
+          position: absolute;
+          transform: skew(-15deg);
+          width: 88px;
+        }
+      }
+    }
+
+    .xlarge {
+      font-size: 30px;
+    }
+
+    .text {
+      color: #44484c;
+      
+      span {
+        color: #44484c;
+      }
+    }
+  }
+}
+
+.experiment-mkt {
+  .content-top {
+    @include mediaquery ($bp-tablet) {
+      flex-wrap: nowrap;
+
+      .content-type-text {
+        flex: auto;
+        flex: 1 1 80%;
+      }
+    }
+  }
+
+  .offer {
+    background-color: #e7f1f7;
+    padding: 20px 0;
+    
+
+    @include mediaquery ($bp-desktop) {
+      height: 326px;
+      margin-top: 262px;
+      margin-bottom: 172px;
+      padding: 0;
+    }
+
+    .container {
+      flex-direction: column;
+      position: relative;
+
+      @include mediaquery ($bp-desktop) {
+        display: flex;
+        width: row;
+      }
+    }
+
+    .claim {
+      
+      background-repeat: no-repeat;
+      color: #4085cc;
+      order: 1;
+      font-size: 42px;
+      line-height: 1.19;
+      text-align: center;
+
+      .xxxlarge {
+        font-size: 24px;
+        line-height: 28px;
+        padding: 0 20px;
+        text-align: center;
+
+        @include mediaquery ($bp-tablet) {
+          font-size: 42px;
+          line-height: 50px;
+          padding: 0;
+        }
+
+        @include mediaquery ($bp-desktop) {
+          text-align: left;
+        }
+      }
+
+      @include mediaquery ($bp-desktop) {
+        background-image: url(//media.infojobs.net/appgrade/discovery/home-empresas/mkt/img-circle.png);
+        width: 617px;
+          padding: 100px 0 100px 77px;
+        text-align: left;
+      }
+
+      .alert {
+        color: #E25D5C;
+      }
+
+      .btn-primary {
+        margin-bottom: 40px;
+      }
+    }
+
+    img {
+      width: 100%;
+
+      @include mediaquery ($bp-desktop) {
+        position: absolute;
+        top: -140px;
+        right: 0;
+        width: auto;
+      }
+    }
+
+    .img-offer {
+      @include mediaquery ($bp-tablet) {
+        width: 480px;
+        margin: 0 auto;
+      }
+    }
+
+    span.dto,
+    span.dto.mobile {
+      right: -100px;
+      top: -70px;
+      z-index: 5;
+      background: url(//media.infojobs.net/appgrade/discovery/home-empresas/mkt/img-offer.png) no-repeat;
+      padding: 70px 30px;
+      font-size: 50px;
+      color: #ffff;
+      font-family: Proximanovabold;
+
+      @include mediaquery ($bp-desktop) {
+        position: absolute;
+      }
+    }
+
+    span.dto {
+      display: none;
+
+      @include mediaquery ($bp-desktop) {
+        display: block;
+      }
+    }
+
+    span.dto.mobile {
+      display: block;
+      width: 150px;
+      margin: 0 auto;
+
+      @include mediaquery ($bp-desktop) {
+        display: none;
+      }
+    }
+  }
+
+  .main {
+    display: block;
+    text-align: left;
+    
+    h2 {
+      color: #287dc1;
+      font-size: 24px; 
+      line-height: 29px;
+
+      @include mediaquery ($bp-tablet) {
+        font-size: 42px;
+        line-height: 50px;
+      }
+    }
+
+    p {
+      font-size: 24px; 
+      line-height: 29px;
+      font-family: Proximanovalight;
+      margin-bottom: 40px;
+
+      @include mediaquery ($bp-tablet) {
+        font-size: 36px;
+        line-height: 1.11;
+        margin-bottom: 60px;
+      }
+    }
+
+    .btn-primary {
+      margin-bottom: 40px;
+    }
+  }
+
+  .xxlarge {
+    font-size: 20px;
+    margin-bottom: 40px;
+    margin-top: 60px;
+
+    @include mediaquery ($bp-tablet) {
+      font-size: 36px;
+      line-height: 36px;
+    }
+
+    @include mediaquery ($bp-desktop) {
+      margin-top: 160px;
+
+      &.found {
+        margin-top: 60px;
+      }
+    }
+  }
+
+  .content-type-media {
+    flex: auto;
+
+    @include mediaquery ($bp-desktop) {
+      flex: none;
+    }
+
+    img {
+      width: 100%;
+
+      @include mediaquery ($bp-desktop) {
+        width: auto;
+      }
+    }
+  }
+
+  .bbdd {
+    display: flex;
+    flex-direction: column;
+
+    @include mediaquery ($bp-desktop) {
+      flex-direction: row;
+    }
+
+    .benify {
+      @include mediaquery ($bp-tablet) {
+        width: 480px;
+        margin: 0 auto;
+      }
+
+      @include mediaquery ($bp-desktop) {
+        width: auto;
+        margin: 0 0 0 120px;
+      }
+
+      
+      .content-type-text {
+        margin-left: 20px;
+
+        @include mediaquery ($bp-desktop) {
+          margin-left: 50px;        
+        }
+      }
+
+      display: flex;
+      flex-direction: column;
+
+      p {
+        margin-top: 16px;
+      }
+
+      .content-type-media {
+        flex: none;
+        
+        img {
+          width: auto;
+        }
+      }
+    }
+  }
+  
+  .help {
+    flex-direction: column;
+    color: #2d3133;
+    
+    @include mediaquery ($bp-desktop) {
+      flex-direction: row;
+      width: 1038px;
+      margin-bottom: 0;
+    }
+    
+    
+    .medium {
+      font-size: 16px;
+      font-family: Proximanovasemibold;
+    }
+
+    .call {
+      font-size: 16px;
+      line-height: 20px;
+
+      @include mediaquery ($bp-desktop) {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+
+    .text {
+      @include mediaquery ($bp-tablet) {
+        padding: 60px 40px;
+      }
+    }
+
+    .xlarge {
+      font-size: 20px;
+      line-height: 24px;
+
+      @include mediaquery ($bp-desktop) {
+        font-size: 30px;
+        line-height: 36px;
+      }
+    }
+
+    .callcenter {
+      display: block;
+      background: #c0d8e8;
+      padding: 50px 0;
+      width: auto;
+    
+      @include mediaquery ($bp-desktop) {
+        position: relative;
+        width: 50%;
+        padding: 0;
+      }
+
+      img {
+        position: relative;
+        width: 200px;
+        display: block;
+        margin: 0 auto;
+
+        @include mediaquery ($bp-desktop) {
+          position: absolute;
+          width: 60%;
+          position: absolute;
+          right: 50px;
+          top: 50px;
+        }
+      }
+    }
+  }
+  .callcenter {
+    background: #c0d8e8;
+    position: relative;
+    width: 50%;
+  }
+
+  .offer-section {
+    display: flex;
+    flex-direction: column;
+
+    @include mediaquery ($bp-tablet) {
+      margin: 0 auto;
+      width: 480px;
+    }
+
+    @include mediaquery ($bp-desktop) {
+      flex-direction: row;
+      width: auto;
+    }
+
+    li {
+      box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+      
+      margin-bottom: 16px;
+      padding: 40px 24px;
+
+      @include mediaquery ($bp-desktop) {
+        margin-right: 14px;
+      }
+
+      
+      img {
+        margin-bottom: 35px;
+      }
+
+      p {
+        margin-top: 16px;
+      }
+    }
+  }
+  .desktop {
+    @include mediaquery ($bp-tablet) {
+        margin: 0 auto;
+      }
+  
+    img {
+      width: 100%;
+    }
+  }
+}

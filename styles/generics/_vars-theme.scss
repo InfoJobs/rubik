@@ -1,4 +1,3 @@
-//
 // Brand colors
 // -------------------------------------------
 $color-primary:        $theme-color-primary;
@@ -10,7 +9,11 @@ $color-header:         $theme-color-focus;
 //
 // Background and border colors
 // -------------------------------------------
-$color-contrast:        $theme-color-contrast;
+$bg-body: 				$theme-bg-body;
+$bgc-footer:			$theme-bgc-footer;
+$bdtw-footer:			$theme-bdtw-footer;
+$bdts-footer:			$theme-bdts-footer;
+$bdtc-footer:			$theme-bdtc-footer;
 
 
 //
@@ -20,9 +23,9 @@ $button-secondary:                      $theme-button-secondary;
 $button-secondary--hover:               $theme-button-secondary--hover;
 $button-secondary-contrast:             $theme-button-secondary-contrast;
 $button-secondary-contrast--hover:      $theme-button-secondary-contrast--hover;
-
 $button-cta: 							$theme-button-cta;
 $button-cta--hover:						$theme-button-cta--hover;
+
 
 //
 // Stickers colors
@@ -32,6 +35,7 @@ $sticker-color--hover:       $theme-sticker-color--hover;
 $sticker-border:             $theme-sticker-border;
 $sticker-background:         $theme-sticker-background;
 $sticker-background--hover:  $theme-sticker-background--hover;
+
 
 //
 // Form elements
@@ -45,4 +49,8 @@ $input-tel-width:       	$theme-input-tel-width;
 $row-centered-width-form:   $theme-row-centered-width-form;
 $row-centered-width:        $theme-row-centered-width;
 $container-width:           $theme-container-width;
+$container-home-with:		$theme-container-extended-width;
 $container-extended-width:  $theme-container-extended-width;
+$mt-footer: 				$theme-mt-footer;
+$pt-footer: 				$theme-pt-footer;
+$mt-container:				$theme-mt-container;

@@ -1,15 +1,23 @@
 // Brand colors
 // -------------------------------------------
-
 $day-blue:							#167db7;
 $dark-silk:							#2d3133; // grey text mobile menu
 $resting-katana:					#d5e1e5; // gray default button
 $katana-slash:						#bac7cc;
 $theme-color-focus:					$day-blue;
-
 $theme-color-primary:       		$day-blue;
 $theme-color-secondary:     		$resting-katana;
 $theme-color-contrast:      		$dark-silk;
+
+
+//
+// Background and border colors
+// -------------------------------------------
+$theme-bg-body:						$dark-shiro;
+$theme-bgc-footer:					transparent;
+$theme-bdtw-footer:					1px;
+$theme-bdts-footer:					solid;
+$theme-bdtc-footer:					$darkest-shiro;
 
 
 //
@@ -19,9 +27,9 @@ $theme-button-secondary:     		         transparent;
 $theme-button-secondary--hover:          $katana-slash;
 $theme-button-secondary-contrast:        $resting-katana;
 $theme-button-secondary-contrast--hover: $katana-slash;
-
 $theme-button-cta:     		            $orange-soda;
 $theme-button-cta--hover: 	            $orange-soda;
+
 
 //
 // Sticker colors
@@ -33,15 +41,19 @@ $theme-sticker-background:			$theme-color-secondary;
 $theme-sticker-background--hover:	$theme-color-secondary;
 
 
+//
+// Form elements
+// -------------------------------------------
+$theme-input-tel-width:           230px;
 
 
 //
-// Breakpoints
+// Layout
 // -------------------------------------------
-
 $theme-row-centered-width:        645px;
 $theme-row-centered-width-form:   446px;
-$theme-container-width:           970px;
+$theme-container-width:           960px;
 $theme-container-extended-width:  1280px;
-
-$theme-input-tel-width:           230px;
+$theme-mt-footer:				  80px;
+$theme-pt-footer:				  20px;
+$theme-mt-container:			  $gap*2;
