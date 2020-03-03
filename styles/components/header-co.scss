@@ -920,11 +920,13 @@ a.nav-bar-toggle::before {
     order: 1;
     text-align: center;
     margin-top: 10px;
+    flex: auto;
 
     @include mediaquery ($bp-desktop) {
       margin-left: -50px;
       order: 0;
       text-align: left;
+      flex: 1;
     }
     
     p {
