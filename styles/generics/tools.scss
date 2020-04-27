@@ -137,6 +137,10 @@ Styleguide #{$sgi-helpers}
 			@include align-items(center);
 		}
 	}
+
+	&--baseline {
+		@include align-items(baseline);
+	}
 }
 
 
@@ -167,20 +171,20 @@ Styleguide #{$sgi-helpers}
 
 .border-divider { // Used to generate a gap with a top border
   border-top: 1px solid $darkest-shiro;
-  padding-bottom: $gap * 2;
-  padding-top: $gap * 2;
+  padding-bottom: $padding;
+  padding-top: $padding;
 
 	.inner & {
-    margin-left: -$gap;
-    margin-right:-$gap;
-    padding-left: $gap;
-    padding-right: $gap;
+    margin-left: -#{$padding/2};
+    margin-right:-#{$padding/2};
+    padding-left: $padding/2;
+    padding-right: $padding/2;
 
     @include mediaquery ($bp-tablet) {
-      margin-left: -$gap * 2;
-      margin-right: -$gap * 2;
-      padding-left: $gap * 2;
-      padding-right: $gap * 2;
+      margin-left: -#{$padding};
+      margin-right: -#{$padding};
+      padding-left: $padding;
+      padding-right: $padding;
 	   }
 	}
 
@@ -212,19 +216,48 @@ Styleguide #{$sgi-helpers}
   border-top: 5px solid $day-blue;
 }
 
+/*------------------------------------*\
+    $SHADOW
+\*------------------------------------*/
+
 .shadow {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+
+  &-hover--image {
+		img {
+			transition: box-shadow 0.3s ease;
+		}
+
+		&:hover {
+			img {
+				box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.04),
+				0 1px 16px 0 rgba(0, 0, 0, 0.16),
+				0 2px 4px 0 rgba(0, 0, 0, 0.08);
+	    	}
+		}
+  }
 }
 
+.shadow {
+	&-hover--element {
+		transition: box-shadow 0.3s ease;
+
+		&:hover {
+	     	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.04),
+				0 1px 16px 0 rgba(0, 0, 0, 0.16),
+				0 2px 4px 0 rgba(0, 0, 0, 0.08);
+		}
+	}
+}
 
 /*------------------------------------*\
     $MARGINS and PADDINGS
 
-    var $orientations and $gapamounts in _vars.scss
+    var $orientations and $spaceamounts in _vars.scss
 \*------------------------------------*/
 
 @each $side in $orientations {
-  @each $size, $space in $gapamounts {
+  @each $size, $space in $spaceamounts {
     @if ($size == base) {
       .margin-#{$side}  {
         margin-#{$side}: $space/2;
@@ -251,17 +284,38 @@ Styleguide #{$sgi-helpers}
   }
 }
 
+@each $side in $orientations {
+  @each $size, $space in $spaceamounts {
+    @if ($size == base) {
+      .margin-#{$side}-small-device  {
+        margin-#{$side}: $space/2;
+
+        @include mediaquery ($bp-tablet) {
+          margin-#{$side}: 0;
+        }
+      }
+    }
+
+    @else {
+      .margin-#{$side}-#{$size} {
+        margin-#{$side}: $space;
+      }
+    }
+  }
+}
+
+
 .link-annex {
-	margin-right: $gap * 2;
+	margin-right: 20px;
 }
 
 .indent {
-  margin-top: $gap / 2;
+  margin-top: 5px;
 	margin-left: 24px;
 
 	&--small {
-    margin-top: $gap / 2;
-		margin-left: $gap;
+    margin-top: 5px;
+		margin-left: 10px;
 	}
 }
 
@@ -391,6 +445,21 @@ Styleguide #{$sgi-helpers}
   }
 }
 
+@mixin sticky($position: 0){
+	position: -webkit-sticky;
+	position: sticky;
+	top: $position;
+	width: 100%;
+	@media print {
+		display: none;
+	}
+}
+
+.container-sticky {
+	@include sticky;
+	z-index: $zindex-sticky-content;
+}
+
 @mixin sticky-bottom {
   position: fixed;
   left: 0;
@@ -414,11 +483,50 @@ Styleguide #{$sgi-helpers}
     @include mediaquery ($bp-desktop) {
       position: static;
       box-shadow: none;
-      .inner &{
+
+      .inner &,
+			.inner-s & {
         padding: 0;
       }
     }
   }
 
 
+}
+
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+
+.link {
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  &-underline,
+  &-underline:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  &-panel:hover {
+    cursor: pointer;
+    text-decoration: none;
+
+    .link {
+      text-decoration: underline;
+    }
+  }
+}
+
+/*------------------------------------*\
+    $DIVIDERS
+\*------------------------------------*/
+
+.divider--dot::after {
+	color: $mid-script;
+  content: "\00b7";
+	font-size: inherit;
+  padding-left: $gap;
 }
